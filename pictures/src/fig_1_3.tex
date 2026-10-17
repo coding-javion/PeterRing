@@ -1,0 +1,48 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Subfigure 1: lambda = 2 (Top Left)
+  \begin{scope}[shift={(0, 4.8)}]
+    \draw[thick, dashed] (0, 0) circle (1.3);
+    \draw[very thick, line width=1.3pt] (0, 0) ellipse (1.62cm and 1.12cm);
+    \node[font=\large] at (0, -1.9) {$\lambda = 2$};
+  \end{scope}
+
+  % Subfigure 2: lambda = 3 (Top Right)
+  \begin{scope}[shift={(4.8, 4.8)}]
+    \draw[thick, dashed] (0, 0) circle (1.3);
+    \draw[very thick, line width=1.3pt, domain=0:360, samples=150, smooth]
+      plot (\x: {1.3 * (1.0 + 0.30 * 0.5 * (5 * (cos(90 - \x))^3 - 3 * cos(90 - \x)))});
+    \node[font=\large] at (0, -1.9) {$\lambda = 3$};
+  \end{scope}
+
+  % Subfigure 3: lambda = 4, alpha_40 > 0 (Bottom Left)
+  \begin{scope}[shift={(0, 0)}]
+    \draw[thick, dashed] (0, 0) circle (1.3);
+    \draw[very thick, line width=1.3pt, domain=0:360, samples=180, smooth]
+      plot (\x: {1.3 * (1.0 + 0.35 * 0.125 * (35 * (cos(90 - \x))^4 - 30 * (cos(90 - \x))^2 + 3))});
+    \node[font=\large] at (0, -2.1) {$\lambda = 4 \quad \alpha_{40} > 0$};
+  \end{scope}
+
+  % Subfigure 4: lambda = 4, alpha_40 < 0 (Bottom Right)
+  \begin{scope}[shift={(4.8, 0)}]
+    \draw[thick, dashed] (0, 0) circle (1.3);
+    \draw[very thick, line width=1.3pt, domain=0:360, samples=180, smooth]
+      plot (\x: {1.3 * (1.0 - 0.35 * 0.125 * (35 * (cos(90 - \x))^4 - 30 * (cos(90 - \x))^2 + 3))});
+    \node[font=\large] at (0, -2.1) {$\lambda = 4 \quad \alpha_{40} < 0$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

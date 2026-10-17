@@ -1,0 +1,1922 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\end_preamble
+\use_default_options true
+\begin_modules
+beautiful-booknotes
+theorems-ams-chap-bytype
+\end_modules
+\maintain_unincluded_children no
+\language chinese-simplified
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_auto_link true
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008080
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+专有术语英汉对照表
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{chapter}{专有术语英汉对照表}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+markboth{专有术语英汉对照表}{专有术语英汉对照表}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+本书翻译严格遵循统一的理论核物理中文学术术语体系。
+\end_layout
+
+\begin_layout Standard
+\noindent
+\textbf{人名规范最高准则}：所有人名以及包含人名的定理、定律、模型、方程、势阱、效应、算符、变换与单位等（如 Slater 行列式、Bogoliubov 变换、Thouless 定理、Bloch-Messiah 定理、Onishi 公式、Wigner-Eckart 定理、Clebsch-Gordan 系数、Coriolis 力、BCS 理论、Skyrme 力、Gogny 力、Yukawa 势、Weisskopf 单位等），全部直接使用英文原名，严禁中文音译。
+\end_layout
+
+\begin_layout Section*
+1. 核心模型、方法与理论框架 (Core Theories & Frameworks)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.2cm} p{4.2cm} p{1.6cm} p{4.5cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{缩写/记号} & \backslash
+textbf{重点说明 / 典型章节} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{缩写/记号} & \backslash
+textbf{重点说明 / 典型章节} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Many-Body Problem & 多体问题 &  & 全书核心主题 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Liquid Drop Model & 液滴模型 & LDM & 第 1 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Shell Model & 壳模型 & SM & 第 2 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Deformed Shell Model & 形变壳模型 &  & 第 2 章，Nilsson 势等 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Mean Field Approximation & 平均场近似 &  & 贯穿全书 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Self-Consistent Field & 自洽场 & SCF & 第 5、7 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hartree-Fock Method & Hartree-Fock 方法 / HF 方法 & HF & 第 5 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Density-Dependent Hartree-Fock & 密度依赖的 Hartree-Fock 方法 & DDHF & 第 5 章，Skyrme / Gogny 力 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Local Density Approximation & 局域密度近似 & LDA & 第 5、13 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pairing Correlation & 对关联 &  & 第 6 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Superfluid Nuclei & 超流核 &  & 第 6 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Seniority Model & 辛弱数模型 &  & 第 6 章，准自旋方法 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+BCS Theory & BCS 理论 & BCS & Bardeen-Cooper-Schrieffer 理论，第 6 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Generalized Single-Particle Model & 推广的单粒子模型 &  & 第 7 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hartree-Fock-Bogoliubov Theory & Hartree-Fock-Bogoliubov 理论 & HFB & 第 7 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Constrained Hartree-Fock / HFB & 约束 Hartree-Fock / 约束 HFB 理论 & CHF / CHFB & 第 7 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Harmonic Vibrations & 简谐振动 &  & 第 8 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Random Phase Approximation & 随机相位近似 & RPA & 第 8 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Quasiparticle RPA & 准粒子随机相位近似 & QRPA & 第 8 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Boson Expansion Method & 玻色展开方法 & BEM & 第 9 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Generator Coordinate Method & 生成坐标法 & GCM & 第 10 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Restoration of Broken Symmetries & 对称性的恢复 &  & 第 11 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Spontaneous Symmetry Breaking & 自发对称性破缺 & SSB & 第 11 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Projection Method & 投影方法 &  & 第 11 章，粒子数投影、角动量投影 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Time-Dependent Hartree-Fock & 时间相关 Hartree-Fock 方法 & TDHF & 第 12 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Semiclassical Methods & 半经典方法 &  & 第 13 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+2. 微观多体物理与算符代数 (Many-Body Physics & Second Quantization)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Second Quantization & 二次量子化 & 附录 C \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Creation Operator & 产生算符 & 粒子 $c_k^\backslash
+dagger, a_k^\backslash
+dagger$；准粒子 $\backslash
+alpha_k^\backslash
+dagger, \backslash
+beta_k^\backslash
+dagger$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Annihilation Operator & 湮灭算符 & 粒子 $c_k, a_k$；准粒子 $\backslash
+alpha_k, \backslash
+beta_k$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Quasiparticle & 准粒子 & 产生算符 $\backslash
+alpha^\backslash
+dagger$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Product Wave Function & 直积波函数 & 附录 E，独立粒子波函数 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Slater Determinant & Slater 行列式 & 费米子多体波函数 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Density Matrix & 密度矩阵 & $\backslash
+rho_{kk'} = \backslash
+langle c_{k'}^\backslash
+dagger c_k \backslash
+rangle$，附录 D \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pairing Tensor & 配对张量 & $\backslash
+kappa_{kk'} = \backslash
+langle c_{k'} c_k \backslash
+rangle$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Generalized Density Matrix & 广义密度矩阵 & $\backslash
+mathcal{R} = \backslash
+begin{bmatrix} \backslash
+rho & \backslash
+kappa \backslash
+\backslash
+ -\backslash
+kappa^* & 1-\backslash
+rho^* \backslash
+end{bmatrix}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Bogoliubov Transformation & Bogoliubov 变换 & $u, v$ 振幅矩阵 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Bloch-Messiah Theorem & Bloch-Messiah 定理 & 附录 E，将广义 Bogoliubov 变换分解为典范基 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Canonical Basis & 典范基 / 标准基 & 对角化密度矩阵 $\backslash
+rho$ 的单粒子表象 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Thouless Theorem & Thouless 定理 & 附录 E，联接两个非正交准粒子真空态 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Onishi Formula & Onishi 公式 & 附录 E，直积态重叠的行列式表达式 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Wick's Theorem & Wick 定理 & 算符乘积转正规序与缩并 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Normal Ordering & 正规序 & $: A B C :$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Contraction & 缩并 & 费米子线缩并 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Particle-Hole (ph) Channel & 粒子-空穴通道 & $\backslash
+text{ph}$ 相互作用，激发算符 $a_m^\backslash
+dagger a_i$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Particle-Particle (pp) Channel & 粒子-粒子通道 & $\backslash
+text{pp}$ 相互作用，配对相互作用 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hole-Hole (hh) Channel & 空穴-空穴通道 & $\backslash
+text{hh}$ 相互作用 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Green's Function & Green 函数 & 附录 F，单体与两体传播子 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+3. 核结构、形变与转动运动 (Structure, Deformation & Rotation)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Magic Numbers & 幻数 & 2, 8, 20, 28, 50, 82, 126 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Nuclear Deformation & 核形变 & 多极展开参数 $\backslash
+alpha_{\backslash
+lambda\backslash
+mu}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Quadrupole / Octupole Deformation & 四极形变 / 八极形变 & $\backslash
+lambda=2$ / $\backslash
+lambda=3$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hexadecapole Deformation & 十六极形变 & $\backslash
+lambda=4$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hill-Wheeler Coordinates & Hill-Wheeler 坐标 & $\backslash
+beta, \backslash
+gamma$ 形状参数 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Prolate Deformation & 长椭球形变 & $\backslash
+gamma = 0^\backslash
+circ$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Oblate Deformation & 扁椭球形变 & $\backslash
+gamma = 60^\backslash
+circ$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Triaxial Deformation & 三轴形变 & $0^\backslash
+circ < \backslash
+gamma < 60^\backslash
+circ$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Moment of Inertia & 转动惯量 & $\backslash
+mathcal{J}$，刚体转动惯量 / 流体转动惯量 / Cranking 转动惯量 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Rigid-Body Moment of Inertia & 刚体转动惯量 & $\backslash
+mathcal{J}_{\backslash
+text{rig}}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Cranking Model & Cranking 模型 / 推引模型 & 描述转动核的 Inglis 理论，第 3、7 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Rotating Frame & 转动参考系 / 体固坐标系 & 坐标系与原子核形状共同转动 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Coriolis Force & Coriolis 力 & $-\backslash
+boldsymbol{\backslash
+omega} \backslash
+cdot \backslash
+boldsymbol{j}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Coriolis Anti-Pairing & CAP 效应 / Coriolis 反配对效应 & 强转动下配对能隙塌缩 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Backbending & 回弯现象 & 高自旋态下转动惯量剧增的现象 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Rotational Alignment & 转动顺排 & 高 $j$ 轨道核子角动量向转动轴顺排 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Particle-Rotor Model & 粒子加转子模型 & 第 3 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Band Crossing & 能带交叉 & 基态带 (g-band) 与顺排带 (s-band) 交叉 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Laboratory System & 实验室坐标系 & 空间固定坐标系 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Body-Fixed System & 体固坐标系 / 内秉坐标系 & 附录 A \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Euler Angles & Euler 角 & $\backslash
+Omega = (\backslash
+alpha, \backslash
+beta, \backslash
+gamma)$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+4. 核力、核物质与相互作用 (Nuclear Forces & Interactions)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Nucleon-Nucleon Interaction & 核子-核子相互作用 & NN 相互作用 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Bare Force / Realistic Force & 裸核力 / 现实核力 & Hamada-Johnston, Reid, Bonn 势 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Effective Interaction & 有效相互作用 & 平均场中使用的有效力，如 Skyrme, Gogny \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Repulsive Core / Hard Core & 排斥核心 / 硬芯 & 短程强排斥势 ($r \backslash
+lesssim 0.5\backslash
+,\backslash
+text{fm}$) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Soft Core & 软芯 & 连续平滑可微的短程排斥 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+One-Boson-Exchange Potential & 单玻色子交换势 & OBEP，基于介子场论 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Yukawa Potential & Yukawa 势 & 介子交换势 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Tensor Force & 张量力 & $S_{12} = 3(\backslash
+boldsymbol{\backslash
+sigma}_1 \backslash
+cdot \backslash
+hat{\backslash
+boldsymbol{r}})(\backslash
+boldsymbol{\backslash
+sigma}_2 \backslash
+cdot \backslash
+hat{\backslash
+boldsymbol{r}}) - \backslash
+boldsymbol{\backslash
+sigma}_1 \backslash
+cdot \backslash
+boldsymbol{\backslash
+sigma}_2$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Spin-Orbit Force & 自旋-轨道力 & $\backslash
+boldsymbol{l} \backslash
+cdot \backslash
+boldsymbol{s}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Isospin & 同位旋 & $\backslash
+boldsymbol{\backslash
+tau}$，质子与中子统一定义 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Charge Independence & 电荷无关性 & 同位旋标量性质 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Charge Symmetry & 电荷对称性 & $pp$ 与 $nn$ 相互作用的等价性 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Nuclear Matter & 核物质 & 无穷大均匀费米流体 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Saturation Density & 饱和密度 & $\backslash
+rho_0 \backslash
+simeq 0.16 \backslash
+sim 0.17\backslash
+,\backslash
+text{fm}^{-3}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Incompressibility & 不可压缩模量 / 压缩系数 & $K \backslash
+simeq 200 \backslash
+sim 250\backslash
+,\backslash
+text{MeV}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Symmetry Energy & 对称能 & 结合能中与中子过剩 $(N-Z)^2/A$ 相关的项 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Surface Energy & 表面能 & $a_S A^{2/3}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Coulomb Energy & 库仑能 & 质子间静电排斥能 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Bethe-Weizsäcker Formula & Bethe-Weizsäcker 公式 / 半经验质量公式 & 第 1 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+G-Matrix & G 矩阵 & Brueckner 理论处理硬芯的重整化相互作用 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+5. 对关联与超流核术语 (Pairing & Superfluidity)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Cooper Pair & Cooper 对 & 时间反演态对 $(k, \backslash
+bar{k})$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pairing Force & 配对力 / 对力 & 常数单极对力 $-G \backslash
+sum a_k^\backslash
+dagger a_{\backslash
+bar{k}}^\backslash
+dagger a_{\backslash
+bar{k}'} a_{k'}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Seniority Quantum Number & 辛弱数 & $v$（未配对核子数） \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Quasi-spin Operators & 准自旋算符 & $S_+, S_-, S_0$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Occupation Probability & 占据几率 & $v_k^2$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Vacancy Probability & 空额几率 & $u_k^2 = 1 - v_k^2$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pairing Gap & 配对能隙 & $\backslash
+Delta$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Gap Equation & 能隙方程 & $\backslash
+Delta = G \backslash
+sum_k u_k v_k$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Chemical Potential & 化学势 / Fermi 能 & $\backslash
+lambda$（约束平均粒子数 $\backslash
+langle \backslash
+hat{N} \backslash
+rangle = A$） \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Quasiparticle Energy & 准粒子能量 & $E_k = \backslash
+sqrt{(\backslash
+epsilon_k - \backslash
+lambda)^2 + \backslash
+Delta^2}$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Even-Odd Mass Staggering & 奇偶质量差 / 奇偶交错 & 配对效应导致的基态结合能系统性差异 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Pairing Vibration & 对振动 & 跨闭壳两核子转移激发的模式 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+6. 集体激发与动力学 (Excitation, RPA, TDHF, Semiclassical)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Giant Resonance & 巨共振 & GR（核子集体相干运动激发） \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Giant Dipole Resonance & 巨偶极共振 & GDR \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Giant Quadrupole Resonance & 巨四极共振 & GQR \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Giant Monopole Resonance & 巨单极共振（呼吸模） & GMR (Breathing Mode) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Isoscalar Mode & 同位旋标量模 & 质子与中子同相位运动 ($\backslash
+Delta T = 0$) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Isovector Mode & 同位旋矢量模 & 质子与中子反相位运动 ($\backslash
+Delta T = 1$) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Forward Amplitude & 正向振幅 & $X_{mi}$ (粒子-空穴激发振幅) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Backward Amplitude & 反向振幅 & $Y_{mi}$ (地面关联 / 粒子-空穴去激发振幅) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Spurious State / Spurious Mode & 赝态 / 赝模（虚假态） & 质心运动或平移/转动对称性自发破缺引入的无物理能量激发 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Goldstone Mode & Goldstone 模 / 零能模 & 恢复破缺对称性对应的零激发能本征模 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Energy-Weighted Sum Rule & 能量加权求和规则 & EWSR \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Boson Expansion Method & 玻色展开方法 & 第 9 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Marumori Expansion & Marumori 展开 & 第 9 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Belyaev-Zelevinsky Expansion & Belyaev-Zelevinsky 展开 & 第 9 章 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Generator Coordinate & 生成坐标 & $q$ (形变参数、对能隙等动力学自由度) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Hill-Wheeler Equation & Hill-Wheeler 方程 & GCM 中的积分本征值方程 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Projection Before Variation & 变分前投影 & PBV / VAP (Variation After Projection) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Projection After Variation & 变分后投影 & PAV \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Particle Number Projection & 粒子数投影 & PNP \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Angular Momentum Projection & 角动量投影 & AMP \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+WKB Approximation & WKB 近似 & Wentzel-Kramers-Brillouin 半经典波函数 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Thomas-Fermi Model & Thomas-Fermi 模型 & 费米气体局域动量空间近似 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Extended Thomas-Fermi & 扩展 Thomas-Fermi 模型 & ETF，包含 $\backslash
+hbar^2, \backslash
+hbar^4$ 梯度修正 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Wigner Transform & Wigner 变换 & 相空间分布函数 $f(\backslash
+boldsymbol{r}, \backslash
+boldsymbol{p})$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Wigner Function & Wigner 函数 & 经典相空间量子对应 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+7. 跃迁概率、角动量代数与电磁极矩 (Transitions & Electromagnetism)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{longtable}{p{4.8cm} p{4.8cm} p{5.0cm}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+toprule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+textbf{英文原名 (En)} & \backslash
+textbf{规范中文译名 (Zh)} & \backslash
+textbf{常见符号 / 备注} \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+midrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endhead
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+bottomrule
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endlastfoot
+\end_layout
+
+\begin_layout Plain Layout
+
+Reduced Transition Probability & 约化跃迁几率 / 约化跃迁概率 & $B(E\backslash
+lambda), B(M\backslash
+lambda)$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Wigner-Eckart Theorem & Wigner-Eckart 定理 & 附录 B，分解矩阵元为几何因子与动力学约化矩阵元 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Electric Multipole Operator & 电多极算符 & $\backslash
+mathcal{M}(E\backslash
+lambda, \backslash
+mu)$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Magnetic Multipole Operator & 磁多极算符 & $\backslash
+mathcal{M}(M\backslash
+lambda, \backslash
+mu)$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Electric Quadrupole Moment & 电四极矩 & $Q_0$ (内秉电四极矩), $Q_{\backslash
+text{spec}}$ (谱学电四极矩) \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Magnetic Dipole Moment & 磁偶极矩 & $\backslash
+mu$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Gyromagnetic Ratio & 旋磁比 / $g$ 因子 & $g_l, g_s, g_R$ \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Weisskopf Single-Particle Unit & Weisskopf 单粒子单位 & W.u.，单粒子跃迁强度的基准单位 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Selection Rules & 选择定则 & 宇称、角动量三角定则 \backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{longtable}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Section*
+8. 经典文献与人名惯用列表 (Proper Names & Literature)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Subsection*
+原著作者Peter Ring, Peter Schuck
+\end_layout
+
+\begin_layout Subsection*
+文献著作
+\end_layout
+
+\begin_layout Itemize
+Bohr & Mottelson [BM 75]
+\end_layout
+
+\begin_layout Itemize
+Eisenberg & Greiner [EG 70]
+\end_layout
+
+\begin_layout Itemize
+de Shalit & Feshbach [SF 74]
+\end_layout
+
+\begin_layout Itemize
+Edmonds [Ed 57]
+\end_layout
+
+\begin_layout Subsection*
+理论物理人名
+\end_layout
+
+\begin_layout Itemize
+Hartree, Fock
+\end_layout
+
+\begin_layout Itemize
+Bogoliubov
+\end_layout
+
+\begin_layout Itemize
+Slater
+\end_layout
+
+\begin_layout Itemize
+Bloch, Messiah
+\end_layout
+
+\begin_layout Itemize
+Thouless
+\end_layout
+
+\begin_layout Itemize
+Onishi
+\end_layout
+
+\begin_layout Itemize
+Wick
+\end_layout
+
+\begin_layout Itemize
+Bardeen, Cooper, Schrieffer
+\end_layout
+
+\begin_layout Itemize
+Strutinsky
+\end_layout
+
+\begin_layout Itemize
+Nilsson
+\end_layout
+
+\begin_layout Itemize
+Inglis
+\end_layout
+
+\begin_layout Itemize
+Skyrme, Gogny
+\end_layout
+
+\begin_layout Itemize
+Brueckner, Bethe, Goldstone
+\end_layout
+
+\begin_layout Itemize
+Yukawa
+\end_layout
+
+\begin_layout Itemize
+Coriolis
+\end_layout
+
+\begin_layout Itemize
+Clebsch, Gordan
+\end_layout
+
+\begin_layout Itemize
+Wigner, Eckart
+\end_layout
+
+\begin_layout Itemize
+Weisskopf
+\end_layout
+
+\begin_layout Itemize
+Hill, Wheeler
+\end_layout
+
+\begin_layout Itemize
+Marumori, Belyaev, Zelevinsky
+\end_layout
+
+\begin_layout Itemize
+Wentzel, Kramers, Brillouin (WKB)
+\end_layout
+
+\begin_layout Itemize
+Thomas, Fermi
+\end_layout
+
+\begin_layout Itemize
+Pauli
+\end_layout
+
+\begin_layout Itemize
+Dirac
+\end_layout
+
+\begin_layout Itemize
+Schrödinger
+\end_layout
+
+\begin_layout Itemize
+Hamilton
+\end_layout
+
+\begin_layout Itemize
+Feynman
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+end{multicols}
+\end_layout
+
+\end_inset
+\end_layout
+
+\end_body
+\end_document

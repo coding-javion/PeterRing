@@ -1,0 +1,44 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Column widths: w = 1.2 cm, Level height: h = 0.45 cm
+  % 9 levels total: total height = 9 * 0.45 = 4.05 cm
+
+  % Headers
+  \node[font=\large] at (0.6, 4.35) {$\mathrm{p}$};
+  \node[font=\large] at (1.8, 4.35) {$\mathrm{n}$};
+
+  % Outer border
+  \draw[thick, line width=1.1pt] (0, 0) rectangle (2.4, 4.05);
+
+  % Vertical divider
+  \draw[thick, line width=1.1pt] (1.2, 0) -- (1.2, 4.05);
+
+  % Horizontal dividers and dots
+  \foreach \i in {1,...,8} {
+    \draw[thick, line width=0.8pt] (0, \i*0.45) -- (2.4, \i*0.45);
+  }
+
+  % Protons (levels 1 to 5)
+  \foreach \i in {1,...,5} {
+    \filldraw[black] (0.6, \i*0.45 - 0.225) circle (2.6pt);
+  }
+
+  % Neutrons (levels 1 to 9)
+  \foreach \i in {1,...,9} {
+    \filldraw[black] (1.8, \i*0.45 - 0.225) circle (2.6pt);
+  }
+
+\end{tikzpicture}
+\end{document}

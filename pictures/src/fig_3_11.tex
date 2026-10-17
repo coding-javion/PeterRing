@@ -1,0 +1,166 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Energy scale: y = 0.8 + 2.85 * E (MeV)
+  \def\yzero{0.8}
+  \def\yscale{2.85}
+
+  % Y-axis
+  \draw[thick, ->] (0, 0.4) -- (0, 7.6);
+  \foreach \E in {0.5, 1.0, 1.5, 2.0} {
+    \pgfmathsetmacro{\ypos}{\yzero + \E * \yscale}
+    \draw[thick] (0, \ypos) -- (-0.12, \ypos) node[left=2pt, font=\normalsize] {\E};
+  }
+  \node[font=\large\bfseries, align=center] at (-0.6, 7.4) {$E$\\[-2pt]\normalsize($\mathrm{MeV}$)};
+
+  % Nucleus title
+  \node[font=\LARGE\bfseries] at (1.6, 7.0) {$^{159}\mathrm{Dy}$};
+
+  % Helper macros for levels:
+  \newcommand{\levelL}[4]{%
+    \pgfmathsetmacro{\y}{\yzero + #3 * \yscale}
+    \draw[line width=1.1pt] (#1, \y) node[left=1.2pt, font=\scriptsize, fill=white, inner sep=0.5pt] {$#4$} -- (#2, \y);%
+  }
+  \newcommand{\levelOffset}[5]{%
+    \pgfmathsetmacro{\y}{\yzero + #3 * \yscale}
+    \draw[line width=1.1pt] (#1, \y) node[left=1.2pt, #5, font=\scriptsize, fill=white, inner sep=0.5pt] {$#4$} -- (#2, \y);%
+  }
+  \newcommand{\levelBare}[3]{%
+    \pgfmathsetmacro{\y}{\yzero + #3 * \yscale}
+    \draw[line width=1.1pt] (#1, \y) -- (#2, \y);%
+  }
+
+  % ==================== EXPERIMENT ====================
+  % --- Column 1: K=3/2- band ---
+  \def\xAL{0.9} \def\xAR{1.6}
+  \levelOffset{\xAL}{\xAR}{0.056}{3/2^-}{yshift=-1.5pt}
+  \levelOffset{\xAL}{\xAR}{0.136}{5/2^-}{yshift=1.5pt}
+  \levelL{\xAL}{\xAR}{0.239}{7/2^-}
+  \levelL{\xAL}{\xAR}{0.364}{9/2^-}
+  \levelL{\xAL}{\xAR}{0.510}{11/2^-}
+  \levelL{\xAL}{\xAR}{0.678}{13/2^-}
+  \levelL{\xAL}{\xAR}{0.866}{15/2^-}
+  \levelL{\xAL}{\xAR}{1.074}{17/2^-}
+
+  % --- Column 2: K=11/2- band ---
+  \def\xBL{2.5} \def\xBR{3.2}
+  \levelL{\xBL}{\xBR}{0.35}{11/2^-}
+  \levelL{\xBL}{\xBR}{0.51}{13/2^-}
+  \levelL{\xBL}{\xBR}{0.69}{15/2^-}
+  \levelL{\xBL}{\xBR}{0.90}{17/2^-}
+  \levelL{\xBL}{\xBR}{1.13}{19/2^-}
+  \levelL{\xBL}{\xBR}{1.37}{21/2^-}
+  \levelL{\xBL}{\xBR}{1.62}{23/2^-}
+
+  % --- Column 3: i_13/2 positive parity band ---
+  \def\xCL{4.7} \def\xCR{5.4}
+  \levelOffset{\xCL}{\xCR}{0.18}{5/2^+}{yshift=-2pt}
+  \levelOffset{\xCL}{\xCR}{0.21}{7/2^+}{xshift=-13pt, yshift=-1pt}
+  \levelOffset{\xCL}{\xCR}{0.26}{9/2^+}{yshift=1.5pt}
+  \levelOffset{\xCL}{\xCR}{0.33}{11/2^+}{xshift=-11pt, yshift=1.5pt}
+  \levelOffset{\xCL}{\xCR}{0.38}{13/2^+}{yshift=2.5pt}
+  \levelOffset{\xCL}{\xCR}{0.54}{15/2^+}{yshift=-2.5pt}
+  \levelOffset{\xCL}{\xCR}{0.58}{17/2^+}{yshift=2.5pt}
+  \levelOffset{\xCL}{\xCR}{0.75}{19/2^+}{yshift=-2.5pt}
+  \levelOffset{\xCL}{\xCR}{0.79}{21/2^+}{yshift=2.5pt}
+  \levelOffset{\xCL}{\xCR}{1.26}{25/2^+}{yshift=-2.5pt}
+  \levelOffset{\xCL}{\xCR}{1.29}{23/2^+}{yshift=2.5pt}
+  \levelOffset{\xCL}{\xCR}{1.76}{29/2^+}{yshift=-2.5pt}
+  \levelOffset{\xCL}{\xCR}{1.80}{27/2^+}{yshift=2.5pt}
+  \levelOffset{\xCL}{\xCR}{2.26}{33/2^+}{yshift=0pt}
+
+  % ==================== THEORY COLUMNS ====================
+  \def\xDaL{7.1} \def\xDaR{7.8}
+  \def\xDbL{8.8} \def\xDbR{9.5}
+  \def\xDcL{10.3} \def\xDcR{11.0}
+
+  % Column a) levels
+  \levelBare{\xDaL}{\xDaR}{-0.25}
+  \levelBare{\xDaL}{\xDaR}{-0.22}
+  \levelBare{\xDaL}{\xDaR}{-0.10}
+  \levelBare{\xDaL}{\xDaR}{-0.03}
+  \levelBare{\xDaL}{\xDaR}{0.12}
+  \levelBare{\xDaL}{\xDaR}{0.40}
+  \levelBare{\xDaL}{\xDaR}{0.59}
+  \levelBare{\xDaL}{\xDaR}{0.94}
+  \levelBare{\xDaL}{\xDaR}{1.14}
+  \levelBare{\xDaL}{\xDaR}{1.65}
+  \levelBare{\xDaL}{\xDaR}{1.88}
+  \levelBare{\xDaL}{\xDaR}{2.41}
+
+  % Column b) levels
+  \levelBare{\xDbL}{\xDbR}{0.22}
+  \levelBare{\xDbL}{\xDbR}{0.24}
+  \levelBare{\xDbL}{\xDbR}{0.31}
+  \levelBare{\xDbL}{\xDbR}{0.34}
+  \levelBare{\xDbL}{\xDbR}{0.53}
+  \levelBare{\xDbL}{\xDbR}{0.58}
+  \levelBare{\xDbL}{\xDbR}{0.86}
+  \levelBare{\xDbL}{\xDbR}{0.91}
+  \levelBare{\xDbL}{\xDbR}{1.28}
+  \levelBare{\xDbL}{\xDbR}{1.32}
+  \levelBare{\xDbL}{\xDbR}{1.78}
+  \levelBare{\xDbL}{\xDbR}{1.81}
+  \levelBare{\xDbL}{\xDbR}{2.25}
+
+  % Column c) levels
+  \levelBare{\xDcL}{\xDcR}{0.21}
+  \levelBare{\xDcL}{\xDcR}{0.23}
+  \levelBare{\xDcL}{\xDcR}{0.30}
+  \levelBare{\xDcL}{\xDcR}{0.33}
+  \levelBare{\xDcL}{\xDcR}{0.51}
+  \levelBare{\xDcL}{\xDcR}{0.56}
+  \levelBare{\xDcL}{\xDcR}{0.72}
+  \levelBare{\xDcL}{\xDcR}{0.77}
+  \levelBare{\xDcL}{\xDcR}{1.23}
+  \levelBare{\xDcL}{\xDcR}{1.27}
+  \levelBare{\xDcL}{\xDcR}{1.75}
+  \levelBare{\xDcL}{\xDcR}{1.79}
+  \levelBare{\xDcL}{\xDcR}{2.25}
+
+  % ==================== CONNECTING LINES (Exp -> a -> b -> c) ====================
+  \newcommand{\connectFour}[4]{%
+    \draw[line width=0.6pt] (\xCR, {\yzero + #1 * \yscale}) -- (\xDaL, {\yzero + #2 * \yscale});%
+    \draw[line width=0.6pt] (\xDaR, {\yzero + #2 * \yscale}) -- (\xDbL, {\yzero + #3 * \yscale});%
+    \draw[line width=0.6pt] (\xDbR, {\yzero + #3 * \yscale}) -- (\xDcL, {\yzero + #4 * \yscale});%
+  }
+
+  \connectFour{0.18}{-0.25}{0.22}{0.21}
+  \connectFour{0.21}{-0.22}{0.24}{0.23}
+  \connectFour{0.26}{-0.10}{0.31}{0.30}
+  \connectFour{0.33}{-0.03}{0.34}{0.33}
+  \connectFour{0.38}{0.12}{0.53}{0.51}
+  \connectFour{0.54}{0.40}{0.58}{0.56}
+  \connectFour{0.58}{0.59}{0.86}{0.72}
+  \connectFour{0.75}{0.94}{0.91}{0.77}
+  \connectFour{0.79}{1.14}{1.28}{1.23}
+  \connectFour{1.26}{1.65}{1.32}{1.27}
+  \connectFour{1.76}{1.88}{1.78}{1.75}
+  \connectFour{1.80}{1.88}{1.81}{1.79}
+  \connectFour{2.26}{2.41}{2.25}{2.25}
+
+  % Dotted horizontal reference line from 5/2+
+  \draw[densely dotted, line width=0.8pt] (\xCL, {\yzero + 0.18 * \yscale}) -- (\xDcR, {\yzero + 0.18 * \yscale});
+
+  % ==================== LABELS ====================
+  \node[font=\Large\bfseries] at (3.25, -0.6) {Experiment [BT 71]};
+  \node[font=\Large\bfseries] at (9.05, -0.6) {Theory};
+
+  \node[font=\large\bfseries] at ({(\xDaL+\xDaR)/2}, -0.15) {a)};
+  \node[font=\large\bfseries] at ({(\xDbL+\xDbR)/2}, -0.15) {b)};
+  \node[font=\large\bfseries] at ({(\xDcL+\xDcR)/2}, -0.15) {c)};
+
+\end{tikzpicture}
+\end{document}

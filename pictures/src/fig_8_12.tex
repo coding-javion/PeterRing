@@ -1,0 +1,258 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \pgfplotsset{
+    multibar/.style={
+      width=6.8cm,
+      height=4.0cm,
+      xmin=0, xmax=30.5,
+      xtick={0, 10, 20, 30},
+      xticklabels={$0$, $10$, $20$, $30$},
+      tick pos=left,
+      tick align=inside,
+      tick style={line width=0.6pt, color=black},
+      major tick length=4pt,
+      axis line style={line width=0.85pt},
+      xlabel={$E(\mathrm{MeV})$},
+      xlabel style={at={(axis description cs:0.75, -0.15)}, anchor=north, font=\footnotesize},
+      clip=false
+    }
+  }
+
+  % Helper command to draw peak bar
+  \newcommand{\pbar}[2]{\draw[line width=1.0pt] (axis cs:#1, 0) -- (axis cs:#1, #2);}
+
+  % ========================================================
+  % ROW 1: 3^- (Left) and 5^- (Right)
+  % ========================================================
+  % 1. 3^- (Left)
+  \begin{axis}[
+    name=p3m,
+    multibar,
+    ymin=0, ymax=6.0,
+    ytick={0, 1, 2, 3, 4, 5},
+    ylabel={$10^5\,(e^2\,\mathrm{fm}^6)\,B(E3)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 4.8) {$3^-$};
+    \pbar{2.61}{5.4}
+    \pbar{5.0}{0.12}
+    \pbar{5.3}{0.15}
+    \pbar{8.5}{0.45}
+    \pbar{10.0}{0.16}
+    \pbar{11.8}{0.12}
+    \pbar{13.0}{0.10}
+    \pbar{13.6}{0.12}
+    \pbar{14.5}{0.08}
+    \pbar{16.5}{0.15}
+    \pbar{19.2}{0.10}
+    \pbar{20.2}{0.60}
+    \pbar{20.8}{1.35}
+  \end{axis}
+
+  % 2. 5^- (Right)
+  \begin{axis}[
+    name=p5m,
+    multibar,
+    at={($(p3m.south east)+(1.8cm, 0)$)},
+    ymin=0, ymax=4.8,
+    ytick={0, 2, 4},
+    ylabel={$10^8\,(e^2\,\mathrm{fm}^{10})\,B(E5)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 3.8) {$5^-$};
+    \pbar{3.2}{2.7}
+    \pbar{3.7}{3.0}
+    \pbar{4.5}{0.2}
+    \pbar{5.2}{1.7}
+    \pbar{5.8}{0.7}
+    \pbar{6.8}{1.0}
+    \pbar{9.2}{0.8}
+    \pbar{11.5}{0.9}
+    \pbar{12.2}{1.0}
+    \pbar{13.5}{1.4}
+    \pbar{14.2}{1.2}
+    \pbar{14.8}{0.6}
+    \pbar{15.5}{0.5}
+    \pbar{18.5}{0.9}
+    \pbar{19.0}{1.1}
+    \pbar{19.8}{2.1}
+    \pbar{20.2}{1.2}
+    \pbar{23.5}{0.35}
+    \pbar{25.0}{0.45}
+    \pbar{28.0}{0.15}
+  \end{axis}
+
+  % ========================================================
+  % ROW 2: 1^- (Left) and 1^+ (Right)
+  % ========================================================
+  % 3. 1^- (Left)
+  \begin{axis}[
+    name=p1m,
+    multibar,
+    at={($(p3m.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=48,
+    ytick={0, 20, 40},
+    ylabel={$(e^2\,\mathrm{fm}^2)\,B(E1)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 38) {$1^-$};
+    \pbar{6.0}{1.5}
+    \pbar{6.5}{1.0}
+    \pbar{7.8}{1.2}
+    \pbar{8.3}{12.0}
+    \pbar{9.8}{14.5}
+    \pbar{10.2}{36.0}
+    \pbar{10.8}{1.5}
+    \pbar{14.5}{1.5}
+  \end{axis}
+
+  % 4. 1^+ (Right)
+  \begin{axis}[
+    name=p1p,
+    multibar,
+    at={($(p5m.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=11.5,
+    ytick={0, 2, 4, 6, 8, 10},
+    ylabel={$(\mu_K)^2\,B(M1)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 9.2) {$1^+$};
+    \pbar{7.5}{5.5}
+    \pbar{8.2}{10.5}
+    \pbar{11.8}{0.12}
+    \pbar{12.5}{0.10}
+    \pbar{15.0}{0.10}
+    \pbar{16.5}{0.22}
+    \pbar{18.0}{0.12}
+  \end{axis}
+
+  % ========================================================
+  % ROW 3: 2^+ (Left) and 4^+ (Right)
+  % ========================================================
+  % 5. 2^+ (Left)
+  \begin{axis}[
+    name=p2p,
+    multibar,
+    at={($(p1m.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=5.5,
+    ytick={0, 1, 2, 3, 4, 5},
+    ylabel={$10^3\,(e^2\,\mathrm{fm}^4)\,B(E2)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 4.4) {$2^+$};
+    \pbar{4.1}{3.1}
+    \pbar{6.2}{0.5}
+    \pbar{6.8}{0.7}
+    \pbar{10.8}{2.3}
+    \pbar{11.1}{4.4}
+    \pbar{11.5}{0.75}
+    \pbar{11.8}{0.20}
+    \pbar{13.5}{0.08}
+    \pbar{14.0}{0.10}
+    \pbar{16.0}{0.18}
+    \pbar{16.8}{1.15}
+    \pbar{17.2}{0.70}
+    \pbar{18.2}{0.15}
+    \pbar{19.2}{0.12}
+    \pbar{20.8}{0.08}
+  \end{axis}
+
+  % 6. 4^+ (Right)
+  \begin{axis}[
+    name=p4p,
+    multibar,
+    at={($(p1p.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=9.5,
+    ytick={0, 2, 4, 6, 8},
+    ylabel={$10^6\,(e^2\,\mathrm{fm}^8)\,B(E4)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 7.6) {$4^+$};
+    \pbar{4.3}{7.5}
+    \pbar{5.5}{4.6}
+    \pbar{5.8}{1.2}
+    \pbar{6.2}{1.5}
+    \pbar{6.8}{1.8}
+    \pbar{7.5}{1.4}
+    \pbar{8.5}{2.0}
+    \pbar{9.2}{0.5}
+    \pbar{11.2}{7.7}
+    \pbar{11.5}{2.4}
+    \pbar{12.2}{2.8}
+    \pbar{12.6}{1.3}
+    \pbar{14.2}{2.5}
+    \pbar{15.4}{2.1}
+    \pbar{16.5}{1.6}
+    \pbar{17.2}{0.9}
+    \pbar{17.8}{0.6}
+    \pbar{19.5}{1.4}
+    \pbar{22.0}{0.4}
+    \pbar{26.0}{3.5}
+    \pbar{26.8}{0.9}
+  \end{axis}
+
+  % ========================================================
+  % ROW 4: 6^+ (Left) and 0^+ (Right)
+  % ========================================================
+  % 7. 6^+ (Left)
+  \begin{axis}[
+    name=p6p,
+    multibar,
+    at={($(p2p.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=4.2,
+    ytick={0, 1, 2, 3},
+    ylabel={$10^9\,(e^2\,\mathrm{fm}^{12})\,B(E6)$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 3.4) {$6^+$};
+    \pbar{3.2}{2.0}
+    \pbar{4.0}{1.0}
+    \pbar{5.5}{0.4}
+    \pbar{6.8}{0.6}
+    \pbar{8.5}{1.0}
+    \pbar{10.8}{1.0}
+    \pbar{11.5}{1.2}
+    \pbar{12.2}{1.0}
+    \pbar{16.2}{1.2}
+    \pbar{19.5}{1.0}
+    \pbar{22.5}{0.8}
+    \pbar{24.5}{0.6}
+  \end{axis}
+
+  % 8. 0^+ (Right)
+  \begin{axis}[
+    name=p0p,
+    multibar,
+    at={($(p4p.south west)+(0, -4.6cm)$)},
+    ymin=0, ymax=4.2,
+    ytick={0, 1, 2, 3},
+    ylabel={$10^3\,(e^2\,\mathrm{fm}^4)\,|\langle \mu| r_p^2 | 0 \rangle|^2$},
+    ylabel style={at={(axis description cs:-0.14, 0.5)}, anchor=south, font=\scriptsize}
+  ]
+    \node[circle, draw=black, line width=0.7pt, inner sep=1.5pt, font=\small\bfseries] at (axis cs:26, 3.4) {$0^+$};
+    \pbar{11.8}{0.5}
+    \pbar{12.2}{0.6}
+    \pbar{13.5}{2.0}
+    \pbar{15.0}{2.7}
+    \pbar{17.5}{0.6}
+    \pbar{19.5}{0.8}
+    \pbar{21.5}{3.0}
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

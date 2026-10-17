@@ -1,0 +1,270 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions
+  \def\W{12.4}
+  \def\H{9.2}
+
+  % Energy scale: E in MeV, y = 7.0 + E * 0.40 cm
+  \def\yzero{7.0}
+  \def\yscale{0.40}
+
+  \newcommand{\EtoY}[1]{\yzero + #1 * \yscale}
+
+  % ==================== COLUMN X DEFINITIONS ====================
+  % Neutrons:
+  \def\nSIIA{1.0}   \def\nSIIB{1.8}
+  \def\nSIIIA{2.4}  \def\nSIIIB{3.2}
+  \def\nExpA{3.8}   \def\nExpB{4.6}
+
+  % Protons:
+  \def\pSIIA{7.2}   \def\pSIIB{8.0}
+  \def\pSIIIA{8.6}  \def\pSIIIB{9.4}
+  \def\pExpA{10.0}  \def\pExpB{10.8}
+
+  % Reference line at E = 0 (split around central energy axis and terminating before labels)
+  \draw[line width=0.8pt] (0.8, \yzero) -- (5.85, \yzero);
+  \draw[line width=0.8pt] (6.45, \yzero) -- (\pExpB, \yzero);
+
+  % ==================== CENTRAL ENERGY AXIS ====================
+  \def\xAx{6.0}
+  \draw[line width=0.9pt, ->] (\xAx, \EtoY{-15.2}) -- (\xAx, \EtoY{1.6});
+  \node[above=4pt, font=\normalsize] at (\xAx, \EtoY{1.6}) {$\varepsilon\ \mathrm{(MeV)}$};
+
+  % Ticks and labels on center axis
+  \foreach \E in {0, -2, -4, -6, -8, -10, -12, -14} {
+    \pgfmathsetmacro{\ypos}{\EtoY{\E}}
+    \draw[line width=0.7pt] (\xAx - 0.1, \ypos) -- (\xAx + 0.1, \ypos);
+    \node[right=3pt, font=\small, fill=white, inner sep=0.8pt] at (\xAx + 0.05, \ypos) {\E};
+  }
+  \foreach \E in {-1, -3, -5, -7, -9, -11, -13} {
+    \pgfmathsetmacro{\ypos}{\EtoY{\E}}
+    \draw[line width=0.5pt] (\xAx - 0.06, \ypos) -- (\xAx + 0.06, \ypos);
+  }
+
+  % ==================== HEADINGS ====================
+  \node[font=\large\bfseries] at (2.8, 8.7) {Neutrons};
+  \node[font=\large\bfseries] at (9.2, 8.7) {Protons};
+
+  % Column headers
+  \node[font=\normalsize\bfseries] at (1.4, 8.0) {S\,II};
+  \node[font=\normalsize\bfseries] at (2.8, 8.0) {S\,III};
+  \node[font=\normalsize\bfseries] at (4.2, 8.0) {exp};
+
+  \node[font=\normalsize\bfseries] at (7.6, 8.0) {S\,II};
+  \node[font=\normalsize\bfseries] at (9.0, 8.0) {S\,III};
+  \node[font=\normalsize\bfseries] at (10.4, 8.0) {exp};
+
+  % ==================== NEUTRONS: PARTICLE STATES ====================
+  % Top SIII levels going down into exp
+  % 3d 3/2:
+  \pgfmathsetmacro{\ySIIIa}{\EtoY{0.50}}
+  \draw[line width=0.8pt] (\nSIIIA, \ySIIIa) -- (\nSIIIB, \ySIIIa);
+  \draw[line width=0.7pt] (\nSIIIB, \ySIIIa) -- (\nExpA, \EtoY{-0.65});
+  \draw[line width=0.8pt, densely dashed] (\nExpA, \EtoY{-0.65}) -- (\nExpB, \EtoY{-0.65});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-0.65}) -- (\nExpB + 0.35, \EtoY{-0.65});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-0.65}) {$3\mathrm{d}_{3/2}$};
+
+  % 2g 7/2:
+  \pgfmathsetmacro{\ySIIIb}{\EtoY{0.22}}
+  \draw[line width=0.8pt] (\nSIIIA, \ySIIIb) -- (\nSIIIB, \ySIIIb);
+  \draw[line width=0.7pt] (\nSIIIB, \ySIIIb) -- (\nExpA, \EtoY{-1.39});
+  \draw[line width=0.8pt, densely dashed] (\nExpA, \EtoY{-1.39}) -- (\nExpB, \EtoY{-1.39});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-1.39}) -- (\nExpB + 0.35, \EtoY{-1.20});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-1.20}) {$2\mathrm{g}_{7/2}$};
+
+  % 4s 1/2:
+  \pgfmathsetmacro{\ySIIIc}{\EtoY{-0.02}}
+  \draw[line width=0.8pt] (\nSIIIA, \ySIIIc) -- (\nSIIIB, \ySIIIc);
+  \draw[line width=0.7pt] (\nSIIIB, \ySIIIc) -- (\nExpA, \EtoY{-1.89});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-1.89}) -- (\nExpB, \EtoY{-1.89});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-1.89}) -- (\nExpB + 0.35, \EtoY{-1.75});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-1.75}) {$4\mathrm{s}_{1/2}$};
+
+  % 3d 5/2:
+  \pgfmathsetmacro{\ySIIId}{\EtoY{-0.32}}
+  \draw[line width=0.8pt] (\nSIIIA, \ySIIId) -- (\nSIIIB, \ySIIId);
+  \draw[line width=0.7pt] (\nSIIIB, \ySIIId) -- (\nExpA, \EtoY{-2.34});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-2.34}) -- (\nExpB, \EtoY{-2.34});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-2.34}) -- (\nExpB + 0.35, \EtoY{-2.30});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-2.30}) {$3\mathrm{d}_{5/2}$};
+
+  % Mid levels: 1j 15/2, 1i 11/2, 2g 9/2
+  % Level SII at -1.44
+  \pgfmathsetmacro{\ySIIa}{\EtoY{-1.44}}
+  \draw[line width=0.8pt] (\nSIIA, \ySIIa) -- (\nSIIB, \ySIIa);
+  \draw[line width=0.7pt] (\nSIIB, \ySIIa) -- (\nSIIIA, \EtoY{-2.66});
+
+  % Level SII at -2.34
+  \pgfmathsetmacro{\ySIIb}{\EtoY{-2.34}}
+  \draw[line width=0.8pt] (\nSIIA, \ySIIb) -- (\nSIIB, \ySIIb);
+  \draw[line width=0.7pt] (\nSIIB, \ySIIb) -- (\nSIIIA, \EtoY{-2.98});
+
+  % SIII at -1.82 (connects to 1j 15/2)
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-1.82}) -- (\nSIIIB, \EtoY{-1.82});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-1.82}) -- (\nExpA, \EtoY{-2.48});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-2.48}) -- (\nExpB, \EtoY{-2.48});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-2.48}) -- (\nExpB + 0.35, \EtoY{-2.85});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-2.85}) {$1\mathrm{j}_{15/2}$};
+
+  % SIII at -2.66 (connects to 1i 11/2)
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-2.66}) -- (\nSIIIB, \EtoY{-2.66});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-2.66}) -- (\nExpA, \EtoY{-3.14});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-3.14}) -- (\nExpB, \EtoY{-3.14});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-3.14}) -- (\nExpB + 0.35, \EtoY{-3.45});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-3.45}) {$1\mathrm{i}_{11/2}$};
+
+  % SIII at -2.98 (connects to 2g 9/2)
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-2.98}) -- (\nSIIIB, \EtoY{-2.98});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-2.98}) -- (\nExpA, \EtoY{-3.89});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-3.89}) -- (\nExpB, \EtoY{-3.89});
+  \draw[line width=0.4pt, densely dotted] (\nExpB, \EtoY{-3.89}) -- (\nExpB + 0.35, \EtoY{-4.05});
+  \node[right=1pt, font=\scriptsize] at (\nExpB + 0.35, \EtoY{-4.05}) {$2\mathrm{g}_{9/2}$};
+
+  % ==================== NEUTRONS: HOLE STATES ====================
+  % 3p 1/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-6.98}) -- (\nSIIB, \EtoY{-6.98});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-6.98}) -- (\nSIIIA, \EtoY{-7.10});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-7.10}) -- (\nSIIIB, \EtoY{-7.10});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-7.10}) -- (\nExpA, \EtoY{-7.39});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-7.39}) -- (\nExpB, \EtoY{-7.39});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-7.39}) {$3\mathrm{p}_{1/2}$};
+
+  % 2f 5/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-7.93}) -- (\nSIIB, \EtoY{-7.93});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-7.93}) -- (\nSIIIA, \EtoY{-8.12});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-8.12}) -- (\nSIIIB, \EtoY{-8.12});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-8.12}) -- (\nExpA, \EtoY{-7.95});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-7.95}) -- (\nExpB, \EtoY{-7.95});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-7.95}) {$2\mathrm{f}_{5/2}$};
+
+  % 3p 3/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-8.59}) -- (\nSIIB, \EtoY{-8.59});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-8.59}) -- (\nSIIIA, \EtoY{-8.41});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-8.41}) -- (\nSIIIB, \EtoY{-8.41});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-8.41}) -- (\nExpA, \EtoY{-8.31});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-8.31}) -- (\nExpB, \EtoY{-8.31});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-8.45}) {$3\mathrm{p}_{3/2}$};
+
+  % 1i 13/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-8.89}) -- (\nSIIB, \EtoY{-8.89});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-8.89}) -- (\nSIIIA, \EtoY{-10.09});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-10.09}) -- (\nSIIIB, \EtoY{-10.09});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-10.09}) -- (\nExpA, \EtoY{-9.05});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-9.05}) -- (\nExpB, \EtoY{-9.05});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-9.05}) {$1\mathrm{i}_{13/2}$};
+
+  % 2f 7/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-11.20}) -- (\nSIIB, \EtoY{-11.20});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-11.20}) -- (\nSIIIA, \EtoY{-11.17});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-11.17}) -- (\nSIIIB, \EtoY{-11.17});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-11.17}) -- (\nExpA, \EtoY{-9.73});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-9.73}) -- (\nExpB, \EtoY{-9.73});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-9.73}) {$2\mathrm{f}_{7/2}$};
+
+  % 1h 9/2:
+  \draw[line width=0.8pt] (\nSIIA, \EtoY{-13.97}) -- (\nSIIB, \EtoY{-13.97});
+  \draw[line width=0.7pt] (\nSIIB, \EtoY{-13.97}) -- (\nSIIIA, \EtoY{-12.67});
+  \draw[line width=0.8pt] (\nSIIIA, \EtoY{-12.67}) -- (\nSIIIB, \EtoY{-12.67});
+  \draw[line width=0.7pt] (\nSIIIB, \EtoY{-12.67}) -- (\nExpA, \EtoY{-10.84});
+  \draw[line width=0.8pt] (\nExpA, \EtoY{-10.84}) -- (\nExpB, \EtoY{-10.84});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\nExpB + 0.05, \EtoY{-10.84}) {$1\mathrm{h}_{9/2}$};
+
+  % ==================== PROTONS: PARTICLE STATES ====================
+  % Top SIII line at 0.70 connecting to 3p 1/2, 2f 5/2, 3p 3/2:
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{0.70}) -- (\pSIIIB, \EtoY{0.70});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{0.70}) -- (\pExpA, \EtoY{-0.15});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{0.70}) -- (\pExpA, \EtoY{-0.68});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{0.70}) -- (\pExpA, \EtoY{-0.95});
+
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-0.15}) -- (\pExpB, \EtoY{-0.15});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, fill=white, yshift=1.5pt] at (\pExpB + 0.05, \EtoY{-0.15}) {$3\mathrm{p}_{1/2}$};
+
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-0.68}) -- (\pExpB, \EtoY{-0.68});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=0.5pt] at (\pExpB + 0.05, \EtoY{-0.68}) {$2\mathrm{f}_{5/2}$};
+
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-0.95}) -- (\pExpB, \EtoY{-0.95});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=-4.0pt] at (\pExpB + 0.05, \EtoY{-0.95}) {$3\mathrm{p}_{3/2}$};
+
+  % SII level at -1.43 connecting to SIII -1.57 & -1.68
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-1.43}) -- (\pSIIB, \EtoY{-1.43});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-1.43}) -- (\pSIIIA, \EtoY{-1.57});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-1.43}) -- (\pSIIIA, \EtoY{-1.68});
+
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-1.57}) -- (\pSIIIB, \EtoY{-1.57});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-1.57}) -- (\pExpA, \EtoY{-2.17});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-2.17}) -- (\pExpB, \EtoY{-2.17});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\pExpB + 0.05, \EtoY{-2.17}) {$1\mathrm{i}_{13/2}$};
+
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-1.68}) -- (\pSIIIB, \EtoY{-1.68});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-1.68}) -- (\pExpA, \EtoY{-2.89});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-2.89}) -- (\pExpB, \EtoY{-2.89});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\pExpB + 0.05, \EtoY{-2.89}) {$2\mathrm{f}_{7/2}$};
+
+  % 1h 9/2:
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-5.39}) -- (\pSIIB, \EtoY{-5.39});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-5.39}) -- (\pSIIIA, \EtoY{-4.23});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-4.23}) -- (\pSIIIB, \EtoY{-4.23});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-4.23}) -- (\pExpA, \EtoY{-3.78});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-3.78}) -- (\pExpB, \EtoY{-3.78});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\pExpB + 0.05, \EtoY{-3.78}) {$1\mathrm{h}_{9/2}$};
+
+  % ==================== PROTONS: HOLE STATES ====================
+  % 3s 1/2:
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-8.93}) -- (\pSIIB, \EtoY{-8.93});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-8.93}) -- (\pSIIIA, \EtoY{-7.27});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-7.27}) -- (\pSIIIB, \EtoY{-7.27});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-7.27}) -- (\pExpA, \EtoY{-8.07});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-8.07}) -- (\pExpB, \EtoY{-8.07});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=2.0pt] at (\pExpB + 0.05, \EtoY{-8.07}) {$3\mathrm{s}_{1/2}$};
+
+  % 2d 3/2:
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-8.93}) -- (\pSIIIA, \EtoY{-8.39});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-8.39}) -- (\pSIIIB, \EtoY{-8.39});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-8.39}) -- (\pExpA, \EtoY{-8.41});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-8.41}) -- (\pExpB, \EtoY{-8.41});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=-1.0pt] at (\pExpB + 0.05, \EtoY{-8.41}) {$2\mathrm{d}_{3/2}$};
+
+  % 1h 11/2:
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-10.20}) -- (\pSIIB, \EtoY{-10.20});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-10.20}) -- (\pSIIIA, \EtoY{-9.59});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-9.59}) -- (\pSIIIB, \EtoY{-9.59});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-9.59}) -- (\pExpA, \EtoY{-9.40});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-9.40}) -- (\pExpB, \EtoY{-9.40});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=1.0pt] at (\pExpB + 0.05, \EtoY{-9.40}) {$1\mathrm{h}_{11/2}$};
+
+  % 2d 5/2:
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-10.51}) -- (\pSIIB, \EtoY{-10.51});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-10.51}) -- (\pSIIIA, \EtoY{-10.19});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-10.19}) -- (\pSIIIB, \EtoY{-10.19});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-10.19}) -- (\pExpA, \EtoY{-9.75});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-9.75}) -- (\pExpB, \EtoY{-9.75});
+  \node[anchor=west, font=\scriptsize, inner sep=0.8pt, yshift=-2.0pt] at (\pExpB + 0.05, \EtoY{-9.75}) {$2\mathrm{d}_{5/2}$};
+
+  % 1g 7/2:
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-11.07}) -- (\pSIIB, \EtoY{-11.07});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-11.07}) -- (\pSIIIA, \EtoY{-13.48});
+  \draw[line width=0.8pt] (\pSIIIA, \EtoY{-13.48}) -- (\pSIIIB, \EtoY{-13.48});
+  \draw[line width=0.7pt] (\pSIIIB, \EtoY{-13.48}) -- (\pExpA, \EtoY{-11.53});
+  \draw[line width=0.8pt] (\pExpA, \EtoY{-11.53}) -- (\pExpB, \EtoY{-11.53});
+  \node[anchor=west, font=\scriptsize, inner sep=1pt] at (\pExpB + 0.05, \EtoY{-11.53}) {$1\mathrm{g}_{7/2}$};
+
+  % Bottom tail rising into SIII at -13.48:
+  \draw[line width=0.7pt] (\pSIIA - 0.4, \EtoY{-14.8}) -- (\pSIIA, \EtoY{-13.48});
+  \draw[line width=0.8pt] (\pSIIA, \EtoY{-13.48}) -- (\pSIIB, \EtoY{-13.48});
+  \draw[line width=0.7pt] (\pSIIB, \EtoY{-13.48}) -- (\pSIIIA, \EtoY{-13.48});
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,187 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{11.5}
+  \def\h{11.0}
+
+  \def\dmin{-0.06}
+  \def\dmax{0.36}
+  \def\emin{5.68}
+  \def\emax{6.75}
+
+  \pgfmathsetmacro{\sx}{\w / (\dmax - \dmin)}
+  \pgfmathsetmacro{\sy}{\h / (\emax - \emin)}
+
+  % Coordinate axes: Left vertical axis and Bottom horizontal axis with arrow
+  \draw[line width=0.85pt, ->] (0, 0) -- (\w + 0.6, 0);
+  \draw[line width=0.85pt, ->] (0, 0) -- (0, \h + 0.5);
+
+  % X-axis label
+  \node[right=3pt, font=\Large] at (\w + 0.6, 0) {$\delta$};
+  % Y-axis label
+  \node[left=3pt, font=\Large] at (0, \h + 0.5) {$\displaystyle\frac{E}{\hbar\omega_0(\delta)}$};
+
+  % X-axis ticks: 0, 0.1, 0.2, 0.3
+  \foreach \d in {0, 0.1, 0.2, 0.3} {
+    \pgfmathsetmacro{\xpos}{(\d - \dmin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\d$};
+  }
+
+  % Y-axis ticks: 5.75, 6.00, 6.25, 6.50
+  \foreach \e in {5.75, 6.00, 6.25, 6.50} {
+    \pgfmathsetmacro{\ypos}{(\e - \emin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {$\e$};
+  }
+
+  % Spherical magic circles: 82, 126
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.8pt, font=\normalsize] at ({(0 - \dmin)*\sx}, {(5.92 - \emin)*\sy}) {$82$};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.2pt, font=\normalsize] at ({(0 - \dmin)*\sx}, {(6.60 - \emin)*\sy}) {$126$};
+
+  % Deformed gap circles: 88, 90
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.5pt, font=\small] at ({(0.18 - \dmin)*\sx}, {(5.93 - \emin)*\sy}) {$88$};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.5pt, font=\small] at ({(0.27 - \dmin)*\sx}, {(5.84 - \emin)*\sy}) {$90$};
+
+  % Vertical dashed lines for 183W
+  \draw[line width=0.75pt, dashed] ({(0.16 - \dmin)*\sx}, {(5.80 - \emin)*\sy}) -- ({(0.16 - \dmin)*\sx}, {(6.50 - \emin)*\sy});
+  \draw[line width=0.75pt, dashed] ({(0.21 - \dmin)*\sx}, {(5.78 - \emin)*\sy}) -- ({(0.21 - \dmin)*\sx}, {(6.52 - \emin)*\sy});
+  \draw[line width=0.75pt, dashed] ({(0.29 - \dmin)*\sx}, {(5.75 - \emin)*\sy}) -- ({(0.29 - \dmin)*\sx}, {(6.02 - \emin)*\sy});
+
+  % Neutron number 109 at 183W equilibrium deformation
+  \node[right=2pt, font=\normalsize] at ({(0.21 - \dmin)*\sx}, {(6.38 - \emin)*\sy}) {$109$};
+
+  % Spherical labels at delta = 0
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.47 - \emin)*\sy}) {$p_{\frac{1}{2}}$};
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.42 - \emin)*\sy}) {$f_{\frac{5}{2}}$};
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.34 - \emin)*\sy}) {$p_{\frac{3}{2}}$};
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) {$i_{\frac{13}{2}}$};
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) {$h_{\frac{9}{2}}$};
+  \node[left=2pt, font=\small] at ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) {$f_{\frac{7}{2}}$};
+
+  % Arrow for h_11/2 pointing down-left
+  \draw[line width=0.8pt, ->] ({(0.18 - \dmin)*\sx}, {(5.82 - \emin)*\sy}) -- ({(0.12 - \dmin)*\sx}, {(5.73 - \emin)*\sy})
+    node[left=1pt, font=\small] {$h_{\frac{11}{2}}$};
+
+  % Particle numbers at dashed line level crossings
+  \node[font=\small] at ({(0.175 - \dmin)*\sx}, {(5.80 - \emin)*\sy}) {$+82$};
+  \node[font=\small] at ({(0.225 - \dmin)*\sx}, {(5.78 - \emin)*\sy}) {$+84$};
+  \node[font=\small] at ({(0.305 - \dmin)*\sx}, {(5.77 - \emin)*\sy}) {$+90$};
+
+  % --- Nilsson Level Curves ---
+  % 1. Parabolic high shell
+  \draw[line width=0.85pt] plot[smooth] coordinates {
+    ({(-0.04 - \dmin)*\sx}, {(6.56 - \emin)*\sy})
+    ({(0.00 - \dmin)*\sx}, {(6.52 - \emin)*\sy})
+    ({(0.06 - \dmin)*\sx}, {(6.58 - \emin)*\sy})
+    ({(0.12 - \dmin)*\sx}, {(6.68 - \emin)*\sy})
+  };
+
+  % 2. Emerging upwards from delta=0
+  % [501] 1/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.47 - \emin)*\sy}) -- ({(0.18 - \dmin)*\sx}, {(6.70 - \emin)*\sy})
+    node[above, rotate=90, font=\scriptsize] {$\frac{1}{2}^-[501]$};
+  % [503] 5/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.42 - \emin)*\sy}) -- ({(0.23 - \dmin)*\sx}, {(6.70 - \emin)*\sy})
+    node[above, rotate=90, font=\scriptsize] {$\frac{5}{2}^-[503]$};
+  % [501] 3/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.34 - \emin)*\sy}) -- ({(0.25 - \dmin)*\sx}, {(6.70 - \emin)*\sy})
+    node[above, rotate=90, font=\scriptsize] {$\frac{3}{2}^-[501]$};
+  % [606] 13/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.27 - \dmin)*\sx}, {(6.70 - \emin)*\sy})
+    node[above, rotate=90, font=\scriptsize] {$\frac{13}{2}^+[606]$};
+
+  % Upwards to right boundary
+  % [505] 9/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.56 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{9}{2}^-[505]$};
+  % [615] 11/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.51 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{11}{2}^+[615]$};
+  % [503] 7/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.47 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{7}{2}^-[503]$};
+  % [512] 5/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.42 - \emin)*\sy})
+    .. controls ({(0.10 - \dmin)*\sx}, {(6.38 - \emin)*\sy}) ..
+    ({(0.31 - \dmin)*\sx}, {(6.43 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{5}{2}^-[512]$};
+  % [510] 1/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.47 - \emin)*\sy})
+    .. controls ({(0.10 - \dmin)*\sx}, {(6.36 - \emin)*\sy}) ..
+    ({(0.31 - \dmin)*\sx}, {(6.40 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{1}{2}^-[510]$};
+
+  % Middle right group
+  % [624] 9/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.28 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{9}{2}^+[624]$};
+  % [514] 7/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.22 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{7}{2}^-[514]$};
+  % [512] 5/2- (lower)
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.16 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{5}{2}^-[512]$};
+  % [633] 7/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.10 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{7}{2}^+[633]$};
+  % [521] 1/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.07 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{1}{2}^-[521]$};
+  % [505] 11/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(5.82 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(6.04 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{11}{2}^-[505]$};
+
+  % Lower right group
+  % [523] 5/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(5.96 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{5}{2}^-[523]$};
+  % [521] 3/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(5.92 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{3}{2}^-[521]$};
+  % [642] 5/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.31 - \dmin)*\sx}, {(5.88 - \emin)*\sy})
+    node[right, font=\scriptsize] {$\frac{5}{2}^+[642]$};
+
+  % Steep down-sloping levels (reaching bottom labels)
+  % [541] 1/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(0.16 - \dmin)*\sx}, {(5.80 - \emin)*\sy})
+    node[below=14pt, rotate=90, font=\scriptsize] {$[541]\frac{1}{2}^-$};
+  % [530] 1/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.21 - \dmin)*\sx}, {(5.78 - \emin)*\sy})
+    node[below=14pt, rotate=90, font=\scriptsize] {$[530]\frac{1}{2}^-$};
+  % [532] 3/2-
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(0.23 - \dmin)*\sx}, {(5.74 - \emin)*\sy})
+    node[below=14pt, rotate=90, font=\scriptsize] {$[532]\frac{3}{2}^-$};
+  % [660] 1/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.26 - \dmin)*\sx}, {(5.72 - \emin)*\sy})
+    node[below=14pt, rotate=90, font=\scriptsize] {$[660]\frac{1}{2}^+$};
+  % [651] 3/2+
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(0.29 - \dmin)*\sx}, {(5.70 - \emin)*\sy})
+    node[below=14pt, rotate=90, font=\scriptsize] {$[651]\frac{3}{2}^+$};
+
+  % Oblate extensions (delta < 0)
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.47 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.45 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.42 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.46 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.34 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.40 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.29 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.25 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.22 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.18 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.13 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.11 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.07 - \emin)*\sy});
+  \draw[line width=0.85pt] ({(0 - \dmin)*\sx}, {(6.03 - \emin)*\sy}) -- ({(-0.04 - \dmin)*\sx}, {(6.01 - \emin)*\sy});
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Axes
+  \draw[thick, ->] (0, 0) -- (7.2, 0) node[below=2pt, font=\Large] {$s$};
+  \draw[thick, ->] (0, 0) -- (0, 5.2) node[left=2pt, font=\Large] {$V(s)$};
+
+  % Potential curve V(s)
+  % Ground state at (0, 2.8), peak at (2.0, 4.2), drop to bottom near (6.0, 0.1)
+  \draw[very thick, line width=1.4pt, smooth]
+    plot coordinates {
+      (0, 2.8) (0.6, 2.88) (1.2, 3.4) (1.6, 3.95) (2.0, 4.2) (2.4, 4.05)
+      (2.8, 3.4) (3.3, 2.2) (3.8, 1.2) (4.4, 0.5) (5.2, 0.18) (6.4, 0.08)
+    };
+
+  % Dashed horizontal lines for reference
+  \draw[thick, dashed] (2.0, 4.2) -- (6.3, 4.2);
+  \draw[thick, dashed] (0, 2.8) -- (6.3, 2.8);
+
+  % Barrier height E_B
+  \draw[{Latex}-{Latex}, thick] (1.8, 2.8) -- (1.8, 4.2);
+  \node[right=2pt, font=\Large] at (1.8, 3.5) {$E_B$};
+
+  % Barrier magnitude: ~ 5-10 MeV
+  \draw[{Latex}-{Latex}, thick] (5.6, 2.8) -- (5.6, 4.2);
+  \node[right=3pt, font=\normalsize] at (5.6, 3.5) {$\sim 5\text{--}10\ \mathrm{MeV}$};
+
+  % Energy release: several hundred MeV
+  \draw[{Latex}-{Latex}, thick] (5.6, 0.1) -- (5.6, 2.8);
+  \node[right=3pt, align=left, font=\normalsize] at (5.6, 1.45) {several\\hundred $\mathrm{MeV}$};
+
+\end{tikzpicture}
+\end{document}

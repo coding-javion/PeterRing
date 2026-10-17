@@ -1,0 +1,132 @@
+\documentclass[tikz,border=14pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions of plot box
+  \def\W{9.4}
+  \def\H{10.5}
+
+  % Y-axis ticks and labels (0 to 3500 keV in steps of 500)
+  % Scale: 3500 keV -> 10.15 cm => y = E * 10.15 / 3500
+  \foreach \E/\y in {0/0.0, 500/1.45, 1000/2.90, 1500/4.35, 2000/5.80, 2500/7.25, 3000/8.70, 3500/10.15} {
+    \draw[line width=0.8pt] (0, \y) -- (0.15, \y);
+    \draw[line width=0.8pt] (\W, \y) -- (\W - 0.15, \y);
+    \node[left=4pt, font=\small] at (0, \y) {\E};
+  }
+  \node[rotate=90, font=\normalsize\bfseries] at (-1.5, 5.25) {RELATIVE EXCITATION ENERGIES ($\mathrm{keV}$)};
+
+  % X-axis ticks and labels (SPIN)
+  % Protect fractional labels by grouping: {1/2}/1.0
+  \foreach \spin/\x in {{1/2}/1.0, {5/2}/1.9, {9/2}/2.8, {13/2}/3.7, {17/2}/4.6, {21/2}/5.5, {25/2}/6.4, {29/2}/7.3, {33/2}/8.2} {
+    \draw[line width=0.8pt] (\x, 0) -- (\x, 0.15);
+    \draw[line width=0.8pt] (\x, \H) -- (\x, \H - 0.15);
+    \node[below=4pt, font=\small] at (\x, 0) {$\spin$};
+  }
+  \node[font=\normalsize\bfseries] at (4.7, -1.0) {SPIN};
+
+  % Title inside plot
+  \node[font=\Large\bfseries] at (3.5, 9.6) {$i_{13/2}\text{ bands}$};
+
+  % Define point marker styles using calc library
+  % 149Nd: open square
+  \newcommand{\markerNd}[2]{\draw[line width=0.8pt, fill=white] ($(#1, #2) + (-2.2pt, -2.2pt)$) rectangle ($(#1, #2) + (2.2pt, 2.2pt)$);}
+  % 151Sm: open circle
+  \newcommand{\markerSm}[2]{\draw[line width=0.8pt, fill=white] (#1, #2) circle (2.2pt);}
+  % 153Gd: cross (x)
+  \newcommand{\markerGd}[2]{%
+    \draw[line width=0.9pt] ($(#1, #2) + (-2.2pt, -2.2pt)$) -- ($(#1, #2) + (2.2pt, 2.2pt)$);
+    \draw[line width=0.9pt] ($(#1, #2) + (-2.2pt, 2.2pt)$) -- ($(#1, #2) + (2.2pt, -2.2pt)$);
+  }
+  % 155Dy: open triangle
+  \newcommand{\markerDy}[2]{\draw[line width=0.8pt, fill=white] ($(#1, #2) + (0, 3.0pt)$) -- ($(#1, #2) + (-2.6pt, -1.8pt)$) -- ($(#1, #2) + (2.6pt, -1.8pt)$) -- cycle;}
+  % 157Er: solid circle
+  \newcommand{\markerEr}[2]{\fill (#1, #2) circle (2.2pt);}
+
+  % Clip all plotted curves and markers to the box interior
+  \begin{scope}
+    \clip (0, 0) rectangle (\W, \H);
+
+    % --- CURVE 1: 149Nd ---
+    \draw[line width=1.0pt] plot [smooth, tension=0.75] coordinates {
+      (0.7, 1.82) (1.0, 1.60) (1.9, 1.19) (2.8, 0.96) (3.7, 1.16) (4.6, 1.65) (5.1, 2.25)
+    };
+    \markerNd{1.0}{1.60}
+    \markerNd{1.9}{1.19}
+    \markerNd{2.8}{0.96}
+    \markerNd{3.7}{1.16}
+    \markerNd{4.6}{1.65}
+    \node[font=\normalsize\bfseries] at (2.6, 1.25) {$^{149}\mathrm{Nd}$};
+
+    % --- CURVE 2: 151Sm ---
+    \draw[line width=1.0pt] plot [smooth, tension=0.75] coordinates {
+      (0.7, 2.92) (1.0, 2.64) (1.9, 2.09) (2.8, 1.87) (3.7, 2.04) (4.6, 2.73) (5.5, 3.80) (6.4, 5.22) (7.3, 6.84) (8.2, 8.67) (8.5, 9.45)
+    };
+    \markerSm{1.0}{2.64}
+    \markerSm{1.9}{2.09}
+    \markerSm{2.8}{1.87}
+    \markerSm{3.7}{2.04}
+    \markerSm{4.6}{2.73}
+    \markerSm{5.5}{3.80}
+    \markerSm{6.4}{5.22}
+    \markerSm{7.3}{6.84}
+    \markerSm{8.2}{8.67}
+    \node[font=\normalsize\bfseries] at (2.4, 2.22) {$^{151}\mathrm{Sm}$};
+
+    % --- CURVE 3: 153Gd ---
+    \draw[line width=1.0pt] plot [smooth, tension=0.75] coordinates {
+      (0.7, 4.15) (1.0, 3.87) (1.9, 3.05) (2.8, 2.77) (3.7, 2.90) (4.6, 3.58) (5.5, 4.64) (6.4, 5.95) (7.3, 7.57) (8.2, 9.34) (8.45, 9.95)
+    };
+    \markerGd{1.0}{3.87}
+    \markerGd{1.9}{3.05}
+    \markerGd{2.8}{2.77}
+    \markerGd{3.7}{2.90}
+    \markerGd{4.6}{3.58}
+    \markerGd{5.5}{4.64}
+    \markerGd{6.4}{5.95}
+    \markerGd{7.3}{7.57}
+    \markerGd{8.2}{9.34}
+    \node[font=\normalsize\bfseries] at (2.4, 3.15) {$^{153}\mathrm{Gd}$};
+
+    % --- CURVE 4: 155Dy ---
+    \draw[line width=1.0pt] plot [smooth, tension=0.75] coordinates {
+      (0.7, 5.25) (1.0, 4.70) (1.9, 4.03) (2.8, 3.73) (3.7, 3.77) (4.6, 4.44) (5.5, 5.51) (6.4, 6.84) (7.3, 8.44) (8.2, 10.24) (8.32, 10.5)
+    };
+    \markerDy{1.9}{4.03}
+    \markerDy{2.8}{3.73}
+    \markerDy{3.7}{3.77}
+    \markerDy{4.6}{4.44}
+    \markerDy{5.5}{5.51}
+    \markerDy{6.4}{6.84}
+    \markerDy{7.3}{8.44}
+    \markerDy{8.2}{10.24}
+    \node[font=\normalsize\bfseries] at (2.3, 4.25) {$^{155}\mathrm{Dy}$};
+
+    % --- CURVE 5: 157Er ---
+    % Note: point at (3.7, 4.64) is slightly below the minimum of the curve, exactly as in original experiment
+    \draw[line width=1.0pt] plot [smooth, tension=0.75] coordinates {
+      (0.7, 6.75) (1.0, 6.10) (1.9, 5.30) (2.8, 4.90) (3.5, 4.82) (4.6, 5.41) (5.5, 6.64) (6.4, 8.15) (7.3, 9.98) (7.5, 10.5)
+    };
+    \markerEr{3.7}{4.64}
+    \markerEr{4.6}{5.41}
+    \markerEr{5.5}{6.64}
+    \markerEr{6.4}{8.15}
+    \markerEr{7.3}{9.98}
+    \node[font=\normalsize\bfseries] at (2.3, 5.35) {$^{157}\mathrm{Er}$};
+  \end{scope}
+
+  % Outer rectangular frame (drawn on top)
+  \draw[line width=1.1pt] (0, 0) rectangle (\W, \H);
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, shapes}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Axes
+  \draw[thick, ->] (0, 0) -- (10.5, 0) node[below right=1pt, font=\large] {$E$};
+  \draw[thick, ->] (0, 0) -- (0, 5.5);
+
+  % Y-axis label (vertical, rotated 90 degrees)
+  \node[rotate=90, font=\large, anchor=south] at (-0.6, 2.7) {$\mathrm{BE2} \sim \lvert\langle 2^+ \Vert Q_2 \Vert 0^+\rangle\rvert^2$};
+
+  % Circled 2^+ label in upper right
+  \node[draw, circle, line width=1.1pt, inner sep=3pt, font=\large\bfseries] at (8.5, 4.7) {$2^+$};
+
+  % Discrete levels (spikes with line width 1.3pt)
+  \draw[line width=1.4pt] (1.3, 0) -- (1.3, 2.85);
+  \draw[line width=1.4pt] (1.7, 0) -- (1.7, 0.42);
+  \draw[line width=1.4pt] (2.05, 0) -- (2.05, 1.25);
+  \draw[line width=1.4pt] (2.4, 0) -- (2.4, 0.16);
+  \draw[line width=1.4pt] (2.65, 0) -- (2.65, 0.28);
+  \draw[line width=1.4pt] (2.9, 0) -- (2.9, 0.38);
+  \draw[line width=1.4pt] (3.15, 0) -- (3.15, 0.65);
+  \draw[line width=1.4pt] (3.4, 0) -- (3.4, 0.24);
+  \draw[line width=1.4pt] (3.65, 0) -- (3.65, 0.12);
+
+  % Giant resonance continuous curve
+  % Starts around x=3.9, peaks around 5.8 at height 3.8, shoulder at 7.0 (height 2.8), drops to zero around 9.2
+  \draw[line width=1.3pt] plot [smooth, tension=0.7] coordinates {
+    (3.85, 0)
+    (4.1, 0.1)
+    (4.5, 0.35)
+    (4.9, 1.1)
+    (5.3, 2.7)
+    (5.7, 3.75)
+    (6.2, 3.8)
+    (6.7, 3.65)
+    (7.1, 3.3)
+    (7.4, 2.75)
+    (7.8, 1.5)
+    (8.3, 0.65)
+    (8.8, 0.15)
+    (9.4, 0)
+  };
+
+\end{tikzpicture}
+\end{document}

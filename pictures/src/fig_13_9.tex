@@ -1,0 +1,87 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: q in fm (0 to 8.0), Delta in MeV (0 to 1.55)
+  \def\xscale{1.10}
+  \def\yscale{3.6}
+
+  % Outer bounding frame
+  \draw[line width=0.95pt] (0, 0) rectangle (8.0*\xscale, 1.55*\yscale);
+
+  % Y-axis ticks and labels (left)
+  \foreach \y/\lbl in {0.0/0.0, 0.5/0.5, 1.0/1.0} {
+    \draw[line width=0.65pt] (0, \y*\yscale) -- (0.16, \y*\yscale);
+    \node[anchor=east, font=\small] at (-0.08, \y*\yscale) {$\lbl$};
+  }
+  \node[anchor=south east, font=\normalsize, align=center] at (-0.15, 1.30*\yscale) {$\Delta(q, p_F(q))$\\[2pt]\small$(\mathrm{MeV})$};
+
+  % X-axis ticks and labels (bottom)
+  \foreach \q in {0, 1, 2, 3, 4, 5, 6, 7} {
+    \draw[line width=0.65pt] (\q*\xscale, 0) -- (\q*\xscale, 0.16);
+    \node[anchor=north, font=\small] at (\q*\xscale, -0.08) {$\q$};
+  }
+  \node[anchor=north west, font=\normalsize] at (7.15*\xscale, -0.08) {$q\,(\mathrm{fm})$};
+
+  % ========================================================
+  % UPPER CURVE: V0 = -28 MeV, r0 = 1.6 fm
+  % ========================================================
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 0.77*\yscale)
+      (2.0*\xscale, 0.77*\yscale)
+      (3.5*\xscale, 0.77*\yscale)
+      (4.5*\xscale, 0.78*\yscale)
+      (5.2*\xscale, 0.84*\yscale)
+      (5.8*\xscale, 1.02*\yscale)
+      (6.4*\xscale, 1.32*\yscale)
+      (6.7*\xscale, 1.35*\yscale)
+      (7.0*\xscale, 1.25*\yscale)
+      (7.3*\xscale, 0.80*\yscale)
+      (7.55*\xscale, 0.20*\yscale)
+      (7.62*\xscale, 0.00*\yscale)
+    };
+
+  % Annotation for upper curve
+  \node[anchor=south west, font=\small, align=left] (lblUp) at (3.5*\xscale, 1.15*\yscale)
+    {$V_0 = -28\,\mathrm{MeV}$\\[1pt]$r_0 = 1.6\,\mathrm{fm}$};
+  \draw[->, line width=0.75pt] (lblUp.south west) to[out=-135, in=65] (2.7*\xscale, 0.78*\yscale);
+
+  % ========================================================
+  % LOWER CURVE: V0 = 14 MeV, r0 = 2.7 fm
+  % ========================================================
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 0.60*\yscale)
+      (3.0*\xscale, 0.60*\yscale)
+      (5.0*\xscale, 0.61*\yscale)
+      (5.8*\xscale, 0.63*\yscale)
+      (6.4*\xscale, 0.72*\yscale)
+      (6.8*\xscale, 0.95*\yscale)
+      (7.15*\xscale, 1.31*\yscale)
+      (7.30*\xscale, 1.32*\yscale)
+      (7.45*\xscale, 1.10*\yscale)
+      (7.60*\xscale, 0.50*\yscale)
+      (7.68*\xscale, 0.00*\yscale)
+    };
+
+  % Annotation for lower curve
+  \node[anchor=north west, font=\small, align=left] (lblDown) at (3.5*\xscale, 0.45*\yscale)
+    {$V_0 = 14\,\mathrm{MeV}$\\[1pt]$r_0 = 2.7\,\mathrm{fm}$};
+  \draw[->, line width=0.75pt] (lblDown.north west) to[out=135, in=-65] (2.7*\xscale, 0.59*\yscale);
+
+\end{tikzpicture}
+\end{document}

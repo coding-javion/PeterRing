@@ -1,0 +1,39 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions
+  \def\w{1.1}     % half-width of level bar: 2.2 cm
+  \def\dy{0.68}   % vertical spacing between levels
+
+  % Levels from 214 up to 202
+  % i = 0 (214), 1 (212), 2 (210), 3 (208), 4 (206), 5 (204), 6 (202)
+  \foreach \i/\mass in {0/214, 1/212, 2/210, 4/206, 5/204, 6/202} {
+    \draw[line width=1.1pt] ({-\w}, {\i * \dy}) -- (\w, {\i * \dy});
+    \node[left=3pt, font=\normalsize] at ({-\w}, {\i * \dy}) {$0^+$};
+    \node[right=4pt, font=\normalsize] at (\w, {\i * \dy}) {$\mass$};
+  }
+
+  % Highlight 208 Pb (doubly magic core) with thicker line
+  \draw[line width=1.6pt] ({-\w}, {3 * \dy}) -- (\w, {3 * \dy});
+  \node[left=3pt, font=\normalsize] at ({-\w}, {3 * \dy}) {$0^+$};
+  \node[right=4pt, font=\normalsize] at (\w, {3 * \dy}) {$208$};
+
+  % Right curly brace
+  \draw[decorate, decoration={brace, amplitude=6pt}, line width=0.85pt] 
+    ({\w + 1.1}, {6 * \dy + 0.1}) -- ({\w + 1.1}, {-0.1})
+    node[midway, right=7pt, font=\Large\bfseries] {Pb};
+
+\end{tikzpicture}
+\end{document}

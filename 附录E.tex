@@ -1,0 +1,655 @@
+
+\chapter{直积波函数相关的定理\label{chap:=0076F4=0079EF=006CE2=0051FD=006570=0076F8=005173=007684=005B9A=007406}}
+
+在这份附录我们推导一些在单粒子模型和一些基于单粒子模型的理论中用到的一些定理和公式。
+
+\section{Bloch-Messiah定理\cite{BM62}}
+
+Bloch-Messiah定理说的是：
+
+一个具有如下形式的酉矩阵$\mathcal{W}$可以被分解为三个矩阵：
+
+\[
+\mathcal{W}=\begin{bmatrix}U & V^{*}\\
+V & U^{*}
+\end{bmatrix}=\begin{bmatrix}D & 0\\
+0 & D^{*}
+\end{bmatrix}\begin{bmatrix}\bar{U} & \bar{V}\\
+\bar{V} & \bar{U}
+\end{bmatrix}\begin{bmatrix}C & 0\\
+0 & C^{*}
+\end{bmatrix}
+\]
+
+这里实矩阵$\bar{U}$和$\bar{V}$是对角的并且具有（7.9）式给出的“准正则”形式。
+
+这个证明依赖于一个厄米矩阵$\rho$可以被酉矩阵$D$实对角化，即$\bar{\rho}=D^{\dagger}\rho D$是对角的并且本征值为实数。
+
+一个反对称矩阵$\kappa$可以被酉矩阵$D$（一般来说同上面的矩阵并不相同）变为正则形式$\bar{\kappa}=D^{\dagger}\kappa D^{*}$可以分解为在对角线上的形如$\left[\begin{smallmatrix}0 & \kappa_{k}\\
+-\kappa_{k} & 0
+\end{smallmatrix}\right]$的$(2\times2)$小方块，并且$\kappa_{k}$都是实数\cite{Zu62}。下一步，我们将要说明，如果有关系：
+
+\[
+\rho\kappa=\kappa\rho^{*}
+\]
+
+则我们可以找到一个矩阵$D$同时对角化$\rho$和让$\kappa$变成正则形式。为了做到这一点，我们首先对角化$\rho$，接下来从上式我们可以得到：
+
+\[
+(\rho_{i}-\rho_{k})\kappa_{ij}=0
+\]
+
+\begin{booknote*}
+在$\rho\kappa=\kappa\rho^{*}$两端同左乘$D^{\dagger}$，右乘$D^{*}$，可以有： 
+\[
+D^{\dagger}\rho DD^{\dagger}\kappa D^{*}=D^{\dagger}\kappa D^{*}D^{T}\rho^{*}D^{*}
+\]
+
+即可写为：
+\[
+\bar{\rho}\bar{\kappa}=\bar{\kappa}\bar{\rho}^{*}
+\]
+
+而由于此时$\bar{\rho}$是实对角矩阵，因此$\bar{\rho}\bar{\kappa}=\bar{\kappa}\bar{\rho}$，于是得到该式。
+\end{booknote*}
+这意味着$\kappa_{ik}$在$\rho_{i}\neq\rho_{k}$时为零，也就是说，我们接下来可以只考虑简并本征值$\rho_{i}$对应的子空间。$\kappa$并没有混合不同的本征值。在这个子空间中，$\rho$是一个常数乘单位矩阵，因此我们可以变换基使得$\kappa$变成正则形式的同事而不改变$\rho$的对角性质。
+
+现在我们把这些比较宽泛的考虑应用到这一具体的变换上去。我们首先假设$U$是厄米的并且是半正定的，否则我们可以用一个$C$-变换来使它变成这样
+\begin{comment}
+这里做的即是左极分解，把任意一个算子分为半正定算子乘酉算子，我个人认为下边的表达式好像不是很正确。
+\end{comment}
+，例如：
+
+\[
+C=(\sqrt{UU^{\dagger}})^{-1}U^{\dagger}
+\]
+
+从方程（7.5）可以得到：
+\begin{equation}
+\rho=V^{*}V^{\mathrm{T}}=1-UU^{\dagger}\label{eq:def of rho}
+\end{equation}
+
+和：
+\begin{equation}
+\kappa=V^{*}U^{\mathrm{T}}=-\kappa^{T}\label{eq:def of kappa}
+\end{equation}
+
+这符合上面的条件
+\begin{comment}
+$\rho$厄米，$\kappa$反对称，以及$\rho\kappa=\kappa\rho^{*}$，均容易证明。
+\end{comment}
+。因此，我们可以找到一个矩阵$D$，能够使$\kappa$是正则形式的同时对角化$\rho$和$U$，这里$U$的本征值为$u_{k}$是实数，则$\rho$的本征值是$v^{2}_{k}$。
+\begin{comment}
+这里并不能直接应用上面的定理，但思路一致。对角化$U$即能保证对角化$\rho$，假设$U$的本征值为$u_{k}$，则$\rho$的本征值为$u^{2}_{k}$。因此对角化$U$后能得到$(u^{2}_{i}-u^{2}_{k})\kappa_{ik}=0$，$\kappa$的形式仍与此前相同，同样只需要考虑$\kappa$在简并本征值对应的子空间，因此只需变换矩阵使得$\kappa$成正则形式的同时保持$U$仍然是对角的即可。
+\end{comment}
+这里我们还可以得到：
+\[
+u^{2}_{k}+v^{2}_{k}=1
+\]
+
+现在我们必须区分$U$的本征值$u_{k}\neq0$和$u_{k}=0$的子空间。第一种情况，我们可以把令$\kappa_{ik}$除以$u_{k}$，于是从\ref{eq:def of kappa}可以得到$V$也是正则形式，并且元素为$v_{k}$
+\begin{comment}
+这个从\ref{eq:def of rho}可以看出来。
+\end{comment}
+第二种情况，我们可以从\ref{eq:def of rho}看出$V$是酉的，因此我们可以任意的把它放到$D$或者$C$里面，剩余的部分是单位矩阵。
+\begin{booknote*}
+总结一下证明。首先，要证明上述分解成立，我们只需证明$U=D\bar{U}C$和$V=D^{*}\bar{V}C$。在上面的证明中，我们证明了可以找到一个矩阵$D$，使得$D^{\dagger}UD=\bar{U}$是对角的，并且$D^{\dagger}V^{*}U^{\mathrm{T}}D^{*}$是正则形式。令$D^{\mathrm{T}}VD=\bar{V}$，我们随后证明了$\bar{V}$是正则形式。因此我们可以找到矩阵$D$使得$U=D\bar{U}D^{\dagger}$，$V=D^{*}\bar{V}D^{\dagger}$。接下来只需要把一开始为了把$U$变成厄米且半正定的矩阵所作的极分解中的酉矩阵和最后对$u_{k}=0$空间对应的酉矩阵（这个也可以合并到$D$中）合并到$C$中，即可得到$U=D\bar{U}C$，$V=D^{*}\bar{V}C$。
+\end{booknote*}
+特别的，从这个推导中我们可以看出$u_{k}$和$v_{k}$都是实的。所有的复相位都可以合并到$C$和$D$中。如果我们限制系数矩阵$D$是实的，使用$u_{k}$和$v_{k}$的相对相位也是很有趣的。相应的BCS波函数也会依赖于这些。
+\begin{comment}
+我不知道他在说什么。
+\end{comment}
+
+
+\section{准粒子空间中的算符}
+
+利用（7.1）中的变换，我们可以把$c$，$c^{\dagger}$表示的算符转化到准粒子空间。现在我们给出几个例子。
+
+对于一个厄米单粒子算符：
+\[
+\hat{F}=\sum_{ll^{\prime}}f_{ll^{\prime}}c^{\dagger}_{l}c_{l^{\prime}}+\frac{1}{2}(g_{ll^{\prime}}c^{\dagger}_{l}c^{\dagger}_{l^{\prime}}+\text{h.c.})
+\]
+
+我们得到：
+\[
+\hat{F}=F^{0}+\sum_{kk^{\prime}}F^{11}_{kk^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}+\frac{1}{2}\sum_{kk^{\prime}}(F^{20}_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+\text{h.c.})
+\]
+
+这里：
+\begin{align*}
+F^{0} & =\mathop{\text{Tr}}(f\rho)-\mathop{\text{Tr}}(g\kappa^{*}+g^{*}k)/2\\
+F^{11}_{kk^{\prime}} & =(U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+U^{\dagger}gV-V^{\dagger}g^{*}U)_{kk^{\prime}}\\
+F^{20}_{kk^{\prime}} & =(U^{\dagger}fV^{*}-V^{\dagger}f^{\mathrm{T}}U^{*}+U^{\dagger}gU^{*}-V^{\dagger}g^{*}V^{*})_{kk^{\prime}}
+\end{align*}
+
+\begin{booknote*}
+利用：
+\begin{align*}
+c^{\dagger}_{l} & =\sum_{k}U^{*}_{lk}\beta^{\dagger}_{k}+V_{lk}\beta_{k}\\
+c_{l} & =\sum_{k}V^{*}_{lk}\beta^{\dagger}_{k}+U_{lk}\beta_{k}
+\end{align*}
+
+代入$\hat{F}$中去，得到：
+
+\begin{align*}
+\hat{F} & =\sum_{kk^{\prime}}\sum_{ll^{\prime}}\Bigl[f_{ll^{\prime}}V_{lk}V^{*}_{l^{\prime}k^{\prime}}\delta_{kk^{\prime}}+\frac{1}{2}g_{ll^{\prime}}V_{lk}U^{*}_{l^{\prime}k^{\prime}}\delta_{kk^{\prime}}+\frac{1}{2}g^{*}_{ll^{\prime}}V^{*}_{lk}U_{l^{\prime}k^{\prime}}\delta_{kk^{\prime}}\\
+ & +f_{ll^{\prime}}\left(U^{*}_{lk}U_{l^{\prime}k^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}-V_{lk^{\prime}}V^{*}_{l^{\prime}k}\beta^{\dagger}_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}\left(U^{*}_{lk}V_{l^{\prime}k^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}-V_{lk^{\prime}}U^{*}_{l^{\prime}k}\beta^{\dagger}_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g^{*}_{ll^{\prime}}\left(U_{lk^{\prime}}V^{*}_{l^{\prime}k}\beta^{\dagger}_{k}\beta_{k^{\prime}}-V^{*}_{lk}U_{l^{\prime}k^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}\right)\\
+ & +f_{ll^{\prime}}\left(U^{*}_{lk}V^{*}_{l^{\prime}k^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+V_{lk}U_{l^{\prime}k^{\prime}}\beta_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}\left(U^{*}_{lk}U^{*}_{l^{\prime}k^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+V_{lk}V_{l^{\prime}k^{\prime}}\beta_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g^{*}_{ll^{\prime}}\left(V^{*}_{lk^{\prime}}V^{*}_{l^{\prime}k}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+U_{lk^{\prime}}U_{l^{\prime}k}\beta_{k}\beta_{k^{\prime}}\right)\Bigr]
+\end{align*}
+
+将其写成矩阵形式：
+\begin{align*}
+\hat{F} & =\mathop{\text{Tr}}(V^{\mathrm{T}}fV^{*}+\frac{1}{2}V^{\mathrm{T}}gU^{*}+\frac{1}{2}V^{\dagger}g^{*}U)\\
+ & +\sum_{kk^{\prime}}[U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+\frac{1}{2}(U^{\dagger}gV-U^{\dagger}g^{\mathrm{T}}V+V^{\dagger}g^{\dagger}U-V^{\dagger}g^{*}U)]_{kk^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}\\
+ & +\sum_{kk^{\prime}}[U^{\dagger}fV^{*}+\frac{1}{2}(U^{\dagger}gU^{*}+V^{\dagger}g^{\dagger}V^{*})]_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+\sum_{kk^{\prime}}[V^{\mathrm{T}}fU+\frac{1}{2}(V^{\mathrm{T}}gV+U^{\mathrm{T}}g^{\dagger}U)]_{kk^{\prime}}\beta_{k}\beta_{k^{\prime}}
+\end{align*}
+利用$\rho=V^{*}V^{\mathrm{T}}$和$\kappa=UV^{\dagger}$和求迹的性质，将第一项化为：
+\[
+\mathop{\text{Tr}}(f\rho)-\frac{1}{2}\mathop{\text{Tr}}(g\kappa^{*}+g^{*}\kappa)
+\]
+
+利用$f_{ll^{\prime}}=f^{*}_{l^{\prime}l}$和$g_{ll^{\prime}}=-g_{l^{\prime}l}$，知$f^{\dagger}=f$和$g^{\mathrm{T}}=-g$，将第二项化为：
+\[
+\sum_{kk^{\prime}}(U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+U^{\dagger}gV-V^{\dagger}g^{*}U)_{kk^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}
+\]
+
+第三项把$1/2$提出来后写成和第二项类似的形式：
+\[
+\frac{1}{2}\sum_{kk^{\prime}}(U^{\dagger}fV^{*}-V^{\dagger}f^{\mathrm{T}}U^{*}+U^{\dagger}gU^{*}-V^{\dagger}g^{*}V^{*})_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+\text{h.c.}
+\]
+
+注意，这里实际上$U^{\dagger}fV^{*}$和$-V^{\dagger}f^{\mathrm{T}}U^{*}$相同。
+\end{booknote*}
+在有时间反演对称性的情况下$\mathsf{T}\hat{F}\mathsf{T}^{\dagger}=\tau\hat{F}$，这里$\tau=\pm1$，这意味着在正则基下：
+\begin{align*}
+F^{11}_{kk^{\prime}} & =f_{kk^{\prime}}\xi^{\tau}_{kk^{\prime}}-g_{k\bar{k^{\prime}}}\eta^{\tau}_{kk^{\prime}}\\
+F^{20}_{kk^{\prime}} & =-f_{k\bar{k^{\prime}}}\eta^{\tau}_{kk^{\prime}}+g_{kk^{\prime}}\xi^{\tau}_{kk^{\prime}}
+\end{align*}
+
+这里$\xi^{\pm}$和$\eta^{\pm}$在（8.202）中定义。
+
+一个厄米的两粒子算符的粒子是Hamilton量：
+\[
+\hat{H}=\sum_{l_{1}l_{2}}\varepsilon_{l_{1}l_{2}}c^{\dagger}_{l_{1}}c_{l_{2}}+\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}c^{\dagger}_{l_{1}}c^{\dagger}_{l_{2}}c_{l_{4}}c_{l_{3}}
+\]
+
+我们得到：
+\begin{align}
+\hat{H} & =H^{0}+\sum_{k_{1}k_{2}}H^{11}_{k_{1}k_{2}}\beta^{\dagger}_{k_{1}}\beta_{k_{2}}+\frac{1}{2}\sum_{k_{1}k_{2}}(H^{20}_{k_{1}k_{2}}\beta^{\dagger}_{k_{1}}\beta^{\dagger}_{k_{2}}+\text{h.c.})\nonumber \\
+ & +\sum_{k_{1}k_{2}k_{3}k_{4}}(H^{40}_{k_{1}k_{2}k_{3}k_{4}}\beta^{\dagger}_{k_{1}}\beta^{\dagger}_{k_{2}}\beta^{\dagger}_{k_{3}}\beta^{\dagger}_{k_{4}}+\text{h.c.})\nonumber \\
+ & +\sum_{k_{1}k_{2}k_{3}k_{4}}(H^{31}_{k_{1}k_{2}k_{3}k_{4}}\beta^{\dagger}_{k_{1}}\beta^{\dagger}_{k_{2}}\beta^{\dagger}_{k_{3}}\beta_{k_{4}}+\text{h.c.})\nonumber \\
+ & +\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}H^{22}_{k_{1}k_{2}k_{3}k_{4}}\beta^{\dagger}_{k_{1}}\beta^{\dagger}_{k_{2}}\beta_{k_{4}}\beta_{k_{3}}\label{eq:quasi-particle Hamiltonian}
+\end{align}
+
+利用定义：
+\begin{alignat*}{2}
+h & =\varepsilon+\Gamma\\
+\Gamma_{lm} & =\sum_{pq}\bar{v}_{lqmp}\rho_{pq} &  & :=\mathop{\text{Tr}}_{1}(\bar{v}\rho)\\
+\Delta_{lm} & =\frac{1}{2}\sum_{pq}\bar{v}_{lmpq}\kappa_{pq} &  & :=-\frac{1}{2}\mathop{\text{Tr}}_{2}(\bar{v}\kappa)
+\end{alignat*}
+
+我们可以写出
+\begin{comment}
+我觉得这个Trace记号非常愚蠢。
+\end{comment}
+：
+\begin{align*}
+H^{0} & =\mathop{\text{Tr}}(\varepsilon\rho+\frac{1}{2}\Gamma\rho-\frac{1}{2}\Delta\kappa^{*})\\
+ & =\mathop{\text{Tr}}(\varepsilon\rho)+\frac{1}{2}\mathop{\text{Tr}}_{1}\mathop{\text{Tr}}_{1}(\rho\bar{v}\rho)+\frac{1}{4}\mathop{\text{Tr}}_{2}\mathop{\text{Tr}}_{2}(\kappa^{*}\bar{v}\kappa)\\
+H^{11} & =U^{\dagger}hU-V^{\dagger}h^{\mathrm{T}}V+U^{\dagger}\Delta V-V^{\dagger}\Delta^{*}U\\
+H^{20} & =U^{\dagger}hV^{*}-V^{\dagger}h^{\mathrm{T}}U^{*}+U^{\dagger}\Delta U^{*}-V^{\dagger}\Delta^{*}V^{*}
+\end{align*}
+
+和：
+\begin{align*}
+H^{40}_{k_{1}k_{2}k_{3}k_{4}} & =\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}U^{*}_{l_{1}k_{1}}U^{*}_{l_{2}k_{2}}V^{*}_{l_{4}k_{3}}V^{*}_{l_{3}k_{4}}\\
+H^{31}_{k_{1}k_{2}k_{3}k_{4}} & =\frac{1}{2}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}(U^{*}_{l_{1}k_{1}}V^{*}_{l_{4}l_{2}}V^{*}_{l_{3}k_{3}}V_{l_{2}k_{4}}+V^{*}_{l_{3}k_{1}}U^{*}_{l_{2}k_{2}}U^{*}_{l_{1}k_{3}}U_{l_{4}k_{4}})\\
+H^{22}_{k_{1}k_{2}k_{3}k_{4}} & =\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}((U^{*}_{l_{1}k_{1}}V^{*}_{l_{4}k_{2}}V_{l_{2}k_{2}}U_{l_{3}k_{4}}-(k_{1}\leftrightarrow k_{2}))-(k_{3}\leftrightarrow k_{4})\\
+ & +U^{*}_{l_{1}k_{1}}U^{*}_{l_{2}k_{2}}U_{l_{3}k_{3}}U_{l_{4}k_{4}}+V^{*}_{l_{3}k_{1}}V^{*}_{l_{4}k_{2}}V_{l_{1}k_{3}}V_{l_{2}k_{4}})
+\end{align*}
+
+正则基下这些矩阵的表示可以由（8.201）和（9.133）给出。
+
+在对关联为零的时候，准粒子就是粒子或者空穴：
+\begin{align*}
+\beta^{\dagger}_{m} & =a^{\dagger}_{m}\quad\text{当}\varepsilon_{m}>\varepsilon_{\text{F}}\\
+\beta^{\dagger}_{i} & =a_{i}\quad\text{当}\varepsilon_{i}>\varepsilon_{\text{F}}
+\end{align*}
+
+在这个表示下，Hamilton量\ref{eq:quasi-particle Hamiltonian}写为：
+\begin{align*}
+H^{0} & =\sum_{i}(\varepsilon_{ii}+\frac{1}{2}\sum_{j}\bar{v}_{ijij})\\
+H^{11} & =\sum_{mm^{\prime}}(\varepsilon_{mm^{\prime}}+\sum_{j}\bar{v}_{mjm^{\prime}j})\beta^{\dagger}_{m}\beta_{m^{\prime}}-\sum_{ii^{\prime}}(\varepsilon_{i^{\prime}i}+\sum_{j}\bar{v}_{i^{\prime}jij})\beta^{\dagger}_{i}\beta_{i^{\prime}}\\
+H^{20} & =\sum_{mi}(\varepsilon_{mi}+\sum_{j}\bar{v}_{mjij})\beta^{\dagger}_{m}\beta^{\dagger}_{i}+\text{h.c.}\\
+H^{40} & =\frac{1}{4}\sum_{mnij}\bar{v}_{mnji}\beta^{\dagger}_{m}\beta^{\dagger}_{i}\beta^{\dagger}_{n}\beta^{\dagger}_{j}+\text{h.c.}\\
+H^{31} & =\frac{1}{2}\sum_{mi}\beta^{\dagger}_{m}\beta^{\dagger}_{i}(\sum_{nn^{\prime}}\bar{v}_{mnin^{\prime}}\beta^{\dagger}_{n}\beta_{n^{\prime}}-\sum_{jj^{\prime}}\bar{v}_{mj^{\prime}ij}\beta^{\dagger}_{j}\beta_{j^{\prime}})+\text{h.c.}\\
+H^{22} & =\frac{1}{4}\sum_{mm^{\prime}nn^{\prime}}\bar{v}_{mnm^{\prime}n^{\prime}}\beta^{\dagger}_{m}\beta^{\dagger}_{n}\beta_{n^{\prime}}\beta_{m^{\prime}}+\frac{1}{4}\sum_{iji^{\prime}j^{\prime}}\bar{v}_{iji^{\prime}j^{\prime}}\beta^{\dagger}_{i^{\prime}}\beta^{\dagger}_{j^{\prime}}\beta_{j}\beta_{i}\\
+ & +\sum_{minj}\bar{v}_{mjin}\beta^{\dagger}_{m}\beta^{\dagger}_{i}\beta_{j}\beta_{n}
+\end{align*}
+
+
+\section{Thouless定理}
+
+Thouless定理\cite{Th60}说的是：
+
+从一个广义直积波函数$|\Phi_{0}\rangle$也就是准粒子算符$\beta$的真空出发，任何其它的和$|\Phi_{0}\rangle$不正交的广义直积波函数$|\Phi_{1}\rangle$可以写为：
+\begin{equation}
+|\Phi_{1}\rangle=\mathcal{N}\exp\left(\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}\right)|\Phi_{0}\rangle\label{eq:Thouless theorem}
+\end{equation}
+
+这里$\mathcal{N}=\langle\Phi_{0}|\Phi_{1}\rangle$
+\begin{comment}
+原书这里说$\mathcal{N}$是归一化因子，但是它其实和归一化没有关系。而且这个式子是恒等式，写出来也没有任何意义。
+\end{comment}
+，$Z$是反对称矩阵。Thouless给出了在$\Phi_{0}$，$\Phi_{1}$是纯Slater行列式的情况下的证明。这种情况下的两准粒子态是ph态：
+\[
+|\Phi_{1}\rangle=\mathcal{N}\exp\left(\sum_{mi}Z_{mi}a^{\dagger}_{m}a_{i}\right)|\Phi_{0}\rangle
+\]
+
+为了证明这个定理，我们从波函数$|\Phi_{0}\rangle$和$|\Phi_{1}\rangle$对应的准粒子算符$\beta,\beta^{\dagger}$和$\gamma,\gamma^{\dagger}$出发：
+\begin{align}
+\beta^{\dagger}_{k} & =\sum_{l}U_{0lk}c^{\dagger}_{l}+V_{0lk}c_{l}\label{eq:beta gamma c}\\
+\gamma^{\dagger}_{k} & =\sum_{l}U_{1lk}c^{\dagger}_{l}+V_{1lk}c_{l}\nonumber 
+\end{align}
+
+把算符$\gamma^{\dagger}$用算符$\beta,\beta^{\dagger}$展开
+\begin{comment}
+这里原书应该是有一点小错误。
+\end{comment}
+：
+\[
+\gamma^{\dagger}_{k}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+得到：
+\begin{align}
+U & =U^{\dagger}_{0}U_{1}+V^{\dagger}_{0}V_{1}\label{eq:UV UV01}\\
+V & =V^{\mathrm{T}}_{0}U_{1}+U^{\mathrm{T}}_{0}V_{1}\nonumber 
+\end{align}
+
+\begin{booknote*}
+根据$(\beta,\beta^{\dagger})$，$(\gamma,\gamma^{\dagger})$和$(c,c^{\dagger})$的关系，可以得到：
+\begin{align*}
+\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix} & =\begin{bmatrix}U_{0} & V^{*}_{0}\\
+V_{0} & U^{*}_{0}
+\end{bmatrix}\begin{bmatrix}\beta\\
+\beta^{\dagger}
+\end{bmatrix},\quad\begin{bmatrix}\gamma\\
+\gamma^{\dagger}
+\end{bmatrix}=\begin{bmatrix}U^{\dagger}_{1} & V^{\dagger}_{1}\\
+V^{\mathrm{T}}_{1} & U^{\mathrm{T}}_{1}
+\end{bmatrix}\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix}
+\end{align*}
+
+即可得到：
+\[
+\begin{bmatrix}U^{\dagger} & V^{\dagger}\\
+V^{\mathrm{T}} & U^{\mathrm{T}}
+\end{bmatrix}=\begin{bmatrix}U^{\dagger}_{1} & V^{\dagger}_{1}\\
+V^{\mathrm{T}}_{1} & U^{\mathrm{T}}_{1}
+\end{bmatrix}\begin{bmatrix}U_{0} & V^{*}_{0}\\
+V_{0} & U^{*}_{0}
+\end{bmatrix}
+\]
+
+于是得到：
+\begin{align*}
+U & =U^{\dagger}_{0}U_{1}+V^{\dagger}_{0}V_{1}\\
+V & =V^{\mathrm{T}}_{0}U_{1}+U^{\mathrm{T}}_{0}V_{1}
+\end{align*}
+\end{booknote*}
+我们将要在E.4节看到，$\left|\langle\Phi_{1}|\Phi_{0}\rangle\right|^{2}$由$\left|\det(U)\right|$给出。$|\Phi_{1}\rangle$和$|\Phi_{0}\rangle$的非正交性意味着我们可以对$U$取逆，并且定义算符：
+\begin{equation}
+\tilde{\gamma}^{\dagger}_{k}=\sum_{k^{\prime}}U^{-1}_{k^{\prime}k}\gamma^{\dagger}_{k^{\prime}}=\beta^{\dagger}_{k}+\sum_{k^{\prime}}Z^{*}_{k^{\prime}k}\beta_{k^{\prime}}\label{eq:normalization of gamma}
+\end{equation}
+
+这里$Z$是反对称矩阵：
+\begin{equation}
+Z:=(VU^{-1})^{*}=-(U^{\dagger})^{-1}V^{\dagger}=-Z^{\mathrm{T}}\label{eq:Z UV}
+\end{equation}
+
+由于\ref{eq:normalization of gamma}只是产生算符$\gamma^{\dagger}$之间的变换，因此$|\Phi_{1}\rangle$也是算符$\tilde{\gamma}$的真空态。这个条件把$|\Phi_{1}\rangle$确定到只差一个常数。因此我们只需要说明$\tilde{\gamma}_{k}$作用到等式的右边为零：
+\[
+\tilde{\gamma}_{k}\exp\left(\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}\right)|\Phi_{0}\rangle=\mathrm{e}^{\hat{Z}}\left(\mathrm{e}^{-\hat{Z}}\beta_{k}\mathrm{e}^{\hat{Z}}+\sum_{k^{\prime}}Z_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}\right)|\Phi_{0}\rangle
+\]
+
+这里：
+\[
+\hat{Z}=\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}
+\]
+
+利用：
+\[
+\mathrm{e}^{-\hat{Z}}\beta_{k}\mathrm{e}^{\hat{Z}}=\beta_{k}-[\hat{Z},\beta_{k}]=\beta_{k}-\sum_{k^{\prime}}Z_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}
+\]
+
+可以看到等式右边确实为零。这证明了Thouless定理并且说明了$Z$由$|\Phi_{1}\rangle$唯一确定。特别的，它并不依赖于准粒子$\gamma^{\dagger}$之间的$C$-变换。
+\begin{booknote*}
+我认为上述证明不如这样想，我们证明$\tilde{\gamma}_{k}=\mathrm{e}^{\hat{Z}}\beta_{k}\mathrm{e}^{-\hat{Z}}$，然后自然有$\tilde{\gamma}_{k}\mathrm{e}^{\hat{Z}}=\mathrm{e}^{\hat{Z}}\beta_{k}\mathrm{e}^{-\hat{Z}}\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle=0$。
+\end{booknote*}
+接下来我们可能要问，能否用类似的方式表示出与$|\Phi_{0}\rangle$正交的波函数$|\tilde{\Phi}_{1}\rangle$？答案是推广的Thouless定理，它证明了正交于$|\Phi_{0}\rangle$的波函数$|\tilde{\Phi}_{1}\rangle$可以写为不正交于$|\Phi_{0}\rangle$的$|\Phi_{1}\rangle$上的多准粒子态：
+\begin{equation}
+|\tilde{\Phi}_{1}\rangle=\tilde{\beta}^{\dagger}_{b_{1}}\dots\tilde{\beta}^{\dagger}_{b_{n}}|\Phi_{1}\rangle\label{eq:Phi1 orthogonal}
+\end{equation}
+
+准粒子算符$\tilde{\beta}_{b_{i}}$会湮灭$|\Phi_{0}\rangle$。
+
+为了证明这个推广，并给出函数$|\Phi_{1}\rangle$的精确形式，我们利用$(\beta,\beta^{\dagger})\rightarrow(\gamma,\gamma^{\dagger})$是一个一般的Bogoliubov变换这一点。我们因此可以利用Bloch-Messiah定理，于是可以得到它可以被分解为$\beta^{\dagger}$内部的变换：
+\[
+\tilde{\beta}^{\dagger}_{k}=\sum_{k^{\prime}}D_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}
+\]
+
+一个特殊的到$|\Phi_{1}\rangle$对应的准粒子算符$\tilde{\gamma}$，$\tilde{\gamma}^{\dagger}$的Bogoliubov变换和一个$C$-变换$\tilde{\gamma}^{\dagger}\rightarrow\gamma^{\dagger}$。
+
+类比（7.18），$|\tilde{\Phi}_{1}\rangle$可以因此写为：
+\begin{equation}
+|\tilde{\Phi}_{1}\rangle=\prod^{n}_{i=1}\tilde{\beta}^{\dagger}_{b_{i}}\prod_{p>0}(u_{p}+v_{p}\tilde{\beta}^{\dagger}_{p}\tilde{\beta}^{\dagger}_{\bar{p}})|\Phi_{0}\rangle\label{eq:Phi1 in caonnical basis}
+\end{equation}
+
+这里$b_{1}\dots b_{n}$是阻塞能级，根据定义$u_{p}>0$。我们因此得到$|\Phi_{1}\rangle$：
+\[
+|\Phi_{1}\rangle=\prod_{p>0}(u_{p}+v_{p}\tilde{\beta}^{\dagger}_{p}\tilde{\beta}^{\dagger}_{\bar{p}})|\Phi_{0}\rangle=(\prod_{p>0}u_{p})\exp\left(\sum_{p>0}\frac{v_{p}}{u_{p}}\tilde{\beta}^{\dagger}_{p}\tilde{\beta}^{\dagger}_{\bar{p}}\right)|\Phi_{0}\rangle
+\]
+
+这就完成了证明。
+
+变换$\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle$不是酉的，因为它改变了态的模。我们想问，是否有一个酉变换达成同样的效果\cite{RS77b}
+\[
+|\Phi_{1}\rangle=\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle
+\]
+
+这里$\hat{T}$是厄米算符。回答是肯定的，甚至$|\Phi_{1}\rangle$和$|\Phi_{0}\rangle$正交的情况也可以做到。为了寻找一个可能的选择，我们从变换\ref{eq:Thouless theorem}出发
+\begin{comment}
+我认为这里原书引用错了公式。
+\end{comment}
+，根据Bloch-Messiah定理分解矩阵U和V。由于$|\Phi_{1}\rangle$不依赖于$C$矩阵的选择，我们用$C=D^{\dagger}$，然后得到：
+\[
+U=D\bar{U}D^{\dagger}\quad V=D^{*}\bar{V}D^{\dagger}
+\]
+
+$\bar{U}$是对角的，对角元素是$u_{k}$，$\bar{V}$可以写为一个对角元素为$v_{k}$的对角矩阵$\tilde{V}$和一个对角元素只有$0$，$1$和$\left[\begin{smallmatrix}0 & 1\\
+-1 & 0
+\end{smallmatrix}\right]$小方块的$\bar{S}$矩阵的乘积
+\[
+\bar{V}=\tilde{V}\bar{S}
+\]
+
+如果我们定义一个对角元素为$0\leq r_{k}\leq\mathrm{\pi}/2$的对角矩阵$\bar{R}$，并且有$u_{k}=\cos r_{k}$和$v_{k}=\sin r_{k}$，我们得到：
+\begin{equation}
+U=\cos R\quad V=S\sin R=(\sin R)^{*}S\label{eq:UV RS}
+\end{equation}
+
+\begin{booknote*}
+很容易知道$\bar{U}=\cos(\bar{R})$，因此$U=D\bar{U}D^{\dagger}=D\cos(\bar{R})D^{\dagger}=\cos(R)$。而对于$\bar{V}$，它可以写为$\bar{V}=\tilde{V}\bar{S}$，也可以写为$\bar{V}=\bar{S}\tilde{V}$，因此有：
+\begin{alignat*}{2}
+V & =D^{*}\bar{V}D^{\dagger}=D^{*}\tilde{V}\bar{S}D^{\dagger}=D^{*}\sin(\bar{R})D^{\mathrm{T}}D^{*}\bar{S}D^{\dagger} &  & =(\sin R)^{*}S\\
+V & =D^{*}\bar{V}D^{\dagger}=D^{*}\bar{S}\tilde{V}D^{\dagger}=D^{*}\bar{S}D^{\dagger}D\sin(\bar{R})D^{\dagger} &  & =S\sin(R)
+\end{alignat*}
+\end{booknote*}
+其中：
+\[
+R=D\bar{R}D^{\dagger}\quad\text{和}\quad S=D^{*}\bar{S}D^{\dagger}:=\mathrm{e}^{-\mathrm{i}F}
+\]
+
+这里$S$是酉的，$R$和$F$是厄米的。
+
+我们现在可以定义一个厄米算符$\hat{T}$：
+\[
+\hat{T}=\sum_{k<k^{\prime}}T_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+\text{h.c.}
+\]
+
+这个算符只有二准粒子部分。$T$矩阵可以由它的“极分解”给出：
+\[
+T=\mathrm{i}R\mathrm{e}^{\mathrm{i}F}=\mathrm{i}\mathrm{e}^{\mathrm{i}F}R^{*}
+\]
+
+利用公式$\mathrm{e}^{A}B\mathrm{e}^{-A}=B+[A,B]+(1/2!)[A,[A,B]]+\dots$，很容易可以得到：
+\[
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta^{\dagger}_{k}\mathrm{e}^{-\mathrm{i}\hat{T}}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+\begin{booknote*}
+首先我们要看$T_{kk^{\prime}}$的性质，利用交换$\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}$的位置变号即可得到$T_{kk^{\prime}}=-T_{k^{\prime}k}$。此外，$\hat{T}$的厄米性不会构成对$T_{kk^{\prime}}$的任何限制，它只要求$\beta_{k}\beta_{k^{\prime}}$的系数为$T^{*}_{k^{\prime}k}$。我们知道它我们现在要做的是计算左边的式子，为此，我们先计算：
+\begin{align*}
+[\mathrm{i}\hat{T},\beta^{\dagger}_{k}] & =\frac{\mathrm{i}}{2}\sum_{k_{1}k_{2}}T^{*}_{k_{2}k_{1}}[\beta_{k_{1}}\beta_{k_{2}},\beta^{\dagger}_{k}]\\
+ & =\mathrm{i}\sum_{k_{1}}T^{*}_{kk_{1}}\beta_{k_{1}}=\mathrm{i}T^{*}\beta
+\end{align*}
+
+最后一步我们写成了矩阵乘法的形式。类似的，我们计算：
+\begin{align*}
+[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},\beta^{\dagger}_{k}]] & =-\sum_{k_{1}k_{2}k_{3}}T^{*}_{kk_{1}}T_{k_{2}k_{3}}[\beta^{\dagger}_{k_{2}}\beta^{\dagger}_{k_{3}},\beta_{k_{1}}]\\
+ & =\sum_{k_{1}k_{2}}T^{*}_{kk_{1}}T_{k_{1}k_{2}}\beta^{\dagger}_{k_{2}}=T^{*}T\beta^{\dagger}
+\end{align*}
+
+再多计算几项，可以总结出规律：
+\begin{align*}
+[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},\beta^{\dagger}_{k}]]] & =\mathrm{i}\sum_{k_{1}k_{2}k_{3}}T^{*}_{kk_{1}}T_{k_{1}k_{2}}T^{*}_{k_{2}k_{3}}\beta_{k_{3}}=\mathrm{i}T^{*}TT^{*}\beta\\
+ & \dots
+\end{align*}
+
+根据$T$的表达式，我们可以得到：
+
+\begin{align*}
+T^{*}T & =(-\mathrm{i}R^{*}\mathrm{e}^{-\mathrm{i}F^{*}})(\mathrm{i}\mathrm{e}^{\mathrm{i}F}R^{*})\\
+ & =-(R^{\mathrm{T}})^{2}
+\end{align*}
+
+由此：
+\begin{align*}
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta^{\dagger}\mathrm{e}^{-\mathrm{i}\hat{T}} & =\beta^{\dagger}-R^{\mathrm{T}}\mathrm{e}^{-\mathrm{i}F}\beta-\frac{1}{2!}(R^{\mathrm{T}})^{2}\beta^{\dagger}+\frac{1}{3}(R^{\mathrm{T}})^{3}\mathrm{e}^{\mathrm{-\mathrm{i}F}}\beta+\dots\\
+ & =\cos(R^{\mathrm{T}})\beta^{\dagger}-\sin(R^{\mathrm{T}})\mathrm{e}^{-\mathrm{i}F}\beta\\
+ & =U^{\mathrm{T}}\beta^{\dagger}+V^{\mathrm{T}}\beta\\
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta^{\dagger}_{k}\mathrm{e}^{-\mathrm{i}\hat{T}} & =\sum_{k^{\prime}}U_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\end{align*}
+
+于是我们证明了$\gamma^{\dagger}_{k}=\mathrm{e}^{\mathrm{i}\hat{T}}\beta^{\dagger}_{k}\mathrm{e}^{-\mathrm{i\hat{T}}}$，因此有$\gamma_{k}=\mathrm{e}^{\mathrm{i}\hat{T}}\beta_{k}\mathrm{e}^{-\mathrm{i}\hat{T}}$，自然$\gamma_{k}\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle=0$，证明完毕。
+\end{booknote*}
+Thouless定理中的矩阵$Z$可以利用$R$和$F$表示
+\begin{comment}
+利用$Z=-(U^{\dagger})^{-1}V^{\dagger}$。
+\end{comment}
+：
+\[
+Z=-(\mathop{\text{tg}}R)\mathrm{e}^{\mathrm{i}F}
+\]
+
+这说明如果$R$的本征值$r_{k}=\mathrm{\pi}/2$也就是说$u_{k}=0$的时候$Z$会发散。变换$\mathrm{e}^{\hat{Z}}$的优点是它被$|\Phi_{1}\rangle$和$|\Phi_{0}\rangle$唯一确定。然而矩阵$T$只有我们限制$R$的本征值$0\leq r_{k}<\mathrm{\pi}/2$时才是唯一的。
+\begin{comment}
+我不知道他在说什么。按照我的理解，$U$必须是没有非零本征值时才能找到一个$\hat{Z}$，使得$|\Phi_{1}\rangle=\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle$。然而你总可以找到一个$\hat{T}$，使得$|\Phi_{1}\rangle=\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle$。肯定是$\hat{T}$更好。而且我也没发现$T$如何不唯一。
+\end{comment}
+
+这些讨论都是Balian和Brézin{[}BB 69, HI 79{]}的一个普适的公式的特殊情况，这一普适公式对任意关于$\beta_{k}$和$\beta^{\dagger}_{k}$的双线性形式的单粒子厄米算符$\hat{S}$都成立：
+\[
+\hat{S}=\sum_{kk^{\prime}}S^{11}_{kk^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}+\sum_{k<k^{\prime}}(S^{20}_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}+\text{h.c.})
+\]
+
+酉算符$\mathrm{e}^{\mathrm{i}\hat{S}}$可以写为：
+\[
+\mathrm{e}^{\mathrm{i}\hat{S}}=\langle\mathrm{e}^{\mathrm{i}\hat{S}}\rangle\mathrm{e}^{\hat{Z}}\mathrm{e}^{\mathrm{i}\hat{Y}}\mathrm{e}^{\hat{X}}
+\]
+
+这里$\beta|\rangle=0$并且：
+\begin{align*}
+\hat{X} & =\sum_{k<k^{\prime}}X_{kk^{\prime}}\beta_{k^{\prime}}\beta_{k}\\
+\hat{Y} & =\sum_{kk^{\prime}}Y_{kk^{\prime}}\beta^{\dagger}_{k}\beta_{k^{\prime}}\\
+\hat{Z} & =\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta^{\dagger}_{k}\beta^{\dagger}_{k^{\prime}}
+\end{align*}
+
+这些矩阵$X$，$Y$和$Z$可以从$\beta^{\dagger}_{k}$的酉变换的系数矩阵$U$和$V$中得到：
+\[
+\mathrm{e}^{\mathrm{i}\hat{S}}\beta^{\dagger}_{k}\mathrm{e}^{-\mathrm{i}\hat{S}}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta^{\dagger}_{k^{\prime}}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+也就是说：
+\begin{align*}
+X & =V^{\mathrm{T}}(U^{\dagger})^{-1}\\
+Z & =V^{*}(U^{*})^{-1}\\
+\mathrm{e}^{\mathrm{i}Y} & =(U^{\dagger})^{-1}
+\end{align*}
+
+矩阵$U$和$V$可以用$S^{11}$和$S^{20}$表示：
+\[
+\begin{bmatrix}U & V^{*}\\
+V & U^{*}
+\end{bmatrix}=\exp\left(\mathrm{i}\begin{bmatrix}S^{11} & S^{20}\\
+-S^{20*} & -S^{11*}
+\end{bmatrix}\right)
+\]
+
+
+\section{Onishi公式}
+
+在许多问题中（例如GCM方法），我们需要单位算符和其它算符的交叠积分$\langle\Phi_{1}|\Phi_{0}\rangle$和$\langle\Phi_{1}|\hat{O}|\Phi_{0}\rangle$，这里$|\Phi_{0}\rangle$和$|\Phi_{1}\rangle$是广义直积波函数。在Slater行列式的情况下，公式由Löwdin\cite{Lo55}给出。推广到HFB波函数的情况由Onishi和Yoshida给出\cite{OY66}。玻色子的情况由Balian和Brézin\cite{BB69}给出了一个优雅的证明。
+
+这些公式只有当$\langle\Phi_{1}|\Phi_{0}\rangle$不为零的时候才可以使用。当它为零时我们可以使用\ref{eq:Phi1 orthogonal}来表示$|\Phi_{1}\rangle$。
+
+利用\ref{eq:UV UV01}\ref{eq:Z UV}\ref{eq:UV RS}可以给出\footnote{由于波函数$|\Phi_{0}\rangle$和$|\Phi_{1}\rangle$给出的时候有一个相位的不确定性，下面的公式也有一个不确定的相位。我们假设$U$是厄米且正定的。}：
+\begin{equation}
+\langle\Phi_{1}|\Phi_{0}\rangle=\sqrt{\det U}=\sqrt{\det(U^{\dagger}_{0}U_{1}+V^{\dagger}_{0}V_{1})}=\sqrt{\det(\cos R)}\label{eq:inner of Phi1 Phi0}
+\end{equation}
+
+在我们证明这个式子之前，我们把它重写成另一种形式。在一组使$U$是对角的基下，可以有：
+\[
+\det(U)=\exp(\mathop{\text{Tr}}\ln U)
+\]
+
+利用\ref{eq:beta gamma c}，我们可以把波函数$|\Phi_{i}\rangle(i=0,1)$表示为$c^{\dagger}_{l}$和$|\rangle$（当$\langle\Phi_{i}|-\rangle\neq0$时）。已知$Z_{i}=(V_{i}U^{-1}_{i})^{*}$从\ref{eq:inner of Phi1 Phi0}可以得到：
+\[
+\langle|\mathrm{e}^{\hat{Z}^{\dagger}_{1}}\mathrm{e}^{\hat{Z}_{0}}|\rangle=\exp\left(\frac{1}{2}\mathop{\text{Tr}}\left(\ln(1-Z^{*}_{1}Z_{0})\right)\right)
+\]
+
+\begin{booknote*}
+利用$|\Phi_{i}\rangle=\langle|\Phi_{i}\rangle\mathrm{e}^{\hat{Z}_{i}}|\rangle=\sqrt{\det U_{i}}\mathrm{e}^{\hat{Z}_{i}}|\rangle$得到：
+\[
+\langle\Phi_{1}|\Phi_{0}\rangle=\sqrt{\det U_{1}\det U_{0}}\langle|\mathrm{e}^{\hat{Z}^{\dagger}_{1}}\mathrm{e}^{\hat{Z}_{0}}|\rangle
+\]
+
+于是：
+
+\begin{align*}
+\langle|\mathrm{e}^{\hat{Z}^{\dagger}_{1}}\mathrm{e}^{\hat{Z}_{0}}|\rangle & =\sqrt{\det U^{-1}_{1}\det U^{-1}_{0}\det U}\\
+ & =\sqrt{\det((U^{\mathrm{T}}_{1})^{-1}U(U^{*}_{0})^{-1})}
+\end{align*}
+
+这里利用了行列式的一些性质。接下来我们利用$U=U^{\dagger}_{0}U_{1}+V^{\dagger}_{0}V_{1}$，再利用行列式的一些性质：
+\begin{align*}
+\langle|\mathrm{e}^{\hat{Z}^{\dagger}_{1}}\mathrm{e}^{\hat{Z}_{0}}|\rangle & =\sqrt{\det((U^{\mathrm{T}}_{1})^{-1}(U^{\mathrm{T}}_{1}U^{*}_{0}+V^{\mathrm{T}}_{1}V^{*}_{0})(U^{*}_{0})^{-1})}\\
+ & =\sqrt{\det(1+(U^{\mathrm{T}}_{1})^{-1}V^{\mathrm{T}}_{1}V^{*}_{0}(U^{*}_{0})^{-1})}\\
+ & =\sqrt{\det(1-Z^{*}_{1}Z_{0})}\\
+ & =\exp\left(\frac{1}{2}\mathop{\text{Tr}}(\ln(1-Z^{*}_{1}Z_{0}))\right)
+\end{align*}
+\end{booknote*}
+接下来我们给出有关Hamilton量的交叠积分
+\begin{comment}
+这里应该是需要推广Wick定理。
+\end{comment}
+：
+\[
+\langle\Phi_{1}|H|\Phi_{0}\rangle=\langle\Phi_{1}|\Phi_{0}\rangle\left(\mathop{\text{Tr}}(\varepsilon\rho^{10})+\frac{1}{2}\mathop{\text{Tr}}_{1}\mathop{\text{Tr}}_{1}(\rho^{10}\bar{v}\rho^{10})+\frac{1}{4}\mathop{\text{Tr}}_{2}\mathop{\text{Tr}}_{2}(\kappa^{01*}\bar{v}\kappa^{10})\right)
+\]
+
+定义转移矩阵$\rho^{10}$，$\kappa^{10}$，$\kappa^{01}$：
+\begin{align*}
+\rho^{10}_{ll^{\prime}} & =\frac{\langle\Phi_{1}|c^{\dagger}_{l^{\prime}}c_{l}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}\\
+\kappa^{10}_{ll^{\prime}} & =\frac{\langle\Phi_{1}|c_{l^{\prime}}c_{l}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}\\
+\kappa^{01*}_{ll^{\prime}} & =\frac{\langle\Phi_{1}|c^{\dagger}_{l}c^{\dagger}_{l^{\prime}}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}
+\end{align*}
+
+这些矩阵可以用密度$\rho_{0}$和$\kappa_{0}$，$|\Phi_{0}\rangle$的HFB系数$U_{0}$和$V_{0}$，Thouless矩阵$Z$表示，也可以在利用$U_{0}$，$V_{0}$，$U_{1}$和$V_{1}$的正交关系后用$Z_{0}$和$Z_{1}$表示成更对称的形式：
+\begin{alignat}{4}
+\rho^{10} & =\rho_{0}-V^{*}_{0}Z^{*}U^{\dagger}_{0} &  & = & -Z_{0} & (1-Z^{*}_{1}Z_{0})^{-1}Z^{*}_{1} &  & =V^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}_{1}\nonumber \\
+\kappa^{10} & =\kappa_{0}-V^{*}_{0}Z^{*}V^{\dagger}_{0} &  & = & Z_{0} & (1-Z^{*}_{1}Z_{0})^{-1} &  & =V^{*}_{0}(U^{\mathrm{T}})^{-1}U^{\mathrm{T}}_{1}\label{eq:10 density and abnormal density}\\
+\kappa^{01*} & =\kappa^{*}_{0}+U^{*}_{0}Z^{*}U^{\dagger}_{0} &  & = &  & (1-Z^{*}_{1}Z_{0})^{-1}Z^{*}_{1} &  & =-U^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}_{1}\nonumber 
+\end{alignat}
+
+\begin{booknote*}
+这里我们不去计算等式的第一步（留在后面计算），而是从第一步出发得到后面的等式，即相当于已知：
+\[
+\rho^{10}_{ll^{\prime}}=\rho_{0}-V^{*}_{0}Z^{*}U^{\dagger}_{0}
+\]
+
+利用$\rho=V^{*}V^{\mathrm{T}}$，$Z=-(U^{\dagger})^{-1}V^{\dagger}$，得到：
+\begin{align*}
+\rho^{10}_{ll^{\prime}} & =V^{*}_{0}V^{\mathrm{T}}_{0}+V^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}U^{\dagger}_{0}\\
+ & =V^{*}_{0}(U^{\mathrm{T}})^{-1}U^{\mathrm{T}}V^{\mathrm{T}}_{0}+V^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}U^{\dagger}_{0}\\
+ & =V^{*}_{0}(U^{\mathrm{T}})^{-1}(U^{\mathrm{T}}V^{\mathrm{T}}_{0}+V^{\mathrm{T}}U^{\dagger}_{0})
+\end{align*}
+
+利用\ref{eq:UV UV01}，得到：
+\begin{align*}
+\rho^{10}_{ll^{\prime}} & =V^{*}_{0}(U^{\mathrm{T}})^{-1}(U^{\mathrm{T}}V^{\mathrm{T}}_{0}+V^{\dagger}U^{\dagger}_{0})\\
+ & =V^{*}_{0}(U^{\mathrm{T}})^{-1}[(U^{\mathrm{T}}_{1}U^{*}_{0}+V^{\mathrm{T}}_{1}V^{*}_{0})V^{\mathrm{T}}_{0}+(U^{\mathrm{T}}_{1}V_{0}+V^{\mathrm{T}}_{1}U_{0})U^{\dagger}_{0}]\\
+ & =V^{*}_{0}(U^{\mathrm{T}})^{-1}[U^{\mathrm{T}}_{1}(U^{*}_{0}V^{\mathrm{T}}_{0}+V_{0}U^{\dagger}_{0})+V^{\mathrm{T}}_{1}(V^{*}_{0}V^{\mathrm{T}}_{0}+U_{0}U^{\dagger}_{0})]
+\end{align*}
+
+再利用正交关系，即可得到：
+\[
+\rho^{10}_{ll^{\prime}}=V^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}_{1}
+\]
+
+根据前面的推导我们知道：
+
+\[
+(U^{\mathrm{T}}_{1})^{-1}U(U^{*}_{0})^{-1}=1-Z^{*}_{1}Z_{0}
+\]
+
+由此：
+\begin{align*}
+\rho^{10}_{ll^{\prime}}=V^{*}_{0}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}_{1} & =V^{*}_{0}(U^{*}_{0})^{-1}U^{*}_{0}(U^{\mathrm{T}})^{-1}U^{\mathrm{T}}_{1}(U^{\mathrm{T}}_{1})^{-1}V^{\mathrm{T}}_{1}\\
+ & =V^{*}_{0}(U^{*}_{0})^{-1}(1-Z^{*}_{1}Z_{0})^{-1}(U^{\mathrm{T}}_{1})^{-1}V^{\mathrm{T}}_{1}\\
+ & =-Z_{0}(1-Z^{*}_{1}Z_{0})^{-1}Z^{*}_{1}
+\end{align*}
+
+这样我们就证明了第一个等式，其它两个等式类似。
+\end{booknote*}
+可以看出，把$|\Phi_{1}\rangle$替换为$|\Phi_{0}\rangle$，即可得到通常的密度$\rho$，$\kappa$和$\kappa^{*}$。用这种方式我们可以计算$c^{\dagger}_{l}$和$c_{l}$表示的任意算符的交叠积分。我们首先必须得到它相较于一个HFB波函数的期待值。根据Wick定理，我们可以把表达式展开成缩并的期待值，即$\rho$，$\kappa$和$\kappa^{*}$。为了计算这种不同基态的交叠积分，我们只需要把$\rho$替换成$\rho^{10}$，把$\kappa$替换成$\kappa^{10}$，把$\kappa^{*}$替换成$\kappa^{01*}$，并乘上$\langle\Phi_{1}|\Phi_{0}\rangle$。显然，当我们把真空替换成任意HFB波函数$|\Phi\rangle$和相应的准粒子算符$c^{\dagger}$和$c$时这些结论也成立。
+
+接下来我们给出\ref{eq:inner of Phi1 Phi0}的推导：
+
+为了得到$\langle\Phi_{1}|\Phi_{0}\rangle$我们在正则基下写$|\Phi_{1}\rangle$。这就是\ref{eq:Phi1 in caonnical basis}。由于$\langle\Phi_{1}|\Phi_{0}\rangle$不为零
+\begin{comment}
+是零的话行列式$\det U$也为零，因此还是相等。
+\end{comment}
+，因此没有阻塞能级，我们得到$\langle\Phi_{1}|\Phi_{0}\rangle$就是所有正实数$u_{p}$的乘积，这就是矩阵$U$的二重简并的本征值：
+\[
+\langle\Phi_{1}|\Phi_{0}\rangle=\prod_{p>0}u_{p}=\left(\prod_{p\gtrless0}u_{p}\right)^{1/2}=(\det U)^{1/2}
+\]
+
+现在我们导出用算符$c$和$c^{\dagger}$表示的任意算符的交叠积分。利用Thouless定理，我们得到：
+\begin{align*}
+|\Phi_{1}\rangle & =\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle\langle\Phi_{0}|\Phi_{1}\rangle\\
+\mathrm{e}^{-\hat{Z}^{\dagger}}|\Phi_{0}\rangle & =|\Phi_{0}\rangle
+\end{align*}
+
+和：
+\[
+\langle\Phi_{1}|c^{\dagger}_{l_{1}}\dots c^{\dagger}_{l_{p}}c_{k_{1}}\dots c_{k_{q}}|\Phi_{0}\rangle=\langle\Phi_{1}|\Phi_{0}\rangle\langle\Phi_{0}|\bar{d}_{l_{1}}\dots\bar{d}_{l_{p}}d_{k_{1}}\dots d_{k_{1}}|\Phi_{0}\rangle
+\]
+
+这里我们引入了算符：
+\begin{align*}
+\bar{d}_{l} & =\mathrm{e}^{\hat{Z}^{\dagger}}c^{\dagger}_{l}\mathrm{e}^{-\hat{Z}^{\dagger}}\\
+d_{l} & =\mathrm{e}^{\hat{Z}^{\dagger}}c_{l}\mathrm{e}^{-\hat{Z}^{\dagger}}
+\end{align*}
+
+这些算符满足Fermi对易关系，因此我们可以利用Wick定理来计算矩阵元。这意味着我们只需要缩并$\wick{\c1{\bar{d}}\c1{d}}$，$\wick{\c1{d}\c1{d}}$和$\wick{\c1{\bar{d}}\c1{\bar{d}}}$，这给出了$\rho^{10}$，$\kappa^{10}$和$\kappa^{01*}$。把$d$和$\bar{d}$用$\beta$和$\beta^{\dagger}$表示，即可用于计算\ref{eq:10 density and abnormal density}：
+\begin{align*}
+\bar{d}_{l} & =\sum_{k}U^{*}_{0lk}\beta^{\dagger}_{k}+\sum_{k}(V_{0}+U^{*}_{0}Z^{*})_{lk}\beta_{k}\\
+d_{l} & =\sum_{k}(U_{0}+V^{*}_{0}Z^{*})_{lk}\beta_{k}+\sum_{k}V^{*}_{0lk}\beta^{\dagger}_{k}
+\end{align*}
+
+\begin{booknote*}
+计算缩并即可得到：
+\begin{align*}
+\rho^{10}_{ll^{\prime}} & =\wick{\c1{\bar{d}_{l^{\prime}}}\c1{d_{l}}}=V^{*}_{0}(V^{\mathrm{T}}_{0}+Z^{\dagger}U^{\dagger}_{0})=\rho_{ll^{\prime}}-V^{*}_{0}Z^{*}U^{\dagger}_{0}\\
+\kappa^{10}_{ll^{\prime}} & =\wick{\c1{d_{l^{\prime}}}\c1{d_{l}}}=V^{*}_{0}(U^{\mathrm{T}}_{0}+Z^{\dagger}V^{\dagger}_{0})=\kappa_{ll^{\prime}}-V^{*}_{0}Z^{*}V^{\dagger}_{0}\\
+\kappa^{10*}_{ll^{\prime}} & =\wick{\c1{\bar{d}_{l}}\c1{\bar{d}_{l^{\prime}}}}=(V_{0}+U^{*}_{0}Z^{*})U^{\dagger}_{0}=\kappa^{*}_{ll^{\prime}}+U^{*}_{0}Z^{*}U^{\dagger}_{0}
+\end{align*}
+
+于是这证明了前面的公式。
+\end{booknote*}
+

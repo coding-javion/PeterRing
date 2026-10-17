@@ -1,0 +1,265 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\wCol{4.8}
+  \def\hRow{4.4}
+
+  % =============================================================
+  % ROW 1: (a), (b), (c)
+  % =============================================================
+
+  % -------------------------------------------------------------
+  % (a) ground state band
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(0, \hRow)}]
+    % Axes
+    \draw[line width=0.8pt] (0, 0.85) -- (0, 1.9);
+    \draw[line width=0.8pt] (0, -0.85) -- (0, -1.5);
+    \draw[line width=0.8pt] (-1.9, 0) -- (-1.5, 0);
+    \draw[line width=0.8pt] (1.5, 0) -- (1.9, 0);
+
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Prolate nucleus outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.5 and 0.9);
+
+    % Surface contours
+    \begin{scope}
+      \clip (0, 0) ellipse (1.5 and 0.9);
+      \draw[line width=0.7pt] (-1.35, 0) ellipse (0.18 and 0.25);
+      \draw[line width=0.7pt] (-0.95, -0.9) to[out=60, in=-60] (-0.95, 0.9);
+      \draw[line width=0.7pt] (-0.3, -0.9) to[out=70, in=-70] (-0.3, 0.9);
+      \draw[line width=0.7pt] (0.4, -0.9) to[out=80, in=-80] (0.4, 0.9);
+    \end{scope}
+
+    % Nucleon paired orbits with arrows
+    \draw[line width=0.8pt] (-0.7, 0.25) ellipse (0.22 and 0.12);
+    \draw[line width=0.8pt, ->] (-0.92, 0.25) -- (-0.92, 0.32);
+    \draw[line width=0.8pt, ->] (-0.48, 0.25) -- (-0.48, 0.18);
+
+    \draw[line width=0.8pt] (0.7, 0.25) ellipse (0.22 and 0.12);
+    \draw[line width=0.8pt, ->] (0.48, 0.25) -- (0.48, 0.32);
+    \draw[line width=0.8pt, ->] (0.92, 0.25) -- (0.92, 0.18);
+
+    \draw[line width=0.8pt] (0.3, -0.35) ellipse (0.22 and 0.12);
+    \draw[line width=0.8pt, ->] (0.08, -0.35) -- (0.08, -0.28);
+    \draw[line width=0.8pt, ->] (0.52, -0.35) -- (0.52, -0.42);
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {a) ground state band};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % (b) alignment of a pair
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(\wCol, \hRow)}]
+    % Central rotation axis
+    \draw[line width=0.8pt] (0, 0.85) -- (0, 1.9);
+    \draw[line width=0.8pt] (0, -0.85) -- (0, -1.5);
+    \draw[line width=0.8pt] (-1.9, 0) -- (-1.5, 0);
+    \draw[line width=0.8pt] (1.5, 0) -- (1.9, 0);
+
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Prolate nucleus outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.5 and 0.9);
+
+    % Surface contours
+    \begin{scope}
+      \clip (0, 0) ellipse (1.5 and 0.9);
+      \draw[line width=0.7pt] (-1.35, 0) ellipse (0.18 and 0.25);
+      \draw[line width=0.7pt] (-0.95, -0.9) to[out=60, in=-60] (-0.95, 0.9);
+      \draw[line width=0.7pt] (-0.3, -0.9) to[out=70, in=-70] (-0.3, 0.9);
+      \draw[line width=0.7pt] (0.4, -0.9) to[out=80, in=-80] (0.4, 0.9);
+    \end{scope}
+
+    % Still paired orbit
+    \draw[line width=0.8pt] (-0.7, -0.2) ellipse (0.22 and 0.12);
+    \draw[line width=0.8pt, ->] (-0.92, -0.2) -- (-0.92, -0.13);
+    \draw[line width=0.8pt, ->] (-0.48, -0.2) -- (-0.48, -0.27);
+
+    \draw[line width=0.8pt] (0.4, -0.4) ellipse (0.22 and 0.12);
+    \draw[line width=0.8pt, ->] (0.18, -0.4) -- (0.18, -0.33);
+    \draw[line width=0.8pt, ->] (0.62, -0.4) -- (0.62, -0.47);
+
+    % Unpaired aligned pair: vectors pointing up
+    \draw[line width=1.0pt, ->] (-0.2, 0.7) -- (-0.35, 1.85);
+    \draw[line width=0.6pt, ->] (-0.48, 1.55) arc (180:-80:0.18 and 0.08);
+
+    \draw[line width=1.0pt, ->] (0.2, 0.7) -- (0.35, 1.85);
+    \draw[line width=0.6pt, ->] (0.22, 1.55) arc (180:-80:0.18 and 0.08);
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {b) alignment of a pair};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % (c) triaxial
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(2*\wCol, \hRow)}]
+    % Rotation axis
+    \draw[line width=0.8pt] (0, 0.85) -- (0, 1.9);
+    \draw[line width=0.8pt] (0, -0.85) -- (0, -1.5);
+    \draw[line width=0.8pt] (-1.9, 0) -- (-1.5, 0);
+    \draw[line width=0.8pt] (1.5, 0) -- (1.9, 0);
+
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Nucleus outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.55 and 0.88);
+
+    % Surface contours
+    \begin{scope}
+      \clip (0, 0) ellipse (1.55 and 0.88);
+      \draw[line width=0.7pt] (-1.25, 0.1) ellipse (0.25 and 0.35);
+      \draw[line width=0.7pt] (-0.8, -0.9) to[out=55, in=-55] (-0.8, 0.9);
+      \draw[line width=0.7pt] (-0.2, -0.9) to[out=65, in=-65] (-0.2, 0.9);
+      \draw[line width=0.7pt] (0.45, -0.9) to[out=75, in=-75] (0.45, 0.9);
+    \end{scope}
+
+    % Several precessing vectors along top
+    \draw[line width=1.0pt, ->] (-0.6, 0.65) -- (-0.9, 1.8);
+    \draw[line width=0.6pt, ->] (-0.95, 1.5) arc (180:-80:0.18 and 0.08);
+
+    \draw[line width=1.0pt, ->] (-0.2, 0.7) -- (-0.3, 1.95);
+    \draw[line width=0.6pt, ->] (-0.42, 1.65) arc (180:-80:0.18 and 0.08);
+
+    \draw[line width=1.0pt, ->] (0.2, 0.7) -- (0.3, 1.95);
+    \draw[line width=0.6pt, ->] (0.18, 1.65) arc (180:-80:0.18 and 0.08);
+
+    \draw[line width=1.0pt, ->] (0.6, 0.65) -- (0.9, 1.8);
+    \draw[line width=0.6pt, ->] (0.78, 1.5) arc (180:-80:0.18 and 0.08);
+
+    % Small transverse vectors inside
+    \draw[line width=0.9pt, ->] (-0.75, 0.4) -- (-0.5, 0.6);
+    \draw[line width=0.9pt, ->] (0.5, -0.3) -- (0.8, -0.1);
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {c) triaxial};
+  \end{scope}
+
+  % =============================================================
+  % ROW 2: (d), (e), (f)
+  % =============================================================
+
+  % -------------------------------------------------------------
+  % (d) complete alignment
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(0, 0)}]
+    % Rotation axis
+    \draw[line width=0.8pt] (0, 0.7) -- (0, 1.9);
+    \draw[line width=0.8pt] (0, -0.7) -- (0, -1.5);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Oblate flattened disk
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.6 and 0.7);
+
+    % Central hole/core indicator
+    \draw[line width=0.8pt] (0, 0.1) ellipse (0.15 and 0.08);
+
+    % Parallel vertical alignment arrows through the disk
+    \foreach \x in {-1.2, -0.8, -0.4, 0.4, 0.8, 1.2} {
+      \draw[line width=1.0pt, ->] (\x, -0.3) -- (\x, 1.6);
+    }
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {d) complete alignment};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % (e) triaxial (Jacobi)
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(\wCol, 0)}]
+    % Rotation axis
+    \draw[line width=0.8pt] (0, 0.82) -- (0, 1.9);
+    \draw[line width=0.8pt] (0, -0.82) -- (0, -1.5);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Ellipsoid body outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.65 and 0.85);
+
+    % Left pointing arrow
+    \draw[line width=0.9pt, ->] (-1.95, 0) -- (-1.65, 0);
+
+    % Circulation streamlines
+    \begin{scope}
+      \clip (0, 0) ellipse (1.65 and 0.85);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.16 and 0.12);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.35 and 0.28);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.65 and 0.48);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (1.05 and 0.68);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (1.55 and 0.82);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (2.15 and 0.95);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (2.80 and 1.10);
+    \end{scope}
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {e) triaxial (Jacobi)};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % (f) fission
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(2*\wCol, 0)}]
+    % Central rotation axis
+    \draw[line width=0.8pt] (0, -1.5) -- (0, 1.9);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.38, 1.45) arc (180:-70:0.38 and 0.14);
+
+    % Left droplet
+    \def\dropletLf{
+      (-0.25, 0.05) to[out=135, in=0] (-0.95, 0.68)
+      to[out=180, in=90] (-1.55, 0)
+      to[out=-90, in=180] (-0.95, -0.68)
+      to[out=0, in=225] (-0.25, -0.05)
+      to[out=45, in=-45] cycle
+    }
+    \draw[line width=1.2pt, fill=white] \dropletLf;
+    \draw[line width=0.9pt, ->] (-1.55, 0) -- (-1.95, 0);
+
+    \begin{scope}
+      \clip \dropletLf;
+      \draw[line width=0.8pt] (-1.4, 0) arc (180:0:0.18 and 0.65);
+      \draw[line width=0.8pt] (-1.4, 0) arc (180:360:0.18 and 0.65);
+      \draw[line width=0.8pt] (-1.18, -0.8) to[out=70, in=-70] (-1.18, 0.8);
+      \draw[line width=0.8pt] (-0.95, -0.8) to[out=70, in=-70] (-0.95, 0.8);
+      \draw[line width=0.8pt] (-0.72, -0.8) to[out=70, in=-70] (-0.72, 0.8);
+      \draw[line width=0.8pt] (-0.48, -0.8) to[out=70, in=-70] (-0.48, 0.8);
+    \end{scope}
+
+    % Right droplet
+    \def\dropletRf{
+      (0.25, 0.05) to[out=45, in=180] (0.95, 0.68)
+      to[out=0, in=90] (1.55, 0)
+      to[out=-90, in=0] (0.95, -0.68)
+      to[out=180, in=-45] (0.25, -0.05)
+      to[out=135, in=-135] cycle
+    }
+    \draw[line width=1.2pt, fill=white] \dropletRf;
+    \draw[line width=0.9pt, ->] (1.55, 0) -- (1.95, 0);
+
+    \begin{scope}
+      \clip \dropletRf;
+      \draw[line width=0.8pt] (1.18, -0.8) to[out=110, in=-110] (1.18, 0.8);
+      \draw[line width=0.8pt] (0.95, -0.8) to[out=110, in=-110] (0.95, 0.8);
+      \draw[line width=0.8pt] (0.72, -0.8) to[out=110, in=-110] (0.72, 0.8);
+      \draw[line width=0.8pt] (0.48, -0.8) to[out=110, in=-110] (0.48, 0.8);
+    \end{scope}
+
+    \node[anchor=north, font=\normalsize] at (0, -1.6) {f) fission};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

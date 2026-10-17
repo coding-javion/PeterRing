@@ -1,0 +1,83 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Dimensions: width = 9.0cm (x: 0 to 2.45), height = 5.8cm (y: 0 to 3.05)
+  % Scale: x * 3.6, y * 1.9
+  \def\xscale{3.7}
+  \def\yscale{1.9}
+
+  % Outer bounding frame
+  \draw[thick, line width=1.0pt] (0, 0) rectangle (2.45*\xscale, 3.05*\yscale);
+
+  % Ticks: bottom and top
+  \foreach \x in {1.0, 2.0} {
+    \draw[line width=0.8pt] (\x*\xscale, 0) -- (\x*\xscale, 0.18);
+    \draw[line width=0.8pt] (\x*\xscale, 3.05*\yscale) -- (\x*\xscale, 3.05*\yscale - 0.18);
+  }
+  \node[below=3pt, font=\large] at (1.0*\xscale, 0) {$1.0$};
+  \node[below=3pt, font=\large] at (2.0*\xscale, 0) {$2.0$};
+  \node[below=3pt, font=\Large] at (2.25*\xscale, 0) {$\chi$};
+
+  % Ticks: left and right
+  \foreach \y in {1.0, 2.0, 3.0} {
+    \draw[line width=0.8pt] (0, \y*\yscale) -- (0.18, \y*\yscale);
+    \draw[line width=0.8pt] (2.45*\xscale, \y*\yscale) -- (2.45*\xscale - 0.18, \y*\yscale);
+  }
+  \node[left=3pt, font=\large] at (0, 1.0*\yscale) {$1$};
+  \node[left=3pt, font=\large] at (0, 2.0*\yscale) {$2$};
+  \node[left=3pt, font=\large] at (0, 3.0*\yscale) {$3$};
+
+  % Y-axis label
+  \node[left=12pt, font=\Large] at (0, 1.55*\yscale) {$\frac{E - E_0}{\varepsilon}$};
+
+  % Annotation inside
+  \node[font=\Large] at (1.18*\xscale, 2.65*\yscale) {$\Omega = 40$};
+
+  % Lower curve: first excited state
+  \draw[very thick, line width=1.6pt, smooth]
+    plot coordinates {
+      (0*\xscale, 1.0*\yscale)
+      (0.3*\xscale, 0.96*\yscale)
+      (0.6*\xscale, 0.86*\yscale)
+      (0.85*\xscale, 0.68*\yscale)
+      (1.05*\xscale, 0.42*\yscale)
+      (1.2*\xscale, 0.22*\yscale)
+      (1.35*\xscale, 0.09*\yscale)
+      (1.5*\xscale, 0.03*\yscale)
+      (1.7*\xscale, 0.005*\yscale)
+      (2.0*\xscale, 0.0*\yscale)
+    };
+
+  % Upper curve: second excited state
+  \draw[very thick, line width=1.6pt, smooth]
+    plot coordinates {
+      (0*\xscale, 2.0*\yscale)
+      (0.2*\xscale, 1.97*\yscale)
+      (0.4*\xscale, 1.88*\yscale)
+      (0.6*\xscale, 1.73*\yscale)
+      (0.8*\xscale, 1.50*\yscale)
+      (1.0*\xscale, 1.18*\yscale)
+      (1.15*\xscale, 0.93*\yscale)
+      (1.25*\xscale, 0.80*\yscale)
+      (1.35*\xscale, 0.85*\yscale)
+      (1.45*\xscale, 1.02*\yscale)
+      (1.6*\xscale, 1.35*\yscale)
+      (1.8*\xscale, 1.79*\yscale)
+      (2.0*\xscale, 2.22*\yscale)
+      (2.2*\xscale, 2.62*\yscale)
+      (2.41*\xscale, 3.05*\yscale)
+    };
+
+\end{tikzpicture}
+\end{document}

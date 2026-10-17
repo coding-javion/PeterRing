@@ -1,0 +1,175 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Top title
+  \node[font=\Large\bfseries] at (7.0, 13.0) {Proton densities};
+  \node[font=\large] at (7.0, 12.3) {$^{240}\mathrm{Pu}$};
+
+  % Define a macro for the axes in each subplot:
+  % Horizontal axis from -12 to 12 fm, ticks at -10, -5, 5, 10
+  % Vertical axis from -6 to 6 fm, ticks at -5, 5
+  \def\drawAxes#1{
+    % Horizontal axis
+    \draw[line width=0.5pt, densely dotted] (-2.7, 0) -- (2.7, 0);
+    \foreach \x/\lbl in {-2.2/-10, -1.1/-5, 1.1/5, 2.2/10} {
+      \draw[line width=0.5pt] (\x, -0.06) -- (\x, 0.06);
+      \node[below=1pt, font=\tiny, fill=white, inner sep=0.5pt] at (\x, 0) {$\lbl$};
+    }
+    % Vertical axis
+    \draw[line width=0.5pt, densely dotted] (0, -1.4) -- (0, 1.4);
+    \foreach \y/\lbl in {-1.1/-5, 1.1/5} {
+      \draw[line width=0.5pt] (-0.06, \y) -- (0.06, \y);
+      \node[left=1pt, font=\tiny, fill=white, inner sep=0.5pt] at (0, \y) {$\lbl$};
+    }
+  }
+
+  % ========================================================
+  % Subplot 1: q = 0 (top left)
+  % ========================================================
+  \begin{scope}[shift={(3.5, 9.5)}]
+    \drawAxes{0}
+    % Outer contours (spherical)
+    \draw[line width=0.85pt] (0, 0) circle (1.75);
+    \draw[line width=0.85pt] (0, 0) circle (1.52);
+    % Shaded dense ring
+    \draw[line width=0.85pt, fill=black!30, even odd rule]
+      (0, 0) circle (1.42)
+      (0, 0) circle (1.20);
+    \fill (0, 0) circle (2.2pt);
+    \node[below=14pt, font=\normalsize] at (0, -1.4) {$q = 0$};
+  \end{scope}
+
+  % ========================================================
+  % Subplot 2: q = 28.5 (top right)
+  % ========================================================
+  \begin{scope}[shift={(10.5, 9.5)}]
+    \drawAxes{28.5}
+    % Outer contours (prolate oval)
+    \draw[line width=0.85pt] (0, 0) ellipse (2.00 and 1.55);
+    \draw[line width=0.85pt] (0, 0) ellipse (1.80 and 1.35);
+    % Inner shaded crescents
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (1.05, 0.85) (1.45, 0.65) (1.60, 0.0) (1.45, -0.65) (1.05, -0.85) (1.30, 0.0)
+      };
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (-1.05, 0.85) (-1.45, 0.65) (-1.60, 0.0) (-1.45, -0.65) (-1.05, -0.85) (-1.30, 0.0)
+      };
+    \fill (0.95, 0) circle (2.0pt);
+    \fill (-0.95, 0) circle (2.0pt);
+    \fill (0, 0) ellipse (0.22 and 0.06);
+    \node[below=14pt, font=\normalsize] at (0, -1.4) {$q = 28.5$};
+  \end{scope}
+
+  % ========================================================
+  % Subplot 3: q = 169.7 (middle)
+  % ========================================================
+  \begin{scope}[shift={(7.0, 5.5)}]
+    % Wider horizontal axis for elongated shape (up to 16 fm)
+    \draw[line width=0.5pt, densely dotted] (-3.4, 0) -- (3.4, 0);
+    \foreach \x/\lbl in {-2.2/-10, -1.1/-5, 1.1/5, 2.2/10} {
+      \draw[line width=0.5pt] (\x, -0.06) -- (\x, 0.06);
+      \node[below=1pt, font=\tiny, fill=white, inner sep=0.5pt] at (\x, 0) {$\lbl$};
+    }
+    \draw[line width=0.5pt, densely dotted] (0, -1.3) -- (0, 1.3);
+    \foreach \y/\lbl in {-1.1/-5, 1.1/5} {
+      \draw[line width=0.5pt] (-0.06, \y) -- (0.06, \y);
+      \node[left=1pt, font=\tiny, fill=white, inner sep=0.5pt] at (0, \y) {$\lbl$};
+    }
+    % Dumbbell shape with neck at z=0
+    \draw[line width=0.85pt]
+      plot[smooth cycle] coordinates {
+        (0, 0.78) (1.2, 0.85) (2.5, 0.80) (3.0, 0.40) (3.1, 0.0)
+        (3.0, -0.40) (2.5, -0.80) (1.2, -0.85) (0, -0.78)
+        (-1.2, -0.85) (-2.5, -0.80) (-3.0, -0.40) (-3.1, 0.0)
+        (-3.0, 0.40) (-2.5, 0.80) (-1.2, 0.85)
+      };
+    \draw[line width=0.85pt]
+      plot[smooth cycle] coordinates {
+        (0, 0.65) (1.2, 0.72) (2.3, 0.68) (2.8, 0.35) (2.9, 0.0)
+        (2.8, -0.35) (2.3, -0.68) (1.2, -0.72) (0, -0.65)
+        (-1.2, -0.72) (-2.3, -0.68) (-2.8, -0.35) (-2.9, 0.0)
+        (-2.8, 0.35) (-2.3, 0.68) (-1.2, 0.72)
+      };
+    % Two shaded crescent lobes near ends
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (1.5, 0.58) (2.2, 0.50) (2.5, 0.0) (2.2, -0.50) (1.5, -0.58) (2.0, 0.0)
+      };
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (-1.5, 0.58) (-2.2, 0.50) (-2.5, 0.0) (-2.2, -0.50) (-1.5, -0.58) (-2.0, 0.0)
+      };
+    \fill (1.8, 0) circle (2.0pt);
+    \fill (-1.8, 0) circle (2.0pt);
+    \node[below=14pt, font=\normalsize] at (0, -1.3) {$q = 169.7$};
+  \end{scope}
+
+  % ========================================================
+  % Subplot 4: q = 49.9 (bottom left)
+  % ========================================================
+  \begin{scope}[shift={(3.5, 1.2)}]
+    \drawAxes{49.9}
+    % Outer contours (elongated oval)
+    \draw[line width=0.85pt] (0, 0) ellipse (2.25 and 1.45);
+    \draw[line width=0.85pt] (0, 0) ellipse (2.05 and 1.25);
+    % Shaded lobes
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (1.2, 0.75) (1.65, 0.55) (1.85, 0.0) (1.65, -0.55) (1.2, -0.75) (1.50, 0.0)
+      };
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (-1.2, 0.75) (-1.65, 0.55) (-1.85, 0.0) (-1.65, -0.55) (-1.2, -0.75) (-1.50, 0.0)
+      };
+    \node[below=14pt, font=\normalsize] at (0, -1.4) {$q = 49.9$};
+  \end{scope}
+
+  % ========================================================
+  % Subplot 5: q = 81.8 (bottom right)
+  % ========================================================
+  \begin{scope}[shift={(10.5, 1.2)}]
+    \drawAxes{81.8}
+    % Outer contours with slight waist
+    \draw[line width=0.85pt]
+      plot[smooth cycle] coordinates {
+        (0, 1.30) (1.2, 1.40) (2.1, 1.15) (2.45, 0.0)
+        (2.1, -1.15) (1.2, -1.40) (0, -1.30)
+        (-1.2, -1.40) (-2.1, -1.15) (-2.45, 0.0)
+        (-2.1, 1.15) (-1.2, 1.40)
+      };
+    \draw[line width=0.85pt]
+      plot[smooth cycle] coordinates {
+        (0, 1.15) (1.1, 1.25) (1.9, 1.00) (2.25, 0.0)
+        (1.9, -1.00) (1.1, -1.25) (0, -1.15)
+        (-1.1, -1.25) (-1.9, -1.00) (-2.25, 0.0)
+        (-1.9, 1.00) (-1.1, 1.25)
+      };
+    % Shaded lobes
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (1.3, 0.70) (1.75, 0.50) (1.95, 0.0) (1.75, -0.50) (1.3, -0.70) (1.60, 0.0)
+      };
+    \draw[line width=0.85pt, fill=black!30]
+      plot[smooth cycle] coordinates {
+        (-1.3, 0.70) (-1.75, 0.50) (-1.95, 0.0) (-1.75, -0.50) (-1.3, -0.70) (-1.60, 0.0)
+      };
+    \fill (1.5, 0) ellipse (0.08 and 0.14);
+    \fill (-1.5, 0) ellipse (0.08 and 0.14);
+    \node[below=14pt, font=\normalsize] at (0, -1.4) {$q = 81.8$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

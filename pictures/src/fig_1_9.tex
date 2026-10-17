@@ -1,0 +1,130 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions for each panel
+  \def\w{4.8}
+  \def\h{5.6}
+
+  % ========================================================
+  % Left Panel: Irrotational flow moments of inertia
+  % ========================================================
+  \begin{scope}[shift={(0,0)}]
+    % Outer box
+    \draw[thick] (0, 0) rectangle (\w, \h);
+
+    % Y-axis label
+    \node[above=4pt, font=\large] at (0, \h) {$\frac{\mathcal{J}^{\mathrm{irr}}(\gamma)}{\mathcal{J}_1^{\mathrm{irr}}(0)}$};
+
+    % Y-axis ticks and labels (0, 1)
+    % Scale: y = 0 at 0, y = 1 at 3.2 cm, max = 1.6 at 5.12 cm
+    \def\yUnit{3.2}
+    \draw[thick] (0, \yUnit) -- (0.1, \yUnit);
+    \node[left=3pt, font=\normalsize] at (0, \yUnit) {$1$};
+
+    % X-axis ticks: 0, 30, 60 deg
+    \draw[thick] (0, 0) -- (0, 0.1);
+    \node[below=3pt, font=\normalsize] at (0, 0) {$0^\circ$};
+
+    \draw[thick] ({\w/2}, 0) -- ({\w/2}, 0.1);
+    \node[below=3pt, font=\normalsize] at ({\w/2}, 0) {$30^\circ$};
+
+    \draw[thick] (\w, 0) -- (\w, 0.1);
+    \node[below=3pt, font=\normalsize] at (\w, 0) {$60^\circ$};
+
+    % X-axis label with arrow
+    \draw[thick, ->] (\w*0.5, -0.9) -- (\w*0.75, -0.9) node[right=4pt, font=\Large] {$\gamma$};
+
+    % Curve J1: 4/3 * sin^2(x - 120) * \yUnit
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {(4.0/3.0) * (sin(\x - 120))^2 * \yUnit});
+    \node[above=2pt, font=\large] at ({\w/2}, {(4.0/3.0) * \yUnit}) {$\mathcal{J}_1$};
+
+    % Curve J2: 4/3 * sin^2(x - 240) * \yUnit
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {(4.0/3.0) * (sin(\x - 240))^2 * \yUnit});
+    \node[above right=-2pt, font=\large] at ({\w*0.25}, {0.75 * \yUnit}) {$\mathcal{J}_2$};
+
+    % Curve J3: 4/3 * sin^2(x) * \yUnit
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {(4.0/3.0) * (sin(\x))^2 * \yUnit});
+    \node[above left=-2pt, font=\large] at ({\w*0.75}, {0.75 * \yUnit}) {$\mathcal{J}_3$};
+  \end{scope}
+
+  % ========================================================
+  % Right Panel: Rigid body moments of inertia (beta = 0.3)
+  % ========================================================
+  \begin{scope}[shift={(6.8,0)}]
+    % Outer box
+    \draw[thick] (0, 0) rectangle (\w, \h);
+
+    % Y-axis label
+    \node[above=4pt, font=\large] at (0, \h) {$\frac{\mathcal{J}^{\mathrm{rig}}(\gamma)}{\mathcal{J}_1^{\mathrm{rig}}(0)}$};
+
+    % Y-axis tick at 1
+    % In right panel, 1 is near middle, say at y = 3.2 cm
+    % Let scale factor map value 1 to 3.2 cm, but we need high resolution since range is ~0.6 to 1.2
+    % Let y = 0 be at base, y = 1 at 3.2 cm.
+    % Wait, in the original plot:
+    % 1 is at ~60% height. Let's make y_pos = (val - 0.5) * (5.6 / 0.8) or similar,
+    % or let baseline be ~0.4 and 1 at 3.2 cm.
+    % Let's check original: 1 is marked on left.
+    % The curve J3 starts at ~0.74, J1 at 1.0, J2 at 1.0.
+    % J2 reaches ~1.09 at 60 deg. J3 and J1 meet at ~0.83 at 60 deg.
+    % Let's use linear mapping: y(val) = (val - 0.5) * 5.0
+    % At val = 1: y = 2.5 cm.
+    % At val = 0.74: y = 1.2 cm.
+    % At val = 1.09: y = 2.95 cm.
+    % Let's check tick at 1:
+    \def\yMap#1{({(#1 - 0.45) * 5.2})}
+
+    \draw[thick] (0, {\yMap{1.0}}) -- (0.1, {\yMap{1.0}});
+    \node[left=3pt, font=\normalsize] at (0, {\yMap{1.0}}) {$1$};
+
+    % X-axis ticks: 0, 30, 60 deg
+    \draw[thick] (0, 0) -- (0, 0.1);
+    \node[below=3pt, font=\normalsize] at (0, 0) {$0^\circ$};
+
+    \draw[thick] ({\w/2}, 0) -- ({\w/2}, 0.1);
+    \node[below=3pt, font=\normalsize] at ({\w/2}, 0) {$30^\circ$};
+
+    \draw[thick] (\w, 0) -- (\w, 0.1);
+    \node[below=3pt, font=\normalsize] at (\w, 0) {$60^\circ$};
+
+    % X-axis label with arrow
+    \draw[thick, ->] (\w*0.5, -0.9) -- (\w*0.75, -0.9) node[right=4pt, font=\Large] {$\gamma$};
+
+    % Parameter note: beta = 0.3
+    \node[font=\large] at ({\w*0.8}, 0.6) {$\beta = 0.3$};
+
+    % Constants: C0 = sqrt(5/(4*pi)) * 0.3 = 0.189235
+    % Norm = 1 + 0.5 * C0 = 1.094618
+    % J1(x) = (1 - 0.189235 * cos(x - 120)) / 1.094618
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {\yMap{(1.0 - 0.189235 * cos(\x - 120)) / 1.094618}});
+    \node[above=1pt, font=\large] at ({\w*0.62}, {\yMap{0.91}}) {$\mathcal{J}_1$};
+
+    % J2(x) = (1 - 0.189235 * cos(x - 240)) / 1.094618
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {\yMap{(1.0 - 0.189235 * cos(\x - 240)) / 1.094618}});
+    \node[above=2pt, font=\large] at ({\w*0.55}, {\yMap{1.07}}) {$\mathcal{J}_2$};
+
+    % J3(x) = (1 - 0.189235 * cos(x)) / 1.094618
+    \draw[very thick, line width=1.3pt, domain=0:60, samples=80, smooth]
+      plot ({\x * \w / 60}, {\yMap{(1.0 - 0.189235 * cos(\x)) / 1.094618}});
+    \node[below=2pt, font=\large] at ({\w*0.25}, {\yMap{0.75}}) {$\mathcal{J}_3$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: p in fm^-1 (0 to 1.76), kappa in [0, 0.55]
+  \def\xscale{5.0}
+  \def\yscale{9.5}
+
+  % Outer bounding frame
+  \draw[line width=0.95pt] (0, 0) rectangle (1.76*\xscale, 0.55*\yscale);
+
+  % Y-axis ticks and labels (left)
+  \foreach \y/\lbl in {0.25/0.25, 0.50/0.50} {
+    \draw[line width=0.65pt] (0, \y*\yscale) -- (0.025*\xscale, \y*\yscale);
+    \node[anchor=east, font=\small] at (-0.08, \y*\yscale) {$\lbl$};
+  }
+  \node[anchor=south east, font=\normalsize] at (-0.08, 0.51*\yscale) {$\varkappa(q, p)$};
+
+  % X-axis ticks and labels (bottom)
+  \foreach \x/\lbl in {0/0, 0.5/0.5, 1.0/1.0, 1.5/1.5} {
+    \draw[line width=0.65pt] (\x*\xscale, 0) -- (\x*\xscale, 0.015*\yscale);
+    \node[anchor=north, font=\small] at (\x*\xscale, -0.08) {$\lbl$};
+  }
+  \node[anchor=north west, font=\normalsize] at (1.56*\xscale, -0.08) {$p\,(\mathrm{fm}^{-1})$};
+
+  % --- Peak 1: q = 7.67 (p0 = 0.33) ---
+  \draw[line width=1.15pt]
+    plot[smooth, domain=0.0:0.75, samples=50]
+    (\x*\xscale, {(0.015 + 0.475 / (1 + ((\x - 0.33) / 0.052)^2)) * \yscale});
+  \node[font=\small] at (0.33*\xscale, 0.52*\yscale) {$q = 7.67$};
+
+  % --- Peak 2: q = 7.0 (p0 = 0.78, broader) ---
+  \draw[line width=1.15pt]
+    plot[smooth, domain=0.0:1.35, samples=60]
+    (\x*\xscale, {(0.01 + 0.48 / (1 + ((\x - 0.78) / 0.11)^2)) * \yscale});
+  \node[font=\small] at (0.78*\xscale, 0.52*\yscale) {$q = 7.0$};
+
+  % --- Peak 3: q = 6.0 (p0 = 1.20) ---
+  \draw[line width=1.15pt]
+    plot[smooth, domain=0.55:1.55, samples=50]
+    (\x*\xscale, {(0.005 + 0.485 / (1 + ((\x - 1.20) / 0.052)^2)) * \yscale});
+  \node[font=\small] at (1.17*\xscale, 0.52*\yscale) {$q = 6.0$};
+
+  % --- Peak 4: q = 0.0 (p0 = 1.40, sharp) ---
+  \draw[line width=1.15pt]
+    plot[smooth, domain=0.95:1.68, samples=50]
+    (\x*\xscale, {(0.002 + 0.488 / (1 + ((\x - 1.40) / 0.038)^2)) * \yscale});
+  \node[font=\small] at (1.46*\xscale, 0.52*\yscale) {$q = 0.0$};
+
+\end{tikzpicture}
+\end{document}

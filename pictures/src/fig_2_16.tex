@@ -1,0 +1,301 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions: X from j=0.25 to j=4.75, Y from mu=-0.5 to mu=6.5
+  \def\w{11.5}
+  \def\h{11.0}
+  
+  \def\jmin{0.25}
+  \def\jmax{4.75}
+  \def\mumin{-0.5}
+  \def\mumax{6.5}
+
+  \pgfmathsetmacro{\sx}{\w / (\jmax - \jmin)}
+  \pgfmathsetmacro{\sy}{\h / (\mumax - \mumin)}
+
+  % Macro to convert (j, mu) to canvas (x, y)
+  % x = (j - \jmin) * \sx, y = (mu - \mumin) * \sy
+
+  % Frame
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % X-axis ticks: j = 1/2, 3/2, 5/2, 7/2, 9/2
+  \foreach \j/\label in {0.5/\frac{1}{2}, 1.5/\frac{3}{2}, 2.5/\frac{5}{2}, 3.5/\frac{7}{2}, 4.5/\frac{9}{2}} {
+    \pgfmathsetmacro{\xpos}{(\j - \jmin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, {\h - 0.16});
+    \node[below=3pt, font=\normalsize] at (\xpos, 0) {$\label$};
+  }
+  \node[below=5pt, font=\normalsize] at (-0.15, 0) {$j=$};
+
+  % Y-axis ticks: 0, 1, 2, 3, 4, 5, 6
+  \foreach \mu in {0, 1, 2, 3, 4, 5, 6} {
+    \pgfmathsetmacro{\ypos}{(\mu - \mumin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- ({\w - 0.16}, \ypos);
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {$\mu$};
+  }
+  
+  % Y-axis label
+  \node[rotate=90, font=\normalsize] at (-1.1, {\h * 0.5}) {$\mu\ (\mathrm{Nuclear\ Magneton})$};
+
+  % --- Schmidt lines ---
+  % Upper line: mu = j + 2.293
+  % j from 0.25 to (6.5 - 2.293) = 4.207
+  \pgfmathsetmacro{\xUone}{(0.25 - \jmin) * \sx}
+  \pgfmathsetmacro{\yUone}{(0.25 + 2.293 - \mumin) * \sy}
+  \pgfmathsetmacro{\xUtwo}{(4.207 - \jmin) * \sx}
+  \pgfmathsetmacro{\yUtwo}{(6.5 - \mumin) * \sy}
+  \draw[line width=1.3pt] (\xUone, \yUone) -- (\xUtwo, \yUtwo);
+  \node[above left=2pt and 0pt, font=\normalsize] at ({(3.1 - \jmin)*\sx}, {(3.1 + 2.293 - \mumin)*\sy}) {$j = l + \frac{1}{2}$};
+
+  % Lower line: mu = (j / (j + 1)) * (j - 1.293)
+  \draw[line width=1.3pt] plot[smooth] coordinates {
+    ({(0.25 - \jmin)*\sx}, {((0.25/1.25)*(0.25 - 1.293) - \mumin)*\sy})
+    ({(0.50 - \jmin)*\sx}, {((0.50/1.50)*(0.50 - 1.293) - \mumin)*\sy})
+    ({(1.00 - \jmin)*\sx}, {((1.00/2.00)*(1.00 - 1.293) - \mumin)*\sy})
+    ({(1.50 - \jmin)*\sx}, {((1.50/2.50)*(1.50 - 1.293) - \mumin)*\sy})
+    ({(2.00 - \jmin)*\sx}, {((2.00/3.00)*(2.00 - 1.293) - \mumin)*\sy})
+    ({(2.50 - \jmin)*\sx}, {((2.50/3.50)*(2.50 - 1.293) - \mumin)*\sy})
+    ({(3.00 - \jmin)*\sx}, {((3.00/4.00)*(3.00 - 1.293) - \mumin)*\sy})
+    ({(3.50 - \jmin)*\sx}, {((3.50/4.50)*(3.50 - 1.293) - \mumin)*\sy})
+    ({(4.00 - \jmin)*\sx}, {((4.00/5.00)*(4.00 - 1.293) - \mumin)*\sy})
+    ({(4.50 - \jmin)*\sx}, {((4.50/5.50)*(4.50 - 1.293) - \mumin)*\sy})
+    ({(4.75 - \jmin)*\sx}, {((4.75/5.75)*(4.75 - 1.293) - \mumin)*\sy})
+  };
+  \node[below=2pt, font=\normalsize] at ({(3.7 - \jmin)*\sx}, {((3.7/4.7)*(3.7 - 1.293) - \mumin)*\sy - 0.25}) {$j = l - \frac{1}{2}$};
+
+  % Dot style
+  \tikzset{
+    pdot/.style={circle, fill=black, inner sep=1.2pt},
+    pcross/.style={path picture={
+      \draw[line width=0.8pt] (-2pt, -2pt) -- (2pt, 2pt) (-2pt, 2pt) -- (2pt, -2pt);
+    }, inner sep=2.5pt}
+  }
+
+  % ================= j = 1/2 =================
+  \pgfmathsetmacro{\xjhalf}{(0.5 - \jmin) * \sx}
+  % H_3^*
+  \node[pdot] at (\xjhalf, {(2.98 - \mumin)*\sy}) {};
+  \node[above=1pt, font=\small] at (\xjhalf, {(2.98 - \mumin)*\sy}) {$\mathrm{H}_3^*$};
+  % H^1
+  \node[pdot] (H1) at (\xjhalf, {(2.79 - \mumin)*\sy}) {};
+  \node[right=14pt, font=\small] (H1lab) at (\xjhalf, {(2.79 - \mumin)*\sy}) {$\mathrm{H}^1$};
+  \draw[->, line width=0.5pt] (H1lab) -- (H1);
+  % F^19
+  \node[pdot] at (\xjhalf, {(2.63 - \mumin)*\sy}) {};
+  \node[below right=-1pt and 1pt, font=\small] at (\xjhalf, {(2.63 - \mumin)*\sy}) {$\mathrm{F}^{19}$};
+  % Tl^205, Tl^203
+  \node[pdot] at (\xjhalf, {(1.64 - \mumin)*\sy}) {};
+  \node[right=2pt, font=\small] at (\xjhalf, {(1.64 - \mumin)*\sy}) {$\mathrm{Tl}^{205}$};
+  \node[pdot] at (\xjhalf, {(1.58 - \mumin)*\sy}) {};
+  \node[below right=-1pt and 2pt, font=\small] at (\xjhalf, {(1.58 - \mumin)*\sy}) {$\mathrm{Tl}^{203}$};
+  % P^31
+  \node[pcross] at (\xjhalf, {(1.13 - \mumin)*\sy}) {};
+  \node[right=3pt, font=\small] at (\xjhalf, {(1.13 - \mumin)*\sy}) {$\mathrm{P}^{31}$};
+  % Lower: Y89, Rh103, Ag107, Ag109, N15
+  \node[pdot] (Y89) at (\xjhalf, {(-0.14 - \mumin)*\sy}) {};
+  \node[above left=3pt and 1pt, font=\small] (Y89lab) at (0.3, {(-0.02 - \mumin)*\sy}) {$\mathrm{Y}^{89}$};
+  \draw[->, line width=0.5pt] (Y89lab.south east) -- (Y89);
+
+  \node[pdot] (Rh) at (\xjhalf, {(-0.09 - \mumin)*\sy}) {};
+  \node[above right=3pt and 15pt, font=\small] (Rhlab) at (\xjhalf, {(0.05 - \mumin)*\sy}) {$\mathrm{Rh}^{103}$};
+  \draw[->, line width=0.5pt] (Rhlab.west) -- (Rh);
+
+  \node[pcross] (Ag107) at (\xjhalf, {(-0.11 - \mumin)*\sy}) {};
+  \node[right=18pt, font=\small] (Ag107lab) at (\xjhalf, {(-0.08 - \mumin)*\sy}) {$\mathrm{Ag}^{107}$};
+  \draw[->, line width=0.5pt] (Ag107lab.west) -- (Ag107);
+
+  \node[pdot] (Ag109) at (\xjhalf, {(-0.13 - \mumin)*\sy}) {};
+  \node[below right=1pt and 18pt, font=\small] (Ag109lab) at (\xjhalf, {(-0.18 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Ag}^{109}$};
+  \draw[->, line width=0.5pt] (Ag109lab.west) -- (Ag109);
+
+  \node[pcross] (N15) at (\xjhalf, {(-0.28 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (N15lab) at (\xjhalf, {(-0.28 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{N}^{15}$};
+  \draw[->, line width=0.5pt] (N15lab.west) -- (N15);
+
+  % ================= j = 3/2 =================
+  \pgfmathsetmacro{\xjthree}{(1.5 - \jmin) * \sx}
+  % Li7
+  \node[pdot] at (\xjthree, {(3.26 - \mumin)*\sy}) {};
+  \node[above right=0pt and 2pt, font=\small] at (\xjthree, {(3.26 - \mumin)*\sy}) {$\mathrm{Li}^7$};
+  % Cluster: Rb87, B11, Ga71, Cu65, Cu63, Na23, Br81, Br79, Ga69
+  \node[pdot] (Rb87) at (\xjthree, {(2.75 - \mumin)*\sy}) {};
+  \node[above right=1pt and 16pt, font=\small] (Rb87lab) at (\xjthree, {(2.85 - \mumin)*\sy}) {$\mathrm{Rb}^{87}$};
+  \draw[->, line width=0.5pt] (Rb87lab.west) -- (Rb87);
+
+  \node[pcross] (B11) at (\xjthree, {(2.69 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (B11lab) at (\xjthree, {(2.68 - \mumin)*\sy}) {$\mathrm{B}^{11}$};
+  \draw[->, line width=0.5pt] (B11lab.west) -- (B11);
+
+  \node[pdot] (Ga71) at (\xjthree, {(2.56 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (Ga71lab) at (\xjthree, {(2.54 - \mumin)*\sy}) {$\mathrm{Ga}^{71}$};
+  \draw[->, line width=0.5pt] (Ga71lab.west) -- (Ga71);
+
+  \node[pdot] (Cu65) at (\xjthree, {(2.38 - \mumin)*\sy}) {};
+  \node[left=16pt, font=\small] (Cu65lab) at (\xjthree, {(2.75 - \mumin)*\sy}) {$\mathrm{Cu}^{65}$};
+  \draw[->, line width=0.5pt] (Cu65lab.east) -- (Cu65);
+
+  \node[pdot] (Cu63) at (\xjthree, {(2.23 - \mumin)*\sy}) {};
+  \node[left=16pt, font=\small] (Cu63lab) at (\xjthree, {(2.55 - \mumin)*\sy}) {$\mathrm{Cu}^{63}$};
+  \draw[->, line width=0.5pt] (Cu63lab.east) -- (Cu63);
+
+  \node[pdot] (Na23) at (\xjthree, {(2.22 - \mumin)*\sy}) {};
+  \node[left=16pt, font=\small] (Na23lab) at (\xjthree, {(2.35 - \mumin)*\sy}) {$\mathrm{Na}^{23}$};
+  \draw[->, line width=0.5pt] (Na23lab.east) -- (Na23);
+
+  \node[pcross] (Br81) at (\xjthree, {(2.27 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (Br81lab) at (\xjthree, {(2.38 - \mumin)*\sy}) {$\mathrm{Br}^{81}$};
+  \draw[->, line width=0.5pt] (Br81lab.west) -- (Br81);
+
+  \node[pdot] (Br79) at (\xjthree, {(2.11 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (Br79lab) at (\xjthree, {(2.22 - \mumin)*\sy}) {$\mathrm{Br}^{79}$};
+  \draw[->, line width=0.5pt] (Br79lab.west) -- (Br79);
+
+  \node[pcross] (Ga69) at (\xjthree, {(2.02 - \mumin)*\sy}) {};
+  \node[below left=0pt and 14pt, font=\small] (Ga69lab) at (\xjthree, {(2.15 - \mumin)*\sy}) {$\mathrm{Ga}^{69}$};
+  \draw[->, line width=0.5pt] (Ga69lab.east) -- (Ga69);
+
+  % As75
+  \node[pdot] at (\xjthree, {(1.44 - \mumin)*\sy}) {};
+  \node[above right=0pt and 3pt, font=\small] at (\xjthree, {(1.44 - \mumin)*\sy}) {$\mathrm{As}^{75}$};
+
+  % Cl35, Cl37, K39, K41, Au197, Ir191, Ir193
+  \node[pdot] at (\xjthree, {(0.82 - \mumin)*\sy}) {};
+  \node[right=14pt, font=\small] at (\xjthree, {(0.88 - \mumin)*\sy}) {$\mathrm{Cl}^{35}$};
+  \node[pdot] at (\xjthree, {(0.68 - \mumin)*\sy}) {};
+  \node[right=14pt, font=\small] at (\xjthree, {(0.72 - \mumin)*\sy}) {$\mathrm{Cl}^{37}$};
+  \node[pcross] (K39) at (\xjthree, {(0.39 - \mumin)*\sy}) {};
+  \node[above left=3pt and 14pt, font=\small] (K39lab) at (\xjthree, {(0.60 - \mumin)*\sy}) {$\mathrm{K}^{39}$};
+  \draw[->, line width=0.5pt] (K39lab.east) -- (K39);
+
+  \node[pcross] (K41) at (\xjthree, {(0.21 - \mumin)*\sy}) {};
+  \node[left=14pt, font=\small] (K41lab) at (\xjthree, {(0.35 - \mumin)*\sy}) {$\mathrm{K}^{41}$};
+  \draw[->, line width=0.5pt] (K41lab.east) -- (K41);
+
+  \node[pdot] (Au) at (\xjthree, {(0.14 - \mumin)*\sy}) {};
+  \node[above right=2pt and 14pt, font=\small] (Aulab) at (\xjthree, {(0.28 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Au}^{197}$};
+  \draw[->, line width=0.5pt] (Aulab.west) -- (Au);
+
+  \node[pdot] at (\xjthree, {(0.16 - \mumin)*\sy}) {};
+  \node[below left=2pt and 5pt, font=\small] at (\xjthree, {(0.0 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Ir}^{191}$};
+  \node[pdot] at (\xjthree, {(0.17 - \mumin)*\sy}) {};
+  \node[below right=2pt and 5pt, font=\small] at (\xjthree, {(-0.02 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Ir}^{193}$};
+
+  % ================= j = 5/2 =================
+  \pgfmathsetmacro{\xjfive}{(2.5 - \jmin) * \sx}
+  % Pr141, Al27, Cs131, Mn55, Eu151, Sb121, Re187, Re185, I127
+  \node[pdot] at (\xjfive, {(3.92 - \mumin)*\sy}) {};
+  \node[above right=1pt and 3pt, font=\small] at (\xjfive, {(3.92 - \mumin)*\sy}) {$\mathrm{Pr}^{141}$};
+
+  \node[pdot] (Al) at (\xjfive, {(3.64 - \mumin)*\sy}) {};
+  \node[above right=1pt and 16pt, font=\small] (Allab) at (\xjfive, {(3.70 - \mumin)*\sy}) {$\mathrm{Al}^{27}$};
+  \draw[->, line width=0.5pt] (Allab.west) -- (Al);
+
+  \node[pcross] (Cs131) at (\xjfive, {(3.52 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (Cs131lab) at (\xjfive, {(3.52 - \mumin)*\sy}) {$\mathrm{Cs}^{*131}$};
+  \draw[->, line width=0.5pt] (Cs131lab.west) -- (Cs131);
+
+  \node[pdot] (Mn) at (\xjfive, {(3.46 - \mumin)*\sy}) {};
+  \node[above left=2pt and 14pt, font=\small] (Mnlab) at (\xjfive, {(3.65 - \mumin)*\sy}) {$\mathrm{Mn}^{55}$};
+  \draw[->, line width=0.5pt] (Mnlab.east) -- (Mn);
+
+  \node[pdot] (Eu151) at (\xjfive, {(3.46 - \mumin)*\sy}) {};
+  \node[left=14pt, font=\small] (Eu151lab) at (\xjfive, {(3.46 - \mumin)*\sy}) {$\mathrm{Eu}^{151}$};
+  \draw[->, line width=0.5pt] (Eu151lab.east) -- (Eu151);
+
+  \node[pcross] (Sb121) at (\xjfive, {(3.36 - \mumin)*\sy}) {};
+  \node[right=16pt, font=\small] (Sb121lab) at (\xjfive, {(3.36 - \mumin)*\sy}) {$\mathrm{Sb}^{121}$};
+  \draw[->, line width=0.5pt] (Sb121lab.west) -- (Sb121);
+
+  \node[pdot] (Re187) at (\xjfive, {(3.22 - \mumin)*\sy}) {};
+  \node[left=14pt, font=\small] (Re187lab) at (\xjfive, {(3.20 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Re}^{187}$};
+  \draw[->, line width=0.5pt] (Re187lab.east) -- (Re187);
+
+  \node[pdot] (Re185) at (\xjfive, {(3.17 - \mumin)*\sy}) {};
+  \node[below left=2pt and 14pt, font=\small] (Re185lab) at (\xjfive, {(3.05 - \mumin)*\sy}) {$\mathrm{Re}^{185}$};
+  \draw[->, line width=0.5pt] (Re185lab.east) -- (Re185);
+
+  \node[pdot] at (\xjfive, {(2.81 - \mumin)*\sy}) {};
+  \node[right=4pt, font=\small] at (\xjfive, {(2.81 - \mumin)*\sy}) {$\mathrm{I}^{127}$};
+
+  % Eu153, Rb85
+  \node[pdot] at (\xjfive, {(1.53 - \mumin)*\sy}) {};
+  \node[above right=1pt and 4pt, font=\small] at (\xjfive, {(1.53 - \mumin)*\sy}) {$\mathrm{Eu}^{153}$};
+  \node[pdot] at (\xjfive, {(1.35 - \mumin)*\sy}) {};
+  \node[below right=1pt and 4pt, font=\small] at (\xjfive, {(1.35 - \mumin)*\sy}) {$\mathrm{Rb}^{85}$};
+
+  % ================= j = 7/2 =================
+  \pgfmathsetmacro{\xjseven}{(3.5 - \jmin) * \sx}
+  % V51, Sc45, Co59
+  \node[pdot] at (\xjseven, {(5.15 - \mumin)*\sy}) {};
+  \node[right=3pt, font=\small] at (\xjseven, {(5.15 - \mumin)*\sy}) {$\mathrm{V}^{51}$};
+  \node[pdot] at (\xjseven, {(4.76 - \mumin)*\sy}) {};
+  \node[right=3pt, font=\small] at (\xjseven, {(4.76 - \mumin)*\sy}) {$\mathrm{Sc}^{45}$};
+  \node[pcross] at (\xjseven, {(4.62 - \mumin)*\sy}) {};
+  \node[left=3pt, font=\small] at (\xjseven, {(4.62 - \mumin)*\sy}) {$\mathrm{Co}^{59}$};
+
+  % Middle cluster: Lu175, Cs137, I129, La139, Cs135, Sb123, Cs133, Ta181
+  \node[pdot] (Lu) at (\xjseven, {(2.90 - \mumin)*\sy}) {};
+  \node[above right=1pt and 14pt, font=\small] (Lulab) at (\xjseven, {(2.98 - \mumin)*\sy}) {$\mathrm{Lu}^{175}$};
+  \draw[->, line width=0.5pt] (Lulab.west) -- (Lu);
+
+  \node[pcross] (Cs137) at (\xjseven, {(2.84 - \mumin)*\sy}) {};
+  \node[right=14pt, font=\small] (Cs137lab) at (\xjseven, {(2.92 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{Cs}^{137}$};
+  \draw[->, line width=0.5pt] (Cs137lab.west) -- (Cs137);
+
+  \node[pcross] (I129) at (\xjseven, {(2.80 - \mumin)*\sy}) {};
+  \node[right=14pt, font=\small] (I129lab) at (\xjseven, {(2.55 - \mumin)*\sy}) [fill=white, fill opacity=0.85, text opacity=1, inner sep=0.8pt] {$\mathrm{I}^{*129}$};
+  \draw[->, line width=0.5pt] (I129lab.west) -- (I129);
+
+  \node[pdot] (La) at (\xjseven, {(2.78 - \mumin)*\sy}) {};
+  \node[left=14pt, font=\small] (Lalab) at (\xjseven, {(2.80 - \mumin)*\sy}) {$\mathrm{La}^{139}$};
+  \draw[->, line width=0.5pt] (Lalab.east) -- (La);
+
+  \node[pcross] (Cs135) at (\xjseven, {(2.73 - \mumin)*\sy}) {};
+  \node[below left=2pt and 14pt, font=\small] (Cs135lab) at (\xjseven, {(2.62 - \mumin)*\sy}) {$\mathrm{Cs}^{*135}$};
+  \draw[->, line width=0.5pt] (Cs135lab.east) -- (Cs135);
+
+  \node[pdot] (Sb123) at (\xjseven, {(2.55 - \mumin)*\sy}) {};
+  \node[below right=2pt and 14pt, font=\small] (Sb123lab) at (\xjseven, {(2.45 - \mumin)*\sy}) {$\mathrm{Sb}^{123}$};
+  \draw[->, line width=0.5pt] (Sb123lab.west) -- (Sb123);
+
+  \node[pdot] (Cs133) at (\xjseven, {(2.58 - \mumin)*\sy}) {};
+  \node[below left=2pt and 14pt, font=\small] (Cs133lab) at (\xjseven, {(2.20 - \mumin)*\sy}) {$\mathrm{Cs}^{133}$};
+  \draw[->, line width=0.5pt] (Cs133lab.east) -- (Cs133);
+
+  \node[pdot] (Ta) at (\xjseven, {(2.10 - \mumin)*\sy}) {};
+  \node[below left=2pt and 14pt, font=\small] (Talab) at (\xjseven, {(1.95 - \mumin)*\sy}) {$\mathrm{Ta}^{181}$};
+  \draw[->, line width=0.5pt] (Talab.east) -- (Ta);
+
+  % ================= j = 9/2 =================
+  \pgfmathsetmacro{\xjnine}{(4.5 - \jmin) * \sx}
+  \node[pdot] at (\xjnine, {(6.17 - \mumin)*\sy}) {};
+  \node[above left=1pt and 2pt, font=\small] at (\xjnine, {(6.17 - \mumin)*\sy}) {$\mathrm{Nb}^{93}$};
+
+  \node[pdot] at (\xjnine, {(5.68 - \mumin)*\sy}) {};
+  \node[above right=1pt and 2pt, font=\small] at (\xjnine, {(5.68 - \mumin)*\sy}) {$\mathrm{Tc}^{99}$};
+
+  \node[pcross] at (\xjnine, {(5.53 - \mumin)*\sy}) {};
+  \node[above left=1pt and 2pt, font=\small] at (\xjnine, {(5.53 - \mumin)*\sy}) {$\mathrm{In}^{115}$};
+
+  \node[pcross] at (\xjnine, {(5.52 - \mumin)*\sy}) {};
+  \node[below left=1pt and 2pt, font=\small] at (\xjnine, {(5.45 - \mumin)*\sy}) {$\mathrm{In}^{113}$};
+
+  \node[pcross] at (\xjnine, {(4.08 - \mumin)*\sy}) {};
+  \node[left=3pt, font=\small] at (\xjnine, {(4.08 - \mumin)*\sy}) {$\mathrm{Bi}^{209}$};
+
+\end{tikzpicture}
+\end{document}

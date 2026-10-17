@@ -1,0 +1,39 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, patterns}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Incoming proton arrow
+  \draw[line width=1.1pt, ->] (-3.8, 0) -- (-1.0, 0);
+  \node[above=3pt, font=\large] at (-2.4, 0) {$E, \boldsymbol{p}$};
+
+  % Target nucleus (circle with hatching)
+  \begin{scope}
+    \clip (0, 0) circle (1.0);
+    \foreach \x in {-1.8, -1.5, ..., 1.8} {
+      \draw[line width=0.9pt] (\x - 1.5, -1.5) -- (\x + 1.5, 1.5);
+    }
+  \end{scope}
+  \draw[line width=1.5pt] (0, 0) circle (1.0);
+
+  % Outgoing protons
+  % Upper outgoing proton
+  \draw[line width=1.1pt, ->] (25:1.0) -- (25:4.2);
+  \node[right=3pt, font=\large] at (25:4.2) {$E', \boldsymbol{p}'$};
+
+  % Lower outgoing proton
+  \draw[line width=1.1pt, ->] (-25:1.0) -- (-25:4.2);
+  \node[right=3pt, font=\large] at (-25:4.2) {$E'', \boldsymbol{p}''$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,329 @@
+
+\chapter{密度矩阵}
+
+\section{正常密度}
+
+为了描述多体系统的动力学，我们经常使用密度矩阵。我们区分单粒子密度矩阵、两体密度矩阵等等。在本书中，我们主要使用单粒子密度。关于更高阶的密度，读者可参阅
+\cite{Th61b} 的工作。我们在此也仅限于费米子的情况。
+
+首先我们在$N$体Hilbert空间中定义一个单粒子算符$\hat{\rho}(\boldsymbol{r})$：
+\begin{equation}
+\hat{\rho}(\boldsymbol{r})=\sum^{N}_{i=1}\delta(\boldsymbol{r}-\hat{\boldsymbol{r}}_{i}),\label{eq:appendix_d_density_op}
+\end{equation}
+其中$\hat{\boldsymbol{r}}_{i}$是粒子$i$的空间算符，$\boldsymbol{r}$是一个参数。$\hat{\rho}(\boldsymbol{r})$可以在二次量子化框架下表示（参见附录C）：
+\begin{equation}
+\hat{\rho}(\boldsymbol{r})=\sum_{pq}d_{pq}a^{\dagger}_{p}a_{q},\label{eq:appendix_d_density_second_quant}
+\end{equation}
+\begin{equation}
+d_{pq}=\langle p|\delta(\boldsymbol{r}-\hat{\boldsymbol{r}})|q\rangle=\sum_{s}\varphi^{*}_{p}(\boldsymbol{r},s)\varphi_{q}(\boldsymbol{r},s),\label{eq:appendix_d_dpq}
+\end{equation}
+\begin{equation}
+\hat{\rho}(\boldsymbol{r})=\sum_{s}a^{\dagger}(\boldsymbol{r},s)a(\boldsymbol{r},s).\label{eq:appendix_d_density_field}
+\end{equation}
+该算符在$N$体态$|\Psi\rangle$中的期望值为（参见附录C）
+\begin{align}
+\langle\Psi|\hat{\rho}(\boldsymbol{r})|\Psi\rangle & =\sum_{s}\langle\Psi|a^{\dagger}(\boldsymbol{r},s)a(\boldsymbol{r},s)|\Psi\rangle\label{eq:appendix_d_rho_exp_field}\\
+ & =N\sum_{ss_{2}\dots s_{N}}\int\mathrm{d}^{3}r_{2}\dots\mathrm{d}^{3}r_{N}\,\left|\Psi(\boldsymbol{r},s,\boldsymbol{r}_{2},s_{2},\dots,\boldsymbol{r}_{N},s_{N})\right|^{2}=\rho(\boldsymbol{r}),\label{eq:appendix_d_rho_exp_coord}
+\end{align}
+这表达了这样一个事实：$\hat{\rho}(\boldsymbol{r})$的期望值恰好是该态下在点$\boldsymbol{r}$处的平均粒子密度$\rho(\boldsymbol{r})$。将式
+(D.6) 对全空间积分便给出系统的粒子数$N$。
+
+式 (D.6) 也可以解释为坐标空间表象中算符$\hat{\rho}_{\Psi}$的对角元，该算符被称为密度矩阵。一般地，它定义为
+\begin{equation}
+\langle\boldsymbol{r},s|\hat{\rho}_{\Psi}|\boldsymbol{r}^{\prime},s^{\prime}\rangle:=\rho(\boldsymbol{r}s;\boldsymbol{r}^{\prime}s^{\prime})=\langle\Psi|a^{\dagger}(\boldsymbol{r}^{\prime},s^{\prime})a(\boldsymbol{r},s)|\Psi\rangle.\label{eq:appendix_d_density_matrix_coord}
+\end{equation}
+由式 (C.26) 我们得到
+\begin{align}
+\rho(\boldsymbol{r},s;\boldsymbol{r}^{\prime},s^{\prime}) & =\sum_{pq}\varphi_{p}(\boldsymbol{r},s)\rho_{pq}\varphi^{*}_{q}(\boldsymbol{r}^{\prime},s^{\prime})\nonumber \\
+ & =\sum_{pq}\langle\boldsymbol{r},s|p\rangle\rho_{pq}\langle q|\boldsymbol{r}^{\prime},s^{\prime}\rangle,\label{eq:appendix_d_density_expansion}
+\end{align}
+其中
+\begin{equation}
+\rho_{pq}=\langle\Psi|c^{\dagger}_{q}c_{p}|\Psi\rangle\label{eq:sp density matrix}
+\end{equation}
+是密度算符$\hat{\rho}_{\Psi}$在任意基底下的矩阵元，且$\hat{\rho}_{\Psi}$具有如下形式：
+\begin{equation}
+\hat{\rho}_{\Psi}=\sum_{pq}|p\rangle\rho_{pq}\langle q|.\label{eq:density operator}
+\end{equation}
+它是一个厄米单粒子算符。矩阵$\rho$可以通过单粒子基的幺正变换对角化：
+\begin{equation}
+(D^{\dagger}\rho D)_{ll^{\prime}}=\rho_{l}\delta_{ll^{\prime}},\quad a^{\dagger}_{l}=\sum_{l^{\prime}}D_{l^{\prime}l}c^{\dagger}_{l^{\prime}},\label{eq:appendix_d_diagonalization}
+\end{equation}
+其中
+\begin{equation}
+\rho_{l}=\langle\Psi|a^{\dagger}_{l}a_{l}|\Psi\rangle,\quad0\leqslant\rho_{l}\leqslant1,\label{eq:appendix_d_rho_eigenvalues}
+\end{equation}
+是能级$l$在波函数$\Psi$中被占据的几率。这里我们是在基底中用占据数表象（参见附录C）写下$\rho$，在该基底中$\rho$是对角的。对于粒子数，我们得到
+\begin{equation}
+N=\sum_{l}\rho_{l}=\mathop{\text{Tr}}\rho=\sum_{s}\int\rho(\boldsymbol{r},s;\boldsymbol{r},s)\,\mathrm{d}^{3}r=\int\rho(\boldsymbol{r})\,\mathrm{d}^{3}r\label{eq:appendix_d_total_particle_number}
+\end{equation}
+而对于具有式 (C.32) 形式的任何其他单粒子算符，我们得到
+\begin{equation}
+\langle\Psi|\hat{F}|\Psi\rangle=\sum_{ll^{\prime}}f_{ll^{\prime}}\langle\Psi|a^{\dagger}_{l}a_{l^{\prime}}|\Psi\rangle=\mathop{\text{Tr}}(f\cdot\rho).\label{eq:appendix_d_trace_formula}
+\end{equation}
+单粒子密度有两个重要的例子，我们将在下文中进行详细讨论。
+
+\section{Slater行列式的密度\label{sec:Slater=00884C=005217=005F0F=007684=005355=007C92=005B50=005BC6=005EA6=0077E9=009635}}
+
+在直积波函数的情况下，我们有以下定理：
+\begin{center}
+\textbf{定理}：波函数$\Psi(1\dots N)$是一个Slater行列式，当且仅当对应的密度矩阵$\rho_{\Psi}$（式
+D.10）是单粒子Hilbert空间中的投影算符，即
+\par\end{center}
+
+\begin{equation}
+\hat{\rho}^{2}_{\Psi}=\hat{\rho}_{\Psi}.\label{eq:property of projector}
+\end{equation}
+在这种情况下，$\hat{\rho}_{\Psi}$与$|\Psi\rangle$之间存在一一对应关系（当然，相差一个相因子$|\Psi\rangle$）。
+
+为了证明该定理，我们从某个单粒子基底中的Slater行列式出发，该基底由算符$a^{\dagger}_{i},a_{i}$表征：
+\begin{equation}
+|\Psi\rangle=a^{\dagger}_{1}\dots a^{\dagger}_{N}|-\rangle\label{eq:Slater determinant}
+\end{equation}
+由式 (D.9) 我们看到在此基底中$\rho$是对角的，且
+\begin{equation}
+\rho_{l}=\begin{cases}
+0 & (l>N,\text{ 空能级，粒子态}),\\
+1 & (l\leqslant N,\text{ 占据能级，空穴态}).
+\end{cases}\label{eq:appendix_d_rho_eigenvalues_slater}
+\end{equation}
+$\hat{\rho}_{\Psi}$（式 D.10）具有如下形式：
+\begin{equation}
+\hat{\rho}_{\Psi}=\sum^{N}_{i=1}|i\rangle\langle i|.\label{eq:appendix_d_rho_projector_sum}
+\end{equation}
+这是向占据态空间的投影算符，具有性质 (D.15)。
+
+另一方面，我们可以从具有性质 (D.15) 的密度矩阵$\rho$出发。它可以被对角化 {[}参见式 (D.11){]}，其本征值$\rho_{l}$具有性质
+\begin{equation}
+\rho^{2}_{l}=\rho_{l},\label{eq:appendix_d_eigenvalue_idempotent}
+\end{equation}
+也就是说，它们要么为$0$，要么为$1$。由具有$\rho_{l}=1$的单粒子波函数构造一个Slater行列式，就给出了相应的波函数$\Psi$。这些单粒子波函数$\varphi_{i}$并不能由$\rho$的对角化唯一定出。占据能级之间的任何幺正变换都保持$\rho$正如我们从式\ref{eq:Slater determinant}所见，这样的幺正变换只给波函数$|\Psi\rangle$乘上该变换的行列式，即一个相因子
+\begin{comment}
+对$l<N$的产生算符$a^{\dagger}_{l}$做酉变换变成$b^{\dagger}_{l}$，则$b^{\dagger}_{l}$构成的新的直积波函数为$\prod_{l}b^{\dagger}_{l}|\rangle=\sum_{P}\prod_{l}U_{lP(l)}a^{\dagger}_{P(l)}|\rangle=\sum_{P}\prod_{l}U_{lP(l)}\prod_{k}a^{\dagger}_{k}|\rangle=|U||\Psi\rangle$。
+\end{comment}
+。
+
+这表明在Slater行列式的情况下，$\rho$与$|\Psi\rangle$之间存在一一对应关系。特别地，我们可以使用Wick定理
+{[}式 (C.52){]}，并通过单粒子密度$\rho$来表示任意算符$\hat{O}$的期望值$\langle\Psi|\hat{O}|\Psi\rangle$。
+
+接下来我们证明一个归功于 Baranger 和 Veneroni \cite{BV78,RS77b} 的定理，该定理指出：属于一个Slater行列式的任何单粒子密度矩阵$\rho$（$\rho^{2}=\rho$）都可以按如下方式分解：
+\begin{equation}
+\rho=\mathrm{e}^{\mathrm{i}\chi}\rho_{0}\mathrm{e}^{-\mathrm{i}\chi},\label{eq:appendix_d_baranger_veneroni}
+\end{equation}
+其中$\chi$和$\rho_{0}$是在时间反演下为偶的厄米矩阵。如果我们要求：
+\begin{enumerate}
+\item 在使$\rho_{0}$对角的基底中，$\chi$只有$\text{ph}$和$\text{hp}$矩阵元：
+\begin{equation}
+\rho_{0}\chi\rho_{0}=\sigma_{0}\chi\sigma_{0}=0\label{eq:appendix_d_chi_ph_condition}
+\end{equation}
+（$\sigma_{0}=1-\rho_{0}$投影到粒子态上）；
+\item 矩阵$\chi$的本征值$\chi_{\mu}$具有性质
+\begin{equation}
+-\frac{\mathrm{\pi}}{4}\leqslant\chi_{\mu}<\frac{\mathrm{\pi}}{4}.\label{eq:appendix_d_chi_range}
+\end{equation}
+\end{enumerate}
+则这种分解是唯一的。
+
+为了证明这一点并确立分解式 (D.20) 的唯一性，我们使用算符
+\begin{equation}
+\tau=2\rho-1\quad\text{且 }\tau^{2}=1.\label{eq:appendix_d_tau_def}
+\end{equation}
+它与其时间反演反转算符$\tau_{T}=T\tau T^{\dagger}$的乘积是幺正的，因此具有如下形式：
+\begin{equation}
+\tau\tau_{T}=\mathrm{e}^{4\mathrm{i}\chi},\label{eq:appendix_d_tau_taut}
+\end{equation}
+其中厄米算符$\chi$由条件 (D.22) 唯一确定。通过求逆、时间反演以及厄米共轭：
+\begin{equation}
+\tau_{T}\tau=\mathrm{e}^{-4\mathrm{i}\chi}=\mathrm{e}^{-4\mathrm{i}\chi_{T}}=\mathrm{e}^{-4\mathrm{i}\chi^{\dagger}},\label{eq:appendix_d_taut_tau}
+\end{equation}
+我们看到$\chi$是时间反演不变且厄米的。
+
+设$|\mu\rangle$为$\tau\tau_{T}$的一组本征态，对应本征值为$\mu=\mathrm{e}^{4\mathrm{i}\chi_{\mu}}$，则$T|\mu\rangle$是具有相同本征值$\mu$的另一个本征矢，且$\tau|\mu\rangle$是具有本征值$\mu^{*}$的本征矢。这蕴含
+\begin{equation}
+(\chi\tau+\tau\chi)|\mu\rangle=(-\chi_{\mu}+\chi_{\mu})\tau|\mu\rangle=0,\label{eq:appendix_d_chi_tau_action}
+\end{equation}
+从而
+\begin{equation}
+\chi\tau+\tau\chi=0.\label{eq:appendix_d_chi_tau_anticomm}
+\end{equation}
+特别地，这意味着对于任意实数$\alpha$：
+\begin{equation}
+\mathrm{e}^{\mathrm{i}\alpha\chi}\tau=\tau\mathrm{e}^{-\mathrm{i}\alpha\chi}\label{eq:appendix_d_exp_comm}
+\end{equation}
+并且
+\begin{equation}
+\tau_{0}:=\mathrm{e}^{-2\mathrm{i}\chi}\tau=\tau\mathrm{e}^{2\mathrm{i}\chi}=\tau\mathrm{e}^{-2\mathrm{i}\chi}\tau\tau_{T}=\mathrm{e}^{2\mathrm{i}\chi}\tau_{T}=\tau_{T}\mathrm{e}^{-2\mathrm{i}\chi}.\label{eq:appendix_d_tau0_def}
+\end{equation}
+因此$\tau_{0}$是厄米且时间反演偶的。对下式同样成立：
+\begin{equation}
+\rho_{0}:=\frac{1}{2}(\tau_{0}+1).\label{eq:appendix_d_rho0_def}
+\end{equation}
+再次利用式 (D.28) 给出
+\begin{equation}
+\chi\rho_{0}+\rho_{0}\chi=\chi,\label{eq:appendix_d_chi_rho0}
+\end{equation}
+这等价于式 (D.21)。证毕。
+
+在下文中，我们给出关于Slater行列式的单粒子密度$\rho$（$\rho^{2}=\rho,\sigma=1-\rho$）进行计算的一些规则。任意矩阵$A$在使$\rho$对角的基底中具有如下的$\text{pp},\text{ph},\text{hp}$和$\text{hh}$部分：
+\begin{equation}
+A^{\text{pp}}:=\sigma A\sigma;\quad A^{\text{hh}}=\rho A\rho;\quad A^{\text{ph}}=\sigma A\rho;\quad A^{\text{hp}}=\rho A\sigma.\label{eq:appendix_d_matrix_channels}
+\end{equation}
+以下三个陈述是等价的：
+\begin{equation}
+A=A\rho+\rho A\iff A=\sigma A+A\sigma\iff A^{\text{pp}}=A^{\text{hh}}=0.\label{eq:appendix_d_three_statements}
+\end{equation}
+如果两个矩阵$A$和$B$满足关系$B=[A,\rho]$，则有：
+\begin{equation}
+B^{\text{pp}}=B^{\text{hh}}=0;\quad B^{\text{ph}}=A^{\text{ph}};\quad B^{\text{hp}}=-A^{\text{hp}}.\label{eq:appendix_d_b_channels}
+\end{equation}
+如果此外还有
+\begin{equation}
+A^{\text{pp}}=A^{\text{hh}}=0,\label{eq:appendix_d_a_pp_hh_zero}
+\end{equation}
+我们便可以写成
+\begin{equation}
+A=[B,\rho].\label{eq:appendix_d_a_is_b_rho}
+\end{equation}
+对于$\text{pp}$和$\text{hh}$矩阵元消失的厄米矩阵$A,B$，我们经常定义向量
+\begin{equation}
+\begin{pmatrix}A\\
+A^{*}
+\end{pmatrix}=\begin{pmatrix}A_{mi}\\
+A^{*}_{mi}
+\end{pmatrix},\label{eq:appendix_d_vector_def}
+\end{equation}
+并发现如下关系：
+\begin{align}
+(A^{*},A)\begin{pmatrix}B\\
+B^{*}
+\end{pmatrix} & =\sum_{mi}A^{*}_{mi}B_{mi}+A_{mi}B^{*}_{mi}=\mathop{\text{Tr}}(A\cdot B),\nonumber \\
+(A^{*},A)\begin{pmatrix}B\\
+-B^{*}
+\end{pmatrix} & =\mathop{\text{Tr}}(A\cdot[B,\rho]).\label{eq:appendix_d_vector_relations}
+\end{align}
+
+接下来我们研究依赖于某个参数$q$（例如形变）的一族Slater行列式$|\Phi(q)\rangle$及其密度$\rho(q)$的一些性质。从该族中的一个波函数$|\Phi(q_{0})\rangle$出发，我们可以用厄米单粒子算符$\hat{P}$来表示其他波函数，该算符相对于$|\Phi(q_{0})\rangle$仅具有$\text{ph}$和$\text{hp}$矩阵元，如下所示
+{[}参见式 (E.40){]}：
+\begin{equation}
+|\Phi(q+q_{0})\rangle=\mathrm{e}^{-(\mathrm{i}/\hbar)q\hat{P}}|\Phi(q_{0})\rangle,\label{eq:appendix_d_phi_translation}
+\end{equation}
+\begin{equation}
+\hat{P}=P^{0}+\sum_{mi}P_{mi}a^{\dagger}_{m}a_{i}+P^{*}_{mi}a^{\dagger}_{i}a_{m}.\label{eq:appendix_d_p_operator}
+\end{equation}
+常数$P^{0}$最终决定一个相位。算符$\hat{P}$通常依赖于$q$和$q_{0}$，并且只有在极限$q\to0$下它才变得与$q$无关，此时我们得到
+\begin{equation}
+\hat{P}|\Phi(q)\rangle=\mathrm{i}\hbar\frac{\partial}{\partial q}|\Phi(q)\rangle.\label{eq:appendix_d_p_derivative}
+\end{equation}
+对于密度，我们有
+\begin{equation}
+\rho(q_{0}+q)=\mathrm{e}^{-(\mathrm{i}/\hbar)qP}\rho(q_{0})\mathrm{e}^{(\mathrm{i}/\hbar)qP}\label{eq:appendix_d_rho_translation}
+\end{equation}
+以及
+\begin{equation}
+\frac{\partial}{\partial q}\rho(q)=\frac{-\mathrm{i}}{\hbar}[P,\rho].\label{eq:appendix_d_rho_derivative}
+\end{equation}
+由表象 (D.18) 我们有
+\begin{equation}
+\frac{\partial}{\partial q}\hat{\rho}_{\Psi}=\frac{\partial}{\partial q}\sum_{i}|i\rangle\langle i|.\label{eq:appendix_d_rho_op_derivative}
+\end{equation}
+因此$\hat{P}$的$\text{ph}$矩阵元具有如下形式：
+\begin{equation}
+P_{mi}=\mathrm{i}\hbar\langle m|\frac{\partial}{\partial q}|i\rangle=\mathrm{i}\hbar\int\mathrm{d}\boldsymbol{r}\,\varphi^{*}_{m}(\boldsymbol{r},q)\frac{\partial}{\partial q}\varphi_{i}(\boldsymbol{r},q).\label{eq:appendix_d_p_mi_matrix_el}
+\end{equation}
+非常常见的情况是，$|\Phi(q)\rangle$被确定为依赖于参数$q$的Hamilton量$H(q)$的HF解（参见第
+7.6 节）。由变分原理 (5.5)，我们得到 Feynman 定理 \cite{Fe39}：
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}q}\langle\Phi(q)|H(q)|\Phi(q)\rangle=\langle\Phi(q)|\frac{\partial H}{\partial q}|\Phi(q)\rangle.\label{eq:appendix_d_feynman_theorem}
+\end{equation}
+在$\partial H/\partial q$是单粒子算符的情况下，我们可以在线性响应理论中计算矩阵元$P_{mi}$（参见第
+8.5.3 节）。如果我们忽略剩余相互作用，简单的微扰论给出（参见例如第 3.4.2 节）：
+\begin{equation}
+\langle m|\frac{\partial}{\partial q}|i\rangle=\frac{\langle m|\partial H/\partial q|i\rangle}{\epsilon_{m}-\epsilon_{i}},\label{eq:appendix_d_perturbation_p_mi}
+\end{equation}
+其中$\epsilon_{m},\epsilon_{i}$是对应于算符$H(q)$的单粒子能量。
+
+\section{BCS和HFB态的密度}
+
+在广义直积波函数$|\Phi\rangle$的情况下（参见第 7.2.3 节），我们定义了广义密度矩阵：
+\begin{equation}
+\mathcal{R}=\begin{bmatrix}\langle\Phi|c^{\dagger}_{l}c_{l^{\prime}}|\Phi\rangle & \langle\Phi|c_{l^{\prime}}c_{l}|\Phi\rangle\\
+\langle\Phi|c^{\dagger}_{l}c^{\dagger}_{l^{\prime}}|\Phi\rangle & \langle\Phi|c_{l^{\prime}}c^{\dagger}_{l}|\Phi\rangle
+\end{bmatrix}=\begin{bmatrix}\rho_{ll^{\prime}} & \kappa_{ll^{\prime}}\\
+-\kappa^{*}_{ll^{\prime}} & 1-\rho^{*}_{ll^{\prime}}
+\end{bmatrix}.\label{eq:appendix_d_generalized_density}
+\end{equation}
+除正常密度$\rho$（式 D.9）之外，它还包含反常密度$\kappa$（也称为配对张量）。在基底的幺正变换$D$下（例如式
+D.11），矩阵$\rho$和$\kappa$按如下方式变换：
+\begin{equation}
+\rho\to D^{\dagger}\rho D,\quad\kappa\to D^{\dagger}\kappa D^{*}.\label{eq:appendix_d_rho_kappa_transform}
+\end{equation}
+因此我们可以在坐标空间中表示$\kappa$ {[}参见式 (C.26){]}：
+\begin{equation}
+\kappa(\boldsymbol{r},s;\boldsymbol{r}^{\prime},s^{\prime})=\langle\Phi|a(\boldsymbol{r}^{\prime},s^{\prime})a(\boldsymbol{r},s)|\Phi\rangle=\sum_{pq}\varphi_{p}(\boldsymbol{r},s)\kappa_{pq}\varphi_{q}(\boldsymbol{r}^{\prime},s^{\prime}).\label{eq:appendix_d_kappa_coord}
+\end{equation}
+在标准基（典范基）$|k\rangle$中（参见第 7.2.1 节）或者在纯BCS情况下，$\kappa_{pq}$具有典范形式
+(7.25)，我们得到：
+\begin{equation}
+\kappa(\boldsymbol{r},s;\boldsymbol{r}^{\prime},s^{\prime})=\sum_{k>0}(\varphi_{k}(\boldsymbol{r},s)\varphi_{\bar{k}}(\boldsymbol{r}^{\prime},s^{\prime})-\varphi_{\bar{k}}(\boldsymbol{r},s)\varphi_{k}(\boldsymbol{r}^{\prime},s^{\prime}))u_{k}v_{k}.\label{eq:appendix_d_kappa_canonical}
+\end{equation}
+通过使用广义密度$\mathcal{R}$，我们可以证明：我们对Slater行列式所获得的所有结果同样适用于这种情况。
+
+\section{密度矩阵的Wigner变换}
+
+密度矩阵的Wigner变换定义为\footnote{在下文中我们使用$\rho_{\sigma\sigma^{\prime}}(\boldsymbol{q}+\boldsymbol{s}/2,\boldsymbol{q}-\boldsymbol{s}/2)=\rho(\boldsymbol{r},\sigma;\boldsymbol{r}^{\prime},\sigma^{\prime})$，其中自旋指标为$\sigma,\sigma^{\prime}$，质心坐标为$\boldsymbol{q}=(\boldsymbol{r}+\boldsymbol{r}^{\prime})/2$，$\boldsymbol{s}=\boldsymbol{r}-\boldsymbol{r}^{\prime}$。}：
+\begin{equation}
+f_{\sigma\sigma^{\prime}}(\boldsymbol{q},\boldsymbol{p})=\int\mathrm{d}^{3}s\,\mathrm{e}^{-(\mathrm{i}/\hbar)\boldsymbol{p}\cdot\boldsymbol{s}}\rho_{\sigma\sigma^{\prime}}\left(\boldsymbol{q}+\frac{\boldsymbol{s}}{2},\boldsymbol{q}-\frac{\boldsymbol{s}}{2}\right).\label{eq:appendix_d_wigner_transform_def}
+\end{equation}
+由于$\rho$是厄米算符，若我们用$\rho^{\dagger}$代替$\rho$，式 (D.49) 必须保持不变。此外，如果我们取复共轭，我们看到$f_{\sigma\sigma^{\prime}}(\boldsymbol{q},\boldsymbol{p})$是自旋指标中的厄米矩阵。对角元$f_{\sigma\sigma}=f_{\sigma}$因此是$\boldsymbol{q}$和$\boldsymbol{p}$的实函数。如果我们忽略自旋-轨道力，Hamilton量在自旋反演下是不变的，因此$f_{\sigma\sigma}=f_{-\sigma}$。在此条件下，$f_{\sigma}(\boldsymbol{q},\boldsymbol{p},t)$的时间反演性质非常简单：$f_{\sigma}$在$\boldsymbol{p}$中为偶（奇），取决于$f_{\sigma}$在时间反演下是偶（奇）。
+
+式 (D.49) 的逆变换由下式给出：
+\begin{equation}
+\rho_{\sigma\sigma^{\prime}}(\boldsymbol{r},\boldsymbol{r}^{\prime})=\frac{1}{(2\mathrm{\pi}\hbar)^{3}}\int\mathrm{d}^{3}p\,\mathrm{e}^{(\mathrm{i}/\hbar)\boldsymbol{p}\cdot(\boldsymbol{r}-\boldsymbol{r}^{\prime})}f_{\sigma\sigma^{\prime}}\left(\frac{\boldsymbol{r}+\boldsymbol{r}^{\prime}}{2},\boldsymbol{p}\right).\label{eq:appendix_d_wigner_inverse}
+\end{equation}
+我们经常希望知道算符乘积的Wigner变换，例如$\rho_{\text{W}}=(\exp(\mathrm{i}\chi)\rho_{0}\exp(-\mathrm{i}\chi))_{\text{W}}$。为此，我们写出两个一般单粒子算符$A$和$B$之乘积的Wigner变换形式如下：
+\begin{equation}
+(AB)_{\text{W}}=\int\mathrm{d}^{3}r\,\mathrm{d}^{3}r^{\prime}\,\mathrm{d}^{3}r^{\prime\prime}\,\mathrm{e}^{-(\mathrm{i}/\hbar)\boldsymbol{p}\cdot(\boldsymbol{r}-\boldsymbol{r}^{\prime})}\delta\left(\boldsymbol{q}-\frac{\boldsymbol{r}+\boldsymbol{r}^{\prime}}{2}\right)\langle\boldsymbol{r}|A|\boldsymbol{r}^{\prime\prime}\rangle\langle\boldsymbol{r}^{\prime\prime}|B|\boldsymbol{r}^{\prime}\rangle.\label{eq:appendix_d_ab_wigner}
+\end{equation}
+逆Wigner变换 (D.50) 也可以写为：
+\begin{equation}
+\langle\boldsymbol{r}|A|\boldsymbol{r}^{\prime}\rangle=\frac{1}{(2\mathrm{\pi}\hbar)^{3}}\int\mathrm{d}^{3}p\,\mathrm{d}^{3}q\,A(\boldsymbol{q},\boldsymbol{p})\mathrm{e}^{(\mathrm{i}/\hbar)\boldsymbol{p}\cdot(\boldsymbol{r}-\boldsymbol{r}^{\prime})}\delta\left(\boldsymbol{q}-\frac{\boldsymbol{r}+\boldsymbol{r}^{\prime}}{2}\right).\label{eq:appendix_d_inverse_wigner_a}
+\end{equation}
+将式 (D.52) 代入式 (D.51) 并执行对$\boldsymbol{r},\boldsymbol{r}^{\prime}$和$\boldsymbol{r}^{\prime\prime}$的积分给出：
+\begin{align}
+(AB)_{\text{W}} & =\frac{1}{(\mathrm{\pi}\hbar)^{6}}\int\mathrm{d}^{3}p^{\prime}\,\mathrm{d}^{3}p^{\prime\prime}\,\mathrm{d}^{3}q^{\prime}\,\mathrm{d}^{3}q^{\prime\prime}\,\mathrm{e}^{2\mathrm{i}(\boldsymbol{p}^{\prime\prime}\cdot\boldsymbol{q}^{\prime}-\boldsymbol{p}^{\prime}\cdot\boldsymbol{q}^{\prime\prime})/\hbar}\nonumber \\
+ & \quad\times A(\boldsymbol{q}+\boldsymbol{q}^{\prime},\boldsymbol{p}+\boldsymbol{p}^{\prime})B(\boldsymbol{q}+\boldsymbol{q}^{\prime\prime},\boldsymbol{p}+\boldsymbol{p}^{\prime\prime}).\label{eq:appendix_d_ab_wigner_integral}
+\end{align}
+在式 (D.53) 中将$A(\boldsymbol{q}+\boldsymbol{q}^{\prime},\boldsymbol{p}+\boldsymbol{p}^{\prime})$和$B(\boldsymbol{q}+\boldsymbol{q}^{\prime\prime},\boldsymbol{p}+\boldsymbol{p}^{\prime\prime})$替换为
+\begin{equation}
+\begin{bmatrix}A\\
+B
+\end{bmatrix}(\boldsymbol{q}+\boldsymbol{q}^{\prime},\boldsymbol{p}+\boldsymbol{p}^{\prime})=\mathrm{e}^{\boldsymbol{q}^{\prime}\cdot\boldsymbol{\nabla}_{\boldsymbol{q}}+\boldsymbol{p}^{\prime}\cdot\boldsymbol{\nabla}_{\boldsymbol{p}}}\begin{bmatrix}A\\
+B
+\end{bmatrix}(\boldsymbol{q},\boldsymbol{p})\label{eq:appendix_d_taylor_operator}
+\end{equation}
+允许我们执行对$\boldsymbol{p}^{\prime\prime}$和$\boldsymbol{q}^{\prime\prime}$的积分，而$\delta$函数允许我们执行对$\boldsymbol{p}^{\prime}$和$\boldsymbol{q}^{\prime}$的积分。在仔细记录哪些导数作用在哪些变量上之后，我们得到
+\cite{Gr46,KK76,Vo77,BP77b}：
+\begin{equation}
+(AB)_{\text{W}}=A(\boldsymbol{q},\boldsymbol{p})\mathrm{e}^{(\mathrm{i}\hbar/2)\overleftrightarrow{\Lambda}}B(\boldsymbol{q},\boldsymbol{p})\label{eq:appendix_d_moyal_product}
+\end{equation}
+其中
+\begin{equation}
+\overleftrightarrow{\Lambda}=\overleftarrow{\boldsymbol{\nabla}}_{\boldsymbol{q}}\cdot\overrightarrow{\boldsymbol{\nabla}}_{\boldsymbol{p}}-\overleftarrow{\boldsymbol{\nabla}}_{\boldsymbol{p}}\cdot\overrightarrow{\boldsymbol{\nabla}}_{\boldsymbol{q}},\label{eq:appendix_d_lambda_operator}
+\end{equation}
+箭头方向表明梯度是向左还是向右起作用。
+
+作为一个小例子，让我们计算动能密度矩阵 (13.13) 的Wigner变换：
+\begin{align}
+\tau(\boldsymbol{q},\boldsymbol{p}) & =\left(\frac{\overleftarrow{\boldsymbol{\nabla}}}{\partial\boldsymbol{r}}\cdot\rho(\boldsymbol{r},\boldsymbol{r}^{\prime})\frac{\overrightarrow{\boldsymbol{\nabla}}}{\partial\boldsymbol{r}^{\prime}}\right)_{\text{W}}\nonumber \\
+ & =-\frac{\mathrm{i}}{\hbar}\boldsymbol{p}\,\mathrm{e}^{(\mathrm{i}\hbar/2)\overleftrightarrow{\Lambda}}f(\boldsymbol{q},\boldsymbol{p})\mathrm{e}^{(\mathrm{i}\hbar/2)\overleftrightarrow{\Lambda}}\frac{\mathrm{i}}{\hbar}\boldsymbol{p}\nonumber \\
+ & =\frac{\boldsymbol{p}^{2}}{\hbar^{2}}f(\boldsymbol{q},\boldsymbol{p})+\frac{1}{4}\frac{\partial^{2}}{\partial\boldsymbol{q}^{2}}f(\boldsymbol{q},\boldsymbol{p}).\label{eq:appendix_d_tau_wigner}
+\end{align}
+对$\boldsymbol{p}$积分给出密度矩阵的定域部分 {[}参见式 (D.50){]}：
+\begin{equation}
+\frac{\hbar^{2}}{2m}\tau(\boldsymbol{q})=\frac{1}{(2\mathrm{\pi}\hbar)^{3}}\int\mathrm{d}^{3}p\,\frac{\boldsymbol{p}^{2}}{2m}f(\boldsymbol{q},\boldsymbol{p})+\frac{1}{4}\frac{\hbar^{2}}{2m}\Delta\rho(\boldsymbol{q}).\label{eq:appendix_d_kinetic_energy_density}
+\end{equation}
+在动能的实际计算中，式 (D.58) 中的第二项没有贡献，因为它是矢量场的散度。利用公式 (D.55)，也非常容易计算对易子的Wigner变换：
+\begin{equation}
+\frac{1}{\hbar}[A,B]_{\text{W}}=\frac{2\mathrm{i}}{\hbar}A(\boldsymbol{q},\boldsymbol{p})\cdot\sin\left(\frac{\hbar}{2}\overleftrightarrow{\Lambda}\right)B(\boldsymbol{q},\boldsymbol{p}).\label{eq:appendix_d_commutator_wigner}
+\end{equation}
+在$\hbar$的最低阶上，该对易子恰好给出经典Poisson括号。

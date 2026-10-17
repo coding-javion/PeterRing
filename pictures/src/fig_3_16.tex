@@ -1,0 +1,132 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{axis}[
+    width=9.5cm, height=9.8cm,
+    xmin=0, xmax=1.2,
+    ymin=0, ymax=300,
+    axis line style={line width=0.85pt},
+    tick style={line width=0.7pt, black},
+    tick align=inside,
+    tick pos=both,
+    xtick={0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2},
+    xticklabels={$0$, $0.2$, $0.4$, $0.6$, $0.8$, $1.0$, $1.2$},
+    ytick={0, 50, 100, 150, 200, 250, 300},
+    yticklabels={$0$, $50$, $100$, $150$, $200$, $250$, $300$},
+    ticklabel style={font=\normalsize},
+    xlabel={$(\hbar\omega)^2 \quad (\mathrm{MeV}^2)$},
+    ylabel={$\dfrac{2\mathcal{J}}{\hbar^2} \quad (\mathrm{MeV}^{-1})$},
+    xlabel style={font=\normalsize, at={(axis description cs:0.5, -0.08)}, anchor=north},
+    ylabel style={font=\normalsize, at={(axis description cs:-0.12, 0.5)}, anchor=south},
+    clip=false
+  ]
+
+    % Title atop left
+    \node[anchor=north west, align=left, font=\normalsize] at (axis cs:0.06, 285) {
+      \textbf{$^{154}\mathrm{Sm}$}\\[3pt]
+      \textbf{(LIQ.\ DROP)}
+    };
+
+    % Smooth backbending curve
+    \addplot[
+      line width=1.1pt,
+      color=black,
+      smooth,
+      tension=0.6
+    ] coordinates {
+      (0.000, 124.0)
+      (0.120, 125.1)
+      (0.230, 127.0)
+      (0.380, 129.5)
+      (0.560, 134.0)
+      (0.750, 138.5)
+      (0.850, 141.7)
+      (0.940, 145.0)
+      (0.985, 146.5)
+      (1.025, 147.5)
+      (1.060, 148.8)
+      (1.090, 152.0)
+      (1.060, 155.0)
+      (0.980, 162.0)
+      (0.880, 172.0)
+      (0.740, 198.0)
+      (0.660, 215.0)
+      (0.610, 230.0)
+      (0.550, 252.0)
+      (0.535, 260.0)
+      (0.500, 275.0)
+    };
+
+    % Markers and Spin labels
+    % Format: \node at (...) {$\times$}; \node at (...) {$I$};
+    % I = 0
+    \node[font=\normalsize] at (axis cs:0.000, 124.0) {$\times$};
+    \node[below=4pt, font=\small, fill=white, inner sep=0.5pt] at (axis cs:0.025, 124.0) {$I = 0$};
+
+    % I = 30
+    \node[font=\normalsize] at (axis cs:0.230, 127.0) {$\times$};
+    \node[below=4pt, font=\small] at (axis cs:0.230, 127.0) {$30$};
+
+    % I = 40
+    \node[font=\normalsize] at (axis cs:0.380, 129.5) {$\times$};
+    \node[below=4pt, font=\small] at (axis cs:0.380, 129.5) {$40$};
+
+    % I = 50
+    \node[font=\normalsize] at (axis cs:0.560, 134.0) {$\times$};
+    \node[below=4pt, font=\small] at (axis cs:0.560, 134.0) {$50$};
+
+    % I = 60
+    \node[font=\normalsize] at (axis cs:0.750, 138.5) {$\times$};
+    \node[below=4pt, font=\small] at (axis cs:0.750, 138.5) {$60$};
+
+    % I = 70
+    \node[font=\normalsize] at (axis cs:0.940, 145.0) {$\times$};
+    \node[below=3pt, font=\footnotesize] at (axis cs:0.935, 145.0) {$70$};
+
+    % I = 72
+    \node[font=\normalsize] at (axis cs:0.985, 146.5) {$\times$};
+    \node[font=\footnotesize, fill=white, inner sep=0.6pt] at (axis cs:0.985, 153.0) {$72$};
+
+    % I = 74
+    \node[font=\normalsize] at (axis cs:1.025, 147.5) {$\times$};
+    \node[below=3pt, font=\footnotesize] at (axis cs:1.020, 147.5) {$74$};
+
+    % I = 76
+    \node[font=\normalsize] at (axis cs:1.060, 148.8) {$\times$};
+    \node[below=9pt, font=\footnotesize] at (axis cs:1.065, 148.8) {$76$};
+
+    % I = 78
+    \node[font=\normalsize] at (axis cs:1.090, 152.0) {$\times$};
+    \node[above right=-1pt, font=\small] at (axis cs:1.090, 152.0) {$78$};
+
+    % I = 80
+    \node[font=\normalsize] at (axis cs:0.980, 162.0) {$\times$};
+    \node[above=3pt, font=\small] at (axis cs:0.980, 162.0) {$80$};
+
+    % I = 85
+    \node[font=\normalsize] at (axis cs:0.740, 198.0) {$\times$};
+    \node[above right=1pt, font=\small] at (axis cs:0.740, 198.0) {$85$};
+
+    % I = 90
+    \node[font=\normalsize] at (axis cs:0.610, 230.0) {$\times$};
+    \node[above right=1pt, font=\small] at (axis cs:0.610, 230.0) {$90$};
+
+    % I = 95
+    \node[font=\normalsize] at (axis cs:0.535, 260.0) {$\times$};
+    \node[above right=1pt, font=\small] at (axis cs:0.535, 260.0) {$95$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

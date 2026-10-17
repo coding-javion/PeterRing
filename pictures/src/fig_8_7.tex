@@ -1,0 +1,67 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Column positions
+  \def\xone{2.0}
+  \def\xtwo{6.5}
+  \def\w{0.9} % half width of level line
+
+  % Levels parameters
+  \def\deltaH{3.2}   % Delta shift
+  \def\dOne{0.8}     % first excitation
+  \def\dTwo{0.28}    % second excitation above first
+
+  % Dashed baseline connecting the columns
+  \draw[dashed, line width=0.8pt] ({\xone - \w}, 0) -- ({\xtwo - \w}, 0);
+
+  % ----------------------------------------------------
+  % Right column: (N, Z)
+  % ----------------------------------------------------
+  % Ground state and excited levels
+  \draw[line width=1.2pt] ({\xtwo - \w}, 0) -- ({\xtwo + \w}, 0);
+  \draw[line width=1.1pt] ({\xtwo - \w}, \dOne) -- ({\xtwo + \w}, \dOne);
+  \draw[line width=1.1pt] ({\xtwo - \w}, {\dOne + \dTwo}) -- ({\xtwo + \w}, {\dOne + \dTwo});
+
+  % Right column brace & label
+  \draw[decorate, decoration={brace, amplitude=5pt}, line width=0.8pt] 
+    ({\xtwo + \w + 0.15}, {\dOne + \dTwo + 0.05}) -- ({\xtwo + \w + 0.15}, -0.05)
+    node[midway, right=6pt, font=\normalsize] {$T, T_3 = T$};
+
+  % Label below right column
+  \node[font=\normalsize] at (\xtwo, -0.45) {$(N, Z)$};
+
+  % ----------------------------------------------------
+  % Left column: (N-1, Z+1)
+  % ----------------------------------------------------
+  % Vertical dimension arrow for Delta
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, line width=0.85pt] 
+    (\xone, 0.05) -- (\xone, {\deltaH - 0.05})
+    node[midway, right=2pt, font=\normalsize] {$\Delta$};
+
+  % Analog states
+  \draw[line width=1.2pt] ({\xone - \w}, \deltaH) -- ({\xone + \w}, \deltaH);
+  \draw[line width=1.1pt] ({\xone - \w}, {\deltaH + \dOne}) -- ({\xone + \w}, {\deltaH + \dOne});
+  \draw[line width=1.1pt] ({\xone - \w}, {\deltaH + \dOne + \dTwo}) -- ({\xone + \w}, {\deltaH + \dOne + \dTwo});
+
+  % Left column brace & label
+  \draw[decorate, decoration={brace, amplitude=5pt}, line width=0.8pt] 
+    ({\xone + \w + 0.15}, {\deltaH + \dOne + \dTwo + 0.05}) -- ({\xone + \w + 0.15}, {\deltaH - 0.05})
+    node[midway, right=6pt, font=\normalsize] {$T, T_3 = T - 1$};
+
+  % Label below left column
+  \node[font=\normalsize] at (\xone, -0.45) {$(N - 1, Z + 1)$};
+
+\end{tikzpicture}
+\end{document}

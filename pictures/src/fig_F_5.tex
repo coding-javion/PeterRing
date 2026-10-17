@@ -1,0 +1,129 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings, decorations.pathmorphing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5pt, width=3.5pt]}}
+    },
+    postaction={decorate}
+  },
+  phonon/.style={
+    decorate,
+    decoration={snake, amplitude=1.4pt, segment length=4.5pt}
+  }
+]
+
+  % ========================================================
+  % ROW 1: (a) Dyson equation with phonon
+  % ========================================================
+  \begin{scope}[shift={(0, 1.4)}]
+
+    % Term 1: Full Green function G (solid line)
+    \draw[thick, line width=1.1pt, arrowed] (-4.6, 0) -- (-3.2, 0);
+
+    % Equals sign
+    \node[font=\large] at (-2.4, 0) {$=$};
+
+    % Term 2: Free Green function G0 (dashed line)
+    \draw[thick, dashed, line width=1pt, arrowed] (-1.6, 0) -- (-0.2, 0);
+
+    % Plus sign
+    \node[font=\large] at (0.6, 0) {$+$};
+
+    % Term 3: G0 Sigma_phonon G
+    \begin{scope}[shift={(1.4, 0)}]
+      % Incoming G0
+      \draw[thick, dashed, line width=1pt, arrowed] (0, 0) -- (1.4, 0);
+
+      % Bubble
+      \coordinate (BL) at (1.4, 0);
+      \coordinate (BR) at (3.0, 0);
+
+      % Top arc: phonon wavy line
+      \draw[thick, line width=0.9pt, phonon] (BL) to[out=60, in=120] (BR);
+
+      % Bottom arc: dashed line G0
+      \draw[thick, dashed, line width=1pt, arrowed] (BL) to[out=-60, in=-120] (BR);
+
+      % Outgoing G
+      \draw[thick, line width=1.1pt, arrowed] (BR) -- (4.4, 0);
+
+      % Vertices
+      \filldraw[black] (BL) circle (2pt);
+      \filldraw[black] (BR) circle (2pt);
+    \end{scope}
+
+  \end{scope}
+
+  % ========================================================
+  % ROW 2: (b) Phonon vertex and amputated form
+  % ========================================================
+  \begin{scope}[shift={(0, -1.2)}]
+
+    % LHS: Vertex dot with phonon line
+    \coordinate (D1) at (-4.6, 0);
+    \draw[thick, line width=0.9pt, phonon] (D1) -- (-3.0, 0);
+    \filldraw[black] (D1) circle (2pt);
+
+    % Equals sign
+    \node[font=\large] at (-2.2, 0) {$=$};
+
+    % Middle: Bubble with outgoing phonon
+    \begin{scope}[shift={(-1.4, 0)}]
+      \coordinate (MBL) at (0, 0);
+      \coordinate (MBR) at (1.6, 0);
+
+      % Top arc: particle line (solid)
+      \draw[thick, line width=1.1pt, arrowed] (MBL) to[out=60, in=120] (MBR);
+
+      % Bottom arc: hole line (dashed, arrow pointing left)
+      \draw[thick, dashed, line width=1pt, arrowed] (MBR) to[out=-120, in=-60] (MBL);
+
+      % Outgoing phonon
+      \draw[thick, line width=0.9pt, phonon] (MBR) -- (2.9, 0);
+
+      % Vertices
+      \filldraw[black] (MBL) circle (2pt);
+      \filldraw[black] (MBR) circle (2pt);
+    \end{scope}
+
+    % "or" text
+    \node[font=\normalsize] at (2.6, 0) {$\text{or}$};
+
+    % RHS: Phonon propagator equals amputated vertex
+    \begin{scope}[shift={(3.6, 0)}]
+      % Phonon propagator
+      \draw[thick, line width=0.9pt, phonon] (0, 0) -- (1.4, 0);
+
+      % Equals sign
+      \node[font=\large] at (2.0, 0) {$=$};
+
+      % Amputated vertex
+      \coordinate (AV) at (3.6, 0);
+      % Incoming particle (solid)
+      \draw[thick, line width=1.1pt, arrowed] (2.7, 0.45) to[out=0, in=135] (AV);
+      % Outgoing hole (dashed, pointing away from AV)
+      \draw[thick, dashed, line width=1pt, arrowed] (AV) to[out=-135, in=0] (2.7, -0.45);
+
+      % Outgoing phonon
+      \draw[thick, line width=0.9pt, phonon] (AV) -- (4.8, 0);
+
+      \filldraw[black] (AV) circle (2pt);
+    \end{scope}
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

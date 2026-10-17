@@ -1,0 +1,95 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\wBox{1.2}
+  \def\hL{1.6}
+  \def\hR{2.8}
+
+  % =============================================================
+  % PANEL a)
+  % =============================================================
+  \begin{scope}[shift={(0,0)}]
+    % Boxes
+    \draw[line width=1.2pt] (-\wBox, 0) rectangle (0, \hL);
+    \draw[line width=1.2pt] (0, 0) rectangle (\wBox, \hR);
+
+    % Left: 4 filled dots
+    \foreach \y in {0.28, 0.68, 1.08, 1.40} {
+      \fill (-0.5*\wBox, \y) circle (2.6pt);
+    }
+
+    % Right: 7 filled dots
+    \foreach \y in {0.28, 0.65, 1.02, 1.39, 1.76, 2.13, 2.50} {
+      \fill (0.5*\wBox, \y) circle (2.6pt);
+    }
+
+    \node[anchor=north, font=\large] at (0, -0.45) {a)};
+  \end{scope}
+
+  % =============================================================
+  % PANEL b)
+  % =============================================================
+  \begin{scope}[shift={(3.8,0)}]
+    % Boxes
+    \draw[line width=1.2pt] (-\wBox, 0) rectangle (0, \hL);
+    \draw[line width=1.2pt] (0, 0) rectangle (\wBox, \hR);
+
+    % Left: 1 hole inside, 1 particle above
+    \draw[line width=1.2pt] (-0.5*\wBox, 0.95) circle (2.8pt);
+    \fill (-0.5*\wBox, \hL + 0.35) circle (2.6pt);
+
+    % Right: 1 hole inside near top, 1 particle above
+    \draw[line width=1.2pt] (0.5*\wBox, \hR - 0.32) circle (2.8pt);
+    \fill (0.5*\wBox, \hR + 0.38) circle (2.6pt);
+
+    \node[anchor=north, font=\large] at (0, -0.45) {b)};
+  \end{scope}
+
+  % =============================================================
+  % PANEL c)
+  % =============================================================
+  \begin{scope}[shift={(7.6,0)}]
+    % Boxes
+    \draw[line width=1.2pt] (-\wBox, 0) rectangle (0, \hL);
+    \draw[line width=1.2pt] (0, 0) rectangle (\wBox, \hR);
+
+    % Left: 2 holes inside, 2 particles above
+    \draw[line width=1.2pt] (-0.5*\wBox, 0.55) circle (2.8pt);
+    \draw[line width=1.2pt] (-0.5*\wBox, 1.05) circle (2.8pt);
+    \fill (-0.5*\wBox, \hL + 0.35) circle (2.6pt);
+    \fill (-0.5*\wBox, \hL + 0.80) circle (2.6pt);
+
+    \node[anchor=north, font=\large] at (0, -0.45) {c)};
+  \end{scope}
+
+  % =============================================================
+  % PANEL d)
+  % =============================================================
+  \begin{scope}[shift={(11.4,0)}]
+    % Boxes
+    \draw[line width=1.2pt] (-\wBox, 0) rectangle (0, \hL);
+    \draw[line width=1.2pt] (0, 0) rectangle (\wBox, \hR);
+
+    % Right: 2 holes inside, 2 particles above
+    \draw[line width=1.2pt] (0.5*\wBox, \hR - 0.72) circle (2.8pt);
+    \draw[line width=1.2pt] (0.5*\wBox, \hR - 0.28) circle (2.8pt);
+    \fill (0.5*\wBox, \hR + 0.38) circle (2.6pt);
+    \fill (0.5*\wBox, \hR + 0.82) circle (2.6pt);
+
+    \node[anchor=north, font=\large] at (0, -0.45) {d)};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

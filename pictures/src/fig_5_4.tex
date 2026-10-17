@@ -1,0 +1,105 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+  \begin{axis}[
+    width=13.0cm, height=9.0cm,
+    xmin=2.15, xmax=3.45,
+    ymin=-14.5, ymax=1.2,
+    axis lines=none,
+    clip=false
+  ]
+    % --- Custom Axes matching original layout ---
+    % Vertical E axis at x = 2.22
+    \draw[line width=0.9pt, ->] (2.22, -14.2) -- (2.22, 1.4);
+    \node[anchor=south, align=center, font=\normalsize] at (2.12, 0.4) {
+      $E$\\[2pt]
+      $(\mathrm{MeV})$
+    };
+
+    % Horizontal r_c axis along y = 0
+    \draw[line width=0.9pt, ->] (2.18, 0) -- (3.42, 0);
+    \node[anchor=south, font=\normalsize] at (3.25, 0.28) {$r_{\mathrm{c}}\ (\mathrm{fm})$};
+
+    % Y-axis ticks and labels
+    \draw[line width=0.8pt] (2.19, 0) -- (2.22, 0);
+    \node[anchor=east, font=\normalsize] at (2.18, 0) {$0$};
+    \draw[line width=0.8pt] (2.19, -2) -- (2.22, -2);
+    \node[anchor=east, font=\normalsize] at (2.18, -2) {$-2$};
+    \draw[line width=0.8pt] (2.19, -4) -- (2.22, -4);
+    \node[anchor=east, font=\normalsize] at (2.18, -4) {$-4$};
+    \draw[line width=0.8pt] (2.19, -6) -- (2.22, -6);
+    \node[anchor=east, font=\normalsize] at (2.18, -6) {$-6$};
+    \draw[line width=0.8pt] (2.19, -8) -- (2.22, -8);
+    \node[anchor=east, font=\normalsize] at (2.18, -8) {$-8$};
+    \draw[line width=0.8pt] (2.19, -10) -- (2.22, -10);
+    \node[anchor=east, font=\normalsize] at (2.18, -10) {$-10$};
+    \draw[line width=0.8pt] (2.19, -12) -- (2.22, -12);
+    \node[anchor=east, font=\normalsize] at (2.18, -12) {$-12$};
+    \draw[line width=0.8pt] (2.19, -14) -- (2.22, -14);
+    \node[anchor=east, font=\normalsize] at (2.18, -14) {$-14$};
+
+    % X-axis ticks and labels
+    \draw[line width=0.8pt] (2.3, 0) -- (2.3, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.3, 0.28) {$2.3$};
+    \draw[line width=0.8pt] (2.4, 0) -- (2.4, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.4, 0.28) {$2.4$};
+    \draw[line width=0.8pt] (2.5, 0) -- (2.5, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.5, 0.28) {$2.5$};
+    \draw[line width=0.8pt] (2.6, 0) -- (2.6, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.6, 0.28) {$2.6$};
+    \draw[line width=0.8pt] (2.7, 0) -- (2.7, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.7, 0.28) {$2.7$};
+    \draw[line width=0.8pt] (2.8, 0) -- (2.8, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.8, 0.28) {$2.8$};
+    \draw[line width=0.8pt] (2.9, 0) -- (2.9, 0.25);
+    \node[anchor=south, font=\normalsize] at (2.9, 0.28) {$2.9$};
+    \draw[line width=0.8pt] (3.0, 0) -- (3.0, 0.25);
+    \node[anchor=south, font=\normalsize] at (3.0, 0.28) {$3.0$};
+    \draw[line width=0.8pt] (3.1, 0) -- (3.1, 0.25);
+    \node[anchor=south, font=\normalsize] at (3.1, 0.28) {$3.1$};
+
+    % Solid curve (BHF calculations)
+    \addplot[line width=1.1pt, black, smooth, tension=0.4] coordinates {
+      (2.34, -13.0) (2.40, -11.0) (2.46, -9.0) (2.55, -6.5) (2.65, -4.7) (2.80, -3.2) (2.95, -2.4) (3.06, -2.1)
+    };
+
+    % Solid curve data points
+    \addplot[only marks, mark=*, mark size=1.8pt, black] coordinates {
+      (2.369, -12.14) (2.45, -9.15) (2.564, -6.06) (2.587, -5.68) (2.616, -4.65) (2.658, -4.56) (2.706, -4.09) (2.934, -2.41) (3.019, -2.13)
+    };
+
+    % Dashed curve (including three-body correlations)
+    \addplot[line width=1.1pt, black, dashed, smooth, tension=0.4] coordinates {
+      (2.34, -13.6) (2.40, -11.6) (2.46, -9.6) (2.55, -7.0) (2.65, -5.3) (2.80, -3.9) (2.95, -3.3) (3.08, -3.25)
+    };
+
+    % Dashed curve data points
+    \addplot[only marks, mark=*, mark size=1.8pt, black] coordinates {
+      (2.359, -13.08) (2.44, -9.99) (2.564, -6.71) (2.587, -6.25) (2.625, -5.68) (2.658, -5.03) (2.682, -5.03) (2.901, -3.44) (2.967, -3.25) (3.067, -3.25)
+    };
+
+    % Experimental error bar
+    \draw[line width=0.8pt] (2.644, -7.65) -- (2.644, -8.25);
+    \draw[line width=0.8pt] (2.730, -7.65) -- (2.730, -8.25);
+    \draw[line width=0.8pt] (2.644, -7.95) -- (2.730, -7.95);
+    \node[anchor=west, font=\normalsize] at (2.74, -8.25) {$\mathrm{Exp.}$};
+
+    % Nucleus label at bottom right
+    \node[anchor=south east, font=\LARGE] at (3.05, -10.5) {$^{16}\mathrm{O}$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

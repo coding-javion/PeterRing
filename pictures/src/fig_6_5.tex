@@ -1,0 +1,59 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ==========================================
+  % Left Panel: Delta = 0 (Free Fermi gas step)
+  % ==========================================
+  \begin{scope}[shift={(0,0)}]
+    % Axes
+    \draw[thick, ->] (-0.2, 0) -- (4.2, 0) node[below=2pt, font=\normalsize] {$\varepsilon_k$};
+    \draw[thick, ->] (0, -0.2) -- (0, 3.2) node[left=2pt, font=\normalsize] {$v_k^2$};
+
+    % Ticks and labels
+    \draw[thick] (-0.08, 2.0) -- (0.08, 2.0) node[left=4pt, font=\normalsize] {$1$};
+    \draw[thick] (2.5, -0.08) -- (2.5, 0.08) node[below=4pt, font=\normalsize] {$\lambda$};
+
+    % Title
+    \node[font=\large] at (2.5, 3.0) {$\Delta = 0$};
+
+    % Step function curve
+    \draw[very thick, line width=1.4pt] (0, 2.0) -- (2.5, 2.0) -- (2.5, 0.005) -- (3.9, 0.005);
+  \end{scope}
+
+  % ==========================================
+  % Right Panel: Delta != 0 (BCS smeared Fermi surface)
+  % ==========================================
+  \begin{scope}[shift={(6.2,0)}]
+    % Axes
+    \draw[thick, ->] (-0.2, 0) -- (4.2, 0) node[below=2pt, font=\normalsize] {$\varepsilon_k$};
+    \draw[thick, ->] (0, -0.2) -- (0, 3.2) node[left=2pt, font=\normalsize] {$v_k^2$};
+
+    % Ticks and labels
+    \draw[thick] (-0.08, 2.0) -- (0.08, 2.0) node[left=4pt, font=\normalsize] {$1$};
+    \draw[thick] (2.5, -0.08) -- (2.5, 0.08) node[below=4pt, font=\normalsize] {$\lambda$};
+
+    % Title
+    \node[font=\large] at (2.5, 3.0) {$\Delta \neq 0$};
+
+    % Dashed line at lambda
+    \draw[thick, dashed] (2.5, 0) -- (2.5, 1.0);
+
+    % Smooth BCS curve: v_k^2 = 0.5 * (1 - (x - lambda)/sqrt((x - lambda)^2 + Delta^2))
+    \draw[very thick, line width=1.4pt, smooth, domain=0:4.0, samples=100]
+      plot (\x, {1.0 * (1.0 - (\x - 2.5)/sqrt((\x - 2.5)*(\x - 2.5) + 0.55*0.55))});
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

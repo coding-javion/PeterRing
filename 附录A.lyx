@@ -1,0 +1,448 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\end_preamble
+\use_default_options true
+\begin_modules
+beautiful-booknotes
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+实验室坐标系和体固坐标系中的角动量代数
+\end_layout
+
+\begin_layout Standard
+整本书我们都使用Edmonds
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ed57"
+literal "true"
+
+\end_inset
+对于角动量耦合的约定和术语。唯一我们需要细细探究的地方就是如何把角动量转换到体坐标系。我们应当在Edmonds[Ed
+ 57, Chap,IV]的意义下做这个转换。
+\end_layout
+
+\begin_layout Standard
+为了研究Hilbert空间中的波函数在坐标系转动下的性质，我们应当首先考虑一个一维的例子
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+明明是二维。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/绘图.pdf
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+令
+\begin_inset Formula $f(\varphi)$
+\end_inset
+
+是一个只依赖于相对于体系
+\begin_inset Formula $z$
+\end_inset
+
+轴的函数。在体系转动
+\begin_inset Formula $\alpha$
+\end_inset
+
+角后，空间中固定一点P对应的角
+\begin_inset Formula $\varphi$
+\end_inset
+
+变为角
+\begin_inset Formula $\tilde{\varphi}=\varphi-\alpha$
+\end_inset
+
+。因为函数
+\begin_inset Formula $f$
+\end_inset
+
+在固定点P的值在坐标系变换下不变，原坐标系中的函数
+\begin_inset Formula $f$
+\end_inset
+
+变成了新坐标系中的一个新函数
+\begin_inset Formula $\tilde{f}$
+\end_inset
+
+，具有性质：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{f}(\tilde{\varphi})=f(\varphi)=f(\tilde{\varphi}+\alpha)=\mathrm{e}^{\mathrm{i}\alpha J_{z}}f(\tilde{\varphi})
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+或者，如果我们改变一下自变量
+\begin_inset Flex Comment
+status collapsed
+
+\begin_layout Plain Layout
+nomenclature不是这么翻译，我根据语境改的。
+\end_layout
+
+\end_inset
+
+，使用
+\begin_inset Formula $\varphi$
+\end_inset
+
+而不是
+\begin_inset Formula $\tilde{\varphi}$
+\end_inset
+
+，
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{f}(\varphi)=\mathrm{e}^{\mathrm{i}\alpha J_{z}}f(\varphi)\quad\text{这里}J_{z}=\frac{1}{\mathrm{i}}\frac{\partial}{\partial\varphi}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在三维旋转的情况，我们使用在
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Chap.I"
+key "Ed57"
+literal "true"
+
+\end_inset
+中定义的Euler角
+\begin_inset Formula $\Omega=(\alpha,\beta,\gamma)$
+\end_inset
+
+：在转动了
+\begin_inset Formula $\Omega$
+\end_inset
+
+的情况下，波函数
+\begin_inset Formula $|\Psi\rangle$
+\end_inset
+
+变为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\tilde{\Psi}\rangle=R(\Omega)|\Psi\rangle\label{eq:转动下波函数的变换}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里酉旋转算符：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R(\Omega)=\mathrm{e}^{\mathrm{i}\alpha J_{z}}\mathrm{e}^{\mathrm{i}\beta J_{y}}\mathrm{e}^{\mathrm{i}\gamma J_{z}}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $J_{x},J_{y},J_{z}$
+\end_inset
+
+作用于坐标系
+\begin_inset Formula $\boldsymbol{x}_{1},\dots,\boldsymbol{x}_{A}$
+\end_inset
+
+上。正如在
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ed57"
+literal "true"
+
+\end_inset
+中讨论的，我们也可以引入自旋。
+\begin_inset Formula $\boldsymbol{J}$
+\end_inset
+
+就是轨道角动量和自旋角动量的和。
+\end_layout
+
+\begin_layout Standard
+和Hilbert空间中的矢量变换类似，我们可以得到一个算符
+\begin_inset Formula $T$
+\end_inset
+
+的变换：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T\rightarrow\tilde{T}=RTR^{\dagger}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+根据定义，对于一个球谐张量
+\begin_inset Formula $T_{\lambda\mu}$
+\end_inset
+
+[Ed 57, Eq.
+ (5.2.1)]我们发现：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{T}_{\lambda\mu}=R(\Omega)T_{\lambda\mu}R^{\dagger}(\Omega)=\sum_{\mu^{\prime}}D_{\mu^{\prime}\mu}^{\lambda}(\Omega)T_{\lambda\mu^{\prime}}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里Wigner函数
+\begin_inset Formula $D_{\mu^{\prime}\mu}^{\lambda}(\Omega)$
+\end_inset
+
+可以给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D_{\mu^{\prime}\mu}^{\lambda}(\Omega)=\langle\lambda\mu^{\prime}|R(\Omega)|\lambda\mu\rangle
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们现在希望研究在特定时间
+\begin_inset Formula $t$
+\end_inset
+
+从实验室坐标系到体固坐标系做的转动
+\begin_inset Formula $\Omega$
+\end_inset
+
+。记住角动量算符
+\begin_inset Formula $J_{x},J_{y},J_{z}$
+\end_inset
+
+是绕
+\begin_inset Formula $x,y,z$
+\end_inset
+
+轴无穷小转动的生成元，我们可以把这些算符表示为关于Euler角
+\begin_inset Formula $\alpha,\beta,\gamma$
+\end_inset
+
+的微分算符。例如，我们能通过改变Euler角
+\begin_inset Formula $\alpha$
+\end_inset
+
+一个
+\begin_inset Formula $\delta\varphi$
+\end_inset
+
+的小量而不改变体固坐标系得到绕
+\begin_inset Formula $z$
+\end_inset
+
+-轴
+\begin_inset Formula $\delta\varphi$
+\end_inset
+
+角的转动，也就是说：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L_{z}=-\frac{1}{\mathrm{i}}\frac{\partial}{\partial\alpha}\hat{=}J_{z}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用同样的方式，从Euler角的定义
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ed57"
+literal "true"
+
+\end_inset
+中我们得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+-\frac{1}{\mathrm{i}}\frac{\partial}{\partial\beta}\equiv J_{y^{\prime}}=\mathrm{e}^{\mathrm{i}\alpha J_{z}}J_{y}\mathrm{e}^{-\mathrm{i}\alpha J_{z}}=\cos\alpha J_{y}+\sin\alpha J_{x}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+和：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+-\frac{1}{\mathrm{i}}\frac{\partial}{\partial\gamma} & \equiv J_{z^{\prime\prime}}=\mathrm{e}^{\mathrm{i}\alpha J_{z}}\mathrm{e}^{\mathrm{i}\beta J_{y}}J_{z}\mathrm{e}^{-\mathrm{i}\beta J_{y}}\mathrm{e}^{-\mathrm{i}\alpha J_{z}}\nonumber \\
+ & =\cos\beta J_{z}-\sin\beta(\cos\alpha J_{x}-\sin\alpha J_{y})
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+反解得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+L_{x} & \equiv\frac{1}{\mathrm{i}}\left(-\cos\alpha\cot\beta\frac{\partial}{\partial\alpha}-\sin\alpha\frac{\partial}{\partial\beta}+\frac{\cos\alpha}{\sin\beta}\frac{\partial}{\partial\gamma}\right)\hat{=}J_{x}\nonumber \\
+L_{y} & \equiv\frac{1}{\mathrm{i}}\left(\sin\alpha\cot\beta\frac{\partial}{\partial\alpha}-\cos\alpha\frac{\partial}{\partial\beta}-\frac{\sin\alpha}{\sin\beta}\frac{\partial}{\partial\gamma}\right)\hat{=}J_{y}\\
+L_{z} & \equiv\frac{1}{\mathrm{i}}\left(-\frac{\partial}{\partial\alpha}\right)\hat{=}J_{z}\nonumber 
+\end{align}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+它们是角动量
+\end_layout
+
+\end_body
+\end_document

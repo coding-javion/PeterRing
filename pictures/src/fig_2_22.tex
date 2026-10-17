@@ -1,0 +1,43 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Parameters for hyperbolas
+  \def\slope{0.52}
+  \def\DeltaHalf{0.38}
+  \def\xMax{3.6}
+
+  % Diabatic crossing lines in the central gap region (dashed)
+  \def\xGap{1.15}
+  \draw[line width=0.8pt, dashed] (-\xGap, {-\slope*\xGap}) -- (\xGap, {\slope*\xGap});
+  \draw[line width=0.8pt, dashed] (-\xGap, {\slope*\xGap}) -- (\xGap, {-\slope*\xGap});
+
+  % Adiabatic hyperbolic curves (solid lines)
+  % y = \pm \sqrt{ (\slope * x)^2 + \DeltaHalf^2 }
+  \draw[line width=1.3pt, domain=-\xMax:\xMax, samples=100, smooth]
+    plot (\x, {sqrt((\slope*\x)^2 + \DeltaHalf^2)});
+
+  \draw[line width=1.3pt, domain=-\xMax:\xMax, samples=100, smooth]
+    plot (\x, {-sqrt((\slope*\x)^2 + \DeltaHalf^2)});
+
+  % Energy gap \Delta\varepsilon: double-headed vertical arrow
+  \draw[line width=0.9pt, <->] (0, {-\DeltaHalf + 0.02}) -- (0, {\DeltaHalf - 0.02});
+  \node[anchor=west, font=\large] at (0.12, 0) {$\Delta\varepsilon$};
+
+  % Parameter axis \delta at the bottom
+  \draw[line width=1.0pt, ->] (-\xMax, -2.4) -- (\xMax, -2.4);
+  \node[anchor=north east, font=\large] at (\xMax, -2.5) {$\delta$};
+
+\end{tikzpicture}
+\end{document}

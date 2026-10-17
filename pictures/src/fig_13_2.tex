@@ -1,0 +1,60 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: x in MeV (0 to 24), y in nucleon number N (0 to 26)
+  \def\xscale{0.32}
+  \def\yscale{0.28}
+
+  % Axes with arrows
+  \draw[->, line width=0.85pt] (2*\xscale, 0) -- (23.8*\xscale, 0) node[below right=1pt, font=\normalsize] {$\lambda$};
+  \draw[->, line width=0.85pt] (2*\xscale, 0) -- (2*\xscale, 25.5*\yscale);
+
+  % Y-axis label and subtitle
+  \node[anchor=south west, font=\normalsize] at (2*\xscale, 22.8*\yscale) {$N(\lambda)$};
+  \node[anchor=south west, font=\small] at (2*\xscale, 20.8*\yscale) {$\hbar\omega = 5\,\mathrm{MeV}$};
+
+  % X-axis ticks and labels
+  \foreach \x in {5, 10, 15, 20} {
+    \draw[line width=0.65pt] (\x*\xscale, -0.15) -- (\x*\xscale, 0.15);
+    \node[anchor=north, font=\small] at (\x*\xscale, -0.15) {$\x$};
+  }
+
+  % Y-axis ticks and labels
+  \foreach \y in {1, 2, 10, 20} {
+    \draw[line width=0.65pt] (2*\xscale - 0.15, \y*\yscale) -- (2*\xscale + 0.15, \y*\yscale);
+    \node[anchor=east, font=\small] at (2*\xscale - 0.18, \y*\yscale) {$\y$};
+  }
+
+  % --- Quantum Exact Staircase (Solid) ---
+  \draw[line width=1.15pt]
+    (2*\xscale, 0) -- (7.5*\xscale, 0)
+    -- (7.5*\xscale, 2*\yscale)
+    -- (12.5*\xscale, 2*\yscale)
+    -- (12.5*\xscale, 8*\yscale)
+    -- (17.5*\xscale, 8*\yscale)
+    -- (17.5*\xscale, 20*\yscale)
+    -- (22.5*\xscale, 20*\yscale)
+    -- (22.5*\xscale, 22.5*\yscale);
+
+  % --- Thomas-Fermi Smooth Approximation (Dashed) ---
+  % N_TF(lambda) = 1/3 * (lambda / 5)^3
+  \draw[line width=1.05pt, dashed]
+    plot[smooth, domain=3.2:21.0, samples=40]
+    (\x*\xscale, {1/3 * (\x / 5)^3 * \yscale});
+
+\end{tikzpicture}
+\end{document}

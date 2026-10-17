@@ -1,0 +1,250 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale: 1 MeV = 0.95 cm
+  \def\yscale{0.95}
+
+  % Top titles
+  \node[font=\bfseries\Large] at (-4.2, {0.95 * 3.8}) {Neutrons};
+  \node[font=\bfseries\Large] at (4.2, {0.95 * 3.8}) {Protons};
+
+  \node[font=\bfseries\large] at (-5.8, {0.95 * 2.8}) {Theory};
+  \node[font=\bfseries\large] at (-2.6, {0.95 * 2.8}) {Exp};
+
+  \node[font=\bfseries\large] at (2.6, {0.95 * 2.8}) {Exp};
+  \node[font=\bfseries\large] at (5.8, {0.95 * 2.8}) {Theory};
+
+  % Horizontal line at 0 MeV binding energy
+  \draw[line width=1.1pt] (-7.5, 0) -- (7.5, 0);
+
+  % Central vertical axis (Binding Energy)
+  \draw[line width=1.1pt] (0, {1.0 * \yscale}) -- (0, {-10.8 * \yscale});
+  \node[rotate=90, font=\large, fill=white, inner sep=2pt] at (-0.35, {-5.0 * \yscale}) {Binding\,--\,Energy (MeV)};
+
+  % Axis ticks and labels
+  \foreach \y in {-2, -4, -6, -8, -10} {
+    \draw[line width=1.0pt] (-0.12, {\y * \yscale}) -- (0.12, {\y * \yscale});
+    \node[right=3pt, font=\normalsize] at (0.12, {\y * \yscale}) {$\y$};
+  }
+  \node[above right=1pt, font=\normalsize] at (0.1, 0) {$0$};
+
+  % =========================================================
+  % NEUTRONS (LEFT HALF)
+  % =========================================================
+
+  % Particle states: ground state 2g9/2 at -3.94 MeV
+  % Exp levels (x in [-3.5, -2.0]):
+  \def\xNEstart{-3.8}
+  \def\xNEend{-2.0}
+  \def\xNTstart{-6.5}
+  \def\xNTend{-4.8}
+
+  % Exp Particle energies relative to -3.94:
+  % 0: -3.94
+  % 0.77: -3.17
+  % 1.41: -2.53
+  % 1.56: -2.38
+  % 2.03: -1.91
+  % 2.47: -1.47
+  % 2.52: -1.42
+
+  % 2g9/2 (0)
+  \draw[line width=1.4pt] (\xNEstart, {-3.94 * \yscale}) -- (\xNEend, {-3.94 * \yscale}) node[right=3pt, font=\small] {$0$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-3.65 * \yscale}) -- (\xNTend, {-3.65 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-3.65 * \yscale}) {$2g_{9/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-3.65 * \yscale}) -- (\xNEstart, {-3.94 * \yscale});
+
+  % 1i11/2 (0.77)
+  \draw[line width=1.4pt] (\xNEstart, {-3.17 * \yscale}) -- (\xNEend, {-3.17 * \yscale}) node[right=3pt, font=\small] {$0.77$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-3.05 * \yscale}) -- (\xNTend, {-3.05 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-3.05 * \yscale}) {$1i_{11/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-3.05 * \yscale}) -- (\xNEstart, {-3.17 * \yscale});
+
+  % 3d5/2 (1.41)
+  \draw[line width=1.4pt] (\xNEstart, {-2.53 * \yscale}) -- (\xNEend, {-2.53 * \yscale}); \node[right=3pt, font=\small] at (\xNEend, {-2.65 * \yscale}) {$1.41$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-2.30 * \yscale}) -- (\xNTend, {-2.30 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-2.30 * \yscale}) {$3d_{5/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-2.30 * \yscale}) -- (\xNEstart, {-2.53 * \yscale});
+
+  % 1j15/2 (1.56)
+  \draw[line width=1.4pt] (\xNEstart, {-2.38 * \yscale}) -- (\xNEend, {-2.38 * \yscale}); \node[right=3pt, font=\small] at (\xNEend, {-2.25 * \yscale}) {$1.56$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-1.95 * \yscale}) -- (\xNTend, {-1.95 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-1.95 * \yscale}) {$1j_{15/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-1.95 * \yscale}) -- (\xNEstart, {-2.38 * \yscale});
+
+  % 4s1/2 (2.03)
+  \draw[line width=1.4pt] (\xNEstart, {-1.91 * \yscale}) -- (\xNEend, {-1.91 * \yscale}) node[right=3pt, font=\small] {$2.03$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-1.60 * \yscale}) -- (\xNTend, {-1.60 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-1.60 * \yscale}) {$4s_{1/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-1.60 * \yscale}) -- (\xNEstart, {-1.91 * \yscale});
+
+  % 2g7/2 (2.47)
+  \draw[line width=1.4pt] (\xNEstart, {-1.47 * \yscale}) -- (\xNEend, {-1.47 * \yscale});
+  \node[right=3pt, font=\small] at (\xNEend, {-1.65 * \yscale}) {$2.47$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-1.25 * \yscale}) -- (\xNTend, {-1.25 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-1.25 * \yscale}) {$2g_{7/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-1.25 * \yscale}) -- (\xNEstart, {-1.47 * \yscale});
+
+  % 3d3/2 (2.52)
+  \draw[line width=1.4pt] (\xNEstart, {-1.40 * \yscale}) -- (\xNEend, {-1.40 * \yscale});
+  \node[right=3pt, font=\small] at (\xNEend, {-1.22 * \yscale}) {$2.52$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-0.90 * \yscale}) -- (\xNTend, {-0.90 * \yscale});
+  \node[left=3pt, font=\small] at (\xNTstart, {-0.90 * \yscale}) {$3d_{3/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-0.90 * \yscale}) -- (\xNEstart, {-1.40 * \yscale});
+
+  % Hole states (below -7.37 MeV)
+  % 0: -7.37
+  % 0.57: -7.94
+  % 0.90: -8.27
+  % 1.64: -9.01
+  % 2.35: -9.72
+  % 3.47: -10.84
+
+  % 3p1/2 (0)
+  \draw[line width=1.4pt] (\xNEstart, {-7.37 * \yscale}) -- (\xNEend, {-7.37 * \yscale}) node[right=2pt, font=\small] {$0$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-6.90 * \yscale}) -- (\xNTend, {-6.90 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-6.90 * \yscale}) {$3p_{1/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-6.90 * \yscale}) -- (\xNEstart, {-7.37 * \yscale});
+
+  % 2f5/2 (0.57)
+  \draw[line width=1.4pt] (\xNEstart, {-7.94 * \yscale}) -- (\xNEend, {-7.94 * \yscale}) node[right=2pt, font=\small] {$0.57$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-7.50 * \yscale}) -- (\xNTend, {-7.50 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-7.50 * \yscale}) {$2f_{5/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-7.50 * \yscale}) -- (\xNEstart, {-7.94 * \yscale});
+
+  % 3p3/2 (0.90)
+  \draw[line width=1.4pt] (\xNEstart, {-8.27 * \yscale}) -- (\xNEend, {-8.27 * \yscale}) node[right=2pt, font=\small] {$0.90$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-7.85 * \yscale}) -- (\xNTend, {-7.85 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-7.85 * \yscale}) {$3p_{3/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-7.85 * \yscale}) -- (\xNEstart, {-8.27 * \yscale});
+
+  % 1i13/2 (1.64)
+  \draw[line width=1.4pt] (\xNEstart, {-9.01 * \yscale}) -- (\xNEend, {-9.01 * \yscale}) node[right=2pt, font=\small] {$1.64$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-8.40 * \yscale}) -- (\xNTend, {-8.40 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-8.40 * \yscale}) {$1i_{13/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-8.40 * \yscale}) -- (\xNEstart, {-9.01 * \yscale});
+
+  % 2f7/2 (2.35)
+  \draw[line width=1.4pt] (\xNEstart, {-9.72 * \yscale}) -- (\xNEend, {-9.72 * \yscale}) node[right=2pt, font=\small] {$2.35$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-10.30 * \yscale}) -- (\xNTend, {-10.30 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-10.30 * \yscale}) {$2f_{7/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-10.30 * \yscale}) -- (\xNEstart, {-9.72 * \yscale});
+
+  % 1h9/2 (3.47)
+  \draw[line width=1.4pt] (\xNEstart, {-10.84 * \yscale}) -- (\xNEend, {-10.84 * \yscale}) node[right=2pt, font=\small] {$3.47$};
+  \draw[line width=1.2pt, dashed] (\xNTstart, {-10.65 * \yscale}) -- (\xNTend, {-10.65 * \yscale});
+  \node[left=2pt, font=\small] at (\xNTstart, {-10.65 * \yscale}) {$1h_{9/2}$};
+  \draw[line width=0.9pt] (\xNTend, {-10.65 * \yscale}) -- (\xNEstart, {-10.84 * \yscale});
+
+  % Neutron gap arrow: 3.43 MeV
+  \draw[line width=1.1pt, <->] (-2.9, {-3.94 * \yscale}) -- (-2.9, {-7.37 * \yscale});
+  \node[font=\large, fill=white, inner sep=2pt] at (-2.9, {-5.65 * \yscale}) {$3.43\ (\mathrm{MeV})$};
+
+
+  % =========================================================
+  % PROTONS (RIGHT HALF)
+  % =========================================================
+  \def\xPEstart{2.0}
+  \def\xPEend{3.8}
+  \def\xPTstart{4.8}
+  \def\xPTend{6.5}
+
+  % Particle states: ground state 1h9/2 at -3.80 MeV
+  % Exp Particle energies:
+  % 0: -3.80
+  % 0.90: -2.90
+  % 1.61: -2.19
+  % 2.82: -0.98 (unbound)
+  % 3.11: -0.69 (unbound)
+  % 3.64: -0.16 (unbound)
+
+  % 1h9/2 (0)
+  \draw[line width=1.4pt] (\xPEstart, {-3.80 * \yscale}) node[left=2pt, font=\small] {$0$} -- (\xPEend, {-3.80 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-3.50 * \yscale}) -- (\xPTend, {-3.50 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-3.50 * \yscale}) {$1h_{9/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-3.80 * \yscale}) -- (\xPTstart, {-3.50 * \yscale});
+
+  % 2f7/2 (0.90)
+  \draw[line width=1.4pt] (\xPEstart, {-2.90 * \yscale}) node[left=2pt, font=\small] {$0.90$} -- (\xPEend, {-2.90 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-2.70 * \yscale}) -- (\xPTend, {-2.70 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-2.70 * \yscale}) {$2f_{7/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-2.90 * \yscale}) -- (\xPTstart, {-2.70 * \yscale});
+
+  % 1i13/2 (1.61)
+  \draw[line width=1.4pt] (\xPEstart, {-2.19 * \yscale}) node[left=2pt, font=\small] {$1.61$} -- (\xPEend, {-2.19 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-2.25 * \yscale}) -- (\xPTend, {-2.25 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-2.25 * \yscale}) {$1i_{13/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-2.19 * \yscale}) -- (\xPTstart, {-2.25 * \yscale});
+
+  % Unbound levels
+  % 3p3/2 (2.82)
+  \draw[line width=1.4pt] (\xPEstart, {-0.98 * \yscale}) node[left=2pt, font=\small] {$2.82$} -- (\xPEend, {-0.98 * \yscale});
+  \draw[line width=1.0pt, dashed] (\xPEend, {-0.98 * \yscale}) to[out=40, in=200] (4.6, {0.6 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-1.10 * \yscale}) {$3p_{3/2}$};
+
+  % 2f5/2 (3.11)
+  \draw[line width=1.4pt] (\xPEstart, {-0.69 * \yscale}) node[left=2pt, font=\small] {$3.11$} -- (\xPEend, {-0.69 * \yscale});
+  \draw[line width=1.0pt, dashed] (\xPEend, {-0.69 * \yscale}) to[out=40, in=200] (4.8, {0.9 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-0.60 * \yscale}) {$2f_{5/2}$};
+
+  % 3p1/2 (3.64)
+  \draw[line width=1.4pt] (\xPEstart, {-0.16 * \yscale}) node[left=2pt, font=\small] {$3.64$} -- (\xPEend, {-0.16 * \yscale});
+  \draw[line width=1.0pt, dashed] (\xPEend, {-0.16 * \yscale}) to[out=40, in=200] (5.0, {1.2 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-0.10 * \yscale}) {$3p_{1/2}$};
+  \node[right=4pt, font=\small] at (4.9, {0.9 * \yscale}) {unbound};
+
+  % Hole states (below -8.03 MeV)
+  % 0: -8.03
+  % 0.35: -8.38
+  % 1.34: -9.37
+  % 1.67: -9.70
+  % 3.47: -11.50 -> let's put at -10.8
+
+  % 3s1/2 (0)
+  \draw[line width=1.4pt] (\xPEstart, {-8.03 * \yscale}) node[left=2pt, font=\small] {$0$} -- (\xPEend, {-8.03 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-7.20 * \yscale}) -- (\xPTend, {-7.20 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-7.20 * \yscale}) {$3s_{1/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-8.03 * \yscale}) -- (\xPTstart, {-7.20 * \yscale});
+
+  % 2d3/2 (0.35)
+  \draw[line width=1.4pt] (\xPEstart, {-8.38 * \yscale}) node[left=2pt, font=\small] {$0.35$} -- (\xPEend, {-8.38 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-7.55 * \yscale}) -- (\xPTend, {-7.55 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-7.55 * \yscale}) {$2d_{3/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-8.38 * \yscale}) -- (\xPTstart, {-7.55 * \yscale});
+
+  % 1h11/2 (1.34)
+  \draw[line width=1.4pt] (\xPEstart, {-9.37 * \yscale}) node[left=2pt, font=\small] {$1.34$} -- (\xPEend, {-9.37 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-8.70 * \yscale}) -- (\xPTend, {-8.70 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-8.70 * \yscale}) {$1h_{11/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-9.37 * \yscale}) -- (\xPTstart, {-8.70 * \yscale});
+
+  % 2d5/2 (1.67)
+  \draw[line width=1.4pt] (\xPEstart, {-9.70 * \yscale}) node[left=2pt, font=\small] {$1.67$} -- (\xPEend, {-9.70 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-9.45 * \yscale}) -- (\xPTend, {-9.45 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-9.45 * \yscale}) {$2d_{5/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-9.70 * \yscale}) -- (\xPTstart, {-9.45 * \yscale});
+
+  % 1g7/2 (3.47)
+  \draw[line width=1.4pt] (\xPEstart, {-10.84 * \yscale}) node[left=2pt, font=\small] {$3.47$} -- (\xPEend, {-10.84 * \yscale});
+  \draw[line width=1.2pt, dashed] (\xPTstart, {-10.20 * \yscale}) -- (\xPTend, {-10.20 * \yscale});
+  \node[right=2pt, font=\small] at (\xPTend, {-10.20 * \yscale}) {$1g_{7/2}$};
+  \draw[line width=0.9pt] (\xPEend, {-10.84 * \yscale}) -- (\xPTstart, {-10.20 * \yscale});
+
+  % Proton gap arrow: 4.23 MeV
+  \draw[line width=1.1pt, <->] (2.9, {-3.80 * \yscale}) -- (2.9, {-8.03 * \yscale});
+  \node[font=\large, fill=white, inner sep=2pt] at (2.9, {-5.91 * \yscale}) {$4.23\ (\mathrm{MeV})$};
+
+\end{tikzpicture}
+\end{document}

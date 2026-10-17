@@ -1,0 +1,68 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % Left side: Weak coupling
+  % ========================================================
+  \begin{scope}[shift={(0, 0)}]
+    % Curly brace and text
+    \draw[thick, line width=0.9pt, decorate, decoration={brace, amplitude=6pt}] 
+      (-1.2, 1.1) -- (-1.2, -0.4) 
+      node[midway, left=8pt, font=\large] {weak coupling};
+    
+    \node[right=5pt, font=\large] at (-1.2, 1.1) {phonon};
+    \node[right=5pt, font=\large] at (-1.2, -0.4) {quasiparticle};
+
+    % Wavy cloud for phonon (tilted ellipse)
+    \draw[thick, line width=1.1pt, decorate, decoration={snake, amplitude=1.8pt, segment length=6pt}] 
+      (2.5, 0.9) [rotate around={25:(2.5,0.9)}] ellipse (1.15 and 0.68);
+
+    % Two quasiparticles in the phonon cloud
+    \fill (2.1, 1.15) circle (3pt);
+    \fill (2.9, 0.65) circle (3pt);
+
+    % Lower quasiparticle
+    \fill (2.1, -0.9) circle (3pt);
+
+    % Dashed line connecting quasiparticle to phonon
+    \draw[thick, line width=1.1pt, dashed] (2.1, -0.9) -- (2.48, 0.28);
+  \end{scope}
+
+  % ========================================================
+  % Right side: Dressed three-quasiparticle mode
+  % ========================================================
+  \begin{scope}[shift={(7.5, 0)}]
+    % Wavy cloud enclosing all three quasiparticles (rounded triangle shape)
+    \draw[thick, line width=1.1pt, decorate, decoration={snake, amplitude=1.8pt, segment length=6pt}] 
+      (0, 1.1) to[out=-20, in=100] (1.0, -0.4) 
+               to[out=-80, in=0] (0.2, -1.0) 
+               to[out=180, in=-60] (-0.9, -0.7) 
+               to[out=120, in=-160] (0, 1.1);
+
+    % Three quasiparticles inside
+    \fill (0, 0.8) circle (3pt);
+    \fill (-0.4, -0.5) circle (3pt);
+    \fill (0.7, -0.2) circle (3pt);
+
+    % Text on the right
+    \node[right, font=\large, align=left] at (1.5, 0.3) {
+      dressed\\[3pt]
+      three-quasi-particle\\[3pt]
+      mode
+    };
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % Panel (a): Linear Constraint
+  % ========================================================
+  \begin{scope}[shift={(0, 0)}]
+    % Axes
+    \draw[line width=0.85pt, ->] (-0.2, 0) -- (4.3, 0) node[below=2pt, font=\normalsize] {$q$};
+    \draw[line width=0.85pt, ->] (0, -0.2) -- (0, 4.2) node[left=2pt, font=\normalsize] {$E$};
+
+    \node[font=\large] at (0.6, 3.8) {a)};
+
+    % Energy curve E(q)
+    \draw[line width=1.1pt, domain=-0.1:4.0, samples=80, smooth]
+      plot (\x, {-0.5*(\x*\x*\x/3.0 - 2.0*\x*\x + 2.04*\x) + 0.50});
+
+    % q0 = 1.2, E(q0) = 0.60
+    % Tangent at q0: slope m = 0.66, y = 0.66*(x - 1.2) + 0.60 = 0.66*x - 0.192
+    % x-intercept at x = 0.291
+    \draw[line width=0.8pt] (0.291, 0) -- (2.3, 1.326);
+
+    % Arc for alpha: centered at (0.291, 0), radius 0.75
+    \draw[line width=0.6pt] (0.291 + 0.70, 0) arc (0:33.4:0.70);
+    \node[font=\small] at (0.291 + 0.48, 0.16) {$\alpha$};
+
+    % Perpendicular axis E' at q0: angle = 33.4 + 90 = 123.4 deg
+    \draw[line width=0.8pt, ->] (1.2, 0.60) -- ($(1.2, 0.60) + (123.4:1.7)$)
+      node[above right=-2pt, font=\normalsize] {$E'$};
+
+    % Tangent at q1 = 2.8, E(q1) = 1.65
+    % y = 0.66*(x - 2.8) + 1.65 = 0.66*x - 0.198
+    \draw[line width=0.8pt] (1.8, 0.99) -- (3.7, 2.244);
+
+    % Dashed vertical lines to q0 and q1
+    \draw[line width=0.6pt, dashed] (1.2, 0) -- (1.2, 0.60);
+    \draw[line width=0.6pt, dashed] (2.8, 0) -- (2.8, 1.65);
+
+    % Points
+    \fill (1.2, 0.60) circle (1.8pt);
+    \fill (2.8, 1.65) circle (1.8pt);
+
+    % Ticks / labels
+    \node[below=2pt, font=\normalsize] at (1.2, 0) {$q_0$};
+    \node[below=2pt, font=\normalsize] at (2.8, 0) {$q_1$};
+  \end{scope}
+
+  % ========================================================
+  % Panel (b): Quadratic Constraint
+  % ========================================================
+  \begin{scope}[shift={(5.2, 0)}]
+    % Axes
+    \draw[line width=0.85pt, ->] (-0.2, 0) -- (4.3, 0) node[below=2pt, font=\normalsize] {$q$};
+    \draw[line width=0.85pt, ->] (0, -0.2) -- (0, 4.2) node[left=2pt, font=\normalsize] {$E$};
+
+    \node[font=\large] at (0.6, 3.8) {b)};
+
+    % Energy curve E(q)
+    \draw[line width=1.1pt, domain=-0.1:4.0, samples=80, smooth]
+      plot (\x, {-0.5*(\x*\x*\x/3.0 - 2.0*\x*\x + 2.04*\x) + 0.50});
+
+    % mu = 2.3, E(mu) = 1.25
+    % Dashed constraint parabola centered at mu at bottom: C*(x - mu)^2
+    \draw[line width=0.8pt, dashed, domain=1.85:2.75, samples=50, smooth]
+      plot (\x, {2.2*(\x - 2.3)*(\x - 2.3)});
+
+    % Constrained energy curve E''(q) touching at (mu, E(mu)) = (2.3, 1.25)
+    % Parabola E''(q) = 1.25 + 2.6*(x - 2.3)^2
+    \draw[line width=1.1pt, domain=1.45:3.15, samples=60, smooth]
+      plot (\x, {1.25 + 2.6*(\x - 2.3)*(\x - 2.3)});
+
+    % Dashed vertical line to mu
+    \draw[line width=0.6pt, dashed] (2.3, 0) -- (2.3, 1.25);
+
+    % Point
+    \fill (2.3, 1.25) circle (1.8pt);
+
+    % Labels
+    \node[below=2pt, font=\normalsize] at (2.3, 0) {$\mu$};
+    \node[above=2pt, font=\normalsize] at (1.45, 3.1) {$E''$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

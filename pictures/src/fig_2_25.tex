@@ -1,0 +1,99 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Dimensions:
+  % x: epsilon in [0, 1.0], scale 10.0 cm
+  % y: Energy in [0.0, 11.0], scale 1.15 cm per unit of hbar omega
+  \def\xscale{10.0}
+  \def\yscale{1.18}
+
+  % Outer frame / Box
+  \draw[line width=1.1pt] (0, 0) rectangle ({\xscale}, {11.0 * \yscale});
+
+  % Top label and ticks for Ratio of axes c/a
+  \node[above=12pt, font=\large] at ({0.5 * \xscale}, {11.0 * \yscale}) {Ratio of axes, $c/a$};
+  
+  % c/a ticks at top:
+  \draw[line width=0.9pt] (0, {11.0 * \yscale}) -- (0, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$1$};
+  \draw[line width=0.9pt] ({0.22 * \xscale}, {11.0 * \yscale}) -- ({0.22 * \xscale}, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$5/4$};
+  \draw[line width=0.9pt] ({0.38 * \xscale}, {11.0 * \yscale}) -- ({0.38 * \xscale}, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$3/2$};
+  \draw[line width=0.9pt] ({0.60 * \xscale}, {11.0 * \yscale}) -- ({0.60 * \xscale}, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$2$};
+  \draw[line width=0.9pt] ({0.86 * \xscale}, {11.0 * \yscale}) -- ({0.86 * \xscale}, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$3$};
+  \draw[line width=0.9pt] ({\xscale}, {11.0 * \yscale}) -- ({\xscale}, {11.0 * \yscale - 0.2}) node[above=4pt, font=\normalsize] {$4$};
+
+  % Bottom ticks for Deformation epsilon
+  \node[below=14pt, font=\large] at ({0.5 * \xscale}, 0) {Deformation $\varepsilon$};
+  \foreach \eps in {0.0, 0.2, 0.4, 0.6, 0.8, 1.0} {
+    \draw[line width=0.9pt] ({\eps * \xscale}, 0) -- ({\eps * \xscale}, 0.2);
+    \node[below=4pt, font=\normalsize] at ({\eps * \xscale}, 0) {$\eps$};
+  }
+
+  % Left Y-axis ticks and labels: Energy [units of hbar omega_0(eps)]
+  \node[rotate=90, font=\large] at (-1.5, {5.5 * \yscale}) {Energy $\quad [\text{units of }\hbar\omega_0(\varepsilon)]$};
+  
+  \draw[line width=0.9pt] (0, 0) -- (0.2, 0);
+  \node[left=4pt, font=\normalsize] at (0, 0) {$0$};
+  \draw[line width=0.9pt] ({\xscale}, 0) -- ({\xscale - 0.2}, 0);
+
+  \foreach \idx/\lab in {1.5/{3/2}, 2.5/{5/2}, 3.5/{7/2}, 4.5/{9/2}, 5.5/{11/2}, 6.5/{13/2}, 7.5/{15/2}, 8.5/{17/2}, 9.5/{19/2}, 10.5/{21/2}} {
+    \draw[line width=0.9pt] (0, {\idx * \yscale}) -- (0.2, {\idx * \yscale});
+    \node[left=4pt, font=\normalsize] at (0, {\idx * \yscale}) {$\lab$};
+    \draw[line width=0.9pt] ({\xscale}, {\idx * \yscale}) -- ({\xscale - 0.2}, {\idx * \yscale});
+  }
+
+  % Scope with clipping inside the plot area
+  \begin{scope}
+    \clip (0, 0) rectangle ({\xscale}, {11.0 * \yscale});
+
+    % Draw all single particle levels E(N, nz, eps) = (N + 1.5) + eps * (N - 3*nz)/3
+    \foreach \N in {0, ..., 12} {
+      \foreach \nz in {0, ..., \N} {
+        \draw[line width=0.8pt] 
+          (0, {(\N + 1.5) * \yscale}) -- 
+          ({\xscale}, {(\N + 1.5 + 1.0 * (\N - 3*\nz)/3.0) * \yscale});
+      }
+    }
+  \end{scope}
+
+  % Spherical magic numbers at eps = 0 (left column, inside plot)
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {1.0 * \yscale}) {$2$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {2.0 * \yscale}) {$8$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {3.0 * \yscale}) {$20$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {4.0 * \yscale}) {$40$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {5.0 * \yscale}) {$70$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {6.0 * \yscale}) {$112$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {7.0 * \yscale}) {$168$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {8.0 * \yscale}) {$240$};
+  \node[font=\small, fill=white, inner sep=1pt] at (0.4, {9.0 * \yscale}) {$330$};
+
+  % Superdeformed magic numbers at eps = 0.6 (c/a = 2)
+  \def\xSD{0.6 * \xscale}
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {0.95 * \yscale}) {$2$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {1.55 * \yscale}) {$4$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {2.15 * \yscale}) {$10$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {2.75 * \yscale}) {$16$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {3.35 * \yscale}) {$28$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {3.95 * \yscale}) {$40$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {4.55 * \yscale}) {$60$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {5.15 * \yscale}) {$80$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {5.75 * \yscale}) {$110$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {6.35 * \yscale}) {$140$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {6.95 * \yscale}) {$182$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {7.55 * \yscale}) {$224$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {8.15 * \yscale}) {$280$};
+  \node[font=\small, fill=white, inner sep=1pt] at (\xSD, {8.75 * \yscale}) {$336$};
+
+\end{tikzpicture}
+\end{document}

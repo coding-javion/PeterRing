@@ -1,0 +1,136 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % -------------------------------------------------------------
+  % Panel (a) Oblate Spheroid
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(0,0)}]
+    % Rotation axis
+    \draw[line width=0.9pt] (0, 0.88) -- (0, 1.9);
+    \draw[line width=0.9pt] (0, -0.88) -- (0, -1.6);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.42, 1.45) arc (180:-70:0.42 and 0.15);
+
+    % Spheroid body outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.45 and 0.92);
+
+    % Horizontal surface contours clipped inside
+    \begin{scope}
+      \clip (0, 0) ellipse (1.45 and 0.92);
+      \draw[line width=0.8pt] (-1.5, 0.72) arc (180:360:1.5 and 0.22);
+      \draw[line width=0.8pt] (-1.5, 0.52) arc (180:360:1.5 and 0.24);
+      \draw[line width=0.8pt] (-1.5, 0.30) arc (180:360:1.5 and 0.25);
+      \draw[line width=0.8pt] (-1.5, 0.08) arc (180:360:1.5 and 0.26);
+      \draw[line width=0.8pt] (-1.5, -0.14) arc (180:360:1.5 and 0.26);
+      \draw[line width=0.8pt] (-1.5, -0.36) arc (180:360:1.5 and 0.24);
+      \draw[line width=0.8pt] (-1.5, -0.58) arc (180:360:1.5 and 0.22);
+    \end{scope}
+
+    \node[font=\large] at (0, -1.95) {a};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % Panel (b) Triaxial Ellipsoid (Jacobi)
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(4.5,0)}]
+    % Rotation axis
+    \draw[line width=0.9pt] (0, 0.82) -- (0, 1.9);
+    \draw[line width=0.9pt] (0, -0.82) -- (0, -1.6);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.42, 1.45) arc (180:-70:0.42 and 0.15);
+
+    % Ellipsoid body outline
+    \draw[line width=1.2pt, fill=white] (0, 0) ellipse (1.65 and 0.85);
+
+    % Left pointing arrow
+    \draw[line width=0.9pt, ->] (-1.95, 0) -- (-1.65, 0);
+
+    % Circulation streamlines clipped inside
+    \begin{scope}
+      \clip (0, 0) ellipse (1.65 and 0.85);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.16 and 0.12);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.35 and 0.28);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (0.65 and 0.48);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (1.05 and 0.68);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (1.55 and 0.82);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (2.15 and 0.95);
+      \draw[line width=0.8pt] (-1.4, 0) ellipse (2.80 and 1.10);
+    \end{scope}
+
+    \node[font=\large] at (0, -1.95) {b};
+  \end{scope}
+
+  % -------------------------------------------------------------
+  % Panel (c) Fissioning Droplets
+  % -------------------------------------------------------------
+  \begin{scope}[shift={(9.0,0)}]
+    % Central rotation axis
+    \draw[line width=0.9pt] (0, -1.6) -- (0, 1.9);
+    % Rotation arrow at top
+    \draw[line width=0.8pt, ->] (-0.42, 1.45) arc (180:-70:0.42 and 0.15);
+
+    % Left droplet definition path
+    \def\dropletL{
+      (-0.25, 0.05) to[out=135, in=0] (-0.95, 0.68)
+      to[out=180, in=90] (-1.55, 0)
+      to[out=-90, in=180] (-0.95, -0.68)
+      to[out=0, in=225] (-0.25, -0.05)
+      to[out=45, in=-45] cycle
+    }
+
+    \draw[line width=1.2pt, fill=white] \dropletL;
+
+    % Outward arrow on left droplet
+    \draw[line width=0.9pt, ->] (-1.55, 0) -- (-1.95, 0);
+
+    % Ribs on left droplet
+    \begin{scope}
+      \clip \dropletL;
+      \draw[line width=0.8pt] (-1.4, 0) arc (180:0:0.18 and 0.65);
+      \draw[line width=0.8pt] (-1.4, 0) arc (180:360:0.18 and 0.65);
+      \draw[line width=0.8pt] (-1.18, -0.8) to[out=70, in=-70] (-1.18, 0.8);
+      \draw[line width=0.8pt] (-0.95, -0.8) to[out=70, in=-70] (-0.95, 0.8);
+      \draw[line width=0.8pt] (-0.72, -0.8) to[out=70, in=-70] (-0.72, 0.8);
+      \draw[line width=0.8pt] (-0.48, -0.8) to[out=70, in=-70] (-0.48, 0.8);
+    \end{scope}
+
+    % Right droplet definition path (mirror)
+    \def\dropletR{
+      (0.25, 0.05) to[out=45, in=180] (0.95, 0.68)
+      to[out=0, in=90] (1.55, 0)
+      to[out=-90, in=0] (0.95, -0.68)
+      to[out=180, in=-45] (0.25, -0.05)
+      to[out=135, in=-135] cycle
+    }
+
+    \draw[line width=1.2pt, fill=white] \dropletR;
+
+    % Outward arrow on right droplet
+    \draw[line width=0.9pt, ->] (1.55, 0) -- (1.95, 0);
+
+    % Ribs on right droplet
+    \begin{scope}
+      \clip \dropletR;
+      \draw[line width=0.8pt] (1.18, -0.8) to[out=110, in=-110] (1.18, 0.8);
+      \draw[line width=0.8pt] (0.95, -0.8) to[out=110, in=-110] (0.95, 0.8);
+      \draw[line width=0.8pt] (0.72, -0.8) to[out=110, in=-110] (0.72, 0.8);
+      \draw[line width=0.8pt] (0.48, -0.8) to[out=110, in=-110] (0.48, 0.8);
+    \end{scope}
+
+    \node[font=\large] at (0, -1.95) {c};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

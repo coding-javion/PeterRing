@@ -1,0 +1,160 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % TOP PANEL: Monopole Transition Density (L=0)
+  % ========================================================
+  \begin{axis}[
+    name=topPlot,
+    width=8.8cm,
+    height=5.6cm,
+    xmin=0, xmax=9.5,
+    ymin=-0.85, ymax=0.85,
+    axis x line=middle,
+    axis y line=left,
+    xtick={2, 4, 6, 8},
+    xticklabels={$2$, $4$, $6$, $8$},
+    xticklabel style={above=2pt, font=\small, fill=white, inner sep=1.2pt},
+    minor x tick num=1,
+    ytick={-0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8},
+    yticklabels={$-0.8$, , , , $0$, , , , $0.8$},
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=4pt,
+    minor tick length=2.5pt,
+    axis line style={line width=0.85pt},
+    clip=false
+  ]
+
+    % Header titles
+    \node[font=\footnotesize\bfseries, align=center] at (axis cs:4.5, 0.98) {MONOPOLE\\[1pt]TRANSITION\\[1pt]DENSITY ($\times R^2$)};
+    \node[anchor=north, font=\small] at (axis cs:9.0, -0.05) {$\mathrm{fm}$};
+
+    % Solid curve: Continuum RPA
+    \addplot[line width=1.1pt, black, smooth, tension=0.7] coordinates {
+      (0.0, 0.0)
+      (0.8, -0.03)
+      (1.6, -0.08)
+      (2.4, -0.16)
+      (3.2, -0.29)
+      (4.0, -0.37)
+      (4.8, -0.42)
+      (5.2, -0.37)
+      (5.6, -0.18)
+      (5.8, 0.00)
+      (6.1, 0.35)
+      (6.5, 0.68)
+      (6.8, 0.74)
+      (7.1, 0.68)
+      (7.5, 0.48)
+      (8.0, 0.24)
+      (8.5, 0.10)
+      (9.0, 0.03)
+    };
+
+    % Dotted curve: Hydrodynamical model
+    \addplot[line width=1.1pt, dotted, dash pattern=on 1.5pt off 1.8pt, black, smooth, tension=0.7] coordinates {
+      (0.0, 0.0)
+      (0.8, -0.04)
+      (1.6, -0.11)
+      (2.4, -0.20)
+      (3.2, -0.29)
+      (4.0, -0.39)
+      (4.8, -0.47)
+      (5.3, -0.38)
+      (5.7, -0.15)
+      (5.9, 0.00)
+      (6.2, 0.32)
+      (6.5, 0.65)
+      (6.8, 0.73)
+      (7.1, 0.65)
+      (7.5, 0.45)
+      (8.0, 0.21)
+      (8.5, 0.08)
+      (9.0, 0.02)
+    };
+
+  \end{axis}
+
+  % ========================================================
+  % BOTTOM PANEL: Giant Quadrupole Transition Density (L=2)
+  % ========================================================
+  \begin{axis}[
+    name=botPlot,
+    at={($(topPlot.south west)+(0, -5.6cm)$)},
+    width=8.8cm,
+    height=5.2cm,
+    xmin=0, xmax=10.5,
+    ymin=0, ymax=1.55,
+    axis x line=bottom,
+    axis y line=left,
+    xtick={2, 4, 6, 8, 10},
+    xticklabels={$2$, $4$, $6$, $8$, $10$},
+    ytick={0.5, 1.0, 1.5},
+    yticklabels={$0.5$, $1.0$, $1.5$},
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=4pt,
+    axis line style={line width=0.85pt},
+    clip=false
+  ]
+
+    % Header titles
+    \node[font=\bfseries\normalsize, anchor=north] at (axis cs:3.2, 1.45) {$^{208}\mathrm{Pb}$};
+    \node[font=\footnotesize\bfseries, anchor=north] at (axis cs:3.2, 1.15) {GIANT\ \ $L=2$};
+    \node[anchor=north, font=\small] at (axis cs:9.2, -0.10) {$\mathrm{fm}$};
+
+    % Solid curve: Continuum RPA
+    \addplot[line width=1.1pt, black, smooth, tension=0.7] coordinates {
+      (0.0, 0.0)
+      (2.0, 0.01)
+      (3.5, 0.03)
+      (4.5, 0.08)
+      (5.2, 0.22)
+      (5.8, 0.58)
+      (6.3, 1.02)
+      (6.7, 1.18)
+      (7.1, 1.05)
+      (7.6, 0.65)
+      (8.2, 0.25)
+      (8.8, 0.08)
+      (9.5, 0.02)
+      (10.0, 0.00)
+    };
+
+    % Dotted curve: Tassie model
+    \addplot[line width=1.1pt, dotted, dash pattern=on 1.5pt off 1.8pt, black, smooth, tension=0.7] coordinates {
+      (0.0, 0.0)
+      (2.0, 0.00)
+      (3.5, 0.01)
+      (4.5, 0.05)
+      (5.2, 0.18)
+      (5.8, 0.52)
+      (6.4, 1.05)
+      (6.8, 1.28)
+      (7.2, 1.05)
+      (7.6, 0.62)
+      (8.2, 0.22)
+      (8.8, 0.06)
+      (9.5, 0.01)
+      (10.0, 0.00)
+    };
+
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,83 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % Diagram 1: Direct term
+  % ========================================================
+  \begin{scope}[shift={(-4.2, 0)}]
+    \coordinate (V1) at (0, 0);
+    \coordinate (V2) at (1.5, 0);
+
+    % Dashed interaction line
+    \draw[thick, dashed, line width=1pt] (V1) -- (V2);
+
+    % Vertex 1 (left)
+    \draw[thick, line width=1pt, arrowed] (V1) -- (-0.25, 1.3) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (0.25, 1.3) node[right=1pt, font=\small] {$i$} -- (V1);
+
+    % Vertex 2 (right)
+    \draw[thick, line width=1pt, arrowed] (V2) -- (1.25, 1.3) node[left=1pt, font=\small] {$n$};
+    \draw[thick, line width=1pt, arrowed] (1.75, 1.3) node[right=1pt, font=\small] {$j$} -- (V2);
+  \end{scope}
+
+  % Minus sign
+  \node[font=\large] at (-1.8, 0.4) {$-$};
+
+  % ========================================================
+  % Diagram 2: Exchange term
+  % ========================================================
+  \begin{scope}[shift={(0.2, 0)}]
+    \coordinate (V1) at (0, 0);
+    \coordinate (V2) at (1.5, 0);
+
+    % Dashed interaction line
+    \draw[thick, dashed, line width=1pt] (V1) -- (V2);
+
+    % Vertex 1 (left)
+    \draw[thick, line width=1pt, arrowed] (V1) -- (-0.25, 1.3) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (0.25, 1.3) node[right=1pt, font=\small] {$j$} -- (V1);
+
+    % Vertex 2 (right)
+    \draw[thick, line width=1pt, arrowed] (V2) -- (1.25, 1.3) node[left=1pt, font=\small] {$n$};
+    \draw[thick, line width=1pt, arrowed] (1.75, 1.3) node[right=1pt, font=\small] {$i$} -- (V2);
+  \end{scope}
+
+  % Equals sign
+  \node[font=\large] at (2.8, 0.4) {$=$};
+
+  % ========================================================
+  % Diagram 3: Antisymmetrized B matrix element (4 outgoing lines)
+  % ========================================================
+  \begin{scope}[shift={(4.5, 0)}]
+    \coordinate (C) at (0, 0);
+
+    \draw[thick, line width=1pt, arrowed] (C) -- (-0.85, 1.3) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (-0.30, 1.3) node[above=1pt, font=\small] {$j$} -- (C);
+    \draw[thick, line width=1pt, arrowed] (C) -- (0.30, 1.3) node[above=1pt, font=\small] {$n$};
+    \draw[thick, line width=1pt, arrowed] (0.85, 1.3) node[right=1pt, font=\small] {$i$} -- (C);
+
+    \filldraw[black] (C) circle (2.2pt);
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

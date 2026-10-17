@@ -1,0 +1,120 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{axis}[
+    width=14.5cm, height=9.5cm,
+    xmin=-0.5, xmax=52.0,
+    ymin=20, ymax=96,
+    axis line style={line width=0.9pt},
+    tick style={line width=0.8pt, black},
+    tick align=inside,
+    tick pos=both,
+    xtick={1.0, 3.5, 4.8, 7.0, 8.2, 9.4, 10.6, 13.0, 14.2, 15.4, 16.6, 17.8, 20.2, 21.4, 22.6, 23.8, 25.0, 26.2, 28.6, 29.8, 31.0, 32.2, 33.4, 35.8, 37.0, 38.2, 39.4, 40.6, 43.0, 44.2, 45.4, 46.6, 49.0, 50.2},
+    xticklabels={},
+    ytick={20, 40, 60, 80},
+    yticklabels={$20$, $40$, $60$, $80$},
+    extra y ticks={30, 50, 70, 90},
+    extra y tick labels={},
+    ticklabel style={font=\normalsize},
+    clip=false
+  ]
+    % Y-axis label stacked at top-left
+    \node[anchor=south east, align=center, font=\normalsize] at (-1.5, 84) {
+      $\dfrac{2}{\hbar^2}\mathcal{J}$\\[5pt]
+      $(\mathrm{MeV}^{-1})$
+    };
+
+    % Header
+    \node[anchor=north, font=\large] at (28.0, 93.5) {\textbf{Moments of inertia}};
+
+    % Plots
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (1.0, 46.0) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (1.0, 42.0) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (1.0, 38.3) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (1.0, 45.0) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (3.5, 48.5) (4.8, 73.3) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (3.5, 52.6) (4.8, 64.6) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (3.5, 46.1) (4.8, 56.5) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (3.5, 53.3) (4.8, 64.6) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (7.0, 48.4) (8.2, 66.6) (9.4, 75.8) (10.6, 79.9) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (7.0, 54.5) (8.2, 67.3) (9.4, 72.4) (10.6, 78.5) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (7.0, 51.0) (8.2, 57.4) (9.4, 61.4) (10.6, 65.9) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (7.0, 55.3) (8.2, 65.8) (9.4, 69.3) (10.6, 73.2) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (13.0, 43.0) (14.2, 60.5) (15.4, 69.3) (16.6, 76.3) (17.8, 82.3) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (13.0, 53.1) (14.2, 65.6) (15.4, 72.4) (16.6, 80.7) (17.8, 89.7) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (13.0, 44.5) (14.2, 55.4) (15.4, 61.7) (16.6, 66.9) (17.8, 74.6) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (13.0, 53.9) (14.2, 64.1) (15.4, 70.9) (16.6, 74.3) (17.8, 80.3) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (20.2, 48.0) (21.4, 59.5) (22.6, 68.7) (23.8, 74.2) (25.0, 75.6) (26.2, 76.5) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (20.2, 52.3) (21.4, 60.2) (22.6, 70.2) (23.8, 77.7) (25.0, 73.0) (26.2, 74.3) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (20.2, 47.1) (21.4, 53.7) (22.6, 60.4) (23.8, 66.0) (25.0, 64.4) (26.2, 64.2) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (20.2, 54.6) (21.4, 61.8) (22.6, 67.9) (23.8, 73.4) (25.0, 71.1) (26.2, 70.7) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (28.6, 68.2) (29.8, 71.0) (31.0, 76.3) (32.2, 78.4) (33.4, 73.8) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (28.6, 75.1) (29.8, 70.2) (31.0, 74.2) (32.2, 76.0) (33.4, 67.6) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (28.6, 63.6) (29.8, 62.5) (31.0, 63.6) (32.2, 63.1) (33.4, 58.5) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (28.6, 70.9) (29.8, 70.2) (31.0, 74.2) (32.2, 75.1) (33.4, 64.3) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (35.8, 62.3) (37.0, 66.4) (38.2, 68.8) (39.4, 64.9) (40.6, 64.9) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (35.8, 60.2) (37.0, 62.1) (38.2, 69.2) (39.4, 59.4) (40.6, 58.3) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (35.8, 54.2) (37.0, 56.0) (38.2, 58.5) (39.4, 52.3) (40.6, 50.8) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (35.8, 61.8) (37.0, 64.4) (38.2, 65.0) (39.4, 59.4) (40.6, 56.5) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (43.0, 58.2) (44.2, 60.3) (45.4, 53.4) (46.6, 49.2) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (43.0, 53.5) (44.2, 52.0) (45.4, 44.4) (46.6, 39.5) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (43.0, 47.0) (44.2, 45.1) (45.4, 39.5) (46.6, 34.6) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (43.0, 54.3) (44.2, 51.9) (45.4, 45.2) (46.6, 40.3) };
+    \addplot[black, dashed, line width=0.7pt, mark=square, mark size=1.8pt, mark options={solid, fill=white}] coordinates { (49.0, 44.2) (50.2, 39.2) };
+    \addplot[black, solid, line width=0.8pt, mark=x, mark size=2.2pt] coordinates { (49.0, 42.0) (50.2, 37.5) };
+    \addplot[black, solid, line width=0.8pt, mark=o, mark size=1.8pt, mark options={fill=white}] coordinates { (49.0, 37.2) (50.2, 33.1) };
+    \addplot[black, solid, line width=0.8pt, mark=*, mark size=1.6pt] coordinates { (49.0, 42.0) (50.2, 37.5) };
+
+    % Element labels below axis
+    \node[anchor=north, font=\small] at (0.8, 19.0) {${_{60}\mathrm{Nd}}$};
+    \node[anchor=north, font=\small] at (4.3, 19.0) {${_{62}\mathrm{Sm}}$};
+    \node[anchor=north, font=\small] at (8.8, 19.0) {${_{64}\mathrm{Gd}}$};
+    \node[anchor=north, font=\small] at (15.4, 19.0) {${_{66}\mathrm{Dy}}$};
+    \node[anchor=north, font=\small] at (23.2, 19.0) {${_{68}\mathrm{Er}}$};
+    \node[anchor=north, font=\small] at (31.0, 19.0) {${_{70}\mathrm{Yb}}$};
+    \node[anchor=north, font=\small] at (38.2, 19.0) {${_{72}\mathrm{Hf}}$};
+    \node[anchor=north, font=\small] at (44.8, 19.0) {${_{74}\mathrm{W}}$};
+    \node[anchor=north, font=\small] at (49.6, 19.0) {${_{76}\mathrm{Os}}$};
+
+    % Legend placed above W and Os in open region
+    % Exp
+    \draw[dashed, line width=0.7pt] (35.0, 88.0) -- (37.5, 88.0);
+    \node[draw, fill=white, inner sep=1.4pt] at (36.25, 88.0) {};
+    \node[anchor=west, font=\footnotesize] at (38.0, 88.0) {Experiment};
+
+    % Cranking
+    \draw[solid, line width=0.8pt] (35.0, 84.0) -- (37.5, 84.0);
+    \node[font=\footnotesize] at (36.25, 84.0) {$\times$};
+    \node[anchor=west, font=\footnotesize] at (38.0, 84.0) {cranking};
+
+    % ph
+    \draw[solid, line width=0.8pt] (35.0, 80.0) -- (37.5, 80.0);
+    \draw[fill=white] (36.25, 80.0) circle (1.5pt);
+    \node[anchor=west, font=\footnotesize] at (38.0, 80.0) {$+(\mathrm{ph})\text{--interaction}$};
+
+    % ph+pp
+    \draw[solid, line width=0.8pt] (35.0, 76.0) -- (37.5, 76.0);
+    \fill (36.25, 76.0) circle (1.5pt);
+    \node[anchor=west, font=\footnotesize] at (38.0, 76.0) {$+(\mathrm{ph}+\mathrm{pp})\text{--} \ \ ''$};
+
+    % Right brace for Theory
+    \draw[decorate, decoration={brace, amplitude=3.5pt, mirror}, line width=0.7pt] 
+      (48.5, 84.5) -- (48.5, 75.5);
+    \node[anchor=west, font=\footnotesize] at (49.0, 80.0) {Theory};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

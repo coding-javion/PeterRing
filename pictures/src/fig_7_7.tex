@@ -1,0 +1,186 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % LEFT PANEL: 164Er
+  % ========================================================
+  \begin{axis}[
+    name=leftplot,
+    width=7.5cm,
+    height=8.2cm,
+    xmin=0, xmax=0.108,
+    ymin=0, ymax=160,
+    xtick={0.05, 0.10},
+    xticklabels={$0.05$, $0.1$},
+    ytick={40, 80, 120, 160},
+    minor y tick num=1,
+    tick pos=both,
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=5pt,
+    minor tick length=3pt,
+    axis line style={line width=0.9pt},
+    xlabel={$\hbar^2 \omega^2\ (\mathrm{MeV}^2)$},
+    xlabel style={at={(axis description cs:0.75, -0.09)}, anchor=north, font=\small},
+    clip=false
+  ]
+
+    % Y-axis label atop axis line
+    \node[font=\small, align=center, anchor=south] at (axis cs:0, 161) {$\dfrac{2\mathcal{J}}{\hbar^2}$\\[1pt]\scriptsize$(\mathrm{MeV}^{-1})$};
+
+    % Nucleus title
+    \node[font=\large\bfseries, anchor=north west] at (axis cs:0.015, 150) {$^{164}\mathrm{Er}$};
+
+    % Theory (solid line + filled dots)
+    \addplot[
+      line width=1.0pt,
+      color=black,
+      mark=*,
+      mark size=1.6pt,
+      mark options={fill=black}
+    ] coordinates {
+      (0.0010, 58.8)
+      (0.0160, 61.8)
+      (0.0334, 66.2)
+      (0.0475, 70.7)
+      (0.0614, 76.6)
+      (0.0749, 83.7)
+      (0.0836, 93.4)
+      (0.0809, 106.6)
+      (0.0699, 131.3)
+      (0.0730, 145.8)
+      (0.0932, 143.5)
+    };
+
+    % Experiment (dashed line + open circles)
+    \addplot[
+      line width=1.0pt,
+      dashed,
+      dash pattern=on 4pt off 2.5pt,
+      color=black,
+      mark=*,
+      mark size=1.6pt,
+      mark options={fill=white, draw=black, line width=0.8pt}
+    ] coordinates {
+      (0.0012, 63.1)
+      (0.0137, 65.1)
+      (0.0295, 68.7)
+      (0.0440, 72.3)
+      (0.0593, 76.1)
+      (0.0790, 80.9)
+      (0.0958, 85.8)
+      (0.0793, 107.6)
+      (0.0639, 137.4)
+      (0.0832, 135.9)
+      (0.1081, 132.8)
+    };
+
+    % Legend
+    \draw[line width=1.0pt, dashed, dash pattern=on 4pt off 2.5pt] (axis cs:0.042, 38) -- (axis cs:0.062, 38)
+      node[pos=0.5, circle, draw=black, fill=white, inner sep=1.2pt, line width=0.8pt] {};
+    \node[anchor=west, font=\small] at (axis cs:0.064, 38) {exp.};
+
+    \draw[line width=1.0pt] (axis cs:0.042, 23) -- (axis cs:0.062, 23)
+      node[pos=0.5, circle, draw=black, fill=black, inner sep=1.2pt] {};
+    \node[anchor=west, font=\small] at (axis cs:0.064, 23) {theory};
+
+  \end{axis}
+
+  % ========================================================
+  % RIGHT PANEL: 168Yb
+  % ========================================================
+  \begin{axis}[
+    at={($(leftplot.south east)+(1.5cm,0)$)},
+    width=7.8cm,
+    height=8.2cm,
+    xmin=0, xmax=0.120,
+    ymin=0, ymax=160,
+    xtick={0.05, 0.10},
+    xticklabels={$0.05$, $0.1$},
+    ytick={40, 80, 120, 160},
+    minor y tick num=1,
+    tick pos=both,
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=5pt,
+    minor tick length=3pt,
+    axis line style={line width=0.9pt},
+    xlabel={$\hbar^2 \omega^2\ (\mathrm{MeV}^2)$},
+    xlabel style={at={(axis description cs:0.80, -0.09)}, anchor=north, font=\small},
+    clip=false
+  ]
+
+    % Y-axis label atop axis line
+    \node[font=\small, align=center, anchor=south] at (axis cs:0, 161) {$\dfrac{2\mathcal{J}}{\hbar^2}$\\[1pt]\scriptsize$(\mathrm{MeV}^{-1})$};
+
+    % Nucleus title
+    \node[font=\large\bfseries, anchor=north west] at (axis cs:0.015, 150) {$^{168}\mathrm{Yb}$};
+
+    % Theory (solid line + filled dots)
+    \addplot[
+      line width=1.0pt,
+      color=black,
+      mark=*,
+      mark size=1.6pt,
+      mark options={fill=black}
+    ] coordinates {
+      (0.0008, 65.1)
+      (0.0100, 67.2)
+      (0.0255, 70.0)
+      (0.0422, 73.8)
+      (0.0603, 79.9)
+      (0.0760, 88.5)
+      (0.0881, 96.9)
+      (0.0998, 102.3)
+      (0.1106, 108.1)
+      (0.1196, 113.2)
+    };
+
+    % Experiment (dashed line + open circles)
+    \addplot[
+      line width=1.0pt,
+      dashed,
+      dash pattern=on 4pt off 2.5pt,
+      color=black,
+      mark=*,
+      mark size=1.6pt,
+      mark options={fill=white, draw=black, line width=0.8pt}
+    ] coordinates {
+      (0.0008, 69.7)
+      (0.0107, 71.0)
+      (0.0282, 73.5)
+      (0.0420, 77.9)
+      (0.0570, 83.0)
+      (0.0739, 89.1)
+      (0.0881, 97.7)
+      (0.0992, 105.1)
+      (0.1058, 112.2)
+    };
+
+    % Legend
+    \draw[line width=1.0pt, dashed, dash pattern=on 4pt off 2.5pt] (axis cs:0.055, 38) -- (axis cs:0.075, 38)
+      node[pos=0.5, circle, draw=black, fill=white, inner sep=1.2pt, line width=0.8pt] {};
+    \node[anchor=west, font=\small] at (axis cs:0.077, 38) {exp.};
+
+    \draw[line width=1.0pt] (axis cs:0.055, 23) -- (axis cs:0.075, 23)
+      node[pos=0.5, circle, draw=black, fill=black, inner sep=1.2pt] {};
+    \node[anchor=west, font=\small] at (axis cs:0.077, 23) {theory};
+
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

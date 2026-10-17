@@ -1,0 +1,143 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions of plot box
+  \def\W{7.6}
+  \def\H{10.6}
+
+  % Outer rectangular frame
+  \draw[line width=1.1pt] (0, 0) rectangle (\W, \H);
+
+  % Energy scale: y = 0.8 + (E - (-9.5)) * 3.6 cm
+  \def\Ezero{-9.5}
+  \def\yzero{0.8}
+  \def\yscale{3.6}
+
+  % Y-axis ticks and labels (-9.5 to -7.5 in steps of 0.5)
+  \foreach \E in {-9.5, -9.0, -8.5, -8.0, -7.5} {
+    \pgfmathsetmacro{\ypos}{\yzero + (\E - \Ezero) * \yscale}
+    \draw[line width=0.8pt] (0, \ypos) -- (0.15, \ypos);
+    \draw[line width=0.8pt] (\W, \ypos) -- (\W - 0.15, \ypos);
+    \node[left=3pt, font=\normalsize] at (0, \ypos) {\pgfmathprintnumber[fixed,precision=1]{\E}};
+  }
+
+  % Y-axis label
+  \node[font=\large, align=center] at (-0.6, 9.8) {$E$\\[-2pt]\normalsize(MeV)};
+
+  % Nucleus label
+  \node[font=\LARGE\bfseries] at (6.6, 9.8) {$^{210}\mathrm{Pb}$};
+
+  % Helper macro for level drawing:
+  \newcommand{\level}[4]{%
+    \pgfmathsetmacro{\y}{\yzero + (#3 - \Ezero) * \yscale}
+    \draw[line width=1.1pt] (#1, \y) -- (#2, \y) node[right=1.5pt, font=\small] {$#4$};%
+  }
+
+  % ==================== COLUMN 1: Exp ====================
+  \def\xAL{0.7} \def\xAR{1.5}
+  \level{\xAL}{\xAR}{-9.118}{0}
+  \level{\xAL}{\xAR}{-8.330}{2}
+  \pgfmathsetmacro{\yAfour}{\yzero + (-8.030 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yAsix}{\yzero + (-7.970 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yAeight}{\yzero + (-7.838 - \Ezero) * \yscale}
+  \draw[line width=1.1pt] (\xAL, \yAfour) -- (\xAR, \yAfour);
+  \draw[line width=1.1pt] (\xAL, \yAsix) -- (\xAR, \yAsix);
+  \draw[line width=1.1pt] (\xAL, \yAeight) -- (\xAR, \yAeight);
+  \node[anchor=north west, font=\footnotesize, inner sep=1pt] at (\xAR, \yAfour + 0.04) {4};
+  \node[anchor=west, font=\footnotesize, inner sep=1pt] at (\xAR, \yAsix) {6};
+  \node[anchor=south west, font=\footnotesize, inner sep=1pt] at (\xAR, \yAeight - 0.04) {8};
+  \level{\xAL}{\xAR}{-7.319}{(\ge 6)}
+
+  % ==================== COLUMN 2: Unperturbed ====================
+  \def\xBL{2.2} \def\xBR{2.7}
+  \level{\xBL}{\xBR}{-7.878}{(g_{9/2})^2}
+  \level{\xBL}{\xBR}{-7.094}{(i_{11/2}\,g_{9/2})}
+
+  % ==================== COLUMN 3: G ====================
+  \def\xCL{3.9} \def\xCR{4.6}
+  \level{\xCL}{\xCR}{-8.557}{0}
+  \pgfmathsetmacro{\yCtwo}{\yzero + (-8.055 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yCfour}{\yzero + (-8.006 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yCsix}{\yzero + (-7.945 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yCeight}{\yzero + (-7.914 - \Ezero) * \yscale}
+  \draw[line width=1.1pt] (\xCL, \yCtwo) -- (\xCR, \yCtwo);
+  \draw[line width=1.1pt] (\xCL, \yCfour) -- (\xCR, \yCfour);
+  \draw[line width=1.1pt] (\xCL, \yCsix) -- (\xCR, \yCsix);
+  \draw[line width=1.1pt] (\xCL, \yCeight) -- (\xCR, \yCeight);
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=-3.0pt] at (\xCR, \yCtwo) {2};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=-1.0pt] at (\xCR, \yCfour) {4};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=0.5pt] at (\xCR, \yCsix) {6};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=3.0pt] at (\xCR, \yCeight) {8};
+  \pgfmathsetmacro{\yCten}{\yzero + (-7.303 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yCone}{\yzero + (-7.213 - \Ezero) * \yscale}
+  \draw[line width=1.1pt] (\xCL, \yCten) -- (\xCR, \yCten);
+  \draw[line width=1.1pt] (\xCL, \yCone) -- (\xCR, \yCone);
+  \node[anchor=west, font=\small, inner sep=1pt, yshift=-1.5pt] at (\xCR, \yCten) {10};
+  \node[anchor=west, font=\small, inner sep=1pt, yshift=1.5pt] at (\xCR, \yCone) {1};
+
+  % ==================== COLUMN 4: 3p1h ====================
+  \def\xDL{5.1} \def\xDR{5.8}
+  \level{\xDL}{\xDR}{-9.067}{0}
+  \level{\xDL}{\xDR}{-8.266}{2}
+  \pgfmathsetmacro{\yDfour}{\yzero + (-8.005 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yDsix}{\yzero + (-7.915 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yDeight}{\yzero + (-7.871 - \Ezero) * \yscale}
+  \draw[line width=1.1pt] (\xDL, \yDfour) -- (\xDR, \yDfour);
+  \draw[line width=1.1pt] (\xDL, \yDsix) -- (\xDR, \yDsix);
+  \draw[line width=1.1pt] (\xDL, \yDeight) -- (\xDR, \yDeight);
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt] at (\xDR, \yDfour) {4};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=-1.5pt] at (\xDR, \yDsix) {6};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=2.5pt] at (\xDR, \yDeight) {8};
+  \level{\xDL}{\xDR}{-7.393}{1}
+  \level{\xDL}{\xDR}{-7.281}{10}
+
+  % ==================== COLUMN 5: 4p2h ====================
+  \def\xEL{6.3} \def\xER{7.0}
+  \level{\xEL}{\xER}{-9.308}{0}
+  \level{\xEL}{\xER}{-8.286}{2}
+  \pgfmathsetmacro{\yEfour}{\yzero + (-8.017 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yEsix}{\yzero + (-7.923 - \Ezero) * \yscale}
+  \pgfmathsetmacro{\yEeight}{\yzero + (-7.873 - \Ezero) * \yscale}
+  \draw[line width=1.1pt] (\xEL, \yEfour) -- (\xER, \yEfour);
+  \draw[line width=1.1pt] (\xEL, \yEsix) -- (\xER, \yEsix);
+  \draw[line width=1.1pt] (\xEL, \yEeight) -- (\xER, \yEeight);
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt] at (\xER, \yEfour) {4};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=-1.5pt] at (\xER, \yEsix) {6};
+  \node[anchor=west, font=\scriptsize, inner sep=0.5pt, yshift=2.5pt] at (\xER, \yEeight) {8};
+  \level{\xEL}{\xER}{-7.394}{1}
+  \level{\xEL}{\xER}{-7.282}{10}
+
+  % ==================== BOTTOM LABELS ====================
+  % Col 1: Exp
+  \node[font=\large\bfseries] at (1.1, 0.45) {Exp};
+
+  % Col 3: Wavy interaction line between particle lines
+  \draw[line width=0.9pt] (4.0, 0.22) -- (4.0, 0.68);
+  \draw[line width=0.9pt] (4.6, 0.22) -- (4.6, 0.68);
+  \draw[line width=0.9pt, decorate, decoration={snake, amplitude=1.2pt, segment length=3.5pt}] (4.0, 0.45) -- (4.6, 0.45);
+
+  % Col 4: + Bare G with bubble
+  \node[font=\normalsize] at (4.95, 0.45) {$+$};
+  \draw[line width=0.9pt] (5.15, 0.22) -- (5.15, 0.68);
+  \draw[line width=0.9pt] (5.95, 0.22) -- (5.95, 0.68);
+  \draw[line width=0.9pt, decorate, decoration={snake, amplitude=1.1pt, segment length=3.0pt}] (5.15, 0.45) -- (5.4, 0.45);
+  \draw[line width=0.9pt] (5.55, 0.45) circle (0.15);
+  \draw[line width=0.9pt, decorate, decoration={snake, amplitude=1.1pt, segment length=3.0pt}] (5.7, 0.45) -- (5.95, 0.45);
+
+  % Col 5: +4p2h
+  \node[font=\normalsize\bfseries] at (6.65, 0.45) {$+4\mathrm{p}2\mathrm{h}$};
+
+\end{tikzpicture}
+\end{document}

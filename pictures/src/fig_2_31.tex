@@ -1,0 +1,130 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{10.5}
+  \def\h{7.2}
+
+  \def\qmin{-25.0}
+  \def\qmax{52.0}
+  \def\emin{-1337.5}
+  \def\emax{-1310.0}
+
+  \pgfmathsetmacro{\sx}{\w / (\qmax - \qmin)}
+  \pgfmathsetmacro{\sy}{\h / (\emax - \emin)}
+
+  % Outer box frame
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Ticks on bottom and top (inwards)
+  \foreach \q in {-20, -10, 0, 10, 20, 30, 40, 50} {
+    \pgfmathsetmacro{\xpos}{(\q - \qmin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.16);
+  }
+  % Tick labels on bottom
+  \foreach \q in {-20, 0, 20, 40} {
+    \pgfmathsetmacro{\xpos}{(\q - \qmin) * \sx}
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\q$};
+  }
+  % Axis label Q_2 (b)
+  \node[above left=3pt and 4pt, font=\normalsize] at (\w, 0) {$Q_2\,(\mathrm{b})$};
+
+  % Ticks on left and right (inwards)
+  \foreach \e in {-1310, -1315, -1320, -1325, -1330, -1335} {
+    \pgfmathsetmacro{\ypos}{(\e - \emin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.16, \ypos);
+  }
+  % Tick labels on left
+  \foreach \e in {-1310, -1320, -1330} {
+    \pgfmathsetmacro{\ypos}{(\e - \emin) * \sy}
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {$\e$};
+  }
+  % Axis unit label (MeV)
+  \node[left=8pt, font=\small] at (0, {(-1315 - \emin)*\sy}) {$(\mathrm{MeV})$};
+
+  % Header text
+  \node[below right=12pt and 24pt, font=\large] at (0, \h) {Skyrme III};
+  \node[below left=10pt and 45pt, font=\Large] at (\w, \h) {$^{168}\mathrm{Yb}$};
+
+  % Legend
+  \begin{scope}[shift={(4.3, 5.0)}]
+    \draw[line width=1.1pt] (-0.35, 0.90) -- (0.35, 0.90);
+    \node[right=6pt, font=\normalsize] at (0.35, 0.90) {$E_{\mathrm{HF}}$};
+
+    \draw[line width=1.1pt, dashed] (-0.35, 0.45) -- (0.35, 0.45);
+    \node[right=6pt, font=\normalsize] at (0.35, 0.45) {$\widetilde{E}$};
+
+    \draw[line width=1.1pt, dotted] (-0.35, 0.00) -- (0.35, 0.00);
+    \node[right=6pt, font=\normalsize] at (0.35, 0.00) {$E_{\mathrm{LDM}}$};
+  \end{scope}
+
+  % Liquid drop energy E_LDM (dotted)
+  \draw[line width=1.05pt, dotted]
+    plot[smooth, tension=0.7] coordinates {
+      ({(-23.5 - \qmin)*\sx}, {(-1324.5 - \emin)*\sy})
+      ({(-18.0 - \qmin)*\sx}, {(-1328.5 - \emin)*\sy})
+      ({(-12.0 - \qmin)*\sx}, {(-1332.2 - \emin)*\sy})
+      ({(-6.0  - \qmin)*\sx}, {(-1334.3 - \emin)*\sy})
+      ({(0.0   - \qmin)*\sx}, {(-1335.0 - \emin)*\sy})
+      ({(10.0  - \qmin)*\sx}, {(-1334.0 - \emin)*\sy})
+      ({(20.0  - \qmin)*\sx}, {(-1331.0 - \emin)*\sy})
+      ({(30.0  - \qmin)*\sx}, {(-1327.5 - \emin)*\sy})
+      ({(40.0  - \qmin)*\sx}, {(-1324.5 - \emin)*\sy})
+      ({(50.0  - \qmin)*\sx}, {(-1322.5 - \emin)*\sy})
+    };
+
+  % Strutinsky smoothed energy \tilde{E} (dashed)
+  \draw[line width=1.05pt, dashed]
+    plot[smooth, tension=0.7] coordinates {
+      ({(-23.5 - \qmin)*\sx}, {(-1324.5 - \emin)*\sy})
+      ({(-18.0 - \qmin)*\sx}, {(-1328.5 - \emin)*\sy})
+      ({(-12.0 - \qmin)*\sx}, {(-1332.2 - \emin)*\sy})
+      ({(-6.0  - \qmin)*\sx}, {(-1334.3 - \emin)*\sy})
+      ({(0.0   - \qmin)*\sx}, {(-1335.0 - \emin)*\sy})
+      ({(10.0  - \qmin)*\sx}, {(-1333.5 - \emin)*\sy})
+      ({(20.0  - \qmin)*\sx}, {(-1330.0 - \emin)*\sy})
+      ({(30.0  - \qmin)*\sx}, {(-1326.5 - \emin)*\sy})
+      ({(40.0  - \qmin)*\sx}, {(-1323.0 - \emin)*\sy})
+      ({(50.0  - \qmin)*\sx}, {(-1320.5 - \emin)*\sy})
+    };
+
+  % Hartree-Fock energy E_HF (solid)
+  \draw[line width=1.25pt]
+    ({(-24.5 - \qmin)*\sx}, {(-1320.0 - \emin)*\sy}) --
+    ({(-23.5 - \qmin)*\sx}, {(-1320.0 - \emin)*\sy})
+    plot[smooth, tension=0.7] coordinates {
+      ({(-23.5 - \qmin)*\sx}, {(-1320.0 - \emin)*\sy})
+      ({(-20.0 - \qmin)*\sx}, {(-1324.0 - \emin)*\sy})
+      ({(-17.0 - \qmin)*\sx}, {(-1327.0 - \emin)*\sy})
+      ({(-14.0 - \qmin)*\sx}, {(-1328.2 - \emin)*\sy})
+      ({(-10.0 - \qmin)*\sx}, {(-1326.8 - \emin)*\sy})
+      ({(-5.0  - \qmin)*\sx}, {(-1323.5 - \emin)*\sy})
+      ({(0.0   - \qmin)*\sx}, {(-1321.3 - \emin)*\sy})
+      ({(5.0   - \qmin)*\sx}, {(-1323.5 - \emin)*\sy})
+      ({(10.0  - \qmin)*\sx}, {(-1327.5 - \emin)*\sy})
+      ({(14.0  - \qmin)*\sx}, {(-1331.7 - \emin)*\sy})
+      ({(18.0  - \qmin)*\sx}, {(-1334.8 - \emin)*\sy})
+      ({(22.0  - \qmin)*\sx}, {(-1333.0 - \emin)*\sy})
+      ({(26.0  - \qmin)*\sx}, {(-1329.5 - \emin)*\sy})
+      ({(30.0  - \qmin)*\sx}, {(-1326.0 - \emin)*\sy})
+      ({(35.0  - \qmin)*\sx}, {(-1322.0 - \emin)*\sy})
+      ({(40.0  - \qmin)*\sx}, {(-1319.0 - \emin)*\sy})
+      ({(45.0  - \qmin)*\sx}, {(-1316.5 - \emin)*\sy})
+      ({(50.0  - \qmin)*\sx}, {(-1314.5 - \emin)*\sy})
+    };
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,970 @@
+
+\chapter{电磁极矩与跃迁}
+
+通过研究原子核在外部电磁场中的行为，我们可以了解核结构的信息。核与外场的相互作用是明确而简明
+\begin{comment}
+原文是广为人知的。
+\end{comment}
+的，因此这是一种获得原子核信息的好方法。许多作者推到了相关的公式，读者可以自行参阅它们以了解更多细节（例如{[}BW 52, Da
+65a, SF 74{]}）。
+
+\section{Hamilton量的基本形式}
+
+一个原子核在一个外部电磁场中运动，这个外部电磁场被四维矢势$A_{\mu}=(\Phi,\boldsymbol{A})$或者电场$\boldsymbol{E}$和磁场$\boldsymbol{B}$所描述，Hamilton量写为：
+
+\begin{equation}
+H=H_{\text{nucl}}+H_{\text{field}}+H_{\text{int}}
+\end{equation}
+
+这里有三个部分：$H_{\text{nucl}}$是原子核的Hamilton量，或者至少是核模型的Hamilton量。我们假定我们知道它的本征函数$\Psi_{i}(1\dots A)$：
+
+\begin{equation}
+H_{\text{nucl}}=\Psi_{i}(1\dots A)=E_{i}\Psi_{i}(1\dots A)
+\end{equation}
+
+$H_{\text{field}}$可以如下给出：
+
+\begin{equation}
+H_{\text{field}}=\frac{1}{8\mathrm{\pi}}\int\left(\boldsymbol{E}^{2}(\boldsymbol{r},t)+\boldsymbol{B}^{2}(\boldsymbol{r},t)\right)\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+外场和原子核的相互作用可以写为
+\begin{comment}
+第一项的$c$去哪儿了？
+\end{comment}
+：
+
+\begin{equation}
+H_{\text{int}}=-\frac{1}{c}\int j_{\mu}A^{\mu}\,\mathrm{d^{3}\boldsymbol{r}=\int\left(\rho(\boldsymbol{r},t)\Phi(\boldsymbol{r},t)-\frac{1}{c}\boldsymbol{j}(\boldsymbol{r},t)\cdot\boldsymbol{A}(\boldsymbol{r},t)\right)\,\mathrm{d}^{3}\boldsymbol{r}}
+\end{equation}
+
+这里$\rho(\boldsymbol{r},t)$是核电荷密度：
+
+\begin{equation}
+\rho(\boldsymbol{r},t)=\sum^{A}_{i=1}e\left(\frac{1}{2}-t^{(i)}_{3}\right)\cdot\delta(\boldsymbol{r}-\boldsymbol{r}_{i}(t))
+\end{equation}
+
+这里我们把核子当成了点粒子。事实上，它们有一个有限的延展，可以由形状因子给出。这在{[}BM69, App.3C{]}中有着简单的介绍，出于简明性的考虑我们这里暂时不去考虑它。
+
+原子核中的电流密度$\boldsymbol{j}(\boldsymbol{r},t)$和磁矩密度有关
+\begin{comment}
+这个关系是咋来的啊，忘干净了。
+\end{comment}
+：
+
+\begin{equation}
+\boldsymbol{j}(\boldsymbol{r},t)=c\nabla\times\boldsymbol{\mu}(\boldsymbol{r},t)
+\end{equation}
+
+它有两部分
+\begin{comment}
+这个两部分并不是都用$\boldsymbol{j}$或者$\boldsymbol{\mu}$表示出来的就让人很难受。但是没办法，这是为了后面方便计算。
+\end{comment}
+：
+\begin{enumerate}
+\item 轨道部分，来自于移动的质子：
+
+\begin{equation}
+j^{o}(\boldsymbol{r},t)=\sum^{A}_{i=1}e\left(\frac{1}{2}-t^{(i)}_{3}\right)\frac{1}{2}(\boldsymbol{v}_{i}\delta(\boldsymbol{r}-\boldsymbol{r}_{i}(t)+\text{h.c.})
+\end{equation}
+
+$\boldsymbol{v}_{i}$可以如下给出：
+
+\begin{equation}
+\boldsymbol{v}_{i}=\frac{\mathrm{i}}{\hbar}[H,\boldsymbol{r}_{i}]
+\end{equation}
+
+对于速度无关的势，我们有$\boldsymbol{v}_{i}=(1/m)\boldsymbol{p}_{i}$
+\begin{comment}
+于是有：
+\[
+j^{o}(\boldsymbol{r},t)=\sum^{A}_{i=1}e\left(\frac{1}{2}-t^{(i)}_{3}\right)\boldsymbol{v}_{i}\delta(\boldsymbol{r}-\boldsymbol{r}_{i}(t)
+\]
+
+然而在核物理中这是否只是美好的期望？
+\end{comment}
+。接下来我们仅仅考虑这种情况。此外，这里没有考虑$\pi$介子交换流，更细节的讨论可见\cite{SF74}。
+\item 自旋部分，它来自于原子核的自旋分布，可以如下给出：
+
+\begin{equation}
+\boldsymbol{\mu}^{s}(\boldsymbol{r},t)=\sum^{A}_{i=1}\delta(\boldsymbol{r}-\boldsymbol{r}_{i}(t))\frac{e\hbar}{2mc}\left\{ \left(\frac{1}{2}-t^{(i)}_{3}\right)g_{p}+\left(\frac{1}{2}+t^{(i)}_{3}\right)g_{n}\right\} \boldsymbol{s}_{i}
+\end{equation}
+
+这里$g_{p}$和$g_{n}$是自由质子和中子的$g$-因子（$g_{p}=5.586$，$g_{n}=-3.826$）。$\pi$介子交换流有时可以通过使用有效$g$-因子加以考虑。接下来，我们使用核磁子$\mu_{N}=e\hbar/2mc$。
+\end{enumerate}
+
+\section{静态多极矩}
+
+和静态的电磁场的相互作用会导致核能级的改变，在一阶微扰论下，第$i$个能级的改变量为：
+
+\begin{equation}
+\Delta E_{i}=\langle\Psi_{i}|H_{\text{int}}|\Psi\rangle
+\end{equation}
+
+我们引入磁通量密度
+\begin{comment}
+这不就是磁场吗？怎么就磁通量密度了？
+\end{comment}
+$\boldsymbol{B}=\nabla\times\boldsymbol{A}$，可以得到：
+
+\begin{equation}
+H_{\text{int}}=\int\rho(\boldsymbol{r})\Phi(\boldsymbol{r})\,\mathrm{d}^{3}\boldsymbol{r}-\int\boldsymbol{\mu}(\boldsymbol{r})\cdot\boldsymbol{B}(\boldsymbol{r})\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+\begin{booknote*}
+首先利用求和记号：
+
+\begin{align*}
+\boldsymbol{j}\cdot\boldsymbol{A} & =c(\nabla\times\boldsymbol{\mu})\cdot\boldsymbol{A}\\
+ & =c\varepsilon_{ijk}(\partial_{j}\mu_{k})A_{i}\\
+ & =c\varepsilon_{ijk}(\partial_{j}\mu_{k}A_{i})-c\varepsilon_{ijk}\mu_{k}(\partial_{j}A_{i})\\
+ & =c\nabla\cdot(\boldsymbol{\mu}\times\boldsymbol{A})-c\boldsymbol{\mu}\cdot\boldsymbol{B}
+\end{align*}
+
+积分，得到：
+
+\begin{align*}
+-\frac{1}{c}\int\boldsymbol{j}\cdot\boldsymbol{A}\,\mathrm{d}^{3}\boldsymbol{r} & =-\int\nabla\cdot(\boldsymbol{\mu}\times\boldsymbol{A})\,\mathrm{d}^{3}\boldsymbol{r}+\int\boldsymbol{\mu}\cdot\boldsymbol{B}\,\mathrm{d}^{3}\boldsymbol{r}\\
+ & =-\int\boldsymbol{\mu}(\boldsymbol{r})\cdot\boldsymbol{B}(\boldsymbol{r})\,\mathrm{d}^{3}\boldsymbol{r}
+\end{align*}
+
+这里省去了第一项，原因是$\mu(\boldsymbol{r})$在边界处显然为零。
+\end{booknote*}
+由于外场的源和原子核相距很远，因此原子核中的$\Phi(\boldsymbol{r})$和$\boldsymbol{B}(\boldsymbol{r})$满足均匀Maxwell方程组：
+
+\begin{align}
+\nabla^{2}\Phi(\boldsymbol{r}) & =0\nonumber \\
+\nabla\times\boldsymbol{B}(\boldsymbol{r}) & =0\\
+\nabla\cdot\boldsymbol{B}(\boldsymbol{r}) & =0\nonumber 
+\end{align}
+
+这意味着$\boldsymbol{B}$可以写成：
+
+\begin{equation}
+\boldsymbol{B}(\boldsymbol{r})=-\nabla\Xi(\boldsymbol{r})
+\end{equation}
+
+并且有：
+
+\begin{equation}
+\nabla^{2}\Xi(\boldsymbol{r})=0
+\end{equation}
+
+在球坐标系，上面两个拉普拉斯方程的最一般的在原点处不发散的解可以写为：
+
+\begin{align}
+\Phi(\boldsymbol{r}) & =\sum_{\lambda\mu}a_{\lambda\mu}r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\\
+\Xi(\boldsymbol{r}) & =\sum_{\lambda\mu}b_{\lambda\mu}r^{\lambda}Y_{\lambda\mu}(\theta,\phi)
+\end{align}
+
+这里$Y_{\lambda\mu}$是球谐函数。
+
+我们发现：
+
+\begin{equation}
+H_{\text{int}}=\sum_{\lambda\mu}a_{\lambda\mu}\hat{Q}_{\lambda\mu}+b_{\lambda\mu}\hat{M}_{\lambda\mu}
+\end{equation}
+
+这里电磁多极算符为：
+
+\begin{align}
+\hat{Q}_{\lambda\mu} & =\int\rho(\boldsymbol{r})r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\,\mathrm{d}^{3}\boldsymbol{r}\\
+\hat{M}_{\lambda\mu} & =\int\boldsymbol{\mu}(\boldsymbol{r})\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))\,\mathrm{d}^{3}\boldsymbol{r}
+\end{align}
+
+在代入$\rho(\boldsymbol{r})$和$\boldsymbol{\mu}(\boldsymbol{r})$的具体形式之前，我们可以把$\hat{M}_{\lambda\mu}$重写一下。
+
+我们需要用到关系
+\begin{comment}
+这里我不知道该用什么符号让它清楚一点。
+\end{comment}
+：
+
+\begin{equation}
+\nabla\times[\nabla\times(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\boldsymbol{r})]=(\lambda+1)\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))
+\end{equation}
+
+\begin{booknote*}
+证明。首先利用：
+
+\[
+\nabla\times\nabla\times*=\nabla[\nabla\cdot*]-\nabla^{2}*
+\]
+
+得到：
+
+\[
+\nabla[\nabla\cdot(r^{\lambda+1}Y_{\lambda\mu}(\theta,\phi)\hat{\boldsymbol{e}}_{r})]-\nabla^{2}(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\boldsymbol{r})
+\]
+
+第一项可以利用球坐标散度形式得到为：
+
+\[
+(\lambda+3)\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))
+\]
+
+第二项为：
+
+\begin{align*}
+\partial_{j}\partial_{j}(r^{\lambda}Y_{\lambda\mu}r_{i}) & =\partial_{j}[\partial_{j}(r^{\lambda}Y_{\lambda\mu})r_{i}+r^{\lambda}Y_{\lambda\mu}\partial_{j}r_{i}]\\
+ & =\partial^{2}(r^{\lambda}Y_{\lambda\mu})r_{i}+2\partial_{j}(r^{\lambda}Y_{\lambda\mu})\partial_{j}r_{i}+r^{\lambda}Y_{\lambda\mu}\partial^{2}r_{i}
+\end{align*}
+
+我们显然有$\partial^{2}(r^{\lambda}Y_{\lambda\mu})=0$，也有$\partial^{2}r_{i}=0$，因此得到：
+
+\[
+\partial_{j}\partial_{j}(r^{\lambda}Y_{\lambda\mu}r_{i})=2\partial_{i}(r^{\lambda}Y_{\lambda\mu})
+\]
+
+两项相加，得：
+
+\[
+\nabla\times\nabla\times(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\boldsymbol{r})=(\lambda+1)\nabla\left(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\right)
+\]
+\end{booknote*}
+把这一关系代入$\hat{M}_{\lambda\mu}$的表达式中，分部积分，得：
+
+\begin{align}
+\hat{M}_{\lambda\mu} & =\frac{1}{\lambda+1}\int[\boldsymbol{r}\times(\nabla\times\boldsymbol{\mu}(\boldsymbol{r}))]\cdot\nabla(r^{\lambda}Y_{\lambda\mu})\,\mathrm{d}^{3}\boldsymbol{r}\\
+ & =\frac{1}{c(\lambda+1)}\int(\boldsymbol{r}\times\boldsymbol{j}(\boldsymbol{r}))\cdot\nabla(r^{\lambda}Y_{\lambda\mu})\,\mathrm{d}^{3}\boldsymbol{r}\label{eq:=009759=006001=0078C1=00591A=006781=0077E9}
+\end{align}
+
+\begin{booknote*}
+代入，得：
+
+\[
+\hat{M}_{\lambda\mu}=\frac{1}{\lambda+1}\int\boldsymbol{\mu}(\boldsymbol{r})\cdot\nabla\times[\nabla\times(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\boldsymbol{r})]\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+
+分部积分一次，得：
+
+\begin{align*}
+\hat{M}_{\lambda\mu} & =\frac{1}{\lambda+1}\int[\nabla\times\boldsymbol{\mu}(\boldsymbol{r})]\cdot[\nabla\times(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\boldsymbol{r})]\,\mathrm{d}^{3}\boldsymbol{r}
+\end{align*}
+
+接下来，利用$\nabla\times(f\boldsymbol{r})=(\nabla f)\times\boldsymbol{r}$，得到：
+
+\[
+\hat{M}_{\lambda\mu}=\frac{1}{\lambda+1}\int[\nabla\times\boldsymbol{\mu}(\boldsymbol{r})]\cdot[\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\times\boldsymbol{r})]\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+
+再利用$\boldsymbol{a}\cdot(\boldsymbol{b}\times\boldsymbol{c})=(\boldsymbol{c}\times\boldsymbol{a})\cdot\boldsymbol{b}$，得：
+
+\[
+\hat{M}_{\lambda\mu}=\frac{1}{\lambda+1}\int[\boldsymbol{r}\times(\nabla\times\boldsymbol{\mu}(\boldsymbol{r}))]\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+\end{booknote*}
+现在把$\rho(\boldsymbol{r})$和$\boldsymbol{\mu}(\boldsymbol{r})$的表达式代入，并且发现$\boldsymbol{l}_{i}=(1/\mathrm{i})(\boldsymbol{r}_{i}\times\nabla_{i})$，得：
+
+\begin{align}
+\hat{Q}_{\lambda\mu} & =e\sum^{A}_{i=1}\left(\frac{1}{2}-t^{(i)}_{3}\right)r^{\lambda}_{i}Y_{\lambda\mu}(\theta_{i},\phi_{i})\label{eq:=009759=006001=007535=00591A=006781=007B97=007B26=005177=004F53}\\
+\hat{M}_{\lambda\mu} & =\mu_{N}\sum^{A}_{i=1}\left\{ g^{(i)}_{s}\boldsymbol{s}_{i}+\frac{2}{\lambda+1}\cdot g^{(i)}_{l}\boldsymbol{l}_{i}\right\} \cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))_{r=r_{i}}\label{eq:=009759=006001=0078C1=00591A=006781=007B97=007B26=005177=004F53}
+\end{align}
+
+这里：
+
+\[
+\left.\begin{array}{c}
+g^{(i)}_{s}=g_{p}\\
+g^{(i)}_{l}=1
+\end{array}\right\} \quad\text{对质子来说}\quad\left.\begin{array}{c}
+g^{(i)}_{s}=g_{n}\\
+g^{(i)}_{l}=0
+\end{array}\right\} \quad\text{对中子来说}
+\]
+
+此外，算符$\boldsymbol{l}_{i}$仅仅作用在$\boldsymbol{r}_{i}$上。它与$\nabla r^{\lambda}Y_{\lambda\mu}$对易：
+
+\begin{equation}
+\boldsymbol{l}\cdot(\nabla r^{\lambda}Y_{\lambda\mu})\propto(\boldsymbol{r}\times\nabla)\cdot\nabla r^{\lambda}Y_{\lambda\mu}=\boldsymbol{r}\cdot(\nabla\times\nabla)r^{\lambda}Y_{\lambda\mu}=0
+\end{equation}
+
+\begin{booknote*}
+首先看电多极算符：
+
+\begin{align*}
+\hat{Q}_{\lambda\mu} & =e\sum^{A}_{i=1}\left(\frac{1}{2}-t^{(i)}_{3}\right)\int\delta(\boldsymbol{r}-\boldsymbol{r}_{i}(t))r^{\lambda}Y_{\lambda\mu}(\theta,\phi)\,\mathrm{d}^{3}\boldsymbol{r}\\
+ & =e\sum^{A}_{i=1}\left(\frac{1}{2}-t^{(i)}_{3}\right)r^{\lambda}_{i}Y_{\lambda\mu}(\theta_{i},\phi_{i})
+\end{align*}
+
+磁多极算符分为两部分，第一部分是：
+
+\begin{align*}
+\hat{M}^{o}_{\lambda\mu} & =\frac{1}{c(\lambda+1)}\int(\boldsymbol{r}\times\boldsymbol{j}^{o}(\boldsymbol{r}))\cdot\nabla(r^{\lambda}Y_{\lambda\mu})\,\mathrm{d}^{3}\boldsymbol{r}\\
+ & =\mu_{N}\frac{2}{\lambda+1}\sum^{A}_{i=1}g^{(i)}_{l}(\frac{m}{\mathrm{i}\hbar}\boldsymbol{r}_{i}\times\boldsymbol{v}_{i})\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))_{r=r_{i}}\\
+ & =\mu_{N}\frac{2}{\lambda+1}\sum^{A}_{i=1}g^{(i)}_{l}\boldsymbol{l}_{i}\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))_{r=r_{i}}
+\end{align*}
+
+第二部分是：
+
+\begin{align*}
+\hat{M}^{s}_{\lambda\mu} & =\int\boldsymbol{\mu}^{s}(\boldsymbol{r})\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))\,\mathrm{d}^{3}\boldsymbol{r}\\
+ & =\mu_{N}\sum^{A}_{i=1}g^{(i)}_{s}\boldsymbol{s}_{i}\cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))_{\boldsymbol{r}=\boldsymbol{r}_{i}}
+\end{align*}
+
+相加即得：
+
+\[
+\hat{M}_{\lambda\mu}=\mu_{N}\sum^{A}_{i=1}\left\{ g^{(i)}_{s}\boldsymbol{s}_{i}+\frac{2}{\lambda+1}\cdot g^{(i)}_{l}\boldsymbol{l}_{i}\right\} \cdot\nabla(r^{\lambda}Y_{\lambda\mu}(\theta,\phi))_{r=r_{i}}
+\]
+\end{booknote*}
+这些算符在态$|\Psi\rangle$上的期待值就是这个态的电或磁矩：
+
+\begin{align}
+Q_{\lambda\mu} & =\langle\Psi|\hat{Q}_{\lambda\mu}|\Psi\rangle\\
+M_{\lambda\mu} & =\langle\Psi|\hat{M}_{\lambda\mu}|\Psi\rangle
+\end{align}
+
+我们首先讨论$Q_{\lambda\mu}$和$M_{\lambda\mu}$的选择定则，因为它们和态$|\Psi\rangle$具体的形式无关。由于强相互作用和电磁相互作用宇称守恒，选择$|\Psi\rangle$是宇称算符的本征态是合理的。另一方面，多极算符$\hat{Q}_{\lambda\mu}$和$\hat{M}_{\lambda\mu}$分别具有$(-)^{\lambda}$和$(-)^{\lambda+1}$的宇称。这意味着：
+
+\begin{align}
+Q_{\lambda\mu} & =0\quad\text{对}\lambda=1,3,5,\dots\nonumber \\
+M_{\lambda\mu} & =0\quad\text{对}\lambda=0,2,4,\dots
+\end{align}
+
+利用算符$\hat{Q}_{\lambda\mu}$和$\hat{M}_{\lambda\mu}$是球谐张量，我们可以对角动量本征态$|I,M\rangle$使用Wigner-Eckart定理：
+
+\begin{align}
+Q_{\lambda\mu} & =\langle IM|\hat{Q}_{\lambda\mu}|IM\rangle=(-)^{I-M}\begin{pmatrix}I & \lambda & I\\
+-M & \mu & M
+\end{pmatrix}\langle I||\hat{Q}_{\lambda}||I\rangle\\
+M_{\lambda\mu} & =\langle IM|\hat{M}_{\lambda\mu}|IM\rangle=(-)^{I-M}\begin{pmatrix}I & \lambda & I\\
+-M & \mu & M
+\end{pmatrix}\langle I||\hat{M}_{\lambda\mu}||I\rangle\nonumber 
+\end{align}
+
+由此得到：
+
+\begin{equation}
+\left.\begin{array}{c}
+Q_{\lambda\mu}\\
+M_{\lambda\mu}
+\end{array}\right\} \neq0\quad\text{仅仅对}\mu=0\text{和}0\leq\lambda\leq2I\text{成\text{立}}
+\end{equation}
+
+由于$Q_{\lambda\mu}$和$M_{\lambda\mu}$关于磁量子数的关系是平凡的，我们往往只给出$M=I$的值。
+
+磁偶极矩被定义为：
+
+\begin{equation}
+\boldsymbol{\mu}=\sqrt{\frac{4\mathrm{\pi}}{3}}\langle II|\hat{M}_{10}|II\rangle
+\end{equation}
+
+电偶极矩被定义为：
+
+\begin{equation}
+Q=\sqrt{\frac{16\mathrm{\pi}}{5}}\langle II|\hat{Q}_{20}|II\rangle
+\end{equation}
+
+这些值是在实验室系下定义的并且可以被实验测量。内禀的多极矩可以由1.70
+\begin{comment}
+还没写，之后再说。
+\end{comment}
+给出。
+
+\section{辐射场的多级展开}
+
+在电磁辐射的情况下，使用Coulomb规范是方便的：
+
+\begin{equation}
+\Phi=0;\quad\nabla\cdot\boldsymbol{A}=0\label{eq:Coulomb=0089C4=008303}
+\end{equation}
+
+自由场的Hamilton量可以写为：
+
+\begin{equation}
+H_{\text{field}}=\frac{1}{8\mathrm{\pi}}\int\left(\frac{1}{c^{2}}\dot{\boldsymbol{A}}^{2}+(\nabla\times\boldsymbol{A})^{2}\right)\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+由此可以推出波动方程：
+
+\begin{equation}
+\nabla^{2}\boldsymbol{A}-\frac{1}{c^{2}}\frac{\partial^{2}}{\partial t^{2}}\boldsymbol{A}=0
+\end{equation}
+
+为了表示出最一般的矢势$\boldsymbol{A}$，我们需要找一组满足上述方程的完备正交基。此时，我们通常做时间与空间的Fourier变换，然后只保留与波矢$\boldsymbol{k}$垂直的部分以满足\ref{eq:Coulomb=0089C4=008303}。
+\begin{comment}
+虽然没搞懂它在说什么，不过应该不重要。
+\end{comment}
+然而，此处有球对称，我们只做时间的Fourier变换，也就是说，我们假设我们的基关于时间的依赖是$\exp(-\mathrm{i}kct)$，并且满足Helmholtz方程：
+
+\begin{equation}
+(\nabla^{2}+k^{2})\boldsymbol{A}=0
+\end{equation}
+
+\begin{comment}
+下面这一段其实只是找到解，没必要看。可以直接跳到$\boldsymbol{A}$的一般形式。
+\end{comment}
+根据球对称性，我们可以使用轨道角动量$\boldsymbol{L}^{2}$和$L_{z}$的本征函数。一组满足这一条件并且在原点处不发散的基是$j_{L}(kr)Y_{LM_{L}}(\theta,\phi)$，这里$j_{L}(kr)$是球Bessel函数，$Y_{LM}$是球谐函数。除了轨道角动量，根据$\boldsymbol{A}$的矢量性质，光子还应具有$1$自旋，即$S=1$。$\boldsymbol{S}^{2}$和$S_{z}$的本征函数是矢量$\boldsymbol{e}_{M_{S}}$（$M_{S}=+1,0,-1$）。光子的总角动量可以由$\boldsymbol{I}=\boldsymbol{L}+\boldsymbol{S}$给出。根据角动量耦合规则，我们可以使用$\boldsymbol{L}^{2}$，$\boldsymbol{S}^{2}$，$\boldsymbol{I}^{2}$，$I_{z}$的本征函数，即矢量球谐函数：
+
+\begin{equation}
+\boldsymbol{Y}_{ILM}(\Omega)=\sum_{M_{S}M_{L}}C^{L1I}_{M_{L}M_{S}m}Y_{LM_{L}}(\Omega)\boldsymbol{e}_{M_{S}}
+\end{equation}
+
+它们组成了一组完备正交基：
+
+\[
+\int\mathrm{d}\Omega\,\boldsymbol{Y}^{*}_{ILm}(\Omega)\boldsymbol{Y}_{I^{\prime}L^{\prime}m^{\prime}}(\Omega)=\delta_{ll^{\prime}}\delta_{LL^{\prime}}\delta_{mm^{\prime}}
+\]
+
+对于固定的$I$，轨道角动量可以是$I-1$，$I$，$I+1$。这意味着Helmholtz方程对于每个$k$，$I$，$m$可以有三个独立的解
+\begin{comment}
+这里应该对应三种矢量球谐函数？
+\end{comment}
+。然而我们还必须要满足\ref{eq:Coulomb=0089C4=008303}。
+
+从{[}Ed. 57{]}可知
+\begin{comment}
+已查阅，证明复杂，等着写了角动量部分再说。
+\end{comment}
+：
+
+\begin{equation}
+\boldsymbol{Y}_{IIm}(\Omega)=\frac{1}{\sqrt{I(I+1)}}\boldsymbol{L}Y_{Im}(\Omega)\label{eq:=0077E2=0091CF=007403=008C10=0051FD=006570=007B80=00660E=005199=006CD5}
+\end{equation}
+
+我们可以发现，$j_{I}(kr)\boldsymbol{Y}_{IIm}(\Omega)$
+\begin{comment}
+原书上这个地方应该是写错了。
+\end{comment}
+自动满足\ref{eq:Coulomb=0089C4=008303}。上式的正交波函数是$\boldsymbol{Y}_{I,I+1,m}$和$\boldsymbol{Y}_{I,I-1,m}$。只有一个这样的组合满足\ref{eq:Coulomb=0089C4=008303}：
+
+\begin{equation}
+\frac{\mathrm{i}}{k}\nabla\times(j_{l}(kr)\boldsymbol{Y}_{IIm})=\sqrt{\frac{I}{2I+1}}j_{I+1}(kr)\boldsymbol{Y}_{I,I+1,m}-\sqrt{\frac{I+1}{2I+1}}j_{I-1}(kr)\boldsymbol{Y}_{I,I-1,m}
+\end{equation}
+
+\begin{booknote*}
+验证$j_{I}(kr)\boldsymbol{Y}_{IIm}(\Omega)$满足Coulomb规范，首先证明：
+
+\begin{align*}
+\nabla\cdot\left(j_{I}(kr)\boldsymbol{r}\times\nabla Y_{IIm}(\Omega)\right) & =\boldsymbol{r}\cdot\left(\nabla j_{I}(kr)\times\nabla Y_{IIm}(\Omega)\right)
+\end{align*}
+
+由于$\nabla j_{I}(kr)$与$\boldsymbol{r}$方向相同，可以得到其为零。
+\end{booknote*}
+因此，对每个$I$和$m$，我们得到了Helmholtz方程满足\ref{eq:Coulomb=0089C4=008303}的两个独立的解。我们用一个指标$\lambda$标记他们并称它们为电（$\lambda=E$）和磁（$\lambda=M$）辐射：
+
+\begin{align}
+\boldsymbol{A}_{MkIm} & (\boldsymbol{r})=\mathcal{N}j_{I}(kr)\boldsymbol{Y}_{IIm}(\Omega)\nonumber \\
+ & =\frac{\mathcal{N}}{\sqrt{I(I+1)}}\frac{1}{\mathrm{i}}(\boldsymbol{r}\times\nabla)j_{I}(kr)Y_{Im}(\Omega)
+\end{align}
+
+和：
+
+\begin{align}
+\boldsymbol{A}_{EkIm}(\boldsymbol{r}) & =\frac{\mathrm{i}}{k}(\nabla\times\boldsymbol{A}_{MkIm}(\boldsymbol{r}))\nonumber \\
+ & =\frac{-\mathcal{N}}{\sqrt{I(I+1)}}\frac{1}{k}\left\{ \nabla\left[Y_{Im}(\Omega)\frac{\partial}{\partial r}(rj_{I}(kr))\right]+k^{2}\boldsymbol{r}j_{I}(kr)Y_{Im}(\Omega)\right\} 
+\end{align}
+
+电辐射解是从磁辐射解中得到的，过程中计算了$\nabla\times\nabla\times(\boldsymbol{r}j_{I}Y_{Im})$并且利用了$j_{I}Y_{Im}$满足Helmholtz方程的事实。
+\begin{booknote*}
+将$\boldsymbol{A}_{MkIm}$代入，得：
+
+\begin{align*}
+\boldsymbol{A}_{EkIm}(\boldsymbol{r}) & =\frac{\mathrm{i}}{k}(\nabla\times\boldsymbol{A}_{MkIm}(\boldsymbol{r}))\\
+ & =\frac{\mathcal{N}}{\sqrt{I(I+1)}}\frac{1}{k}\nabla\times\bigl[\boldsymbol{r}\times\nabla\bigl(j_{I}(kr)Y_{Im}(\Omega)\bigr)\bigr]\\
+ & =\frac{-\mathcal{N}}{\sqrt{I(I+1)}}\frac{1}{k}\nabla\times\bigl[\nabla\times\bigl(\boldsymbol{r}j_{I}(kr)Y_{Im}(\Omega)\bigr)\bigr]
+\end{align*}
+
+利用矢量分析公式：
+
+\[
+\nabla\times\bigl[\nabla\times\bigl(\boldsymbol{r}*\bigr)\bigr]=\nabla\bigl[\nabla\cdot(\boldsymbol{r}*)\bigr]-\nabla^{2}(\boldsymbol{r}*)
+\]
+
+对于第一项，利用球坐标的梯度公式，得到：
+
+\[
+\nabla\bigl[\nabla\cdot(\boldsymbol{r}*)\bigr]=\nabla\left[\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial r}(r^{2}\sin\theta\cdot r*)\right]=\nabla\left[\frac{\partial}{\partial r}(r*)\right]+2\nabla(*)
+\]
+
+对于第二项，利用矢量分析公式：
+
+\begin{align*}
+\nabla^{2}(\boldsymbol{r}*) & =2\nabla(*)+\boldsymbol{r}\nabla^{2}(*)
+\end{align*}
+
+于是得到：
+
+\[
+\nabla\times\bigl[\nabla\times\bigl(\boldsymbol{r}*\bigr)\bigr]=\nabla\left[\frac{\partial}{\partial r}(r*)\right]-\boldsymbol{r}\nabla^{2}(*)
+\]
+
+利用Helmholtz方程，则可得到：
+
+\[
+\boldsymbol{A}_{EkIm}(\boldsymbol{r})=\frac{-\mathcal{N}}{\sqrt{I(I+1)}}\frac{1}{k}\left\{ \nabla\left[Y_{Im}(\Omega)\frac{\partial}{\partial r}(rj_{I}(kr))\right]+k^{2}\boldsymbol{r}j_{I}(kr)Y_{Im}(\Omega)\right\} 
+\]
+\end{booknote*}
+$\mathcal{N}$是归一化系数。量子数$k$通过在半径为 $R$的完美导体球面上要求适当的边界条件来离散化。球面的引入仅仅是为了引入边界条件，在最后需要让其远大于核半径$R_{0}$。根据经典电动力学，边界条件应当为$E_{\parallel}=0$和$B_{\perp}=0$。这些条件只有当$k$值是离散的值$k_{n}$的时候才能满足。在磁的情况下他们可以由Bessel函数的零点给出：
+
+\begin{equation}
+j_{I}(k_{n}R)=0\label{eq:=0078C1=008FB9=00754C=006761=004EF6}
+\end{equation}
+
+在电的情况下，条件为：
+
+\begin{equation}
+\left.\frac{\partial}{\partial r}(rj_{I}(k_{n}r))\right|_{r=R}=0
+\end{equation}
+
+接下来我们把$k$当做离散指标，取遍所有可能的离散值。
+
+归一化系数$\mathcal{N}$选取为使得如下正交关系满足的值：
+
+\begin{equation}
+\int^{R}_{0}r^{2}\mathrm{d}r\int\mathrm{d}\Omega\,\boldsymbol{A}^{*}_{\lambda^{\prime}k^{\prime}I^{\prime}m^{\prime}}(\boldsymbol{r})\cdot\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})=\frac{2\mathrm{\pi}\hbar c}{k}\delta_{\lambda\lambda^{\prime}}\delta_{kk^{\prime}}\delta_{II^{\prime}}\delta_{mm^{\prime}}
+\end{equation}
+
+在大$R$极限下，$\mathcal{N}$被证明是：
+
+\begin{equation}
+\mathcal{N}=\sqrt{\frac{4\mathrm{\pi}\hbar ck}{R}}
+\end{equation}
+
+这在两种$\lambda$的情况下都成立。
+
+电磁辐射在宇称变换下的性质可以由\ref{eq:=0077E2=0091CF=007403=008C10=0051FD=006570=007B80=00660E=005199=006CD5}得到。角动量算符$\boldsymbol{L}$保持宇称，而旋度算符改变宇称，于是得到：
+
+\begin{align}
+\Pi\boldsymbol{A}_{EkIm} & =(-)^{I+1}\boldsymbol{A}_{EkIm}\nonumber \\
+\Pi\boldsymbol{A}_{MkIm} & =(-)^{I}\boldsymbol{A}_{MkIm}\label{eq:=007535=0078C1=008F90=005C04=005728=005B87=0079F0=0053D8=006362=004E0B=006027=008D28}
+\end{align}
+
+于是我们这个问题的最一般的解为：
+
+\begin{equation}
+\boldsymbol{A}(\boldsymbol{r},t)=\sum_{\lambda k}\sum_{Im}\left(a^{*}_{\lambda kIm}\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}kct}+\text{c.c.}\right)
+\end{equation}
+
+系数$a_{\lambda kIm}$是描述电磁场$\boldsymbol{A}$的独立变量。上面这种形式保证了选取任意$a_{\lambda kIm}$都能使得Coulomb规范和Helmholtz方程被满足。
+
+利用正交关系，我们可以把自由场Hamilton量表示为
+\begin{comment}
+这里$a$是数的情况下本可以简写为$H_{\text{field}}=\sum_{\lambda k}\sum_{Im}\hbar cka^{*}_{\lambda kIm}a_{\lambda kIm}$，但为了方便量子化我们并没有交换$a_{\lambda}$和$a^{*}_{\lambda}$的位置。
+\end{comment}
+：
+
+\begin{equation}
+H_{\text{field}}=\sum_{\lambda k}\sum_{Im}(\hbar ck)\frac{1}{2}\left(a^{*}_{\lambda kIm}a_{\lambda kIm}+\text{c.c.}\right)
+\end{equation}
+
+\begin{booknote*}
+自由场Hamilton量为：
+
+\[
+H_{\text{field}}=\frac{1}{8\mathrm{\pi}}\int\left(\frac{1}{c^{2}}\dot{\boldsymbol{A}}^{2}+(\nabla\times\boldsymbol{A})^{2}\right)\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+
+代入$\boldsymbol{A}$计算：
+
+\begin{align*}
+H_{\text{field}} & =\frac{1}{8\mathrm{\pi}}\int\mathrm{d}^{3}\boldsymbol{r}\,\Biggl\{\frac{1}{c^{2}}\Biggl[\sum_{\lambda k}\sum_{Im}\left(-\mathrm{i}kca^{*}_{\lambda kIm}\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}kct}+\text{c.c.}\right)\Biggr]^{2}\\
++ & \Biggl[\sum_{\lambda k}\sum_{Im}\left(a^{*}_{\lambda kIm}\nabla\times\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}kct}+\text{c.c.}\right)\Biggr]^{2}\Biggr\}
+\end{align*}
+
+根据定义显然有$\nabla\times\boldsymbol{A}_{MkIm}=-\mathrm{i}k\boldsymbol{A}_{EkIm}$，此外，对于$\boldsymbol{A}_{EkIm}$，利用$\nabla\times\nabla\times\boldsymbol{A}_{MkIm}=\nabla(\nabla\cdot\boldsymbol{A}_{MkIm})-\nabla^{2}\boldsymbol{A}_{MkIm}$，再利用Coulomb规范和Helmholtz方程，得到$\nabla\times\nabla\times\boldsymbol{A}_{MkIm}=k^{2}A_{MkIm}$，于是有$\nabla\times\boldsymbol{A}_{EkIm}=\mathrm{i}k\boldsymbol{A}_{MkIm}$。然而，由于只有$\lambda$相同的$\boldsymbol{A}$相乘积分才能保留下来，这里的负号并不重要。我们可以笼统的写为：
+
+\begin{align*}
+H_{\text{field}} & =\frac{1}{8\mathrm{\pi}}\int\mathrm{d}^{3}\boldsymbol{r}\,\Biggl\{\frac{1}{c^{2}}\Biggl[\sum_{\lambda k}\sum_{Im}\left(-\mathrm{i}kca^{*}_{\lambda kIm}\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}kct}+\text{c.c.}\right)\Biggr]^{2}\\
++ & \Biggl[\sum_{\lambda k}\sum_{Im}\left(\mathrm{i}ka^{*}_{\lambda kIm}\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}kct}+\text{c.c.}\right)\Biggr]^{2}\Biggr\}
+\end{align*}
+
+于是得到：
+
+\begin{align*}
+H_{\text{field}} & =\frac{1}{8\mathrm{\pi}}\sum_{\lambda k}\sum_{Im}k^{2}a^{*}_{\lambda kIm}a_{\lambda kIm}\frac{2\mathrm{\pi}\hbar c}{k}+\frac{1}{8\mathrm{\pi}}\sum_{\lambda k}\sum_{Im}k^{2}a^{*}_{\lambda kIm}a_{\lambda kIm}\frac{2\mathrm{\pi}\hbar c}{k}+\text{c.c.}\\
+ & =\sum_{\lambda k}\sum_{Im}(\hbar ck)\frac{1}{2}\left(a^{*}_{\lambda kIm}a_{\lambda kIm}+\text{c.c.}\right)
+\end{align*}
+\end{booknote*}
+这正是谐振子Hamilton量，于是我们可以利用正则量子化：把变量$a^{*}_{\lambda}$和$a_{\lambda}$替换为算符$\hat{a}^{\dagger}_{\lambda}$和$\hat{a}_{\lambda}$，它们遵循玻色子对易关系：
+
+\begin{align}
+[\hat{a}_{\lambda kIm},\hat{a}_{\lambda^{\prime}k^{\prime}I^{\prime}m^{\prime}}] & =0\nonumber \\{}
+[\hat{a}_{\lambda kIm},\hat{a}^{\dagger}_{\lambda^{\prime}k^{\prime}I^{\prime}m^{\prime}}] & =\delta_{\lambda\lambda^{\prime}}\delta_{kk^{\prime}}\delta_{II^{\prime}}\delta_{mm^{\prime}}
+\end{align}
+
+产生算符$\hat{a}^{\dagger}_{\lambda kIm}$产生一个$\lambda$型的光子（电或磁辐射），这个光子能量为$\hbar ck$，角动量量子数为$I$，$m$。利用二次量子化的规则，我们知道Hamilton量为：
+
+\begin{equation}
+H_{\text{field}}=\sum_{k\lambda}\sum_{Im}(\hbar ck)\left(\hat{a}^{\dagger}_{\lambda kIm}\hat{a}_{\lambda kIm}+\frac{1}{2}\right)
+\end{equation}
+
+本征态可以在粒子数表象下写为$|\dots n_{\lambda kIm}\dots\rangle$，并且矢势$\boldsymbol{A}$成为算符：
+
+\begin{equation}
+\hat{\boldsymbol{A}}(\boldsymbol{r},t)=\sum_{\lambda kIm}\{\boldsymbol{A}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}ckt}\hat{a}^{\dagger}_{\lambda kIm}+\boldsymbol{A}^{*}_{\lambda kIm}(\boldsymbol{r})\mathrm{e}^{\mathrm{i}ckt}\hat{a}_{\lambda kIm}\}
+\end{equation}
+
+
+\section{多级跃迁}
+
+与核Hamilton量$H_{\text{nucl}}$的本征态$|\Psi_{i}\rangle$一起，我们现在有整个系统的未微扰Hamilton量的本征态
+\begin{comment}
+这一句话极其奇怪，我在考虑他到底在说什么。
+\end{comment}
+：
+
+\begin{equation}
+H_{0}=H_{\text{nucl}}+H_{\text{field}}
+\end{equation}
+
+时间相关的相互作用为：
+
+\begin{equation}
+H_{\text{int}}=-\frac{1}{c}\sum_{\lambda kIm}\left\{ \hat{a}^{\dagger}_{\lambda kIm}\int\boldsymbol{j}\cdot\boldsymbol{A}_{\lambda kIm}\mathrm{d}^{3}\boldsymbol{r}\mathrm{e}^{-\mathrm{i}kct}+\text{h.c.}\right\} 
+\end{equation}
+
+它并不与光子数算符对易
+\begin{comment}
+也不与核Hamilton量对易。
+\end{comment}
+，因此会导致不同的原子核态$|\Psi_{i}\rangle$和$|\Psi_{f}\rangle$之间的跃迁，以及与之相关的光子吸收和释放：
+
+\[
+|\text{i}\rangle=|\Psi_{\text{i}}\rangle|\dots n_{\lambda}\dots\rangle\begin{array}{c}
+\xrightarrow{\text{吸收}}|\Psi_{\text{f}}\rangle|\dots n_{\lambda}-1\dots\rangle=|\text{f}\rangle\\
+\xrightarrow{\text{释放}}|\Psi_{\text{f}}\rangle|\dots n_{\lambda}+1\dots\rangle=|\text{f}\rangle
+\end{array}
+\]
+
+我们可以通过一阶的Dirac微扰论
+\begin{comment}
+Dirac微扰论就是含时微扰论。
+\end{comment}
+计算跃迁概率
+\begin{comment}
+这不就是Feimi黄金定则？
+\end{comment}
+：
+
+\begin{equation}
+T_{\text{fi}}=\frac{2\mathrm{\pi}}{\hbar}\left|\langle\text{f}|H_{\text{int}}|\text{i}\rangle^{2}\right|g(E_{\text{f}})
+\end{equation}
+
+这里$g(E_{f})$是末态能量附近的态密度。我们必须计算吸收或者释放的光子能量为$c\hbar k=E_{\text{f}}-E_{\text{i}}$的$T_{\text{fi}}$。
+
+我们知道关系：
+
+\begin{align}
+\left|\langle\dots n_{\lambda}-1\dots|\hat{a}_{\lambda}|\dots n_{\lambda}\dots\rangle\right|^{2} & =n_{\lambda}\\
+\left|\langle\dots n_{\lambda}+1\dots|\hat{a}^{\dagger}_{\lambda}|\dots n_{\lambda}\dots\rangle\right|^{2} & =n_{\lambda}+1
+\end{align}
+
+这告诉我们吸收一个光子的概率正比于$n_{\lambda}$，而释放一个光子的概率正比于$n_{\lambda}+1$。即使没有场时，释放光子的概率也不为零（自发辐射）。接下来，我们仅仅考虑这种情况。这和在$n_{\lambda}=1$的场中吸收一个光子是相同的。
+
+这里的态密度$g(k)$可以通过\ref{eq:=0078C1=008FB9=00754C=006761=004EF6}给出（电的情况给出相同的结果）。在大$R$极限下，我们知道：
+
+\begin{equation}
+0=j_{I}(k_{n}R)\simeq\frac{1}{k_{n}R}\sin\left(k_{n}R-\frac{\mathrm{\pi}}{2}I\right)
+\end{equation}
+
+也就是说：
+
+\begin{equation}
+k_{n}R=n\mathrm{\pi}+\frac{\mathrm{\pi}}{2}I\quad n=0,\pm1,\pm2,\dots
+\end{equation}
+
+于是：
+
+\begin{equation}
+g(k)=\frac{1}{\Delta E(k)}=\frac{1}{\hbar c}\frac{1}{\Delta k}=\frac{1}{\hbar c}\frac{R}{\mathrm{\pi}}
+\end{equation}
+
+于是我们可以得到释放或吸收单个量子数为$(\lambda,k,I,m)$的光子的概率为
+\begin{comment}
+我认为原书这里的$|\text{i}\rangle$应为$|\Psi_{\text{i}}\rangle$，$|\text{f}\rangle$应为$|\Psi_{\text{f}}\rangle$
+\end{comment}
+：
+
+\begin{align}
+T_{\text{fi}}(E,kIm) & =\frac{8\mathrm{\pi}k}{\hbar}\left|\langle\Psi_{\text{f}}|\frac{1}{ck}\int\boldsymbol{j}\cdot\nabla\times j_{I}(kr)\boldsymbol{Y}_{IIm}\,\mathrm{d}^{3}\boldsymbol{r}|\Psi_{\text{i}}\rangle\right|^{2}\\
+T_{\text{fi}}(M,kIm) & =\frac{8\mathrm{\pi}k}{\hbar}\left|\langle\Psi_{\text{f}}|\frac{1}{c}\int\boldsymbol{j}\cdot j_{I}(kr)\boldsymbol{Y}_{IIm}\,\mathrm{d}^{3}\boldsymbol{r}|\Psi_{\text{i}}\rangle\right|^{2}
+\end{align}
+
+这可以写为：
+
+\begin{equation}
+T_{\text{fi}}=(\lambda,kIm)=\frac{8\mathrm{\pi}(I+1)}{\hbar I((2I+1)!!)^{2}}\left(\frac{E_{\gamma}}{\hbar c}\right)^{2I+1}\left|\langle\Psi_{\text{f}}|\hat{\mathcal{M}}(\lambda,kIm)|\Psi_{\text{i}}\rangle\right|^{2}
+\end{equation}
+
+这里的广义多级跃迁算符$\hat{\mathcal{M}}(\lambda,kIm)$在$\lambda=E$的情况下为：
+
+\begin{equation}
+\hat{\mathcal{M}}(E,kIm)=\frac{\mathrm{i}(2I+1)!!}{ck^{I+1}(I+1)}\int\boldsymbol{j}\cdot\nabla\times(\nabla\times(\boldsymbol{r}(j_{I}(kr)Y_{Im}(\Omega))\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+\begin{booknote*}
+除去一些不重要的系数，我们最重要的是需要证明：
+
+\[
+\sqrt{I(I+1)}\nabla\times j_{I}(kr)\boldsymbol{Y}_{IIm}=-\mathrm{i}\nabla\times\left[\nabla\times\left(\boldsymbol{r}j_{I}(kr)Y_{Im}(\Omega)\right)\right]
+\]
+
+只需要计算：
+
+\begin{align*}
+\sqrt{I(I+1)}\nabla\times j_{I}(kr)\boldsymbol{Y}_{IIm} & =-\mathrm{i}\nabla\times\left[j_{I}(kr)\left(\boldsymbol{r}\times\nabla Y_{Im}(\Omega)\right)\right]\\
+ & =-\mathrm{i}\nabla\times\left[\boldsymbol{r}\times\nabla\left(j_{I}(kr)Y_{Im}(\Omega)\right)\right]\\
+ & =-\mathrm{i}\nabla\times\left[\nabla\times\left(\boldsymbol{r}j_{I}(kr)Y_{Im}(\Omega)\right)\right]
+\end{align*}
+
+添加系数即可，需要注意$E_{\gamma}=\hbar ck$。
+\end{booknote*}
+同之前一样，计算$\nabla\times(\nabla\times\boldsymbol{r})$算符，我们可以得到两项，第一项中，我们可以在分部积分后利用连续性方程：
+
+\begin{equation}
+\nabla\cdot\boldsymbol{j}=-\frac{\partial}{\partial t}\rho=\mathrm{i}kc\rho
+\end{equation}
+
+最终，我们得到：
+
+\begin{equation}
+\hat{\mathcal{M}}(E,kIm)=\frac{(2I+1)!!}{k^{I}(I+1)}\int\biggl\{\rho Y_{Im}(\Omega)\frac{\partial}{\partial r}rj_{I}(kr)+\mathrm{i}\frac{k}{c}\boldsymbol{j}\cdot\boldsymbol{r}Y_{Im}(\Omega)j_{I}(kr)\biggr\}\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+\begin{booknote*}
+利用矢量分析公式：
+
+\[
+\nabla\times\bigl[\nabla\times\bigl(\boldsymbol{r}*\bigr)\bigr]=\nabla\left[\frac{\partial}{\partial r}(r*)\right]-\boldsymbol{r}\nabla^{2}(*)
+\]
+
+再利用Helmholtz方程，可以得到：
+
+\[
+\hat{\mathcal{M}}(E,kIm)=\frac{\mathrm{i}(2I+1)!!}{ck^{I+1}(I+1)}\int\boldsymbol{j}\cdot\left\{ \nabla\left[\frac{\partial}{\partial r}\bigl(rj_{I}(kr)Y_{Im}(\Omega)\bigr)\right]+\boldsymbol{r}k^{2}\bigl(j_{I}(kr)Y_{Im}(\Omega)\bigr)\right\} \,\mathrm{d}^{3}\boldsymbol{r}
+\]
+
+对第一项用分部积分，即得：
+
+\[
+\hat{\mathcal{M}}(E,kIm)=\frac{\mathrm{i}(2I+1)!!}{ck^{I+1}(I+1)}\int\left[-\nabla\cdot\boldsymbol{j}\frac{\partial}{\partial r}\bigl(rj_{I}(kr)Y_{Im}(\Omega)\bigr)+\boldsymbol{j}\cdot\boldsymbol{r}k^{2}\bigl(j_{I}(kr)Y_{Im}(\Omega)\bigr)\right]\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+
+再利用：
+
+\begin{align*}
+\langle\Psi_{\text{f}}|-\frac{\partial}{\partial t}\rho|\Psi_{\text{i}}\rangle & =\langle\Psi_{\text{f}}|\frac{\mathrm{i}}{\hbar}[\rho,H]|\Psi_{\text{i}}\rangle\\
+ & =\langle\Psi_{\text{f}}|\mathrm{i}ck\rho|\Psi_{\text{i}}\rangle
+\end{align*}
+
+得到：
+
+\[
+\hat{\mathcal{M}}(E,kIm)=\frac{(2I+1)!!}{k^{I}(I+1)}\int\left[\rho Y_{Im}(\Omega)\frac{\partial}{\partial r}\bigl(rj_{I}(kr)\bigr)+\mathrm{i}\frac{k}{c}\boldsymbol{j}\cdot\boldsymbol{r}Y_{Im}(\Omega)j_{I}(kr)\right]\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+\end{booknote*}
+对磁的情况，我们有：
+
+\begin{equation}
+\hat{\mathcal{M}}(M,kIm)=\frac{-(2I+1)!!}{ck^{I}(I+1)}\int\boldsymbol{j}\cdot\bigl[\boldsymbol{r}\times\nabla\bigl(j_{I}(kr)Y_{Im}(\Omega)\bigr)\bigr]\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+\begin{booknote*}
+经简单计算，广义多级跃迁算符$\hat{\mathcal{M}}(\lambda,kIm)$在$\lambda=M$的情况下为：
+
+\begin{align*}
+\hat{\mathcal{M}}(M,kIm) & =\frac{-(2I+1)!!}{ck^{I}(I+1)}\int\boldsymbol{j}\cdot j_{I}(kr)\cdot\boldsymbol{r}\times\nabla Y_{Im}(\Omega)\,\mathrm{d}^{3}\boldsymbol{r}
+\end{align*}
+
+只需要知道$\boldsymbol{r}\times\nabla j_{I}(kr)=0$，即可得到：
+
+\[
+\hat{\mathcal{M}}(M,kIm)=\frac{-(2I+1)!!}{ck^{I}(I+1)}\int\boldsymbol{j}\cdot\bigl[\boldsymbol{r}\times\nabla\bigl(j_{I}(kr)Y_{Im}(\Omega)\bigr)\bigr]\,\mathrm{d}^{3}\boldsymbol{r}
+\]
+\end{booknote*}
+在核物理中，我们通常使用长波极限，也就是说，辐射的波长远大于核半径（$\boldsymbol{k}\cdot\boldsymbol{R}_{0}\ll1$），或者为：
+
+\begin{equation}
+E_{\gamma}\ll\frac{\hbar c}{\boldsymbol{r}_{0}}A^{-1/3}=197\cdot A^{-1/3}\,[\text{MeV}]
+\end{equation}
+
+在这种情况下，我们可以使用球Bessel函数的小分量展开：
+
+\begin{equation}
+j_{I}(kr)\simeq\frac{(kr)^{I}}{(2I+1)!!}\left(1-\frac{1}{2}\frac{(kr)^{2}}{2I+3}+\dots\right)
+\end{equation}
+
+保留到$kr$的最低阶：
+
+\begin{equation}
+\hat{\mathcal{M}}(E,kIm)=\int\rho r^{I}Y_{Im}\,\mathrm{d}^{3}\boldsymbol{r}+\frac{\mathrm{i}k}{I+1}\int(\boldsymbol{r}\times\boldsymbol{\mu})\nabla r^{I}Y_{Im}\,\mathrm{d}^{3}\boldsymbol{r}
+\end{equation}
+
+第一部分不依赖于$k$，是同静态电多极算符$\hat{Q}_{Im}$联系的。第二部分，是$kR_{0}$的一阶项，一般被忽略。
+
+对这种极限下的磁算符，我们得到和\ref{eq:=009759=006001=0078C1=00591A=006781=0077E9}一致的算符：
+
+\begin{equation}
+\hat{\mathcal{M}}(M,kIm)=\frac{1}{c(I+1)}\int(\boldsymbol{r}\times\boldsymbol{j})\cdot\nabla(r^{I}Y_{Im})\,\mathrm{d}^{3}\boldsymbol{r}=\hat{M}_{Im}
+\end{equation}
+
+通常我们不区分不同取向的角动量（除非是测量极化时的情况）。因此可以假设初态有一个统计分布，从而计算不同$m$值的平均。对所有的$m$值的末态求和，我们最终得到某一个特定的多极转移的总概率：
+
+\begin{equation}
+T_{\text{fi}}(\lambda,I)=\frac{1}{2I_{\text{i}}+1}\sum_{m_{\text{i}},m_{\text{f}},m}T_{\text{fi}}(\lambda,kIm)
+\end{equation}
+
+利用Wigner-Eckart定理和$3j$-符号的正交关系，我们可以计算对$m_{i}$和$m_{f}$的求和并且得到转移概率：
+
+\begin{equation}
+T_{\text{fi}}(\lambda,I)=\frac{8\mathrm{\pi}(I+1)}{\hbar I((2I+1)!!)^{2}}\left(\frac{E_{\gamma}}{\hbar c}\right)^{2I+1}B(\lambda I,I_{\text{i}}\rightarrow I_{\text{f}})\label{eq:=008F6C=0079FB=006982=007387}
+\end{equation}
+ 
+
+这里$B(\lambda)$被称为约化转移概率，可以由约化矩阵元给出：
+
+\begin{align}
+B(EI,I_{\text{i}}\rightarrow I_{\text{f}}) & =\frac{1}{2I_{\text{i}}+1}\left|\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle\right|^{2}\\
+B(MI,I_{\text{i}}\rightarrow I_{\text{f}}) & =\frac{1}{2I_{\text{i}}+1}\left|\langle\Psi_{\text{f}}||\hat{M}_{I}||\Psi_{\text{i}}\rangle\right|^{2}
+\end{align}
+
+\begin{booknote*}
+根据前面的公式：
+
+\[
+T_{\text{fi}}=(\lambda,kIm)=\frac{8\mathrm{\pi}(I+1)}{\hbar I((2I+1)!!)^{2}}\left(\frac{E_{\gamma}}{\hbar c}\right)^{2I+1}\left|\langle\Psi_{\text{f}}|\hat{\mathcal{M}}(\lambda,kIm)|\Psi_{\text{i}}\rangle\right|^{2}
+\]
+
+再利用
+
+\[
+T_{\text{fi}}(\lambda,I)=\frac{1}{2I_{i}+1}\sum_{m_{i},m_{f},m}T_{\text{fi}}(\lambda,kIm)
+\]
+
+和
+
+\[
+T_{\text{fi}}(\lambda,kI)=\frac{8\mathrm{\pi}(I+1)}{\hbar I((2I+1)!!)^{2}}\left(\frac{E_{\gamma}}{\hbar c}\right)^{2I+1}B(\lambda I,I_{\text{i}}\rightarrow I_{\text{f}})
+\]
+
+得到：
+
+\[
+B(\lambda I,I_{\text{i}}\rightarrow I_{\text{f}})=\frac{1}{2I_{\text{i}}+1}\sum_{m_{\text{i}},m_{\text{f}},m}\left|\langle\Psi_{\text{f}}|\hat{\mathcal{M}}(\lambda,kIm)|\Psi_{\text{i}}\rangle\right|^{2}
+\]
+
+因而：
+
+\begin{align*}
+\left|\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle\right|^{2} & =\sum_{m_{\text{i}},m_{\text{f}},m}\left|\langle j_{\text{f}}m_{\text{f}}|\hat{Q}_{Im}|j_{\text{i}}m_{\text{i}}\rangle\right|^{2}
+\end{align*}
+
+根据Wigner-Eckart定理：
+
+\[
+\langle j_{\text{f}}m_{\text{f}}|\hat{Q}_{Im}|j_{\text{i}}m_{\text{i}}\rangle=(-1)^{j_{\text{i}}-m_{\text{i}}}\frac{\langle j_{\text{f}}j_{\text{i}};Im|j_{\text{f}}j_{\text{i}};m_{\text{f}},-m_{\text{i}}\rangle}{\sqrt{2I+1}}\langle j_{\text{f}}||\hat{Q}_{I}||j_{\text{i}}\rangle
+\]
+
+可以得到：
+
+\begin{align*}
+\left|\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle\right|^{2} & =\sum_{m_{\text{i}},m_{\text{f}},m}\frac{\left|\langle j_{\text{f}}j_{\text{i}};Im|j_{\text{f}}j_{\text{i}};m_{\text{f}},-m_{\text{i}}\rangle\right|^{2}}{2I+1}\left|\langle j_{\text{f}}||\hat{Q}_{I}||j_{\text{i}}\rangle\right|^{2}\\
+ & =\left|\langle j_{\text{f}}||\hat{Q}_{I}||j_{\text{i}}\rangle\right|^{2}
+\end{align*}
+\end{booknote*}
+这里的多极算符$\hat{Q}_{Im}$和$\hat{M}_{Im}$是在\ref{eq:=009759=006001=007535=00591A=006781=007B97=007B26=005177=004F53}和\ref{eq:=009759=006001=0078C1=00591A=006781=007B97=007B26=005177=004F53}中定义的。$B(EI)$和$B(MI)$的值包含了核波函数的信息。它们通常使用Weisskopf单位\footnote{见\ref{eq:Weisskopf=005355=004F4D}}。剩余的为动能因子。表
+\begin{comment}
+还没画。
+\end{comment}
+给出了最重要的情况下的转移概率$T_{\text{fi}}$和Weisskopf单位制下的$B(\lambda)$值。
+
+从矩阵元
+
+\begin{equation}
+\langle I_{\text{f}}M_{\text{f}}|\hat{Q}_{Im}|I_{i}M_{i}\rangle\quad\text{和}\quad\langle I_{f}M_{f}|\hat{M}_{Im}|I_{i}M_{i}\rangle
+\end{equation}
+
+的结构中我们可以发现从初态$|\text{i}\rangle=|I_{\text{i}}M_{\text{i}}\rangle$到末态$|\text{f}\rangle=|I_{\text{f}}M_{\text{f}}\rangle$的选择定则：
+
+\begin{align}
+\left|I_{\text{i}}-I_{\text{f}}\right| & \leq I\leq I_{\text{i}}+I_{\text{f}}\\
+M_{\text{f}}-M_{\text{i}} & =m\\
+\mathrm{\pi}_{\text{i}}\mathrm{\pi}_{\lambda Im}\mathrm{\pi}_{\text{f}} & =1
+\end{align}
+
+多极辐射的宇称$(\lambda I)_{\mathrm{\pi}_{\lambda Im}}$可以有相互作用$\boldsymbol{A}_{\lambda}\cdot\boldsymbol{j}$的宇称给出。由于$\boldsymbol{j}$在宇称变换下变号，我们由\ref{eq:=007535=0078C1=008F90=005C04=005728=005B87=0079F0=0053D8=006362=004E0B=006027=008D28}可以得到：
+
+\begin{equation}
+\mathrm{\pi}_{EIm}=(-)^{I},\quad\mathrm{\pi}_{MIm}=(-)^{I+1}
+\end{equation}
+
+从\ref{eq:=008F6C=0079FB=006982=007387}和表可以发现，高$I$-值的辐射被强烈压低。只要选择定则或者核结构部分\footnote{$B(\lambda)$-值}的特殊效应没有禁止一次转移，我们通常就只需考虑最低的$I$值。磁辐射比电辐射更弱。因此，我们通常拿M1和E2辐射相互比较
+\begin{comment}
+这里我不知道如何翻译。另外，感觉M1还是和E1比较接近吧。
+\end{comment}
+。
+
+从\ref{eq:=008F6C=0079FB=006982=007387}中，也可以清楚地发现转移概率随转移能量升高剧烈增大。这就是为什么低能的转移有时更难观测到。其它的一些过程（如内部转换）在这种情况下变得重要。
+
+\section{球谐函数基下的单粒子矩阵元}
+
+在所有的电磁极矩和转移概率的微观计算中，我们需要多级算符的矩阵元。我们考虑球谐函数基，也就是说，单粒子态可以由量子数$|jm\rangle=|nsljm\rangle$给出。因为$s=\frac{1}{2}$，因此它通常被省略，但是$slj$的顺序是非常重要的
+\begin{comment}
+我不确定是不是这么翻译。
+\end{comment}
+。
+
+利用Edmonds\cite{Ed57}的过程，我们得到电多极算符的约化单粒子矩阵元：
+
+\begin{align*}
+\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle & =\langle\Psi_{\text{f}}||e\hat{r}^{I}\hat{Y}_{I}||\Psi_{\text{i}}\rangle\\
+ & =e\frac{(1+(-)^{l_{\text{i}}+l_{\text{f}}+I})}{2}\langle\Psi_{\text{f}}|r^{I}|\Psi_{\text{i}}\rangle\sqrt{\frac{(2I+1)(2j_{\text{i}}+1)(2j_{\text{f}}+1)}{4\mathrm{\pi}}}\times(-)^{j_{\text{f}}-\frac{1}{2}}\begin{pmatrix}j_{\text{f}} & I & j_{\text{i}}\\
+-\frac{1}{2} & 0 & \frac{1}{2}
+\end{pmatrix}
+\end{align*}
+
+\begin{booknote*}
+这里考虑的是单质子的情况，根据前面的计算，有：
+
+\[
+\rho(\boldsymbol{r},t)=e\cdot\delta(\boldsymbol{r}-\hat{\boldsymbol{r}}(t))
+\]
+
+代入$\hat{Q}_{Im}=\int\rho r^{I}Y_{Im}\,\mathrm{d}^{3}\boldsymbol{r}$，即得：
+
+\[
+\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle=\langle\Psi_{\text{f}}||e\hat{r}^{I}\hat{Y}_{I}||\Psi_{\text{i}}\rangle
+\]
+
+这里，$|\Psi_{\text{i}}\rangle\equiv|n_{\text{i}}s_{\text{i}}l_{\text{i}}j_{\text{i}}m_{\text{i}}\rangle$，$\langle\Psi_{\text{f}}|=\langle n_{\text{f}}s_{\text{f}}l_{\text{f}}j_{\text{f}}m_{\text{f}}|$，为了简单，省略$n$：
+
+\begin{align*}
+\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle & =\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}||\hat{Q}_{I}||s_{\text{i}}l_{\text{i}}j_{\text{i}}\rangle
+\end{align*}
+
+根据Wigner-Eckart定理：
+
+\[
+\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}m_{\text{f}}|\hat{Q}_{Im}|s_{\text{i}}l_{\text{i}}j_{\text{i}}m_{\text{i}}\rangle=(-1)^{j_{\text{f}}-m_{\text{f}}}\frac{\langle j_{\text{f}}j_{\text{i}}Im|j_{\text{f}}j_{\text{i}}m_{\text{f}},-m_{\text{i}}\rangle}{\sqrt{2I+1}}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}||\hat{Q}_{I}||s_{\text{i}}l_{\text{i}}j_{\text{i}}\rangle
+\]
+
+令$m_{\text{f}}=m_{\text{i}}=m=0$，得：
+
+\begin{align*}
+\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}||\hat{Q}_{I}||s_{\text{i}}l_{\text{i}}j_{\text{i}}\rangle & =(-1)^{j_{\text{f}}}\frac{\sqrt{2I+1}}{\langle j_{\text{f}}j_{\text{i}}I0|j_{\text{f}}j_{\text{i}}00\rangle}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}0|\hat{Q}_{I0}|s_{\text{i}}l_{\text{i}}j_{\text{i}}0\rangle\\
+ & =(-1)^{j_{\text{\text{i}}}}\begin{pmatrix}j_{\text{f}} & j_{\text{i}} & I\\
+0 & 0 & 0
+\end{pmatrix}^{-1}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}0|\hat{Q}_{I0}|s_{\text{i}}l_{\text{i}}j_{\text{i}}0\rangle
+\end{align*}
+
+于是：
+
+\begin{align*}
+\langle\Psi_{\text{f}}||\hat{Q}_{I}||\Psi_{\text{i}}\rangle & =(-1)^{j_{\text{\text{i}}}}\begin{pmatrix}j_{\text{f}} & j_{\text{i}} & I\\
+0 & 0 & 0
+\end{pmatrix}^{-1}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}0|\hat{Q}_{I0}|s_{\text{i}}l_{\text{i}}j_{\text{i}}0\rangle\\
+ & =(-1)^{j_{\text{\text{i}}}}\begin{pmatrix}j_{\text{f}} & j_{\text{i}} & I\\
+0 & 0 & 0
+\end{pmatrix}^{-1}\sum_{m_{s_{\text{f}}},m_{l_{\text{f}}}}\sum_{m_{s_{\text{i}}},m_{l_{\text{i}}}}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}0|s_{\text{f}}l_{\text{f}}m_{s_{\text{f}}}m_{l_{\text{f}}}\rangle\langle s_{\text{f}}l_{\text{f}}m_{s_{\text{f}}}m_{l_{\text{f}}}|\hat{Q}_{I0}|s_{\text{i}}l_{\text{i}}m_{s_{\text{i}}}m_{l_{\text{i}}}\rangle\langle s_{\text{i}}l_{\text{i}}m_{s_{\text{i}}}m_{l_{\text{i}}}|s_{\text{i}}l_{\text{i}}j_{\text{i}}0\rangle\\
+ & =(-1)^{j_{\text{\text{i}}}}\begin{pmatrix}j_{\text{f}} & j_{\text{i}} & I\\
+0 & 0 & 0
+\end{pmatrix}^{-1}\sum_{m_{s_{\text{f}}}}\sum_{m_{s_{\text{i}}}}\langle s_{\text{f}}l_{\text{f}}j_{\text{f}}0|s_{\text{f}}l_{\text{f}}m_{s_{\text{f}}},-m_{s_{\text{f}}}\rangle\langle s_{\text{f}}l_{\text{f}}m_{s_{\text{f}}},-m_{s_{\text{f}}}|\hat{Q}_{I0}|s_{\text{i}}l_{\text{i}}m_{s_{\text{i}}},-m_{s_{\text{i}}}\rangle\langle s_{\text{i}}l_{\text{i}}m_{s_{\text{i}}},-m_{s_{\text{i}}}|s_{\text{i}}l_{\text{i}}j_{\text{i}}0\rangle\\
+ & =
+\end{align*}
+\end{booknote*}
+\begin{equation}
+B(EI)\simeq\frac{e^{2}}{4\mathrm{\pi}}\left(\frac{3}{I+3}\right)^{2}R^{2I}_{0}=\frac{(1.2)^{2I}}{4\mathrm{\pi}}\left(\frac{3}{I+3}\right)^{2}A^{2I/3}[e^{2}(\text{fm})^{2I}]\label{eq:Weisskopf=005355=004F4D}
+\end{equation}
+

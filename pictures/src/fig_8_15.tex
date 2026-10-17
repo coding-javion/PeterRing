@@ -1,0 +1,157 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc, patterns}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \begin{axis}[
+    width=10.5cm,
+    height=8.2cm,
+    xmin=0, xmax=13.5,
+    ymin=-2.4, ymax=9.4,
+    axis x line=middle,
+    axis y line=left,
+    axis line style={-Stealth, line width=0.85pt},
+    xtick={2, 4, 6, 8, 10, 12},
+    xticklabels={, $4$, $6$, $8$, $10$, $12$},
+    xticklabel style={below=2pt, font=\small},
+    ytick={-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8},
+    yticklabels={$-2$, , $0$, , $2$, , $4$, , $6$, , $8$},
+    yticklabel style={left=2pt, font=\small},
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=4pt,
+    clip=false
+  ]
+
+    % Axis titles
+    \node[anchor=north west, font=\small] at (axis cs:12.7, -0.05) {$r\,(\mathrm{fm})$};
+    \node[anchor=south, font=\small, align=center] at (axis cs:0, 9.4) {$\rho^{3^-}(r)\cdot 10^3\,(e\,\mathrm{fm}^{-3})$};
+
+    % --- EXPERIMENTAL REGION (HATCHED BAND) ---
+    % Hatching fill
+    \fill[pattern=north east lines, pattern color=black!75]
+      (axis cs:0, 0)
+      to[out=60, in=170] (axis cs:0.9, 0.72)
+      to[out=-10, in=135] (axis cs:1.75, 0.0)
+      to[out=-45, in=180] (axis cs:2.35, -1.35)
+      to[out=0, in=-120] (axis cs:3.0, 0.0)
+      to[out=60, in=170] (axis cs:3.75, 1.95)
+      to[out=-10, in=180] (axis cs:4.6, 1.08)
+      to[out=0, in=-115] (axis cs:5.5, 2.5)
+      to[out=65, in=195] (axis cs:6.7, 7.85)
+      to[out=-15, in=115] (axis cs:7.8, 3.8)
+      to[out=-65, in=160] (axis cs:8.6, 0.6)
+      to[out=-20, in=180] (axis cs:9.2, 0.22)
+      to[out=0, in=170] (axis cs:10.5, 0.0)
+      to[out=-10, in=180] (axis cs:11.3, -0.15)
+      to[out=0, in=180] (axis cs:12.2, 0.0)
+      -- (axis cs:12.2, 0.0)
+      to[out=180, in=0] (axis cs:11.4, -0.22)
+      to[out=180, in=-5] (axis cs:10.5, -0.05)
+      to[out=175, in=0] (axis cs:9.2, 0.12)
+      to[out=180, in=-30] (axis cs:8.55, 0.35)
+      to[out=150, in=-70] (axis cs:7.75, 3.5)
+      to[out=110, in=-15] (axis cs:6.7, 7.55)
+      to[out=195, in=65] (axis cs:5.55, 2.2)
+      to[out=-115, in=0] (axis cs:4.65, 0.68)
+      to[out=180, in=0] (axis cs:3.7, 1.30)
+      to[out=180, in=70] (axis cs:3.05, 0.0)
+      to[out=-110, in=0] (axis cs:2.15, -1.88)
+      to[out=180, in=-40] (axis cs:0.8, -0.45)
+      to[out=140, in=-20] (axis cs:0, 0)
+      -- cycle;
+
+    % Draw solid boundary lines of experimental band
+    \draw[line width=0.85pt]
+      (axis cs:0, 0)
+      to[out=60, in=170] (axis cs:0.9, 0.72)
+      to[out=-10, in=135] (axis cs:1.75, 0.0)
+      to[out=-45, in=180] (axis cs:2.35, -1.35)
+      to[out=0, in=-120] (axis cs:3.0, 0.0)
+      to[out=60, in=170] (axis cs:3.75, 1.95)
+      to[out=-10, in=180] (axis cs:4.6, 1.08)
+      to[out=0, in=-115] (axis cs:5.5, 2.5)
+      to[out=65, in=195] (axis cs:6.7, 7.85)
+      to[out=-15, in=115] (axis cs:7.8, 3.8)
+      to[out=-65, in=160] (axis cs:8.6, 0.6)
+      to[out=-20, in=180] (axis cs:9.2, 0.22)
+      to[out=0, in=170] (axis cs:10.5, 0.0)
+      to[out=-10, in=180] (axis cs:11.3, -0.15)
+      to[out=0, in=180] (axis cs:12.2, 0.0);
+
+    \draw[line width=0.85pt]
+      (axis cs:0, 0)
+      to[out=-20, in=140] (axis cs:0.8, -0.45)
+      to[out=-40, in=180] (axis cs:2.15, -1.88)
+      to[out=0, in=-110] (axis cs:3.05, 0.0)
+      to[out=70, in=180] (axis cs:3.7, 1.30)
+      to[out=0, in=180] (axis cs:4.65, 0.68)
+      to[out=0, in=-115] (axis cs:5.55, 2.2)
+      to[out=65, in=195] (axis cs:6.7, 7.55)
+      to[out=-15, in=110] (axis cs:7.75, 3.5)
+      to[out=-70, in=150] (axis cs:8.55, 0.35)
+      to[out=-30, in=180] (axis cs:9.2, 0.12)
+      to[out=0, in=175] (axis cs:10.5, -0.05)
+      to[out=-5, in=180] (axis cs:11.4, -0.22)
+      to[out=0, in=180] (axis cs:12.2, 0.0);
+
+    % --- THEORY (RING + SPETH) (DASHED LINE) ---
+    \draw[dashed, dash pattern=on 4.5pt off 3pt, line width=0.95pt]
+      (axis cs:0, 0)
+      to[out=25, in=160] (axis cs:1.0, 0.25)
+      to[out=-20, in=140] (axis cs:2.1, 0.2)
+      to[out=-40, in=-150] (axis cs:2.8, 0.8)
+      to[out=30, in=180] (axis cs:3.8, 3.35)
+      to[out=0, in=180] (axis cs:4.7, 2.65)
+      to[out=0, in=-115] (axis cs:5.6, 3.8)
+      to[out=65, in=195] (axis cs:6.6, 7.3)
+      to[out=-15, in=115] (axis cs:7.6, 3.8)
+      to[out=-65, in=160] (axis cs:8.4, 1.2)
+      to[out=-20, in=180] (axis cs:9.5, 0.1)
+      to[out=0, in=180] (axis cs:11.0, 0.0);
+
+    % --- BOHR - TASSIE - MODEL (DOTTED LINE) ---
+    \draw[dotted, line width=1.3pt, dash pattern=on 1.5pt off 2.5pt]
+      (axis cs:2.0, 0.0)
+      to[out=0, in=180] (axis cs:3.5, 0.05)
+      to[out=0, in=-120] (axis cs:4.8, 0.95)
+      to[out=60, in=-115] (axis cs:5.9, 3.2)
+      to[out=65, in=195] (axis cs:7.2, 7.95)
+      to[out=-15, in=110] (axis cs:8.3, 4.5)
+      to[out=-70, in=135] (axis cs:9.2, 1.8)
+      to[out=-45, in=160] (axis cs:10.2, 0.45)
+      to[out=-20, in=180] (axis cs:11.8, 0.0);
+
+    % --- LEGEND ---
+    \begin{scope}[shift={(axis cs:7.2, 6.8)}]
+      % Background mask
+      \fill[white, opacity=0.92] (0, 0.1) rectangle (5.7, 2.4);
+
+      % Dashed: Theory
+      \draw[dashed, dash pattern=on 4.5pt off 3pt, line width=0.95pt] (0.2, 2.1) -- (1.1, 2.1);
+      \node[anchor=west, font=\footnotesize] at (1.2, 2.1) {Theory (Ring\,+\,Speth)};
+
+      % Dotted: Bohr - Tassie
+      \draw[dotted, line width=1.3pt, dash pattern=on 1.5pt off 2.5pt] (0.2, 1.45) -- (1.1, 1.45);
+      \node[anchor=west, font=\footnotesize] at (1.2, 1.45) {Bohr\,--\,Tassie\,--\,Model};
+
+      % Solid: Experiment
+      \draw[line width=0.85pt] (0.2, 0.7) -- (1.1, 0.7);
+      \node[anchor=west, font=\footnotesize, align=left] at (1.2, 0.6) {Experiment (Yale, Mainz,\\[-1pt]Sendai, Stanford)};
+    \end{scope}
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

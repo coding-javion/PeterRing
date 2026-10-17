@@ -1,0 +1,309 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Common axis style
+  \pgfplotsset{
+    every axis/.append style={
+      width=7.2cm,
+      height=6.2cm,
+      xmin=0, xmax=22,
+      xtick={4, 8, 12, 16, 20},
+      tick pos=both,
+      tick align=inside,
+      tick style={line width=0.6pt, color=black},
+      major tick length=4.5pt,
+      axis line style={line width=0.9pt},
+      clip=false
+    }
+  }
+
+  % ========================================================
+  % PANEL a): Deformation parameters beta and gamma vs I
+  % ========================================================
+  \begin{axis}[
+    name=panelA,
+    ymin=0, ymax=0.36,
+    ytick={0.1, 0.2, 0.3},
+    yticklabels={$0.1$, $0.2$, $0.3$}
+  ]
+    \node[font=\bfseries, anchor=north east] at (axis cs:21.0, 0.35) {a)};
+    \node[font=\normalsize, anchor=south] at (axis cs:0, 0.365) {$\beta$};
+
+    % Curve beta
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 0.300)
+      (4, 0.300)
+      (8, 0.301)
+      (12, 0.304)
+      (14, 0.306)
+      (16, 0.303)
+      (18, 0.288)
+      (20, 0.284)
+      (22, 0.283)
+    };
+    \node[anchor=north, font=\small] at (axis cs:10.5, 0.30) {$\beta$};
+
+    % Curve gamma (mapped: 16 deg = 0.288 -> scale factor = 0.018)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 0.0)
+      (2, 0.005)
+      (4, 0.018)
+      (6, 0.040)
+      (8, 0.072)
+      (10, 0.105)
+      (12, 0.135)
+      (14, 0.155)
+      (16, 0.170)
+      (17, 0.200)
+      (18, 0.225)
+      (20, 0.245)
+      (22, 0.252)
+    };
+    \node[anchor=north west, font=\small] at (axis cs:17.0, 0.20) {$\gamma$};
+
+    % Right y-axis ticks and labels for gamma
+    \draw[line width=0.6pt] (axis cs:22, 0.072) -- (axis cs:21.4, 0.072);
+    \node[right=2pt, font=\small] at (axis cs:22, 0.072) {$4^\circ$};
+    \draw[line width=0.6pt] (axis cs:22, 0.144) -- (axis cs:21.4, 0.144);
+    \node[right=2pt, font=\small] at (axis cs:22, 0.144) {$8^\circ$};
+    \draw[line width=0.6pt] (axis cs:22, 0.216) -- (axis cs:21.4, 0.216);
+    \node[right=2pt, font=\small] at (axis cs:22, 0.216) {$12^\circ$};
+    \draw[line width=0.6pt] (axis cs:22, 0.288) -- (axis cs:21.4, 0.288);
+    \node[right=2pt, font=\small] at (axis cs:22, 0.288) {$16^\circ$};
+
+    \node[font=\normalsize, anchor=south] at (axis cs:22, 0.365) {$\gamma$};
+    \node[below=2pt, font=\normalsize] at (axis cs:22, 0) {$I$};
+  \end{axis}
+
+  % ========================================================
+  % PANEL b): Pairing gap parameters vs I
+  % ========================================================
+  \begin{axis}[
+    name=panelB,
+    at={($(panelA.south east)+(1.5cm, 0)$)},
+    ymin=0, ymax=1.0,
+    ytick={0.5, 1.0},
+    yticklabels={$0.5$, $1.0$}
+  ]
+    \node[font=\bfseries, anchor=north east] at (axis cs:21.0, 0.96) {b)};
+    \node[font=\small, align=center, anchor=south] at (axis cs:0, 1.01) {$\Delta$\\[1pt]\scriptsize$(\mathrm{MeV})$};
+
+    % \tilde{\Delta}_n (average neutron gap)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 0.95)
+      (4, 0.92)
+      (8, 0.86)
+      (12, 0.77)
+      (14, 0.72)
+      (16, 0.65)
+      (17, 0.58)
+      (18, 0.49)
+      (20, 0.42)
+      (22, 0.35)
+    };
+    \node[anchor=south west, font=\small] at (axis cs:16, 0.68) {$\tilde{\Delta}_n$};
+
+    % \tilde{\Delta}_p (average proton gap)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 0.72)
+      (4, 0.69)
+      (8, 0.64)
+      (12, 0.56)
+      (16, 0.50)
+      (18, 0.51)
+      (20, 0.49)
+      (22, 0.44)
+    };
+    \node[anchor=north east, font=\small] at (axis cs:11.5, 0.60) {$\tilde{\Delta}_p$};
+
+    % \Delta_{\alpha\bar{\alpha}} (aligned pair gap, dashed)
+    \addplot[line width=1.1pt, dashed, dash pattern=on 4pt off 2.5pt, smooth, tension=0.7] coordinates {
+      (6.5, 0.88)
+      (8, 0.82)
+      (10, 0.72)
+      (12, 0.58)
+      (14, 0.42)
+      (16, 0.22)
+      (17, 0.10)
+      (18, 0.05)
+      (20, 0.03)
+      (22, 0.02)
+    };
+    \node[anchor=south west, font=\small] at (axis cs:17.5, 0.08) {$\Delta_{\alpha\bar{\alpha}}$};
+    \node[below=2pt, font=\normalsize] at (axis cs:22, 0) {$I$};
+  \end{axis}
+
+  % ========================================================
+  % PANEL c): Angular momentum expectation values vs I
+  % ========================================================
+  \begin{axis}[
+    name=panelC,
+    at={($(panelA.south west)+(0, -6.8cm)$)},
+    ymin=0, ymax=22,
+    ytick={4, 8, 12, 16, 20, 22}
+  ]
+    \node[font=\bfseries, anchor=north east, fill=white, inner sep=1.2pt] at (axis cs:20.5, 21.0) {c)};
+    \node[font=\normalsize, anchor=south] at (axis cs:0, 22.3) {$\langle J_x \rangle$};
+
+    % \langle J_x \rangle (total, linear solid line)
+    \addplot[line width=1.1pt] coordinates {(0, 0) (22, 22)};
+    \node[anchor=south east, font=\small, fill=white, inner sep=1.2pt] at (axis cs:13.5, 15.0) {$\langle J_x \rangle$};
+
+    % v^2 j_{\alpha\alpha}
+    \addplot[line width=1.1pt, dashed, dash pattern=on 4pt off 2.5pt, smooth, tension=0.7] coordinates {
+      (0, 0.0)
+      (4, 0.1)
+      (8, 0.3)
+      (11, 0.8)
+      (13, 1.6)
+      (15, 3.2)
+      (17, 5.2)
+      (19, 5.6)
+      (22, 5.6)
+    };
+    \node[anchor=west, font=\small] at (axis cs:17.5, 3.5) {$v^2 j_{\alpha\alpha}$};
+
+    % v^2 j_{\bar{\alpha}\bar{\alpha}}
+    \addplot[line width=1.1pt, dashed, dash pattern=on 4pt off 2.5pt, smooth, tension=0.7] coordinates {
+      (0, 0.0)
+      (4, 0.3)
+      (8, 0.8)
+      (11, 1.8)
+      (13, 3.2)
+      (15, 6.0)
+      (17, 9.8)
+      (19, 10.3)
+      (22, 10.4)
+    };
+    \node[anchor=west, font=\small] at (axis cs:17.5, 8.5) {$v^2 j_{\bar{\alpha}\bar{\alpha}}$};
+
+    % Double-headed arrows indicating alignment contribution
+    \draw[{Latex}-{Latex}, line width=0.8pt] (axis cs:21, 0) -- (axis cs:21, 5.6);
+    \draw[{Latex}-{Latex}, line width=0.8pt] (axis cs:21, 5.6) -- (axis cs:21, 10.4);
+
+    \node[below=2pt, font=\normalsize] at (axis cs:22, 0) {$I$};
+  \end{axis}
+
+  % ========================================================
+  % PANEL d): Quasiparticle energies Ek vs I
+  % ========================================================
+  \begin{axis}[
+    name=panelD,
+    at={($(panelB.south west)+(0, -6.8cm)$)},
+    ymin=-0.36, ymax=2.2,
+    ytick={0, 1.0, 2.0},
+    yticklabels={$0$, $1.0$, $2.0$}
+  ]
+    \node[font=\bfseries, anchor=north east] at (axis cs:21.0, 2.12) {d)};
+    \node[font=\small, align=center, anchor=south] at (axis cs:0, 2.22) {$E_k$\\[1pt]\scriptsize$(\mathrm{MeV})$};
+
+    % Zero line
+    \draw[line width=0.6pt] (axis cs:0, 0) -- (axis cs:22, 0);
+
+    % Level 1 (-)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 1.84)
+      (2, 1.80)
+      (6, 2.05)
+      (10, 2.14)
+      (14, 2.15)
+      (18, 2.10)
+      (22, 2.12)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, 2.05) {$-$};
+
+    % Level 2 (+)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 1.70)
+      (4, 1.68)
+      (8, 1.69)
+      (12, 1.67)
+      (16, 1.60)
+      (20, 1.55)
+      (22, 1.50)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, 1.50) {$+$};
+
+    % Level 3 (-)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 1.50)
+      (2, 1.50)
+      (6, 1.35)
+      (10, 1.20)
+      (14, 1.18)
+      (18, 1.16)
+      (22, 1.14)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, 1.14) {$-$};
+
+    % Level 4 (+)
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 1.50)
+      (4, 1.48)
+      (8, 1.10)
+      (12, 0.82)
+      (16, 0.77)
+      (20, 0.76)
+      (22, 0.78)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, 0.78) {$+$};
+
+    % Aligning pair:
+    % Upper branch
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (0, 1.14)
+      (4, 0.85)
+      (8, 0.40)
+      (11, 0.00)
+      (13, -0.05)
+      (15, -0.12)
+      (18, -0.15)
+      (22, -0.08)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, -0.08) {$+$};
+
+    % Crossing branch
+    \addplot[line width=1.1pt, smooth, tension=0.7] coordinates {
+      (11.5, 0.05)
+      (15, 0.18)
+      (18, 0.30)
+      (22, 0.55)
+    };
+    \node[anchor=west, font=\small] at (axis cs:21.7, 0.55) {$-$};
+
+    % Dashed conjugate branches (bounded within y >= -0.36)
+    \addplot[line width=1.0pt, dashed, dash pattern=on 3.5pt off 2pt, smooth, tension=0.7] coordinates {
+      (8.2, -0.36)
+      (9.0, -0.25)
+      (11, 0.00)
+      (13, 0.05)
+      (15, 0.12)
+      (18, 0.15)
+      (22, 0.08)
+    };
+    \addplot[line width=1.0pt, dashed, dash pattern=on 3.5pt off 2pt, smooth, tension=0.7] coordinates {
+      (11.5, -0.05)
+      (15, -0.18)
+      (18, -0.30)
+      (20, -0.26)
+    };
+
+    \node[below=2pt, font=\normalsize] at (axis cs:22, -0.36) {$I$};
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

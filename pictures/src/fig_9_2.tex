@@ -1,0 +1,82 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  \begin{axis}[
+    width=8.0cm,
+    height=7.2cm,
+    xmin=0, xmax=2.08,
+    ymin=0, ymax=2.08,
+    axis x line=bottom,
+    axis y line=left,
+    axis line style={line width=0.85pt},
+    xtick={1.0, 2.0},
+    xticklabels={$1.0$, $2.0$},
+    xticklabel style={below=2pt, font=\small},
+    ytick={0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0},
+    yticklabels={$0.0$, , , , , $1.0$, , , , , $2.0$},
+    yticklabel style={left=2pt, font=\small},
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=4.5pt,
+    clip=false
+  ]
+
+    % Axis titles
+    \node[anchor=west, font=\small] at (axis cs:0.06, 2.0) {Excitation Energy};
+    \node[anchor=north, font=\small] at (axis cs:1.45, -0.08) {$\chi$};
+
+    % --- RPA CURVE (drops to 0 at chi = 1.0) ---
+    \draw[line width=0.95pt]
+      (axis cs:0, 1.0)
+      to[out=0, in=155] (axis cs:0.5, 0.866)
+      to[out=-25, in=135] (axis cs:0.75, 0.66)
+      to[out=-45, in=115] (axis cs:0.9, 0.436)
+      to[out=-65, in=90] (axis cs:1.0, 0.0);
+
+    % --- EXACT CURVE ---
+    \draw[line width=0.95pt]
+      (axis cs:0, 1.0)
+      to[out=0, in=155] (axis cs:0.5, 0.866)
+      to[out=-25, in=140] (axis cs:0.8, 0.58)
+      to[out=-40, in=150] (axis cs:1.05, 0.28)
+      to[out=-30, in=170] (axis cs:1.35, 0.06)
+      to[out=-10, in=180] (axis cs:1.55, 0.0)
+      -- (axis cs:1.85, 0.0);
+
+    % --- SCRPA CURVE ---
+    \draw[line width=0.95pt]
+      (axis cs:0.72, 0.70)
+      to[out=-35, in=150] (axis cs:1.05, 0.40)
+      to[out=-30, in=165] (axis cs:1.4, 0.22)
+      to[out=-15, in=180] (axis cs:1.85, 0.17);
+
+    % --- LABELS WITH POINTER LINES ---
+    % RPA label
+    \draw[line width=0.55pt] (axis cs:0.85, 0.32) -- (axis cs:0.95, 0.25);
+    \node[anchor=east, font=\small, inner sep=1pt] at (axis cs:0.85, 0.32) {RPA};
+
+    % SCRPA label
+    \draw[line width=0.55pt] (axis cs:1.35, 0.48) -- (axis cs:1.25, 0.30);
+    \node[anchor=south, font=\small, inner sep=1pt] at (axis cs:1.35, 0.48) {SCRPA};
+
+    % Exact label
+    \draw[line width=0.55pt] (axis cs:1.25, 0.08) -- (axis cs:1.48, 0.08);
+    \node[anchor=west, font=\small, inner sep=1pt] at (axis cs:1.48, 0.08) {Exact};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

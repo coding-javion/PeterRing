@@ -1,0 +1,209 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{10.2}
+  \def\h{8.0}
+
+  \def\amin{149.0}
+  \def\amax{194.2}
+  \def\dmin{0.045}
+  \def\dmax{0.385}
+
+  \pgfmathsetmacro{\sx}{\w / (\amax - \amin)}
+  \pgfmathsetmacro{\sy}{\h / (\dmax - \dmin)}
+
+  % Coordinate helper macro: (A, delta) -> (x, y)
+  % Box frame
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Ticks on bottom and top (inwards)
+  \foreach \a in {150, 155, 160, 165, 170, 175, 180, 185, 190} {
+    \pgfmathsetmacro{\xpos}{(\a - \amin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.16);
+  }
+  % Tick labels on bottom
+  \foreach \a in {150, 160, 170, 180, 190} {
+    \pgfmathsetmacro{\xpos}{(\a - \amin) * \sx}
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\a$};
+  }
+  % Axis label A
+  \node[right=3pt, font=\normalsize] at (\w, 0) {$A$};
+
+  % Ticks on left and right (inwards)
+  \foreach \d in {0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35} {
+    \pgfmathsetmacro{\ypos}{(\d - \dmin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.16, \ypos);
+  }
+  % Tick labels on left
+  \node[left=4pt, font=\normalsize] at (0, {(0.10 - \dmin) * \sy}) {$0.1$};
+  \node[left=4pt, font=\normalsize] at (0, {(0.20 - \dmin) * \sy}) {$0.2$};
+  \node[left=4pt, font=\normalsize] at (0, {(0.30 - \dmin) * \sy}) {$0.3$};
+
+  % Axis label delta
+  \node[above left=1pt and 2pt, font=\large] at (0, \h) {$\delta$};
+
+  % Calculated curve (thick solid)
+  \draw[line width=1.3pt]
+    ({(150.8 - \amin)*\sx}, {(0.200 - \dmin)*\sy}) --
+    ({(152.0 - \amin)*\sx}, {(0.338 - \dmin)*\sy}) --
+    ({(154.0 - \amin)*\sx}, {(0.330 - \dmin)*\sy}) --
+    ({(156.0 - \amin)*\sx}, {(0.337 - \dmin)*\sy}) --
+    ({(158.5 - \amin)*\sx}, {(0.348 - \dmin)*\sy}) --
+    ({(160.0 - \amin)*\sx}, {(0.340 - \dmin)*\sy}) --
+    ({(162.0 - \amin)*\sx}, {(0.325 - \dmin)*\sy}) --
+    ({(164.0 - \amin)*\sx}, {(0.311 - \dmin)*\sy}) --
+    ({(166.0 - \amin)*\sx}, {(0.297 - \dmin)*\sy}) --
+    ({(168.0 - \amin)*\sx}, {(0.297 - \dmin)*\sy}) --
+    ({(170.0 - \amin)*\sx}, {(0.299 - \dmin)*\sy}) --
+    ({(172.0 - \amin)*\sx}, {(0.293 - \dmin)*\sy}) --
+    ({(174.0 - \amin)*\sx}, {(0.287 - \dmin)*\sy}) --
+    ({(176.0 - \amin)*\sx}, {(0.268 - \dmin)*\sy}) --
+    ({(178.0 - \amin)*\sx}, {(0.252 - \dmin)*\sy}) --
+    ({(180.0 - \amin)*\sx}, {(0.239 - \dmin)*\sy}) --
+    ({(182.0 - \amin)*\sx}, {(0.224 - \dmin)*\sy}) --
+    ({(184.0 - \amin)*\sx}, {(0.210 - \dmin)*\sy}) --
+    ({(186.0 - \amin)*\sx}, {(0.201 - \dmin)*\sy}) --
+    ({(188.0 - \amin)*\sx}, {(0.178 - \dmin)*\sy}) --
+    ({(190.0 - \amin)*\sx}, {(0.160 - \dmin)*\sy}) --
+    ({(192.0 - \amin)*\sx}, {(0.147 - \dmin)*\sy}) --
+    ({(193.0 - \amin)*\sx}, {(0.138 - \dmin)*\sy});
+
+  % Chains of even-A nuclei (dashed lines + circles)
+  % Nd
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] (nd150) at ({(150.0 - \amin)*\sx}, {(0.220 - \dmin)*\sy}) {};
+  \node[right=3pt, font=\normalsize] at (nd150) {$\mathrm{Nd}$};
+
+  % Sm: 152, 154, 156
+  \draw[line width=0.75pt, dashed]
+    ({(152.0 - \amin)*\sx}, {(0.244 - \dmin)*\sy}) --
+    ({(154.0 - \amin)*\sx}, {(0.272 - \dmin)*\sy}) --
+    ({(156.0 - \amin)*\sx}, {(0.334 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] (sm152) at ({(152.0 - \amin)*\sx}, {(0.244 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(154.0 - \amin)*\sx}, {(0.272 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(156.0 - \amin)*\sx}, {(0.334 - \dmin)*\sy}) {};
+  \node[right=4pt, font=\normalsize] at (sm152) {$\mathrm{Sm}$};
+
+  % Gd: 156, 158, 160
+  \draw[line width=0.75pt, dashed]
+    ({(156.0 - \amin)*\sx}, {(0.334 - \dmin)*\sy}) --
+    ({(158.0 - \amin)*\sx}, {(0.354 - \dmin)*\sy}) --
+    ({(160.0 - \amin)*\sx}, {(0.368 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(158.0 - \amin)*\sx}, {(0.354 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(160.0 - \amin)*\sx}, {(0.368 - \dmin)*\sy}) {};
+  \node[above left=1pt and 0pt, font=\normalsize] at ({(158.0 - \amin)*\sx}, {(0.354 - \dmin)*\sy}) {$\mathrm{Gd}$};
+
+  % Dy: 160, 162, 164
+  \draw[line width=0.75pt, dashed]
+    ({(160.0 - \amin)*\sx}, {(0.277 - \dmin)*\sy}) --
+    ({(162.0 - \amin)*\sx}, {(0.297 - \dmin)*\sy}) --
+    ({(164.0 - \amin)*\sx}, {(0.338 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(160.0 - \amin)*\sx}, {(0.277 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(162.0 - \amin)*\sx}, {(0.297 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] (dy164) at ({(164.0 - \amin)*\sx}, {(0.338 - \dmin)*\sy}) {};
+  \node[above=3pt, font=\normalsize] at (dy164) {$\mathrm{Dy}$};
+
+  % Er: 164, 166, 168, 170
+  \draw[line width=0.75pt, dashed]
+    ({(164.0 - \amin)*\sx}, {(0.273 - \dmin)*\sy}) --
+    ({(166.0 - \amin)*\sx}, {(0.274 - \dmin)*\sy}) --
+    ({(168.0 - \amin)*\sx}, {(0.276 - \dmin)*\sy}) --
+    ({(170.0 - \amin)*\sx}, {(0.251 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(164.0 - \amin)*\sx}, {(0.273 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(166.0 - \amin)*\sx}, {(0.274 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(168.0 - \amin)*\sx}, {(0.276 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(170.0 - \amin)*\sx}, {(0.251 - \dmin)*\sy}) {};
+  \node[below=4pt, font=\normalsize] at ({(167.0 - \amin)*\sx}, {(0.274 - \dmin)*\sy}) {$\mathrm{Er}$};
+
+  % Yb: 170, 172, 174
+  \draw[line width=0.75pt, dashed]
+    ({(170.0 - \amin)*\sx}, {(0.318 - \dmin)*\sy}) --
+    ({(172.0 - \amin)*\sx}, {(0.317 - \dmin)*\sy}) --
+    ({(174.0 - \amin)*\sx}, {(0.314 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(170.0 - \amin)*\sx}, {(0.318 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(172.0 - \amin)*\sx}, {(0.317 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(174.0 - \amin)*\sx}, {(0.314 - \dmin)*\sy}) {};
+  \node[above=3pt, font=\normalsize] at ({(172.0 - \amin)*\sx}, {(0.318 - \dmin)*\sy}) {$\mathrm{Yb}$};
+
+  % Hf: 176, 178, 180
+  \draw[line width=0.75pt, dashed]
+    ({(176.0 - \amin)*\sx}, {(0.239 - \dmin)*\sy}) --
+    ({(178.0 - \amin)*\sx}, {(0.258 - \dmin)*\sy}) --
+    ({(180.0 - \amin)*\sx}, {(0.244 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(176.0 - \amin)*\sx}, {(0.239 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(178.0 - \amin)*\sx}, {(0.258 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(180.0 - \amin)*\sx}, {(0.244 - \dmin)*\sy}) {};
+  \node[below=4pt, font=\normalsize] at ({(176.0 - \amin)*\sx}, {(0.239 - \dmin)*\sy}) {$\mathrm{Hf}$};
+
+  % W: 182, 184, 186
+  \draw[line width=0.75pt, dashed]
+    ({(182.0 - \amin)*\sx}, {(0.228 - \dmin)*\sy}) --
+    ({(184.0 - \amin)*\sx}, {(0.208 - \dmin)*\sy}) --
+    ({(186.0 - \amin)*\sx}, {(0.202 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(182.0 - \amin)*\sx}, {(0.228 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(184.0 - \amin)*\sx}, {(0.208 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(186.0 - \amin)*\sx}, {(0.202 - \dmin)*\sy}) {};
+  \node[below left=2pt and 0pt, font=\normalsize] at ({(182.0 - \amin)*\sx}, {(0.220 - \dmin)*\sy}) {$\mathrm{W}$};
+
+  % Os: 186, 188
+  \draw[line width=0.75pt, dashed]
+    ({(186.0 - \amin)*\sx}, {(0.188 - \dmin)*\sy}) --
+    ({(188.0 - \amin)*\sx}, {(0.174 - \dmin)*\sy});
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(186.0 - \amin)*\sx}, {(0.188 - \dmin)*\sy}) {};
+  \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at ({(188.0 - \amin)*\sx}, {(0.174 - \dmin)*\sy}) {};
+  \node[below left=3pt and 0pt, font=\normalsize] at ({(186.0 - \amin)*\sx}, {(0.188 - \dmin)*\sy}) {$\mathrm{Os}$};
+
+  % Odd-A experimental crosses
+  \foreach \a/\d in {
+    151.0/0.160,
+    153.0/0.308,
+    159.0/0.314,
+    165.0/0.306,
+    169.0/0.280,
+    175.0/0.289,
+    177.0/0.262,
+    181.0/0.273,
+    183.0/0.230,
+    185.0/0.211,
+    187.0/0.196,
+    191.0/0.146
+  } {
+    \draw[line width=0.9pt]
+      ({(\a - \amin)*\sx - 0.10}, {(\d - \dmin)*\sy - 0.10}) --
+      ({(\a - \amin)*\sx + 0.10}, {(\d - \dmin)*\sy + 0.10});
+    \draw[line width=0.9pt]
+      ({(\a - \amin)*\sx - 0.10}, {(\d - \dmin)*\sy + 0.10}) --
+      ({(\a - \amin)*\sx + 0.10}, {(\d - \dmin)*\sy - 0.10});
+  }
+
+  % Legend (inside bottom-center)
+  \begin{scope}[shift={(2.5, 0.75)}]
+    % circle entry
+    \node[circle, draw=black, line width=0.8pt, inner sep=1.4pt, fill=white] at (0, 0.90) {};
+    \node[right=8pt, font=\normalsize] at (0, 0.90) {exp. deformations of even $A$ nuclei};
+
+    % cross entry
+    \draw[line width=0.9pt] (-0.10, 0.45 - 0.10) -- (0.10, 0.45 + 0.10);
+    \draw[line width=0.9pt] (-0.10, 0.45 + 0.10) -- (0.10, 0.45 - 0.10);
+    \node[right=8pt, font=\normalsize] at (0, 0.45) {exp. deformations of odd $A$ nuclei};
+
+    % solid line entry
+    \draw[line width=1.3pt] (-0.25, 0) -- (0.25, 0);
+    \node[right=8pt, font=\normalsize] at (0, 0) {cal. deformations of odd $A$ nuclei};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

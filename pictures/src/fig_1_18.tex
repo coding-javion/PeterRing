@@ -1,0 +1,103 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Definitions
+  \def\R{8.0} % radius for beta = 1.0
+
+  % --- Axes ---
+  % Horizontal axis (Prolate, gamma = 0)
+  \draw[line width=1.1pt] (-0.3, 0) -- (\R, 0);
+  \node[above=22pt, font=\Large] at ({0.45*\R}, 0) {$\beta$};
+  \node[above=22pt, font=\Large] at ({0.80*\R}, 0) {Prolate};
+
+  % Oblique axis (Oblate, gamma = 60 deg downwards)
+  \draw[line width=1.1pt] (-60:-0.3) -- (-60:\R);
+  \node[left=12pt, rotate=60, font=\Large] at (-60:{0.5*\R}) {Oblate};
+
+  % Outer circular arc
+  \draw[line width=1.1pt] (0:\R) arc (0:-60:\R);
+
+  % --- Ticks along Horizontal Axis (gamma = 0) ---
+  \foreach \b in {0.2, 0.4, 0.6, 0.8, 1.0} {
+    \draw[line width=0.9pt] ({\b*\R}, 0) -- ({\b*\R}, 0.22);
+    \node[above=3pt, font=\normalsize] at ({\b*\R}, 0.22) {$\b$};
+  }
+  \foreach \b in {0.1, 0.3, 0.5, 0.7, 0.9} {
+    \draw[line width=0.7pt] ({\b*\R}, 0) -- ({\b*\R}, 0.12);
+  }
+  \node[above=3pt, font=\normalsize] at (0, 0.22) {$0$};
+
+  % --- Ticks along Oblique Axis (gamma = 60) ---
+  \foreach \b in {0.2, 0.4, 0.6, 0.8, 1.0} {
+    \draw[line width=0.9pt] (-60:{\b*\R}) -- ++(30:0.22);
+  }
+  \foreach \b in {0.1, 0.3, 0.5, 0.7, 0.9} {
+    \draw[line width=0.7pt] (-60:{\b*\R}) -- ++(30:0.12);
+  }
+
+  % --- Angle Ticks along Arc ---
+  \foreach \g in {0, 10, 20, 30, 40, 50, 60} {
+    \draw[line width=0.9pt] (-\g:\R) -- (-\g:{\R + 0.25});
+    \node[right=2pt, font=\normalsize] at (-\g:{\R + 0.25}) {$\g^\circ$};
+  }
+
+  % Gamma direction arrow
+  \draw[line width=0.9pt, ->] ({\R + 0.8}, 0) -- ({\R + 0.8}, -1.0) node[right=2pt, font=\Large] {$-\gamma$};
+
+  % Nucleus label placed cleanly inside sector
+  \node[font=\LARGE] at (5.2, -5.2) {$^{158}\mathrm{Yb}$};
+
+  % Origin label
+  \node[below=8pt, right=1pt, font=\normalsize] at (0, 0) {$I=0$};
+
+  % Equilibrium shape trajectory curve
+  \draw[line width=1.3pt, smooth, tension=0.4] plot coordinates { (0.000, -0.000) (0.480, -0.831) (0.720, -1.247) (0.960, -1.663) (1.163, -1.724) (1.606, -1.784) (2.910, -1.680) (4.153, -1.191) (4.912, -0.690) (5.742, -0.452) (6.231, -0.327) (6.636, -0.232) (7.038, -0.147) (7.520, -0.066) (7.840, -0.000) };
+
+  % Cross markers and labels
+  % I=50
+  \draw[line width=1.0pt] (0.360, -0.951) -- (0.600, -0.711);
+  \draw[line width=1.0pt] (0.360, -0.711) -- (0.600, -0.951);
+  \node[right=4pt, font=\small, fill=white, inner sep=0.8pt] at (0.480, -0.831) {$I=50$};
+  % I=60
+  \draw[line width=1.0pt] (0.600, -1.367) -- (0.840, -1.127);
+  \draw[line width=1.0pt] (0.600, -1.127) -- (0.840, -1.367);
+  \node[right=4pt, font=\small, fill=white, inner sep=0.8pt] at (0.720, -1.247) {$I=60$};
+  % I=70
+  \draw[line width=1.0pt] (0.840, -1.783) -- (1.080, -1.543);
+  \draw[line width=1.0pt] (0.840, -1.543) -- (1.080, -1.783);
+  \node[below right=3pt, font=\small, fill=white, inner sep=0.8pt] at (0.960, -1.663) {$I=70$};
+  % I=72
+  \draw[line width=1.0pt] (4.792, -0.810) -- (5.032, -0.570);
+  \draw[line width=1.0pt] (4.792, -0.570) -- (5.032, -0.810);
+  \node[below=5pt, font=\small, fill=white, inner sep=0.8pt] at (4.912, -0.690) {$I=72$};
+  % I=74
+  \draw[line width=1.0pt] (6.111, -0.447) -- (6.351, -0.207);
+  \draw[line width=1.0pt] (6.111, -0.207) -- (6.351, -0.447);
+  \node[below=3pt, font=\footnotesize, fill=white, inner sep=0.5pt] at (6.15, -0.32) {$I=74$};
+  % 76
+  \draw[line width=1.0pt] (6.516, -0.352) -- (6.756, -0.112);
+  \draw[line width=1.0pt] (6.516, -0.112) -- (6.756, -0.352);
+  \node[below=11pt, font=\footnotesize, fill=white, inner sep=0.5pt] at (6.636, -0.232) {$76$};
+  % 78
+  \draw[line width=1.0pt] (6.918, -0.267) -- (7.158, -0.027);
+  \draw[line width=1.0pt] (6.918, -0.027) -- (7.158, -0.267);
+  \node[below=3pt, font=\footnotesize, fill=white, inner sep=0.5pt] at (7.038, -0.147) {$78$};
+  % 80
+  \draw[line width=1.0pt] (7.400, -0.186) -- (7.640, 0.054);
+  \draw[line width=1.0pt] (7.400, 0.054) -- (7.640, -0.186);
+  \node[below=11pt, font=\footnotesize, fill=white, inner sep=0.5pt] at (7.520, -0.066) {$80$};
+
+\end{tikzpicture}
+\end{document}

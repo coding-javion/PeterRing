@@ -1,0 +1,192 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale definition
+  \def\yscale{1.6} % 1 MeV = 1.6 cm
+  \def\w{0.38}    % half width of level line
+
+  % Y-axis on the left
+  \draw[line width=0.9pt, ->] (0, 0) -- (0, {5.8 * \yscale});
+  \node[font=\small, align=center] at (-0.5, {5.4 * \yscale}) {$E$\\[2pt]\scriptsize(MeV)};
+
+  % Y-axis ticks
+  \foreach \y in {1, 2, 3, 4, 5} {
+    \draw[line width=0.7pt] (0, {\y * \yscale}) -- (-0.15, {\y * \yscale});
+    \node[left=3pt, font=\small] at (-0.15, {\y * \yscale}) {$\y$};
+  }
+
+  % Column positions
+  % Experiment: 4 columns
+  \def\xA{1.4}
+  \def\xB{3.2}
+  \def\xC{5.0}
+  \def\xD{6.8}
+
+  % Theory: 4 columns
+  \def\xE{9.3}
+  \def\xF{11.1}
+  \def\xG{12.9}
+  \def\xH{14.7}
+
+  % Top titles
+  \node[font=\Large\bfseries] at (8.0, {6.4 * \yscale}) {$^{164}\text{Er}$};
+  \node[font=\large\bfseries] at (4.1, {5.9 * \yscale}) {Experiment};
+  \node[font=\large\bfseries] at (12.0, {5.9 * \yscale}) {Theory};
+
+  % Bottom labels
+  \node[font=\small] at (\xA, -0.45) {ss};
+  \node[font=\small] at (\xB, -0.45) {g.s.};
+  \node[font=\small] at (\xC, -0.45) {neg.\,par.};
+  \node[font=\small] at (\xD, -0.45) {$\gamma$};
+
+  \node[font=\small] at (\xE, -0.45) {ss};
+  \node[font=\small] at (\xF, -0.45) {g.s.};
+  \node[font=\small] at (\xG, -0.45) {neg.\,par.};
+  \node[font=\small] at (\xH, -0.45) {$\gamma$};
+
+  % ========================================================
+  % EXPERIMENT
+  % ========================================================
+
+  % Yrast dashed line: connects gs from 0 to 14+, then diagonal to ss 16+, then vertical in ss
+  \draw[densely dashed, line width=0.75pt] (\xB, 0) -- (\xB, {2.70 * \yscale}) -- (\xA, {3.25 * \yscale}) -- (\xA, {5.71 * \yscale});
+
+  % 1. ss band (Experiment)
+  \draw[line width=1.1pt] ({\xA-\w}, {2.52 * \yscale}) -- ({\xA+\w}, {2.52 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {2.52 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {2.88 * \yscale}) -- ({\xA+\w}, {2.88 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {2.88 * \yscale}) {$14^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {3.25 * \yscale}) -- ({\xA+\w}, {3.25 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {3.25 * \yscale}) {$16^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {3.77 * \yscale}) -- ({\xA+\w}, {3.77 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {3.77 * \yscale}) {$18^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {4.37 * \yscale}) -- ({\xA+\w}, {4.37 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {4.37 * \yscale}) {$20^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {5.01 * \yscale}) -- ({\xA+\w}, {5.01 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {5.01 * \yscale}) {$22^+$};
+  \draw[line width=1.1pt] ({\xA-\w}, {5.71 * \yscale}) -- ({\xA+\w}, {5.71 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xA-\w}, {5.71 * \yscale}) {$?$};
+
+  % 2. g.s. band (Experiment)
+  \draw[line width=1.1pt] ({\xB-\w}, {0.00 * \yscale}) -- ({\xB+\w}, {0.00 * \yscale}) node[left=1pt, font=\scriptsize, fill=white, inner sep=0.5pt] at ({\xB-\w}, -0.10) {$0^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {0.09 * \yscale}) -- ({\xB+\w}, {0.09 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {0.09 * \yscale}) {$2^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {0.30 * \yscale}) -- ({\xB+\w}, {0.30 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {0.30 * \yscale}) {$4^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {0.61 * \yscale}) -- ({\xB+\w}, {0.61 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {0.61 * \yscale}) {$6^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {1.02 * \yscale}) -- ({\xB+\w}, {1.02 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {1.02 * \yscale}) {$8^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {1.50 * \yscale}) -- ({\xB+\w}, {1.50 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {1.50 * \yscale}) {$10^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {2.08 * \yscale}) -- ({\xB+\w}, {2.08 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {2.08 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {2.70 * \yscale}) -- ({\xB+\w}, {2.70 * \yscale}) node[left=1pt, font=\scriptsize, fill=white, inner sep=0.8pt] at ({\xB-\w}, {2.70 * \yscale}) {$14^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {3.42 * \yscale}) -- ({\xB+\w}, {3.42 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {3.42 * \yscale}) {$16^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {4.14 * \yscale}) -- ({\xB+\w}, {4.14 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {4.14 * \yscale}) {$18^+$};
+  \draw[line width=1.1pt] ({\xB-\w}, {4.88 * \yscale}) -- ({\xB+\w}, {4.88 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xB-\w}, {4.88 * \yscale}) {$20^+$};
+
+  % 3. neg. par. band (Experiment)
+  \draw[line width=1.1pt] ({\xC-\w}, {1.69 * \yscale}) -- ({\xC+\w}, {1.69 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt, yshift=-1.2pt] at ({\xC-\w}, {1.69 * \yscale}) {$5^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {1.76 * \yscale}) -- ({\xC+\w}, {1.76 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xC-\w}, {1.76 * \yscale}) {$6^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {1.88 * \yscale}) -- ({\xC+\w}, {1.88 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xC-\w}, {1.88 * \yscale}) {$7^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {1.98 * \yscale}) -- ({\xC+\w}, {1.98 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xC-\w}, {1.98 * \yscale}) {$8^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {2.12 * \yscale}) -- ({\xC+\w}, {2.12 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {2.12 * \yscale}) {$9^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {2.25 * \yscale}) -- ({\xC+\w}, {2.25 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {2.25 * \yscale}) {$10^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {2.42 * \yscale}) -- ({\xC+\w}, {2.42 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {2.42 * \yscale}) {$11^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {2.67 * \yscale}) -- ({\xC+\w}, {2.67 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {2.67 * \yscale}) {$12^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {2.86 * \yscale}) -- ({\xC+\w}, {2.86 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {2.86 * \yscale}) {$13^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {3.08 * \yscale}) -- ({\xC+\w}, {3.08 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {3.08 * \yscale}) {$14^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {3.28 * \yscale}) -- ({\xC+\w}, {3.28 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {3.28 * \yscale}) {$15^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {3.52 * \yscale}) -- ({\xC+\w}, {3.52 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {3.52 * \yscale}) {$16^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {3.79 * \yscale}) -- ({\xC+\w}, {3.79 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {3.79 * \yscale}) {$17^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {4.12 * \yscale}) -- ({\xC+\w}, {4.12 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {4.12 * \yscale}) {$18^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {4.38 * \yscale}) -- ({\xC+\w}, {4.38 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {4.38 * \yscale}) {$19^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {4.68 * \yscale}) -- ({\xC+\w}, {4.68 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {4.68 * \yscale}) {$20^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {5.03 * \yscale}) -- ({\xC+\w}, {5.03 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {5.03 * \yscale}) {$21^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {5.37 * \yscale}) -- ({\xC+\w}, {5.37 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {5.37 * \yscale}) {$22^-$};
+  \draw[line width=1.1pt] ({\xC-\w}, {5.71 * \yscale}) -- ({\xC+\w}, {5.71 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xC-\w}, {5.71 * \yscale}) {$?$};
+
+  % 4. gamma band (Experiment)
+  \draw[line width=1.1pt] ({\xD-\w}, {0.86 * \yscale}) -- ({\xD+\w}, {0.86 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt, yshift=-1.0pt] at ({\xD-\w}, {0.86 * \yscale}) {$2^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {0.94 * \yscale}) -- ({\xD+\w}, {0.94 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xD-\w}, {0.94 * \yscale}) {$3^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.05 * \yscale}) -- ({\xD+\w}, {1.05 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt, yshift=0.8pt] at ({\xD-\w}, {1.05 * \yscale}) {$4^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.20 * \yscale}) -- ({\xD+\w}, {1.20 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {1.20 * \yscale}) {$5^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.37 * \yscale}) -- ({\xD+\w}, {1.37 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {1.37 * \yscale}) {$6^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.56 * \yscale}) -- ({\xD+\w}, {1.56 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {1.56 * \yscale}) {$7^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.76 * \yscale}) -- ({\xD+\w}, {1.76 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {1.76 * \yscale}) {$8^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {1.98 * \yscale}) -- ({\xD+\w}, {1.98 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {1.98 * \yscale}) {$9^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {2.19 * \yscale}) -- ({\xD+\w}, {2.19 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {2.19 * \yscale}) {$10^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {2.49 * \yscale}) -- ({\xD+\w}, {2.49 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {2.49 * \yscale}) {$11^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {2.77 * \yscale}) -- ({\xD+\w}, {2.77 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {2.77 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xD-\w}, {3.05 * \yscale}) -- ({\xD+\w}, {3.05 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {3.05 * \yscale}) {$?$};
+  \draw[line width=1.1pt] ({\xD-\w}, {3.25 * \yscale}) -- ({\xD+\w}, {3.25 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {3.25 * \yscale}) {$?$};
+  \draw[line width=1.1pt] ({\xD-\w}, {3.45 * \yscale}) -- ({\xD+\w}, {3.45 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {3.45 * \yscale}) {$?$};
+  \draw[line width=1.1pt] ({\xD-\w}, {3.65 * \yscale}) -- ({\xD+\w}, {3.65 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {3.65 * \yscale}) {$?$};
+  \draw[line width=1.1pt] ({\xD-\w}, {4.02 * \yscale}) -- ({\xD+\w}, {4.02 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xD-\w}, {4.02 * \yscale}) {$?$};
+
+  % ========================================================
+  % THEORY
+  % ========================================================
+
+  % 1. ss band (Theory)
+  \draw[line width=1.1pt] ({\xE-\w}, {2.65 * \yscale}) -- ({\xE+\w}, {2.65 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {2.65 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {2.95 * \yscale}) -- ({\xE+\w}, {2.95 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {2.95 * \yscale}) {$14^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {3.32 * \yscale}) -- ({\xE+\w}, {3.32 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {3.32 * \yscale}) {$16^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {3.77 * \yscale}) -- ({\xE+\w}, {3.77 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {3.77 * \yscale}) {$18^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {4.34 * \yscale}) -- ({\xE+\w}, {4.34 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {4.34 * \yscale}) {$20^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {4.95 * \yscale}) -- ({\xE+\w}, {4.95 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {4.95 * \yscale}) {$22^+$};
+  \draw[line width=1.1pt] ({\xE-\w}, {5.64 * \yscale}) -- ({\xE+\w}, {5.64 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xE-\w}, {5.64 * \yscale}) {$24^+$};
+
+  % 2. g.s. band (Theory)
+  \draw[line width=1.1pt] ({\xF-\w}, {0.00 * \yscale}) -- ({\xF+\w}, {0.00 * \yscale}) node[left=1pt, font=\scriptsize, fill=white, inner sep=0.5pt] at ({\xF-\w}, -0.10) {$0^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {0.09 * \yscale}) -- ({\xF+\w}, {0.09 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {0.09 * \yscale}) {$2^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {0.30 * \yscale}) -- ({\xF+\w}, {0.30 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {0.30 * \yscale}) {$4^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {0.65 * \yscale}) -- ({\xF+\w}, {0.65 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {0.65 * \yscale}) {$6^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {1.09 * \yscale}) -- ({\xF+\w}, {1.09 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {1.09 * \yscale}) {$8^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {1.62 * \yscale}) -- ({\xF+\w}, {1.62 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {1.62 * \yscale}) {$10^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {2.14 * \yscale}) -- ({\xF+\w}, {2.14 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {2.14 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {2.71 * \yscale}) -- ({\xF+\w}, {2.71 * \yscale}) node[left=1pt, font=\scriptsize, fill=white, inner sep=0.8pt] at ({\xF-\w}, {2.71 * \yscale}) {$14^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {3.39 * \yscale}) -- ({\xF+\w}, {3.39 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {3.39 * \yscale}) {$16^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {3.96 * \yscale}) -- ({\xF+\w}, {3.96 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {3.96 * \yscale}) {$18^+$};
+  \draw[line width=1.1pt] ({\xF-\w}, {4.63 * \yscale}) -- ({\xF+\w}, {4.63 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xF-\w}, {4.63 * \yscale}) {$20^+$};
+
+  % 3. neg. par. band (Theory)
+  \draw[line width=1.1pt] ({\xG-\w}, {1.69 * \yscale}) -- ({\xG+\w}, {1.69 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt, yshift=-0.8pt] at ({\xG-\w}, {1.69 * \yscale}) {$5^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {1.78 * \yscale}) -- ({\xG+\w}, {1.78 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xG-\w}, {1.78 * \yscale}) {$6^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {1.88 * \yscale}) -- ({\xG+\w}, {1.88 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xG-\w}, {1.88 * \yscale}) {$7^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.00 * \yscale}) -- ({\xG+\w}, {2.00 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xG-\w}, {2.00 * \yscale}) {$8^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.11 * \yscale}) -- ({\xG+\w}, {2.11 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {2.11 * \yscale}) {$9^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.26 * \yscale}) -- ({\xG+\w}, {2.26 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {2.26 * \yscale}) {$10^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.41 * \yscale}) -- ({\xG+\w}, {2.41 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {2.41 * \yscale}) {$11^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.67 * \yscale}) -- ({\xG+\w}, {2.67 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {2.67 * \yscale}) {$12^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {2.85 * \yscale}) -- ({\xG+\w}, {2.85 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {2.85 * \yscale}) {$13^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {3.09 * \yscale}) -- ({\xG+\w}, {3.09 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {3.09 * \yscale}) {$14^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {3.26 * \yscale}) -- ({\xG+\w}, {3.26 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {3.26 * \yscale}) {$15^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {3.51 * \yscale}) -- ({\xG+\w}, {3.51 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {3.51 * \yscale}) {$16^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {3.72 * \yscale}) -- ({\xG+\w}, {3.72 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {3.72 * \yscale}) {$17^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {4.05 * \yscale}) -- ({\xG+\w}, {4.05 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {4.05 * \yscale}) {$18^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {4.30 * \yscale}) -- ({\xG+\w}, {4.30 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {4.30 * \yscale}) {$19^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {4.61 * \yscale}) -- ({\xG+\w}, {4.61 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {4.61 * \yscale}) {$20^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {4.82 * \yscale}) -- ({\xG+\w}, {4.82 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {4.82 * \yscale}) {$21^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {5.17 * \yscale}) -- ({\xG+\w}, {5.17 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {5.17 * \yscale}) {$22^-$};
+  \draw[line width=1.1pt] ({\xG-\w}, {5.42 * \yscale}) -- ({\xG+\w}, {5.42 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xG-\w}, {5.42 * \yscale}) {$23^-$};
+
+  % 4. gamma band (Theory)
+  \draw[line width=1.1pt] ({\xH-\w}, {0.90 * \yscale}) -- ({\xH+\w}, {0.90 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xH-\w}, {0.90 * \yscale}) {$2^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.03 * \yscale}) -- ({\xH+\w}, {1.03 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xH-\w}, {1.03 * \yscale}) {$3^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.15 * \yscale}) -- ({\xH+\w}, {1.15 * \yscale}) node[left=1pt, font=\fontsize{5.5}{6}\selectfont, fill=white, inner sep=0.4pt] at ({\xH-\w}, {1.15 * \yscale}) {$4^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.33 * \yscale}) -- ({\xH+\w}, {1.33 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {1.33 * \yscale}) {$5^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.51 * \yscale}) -- ({\xH+\w}, {1.51 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {1.51 * \yscale}) {$6^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.74 * \yscale}) -- ({\xH+\w}, {1.74 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {1.74 * \yscale}) {$7^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {1.94 * \yscale}) -- ({\xH+\w}, {1.94 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {1.94 * \yscale}) {$8^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {2.20 * \yscale}) -- ({\xH+\w}, {2.20 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {2.20 * \yscale}) {$9^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {2.40 * \yscale}) -- ({\xH+\w}, {2.40 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {2.40 * \yscale}) {$10^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {2.67 * \yscale}) -- ({\xH+\w}, {2.67 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {2.67 * \yscale}) {$11^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {2.89 * \yscale}) -- ({\xH+\w}, {2.89 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {2.89 * \yscale}) {$12^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {3.16 * \yscale}) -- ({\xH+\w}, {3.16 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {3.16 * \yscale}) {$13^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {3.40 * \yscale}) -- ({\xH+\w}, {3.40 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {3.40 * \yscale}) {$14^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {3.62 * \yscale}) -- ({\xH+\w}, {3.62 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {3.62 * \yscale}) {$15^+$};
+  \draw[line width=1.1pt] ({\xH-\w}, {4.06 * \yscale}) -- ({\xH+\w}, {4.06 * \yscale}) node[left=1pt, font=\scriptsize] at ({\xH-\w}, {4.06 * \yscale}) {$16^+$};
+
+\end{tikzpicture}
+\end{document}

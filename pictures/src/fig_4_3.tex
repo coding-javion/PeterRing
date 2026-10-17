@@ -1,0 +1,64 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+  \begin{axis}[
+    width=11.5cm, height=7.2cm,
+    xmin=0, xmax=6.0,
+    ymin=0, ymax=1.35,
+    axis lines=left,
+    axis line style={line width=0.9pt, ->},
+    tick style={line width=0.8pt, black},
+    tick align=inside,
+    xtick={1, 2, 3, 4, 5},
+    xticklabels={$1$, $2$, $3$, $4$, $5$},
+    ytick={1},
+    yticklabels={$1$},
+    ticklabel style={font=\normalsize},
+    xlabel={$k_{\mathrm{F}}r$},
+    xlabel style={at={(axis description cs:0.96,-0.03)}, anchor=north, font=\normalsize},
+    clip=false
+  ]
+    % Unperturbed wave function (dashed horizontal line at y=1)
+    \draw[dashed, line width=0.8pt, black] (0, 1.0) -- (5.85, 1.0);
+
+    % Hard-core potential boundary at c (vertical solid line)
+    \draw[line width=1.1pt, black] (0.58, 0) -- (0.58, 1.25);
+
+    % Bethe-Goldstone S-wave solution curve
+    \addplot[line width=1.3pt, black, smooth, tension=0.4] coordinates {
+      (0.58, 0.000) (0.66, 0.230) (0.73, 0.340) (0.80, 0.430) (0.87, 0.510) (0.94, 0.580) (1.01, 0.630) (1.15, 0.730) (1.29, 0.810) (1.43, 0.880) (1.57, 0.930) (1.71, 0.970) (1.90, 1.000) (2.10, 1.040) (2.35, 1.070) (2.65, 1.090) (2.95, 1.090) (3.30, 1.070) (3.70, 1.050) (4.15, 1.030) (4.65, 1.015) (5.00, 1.000) (5.45, 0.985) (5.75, 0.975)
+    };
+
+    % Healing distance annotation
+    \draw[line width=0.8pt, <-] (1.90, 1.00) -- (2.35, 0.45);
+    \node[anchor=west, font=\normalsize] at (2.35, 0.38) {Healing distance ($r_{\mathrm{h}}$)};
+
+    % Dimension lines below x-axis
+    % Hard-core radius c
+    \draw[line width=0.6pt] (0, -0.08) -- (0, -0.16);
+    \draw[line width=0.6pt] (0.58, -0.08) -- (0.58, -0.16);
+    \draw[line width=0.6pt] (0, -0.12) -- (0.58, -0.12);
+    \node[anchor=center, fill=white, inner sep=1.2pt, font=\normalsize] at (0.29, -0.12) {$c$};
+
+    % Mean distance k_F d
+    \draw[line width=0.6pt] (0, -0.18) -- (0, -0.27);
+    \draw[line width=0.6pt] (2.40, -0.08) -- (2.40, -0.27);
+    \draw[line width=0.6pt] (0, -0.24) -- (2.40, -0.24);
+    \node[anchor=center, fill=white, inner sep=1.5pt, font=\normalsize] at (1.45, -0.24) {$k_{\mathrm{F}}d$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

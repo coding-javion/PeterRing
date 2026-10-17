@@ -1,0 +1,289 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scales for bottom panel: r in fm, rho in fm^-3
+  \def\rxscale{0.92}
+  \def\rhoscale{42.0}
+
+  % Scales for top panel: r in fm, tau in fm^-5
+  \def\txscale{0.92}
+  \def\tauscale{42.0}
+
+  % ========================================================
+  % BOTTOM PANEL: rho(r)
+  % ========================================================
+
+  % Bottom horizontal axis
+  \draw[line width=0.85pt] (0, 0) -- (10.6*\rxscale, 0) node[below right=2pt, font=\normalsize] {$r\,[\mathrm{fm}]$};
+
+  % Bottom vertical axis
+  \draw[->, line width=0.85pt] (0, 0) -- (0, 0.175*\rhoscale) node[above, font=\normalsize] {$\rho\,[\mathrm{fm}^{-3}]$};
+
+  % Ticks on bottom vertical axis
+  \foreach \y/\lbl in {0/0, 0.05/.05, 0.10/.10, 0.15/.15} {
+    \draw[line width=0.65pt] (0, \y*\rhoscale) -- (0.16, \y*\rhoscale);
+    \node[anchor=east, font=\small] at (-0.08, \y*\rhoscale) {$\lbl$};
+  }
+
+  % Ticks on bottom horizontal axis
+  \foreach \x in {0, 2, 4, 6, 8, 10} {
+    \draw[line width=0.65pt] (\x*\rxscale, 0) -- (\x*\rxscale, 0.16);
+    \node[anchor=north, font=\small] at (\x*\rxscale, -0.08) {$\x$};
+  }
+
+  % --- rho_n CURVES ---
+  % ETF (Dashed)
+  \draw[line width=1.05pt, dashed]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.083*\rhoscale)
+      (2.0*\rxscale, 0.083*\rhoscale)
+      (4.0*\rxscale, 0.083*\rhoscale)
+      (5.0*\rxscale, 0.081*\rhoscale)
+      (5.8*\rxscale, 0.075*\rhoscale)
+      (6.5*\rxscale, 0.052*\rhoscale)
+      (7.2*\rxscale, 0.022*\rhoscale)
+      (7.8*\rxscale, 0.006*\rhoscale)
+      (8.4*\rxscale, 0.001*\rhoscale)
+    };
+
+  % ETF + SC (Dotted)
+  \draw[line width=1.15pt, dotted]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.080*\rhoscale)
+      (0.6*\rxscale, 0.087*\rhoscale)
+      (1.4*\rxscale, 0.093*\rhoscale)
+      (2.2*\rxscale, 0.088*\rhoscale)
+      (3.0*\rxscale, 0.085*\rhoscale)
+      (3.8*\rxscale, 0.088*\rhoscale)
+      (4.6*\rxscale, 0.083*\rhoscale)
+      (5.4*\rxscale, 0.080*\rhoscale)
+      (6.0*\rxscale, 0.072*\rhoscale)
+      (6.7*\rxscale, 0.046*\rhoscale)
+      (7.3*\rxscale, 0.018*\rhoscale)
+      (8.0*\rxscale, 0.004*\rhoscale)
+      (8.6*\rxscale, 0.0005*\rhoscale)
+    };
+
+  % HF (Solid)
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.080*\rhoscale)
+      (0.6*\rxscale, 0.085*\rhoscale)
+      (1.4*\rxscale, 0.091*\rhoscale)
+      (2.2*\rxscale, 0.087*\rhoscale)
+      (3.0*\rxscale, 0.084*\rhoscale)
+      (3.8*\rxscale, 0.086*\rhoscale)
+      (4.6*\rxscale, 0.082*\rhoscale)
+      (5.4*\rxscale, 0.078*\rhoscale)
+      (6.0*\rxscale, 0.070*\rhoscale)
+      (6.7*\rxscale, 0.044*\rhoscale)
+      (7.4*\rxscale, 0.017*\rhoscale)
+      (8.2*\rxscale, 0.003*\rhoscale)
+      (8.8*\rxscale, 0.0005*\rhoscale)
+    };
+
+  \node[font=\normalsize] at (2.4*\rxscale, 0.074*\rhoscale) {$\rho_n$};
+
+  % --- rho_p CURVES ---
+  % ETF (Dashed)
+  \draw[line width=1.05pt, dashed]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.053*\rhoscale)
+      (2.0*\rxscale, 0.053*\rhoscale)
+      (4.0*\rxscale, 0.054*\rhoscale)
+      (5.0*\rxscale, 0.055*\rhoscale)
+      (5.8*\rxscale, 0.051*\rhoscale)
+      (6.5*\rxscale, 0.035*\rhoscale)
+      (7.2*\rxscale, 0.015*\rhoscale)
+      (7.8*\rxscale, 0.004*\rhoscale)
+      (8.4*\rxscale, 0.0005*\rhoscale)
+    };
+
+  % ETF + SC (Dotted)
+  \draw[line width=1.15pt, dotted]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.070*\rhoscale)
+      (0.8*\rxscale, 0.065*\rhoscale)
+      (1.6*\rxscale, 0.058*\rhoscale)
+      (2.4*\rxscale, 0.055*\rhoscale)
+      (3.4*\rxscale, 0.058*\rhoscale)
+      (4.4*\rxscale, 0.056*\rhoscale)
+      (5.2*\rxscale, 0.058*\rhoscale)
+      (6.0*\rxscale, 0.048*\rhoscale)
+      (6.8*\rxscale, 0.027*\rhoscale)
+      (7.5*\rxscale, 0.009*\rhoscale)
+      (8.2*\rxscale, 0.001*\rhoscale)
+    };
+
+  % HF (Solid)
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\rxscale, 0.063*\rhoscale)
+      (0.8*\rxscale, 0.060*\rhoscale)
+      (1.6*\rxscale, 0.055*\rhoscale)
+      (2.4*\rxscale, 0.055*\rhoscale)
+      (3.4*\rxscale, 0.057*\rhoscale)
+      (4.4*\rxscale, 0.056*\rhoscale)
+      (5.2*\rxscale, 0.057*\rhoscale)
+      (6.0*\rxscale, 0.046*\rhoscale)
+      (6.8*\rxscale, 0.025*\rhoscale)
+      (7.5*\rxscale, 0.008*\rhoscale)
+      (8.2*\rxscale, 0.001*\rhoscale)
+    };
+
+  \node[font=\normalsize] at (2.4*\rxscale, 0.045*\rhoscale) {$\rho_p$};
+
+
+  % ========================================================
+  % TOP PANEL: tau(r)
+  % ========================================================
+  \begin{scope}[shift={(0.92*\rxscale, 3.8)}]
+
+    % Horizontal axis for tau (from r = 5.2 to 9.8)
+    \draw[line width=0.85pt] (5.2*\txscale, 0) -- (9.8*\txscale, 0);
+    \node[anchor=north west, font=\normalsize] at (9.0*\txscale, -0.05) {$r\,[\mathrm{fm}]$};
+
+    % Vertical axis for tau at r = 0.92
+    \draw[->, line width=0.85pt] (0, 0) -- (0, 0.175*\tauscale);
+    \node[anchor=south, font=\normalsize, align=center] at (0, 0.178*\tauscale) {$\tau(r)$\\[1pt]\small$[\mathrm{fm}^{-5}]$};
+
+    % Ticks on vertical axis
+    \foreach \y/\lbl in {0.05/.05, 0.10/.10, 0.15/.15} {
+      \draw[line width=0.65pt] (0, \y*\tauscale) -- (0.16, \y*\tauscale);
+      \node[anchor=east, font=\small] at (-0.08, \y*\tauscale) {$\lbl$};
+    }
+
+    % Ticks on horizontal axis
+    \foreach \x in {6, 8} {
+      \draw[line width=0.65pt] (\x*\txscale, 0) -- (\x*\txscale, 0.16);
+      \node[anchor=north, font=\small] at (\x*\txscale, -0.08) {$\x$};
+    }
+
+    % --- tau_n CURVES ---
+    % ETF (Dashed)
+    \draw[line width=1.05pt, dashed]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.098*\tauscale)
+        (3.0*\txscale, 0.098*\tauscale)
+        (4.5*\txscale, 0.098*\tauscale)
+        (5.5*\txscale, 0.092*\tauscale)
+        (6.5*\txscale, 0.065*\tauscale)
+        (7.5*\txscale, 0.025*\tauscale)
+        (8.2*\txscale, 0.006*\tauscale)
+        (8.8*\txscale, 0.001*\tauscale)
+      };
+
+    % ETF + SC (Dotted)
+    \draw[line width=1.15pt, dotted]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.144*\tauscale)
+        (0.8*\txscale, 0.118*\tauscale)
+        (1.5*\txscale, 0.100*\tauscale)
+        (2.2*\txscale, 0.102*\tauscale)
+        (2.9*\txscale, 0.108*\tauscale)
+        (3.7*\txscale, 0.104*\tauscale)
+        (4.5*\txscale, 0.092*\tauscale)
+        (5.3*\txscale, 0.095*\tauscale)
+        (6.2*\txscale, 0.075*\tauscale)
+        (7.0*\txscale, 0.038*\tauscale)
+        (7.8*\txscale, 0.012*\tauscale)
+        (8.6*\txscale, 0.002*\tauscale)
+      };
+
+    % HF (Solid)
+    \draw[line width=1.15pt]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.138*\tauscale)
+        (0.8*\txscale, 0.114*\tauscale)
+        (1.5*\txscale, 0.098*\tauscale)
+        (2.2*\txscale, 0.100*\tauscale)
+        (2.9*\txscale, 0.106*\tauscale)
+        (3.7*\txscale, 0.101*\tauscale)
+        (4.5*\txscale, 0.090*\tauscale)
+        (5.3*\txscale, 0.094*\tauscale)
+        (6.2*\txscale, 0.072*\tauscale)
+        (7.0*\txscale, 0.036*\tauscale)
+        (7.8*\txscale, 0.010*\tauscale)
+        (8.6*\txscale, 0.001*\tauscale)
+      };
+
+    \node[font=\normalsize] at (3.5*\txscale, 0.088*\tauscale) {$\tau_n$};
+
+    % --- tau_p CURVES ---
+    % ETF (Dashed)
+    \draw[line width=1.05pt, dashed]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.046*\tauscale)
+        (3.0*\txscale, 0.046*\tauscale)
+        (4.5*\txscale, 0.047*\tauscale)
+        (5.5*\txscale, 0.044*\tauscale)
+        (6.5*\txscale, 0.032*\tauscale)
+        (7.3*\txscale, 0.012*\tauscale)
+        (8.0*\txscale, 0.003*\tauscale)
+        (8.6*\txscale, 0.0005*\tauscale)
+      };
+
+    % ETF + SC (Dotted)
+    \draw[line width=1.15pt, dotted]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.015*\tauscale)
+        (0.8*\txscale, 0.028*\tauscale)
+        (1.7*\txscale, 0.048*\tauscale)
+        (2.5*\txscale, 0.054*\tauscale)
+        (3.3*\txscale, 0.048*\tauscale)
+        (4.1*\txscale, 0.046*\tauscale)
+        (5.0*\txscale, 0.054*\tauscale)
+        (5.8*\txscale, 0.044*\tauscale)
+        (6.6*\txscale, 0.024*\tauscale)
+        (7.3*\txscale, 0.008*\tauscale)
+        (8.0*\txscale, 0.001*\tauscale)
+      };
+
+    % HF (Solid)
+    \draw[line width=1.15pt]
+      plot[smooth] coordinates {
+        (0.1*\txscale, 0.018*\tauscale)
+        (0.8*\txscale, 0.026*\tauscale)
+        (1.7*\txscale, 0.046*\tauscale)
+        (2.5*\txscale, 0.052*\tauscale)
+        (3.3*\txscale, 0.046*\tauscale)
+        (4.1*\txscale, 0.045*\tauscale)
+        (5.0*\txscale, 0.052*\tauscale)
+        (5.8*\txscale, 0.042*\tauscale)
+        (6.6*\txscale, 0.022*\tauscale)
+        (7.3*\txscale, 0.007*\tauscale)
+        (8.0*\txscale, 0.001*\tauscale)
+      };
+
+    \node[font=\normalsize] at (3.5*\txscale, 0.063*\tauscale) {$\tau_p$};
+
+    % --- LEGEND ---
+    \begin{scope}[shift={(6.2*\txscale, 0.125*\tauscale)}]
+      \draw[line width=1.05pt, dashed] (0, 0.02*\tauscale) -- (0.8*\txscale, 0.02*\tauscale);
+      \node[anchor=west, font=\normalsize] at (0.95*\txscale, 0.02*\tauscale) {$\mathrm{ETF}$};
+
+      \draw[line width=1.15pt, dotted] (0, 0) -- (0.8*\txscale, 0);
+      \node[anchor=west, font=\normalsize] at (0.95*\txscale, 0) {$\mathrm{ETF} + \mathrm{SC}$};
+
+      \draw[line width=1.15pt] (0, -0.02*\tauscale) -- (0.8*\txscale, -0.02*\tauscale);
+      \node[anchor=west, font=\normalsize] at (0.95*\txscale, -0.02*\tauscale) {$\mathrm{HF}$};
+    \end{scope}
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

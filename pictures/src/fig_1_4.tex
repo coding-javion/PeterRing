@@ -1,0 +1,118 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,patterns}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Define radius of the central circle
+  \def\R{2.2}
+
+  % Shaded sextant: 0 to 60 deg
+  \draw[pattern=north east lines, pattern color=black!75] (0,0) -- (0:{\R}) arc (0:60:{\R}) -- cycle;
+
+  % Central circle
+  \draw[thick] (0,0) circle (\R);
+
+  % Axis 3 (Horizontal)
+  \draw[thick] (-3.8, 0) -- (0,0);
+  \draw[thick, ->] (0,0) -- (3.2, 0) node[right=2pt, font=\large] {$\mathbf{3}$};
+
+  % 60 deg line
+  \draw[thick] (60:-2.2) -- (0,0);
+  \draw[thick] (0,0) -- (60:3.4);
+
+  % Axis 1 (120 deg)
+  \draw[thick] (120:-2.2) -- (0,0);
+  \draw[thick, ->] (0,0) -- (120:3.2) node[above left=1pt, font=\large] {$\mathbf{1}$};
+
+  % Axis 2 (240 deg)
+  \draw[thick, ->] (0,0) -- (240:3.2) node[below left=1pt, font=\large] {$\mathbf{2}$};
+
+  % Point (beta, gamma) inside the sextant
+  \def\angG{34}
+  \def\lenB{1.75}
+  \coordinate (P) at (\angG:\lenB);
+  \draw[thick, dashed] (0,0) -- (P);
+  \draw[thick, dashed] (P) -- ({{\lenB*cos(\angG)}}, 0);
+  \node[above left=2pt, fill=white, inner sep=0.8pt, font=\normalsize] at ({0.52*\lenB*cos(\angG)}, {0.52*\lenB*sin(\angG)}) {$\beta$};
+
+  % Arc for gamma
+  \draw[->, thick] (1.0, 0) arc (0:\angG:1.0);
+  \node[font=\normalsize] at (17:1.25) {$\gamma$};
+
+  % 1. Prolate along axis 3 (gamma = 0 deg)
+  \begin{scope}[shift={(4.8, 0)}]
+    \draw[very thick, fill=white] (0,0) ellipse (0.55cm and 0.32cm);
+    \draw[thick] (-0.3, -0.26) arc (-90:90:0.08cm and 0.26cm);
+    \draw[thick] (0, -0.32) arc (-90:90:0.1cm and 0.32cm);
+    \draw[thick] (0.3, -0.26) arc (-90:90:0.08cm and 0.26cm);
+    \draw[thick] (-0.75, 0) -- (0.75, 0) node[right=1pt, font=\footnotesize] {$3$};
+    \draw[thick] (0, -0.65) -- (0, 0.65) node[above=1pt, font=\footnotesize] {$1$};
+    \draw[thick] (-0.45, -0.45) -- (0.45, 0.45);
+    \node[below left=-1pt, font=\footnotesize] at (-0.42, -0.42) {$2$};
+  \end{scope}
+
+  % 2. Oblate along axis 2 (gamma = 60 deg)
+  \begin{scope}[shift={(60:4.6)}]
+    \draw[very thick, fill=white] (0,0) circle (0.46cm);
+    \draw[thick] (0,0) circle (0.28cm);
+    \draw[thick] (0,0) circle (0.12cm);
+    \draw[thick] (-0.6, 0) -- (0.6, 0);
+    \draw[thick] (0, -0.6) -- (0, 0.6);
+    \draw[thick] (-0.4, -0.4) -- (0.4, 0.4);
+  \end{scope}
+
+  % 3. Prolate along axis 1 (gamma = 120 deg)
+  \begin{scope}[shift={(120:4.8)}]
+    \draw[very thick, fill=white, rotate=20] (0,0) ellipse (0.32cm and 0.55cm);
+    \draw[thick, rotate=20] (-0.26, -0.3) arc (180:360:0.26cm and 0.08cm);
+    \draw[thick, rotate=20] (-0.32, 0) arc (180:360:0.32cm and 0.1cm);
+    \draw[thick, rotate=20] (-0.26, 0.3) arc (180:360:0.26cm and 0.08cm);
+    \draw[thick] (-0.6, 0) -- (0.6, 0);
+    \draw[thick] (0, -0.75) -- (0, 0.75) node[above=1pt, font=\footnotesize] {$1$};
+    \draw[thick] (-0.4, -0.4) -- (0.4, 0.4);
+  \end{scope}
+
+  % 4. Oblate along axis 3 (gamma = 180 deg)
+  \begin{scope}[shift={(180:4.6)}]
+    \draw[very thick, fill=white, rotate=15] (0,0) ellipse (0.22cm and 0.55cm);
+    \draw[thick, rotate=15] (0,0) ellipse (0.12cm and 0.35cm);
+    \draw[thick, rotate=15] (0,0) ellipse (0.04cm and 0.15cm);
+    \draw[thick] (-0.6, 0) -- (0.6, 0);
+    \draw[thick] (0, -0.6) -- (0, 0.6);
+    \draw[thick] (-0.4, -0.4) -- (0.4, 0.4);
+  \end{scope}
+
+  % 5. Prolate along axis 2 (gamma = 240 deg)
+  \begin{scope}[shift={(240:4.8)}]
+    \draw[very thick, fill=white, rotate=-35] (0,0) ellipse (0.32cm and 0.55cm);
+    \draw[thick, rotate=-35] (-0.26, -0.3) arc (180:360:0.26cm and 0.08cm);
+    \draw[thick, rotate=-35] (-0.32, 0) arc (180:360:0.32cm and 0.1cm);
+    \draw[thick, rotate=-35] (-0.26, 0.3) arc (180:360:0.26cm and 0.08cm);
+    \draw[thick] (-0.6, 0) -- (0.6, 0);
+    \draw[thick] (0, -0.6) -- (0, 0.6);
+    \draw[thick] (-0.55, -0.55) -- (0.5, 0.5);
+    \node[below left=-1pt, font=\footnotesize] at (-0.52, -0.52) {$2$};
+  \end{scope}
+
+  % 6. Oblate along axis 1 (gamma = 300 deg)
+  \begin{scope}[shift={(300:4.6)}]
+    \draw[thick] (-0.6, 0) -- (0.6, 0);
+    \draw[thick] (0, -0.6) -- (0, 0.6);
+    \draw[thick] (-0.4, -0.4) -- (0.4, 0.4);
+    \draw[very thick, fill=white, rotate=-15] (0,0) ellipse (0.55cm and 0.22cm);
+    \draw[thick, rotate=-15] (0,0) ellipse (0.35cm and 0.12cm);
+    \draw[thick, rotate=-15] (0,0) ellipse (0.15cm and 0.04cm);
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,4011 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\end_preamble
+\use_default_options true
+\begin_modules
+beautiful-booknotes
+theorems-ams-chap-bytype
+\end_modules
+\maintain_unincluded_children no
+\language chinese-simplified
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+壳模型
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:壳模型"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+引言与普遍考虑
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:引言与普遍考虑"
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在上一章中我们探讨了原子核的宏观整体性质，即全核或绝大部分核子协同参与的静态或动态集体行为。在这一章中，我们将讨论原子核完全不同的另一个重要物理层面：大量实验事实表明，核内的核子在很大程度上可以被视为在几乎未受扰动的单粒子轨道上独立运动的粒子。
+\end_layout
+
+\begin_layout Standard
+正如我们在第 1 章开头指出的，独立粒子图像之所以在原子核这样强相互作用体系中成立，主要归因于 Pauli 不相容原理和量子力学测不准原理的深刻制约。现代核物理已经确立，现实核子-核子力在芯部（
+\begin_inset Formula $c \simeq 0.4\,\text{fm}$
+\end_inset
+）处具有极强的硬芯排斥 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vi78"
+literal "true"
+
+\end_inset
+。因此，密堆积体积 
+\begin_inset Formula $V_c$
+\end_inset
+ 与原子核实际体积 
+\begin_inset Formula $V$
+\end_inset
+ 之比仅为 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BM69"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{V_c}{V} = \left(\frac{c}{2r_0}\right)^3 \simeq \frac{1}{100}\label{eq:packing_fraction}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+这意味着平均而言核子之间的距离相对较远，核子通常仅“感受”到核力吸引长程尾部。短程强排斥所诱发的剧烈硬碰撞由于 Pauli 原理对末态相空间的强烈冻结而极其罕见。由核散射实验估计的核内核子平均自由程至少与原子核自身线度相当 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BM69,KK68"
+literal "true"
+
+\end_inset
+，这为核内独立粒子运动提供了最初步的坚实实验支撑。既然核子近似独立运动，这些单粒子运动必然受控于由所有其他核子共同产生的平均单体势阱中。
+\end_layout
+
+\begin_layout Section
+壳效应的实验证据
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:壳效应的实验证据"
+\end_inset
+\end_layout
+
+\begin_layout Standard
+核平均势的存在直接导致了类似于原子物理中电子壳层的特征能级聚集现象。实验上发现的核物理幻数（Magic numbers）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2,\;8,\;20,\;28,\;50,\;82,\;126
+\]
+\end_inset
+\end_layout
+
+\begin_layout Standard
+构成了建立核壳模型最强有力的实验基石。在这些中子数或质子数处，原子核表现出异常强大的结合与极高的稳定性：
+\end_layout
+
+\begin_layout Itemize
+单粒子分离能：将最弱束缚核子从核中移走所需的能量定义为分离能 
+\begin_inset Formula $S_n$
+\end_inset
+ 或 
+\begin_inset Formula $S_p$
+\end_inset
+。图 2.1 表明，通常核的分离能约为 8 MeV，但在幻数处出现极为陡峭的骤降，双满壳核的分离能显著偏高，这一突变特征与原子稀有气体的电离能跃变完全类似；
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_1.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_1"
+
+\end_inset
+图 2.1 中子与质子分离能分别作为中子数和质子数的函数（引自 [Ir 72]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Itemize
+质量与结合能偏差：实验核质量对 Bethe-Weizsäcker 半经验平滑质量公式的偏离（图 2.2）在幻数处呈现出极其显著的深下凹尖峰，表明幻数核具有异常强大的额外束缚能；
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_2.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_2"
+
+\end_inset
+图 2.2 实验核质量对平均平滑值的偏离作为中子数和质子数的函数（引自 [MS 66]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Itemize
+第一激发态能量与集体性：偶偶核的第一激发态 
+\begin_inset Formula $2^+$
+\end_inset
+ 能量在幻数闭壳处急剧升高（图 1.7），表明闭壳核对外场扰动具有极高的刚性，难以发生集体激发。
+\end_layout
+
+\begin_layout Section
+原子核的平均势
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:原子核的平均势"
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在原子中，电子围绕带正电的原子核运动，天然存在一个外部提供的中心 Coulomb 场。而原子核内不存在任何外部中心场，其平均单体势阱是所有核子通过双体相互作用自洽形成的。在中心区域，核子受力均匀对称，净受力为零：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(\frac{\partial V}{\partial r}\right)_{r=0} = 0\label{eq:pot_center_slope}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+随着离开核中心向核表面（
+\begin_inset Formula $r = R_0$
+\end_inset
+）过渡，束缚势阱逐渐变浅，
+\begin_inset Formula $(\partial V/\partial r)_{r<R_0} > 0$
+\end_inset
+；在核外因强相互作用为短程力而迅速趋于零：
+\begin_inset Formula $V(r) \to 0$
+\end_inset
+（
+\begin_inset Formula $r \gg R_0$
+\end_inset
+）。能够优美满足这些物理边界条件并与核电荷分布高度一致的唯象势是 Woods-Saxon 势 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WS54"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{\text{WS}}(r) = -V_0 \left[1 + \exp\left(\frac{r - R_0}{a}\right)\right]^{-1}\label{eq:woods_saxon_spherical}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_3.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_3"
+
+\end_inset
+图 2.3 Woods-Saxon 势的形式。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+典型参数为势阱深度 
+\begin_inset Formula $V_0 \simeq 50\,\text{MeV}$
+\end_inset
+，核半径 
+\begin_inset Formula $R_0 = r_0 A^{1/3}$
+\end_inset
+（
+\begin_inset Formula $r_0 \simeq 1.25\,\text{fm}$
+\end_inset
+），表面弥散厚度参数 
+\begin_inset Formula $a \simeq 0.65\,\text{fm}$
+\end_inset
+。为了解析讨论，物理上常采用两种极端势阱近似：
+\end_layout
+
+\begin_layout Enumerate
+各向同性谐振子势：
+\begin_inset Formula $V(r) = -V_0 + \frac{1}{2} m \omega_0^2 r^2$
+\end_inset
+；
+\end_layout
+
+\begin_layout Enumerate
+球方势阱：当 
+\begin_inset Formula $r \leqslant R_0$
+\end_inset
+ 时 
+\begin_inset Formula $V(r) = -V_0$
+\end_inset
+，当 
+\begin_inset Formula $r > R_0$
+\end_inset
+ 时 
+\begin_inset Formula $V(r) = 0$
+\end_inset
+（或考虑无穷深球方势阱）。
+\end_layout
+
+\begin_layout Standard
+对于三维球形谐振子，能级为等间距能级：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\varepsilon_N = \hbar\omega_0 \left(N + \frac{3}{2}\right) - V_0,\quad N = 2(n - 1) + l\label{eq:ho_spectrum_spherical}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中主量子数 
+\begin_inset Formula $N = 0, 1, 2, \dots$
+\end_inset
+，径向量子数 
+\begin_inset Formula $n = 1, 2, \dots$
+\end_inset
+，轨道角动量 
+\begin_inset Formula $l = 0, 1, \dots, N$
+\end_inset
+ 与 
+\begin_inset Formula $N$
+\end_inset
+ 具有相同的奇偶性（同一振子壳层只包含相同宇称态）。考虑自旋后，每个主振子壳层的简并度为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D(N) = (N + 1)(N + 2)\label{eq:ho_degeneracy}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+谐振子频率 
+\begin_inset Formula $\hbar\omega_0$
+\end_inset
+ 可由核电荷均方半径与核饱和密度确定 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mo57"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hbar\omega_0 \simeq \frac{5}{4}\left(\frac{3}{2}\right)^{1/3} \frac{\hbar^2}{m r_0^2} A^{-1/3} \simeq 41 \cdot A^{-1/3}\,\text{[MeV]}\label{eq:period_of_shell}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+振子特征长度为 
+\begin_inset Formula $b = \sqrt{\hbar/(m\omega_0)} \simeq 1.01 \cdot A^{1/6}\,\text{[fm]}$
+\end_inset
+。谐振子势填满主壳层的累积核子数为：2, 8, 20, 40, 70, 112, 168。在更真实的方势阱或 Woods-Saxon 势中，由于势阱边界比谐振子势更陡峭，高 
+\begin_inset Formula $l$
+\end_inset
+ 轨道的能量显著降低，从而消除了谐振子势中的偶然简并，给出能级序列：
+\begin_inset Formula $1s, 1p, 1d, 2s, 1f, 2p, 1g, \dots$
+\end_inset
+，对应的壳闭合幻数为 2, 8, 20, 34, 40, 58, 92, 138。显然，无论是谐振子势还是球方势阱，都只能解释前三个幻数（2, 8, 20），而完全无法给出重核区正确的实验幻数 28, 50, 82, 126。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_4.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_4"
+
+\end_inset
+图 2.4 各向同性谐振子（左）与无限深球方势阱（右）的单粒子能级方案（引自 [MJ 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Section
+自旋-轨道耦合
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:自旋-轨道耦合"
+\end_inset
+\end_layout
+
+\begin_layout Standard
+1949 年，Mayer 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ma49"
+literal "true"
+
+\end_inset
+ 与 Haxel、Jensen、Suess 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HJS49"
+literal "true"
+
+\end_inset
+ 独立提出，解决这一重大难题的关键在于核单粒子势中存在强大的自旋-轨道相互作用：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{ls}(\boldsymbol{r}) = V_{ls}(r) \boldsymbol{l} \cdot \boldsymbol{s} = \kappa \frac{1}{r}\frac{\mathrm{d}V(r)}{\mathrm{d}r}\,\boldsymbol{l} \cdot \boldsymbol{s}\label{eq:spin_orbit_potential}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+与原子中由相对论 Thomas 进动引起的微弱自旋-轨道耦合不同，核物理中的自旋-轨道力强度不仅比原子大近 30 倍，而且符号相反（
+\begin_inset Formula $\kappa < 0$
+\end_inset
+）。核子的总单粒子角动量为 
+\begin_inset Formula $\boldsymbol{j} = \boldsymbol{l} + \boldsymbol{s}$
+\end_inset
+，由 
+\begin_inset Formula $\boldsymbol{l} \cdot \boldsymbol{s} = \frac{1}{2}(\boldsymbol{j}^2 - \boldsymbol{l}^2 - \boldsymbol{s}^2)$
+\end_inset
+ 可得算符本征值为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\langle \boldsymbol{l} \cdot \boldsymbol{s} \rangle = \begin{cases} \frac{1}{2} l, & \text{对于 } j = l + \frac{1}{2} \\ -\frac{1}{2}(l + 1), & \text{对于 } j = l - \frac{1}{2} \end{cases}\label{eq:ls_eigenvalues}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此导致的同一 
+\begin_inset Formula $l$
+\end_inset
+ 轨道的能级分裂量为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta \varepsilon_{ls} = \varepsilon_{j=l-1/2} - \varepsilon_{j=l+1/2} = \left(l + \frac{1}{2}\right) \langle V_{ls} \rangle\label{eq:ls_splitting}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由于 
+\begin_inset Formula $V_{ls}(r)$
+\end_inset
+ 为强吸引作用，平行耦合的轨道（
+\begin_inset Formula $j = l + 1/2$
+\end_inset
+）能量大幅度下移，而反平行轨道（
+\begin_inset Formula $j = l - 1/2$
+\end_inset
+）能量上移。分裂量正比于 
+\begin_inset Formula $2l + 1$
+\end_inset
+，随轨道角动量 
+\begin_inset Formula $l$
+\end_inset
+ 急剧增大！在每个主要高能壳层中，具有最高角动量的支能级：
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1f_{7/2}$
+\end_inset
+（来自 
+\begin_inset Formula $N=3$
+\end_inset
+ 壳）被强力压低，在 20 之后容纳 8 个核子，形成幻数 
+\begin_inset Formula $\mathbf{28}$
+\end_inset
+；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1g_{9/2}$
+\end_inset
+（来自 
+\begin_inset Formula $N=4$
+\end_inset
+ 壳）侵入下一壳层，在 40 之后容纳 10 个核子，形成幻数 
+\begin_inset Formula $\mathbf{50}$
+\end_inset
+；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1h_{11/2}$
+\end_inset
+（来自 
+\begin_inset Formula $N=5$
+\end_inset
+ 壳）侵入形成幻数 
+\begin_inset Formula $\mathbf{82}$
+\end_inset
+；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $1i_{13/2}$
+\end_inset
+（来自 
+\begin_inset Formula $N=6$
+\end_inset
+ 壳）侵入形成幻数 
+\begin_inset Formula $\mathbf{126}$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+这些被强自旋-轨道耦合压入低主振子壳层的高角动量轨道被称为侵入态（Intruder states）。它们与其所在壳层中的其他轨道具有相反的宇称，因而在单核子衰变中受到宇称选择定则的强力保护。由此，包含强自旋-轨道相互作用的球形单粒子壳模型彻底、自然地解释了全核素区的全部幻数（图 2.5）！
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_5.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_5"
+
+\end_inset
+图 2.5 包含自旋-轨道耦合项的壳模型核能级示意图（引自 [MJ 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Section
+多体问题的壳模型方法
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:多体问题的壳模型方法"
+\end_inset
+\end_layout
+
+\begin_layout Standard
+严格的原子核微观理论建立在非相对论量子多体问题之上，其总微观 Hamilton 量包含核子动能与两体相互作用：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H = \sum_{i=1}^A t_i + \frac{1}{2}\sum_{i \neq j}^A v(i,j)\label{eq:full_microscopic_H}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $i = (\boldsymbol{r}_i, \boldsymbol{s}_i, \boldsymbol{t}_i)$
+\end_inset
+ 表示单个核子的全部空间、自旋与同位旋坐标。壳模型方法的核心思想是在总 Hamilton 量中引入一个平均单粒子势场 
+\begin_inset Formula $U(i)$
+\end_inset
+，并将全 Hamilton 量精确分解为无相互作用的独立粒子单体 Hamilton 量 
+\begin_inset Formula $H_0$
+\end_inset
+ 与剩余相互作用（Residual interaction）
+\begin_inset Formula $V_{\text{res}}$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H = H_0 + V_{\text{res}}\label{eq:H_split_H0_Vres}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+H_0 &= \sum_{i=1}^A h(i) = \sum_{i=1}^A \left[t_i + U(i)\right]\nonumber\\
+V_{\text{res}} &= \frac{1}{2}\sum_{i \neq j}^A v(i,j) - \sum_{i=1}^A U(i)\label{eq:V_residual_def}
+\end{align}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+求解单粒子薛定谔方程：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h(i) \phi_k(i) = \varepsilon_k \phi_k(i)\label{eq:single_particle_schrodinger}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+本征态 
+\begin_inset Formula $\phi_k$
+\end_inset
+ 构成二次量子化表象（附录 C）的正交归一基底。设 
+\begin_inset Formula $a_k^\dagger$
+\end_inset
+ 与 
+\begin_inset Formula $a_k$
+\end_inset
+ 分别为轨道 
+\begin_inset Formula $k$
+\end_inset
+ 上的费米子产生与湮灭算符，则独立粒子 Hamilton 量可写为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_0 = \sum_k \varepsilon_k a_k^\dagger a_k\label{eq:H0_second_quantized}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于双满壳闭壳核，核子从最低轨道一直填到 Fermi 能级 
+\begin_inset Formula $\varepsilon_F$
+\end_inset
+，体系基态由单一 Slater 行列式给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\Phi_0\rangle = \prod_{i \leqslant \varepsilon_F} a_i^\dagger |-\rangle\label{eq:slater_ground_state}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_6.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_6"
+
+\end_inset
+图 2.6 壳模型势阱与费米能级示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+对于中子过剩核，由于质子感受到额外的 Coulomb 排斥能，其势能曲面整体上移；同时核对称能使质子感受到的核势部分比中子势更深，从而使中子与质子的 Fermi 面得以保持平衡（图 2.7）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_7.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_7"
+
+\end_inset
+图 2.7 中子过剩核中中子与质子壳模型势的比较（虚线对应更深的质子核势部分）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+在 Fermi 气体图像下，体系最简单的激发态是将 Fermi 海中的一个核子 
+\begin_inset Formula $i$
+\end_inset
+（
+\begin_inset Formula $\varepsilon_i \leqslant \varepsilon_F$
+\end_inset
+）激发到空轨道 
+\begin_inset Formula $m$
+\end_inset
+（
+\begin_inset Formula $\varepsilon_m > \varepsilon_F$
+\end_inset
+）上，形成粒子-空穴激发态（
+\begin_inset Formula $1p-1h$
+\end_inset
+ 态）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\Phi_{mi}\rangle = a_m^\dagger a_i |\Phi_0\rangle,\quad \Delta E_{mi} = \varepsilon_m - \varepsilon_i\label{eq:ph_excitation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_8.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_8"
+
+\end_inset
+图 2.8 典型的五粒子（叉号）五空穴（空心圆）激发态示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+极其便利的工具是定义准粒子（Quasiparticles）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\alpha_m^\dagger = a_m^\dagger\;(\varepsilon_m > \varepsilon_F),\quad \alpha_i^\dagger = a_i\;(\varepsilon_i \leqslant \varepsilon_F)\label{eq:quasiparticle_particle_hole}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+使得基态成为准粒子真空态：
+\begin_inset Formula $\alpha_k |\Phi_0\rangle = 0$
+\end_inset
+。真实的核基态由于剩余相互作用 
+\begin_inset Formula $V_{\text{res}}$
+\end_inset
+ 的存在，包含着虚粒子-空穴激发的相关混杂：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\Psi\rangle = c_0 |\Phi_0\rangle + \sum_{mi} c_{mi} a_m^\dagger a_i |\Phi_0\rangle + \frac{1}{4}\sum_{mnij} c_{mnij} a_m^\dagger a_n^\dagger a_j a_i |\Phi_0\rangle + \dots\label{eq:ground_state_correlation_expansion}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在良好的平均场势阱下，展开系数满足 
+\begin_inset Formula $c_0 \approx 1$
+\end_inset
+，高阶关联较小。如何在微观上自洽决定最优平均势 
+\begin_inset Formula $U(i)$
+\end_inset
+ 使得剩余相互作用最小，正是第 5 章 Hartree-Fock 理论的核心议题。
+\end_layout
+
+\begin_layout Section
+对称性
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:对称性"
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+平移对称性
+\end_layout
+
+\begin_layout Standard
+真实的原子核 Hamilton 量在全空间中具有严格的平移不变性。然而在唯象壳模型中，为了定义单粒子势场，我们人为地将平均势的中心固定在空间原点，这必然破坏了平移对称性。这种对称性破缺带来的最直接后果是：体系的激发能谱中混入了多余的自由度，产生所谓的赝态或赝模（Spurious states / Spurious modes）。
+\end_layout
+
+\begin_layout Standard
+由于一个包含 
+\begin_inset Formula $A$
+\end_inset
+ 个核子的体系只有 
+\begin_inset Formula $3A - 3$
+\end_inset
+ 个内秉自由度，壳模型的 
+\begin_inset Formula $3A$
+\end_inset
+ 个坐标中包含了核质心整体在势阱中的振荡运动。在谐振子势中，总 Hamilton 量可以精确分离为质心部分与相对运动部分：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H = H_{\text{c.m.}} + H_{\text{rel}} = \left(\frac{\boldsymbol{P}^2}{2mA} + \frac{1}{2}mA\omega_0^2 \boldsymbol{R}^2\right) + H_{\text{rel}}\label{eq:trans_cm_separation}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\boldsymbol{R} = \frac{1}{A}\sum_i \boldsymbol{r}_i$
+\end_inset
+，
+\begin_inset Formula $\boldsymbol{P} = \sum_i \boldsymbol{p}_i$
+\end_inset
+。因此质心零点能为 
+\begin_inset Formula $\frac{3}{2}\hbar\omega_0$
+\end_inset
+。为了消除赝质心动能带来的误差，通常从总能量中减去质心动能期望值 
+\begin_inset Formula $\langle \boldsymbol{P}^2 \rangle / (2mA)$
+\end_inset
+；在第 11 章中我们将系统讨论通过投影算符方法严格消除平移赝态的微观理论。
+\end_layout
+
+\begin_layout Subsection
+转动对称性与组态混合
+\end_layout
+
+\begin_layout Standard
+球形壳模型 Hamilton 量 
+\begin_inset Formula $H_0$
+\end_inset
+（包含自旋-轨道耦合项）与总角动量算符 
+\begin_inset Formula $\boldsymbol{J}^2$
+\end_inset
+ 及 
+\begin_inset Formula $J_z$
+\end_inset
+ 对易：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{J} = \sum_{i=1}^A \boldsymbol{j}_i,\quad J_z = \sum_{i=1}^A j_{zi}\label{eq:total_J_def}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于双满壳闭壳核，所有单粒子态全部被填满，基态唯一的总角动量本征值严格为 
+\begin_inset Formula $I = 0^+$
+\end_inset
+，该结论已被所有双幻核无一例外地实验证实。当闭壳核外只有一个核子（或缺少一个核子形成的单空穴态）时，核基态总角动量自然等于该价核子的单粒子角动量 
+\begin_inset Formula $I = j$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+当闭壳核外存在两个以上价核子时，同一 
+\begin_inset Formula $j$
+\end_inset
+ 壳层内不同磁量子数 
+\begin_inset Formula $m$
+\end_inset
+ 的状态是完全简并的。例如对于同种价核子组态 
+\begin_inset Formula $(j)^2$
+\end_inset
+，根据角动量耦合理论与 Clebsch-Gordan 系数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|IM\rangle = \frac{1}{\sqrt{2}} \sum_{m_1 m_2} C_{j m_1 j m_2}^{I M} |m_1 m_2\rangle\label{eq:cg_two_particle_coupling}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由于核子是全同费米子，双粒子态满足反对称性 
+\begin_inset Formula $|m_2 m_1\rangle = -|m_1 m_2\rangle$
+\end_inset
+，结合 Clebsch-Gordan 系数的对称性性质 
+\begin_inset Formula $C_{j m_2 j m_1}^{I M} = (-1)^{2j-I} C_{j m_1 j m_2}^{I M}$
+\end_inset
+，得到波函数具有因子 
+\begin_inset Formula $1 - (-1)^{2j-I} = 1 + (-1)^I$
+\end_inset
+（因为对半整数 
+\begin_inset Formula $j$
+\end_inset
+，
+\begin_inset Formula $2j$
+\end_inset
+ 为奇数）。因此非零的物理态要求总角动量必须为偶数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I = 0, 2, 4, \dots, 2j - 1\label{eq:even_I_allowed}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+例如对于 
+\begin_inset Formula $j = 3/2$
+\end_inset
+，允许的总角动量仅为 
+\begin_inset Formula $I = 0, 2$
+\end_inset
+。为了在这些简并态中确定基态能量并解除简并，必须引入剩余相互作用 
+\begin_inset Formula $V_{\text{res}}$
+\end_inset
+（式 (2.35)）并在模型组态空间中进行对角化。在真实的核中，配对相互作用使得 
+\begin_inset Formula $I=0$
+\end_inset
+ 态的能量显著降低，从而在理论上保证了所有偶偶核基态自旋恒为 
+\begin_inset Formula $0^+$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+对于远离闭壳的核，单组态壳模型常常失效，必须考虑组态混合（Configuration mixing）：即真实的核本征态是不同粒子-空穴组态和不同单粒子轨道 Slater 行列式的相干叠加：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\Psi_I\rangle = \sum_{\alpha} c_\alpha |\Phi_\alpha(I)\rangle\label{eq:config_mixing_wavefunction}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+组态混合不仅解除了开壳层能级的简并，而且是微观核结构中产生集体相干性与核形变的核心机制。
+\end_layout
+
+\begin_layout Subsection
+同位旋
+\end_layout
+
+\begin_layout Standard
+核力强烈的电荷无关性（Charge independence，见第 4 章）表明，除微弱的电磁相互作用外，质子和中子在强核力作用下表现出高度的一致性。Heisenberg 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "He32"
+literal "true"
+
+\end_inset
+ 与 Wigner 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wi37"
+literal "true"
+
+\end_inset
+ 由此引入了同位旋（Isotopic spin / Isospin）概念，将质子与中子视为同一种粒子——核子（Nucleon）的两个不同内秉荷电状态。
+\end_layout
+
+\begin_layout Standard
+单个核子的同位旋算符由 Pauli 矩阵表示：
+\begin_inset Formula $\boldsymbol{t} = \frac{1}{2}\boldsymbol{\tau}$
+\end_inset
+，其基矢为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|p\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix},\quad |n\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\label{eq:isospin_spinors}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在核物理的传统约定中，
+\begin_inset Formula $t_3$
+\end_inset
+ 的本征值为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+t_3 |n\rangle = \frac{1}{2}|n\rangle,\quad t_3 |p\rangle = -\frac{1}{2}|p\rangle\label{eq:isospin_t3_eigenvals}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+升降算符 
+\begin_inset Formula $t_\pm = t_1 \pm \mathrm{i} t_2$
+\end_inset
+ 实现质子与中子状态的相互跃迁：
+\begin_inset Formula $t_- |n\rangle = |p\rangle$
+\end_inset
+，
+\begin_inset Formula $t_+ |p\rangle = |n\rangle$
+\end_inset
+。对于包含 
+\begin_inset Formula $A$
+\end_inset
+ 个核子的体系，总同位旋矢量算符定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{T} = \sum_{i=1}^A \boldsymbol{t}_i,\quad T_3 = \sum_{i=1}^A t_{3i} = \frac{1}{2}(N - Z)\label{eq:total_isospin_def}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+若忽略 Coulomb 力，总 Hamilton 量与 
+\begin_inset Formula $\boldsymbol{T}^2$
+\end_inset
+ 和 
+\begin_inset Formula $T_3$
+\end_inset
+ 对易，体系的每个定态都具有良好的总同位旋量子数 
+\begin_inset Formula $T$
+\end_inset
+（满足 
+\begin_inset Formula $T \geqslant |T_3|$
+\end_inset
+）。例如对于质量数 
+\begin_inset Formula $A=10$
+\end_inset
+ 的同量异位素三胞胎 
+\begin_inset Formula $\ce{^{10}Be}$
+\end_inset
+（
+\begin_inset Formula $T_3 = 1$
+\end_inset
+）、
+\begin_inset Formula $\ce{^{10}B}$
+\end_inset
+（
+\begin_inset Formula $T_3 = 0$
+\end_inset
+）与 
+\begin_inset Formula $\ce{^{10}C}$
+\end_inset
+（
+\begin_inset Formula $T_3 = -1$
+\end_inset
+），存在严格对应的同位旋三重态（
+\begin_inset Formula $T=1$
+\end_inset
+，图 2.9）；此外 
+\begin_inset Formula $\ce{^{10}B}$
+\end_inset
+ 独有 
+\begin_inset Formula $T=0$
+\end_inset
+ 的单态。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_9.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_9"
+
+\end_inset
+图 2.9 同量异位素激发谱中的同位旋三重态与单态（引自 [MJ 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由同位旋上升算符 
+\begin_inset Formula $T_+$
+\end_inset
+ 作用在满壳组态上为零可知，所有占据质子能级同时被中子占据的壳模型态必有 
+\begin_inset Formula $T = T_3 = (N - Z)/2$
+\end_inset
+，基态组态如图 2.10 所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_10.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_10"
+
+\end_inset
+图 2.10 壳模型组态与同位旋示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+在重核中，虽然质子间巨大的 Coulomb 排斥能破坏了严格的同位旋守恒，但由于大量过剩中子形成了强同位旋矢量单粒子势垒（Symmetry potential），阻碍了不同同位旋组态的混杂，使得重核低激发态仍然保持着高度纯净的同位旋，并在核反应中观察到了极其清晰锐利的同位旋类似态（Isobaric Analogue States, IAS）。
+\end_layout
+
+\begin_layout Section
+与实验对比
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:与实验对比"
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+单粒子（空穴）态的实验证据
+\end_layout
+
+\begin_layout Standard
+单粒子壳模型最直接的实验检验是在双闭壳核附近的单核子转移反应与敲出反应：
+\end_layout
+
+\begin_layout Itemize
+条带反应与单核子拾取：如 
+\begin_inset Formula $(d,p)$
+\end_inset
+、
+\begin_inset Formula $(p,d)$
+\end_inset
+、
+\begin_inset Formula $(d,t)$
+\end_inset
+ 反应，通过测量转移出射粒子的角分布和截面，能够直接提取残核能级的轨道角动量 
+\begin_inset Formula $l$
+\end_inset
+ 与光谱学因子（Spectroscopic factor）
+\begin_inset Formula $S_j$
+\end_inset
+；
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_14.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_14"
+
+\end_inset
+图 2.14 来自 $^{208}\mathrm{Pb}(d,p)^{209}\mathrm{Pb}$ 反应的中子谱，各峰标有壳模型轨道分配（引自 [EKV 69]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Itemize
+准自由散射敲出反应：高能 
+\begin_inset Formula $(p,2p)$
+\end_inset
+ 与 
+\begin_inset Formula $(e,e'p)$
+\end_inset
+ 反应能够直接测量原子核深层束缚轨道的单粒子能谱和动量分布（图 2.11 与图 2.13）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_11.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_11"
+
+\end_inset
+图 2.11 准自由敲出反应 $(p,2p)$ 的示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在壳模型图像下，被打出核子的束缚能由能量守恒给出：
+\begin_inset Formula $E_B = E - E' - E''$
+\end_inset
+（图 2.12）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_12.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_12"
+
+\end_inset
+图 2.12 壳模型框架下的 $(p,2p)$ 反应过程示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_13.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_13"
+
+\end_inset
+图 2.13 实验测量的 $^{16}\mathrm{O}(p,2p)^{15}\mathrm{N}$ 截面（引自 [MHT 58]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+图 2.15 给出了双幻核 
+\begin_inset Formula $\ce{^{208}Pb}$
+\end_inset
+ 邻近奇核（
+\begin_inset Formula $\ce{^{209}Pb}, \ce{^{207}Pb}, \ce{^{209}Bi}, \ce{^{207}Tl}$
+\end_inset
+）测得的单粒子与单空穴能级同理论 Woods-Saxon 势计算值的对比。实验结果不仅证实了高 
+\begin_inset Formula $j$
+\end_inset
+ 侵入轨道的存在，而且光谱学因子 
+\begin_inset Formula $S_j \approx 1$
+\end_inset
+，说明双闭壳核附近的低激发态确实具有极其纯粹的单粒子特征。远离闭壳时，单粒子强度发生明显的碎裂（Fragmentation），表明单粒子自由度与集体振动（声子）之间存在强烈的粒子-振动耦合（Particle-vibration coupling）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_15.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_15"
+
+\end_inset
+图 2.15 $^{208}\mathrm{Pb}$ 实验测定与理论计算的单粒子能级比较。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+电磁极矩与跃迁
+\end_layout
+
+\begin_layout Standard
+单核子电磁极矩与跃迁几率提供了检验核波函数细节的极其敏感的工具（详见附录 B）。
+\end_layout
+
+\begin_layout Standard
+磁偶极矩算符由轨道磁矩与内秉自旋磁矩组成：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{\mu} = \sum_{i=1}^A \left(g_{li}\boldsymbol{l}_i + g_{si}\boldsymbol{s}_i\right)\mu_N\label{eq:mag_moment_operator}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于单个闭壳外奇核子，在角动量为 
+\begin_inset Formula $j$
+\end_inset
+ 的状态下计算得到的磁矩被称为 Schmidt 极限（Schmidt limits / Schmidt lines）
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sc37"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\mu &= \left[g_l\left(j - \frac{1}{2}\right) + \frac{1}{2}g_s\right]\mu_N,\quad \text{对于 } j = l + \frac{1}{2}\nonumber\\
+\mu &= \frac{j}{j+1}\left[g_l\left(j + \frac{3}{2}\right) - \frac{1}{2}g_s\right]\mu_N,\quad \text{对于 } j = l - \frac{1}{2}\label{eq:schmidt_limits}
+\end{align}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+实验测量的磁矩普遍分布在两条 Schmidt 线之间（图 2.17），系统性地小于单粒子预言值（淬灭效应，Quenching）。这一偏差主要源于残余相互作用引起的核芯极化（Core polarization，即价核子激发闭壳核芯形成粒子-空穴对）以及核子间介子交换流（Meson exchange currents）的贡献。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_16.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_16"
+
+\end_inset
+图 2.16 奇 $Z$ 核磁矩作为角动量的函数（Schmidt 线，引自 [MJ 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_17.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_17"
+
+\end_inset
+图 2.17 奇 $N$ 核磁矩作为角动量的函数（Schmidt 线，引自 [MJ 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+单粒子电四极矩定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{\text{s.p.}} = -e_i \frac{2j - 1}{2(j + 1)} \langle r^2 \rangle\label{eq:single_particle_quadrupole}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+按单纯壳模型，中子不带电（
+\begin_inset Formula $e_n = 0$
+\end_inset
+），其实验四极矩应严格为零；而奇质子核的四极矩应由其价质子产生。然而实验测量发现：
+\end_layout
+
+\begin_layout Itemize
+奇中子核呈现出明显的非零电四极矩；
+\end_layout
+
+\begin_layout Itemize
+奇质子核的实验四极矩比单粒子理论值大近两倍。
+\end_layout
+
+\begin_layout Standard
+这一显著效应可以通过引入有效电荷（Effective charge）
+\begin_inset Formula $e_{\text{eff}}$
+\end_inset
+ 来解释：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+e_{\text{eff}} = e_i + \delta e\label{eq:effective_charge_def}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中极化电荷 
+\begin_inset Formula $\delta e$
+\end_inset
+ 反映了价核子通过两体相互作用将带电核芯极化、激发出虚四极巨共振集体模的效应。在近闭壳核中，典型的极化电荷实验值为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta e_p \simeq 0.5 e,\quad \delta e_n \simeq 0.5 e\label{eq:polarization_charge_values}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此中子的有效电荷为 
+\begin_inset Formula $e_{\text{eff}}(n) \simeq 0.5 e$
+\end_inset
+，质子的有效电荷为 
+\begin_inset Formula $e_{\text{eff}}(p) \simeq 1.5 e$
+\end_inset
+。利用这些有效电荷，能够极好地统一解释近闭壳核的静电四极矩以及单粒子电多极跃迁率（以 Weisskopf 单粒子单位 W.u. 衡量）。此外，由于自旋和宇称选择定则的限制，某些高自旋单粒子态只能通过极高多极度的电磁辐射退激发，因而具有极长的寿命，在核素图中形成了著名的“同质异能岛”（Islands of isomers）。
+\end_layout
+
+
+\begin_layout Standard
+而在远离闭壳的稀土区和锕系区，实验测量的电四极矩比单粒子预言值大一至两个数量级，且普遍为正值（长椭球形变），清楚表明核芯本身发生了显著的整体稳定形变（图 2.18）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_18.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_18"
+
+\end_inset
+图 2.18 奇 $A$ 核电四极矩随奇核子数的变化曲线。箭头标出了满壳位置（引自 [Se 64]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Section
+形变壳模型
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:形变壳模型"
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+实验证据
+\end_layout
+
+\begin_layout Standard
+在平均势中核子近似独立的运动是壳模型及所有有限核微观理论的基石。在最简单的形式下，该平均势阱被假定为球对称的。这对于闭壳或近闭壳核是高度精确的；然而，当远离闭壳核时，实验观测到了强烈的偏离：
+\end_layout
+
+\begin_layout Itemize
+巨大的电四极矩：在稀土区（
+\begin_inset Formula $150 < A < 190$
+\end_inset
+）与锕系区（
+\begin_inset Formula $A > 220$
+\end_inset
+），测量到的核基态内秉电四极矩 
+\begin_inset Formula $Q_0$
+\end_inset
+ 比单个未配对核子预期的单粒子值大一到两个数量级（可达数个靶恩，
+\begin_inset Formula $10^{-24}\,\text{cm}^2$
+\end_inset
+）。这意味着有数十个核子协同参与了非球形的形变。
+\end_layout
+
+\begin_layout Itemize
+典型的转动能谱：这些核的激发谱呈现出极为规则的转动带序列，其激发能量严格遵循 
+\begin_inset Formula $E_I = \frac{\hbar^2}{2\mathcal{J}} I(I+1)$
+\end_inset
+ 规律（偶偶核为 
+\begin_inset Formula $0^+, 2^+, 4^+, 6^+, \dots$
+\end_inset
+），伴随着极强增强的集体 
+\begin_inset Formula $E2$
+\end_inset
+ 跃迁（见第 1、3 章）。
+\end_layout
+
+\begin_layout Standard
+这些无可辩驳的实验事实清楚地表明，对于开壳层核，原子核的基态自身发生了空间转动对称性的自发破缺，平均场势阱不再保持球形，而形成了固定的空间取向形变。
+\end_layout
+
+\begin_layout Subsection
+一般的形变势
+\end_layout
+
+\begin_layout Standard
+描述非球形核表面的普遍方法是将核半径按球谐函数展开：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R(\theta,\phi) = R_0 \left[1 + \sum_{\lambda=0}^\infty \sum_{\mu=-\lambda}^\lambda \alpha_{\lambda\mu}^* Y_{\lambda\mu}(\theta,\phi)\right]\label{eq:deformed_surface_expansion}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\lambda=1$
+\end_inset
+ 对应质心平移（不改变内秉形状），最重要的多极形变为四极形变 
+\begin_inset Formula $\lambda=2$
+\end_inset
+。在内秉体固坐标系下，五重分量可由 Hill-Wheeler 形状坐标 
+\begin_inset Formula $\beta, \gamma$
+\end_inset
+ 参数化（见 1.2 节）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+a_{20} &= \beta \cos\gamma\nonumber\\
+a_{22} = a_{2,-2} &= \frac{1}{\sqrt{2}} \beta \sin\gamma\label{eq:hill_wheeler_beta_gamma}
+\end{align}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于轴对称椭球（
+\begin_inset Formula $\gamma = 0^\circ$
+\end_inset
+ 对应长椭球，
+\begin_inset Formula $\gamma = 60^\circ$
+\end_inset
+ 对应扁椭球），形变 Woods-Saxon 势具有形式：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V(r,\theta,\phi) = -V_0 \left[1 + \exp\left(\frac{r - R(\theta,\phi)}{a(\theta,\phi)}\right)\right]^{-1}\label{eq:deformed_WS_pot}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+各向异性谐振子
+\end_layout
+
+\begin_layout Standard
+若假定形变核的密度为椭球分布，则在谐振子近似下最方便的平均势是各向异性谐振子 Hamilton 量：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h_0 = -\frac{\hbar^2}{2m}\nabla^2 + \frac{m}{2}\left(\omega_x^2 x^2 + \omega_y^2 y^2 + \omega_z^2 z^2\right)\label{eq:aniso_ho_h0}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由椭球等势面要求，振荡频率反比于半轴长：
+\begin_inset Formula $\omega_\nu = \omega_0 \frac{R_0}{a_\nu}$
+\end_inset
+（
+\begin_inset Formula $\nu = x, y, z$
+\end_inset
+）。不可压缩流体的体积守恒条件要求：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\omega_x \omega_y \omega_z = \text{常数} = \omega_0^3\label{eq:aniso_ho_vol_conserv}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+本征值为三方向谐振子能量之和：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\varepsilon_0(n_x, n_y, n_z) = \hbar\omega_x\left(n_x + \frac{1}{2}\right) + \hbar\omega_y\left(n_y + \frac{1}{2}\right) + \hbar\omega_z\left(n_z + \frac{1}{2}\right)\label{eq:aniso_ho_eigenval}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在轴对称情形下，取 
+\begin_inset Formula $z$
+\end_inset
+ 轴为对称轴，引入无量纲形变参数 
+\begin_inset Formula $\delta$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\omega_\perp^2 = \omega_x^2 = \omega_y^2 &= \omega_0^2(\delta)\left(1 + \frac{2}{3}\delta\right)\nonumber\\
+\omega_z^2 &= \omega_0^2(\delta)\left(1 - \frac{4}{3}\delta\right)\label{eq:aniso_ho_omega_delta}
+\end{align}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由体积守恒条件 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:aniso_ho_vol_conserv"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+\end_inset
+，展开到 
+\begin_inset Formula $\delta$
+\end_inset
+ 的二阶可得：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\omega_0(\delta) = \omega_0 \left(1 + \frac{2}{9}\delta^2\right)\label{eq:omega_delta_order2}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+引入形变依赖的特征振子长度 
+\begin_inset Formula $b(\delta) = \sqrt{\hbar/(m\omega_0(\delta))}$
+\end_inset
+ 及无量纲坐标 
+\begin_inset Formula $\boldsymbol{r}' = \boldsymbol{r}/b(\delta)$
+\end_inset
+，Hamilton 量可表示为球形谐振子加上四极形变扰动项：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h_0(\delta) = \hbar\omega_0(\delta)\left(-\frac{1}{2}\nabla'^2 + \frac{1}{2}r'^2 - \frac{1}{3}\sqrt{\frac{16\pi}{5}}\,\delta\,r'^2 Y_{20}(\theta',\phi')\right)\label{eq:dimensionless_aniso_ho}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_19.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_19"
+
+\end_inset
+图 2.19 各向异性谐振子能级作为形变参数 $\delta$ 的函数。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+Nilsson Hamilton量
+\end_layout
+
+\begin_layout Standard
+单纯的形变谐振子势无法给出正确的自旋-轨道劈裂以及重核内部平坦底部的势阱特征。为了在形变核中再现真实的单粒子能谱，Nilsson 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ni55"
+literal "true"
+
+\end_inset
+ 在形变谐振子基底上引入了自旋-轨道耦合项与角动量修正项：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h = h_0(\delta) - \kappa \hbar \omega_0 \left[2 \boldsymbol{l} \cdot \boldsymbol{s} + \mu \left(\boldsymbol{l}^2 - \langle \boldsymbol{l}^2 \rangle_N\right)\right]\label{eq:nilsson_hamiltonian}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\kappa$
+\end_inset
+ 决定了自旋-轨道相互作用的强度，
+\begin_inset Formula $\mu$
+\end_inset
+ 调节高 
+\begin_inset Formula $l$
+\end_inset
+ 轨道的相对能量（模拟势阱底部的平坦化），常数 
+\begin_inset Formula $\langle \boldsymbol{l}^2 \rangle_N = \frac{1}{2} N(N+3)$
+\end_inset
+ 保证各主振子壳层能量重心不发生整体漂移。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_20.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_20"
+
+\end_inset
+图 2.20 借助 $\boldsymbol{l}^{2}$ 项将较高 $l$ 轨道向下平移的示意图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+由于形变势破坏了全空间转动球对称性，总角动量 
+\begin_inset Formula $j$
+\end_inset
+ 不再是好量子数。但对于轴对称核，绕对称轴（
+\begin_inset Formula $z$
+\end_inset
+ 轴）的转动不变性与空间宇称仍然保持守恒。因此总角动量在 
+\begin_inset Formula $z$
+\end_inset
+ 轴上的投影 
+\begin_inset Formula $\Omega$
+\end_inset
+ 与空间宇称 
+\begin_inset Formula $\pi = (-1)^N$
+\end_inset
+ 是严格的好量子数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Omega = j_z = l_z + s_z = \Lambda + \Sigma\label{eq:nilsson_omega_def}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在大形变极限下，单粒子能级可以用柱坐标下的渐近基量子数 
+\begin_inset Formula $|N n_z \Lambda \Omega\rangle$
+\end_inset
+（通常简写为渐近标记 
+\begin_inset Formula $[N n_z \Lambda \Omega]$
+\end_inset
+）标记，其中：
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N$
+\end_inset
+：主谐振子量子数；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_z$
+\end_inset
+：沿对称轴方向的振动激发量子数（
+\begin_inset Formula $n_z$
+\end_inset
+ 越大，轨道波函数沿 
+\begin_inset Formula $z$
+\end_inset
+ 轴越延展，长椭球形变时能量随 
+\begin_inset Formula $\delta$
+\end_inset
+ 下降越快）；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Lambda$
+\end_inset
+：轨道角动量在 
+\begin_inset Formula $z$
+\end_inset
+ 轴上的投影（
+\begin_inset Formula $\Lambda = N - n_z, N - n_z - 2, \dots$
+\end_inset
+）；
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Omega = \Lambda \pm 1/2$
+\end_inset
+：总角动量在 
+\begin_inset Formula $z$
+\end_inset
+ 轴上的投影。
+\end_layout
+
+\begin_layout Standard
+根据量子力学的不交叉定则（No-crossing rule），具有相同对称性量子数（相同 
+\begin_inset Formula $\Omega$
+\end_inset
+ 与相同宇称 
+\begin_inset Formula $\pi$
+\end_inset
+）的能级随形变变化时不会真正相交，而是发生强烈的组态混杂并彼此排斥；只有具有不同 
+\begin_inset Formula $\Omega$
+\end_inset
+ 或不同宇称的能级才能自由相交。图 2.21 展示了著名的 Nilsson 能级图。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_22.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_22"
+
+\end_inset
+图 2.22 具有相同对称性的两个能级的不相交定则（Neumann-Wigner 定则）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_21a.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_21a"
+
+\end_inset
+图 2.21a 轻核区的 Nilsson 模型单粒子能级图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_21b.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_21b"
+
+\end_inset
+图 2.21b 重核区中子的 Nilsson 模型单粒子能级图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_21c.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_21c"
+
+\end_inset
+图 2.21c 重核区质子的 Nilsson 模型单粒子能级图。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+奇核基态的量子数
+\end_layout
+
+\begin_layout Standard
+根据时间反演对称性（Kramers 简并），每个形变能级 
+\begin_inset Formula $\pm \Omega$
+\end_inset
+ 严格二重简并。因此在形变核基态中，所有成对的质子或中子分别以时间反演共轭的方式配对填入 Nilsson 轨道，其总角动量在对称轴上的投影和为零。
+\end_layout
+
+\begin_layout Standard
+对于奇 
+\begin_inset Formula $A$
+\end_inset
+ 核，最后一个未配对核子占据最高的 Nilsson 能级，因此形变核基态的自旋与宇称完全由该孤立单粒子的 Nilsson 态决定：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I = \Omega,\quad \pi = (-1)^N\label{eq:nilsson_odd_ground_spin}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+这一简单的定则在稀土区和锕系区的数百个形变奇核中获得了令人惊叹的成功，绝大多数实验测得的基态自旋和宇称均与 Nilsson 能级序列的理论预言完全一致。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_23.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_23"
+
+\end_inset
+图 2.23 确定奇 $A$ 核 $^{183}\mathrm{W}$ 基态自旋的方法说明。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+形变能的计算与双中心壳模型
+\end_layout
+
+\begin_layout Standard
+利用 Nilsson 势最直接的尝试是计算单粒子能量之和随形变参数 
+\begin_inset Formula $\delta$
+\end_inset
+ 的依赖关系：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{\text{s.p.}}(\delta) = \sum_{i=1}^A \varepsilon_i(\delta)\label{eq:sum_single_particle_energy}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此寻找能量极小点 
+\begin_inset Formula $\delta_{\text{eq}}$
+\end_inset
+。虽然这一简单方法对于预测稀土区核的基态平衡形变获得了定性甚至半定量的合理结果（图 2.24），但若将其用于全核素区或大形变行为，就会暴露严重的内在缺陷：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_24.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_24"
+
+\end_inset
+图 2.24 理论计算与实验测定的平衡形变参数比较（引自 [MN 55]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Itemize
+能量过度束缚且绝对结合能完全失真：单粒子能量之和 
+\begin_inset Formula $\sum \varepsilon_i$
+\end_inset
+ 重复计算了双体相互作用能（见第 5 章式 (5.28)），导致平均势的体积饱和行为失真；
+\end_layout
+
+\begin_layout Itemize
+在大形变与核裂变区域发散：当原子核拉长至发生颈缩、甚至断裂为两个分离的核碎片时，基于单一中心展开的 Nilsson 势完全失去了物理意义。
+\end_layout
+
+\begin_layout Standard
+为了描述大形变动力学、重离子聚变与核裂变（Fission）过程，必须构建具有正确渐近极限的形变势模型，其中最重要的代表是双中心壳模型（Two-Center Shell Model, TCSM）
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DR66,HMG69,ADD70,GMG71,MG72"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+双中心模型将平均谐振子势推广为包含两个空间分离中心（位于 
+\begin_inset Formula $z = \pm z_0$
+\end_inset
+）的势阱：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{\text{TCSM}}(\boldsymbol{r}) = \frac{1}{2}m\omega_z^2 (|z| - z_0)^2 + \frac{1}{2}m\omega_\perp^2 (x^2 + y^2)\label{eq:tcsm_potential}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+当双中心间距 
+\begin_inset Formula $z_0 \to 0$
+\end_inset
+ 时，势阱平滑过渡为单体复合核的各向异性谐振子势；当 
+\begin_inset Formula $z_0 \to \infty$
+\end_inset
+ 时，势阱渐近分解为两个完全独立的单核碎片势。通过在此类具有颈缩参数的双中心势中加入自旋-轨道耦合与形变修正，能够严谨地计算裂变通道上的微观单粒子轨道演化（图 2.25）。类似的大形变势阱还包括折积 Yukawa 势（Folded Yukawa Potential 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BFN72,MN73"
+literal "true"
+
+\end_inset
+）和广义形变 Woods-Saxon 势 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BDJ72,Pa73"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+然而，要从这些微观单粒子能级中准确提取真实的形变势能曲面和裂变势垒，必须摒弃粗糙的单粒子能简单求和，而采用宏观-微观结合的 Strutinsky 壳修正方法，这正是下一节的核心主题。
+\end_layout
+
+
+\begin_layout Standard
+此外在大形变下，微观单粒子壳修正与宏观液滴势垒的叠加，导致能量随形变出现第二极小，完美解释了裂变同质异能现象（图 2.26）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_25.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_25"
+
+\end_inset
+图 2.25 长椭球形变谐振子势中的单粒子能级随形变 $\varepsilon$ 的演化及壳能级聚束现象（引自 [MN 73]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_26.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_26"
+
+\end_inset
+图 2.26 具有第二极小的原子核能量随形变变化的示意图。虚线对应纯液滴模型势垒。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Section
+液滴模型的壳修正与 Strutinsky 方法
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:液滴模型的壳修正"
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+引言
+\end_layout
+
+\begin_layout Standard
+在第 1 章中我们看到，液滴模型能够极好地再现结合能的平均行为。然而，在幻数附近结合能存在明显的偏离（见图 2.2），这一事实清楚地表明了单粒子壳效应的存在。另一方面，虽然唯象壳模型能够成功解释基态自旋、宇称以及低激发谱的单粒子性质，但如果仅仅将独立单粒子能级之和作为核的总结合能，在定量上却无法给出正确的核物质饱和性质与绝对结合能（如 2.8.6 节所述）。
+\end_layout
+
+\begin_layout Standard
+为了克服这一困难，Strutinsky 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "St67,St68"
+literal "true"
+
+\end_inset
+ 提出了一个非常富有成果的微观-宏观结合方法（宏观-微观方法）。其基本物理图像是：总结合能可以分解为一个平滑变化的大体部分（即宏观液滴模型能量）加上一个由单粒子能级非均匀分布引起的微小涨落修正部分（即微观壳修正能）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E = E_{\text{LDM}} + E_{\text{osc}}
+\]
+\end_inset
+\end_layout
+
+\begin_layout Standard
+这种分解基于如下事实：结合能的平均行为主要由平滑的平均能级密度决定，而液滴模型已经通过唯象参数的拟合极好地包含了这部分宏观体积和表面能量；唯象壳模型中不准确的正是其平滑宏观部分，但它却相当精确地给出了 Fermi 能量附近的能级成团结构（即壳效应）。因此，我们只需利用壳模型计算振荡修正量 
+\begin_inset Formula $E_{\text{osc}}$
+\end_inset
+，并将其加到宏观的液滴模型能量 
+\begin_inset Formula $E_{\text{LDM}}$
+\end_inset
+ 之上。
+\end_layout
+
+\begin_layout Subsection
+Strutinsky 平均方法的基本思想
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_27.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_27"
+
+\end_inset
+图 2.27 等间距能级密度与示意壳模型聚束能级密度的比较。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+为了在数学上严谨地定义振荡能量 
+\begin_inset Formula $E_{\text{osc}}$
+\end_inset
+，首先需要将壳模型的单粒子能级密度 
+\begin_inset Formula $g(\varepsilon) = \sum_i \delta(\varepsilon - \varepsilon_i)$
+\end_inset
+ 分解为平滑部分 
+\begin_inset Formula $\tilde{g}(\varepsilon)$
+\end_inset
+ 与振荡涨落部分 
+\begin_inset Formula $\delta g(\varepsilon)$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g(\varepsilon) = \tilde{g}(\varepsilon) + \delta g(\varepsilon)\label{eq:strut_g_decomp}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由平滑能级密度 
+\begin_inset Formula $\tilde{g}(\varepsilon)$
+\end_inset
+，可以通过核子数守恒条件唯一定义平滑的化学势（即平均 Fermi 能）
+\begin_inset Formula $\tilde{\lambda}$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A = \int_{-\infty}^{\tilde{\lambda}} \tilde{g}(\varepsilon)\,\mathrm{d}\varepsilon\label{eq:strut_lambda_tilde}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此可得壳模型的平滑能量贡献：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{E}_{\text{sh}} = \int_{-\infty}^{\tilde{\lambda}} \varepsilon\,\tilde{g}(\varepsilon)\,\mathrm{d}\varepsilon\label{eq:strut_E_smooth}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+而单纯单粒子壳模型给出的基态能量为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{\text{sh}} = \sum_{i=1}^A \varepsilon_i\label{eq:strut_E_sh}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+因此，由于壳层非均匀聚集导致的能量涨落（壳修正能）即为二者之差：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{\text{osc}} = E_{\text{sh}} - \tilde{E}_{\text{sh}}\label{eq:strut_E_osc_def}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此体系的总能量表示为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E = E_{\text{LDM}} + E_{\text{sh}} - \tilde{E}_{\text{sh}}\label{eq:strut_total_E}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在液滴模型中，稳定的平衡核形状总是球对称的。但由于额外的壳修正项 
+\begin_inset Formula $E_{\text{osc}}$
+\end_inset
+ 随形变剧烈振荡，在核素表的许多区域（如稀土区与锕系区），Strutinsky 平均能量式 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strut_total_E"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+\end_inset
+ 的能量极小值将落在非零的形变处，从而自然地解释了原子核的自发四极形变。
+\end_layout
+
+\begin_layout Subsection
+平均能级密度的确定
+\end_layout
+
+\begin_layout Standard
+现在我们探讨如何从给定的离散单粒子能级谱 
+\begin_inset Formula $g(\varepsilon) = \sum_i \delta(\varepsilon - \varepsilon_i)$
+\end_inset
+ 中，以严格的数学方式提取其平滑部分 
+\begin_inset Formula $\tilde{g}(\varepsilon)$
+\end_inset
+。困难在于三维势阱中的能级密度随能量呈现非线性增长，且聚集成间距约为 
+\begin_inset Formula $\hbar\omega_0$
+\end_inset
+ 的壳层。通常的想法是将能级密度与一个平滑函数 
+\begin_inset Formula $f(x)$
+\end_inset
+ 进行折积：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{g}(\varepsilon) = \frac{1}{\gamma}\int_{-\infty}^{+\infty} g(\varepsilon') f\left(\frac{\varepsilon' - \varepsilon}{\gamma}\right)\,\mathrm{d}\varepsilon'\label{eq:strut_folding}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_28.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_28"
+
+\end_inset
+图 2.28 三维无限深势阱中能级密度的示意图（展示离散尖峰能级密度与平滑平均能级密度）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\gamma$
+\end_inset
+ 为平滑宽度，其大小取为主壳层间隔量级（
+\begin_inset Formula $\gamma \simeq \hbar\omega_0$
+\end_inset
+）。然而单纯取 
+\begin_inset Formula $f$
+\end_inset
+ 为纯 Gauss 函数并不充分，因为合理的平滑程序必须满足自洽重平均不变性：若对已经平滑的能级密度 
+\begin_inset Formula $\tilde{g}$
+\end_inset
+ 再次施行相同的平滑操作，其结果应保持不变：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{g}(\varepsilon) = \frac{1}{\gamma}\int_{-\infty}^{+\infty} \tilde{g}(\varepsilon') f\left(\frac{\varepsilon' - \varepsilon}{\gamma}\right)\,\mathrm{d}\varepsilon'\label{eq:strut_self_consistent}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+当 
+\begin_inset Formula $f$
+\end_inset
+ 为纯 Gauss 函数而 
+\begin_inset Formula $\tilde{g}$
+\end_inset
+ 包含多项式曲率时，式 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strut_self_consistent"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+\end_inset
+ 并不严格成立。由于积分的主要贡献来自于 
+\begin_inset Formula $\varepsilon' = \varepsilon$
+\end_inset
+ 的近邻区域，我们假定平滑密度 
+\begin_inset Formula $\tilde{g}(\varepsilon')$
+\end_inset
+ 在局域上可以被一个 
+\begin_inset Formula $2M$
+\end_inset
+ 阶的多项式很好地逼近（通常取 
+\begin_inset Formula $2M = 2, 4, 6$
+\end_inset
+）。此时若将平滑函数取为多项式与加权因子的乘积：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f(x) = P(x) w(x)\label{eq:strut_f_pw}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $P(x)$
+\end_inset
+ 为 
+\begin_inset Formula $2M$
+\end_inset
+ 阶偶多项式（曲率修正多项式），
+\begin_inset Formula $w(x)$
+\end_inset
+ 为 Gauss 加权函数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+w(x) = \frac{1}{\sqrt{\pi}} e^{-x^2}\label{eq:strut_gauss_w}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+通过正交多项式理论 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AS65"
+literal "true"
+
+\end_inset
+，
+\begin_inset Formula $P(x)$
+\end_inset
+ 可以由 Hermite 多项式精确构建：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P(x) = \sum_{n=0}^M \frac{(-1)^n}{2^{2n} n!} H_{2n}(x) = L_M^{1/2}(x^2)\label{eq:strut_laguerre}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+这里 
+\begin_inset Formula $L_M^{1/2}(x^2)$
+\end_inset
+ 是伴随 Laguerre 多项式。展开为幂级数形式：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L_M^{1/2}(x^2) = \sum_{n=0}^M a_{2n} x^{2n}\label{eq:strut_laguerre_poly}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+在实际计算中常用的前四阶系数如表 2.5 所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:laguerre_coefficients"
+\end_inset
+前四个 Laguerre 多项式系数
+\end_layout
+
+\end_inset
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $M$
+\end_inset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_0$
+\end_inset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_2$
+\end_inset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_4$
+\end_inset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_6$
+\end_inset
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15/8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35/16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-35/8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7/4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1/6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+\end_inset
+\end_layout
+
+\end_inset
+\end_layout
+
+\begin_layout Standard
+接下来需要确定平滑参数 
+\begin_inset Formula $\gamma$
+\end_inset
+ 与曲率阶数 
+\begin_inset Formula $M$
+\end_inset
+ 的具体取值。物理上有意义的平均方法必须要求最终计算出的物理量在很大程度上独立于平滑参数的选择。这意味着对于固定的 
+\begin_inset Formula $M$
+\end_inset
+，平均能量 
+\begin_inset Formula $\tilde{E}_{\text{sh}}$
+\end_inset
+ 随 
+\begin_inset Formula $\gamma$
+\end_inset
+ 的变化必须存在一个平坦的“坪区”（Plateau），在该区域内严格满足坪区条件 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BP73"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial \tilde{E}_{\text{sh}}}{\partial \gamma} = 0\label{eq:strut_plateau}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由于真实核能级总是以大约 
+\begin_inset Formula $\hbar\omega_0$
+\end_inset
+ 的间距成团，只要取 
+\begin_inset Formula $\gamma \simeq (1.0 \sim 1.5)\hbar\omega_0$
+\end_inset
+ 且 
+\begin_inset Formula $M \geqslant 2$
+\end_inset
+，在绝大多数核物理问题中均能观察到极为宽阔稳定的能量坪区。第 13 章将进一步证明，Strutinsky 平滑方法在深层次上与半经典 Thomas-Fermi 近似完全等价。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_30.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_30"
+
+\end_inset
+图 2.30 谐振子势的壳修正能作为平滑宽度 $\gamma$ 与修正多项式阶数 $M$ 的函数（高原条件，引自 [BP 73]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+Strutinsky 壳修正能的计算
+\end_layout
+
+\begin_layout Standard
+利用确定的平滑函数 
+\begin_inset Formula $f(x)$
+\end_inset
+，由离散谱 
+\begin_inset Formula $g(\varepsilon) = \sum_i \delta(\varepsilon - \varepsilon_i)$
+\end_inset
+ 得到的平滑能级密度为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{g}(\varepsilon) = \sum_i \frac{1}{\gamma} f\left(\frac{\varepsilon - \varepsilon_i}{\gamma}\right)\label{eq:strut_g_smooth_sum}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+将其代入粒子数积分，可引入广义占据数 
+\begin_inset Formula $\tilde{n}_i$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A = \sum_i \tilde{n}_i = \sum_i \int_{-\infty}^{t_i} f(x)\,\mathrm{d}x,\quad t_i = \frac{\tilde{\lambda} - \varepsilon_i}{\gamma}\label{eq:strut_n_tilde}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由此平滑能量可写为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{E}_{\text{sh}} = \sum_i \varepsilon_i \tilde{n}_i + F\label{eq:strut_E_smooth_F}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中残余项 
+\begin_inset Formula $F$
+\end_inset
+ 为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F = \sum_i \int_{-\infty}^{\tilde{\lambda}} (\varepsilon - \varepsilon_i)\frac{1}{\gamma} f\left(\frac{\varepsilon - \varepsilon_i}{\gamma}\right)\,\mathrm{d}\varepsilon = \gamma \sum_i \int_{-\infty}^{t_i} x f(x)\,\mathrm{d}x\label{eq:strut_F_def}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对平滑能量对 
+\begin_inset Formula $\gamma$
+\end_inset
+ 求导可得：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial \tilde{E}_{\text{sh}}}{\partial \gamma} = \frac{1}{\gamma} F + \tilde{\lambda} \frac{\partial}{\partial \gamma}\sum_i \tilde{n}_i = \frac{1}{\gamma} F + \tilde{\lambda} \frac{\partial A}{\partial \gamma} = \frac{1}{\gamma} F\label{eq:strut_dE_dgamma}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+由于核子数 
+\begin_inset Formula $A$
+\end_inset
+ 严格守恒（
+\begin_inset Formula $\partial A/\partial \gamma = 0$
+\end_inset
+），坪区条件 
+\begin_inset Formula $\partial \tilde{E}_{\text{sh}}/\partial \gamma = 0$
+\end_inset
+ 恰好等价于 
+\begin_inset Formula $F = 0$
+\end_inset
+！定义纯壳模型的阶梯占据数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+n_i = \begin{cases} 1, & \varepsilon_i \leqslant \varepsilon_F \\ 0, & \varepsilon_i > \varepsilon_F \end{cases}\label{eq:strut_step_n}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+则总壳修正能 
+\begin_inset Formula $E_{\text{osc}}$
+\end_inset
+ 可以极为优美简洁地表示为占据数偏差 
+\begin_inset Formula $\delta n_i = n_i - \tilde{n}_i$
+\end_inset
+ 的单粒子能级加权和：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{\text{osc}} = \sum_i \varepsilon_i (n_i - \tilde{n}_i) = \sum_i \varepsilon_i \delta n_i\label{eq:strut_E_osc_final}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_29.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_29"
+
+\end_inset
+图 2.29 采用 Strutinsky 平均方法对 Woods-Saxon 势计算得到的占有数偏差 $\delta n_i$（引自 [BP 73]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Standard
+由占据数偏差量 
+\begin_inset Formula $\delta n_i$
+\end_inset
+，还可以直接计算坐标表象中的微观单体密度壳修正 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Di71"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta \rho_{\text{osc}}(\boldsymbol{r}, \boldsymbol{r}') = \sum_i \phi_i(\boldsymbol{r})\phi_i^*(\boldsymbol{r}')\delta n_i\label{eq:strut_delta_rho}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于重核，核子对关联（见第 6、7 章）也扮演着重要角色。在 BCS 理论下，对能 
+\begin_inset Formula $P$
+\end_inset
+ 同样与 Fermi 面附近的能级密度紧密相关。由于宏观液滴能量已拟合了平均质量，其本身已包含了对能的平滑宏观部分 
+\begin_inset Formula $\tilde{P}_{\text{BCS}}$
+\end_inset
+，因此只需额外加上对能的振荡修正 
+\begin_inset Formula $P_{\text{osc}} = P_{\text{BCS}} - \tilde{P}_{\text{BCS}}$
+\end_inset
+。最终核体系的总形变能量由下式给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E = E_{\text{LDM}} + E_{\text{sh}} - \tilde{E}_{\text{sh}} + P_{\text{BCS}} - \tilde{P}_{\text{BCS}}\label{eq:strut_total_E_pairing}
+\end_inset
+\end_layout
+
+\begin_layout Subsection
+壳修正与 Hartree-Fock 方法
+\end_layout
+
+\begin_layout Standard
+在第 5 章中我们将详细探讨如何从微观现实核力通过 Hartree-Fock（HF）方法自洽求解微观平均场。在此我们简要说明：Strutinsky 壳修正方法并非唯象拼凑，而是具有坚实的微观理论基础。
+\end_layout
+
+\begin_layout Standard
+在 HF 理论中，基态总能量以表象无关的方式表示为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_0^{\text{HF}} = \mathrm{Tr}(t\rho) + \frac{1}{2}\mathrm{Tr}_1\mathrm{Tr}_1 \rho \bar{v} \rho\label{eq:strut_E_HF}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\rho$
+\end_inset
+ 为自洽单粒子密度矩阵，
+\begin_inset Formula $h^{\text{HF}} = t + \mathrm{Tr}_1 \bar{v}\rho$
+\end_inset
+ 为单粒子 HF Hamilton 量。将自洽密度分解为平滑部分与振荡部分：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho = \tilde{\rho} + \delta \rho\label{eq:strut_rho_decomp}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+代入能量表达式并按 
+\begin_inset Formula $\delta\rho$
+\end_inset
+ 的阶数展开：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_0^{\text{HF}} = \tilde{E} + \mathrm{Tr}(\tilde{h}^{\text{HF}}\delta\rho) + \mathcal{O}((\delta\rho)^2)\label{eq:strut_energy_theorem}
+\end{equation}
+\end_inset
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\tilde{E} = \mathrm{Tr}(t\tilde{\rho}) + \frac{1}{2}\mathrm{Tr}_1\mathrm{Tr}_1 \tilde{\rho}\bar{v}\tilde{\rho}$
+\end_inset
+ 正好对应于宏观液滴能量，而 
+\begin_inset Formula $\tilde{h}^{\text{HF}} = t + \mathrm{Tr}_1 \bar{v}\tilde{\rho}$
+\end_inset
+ 为由平滑密度生成的平均单体 Hamilton 量。注意到一阶变分项 
+\begin_inset Formula $\mathrm{Tr}(\tilde{h}^{\text{HF}}\delta\rho)$
+\end_inset
+ 正好对应于式 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strut_E_osc_final"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+\end_inset
+ 的单粒子能谱求和修正！式 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:strut_energy_theorem"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+\end_inset
+ 被称为 Strutinsky 能量定理（Strutinsky Energy Theorem）
+\begin_inset CommandInset citation
+LatexCommand cite
+key "St68,St74"
+literal "true"
+
+\end_inset
+：它证明了在 
+\begin_inset Formula $\delta\rho$
+\end_inset
+ 的一阶精度下，微观自洽多体理论的所有壳效应均完全包含在平均势单粒子能级的求和之中，而二阶修正项 
+\begin_inset Formula $\mathcal{O}((\delta\rho)^2)$
+\end_inset
+ 极小（经数值计算验证通常小于 1 MeV 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BKS72,BQ75a"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_31.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_31"
+
+\end_inset
+图 2.31 采用 Skyrme III 力计算的 $^{168}\mathrm{Yb}$ 核形变能随四极矩 $Q_{20}$ 的变化，并与 Strutinsky 壳修正方法进行比较（引自 [BQ 75a,b]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Subsection
+若干应用
+\end_layout
+
+\begin_layout Standard
+Strutinsky 壳修正理论在核物理中取得了巨大的成功：
+\end_layout
+
+\begin_layout Enumerate
+核质量与结合能：结合液滴模型与 Nilsson 势壳修正，极为成功地再现了全核素区核质量系统学（图 2.32 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NTT69"
+literal "true"
+
+\end_inset
+），尤其精准再现了双幻核 
+\begin_inset Formula $\ce{^{208}Pb}$
+\end_inset
+ 附近的结合能剧烈振荡结构。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/2_32.pdf
+	lyxscale 50
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_32"
+
+\end_inset
+图 2.32 理论计算的质量修正与全核素区实验值的比较（引自 [NTT 69]）。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+
+\begin_layout Enumerate
+多维形变能曲面与双峰裂变势垒：不仅考虑四极形变，还将八极形变、十六极形变等纳入考虑，构建多维形变能曲面。在锕系核中成功预言了双峰裂变势垒（Double-humped fission barrier），并解释了处于第二极小势阱中的形变同质异能态（裂变同质异能素，fission isomers）。
+\end_layout
+
+\begin_layout Enumerate
+裂变半衰期与超重核稳定性：通过在多维势能曲面上寻找跨越最低势垒的动力学路径，定量计算重核与超重核的自发裂变寿命，奠定了现代超重核稳定岛（Island of Stability）预言的理论基石 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ni72,NN74,BN77"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_body
+\end_document

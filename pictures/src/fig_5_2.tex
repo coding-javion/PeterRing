@@ -1,0 +1,121 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: x in degrees [-90, 90] -> [-5.0, 5.0] cm
+  % y in energy/mass units [-1.6, 2.5] -> [-2.4, 3.75] cm
+  \def\xscale{5.0/90.0}
+  \def\yscale{1.5}
+
+  % Boundary vertical lines
+  \draw[line width=1.0pt] ({-90*\xscale}, -2.6) -- ({-90*\xscale}, 3.8);
+  \draw[line width=1.0pt] ({90*\xscale}, -2.6) -- ({90*\xscale}, 3.8);
+
+  % Central vertical axis (through alpha = 0)
+  \draw[line width=0.9pt, ->] (0, -2.6) -- (0, 3.8);
+
+  % Horizontal axis (along y = 0)
+  \draw[line width=0.8pt] ({-90*\xscale}, 0) -- ({90*\xscale}, 0);
+
+  % Ticks on x-axis
+  \draw[line width=0.8pt] ({-90*\xscale}, 0.12) -- ({-90*\xscale}, -0.12);
+  \node[anchor=east, font=\normalsize] at ({-90*\xscale - 0.1}, 0) {$-90^\circ$};
+
+  \draw[line width=0.8pt] ({-45*\xscale}, 0.12) -- ({-45*\xscale}, -0.12);
+  \node[anchor=south, font=\normalsize] at ({-45*\xscale}, 0.12) {$-45^\circ$};
+
+  \draw[line width=0.8pt] ({45*\xscale}, 0.12) -- ({45*\xscale}, -0.12);
+  \node[anchor=south, font=\normalsize] at ({45*\xscale}, 0.12) {$45^\circ$};
+
+  \draw[line width=0.8pt] ({90*\xscale}, 0.12) -- ({90*\xscale}, -0.12);
+  \node[anchor=west, font=\normalsize] at ({90*\xscale + 0.1}, 0) {$90^\circ$};
+
+  % Horizontal axis label: -> \alpha
+  \draw[->, line width=0.8pt] (0.8, -0.22) -- (1.5, -0.22);
+  \node[anchor=west, font=\normalsize] at (1.5, -0.22) {$\alpha$};
+
+  % Ticks on vertical axis
+  \draw[line width=0.8pt] (-0.12, {-1.0*\yscale}) -- (0.12, {-1.0*\yscale});
+  \node[anchor=east, font=\normalsize] at (-0.15, {-1.0*\yscale}) {$-1$};
+
+  \draw[line width=0.8pt] (-0.12, {1.0*\yscale}) -- (0.12, {1.0*\yscale});
+  \node[anchor=east, font=\normalsize] at (-0.15, {1.0*\yscale}) {$1$};
+
+  \draw[line width=0.8pt] (-0.12, {0.5*\yscale}) -- (0.12, {0.5*\yscale});
+  \draw[line width=0.8pt] (-0.12, {1.5*\yscale}) -- (0.12, {1.5*\yscale});
+
+  % Top label: \Omega = 10
+  \node[font=\large] at ({-45*\xscale}, 3.4) {$\Omega = 10$};
+
+  % --- CURVES ---
+
+  % 1. Solid curve: E_HF for \chi = 0.6
+  % E(alpha) = -cos(2*alpha) - 0.3*sin(2*alpha)^2
+  \draw[line width=1.3pt, domain=-90:90, samples=90, smooth]
+    plot ({\x*\xscale}, {(-cos(2*\x) - 0.3*(sin(2*\x))^2)*\yscale});
+
+  % 2. Solid curve: E_HF for \chi = 1.8
+  % E(alpha) = -cos(2*alpha) - 0.9*sin(2*alpha)^2
+  \draw[line width=1.3pt, domain=-90:90, samples=90, smooth]
+    plot ({\x*\xscale}, {(-cos(2*\x) - 0.9*(sin(2*\x))^2)*\yscale});
+
+  % 3. Dashed curve: \tilde{V} for \chi = 1.8
+  % Shape drops below E_HF in the double wells, local max at 0: around -1.1, wells at -1.45
+  % Approximation: -1.08*cos(2*alpha) - 1.25*(sin(2*alpha))^2
+  \draw[line width=1.0pt, dashed, domain=-90:90, samples=90, smooth]
+    plot ({\x*\xscale}, {(-1.08*cos(2*\x) - 1.22*(sin(2*\x))^2)*\yscale});
+
+  % 4. Dash-dotted curve: 1/M(alpha) for \chi = 0.6
+  % Gently curved downwards: around 1.2 at 0, 0.7 at 90
+  \draw[line width=0.9pt, dash pattern=on 6pt off 2.5pt on 1.5pt off 2.5pt, domain=-90:90, samples=70, smooth]
+    plot ({\x*\xscale}, {(1.2 - 0.5*(sin(\x))^2)*\yscale});
+
+  % 5. Dash-dotted curve: 1/M(alpha) for \chi = 1.8
+  % Central dip at 1.6, bumps at +/-35 deg reaching ~2.05, falls to 0.75 at +/-90
+  \draw[line width=0.9pt, dash pattern=on 6pt off 2.5pt on 1.5pt off 2.5pt, domain=-90:90, samples=90, smooth]
+    plot ({\x*\xscale}, {(1.6 + 0.45*(sin(2*\x))^2 - 0.85*(sin(\x))^4)*\yscale});
+
+  % --- LABELS AND POINTERS ---
+
+  % Label: 1/M(\alpha) (\chi = 1.8)
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblM18) at (1.5, 2.8) {$\frac{1}{M(\alpha)}(\chi = 1.8)$};
+  \draw[line width=0.6pt] (lblM18.south) -- (1.5, {1.95*\yscale});
+
+  % Label: 1/M(\alpha) (\chi = 0.6)
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblM06) at (1.6, 1.7) {$\frac{1}{M(\alpha)}(\chi = 0.6)$};
+  \draw[line width=0.6pt] (lblM06.south) -- (2.3, {1.05*\yscale});
+
+  % Label: \chi = 0.6 on right
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblChi06) at (1.1, -1.25) {$\chi = 0.6$};
+  \draw[line width=0.6pt] (lblChi06) -- (1.5, {-0.38*\yscale});
+
+  % Label: \chi = 1.8 on right
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblChi18) at (2.8, -1.25) {$\chi = 1.8$};
+  \draw[line width=0.6pt] (lblChi18) -- (2.6, {-0.75*\yscale});
+
+  % Label: \tilde{V} = E_0^HF - \varepsilon I
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblVtilde) at (-3.4, -0.6) {$\widetilde{V} = E_0^{\mathrm{HF}} - \varepsilon I$};
+  \draw[line width=0.6pt] (lblVtilde.east) -- (-2.4, {-0.95*\yscale});
+
+  % Label: E_0^HF(\alpha)
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblE0a) at (-1.3, -0.6) {$E_0^{\mathrm{HF}}(\alpha)$};
+  \draw[line width=0.6pt] (lblE0a.south) -- (-1.7, {-0.48*\yscale});
+
+  % Label: E_0^HF below left well pointing to both curves on left
+  \node[font=\normalsize, fill=white, inner sep=1.5pt] (lblE0) at (-2.3, -2.0) {$E_0^{\mathrm{HF}}$};
+  \draw[line width=0.6pt] (lblE0.north) -- (-1.5, {-1.0*\yscale});
+  \draw[line width=0.6pt] (lblE0.east) -- ({-28.1*\xscale}, {-1.18*\yscale});
+
+\end{tikzpicture}
+\end{document}

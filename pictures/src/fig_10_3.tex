@@ -1,0 +1,157 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Common axis style
+  \pgfplotsset{
+    every axis/.append style={
+      width=7.8cm,
+      height=6.8cm,
+      xmin=0.0, xmax=0.31,
+      ymin=0.0, ymax=1.02,
+      xtick={0.1, 0.2, 0.3},
+      xticklabels={$0.1$, $0.2$, $0.3$},
+      ytick={0.2, 0.4, 0.6, 0.8, 1.0},
+      yticklabels={$0.2$, $0.4$, $0.6$, $0.8$, $1.0$},
+      tick align=inside,
+      tick style={line width=0.6pt, color=black},
+      major tick length=4pt,
+      axis line style={line width=0.85pt},
+      xlabel={$G\,(\mathrm{MeV})$},
+      xlabel style={font=\small, at={(axis description cs:0.5,-0.03)}, anchor=north},
+      clip=false
+    }
+  }
+
+  % ========================================================
+  % LEFT PANEL: Ground State Occupancies
+  % ========================================================
+  \begin{axis}[
+    name=leftPlot,
+    ylabel={Ground State Occupancies},
+    ylabel style={font=\small, at={(axis description cs:-0.1, 0.5)}, anchor=south}
+  ]
+
+    % --- 0p - 0h curve (dashed with circles) ---
+    \addplot[dashed, dash pattern=on 4pt off 3pt, line width=0.9pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.015, 1.0)
+        (0.065, 0.98)
+        (0.105, 0.94)
+        (0.138, 0.88)
+        (0.165, 0.82)
+        (0.190, 0.74)
+        (0.205, 0.68)
+        (0.235, 0.58)
+        (0.265, 0.47)
+        (0.298, 0.36)
+      };
+
+    % --- 2p - 2h curve (solid with circles) ---
+    \addplot[solid, line width=0.95pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.02, 0.0)
+        (0.065, 0.01)
+        (0.115, 0.04)
+        (0.145, 0.12)
+        (0.170, 0.19)
+        (0.195, 0.28)
+        (0.225, 0.37)
+        (0.260, 0.46)
+        (0.298, 0.53)
+      };
+
+    % --- 4p - 4h curve (dash-dotted with circles) ---
+    \addplot[dash pattern=on 5pt off 2.5pt on 1.5pt off 2.5pt, line width=0.9pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.17, 0.01)
+        (0.21, 0.03)
+        (0.255, 0.07)
+        (0.298, 0.11)
+      };
+
+    % Labels
+    \node[anchor=south west, font=\footnotesize, rotate=-38, fill=white, inner sep=1.2pt] at (axis cs:0.17, 0.78) {$0p\text{--}0h$};
+    \node[anchor=south west, font=\footnotesize, rotate=30, fill=white, inner sep=1.2pt] at (axis cs:0.18, 0.29) {$2p\text{--}2h$};
+    \node[anchor=south, font=\footnotesize, rotate=15, fill=white, inner sep=1.2pt] at (axis cs:0.24, 0.05) {$4p\text{--}4h$};
+
+  \end{axis}
+
+  % ========================================================
+  % RIGHT PANEL: Double Pairing Vibration State Occupancies
+  % ========================================================
+  \begin{axis}[
+    name=rightPlot,
+    at={($(leftPlot.east)+(1.8cm, 0)$)},
+    anchor=west,
+    ylabel={Double Pairing Vibration State Occupancies},
+    ylabel style={font=\small, at={(axis description cs:-0.1, 0.5)}, anchor=south}
+  ]
+
+    % --- 2p - 2h curve (solid with circles) ---
+    \addplot[solid, line width=0.95pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.015, 1.0)
+        (0.065, 0.96)
+        (0.115, 0.88)
+        (0.145, 0.81)
+        (0.170, 0.71)
+        (0.198, 0.59)
+        (0.225, 0.56)
+        (0.255, 0.54)
+        (0.298, 0.54)
+      };
+
+    % --- 4p - 4h curve (dash-dotted with circles) ---
+    \addplot[dash pattern=on 5pt off 2.5pt on 1.5pt off 2.5pt, line width=0.9pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.02, 0.02)
+        (0.07, 0.06)
+        (0.12, 0.10)
+        (0.145, 0.15)
+        (0.170, 0.20)
+        (0.195, 0.24)
+        (0.250, 0.28)
+        (0.298, 0.30)
+      };
+
+    % --- 0p - 0h curve (dashed with circles) ---
+    \addplot[dashed, dash pattern=on 4pt off 3pt, line width=0.9pt,
+      mark=o, mark size=1.8pt, mark options={solid, line width=0.75pt, fill=white}]
+      coordinates {
+        (0.09, 0.02)
+        (0.12, 0.05)
+        (0.145, 0.10)
+        (0.170, 0.14)
+        (0.195, 0.18)
+        (0.245, 0.24)
+        (0.298, 0.28)
+      };
+
+    % Labels
+    \node[anchor=south west, font=\footnotesize, fill=white, inner sep=1.2pt] at (axis cs:0.22, 0.56) {$2p\text{--}2h$};
+    \node[anchor=south, font=\footnotesize, rotate=10, fill=white, inner sep=1.2pt] at (axis cs:0.25, 0.28) {$4p\text{--}4h$};
+    \node[anchor=north, font=\footnotesize, rotate=15, fill=white, inner sep=1.2pt] at (axis cs:0.25, 0.24) {$0p\text{--}0h$};
+
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

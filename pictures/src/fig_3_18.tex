@@ -1,0 +1,160 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm, y=1cm, line cap=round, line join=round]
+
+% Panel a
+\begin{scope}[shift={(0,0)}]
+  % Axes and frame
+  \draw[-{Latex[length=3mm, width=1.8mm]}, line width=0.85pt] (0,0) -- (6.8,0) node[right=1pt] {$\omega$};
+  \draw[-{Latex[length=3mm, width=1.8mm]}, line width=0.85pt] (0,0) -- (0,7.8) node[above=1pt] {$\epsilon_i'$};
+  \draw[line width=0.85pt] (6.0,0) -- (6.0,7.2);
+  \draw[line width=0.85pt] (0,7.2) -- (6.0,7.2);
+
+  % Ticks and alpha labels on left axis (x=0)
+  \node[anchor=south east, font=\footnotesize] at (-0.05, 7.03) {$\alpha = 1/2$};
+  \draw[line width=0.7pt] (-0.12, 7.03) -- (0, 7.03);
+
+  \node[anchor=east, font=\footnotesize] at (-0.12, 6.78) {$7/2$};
+  \draw[line width=0.7pt] (-0.12, 6.78) -- (0, 6.78);
+
+  \node[anchor=east, font=\footnotesize] at (-0.12, 5.53) {$5/2$};
+  \draw[line width=0.7pt] (-0.12, 5.53) -- (0, 5.53);
+
+  \node[anchor=east, font=\footnotesize] at (-0.12, 5.08) {$5/2$};
+  \draw[line width=0.7pt] (-0.12, 5.08) -- (0, 5.08);
+
+  \node[anchor=east, font=\footnotesize] at (-0.12, 4.74) {$3/2$};
+  \draw[line width=0.7pt] (-0.12, 4.74) -- (0, 4.74);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 4.28) {$3/2$};
+  \draw[line width=0.7pt] (-0.15, 4.28) -- (-0.08, 4.28) -- (0, 3.94);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 3.65) {$11/2$};
+  \draw[line width=0.7pt] (-0.15, 3.65) -- (-0.08, 3.65) -- (0, 3.86);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 3.21) {$1/2$};
+  \draw[line width=0.7pt] (-0.15, 3.21) -- (0, 3.21);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 2.82) {$3/2$};
+  \draw[line width=0.7pt] (-0.15, 2.86) -- (0, 2.96);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 2.44) {$1/2$};
+  \draw[line width=0.7pt] (-0.15, 2.48) -- (0, 2.56);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 2.06) {$3/2$};
+  \draw[line width=0.7pt] (-0.15, 2.09) -- (0, 2.09);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 1.68) {$1/2$};
+  \draw[line width=0.7pt] (-0.15, 1.72) -- (0, 1.76);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 1.30) {$9/2$};
+  \draw[line width=0.7pt] (-0.15, 1.29) -- (0, 1.29);
+
+  \node[anchor=east, font=\footnotesize] at (-0.15, 0.92) {$1/2$};
+  \draw[line width=0.7pt] (-0.15, 0.94) -- (0, 0.95);
+
+  % Clipping for lines inside the box [0, 6] x [0, 7.2]
+  \begin{scope}
+    \clip (0,0) rectangle (6.0, 7.2);
+    % Levels:
+    % 1: y0=7.03, a=0.5 -> slopes +/- 0.11
+    \draw[line width=0.55pt] (0, 7.03) -- (6, {7.03 + 6*0.11});
+    \draw[line width=0.55pt] (0, 7.03) -- (6, {7.03 - 6*0.11});
+
+    % 2: y0=6.78, a=3.5 -> slopes +/- 0.77
+    \draw[line width=0.55pt] (0, 6.78) -- (6, {6.78 + 6*0.77});
+    \draw[line width=0.55pt] (0, 6.78) -- (6, {6.78 - 6*0.77});
+
+    % 3: y0=5.53, a=2.5 -> slopes +/- 0.55
+    \draw[line width=0.55pt] (0, 5.53) -- (6, {5.53 + 6*0.55});
+    \draw[line width=0.55pt] (0, 5.53) -- (6, {5.53 - 6*0.55});
+
+    % 4: y0=5.08, a=2.5 -> slopes +/- 0.55
+    \draw[line width=0.55pt] (0, 5.08) -- (6, {5.08 + 6*0.55});
+    \draw[line width=0.55pt] (0, 5.08) -- (6, {5.08 - 6*0.55});
+
+    % 5: y0=4.74, a=1.5 -> slopes +/- 0.33
+    \draw[line width=0.55pt] (0, 4.74) -- (6, {4.74 + 6*0.33});
+    \draw[line width=0.55pt] (0, 4.74) -- (6, {4.74 - 6*0.33});
+
+    % 6: y0=3.94, a=1.5 -> slopes +/- 0.33
+    \draw[line width=0.55pt] (0, 3.94) -- (6, {3.94 + 6*0.33});
+    \draw[line width=0.55pt] (0, 3.94) -- (6, {3.94 - 6*0.33});
+
+    % 7: y0=3.86, a=5.5 -> slopes +/- 1.21
+    \draw[line width=0.55pt] (0, 3.86) -- (6, {3.86 + 6*1.21});
+    \draw[line width=0.55pt] (0, 3.86) -- (6, {3.86 - 6*1.21});
+
+    % 8: y0=3.21, a=0.5 -> slopes +/- 0.11
+    \draw[line width=0.55pt] (0, 3.21) -- (6, {3.21 + 6*0.11});
+    \draw[line width=0.55pt] (0, 3.21) -- (6, {3.21 - 6*0.11});
+
+    % 9: y0=2.96, a=1.5 -> slopes +/- 0.33
+    \draw[line width=0.55pt] (0, 2.96) -- (6, {2.96 + 6*0.33});
+    \draw[line width=0.55pt] (0, 2.96) -- (6, {2.96 - 6*0.33});
+
+    % 10: y0=2.56, a=0.5 -> slopes +/- 0.11
+    \draw[line width=0.55pt] (0, 2.56) -- (6, {2.56 + 6*0.11});
+    \draw[line width=0.55pt] (0, 2.56) -- (6, {2.56 - 6*0.11});
+
+    % 11: y0=2.09, a=1.5 -> slopes +/- 0.33
+    \draw[line width=0.55pt] (0, 2.09) -- (6, {2.09 + 6*0.33});
+    \draw[line width=0.55pt] (0, 2.09) -- (6, {2.09 - 6*0.33});
+
+    % 12: y0=1.76, a=0.5 -> slopes +/- 0.11
+    \draw[line width=0.55pt] (0, 1.76) -- (6, {1.76 + 6*0.11});
+    \draw[line width=0.55pt] (0, 1.76) -- (6, {1.76 - 6*0.11});
+
+    % 13: y0=1.29, a=4.5 -> slopes +/- 0.99
+    \draw[line width=0.55pt] (0, 1.29) -- (6, {1.29 + 6*0.99});
+    \draw[line width=0.55pt] (0, 1.29) -- (6, {1.29 - 6*0.99});
+
+    % 14: y0=0.95, a=0.5 -> slopes +/- 0.11
+    \draw[line width=0.55pt] (0, 0.95) -- (6, {0.95 + 6*0.11});
+    \draw[line width=0.55pt] (0, 0.95) -- (6, {0.95 - 6*0.11});
+
+    % Thick Fermi envelope line
+    \draw[line width=2.0pt] (0, 3.21) -- (0.58, 3.27) -- (1.12, 3.33) -- (1.86, 3.65) -- (2.36, 4.00) -- (3.25, 3.65) -- (4.37, 3.30) -- (5.12, 2.95) -- (6.0, 2.50);
+
+  \end{scope}
+
+  \node[font=\large] at (3.0, -0.7) {a)};
+\end{scope}
+
+% Panel b
+\begin{scope}[shift={(8.2,0)}]
+  \draw[-{Latex[length=3mm, width=1.8mm]}, line width=0.85pt] (0,0) -- (6.8,0) node[right=1pt] {$\omega$};
+  \draw[-{Latex[length=3mm, width=1.8mm]}, line width=0.85pt] (0,0) -- (0,7.8);
+  \node[anchor=south west, font=\normalsize] at (0.1, 7.1) {$\langle J_x \rangle = \sum_\alpha j_\alpha$};
+  \node[anchor=north east, font=\small] at (0, 0) {$0$};
+
+  % Dashed average line
+  \draw[dashed, line width=0.9pt] (0,0) -- (6.2, 7.2);
+
+  % Staircase line
+  \draw[line width=1.3pt] 
+    (0,0) -- (0.58,0) -- 
+    (0.58, 1.7) -- (1.12, 1.7) -- 
+    (1.12, 2.0) -- (1.86, 2.0) -- 
+    (1.86, 2.5) -- (2.36, 2.5) -- 
+    (2.36, 3.7) -- (3.25, 3.7) -- 
+    (3.25, 4.5) -- (4.37, 4.5) -- 
+    (4.37, 5.7) -- (5.12, 5.7) -- 
+    (5.12, 6.8) -- (6.5, 6.8);
+
+  \node[font=\large] at (3.0, -0.7) {b)};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

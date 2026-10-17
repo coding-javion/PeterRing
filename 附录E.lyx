@@ -1,0 +1,3244 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\end_preamble
+\use_default_options true
+\begin_modules
+beautiful-booknotes
+\end_modules
+\maintain_unincluded_children no
+\language chinese-simplified
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+直积波函数相关的定理
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:直积波函数相关的定理"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在这份附录我们推导一些在单粒子模型和一些基于单粒子模型的理论中用到的一些定理和公式。
+
+\end_layout
+
+\begin_layout Section
+Bloch-Messiah定理
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BM62"
+literal "true"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bloch-Messiah定理说的是：
+
+\end_layout
+
+\begin_layout Standard
+一个具有如下形式的酉矩阵
+\begin_inset Formula $\mathcal{W}$
+\end_inset
+
+可以被分解为三个矩阵：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathcal{W}=\begin{bmatrix}U & V^{*}\\
+V & U^{*}
+\end{bmatrix}=\begin{bmatrix}D & 0\\
+0 & D^{*}
+\end{bmatrix}\begin{bmatrix}\bar{U} & \bar{V}\\
+\bar{V} & \bar{U}
+\end{bmatrix}\begin{bmatrix}C & 0\\
+0 & C^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里实矩阵
+\begin_inset Formula $\bar{U}$
+\end_inset
+
+和
+\begin_inset Formula $\bar{V}$
+\end_inset
+
+是对角的并且具有（7.9）式给出的“准正则”形式。
+
+\end_layout
+
+\begin_layout Standard
+这个证明依赖于一个厄米矩阵
+\begin_inset Formula $\rho$
+\end_inset
+
+可以被酉矩阵
+\begin_inset Formula $D$
+\end_inset
+
+实对角化，
+即
+\begin_inset Formula $\bar{\rho}=D^{\dagger}\rho D$
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+是对角的并且本征值为实数。
+
+\end_layout
+
+\begin_layout Standard
+一个反对称矩阵
+\begin_inset Formula $\kappa$
+\end_inset
+
+可以被酉矩阵
+\begin_inset Formula $D$
+\end_inset
+
+（一般来说同上面的矩阵并不相同）变为正则形式
+\begin_inset Formula $\bar{\kappa}=D^{\dagger}\kappa D^{*}$
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+可以分解为在对角线上的形如
+\begin_inset Formula $\left[\begin{smallmatrix}0 & \kappa_{k}\\
+-\kappa_{k} & 0
+\end{smallmatrix}\right]$
+\end_inset
+
+的
+\begin_inset Formula $(2\times2)$
+\end_inset
+
+小方块，
+并且
+\begin_inset Formula $\kappa_{k}$
+\end_inset
+
+都是实数
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zu62"
+literal "true"
+
+\end_inset
+。
+下一步，
+我们将要说明，
+如果有关系：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho\kappa=\kappa\rho^{*}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+则我们可以找到一个矩阵
+\begin_inset Formula $D$
+\end_inset
+
+同时对角化
+\begin_inset Formula $\rho$
+\end_inset
+
+和让
+\begin_inset Formula $\kappa$
+\end_inset
+
+变成正则形式。
+为了做到这一点，
+我们首先对角化
+\begin_inset Formula $\rho$
+\end_inset
+
+，
+接下来从上式我们可以得到：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\rho_{i}-\rho_{k})\kappa_{ij}=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+在
+\begin_inset Formula $\rho\kappa=\kappa\rho^{*}$
+\end_inset
+
+两端同左乘
+\begin_inset Formula $D^{\dagger}$
+\end_inset
+
+，
+右乘
+\begin_inset Formula $D^{*}$
+\end_inset
+
+，
+可以有：
+ 
+\begin_inset Formula 
+\[
+D^{\dagger}\rho DD^{\dagger}\kappa D^{*}=D^{\dagger}\kappa D^{*}D^{T}\rho^{*}D^{*}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+即可写为：
+
+\begin_inset Formula 
+\[
+\bar{\rho}\bar{\kappa}=\bar{\kappa}\bar{\rho}^{*}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+而由于此时
+\begin_inset Formula $\bar{\rho}$
+\end_inset
+
+是实对角矩阵，
+因此
+\begin_inset Formula $\bar{\rho}\bar{\kappa}=\bar{\kappa}\bar{\rho}$
+\end_inset
+
+，
+于是得到该式。
+
+\end_layout
+
+\begin_layout Standard
+这意味着
+\begin_inset Formula $\kappa_{ik}$
+\end_inset
+
+在
+\begin_inset Formula $\rho_{i}\neq\rho_{k}$
+\end_inset
+
+时为零，
+也就是说，
+我们接下来可以只考虑简并本征值
+\begin_inset Formula $\rho_{i}$
+\end_inset
+
+对应的子空间。
+
+\begin_inset Formula $\kappa$
+\end_inset
+
+并没有混合不同的本征值。
+在这个子空间中，
+
+\begin_inset Formula $\rho$
+\end_inset
+
+是一个常数乘单位矩阵，
+因此我们可以变换基使得
+\begin_inset Formula $\kappa$
+\end_inset
+
+变成正则形式的同事而不改变
+\begin_inset Formula $\rho$
+\end_inset
+
+的对角性质。
+
+\end_layout
+
+\begin_layout Standard
+现在我们把这些比较宽泛的考虑应用到这一具体的变换上去。
+我们首先假设
+\begin_inset Formula $U$
+\end_inset
+
+是厄米的并且是半正定的，
+否则我们可以用一个
+\begin_inset Formula $C$
+\end_inset
+
+-变换来使它变成这样
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里做的即是左极分解，
+把任意一个算子分为半正定算子乘酉算子，
+我个人认为下边的表达式好像不是很正确。
+
+\end_layout
+
+\end_inset
+
+，
+例如：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=(\sqrt{UU^{\dagger}})^{-1}U^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+从方程（7.5）可以得到：
+
+\begin_inset Formula 
+\begin{equation}
+\rho=V^{*}V^{\mathrm{T}}=1-UU^{\dagger}\label{eq:def of rho}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+和：
+
+\begin_inset Formula 
+\begin{equation}
+\kappa=V^{*}U^{\mathrm{T}}=-\kappa^{T}\label{eq:def of kappa}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这符合上面的条件
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+厄米，
+
+\begin_inset Formula $\kappa$
+\end_inset
+
+反对称，
+以及
+\begin_inset Formula $\rho\kappa=\kappa\rho^{*}$
+\end_inset
+
+，
+均容易证明。
+
+\end_layout
+
+\end_inset
+
+。
+因此，
+我们可以找到一个矩阵
+\begin_inset Formula $D$
+\end_inset
+
+，
+能够使
+\begin_inset Formula $\kappa$
+\end_inset
+
+是正则形式的同时对角化
+\begin_inset Formula $\rho$
+\end_inset
+
+和
+\begin_inset Formula $U$
+\end_inset
+
+，
+这里
+\begin_inset Formula $U$
+\end_inset
+
+的本征值为
+\begin_inset Formula $u_{k}$
+\end_inset
+
+是实数，
+则
+\begin_inset Formula $\rho$
+\end_inset
+
+的本征值是
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+。
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里并不能直接应用上面的定理，
+但思路一致。
+对角化
+\begin_inset Formula $U$
+\end_inset
+
+即能保证对角化
+\begin_inset Formula $\rho$
+\end_inset
+
+，
+假设
+\begin_inset Formula $U$
+\end_inset
+
+的本征值为
+\begin_inset Formula $u_{k}$
+\end_inset
+
+，
+则
+\begin_inset Formula $\rho$
+\end_inset
+
+的本征值为
+\begin_inset Formula $u_{k}^{2}$
+\end_inset
+
+。
+因此对角化
+\begin_inset Formula $U$
+\end_inset
+
+后能得到
+\begin_inset Formula $(u_{i}^{2}-u_{k}^{2})\kappa_{ik}=0$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa$
+\end_inset
+
+的形式仍与此前相同，
+同样只需要考虑
+\begin_inset Formula $\kappa$
+\end_inset
+
+在简并本征值对应的子空间，
+因此只需变换矩阵使得
+\begin_inset Formula $\kappa$
+\end_inset
+
+成正则形式的同时保持
+\begin_inset Formula $U$
+\end_inset
+
+仍然是对角的即可。
+
+\end_layout
+
+\end_inset
+
+这里我们还可以得到：
+
+\begin_inset Formula 
+\[
+u_{k}^{2}+v_{k}^{2}=1
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+现在我们必须区分
+\begin_inset Formula $U$
+\end_inset
+
+的本征值
+\begin_inset Formula $u_{k}\neq0$
+\end_inset
+
+和
+\begin_inset Formula $u_{k}=0$
+\end_inset
+
+的子空间。
+第一种情况，
+我们可以把令
+\begin_inset Formula $\kappa_{ik}$
+\end_inset
+
+除以
+\begin_inset Formula $u_{k}$
+\end_inset
+
+，
+于是从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of kappa"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+可以得到
+\begin_inset Formula $V$
+\end_inset
+
+也是正则形式，
+并且元素为
+\begin_inset Formula $v_{k}$
+\end_inset
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这个从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of rho"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+可以看出来。
+
+\end_layout
+
+\end_inset
+
+第二种情况，
+我们可以从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of rho"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+看出
+\begin_inset Formula $V$
+\end_inset
+
+是酉的，
+因此我们可以任意的把它放到
+\begin_inset Formula $D$
+\end_inset
+
+或者
+\begin_inset Formula $C$
+\end_inset
+
+里面，
+剩余的部分是单位矩阵。
+
+\end_layout
+
+\begin_layout Booknote*
+总结一下证明。
+首先，
+要证明上述分解成立，
+我们只需证明
+\begin_inset Formula $U=D\bar{U}C$
+\end_inset
+
+和
+\begin_inset Formula $V=D^{*}\bar{V}C$
+\end_inset
+
+。
+在上面的证明中，
+我们证明了可以找到一个矩阵
+\begin_inset Formula $D$
+\end_inset
+
+，
+使得
+\begin_inset Formula $D^{\dagger}UD=\bar{U}$
+\end_inset
+
+是对角的，
+并且
+\begin_inset Formula $D^{\dagger}V^{*}U^{\mathrm{T}}D^{*}$
+\end_inset
+
+是正则形式。
+令
+\begin_inset Formula $D^{\mathrm{T}}VD=\bar{V}$
+\end_inset
+
+，
+我们随后证明了
+\begin_inset Formula $\bar{V}$
+\end_inset
+
+是正则形式。
+因此我们可以找到矩阵
+\begin_inset Formula $D$
+\end_inset
+
+使得
+\begin_inset Formula $U=D\bar{U}D^{\dagger}$
+\end_inset
+
+，
+
+\begin_inset Formula $V=D^{*}\bar{V}D^{\dagger}$
+\end_inset
+
+。
+接下来只需要把一开始为了把
+\begin_inset Formula $U$
+\end_inset
+
+变成厄米且半正定的矩阵所作的极分解中的酉矩阵和最后对
+\begin_inset Formula $u_{k}=0$
+\end_inset
+
+空间对应的酉矩阵（这个也可以合并到
+\begin_inset Formula $D$
+\end_inset
+
+中）合并到
+\begin_inset Formula $C$
+\end_inset
+
+中，
+即可得到
+\begin_inset Formula $U=D\bar{U}C$
+\end_inset
+
+，
+
+\begin_inset Formula $V=D^{*}\bar{V}C$
+\end_inset
+
+。
+
+\end_layout
+
+\begin_layout Standard
+特别的，
+从这个推导中我们可以看出
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+都是实的。
+所有的复相位都可以合并到
+\begin_inset Formula $C$
+\end_inset
+
+和
+\begin_inset Formula $D$
+\end_inset
+
+中。
+如果我们限制系数矩阵
+\begin_inset Formula $D$
+\end_inset
+
+是实的，
+使用
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+的相对相位也是很有趣的。
+相应的BCS波函数也会依赖于这些。
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我不知道他在说什么。
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+准粒子空间中的算符
+\end_layout
+
+\begin_layout Standard
+利用（7.1）中的变换，
+我们可以把
+\begin_inset Formula $c$
+\end_inset
+
+，
+
+\begin_inset Formula $c^{\dagger}$
+\end_inset
+
+表示的算符转化到准粒子空间。
+现在我们给出几个例子。
+
+\end_layout
+
+\begin_layout Standard
+对于一个厄米单粒子算符：
+
+\begin_inset Formula 
+\[
+\hat{F}=\sum_{ll^{\prime}}f_{ll^{\prime}}c_{l}^{\dagger}c_{l^{\prime}}+\frac{1}{2}(g_{ll^{\prime}}c_{l}^{\dagger}c_{l^{\prime}}^{\dagger}+\text{h.c.})
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们得到：
+
+\begin_inset Formula 
+\[
+\hat{F}=F^{0}+\sum_{kk^{\prime}}F_{kk^{\prime}}^{11}\beta_{k}^{\dagger}\beta_{k^{\prime}}+\frac{1}{2}\sum_{kk^{\prime}}(F_{kk^{\prime}}^{20}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+\text{h.c.})
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+
+\begin_inset Formula 
+\begin{align*}
+F^{0} & =\mathop{\text{Tr}}(f\rho)-\mathop{\text{Tr}}(g\kappa^{*}+g^{*}k)/2\\
+F_{kk^{\prime}}^{11} & =(U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+U^{\dagger}gV-V^{\dagger}g^{*}U)_{kk^{\prime}}\\
+F_{kk^{\prime}}^{20} & =(U^{\dagger}fV^{*}-V^{\dagger}f^{\mathrm{T}}U^{*}+U^{\dagger}gU^{*}-V^{\dagger}g^{*}V^{*})_{kk^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用：
+
+\begin_inset Formula 
+\begin{align*}
+c_{l}^{\dagger} & =\sum_{k}U_{lk}^{*}\beta_{k}^{\dagger}+V_{lk}\beta_{k}\\
+c_{l} & =\sum_{k}V_{lk}^{*}\beta_{k}^{\dagger}+U_{lk}\beta_{k}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+代入
+\begin_inset Formula $\hat{F}$
+\end_inset
+
+中去，
+得到：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\hat{F} & =\sum_{kk^{\prime}}\sum_{ll^{\prime}}\Bigl[f_{ll^{\prime}}V_{lk}V_{l^{\prime}k^{\prime}}^{*}\delta_{kk^{\prime}}+\frac{1}{2}g_{ll^{\prime}}V_{lk}U_{l^{\prime}k^{\prime}}^{*}\delta_{kk^{\prime}}+\frac{1}{2}g_{ll^{\prime}}^{*}V_{lk}^{*}U_{l^{\prime}k^{\prime}}\delta_{kk^{\prime}}\\
+ & +f_{ll^{\prime}}\left(U_{lk}^{*}U_{l^{\prime}k^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}-V_{lk^{\prime}}V_{l^{\prime}k}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}\left(U_{lk}^{*}V_{l^{\prime}k^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}-V_{lk^{\prime}}U_{l^{\prime}k}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}^{*}\left(U_{lk^{\prime}}V_{l^{\prime}k}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}-V_{lk}^{*}U_{l^{\prime}k^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}\right)\\
+ & +f_{ll^{\prime}}\left(U_{lk}^{*}V_{l^{\prime}k^{\prime}}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+V_{lk}U_{l^{\prime}k^{\prime}}\beta_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}\left(U_{lk}^{*}U_{l^{\prime}k^{\prime}}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+V_{lk}V_{l^{\prime}k^{\prime}}\beta_{k}\beta_{k^{\prime}}\right)+\frac{1}{2}g_{ll^{\prime}}^{*}\left(V_{lk^{\prime}}^{*}V_{l^{\prime}k}^{*}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+U_{lk^{\prime}}U_{l^{\prime}k}\beta_{k}\beta_{k^{\prime}}\right)\Bigr]
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+将其写成矩阵形式：
+
+\begin_inset Formula 
+\begin{align*}
+\hat{F} & =\mathop{\text{Tr}}(V^{\mathrm{T}}fV^{*}+\frac{1}{2}V^{\mathrm{T}}gU^{*}+\frac{1}{2}V^{\dagger}g^{*}U)\\
+ & +\sum_{kk^{\prime}}[U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+\frac{1}{2}(U^{\dagger}gV-U^{\dagger}g^{\mathrm{T}}V+V^{\dagger}g^{\dagger}U-V^{\dagger}g^{*}U)]_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}\\
+ & +\sum_{kk^{\prime}}[U^{\dagger}fV^{*}+\frac{1}{2}(U^{\dagger}gU^{*}+V^{\dagger}g^{\dagger}V^{*})]_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+\sum_{kk^{\prime}}[V^{\mathrm{T}}fU+\frac{1}{2}(V^{\mathrm{T}}gV+U^{\mathrm{T}}g^{\dagger}U)]_{kk^{\prime}}\beta_{k}\beta_{k^{\prime}}
+\end{align*}
+
+\end_inset
+
+利用
+\begin_inset Formula $\rho=V^{*}V^{\mathrm{T}}$
+\end_inset
+
+和
+\begin_inset Formula $\kappa=UV^{\dagger}$
+\end_inset
+
+和求迹的性质，
+将第一项化为：
+
+\begin_inset Formula 
+\[
+\mathop{\text{Tr}}(f\rho)-\frac{1}{2}\mathop{\text{Tr}}(g\kappa^{*}+g^{*}\kappa)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用
+\begin_inset Formula $f_{ll^{\prime}}=f_{l^{\prime}l}^{*}$
+\end_inset
+
+和
+\begin_inset Formula $g_{ll^{\prime}}=-g_{l^{\prime}l}$
+\end_inset
+
+，
+知
+\begin_inset Formula $f^{\dagger}=f$
+\end_inset
+
+和
+\begin_inset Formula $g^{\mathrm{T}}=-g$
+\end_inset
+
+，
+将第二项化为：
+
+\begin_inset Formula 
+\[
+\sum_{kk^{\prime}}(U^{\dagger}fU-V^{\dagger}f^{\mathrm{T}}V+U^{\dagger}gV-V^{\dagger}g^{*}U)_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+第三项把
+\begin_inset Formula $1/2$
+\end_inset
+
+提出来后写成和第二项类似的形式：
+
+\begin_inset Formula 
+\[
+\frac{1}{2}\sum_{kk^{\prime}}(U^{\dagger}fV^{*}-V^{\dagger}f^{\mathrm{T}}U^{*}+U^{\dagger}gU^{*}-V^{\dagger}g^{*}V^{*})_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+\text{h.c.}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+注意，
+这里实际上
+\begin_inset Formula $U^{\dagger}fV^{*}$
+\end_inset
+
+和
+\begin_inset Formula $-V^{\dagger}f^{\mathrm{T}}U^{*}$
+\end_inset
+
+相同。
+
+\end_layout
+
+\begin_layout Standard
+在有时间反演对称性的情况下
+\begin_inset Formula $\mathsf{T}\hat{F}\mathsf{T}^{\dagger}=\tau\hat{F}$
+\end_inset
+
+，
+这里
+\begin_inset Formula $\tau=\pm1$
+\end_inset
+
+，
+这意味着在正则基下：
+
+\begin_inset Formula 
+\begin{align*}
+F_{kk^{\prime}}^{11} & =f_{kk^{\prime}}\xi_{kk^{\prime}}^{\tau}-g_{k\bar{k^{\prime}}}\eta_{kk^{\prime}}^{\tau}\\
+F_{kk^{\prime}}^{20} & =-f_{k\bar{k^{\prime}}}\eta_{kk^{\prime}}^{\tau}+g_{kk^{\prime}}\xi_{kk^{\prime}}^{\tau}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\xi^{\pm}$
+\end_inset
+
+和
+\begin_inset Formula $\eta^{\pm}$
+\end_inset
+
+在（8.202）中定义。
+
+\end_layout
+
+\begin_layout Standard
+一个厄米的两粒子算符的粒子是Hamilton量：
+
+\begin_inset Formula 
+\[
+\hat{H}=\sum_{l_{1}l_{2}}\varepsilon_{l_{1}l_{2}}c_{l_{1}}^{\dagger}c_{l_{2}}+\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}c_{l_{4}}c_{l_{3}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们得到：
+
+\begin_inset Formula 
+\begin{align}
+\hat{H} & =H^{0}+\sum_{k_{1}k_{2}}H_{k_{1}k_{2}}^{11}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}+\frac{1}{2}\sum_{k_{1}k_{2}}(H_{k_{1}k_{2}}^{20}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}+\text{h.c.})\nonumber \\
+ & +\sum_{k_{1}k_{2}k_{3}k_{4}}(H_{k_{1}k_{2}k_{3}k_{4}}^{40}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger}\beta_{k_{4}}^{\dagger}+\text{h.c.})\nonumber \\
+ & +\sum_{k_{1}k_{2}k_{3}k_{4}}(H_{k_{1}k_{2}k_{3}k_{4}}^{31}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger}\beta_{k_{4}}+\text{h.c.})\nonumber \\
+ & +\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}H_{k_{1}k_{2}k_{3}k_{4}}^{22}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{4}}\beta_{k_{3}}\label{eq:quasi-particle Hamiltonian}
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用定义：
+
+\begin_inset Formula 
+\begin{alignat*}{2}
+h & =\varepsilon+\Gamma\\
+\Gamma_{lm} & =\sum_{pq}\bar{v}_{lqmp}\rho_{pq} &  & :=\mathop{\text{Tr}}_{1}(\bar{v}\rho)\\
+\Delta_{lm} & =\frac{1}{2}\sum_{pq}\bar{v}_{lmpq}\kappa_{pq} &  & :=-\frac{1}{2}\mathop{\text{Tr}}_{2}(\bar{v}\kappa)
+\end{alignat*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们可以写出
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我觉得这个Trace记号非常愚蠢。
+
+\end_layout
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\begin{align*}
+H^{0} & =\mathop{\text{Tr}}(\varepsilon\rho+\frac{1}{2}\Gamma\rho-\frac{1}{2}\Delta\kappa^{*})\\
+ & =\mathop{\text{Tr}}(\varepsilon\rho)+\frac{1}{2}\mathop{\text{Tr}}_{1}\mathop{\text{Tr}}_{1}(\rho\bar{v}\rho)+\frac{1}{4}\mathop{\text{Tr}}_{2}\mathop{\text{Tr}}_{2}(\kappa^{*}\bar{v}\kappa)\\
+H^{11} & =U^{\dagger}hU-V^{\dagger}h^{\mathrm{T}}V+U^{\dagger}\Delta V-V^{\dagger}\Delta^{*}U\\
+H^{20} & =U^{\dagger}hV^{*}-V^{\dagger}h^{\mathrm{T}}U^{*}+U^{\dagger}\Delta U^{*}-V^{\dagger}\Delta^{*}V^{*}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+和：
+
+\begin_inset Formula 
+\begin{align*}
+H_{k_{1}k_{2}k_{3}k_{4}}^{40} & =\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}U_{l_{1}k_{1}}^{*}U_{l_{2}k_{2}}^{*}V_{l_{4}k_{3}}^{*}V_{l_{3}k_{4}}^{*}\\
+H_{k_{1}k_{2}k_{3}k_{4}}^{31} & =\frac{1}{2}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}(U_{l_{1}k_{1}}^{*}V_{l_{4}l_{2}}^{*}V_{l_{3}k_{3}}^{*}V_{l_{2}k_{4}}+V_{l_{3}k_{1}}^{*}U_{l_{2}k_{2}}^{*}U_{l_{1}k_{3}}^{*}U_{l_{4}k_{4}})\\
+H_{k_{1}k_{2}k_{3}k_{4}}^{22} & =\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}((U_{l_{1}k_{1}}^{*}V_{l_{4}k_{2}}^{*}V_{l_{2}k_{2}}U_{l_{3}k_{4}}-(k_{1}\leftrightarrow k_{2}))-(k_{3}\leftrightarrow k_{4})\\
+ & +U_{l_{1}k_{1}}^{*}U_{l_{2}k_{2}}^{*}U_{l_{3}k_{3}}U_{l_{4}k_{4}}+V_{l_{3}k_{1}}^{*}V_{l_{4}k_{2}}^{*}V_{l_{1}k_{3}}V_{l_{2}k_{4}})
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+正则基下这些矩阵的表示可以由（8.201）和（9.133）给出。
+
+\end_layout
+
+\begin_layout Standard
+在对关联为零的时候，
+准粒子就是粒子或者空穴：
+
+\begin_inset Formula 
+\begin{align*}
+\beta_{m}^{\dagger} & =a_{m}^{\dagger}\quad\text{当}\varepsilon_{m}>\varepsilon_{\text{F}}\\
+\beta_{i}^{\dagger} & =a_{i}\quad\text{当}\varepsilon_{i}>\varepsilon_{\text{F}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在这个表示下，
+Hamilton量
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quasi-particle Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+写为：
+
+\begin_inset Formula 
+\begin{align*}
+H^{0} & =\sum_{i}(\varepsilon_{ii}+\frac{1}{2}\sum_{j}\bar{v}_{ijij})\\
+H^{11} & =\sum_{mm^{\prime}}(\varepsilon_{mm^{\prime}}+\sum_{j}\bar{v}_{mjm^{\prime}j})\beta_{m}^{\dagger}\beta_{m^{\prime}}-\sum_{ii^{\prime}}(\varepsilon_{i^{\prime}i}+\sum_{j}\bar{v}_{i^{\prime}jij})\beta_{i}^{\dagger}\beta_{i^{\prime}}\\
+H^{20} & =\sum_{mi}(\varepsilon_{mi}+\sum_{j}\bar{v}_{mjij})\beta_{m}^{\dagger}\beta_{i}^{\dagger}+\text{h.c.}\\
+H^{40} & =\frac{1}{4}\sum_{mnij}\bar{v}_{mnji}\beta_{m}^{\dagger}\beta_{i}^{\dagger}\beta_{n}^{\dagger}\beta_{j}^{\dagger}+\text{h.c.}\\
+H^{31} & =\frac{1}{2}\sum_{mi}\beta_{m}^{\dagger}\beta_{i}^{\dagger}(\sum_{nn^{\prime}}\bar{v}_{mnin^{\prime}}\beta_{n}^{\dagger}\beta_{n^{\prime}}-\sum_{jj^{\prime}}\bar{v}_{mj^{\prime}ij}\beta_{j}^{\dagger}\beta_{j^{\prime}})+\text{h.c.}\\
+H^{22} & =\frac{1}{4}\sum_{mm^{\prime}nn^{\prime}}\bar{v}_{mnm^{\prime}n^{\prime}}\beta_{m}^{\dagger}\beta_{n}^{\dagger}\beta_{n^{\prime}}\beta_{m^{\prime}}+\frac{1}{4}\sum_{iji^{\prime}j^{\prime}}\bar{v}_{iji^{\prime}j^{\prime}}\beta_{i^{\prime}}^{\dagger}\beta_{j^{\prime}}^{\dagger}\beta_{j}\beta_{i}\\
+ & +\sum_{minj}\bar{v}_{mjin}\beta_{m}^{\dagger}\beta_{i}^{\dagger}\beta_{j}\beta_{n}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+Thouless定理
+\end_layout
+
+\begin_layout Standard
+Thouless定理
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Th60"
+literal "true"
+
+\end_inset
+说的是：
+
+\end_layout
+
+\begin_layout Standard
+从一个广义直积波函数
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+也就是准粒子算符
+\begin_inset Formula $\beta$
+\end_inset
+
+的真空出发，
+任何其它的和
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+不正交的广义直积波函数
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+可以写为：
+
+\begin_inset Formula 
+\begin{equation}
+|\Phi_{1}\rangle=\mathcal{N}\exp\left(\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}\right)|\Phi_{0}\rangle\label{eq:Thouless theorem}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\mathcal{N}=\langle\Phi_{0}|\Phi_{1}\rangle$
+\end_inset
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+原书这里说
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+是归一化因子，
+但是它其实和归一化没有关系。
+而且这个式子是恒等式，
+写出来也没有任何意义。
+
+\end_layout
+
+\end_inset
+
+，
+
+\begin_inset Formula $Z$
+\end_inset
+
+是反对称矩阵。
+Thouless给出了在
+\begin_inset Formula $\Phi_{0}$
+\end_inset
+
+，
+
+\begin_inset Formula $\Phi_{1}$
+\end_inset
+
+是纯Slater行列式的情况下的证明。
+这种情况下的两准粒子态是ph态：
+
+\begin_inset Formula 
+\[
+|\Phi_{1}\rangle=\mathcal{N}\exp\left(\sum_{mi}Z_{mi}a_{m}^{\dagger}a_{i}\right)|\Phi_{0}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+为了证明这个定理，
+我们从波函数
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+对应的准粒子算符
+\begin_inset Formula $\beta,\beta^{\dagger}$
+\end_inset
+
+和
+\begin_inset Formula $\gamma,\gamma^{\dagger}$
+\end_inset
+
+出发：
+
+\begin_inset Formula 
+\begin{align}
+\beta_{k}^{\dagger} & =\sum_{l}U_{0lk}c_{l}^{\dagger}+V_{0lk}c_{l}\label{eq:beta gamma c}\\
+\gamma_{k}^{\dagger} & =\sum_{l}U_{1lk}c_{l}^{\dagger}+V_{1lk}c_{l}\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+把算符
+\begin_inset Formula $\gamma^{\dagger}$
+\end_inset
+
+用算符
+\begin_inset Formula $\beta,\beta^{\dagger}$
+\end_inset
+
+展开
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里原书应该是有一点小错误。
+
+\end_layout
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\[
+\gamma_{k}^{\dagger}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+得到：
+
+\begin_inset Formula 
+\begin{align}
+U & =U_{0}^{\dagger}U_{1}+V_{0}^{\dagger}V_{1}\label{eq:UV UV01}\\
+V & =V_{0}^{\mathrm{T}}U_{1}+U_{0}^{\mathrm{T}}V_{1}\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+根据
+\begin_inset Formula $(\beta,\beta^{\dagger})$
+\end_inset
+
+，
+
+\begin_inset Formula $(\gamma,\gamma^{\dagger})$
+\end_inset
+
+和
+\begin_inset Formula $(c,c^{\dagger})$
+\end_inset
+
+的关系，
+可以得到：
+
+\begin_inset Formula 
+\begin{align*}
+\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix} & =\begin{bmatrix}U_{0} & V_{0}^{*}\\
+V_{0} & U_{0}^{*}
+\end{bmatrix}\begin{bmatrix}\beta\\
+\beta^{\dagger}
+\end{bmatrix},\quad\begin{bmatrix}\gamma\\
+\gamma^{\dagger}
+\end{bmatrix}=\begin{bmatrix}U_{1}^{\dagger} & V_{1}^{\dagger}\\
+V_{1}^{\mathrm{T}} & U_{1}^{\mathrm{T}}
+\end{bmatrix}\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+即可得到：
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}U^{\dagger} & V^{\dagger}\\
+V^{\mathrm{T}} & U^{\mathrm{T}}
+\end{bmatrix}=\begin{bmatrix}U_{1}^{\dagger} & V_{1}^{\dagger}\\
+V_{1}^{\mathrm{T}} & U_{1}^{\mathrm{T}}
+\end{bmatrix}\begin{bmatrix}U_{0} & V_{0}^{*}\\
+V_{0} & U_{0}^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+于是得到：
+
+\begin_inset Formula 
+\begin{align*}
+U & =U_{0}^{\dagger}U_{1}+V_{0}^{\dagger}V_{1}\\
+V & =V_{0}^{\mathrm{T}}U_{1}+U_{0}^{\mathrm{T}}V_{1}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们将要在E.4节看到，
+
+\begin_inset Formula $\left|\langle\Phi_{1}|\Phi_{0}\rangle\right|^{2}$
+\end_inset
+
+由
+\begin_inset Formula $\left|\det(U)\right|$
+\end_inset
+
+给出。
+
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+的非正交性意味着我们可以对
+\begin_inset Formula $U$
+\end_inset
+
+取逆，
+并且定义算符：
+
+\begin_inset Formula 
+\begin{equation}
+\tilde{\gamma}_{k}^{\dagger}=\sum_{k^{\prime}}U_{k^{\prime}k}^{-1}\gamma_{k^{\prime}}^{\dagger}=\beta_{k}^{\dagger}+\sum_{k^{\prime}}Z_{k^{\prime}k}^{*}\beta_{k^{\prime}}\label{eq:normalization of gamma}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $Z$
+\end_inset
+
+是反对称矩阵：
+
+\begin_inset Formula 
+\begin{equation}
+Z:=(VU^{-1})^{*}=-(U^{\dagger})^{-1}V^{\dagger}=-Z^{\mathrm{T}}\label{eq:Z UV}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:normalization of gamma"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+只是产生算符
+\begin_inset Formula $\gamma^{\dagger}$
+\end_inset
+
+之间的变换，
+因此
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+也是算符
+\begin_inset Formula $\tilde{\gamma}$
+\end_inset
+
+的真空态。
+这个条件把
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+确定到只差一个常数。
+因此我们只需要说明
+\begin_inset Formula $\tilde{\gamma}_{k}$
+\end_inset
+
+作用到等式的右边为零：
+
+\begin_inset Formula 
+\[
+\tilde{\gamma}_{k}\exp\left(\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}\right)|\Phi_{0}\rangle=\mathrm{e}^{\hat{Z}}\left(\mathrm{e}^{-\hat{Z}}\beta_{k}\mathrm{e}^{\hat{Z}}+\sum_{k^{\prime}}Z_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}\right)|\Phi_{0}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+
+\begin_inset Formula 
+\[
+\hat{Z}=\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用：
+
+\begin_inset Formula 
+\[
+\mathrm{e}^{-\hat{Z}}\beta_{k}\mathrm{e}^{\hat{Z}}=\beta_{k}-[\hat{Z},\beta_{k}]=\beta_{k}-\sum_{k^{\prime}}Z_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+可以看到等式右边确实为零。
+这证明了Thouless定理并且说明了
+\begin_inset Formula $Z$
+\end_inset
+
+由
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+唯一确定。
+特别的，
+它并不依赖于准粒子
+\begin_inset Formula $\gamma^{\dagger}$
+\end_inset
+
+之间的
+\begin_inset Formula $C$
+\end_inset
+
+-变换。
+
+\end_layout
+
+\begin_layout Booknote*
+我认为上述证明不如这样想，
+我们证明
+\begin_inset Formula $\tilde{\gamma}_{k}=\mathrm{e}^{\hat{Z}}\beta_{k}\mathrm{e}^{-\hat{Z}}$
+\end_inset
+
+，
+然后自然有
+\begin_inset Formula $\tilde{\gamma}_{k}\mathrm{e}^{\hat{Z}}=\mathrm{e}^{\hat{Z}}\beta_{k}\mathrm{e}^{-\hat{Z}}\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle=0$
+\end_inset
+
+。
+
+\end_layout
+
+\begin_layout Standard
+接下来我们可能要问，
+能否用类似的方式表示出与
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+正交的波函数
+\begin_inset Formula $|\tilde{\Phi}_{1}\rangle$
+\end_inset
+
+？
+答案是推广的Thouless定理，
+它证明了正交于
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+的波函数
+\begin_inset Formula $|\tilde{\Phi}_{1}\rangle$
+\end_inset
+
+可以写为不正交于
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+的
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+上的多准粒子态：
+
+\begin_inset Formula 
+\begin{equation}
+|\tilde{\Phi}_{1}\rangle=\tilde{\beta}_{b_{1}}^{\dagger}\dots\tilde{\beta}_{b_{n}}^{\dagger}|\Phi_{1}\rangle\label{eq:Phi1 orthogonal}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+准粒子算符
+\begin_inset Formula $\tilde{\beta}_{b_{i}}$
+\end_inset
+
+会湮灭
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+。
+
+\end_layout
+
+\begin_layout Standard
+为了证明这个推广，
+并给出函数
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+的精确形式，
+我们利用
+\begin_inset Formula $(\beta,\beta^{\dagger})\rightarrow(\gamma,\gamma^{\dagger})$
+\end_inset
+
+是一个一般的Bogoliubov变换这一点。
+我们因此可以利用Bloch-Messiah定理，
+于是可以得到它可以被分解为
+\begin_inset Formula $\beta^{\dagger}$
+\end_inset
+
+内部的变换：
+
+\begin_inset Formula 
+\[
+\tilde{\beta}_{k}^{\dagger}=\sum_{k^{\prime}}D_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+一个特殊的到
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+对应的准粒子算符
+\begin_inset Formula $\tilde{\gamma}$
+\end_inset
+
+，
+
+\begin_inset Formula $\tilde{\gamma}^{\dagger}$
+\end_inset
+
+的Bogoliubov变换和一个
+\begin_inset Formula $C$
+\end_inset
+
+-变换
+\begin_inset Formula $\tilde{\gamma}^{\dagger}\rightarrow\gamma^{\dagger}$
+\end_inset
+
+。
+
+\end_layout
+
+\begin_layout Standard
+类比（7.18），
+
+\begin_inset Formula $|\tilde{\Phi}_{1}\rangle$
+\end_inset
+
+可以因此写为：
+
+\begin_inset Formula 
+\begin{equation}
+|\tilde{\Phi}_{1}\rangle=\prod_{i=1}^{n}\tilde{\beta}_{b_{i}}^{\dagger}\prod_{p>0}(u_{p}+v_{p}\tilde{\beta}_{p}^{\dagger}\tilde{\beta}_{\bar{p}}^{\dagger})|\Phi_{0}\rangle\label{eq:Phi1 in caonnical basis}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $b_{1}\dots b_{n}$
+\end_inset
+
+是阻塞能级，
+根据定义
+\begin_inset Formula $u_{p}>0$
+\end_inset
+
+。
+我们因此得到
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+：
+
+\begin_inset Formula 
+\[
+|\Phi_{1}\rangle=\prod_{p>0}(u_{p}+v_{p}\tilde{\beta}_{p}^{\dagger}\tilde{\beta}_{\bar{p}}^{\dagger})|\Phi_{0}\rangle=(\prod_{p>0}u_{p})\exp\left(\sum_{p>0}\frac{v_{p}}{u_{p}}\tilde{\beta}_{p}^{\dagger}\tilde{\beta}_{\bar{p}}^{\dagger}\right)|\Phi_{0}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这就完成了证明。
+
+\end_layout
+
+\begin_layout Standard
+变换
+\begin_inset Formula $\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle$
+\end_inset
+
+不是酉的，
+因为它改变了态的模。
+我们想问，
+是否有一个酉变换达成同样的效果
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RS77b"
+literal "true"
+
+\end_inset
+
+\begin_inset Formula 
+\[
+|\Phi_{1}\rangle=\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+是厄米算符。
+回答是肯定的，
+甚至
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+正交的情况也可以做到。
+为了寻找一个可能的选择，
+我们从变换
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Thouless theorem"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+出发
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我认为这里原书引用错了公式。
+
+\end_layout
+
+\end_inset
+
+，
+根据Bloch-Messiah定理分解矩阵U和V。
+由于
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+不依赖于
+\begin_inset Formula $C$
+\end_inset
+
+矩阵的选择，
+我们用
+\begin_inset Formula $C=D^{\dagger}$
+\end_inset
+
+，
+然后得到：
+
+\begin_inset Formula 
+\[
+U=D\bar{U}D^{\dagger}\quad V=D^{*}\bar{V}D^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bar{U}$
+\end_inset
+
+是对角的，
+对角元素是
+\begin_inset Formula $u_{k}$
+\end_inset
+
+，
+
+\begin_inset Formula $\bar{V}$
+\end_inset
+
+可以写为一个对角元素为
+\begin_inset Formula $v_{k}$
+\end_inset
+
+的对角矩阵
+\begin_inset Formula $\tilde{V}$
+\end_inset
+
+和一个对角元素只有
+\begin_inset Formula $0$
+\end_inset
+
+，
+
+\begin_inset Formula $1$
+\end_inset
+
+和
+\begin_inset Formula $\left[\begin{smallmatrix}0 & 1\\
+-1 & 0
+\end{smallmatrix}\right]$
+\end_inset
+
+小方块的
+\begin_inset Formula $\bar{S}$
+\end_inset
+
+矩阵的乘积
+\begin_inset Formula 
+\[
+\bar{V}=\tilde{V}\bar{S}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+如果我们定义一个对角元素为
+\begin_inset Formula $0\leq r_{k}\leq\mathrm{\pi}/2$
+\end_inset
+
+的对角矩阵
+\begin_inset Formula $\bar{R}$
+\end_inset
+
+，
+并且有
+\begin_inset Formula $u_{k}=\cos r_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}=\sin r_{k}$
+\end_inset
+
+，
+我们得到：
+
+\begin_inset Formula 
+\begin{equation}
+U=\cos R\quad V=S\sin R=(\sin R)^{*}S\label{eq:UV RS}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+很容易知道
+\begin_inset Formula $\bar{U}=\cos(\bar{R})$
+\end_inset
+
+，
+因此
+\begin_inset Formula $U=D\bar{U}D^{\dagger}=D\cos(\bar{R})D^{\dagger}=\cos(R)$
+\end_inset
+
+。
+而对于
+\begin_inset Formula $\bar{V}$
+\end_inset
+
+，
+它可以写为
+\begin_inset Formula $\bar{V}=\tilde{V}\bar{S}$
+\end_inset
+
+，
+也可以写为
+\begin_inset Formula $\bar{V}=\bar{S}\tilde{V}$
+\end_inset
+
+，
+因此有：
+
+\begin_inset Formula 
+\begin{alignat*}{2}
+V & =D^{*}\bar{V}D^{\dagger}=D^{*}\tilde{V}\bar{S}D^{\dagger}=D^{*}\sin(\bar{R})D^{\mathrm{T}}D^{*}\bar{S}D^{\dagger} &  & =(\sin R)^{*}S\\
+V & =D^{*}\bar{V}D^{\dagger}=D^{*}\bar{S}\tilde{V}D^{\dagger}=D^{*}\bar{S}D^{\dagger}D\sin(\bar{R})D^{\dagger} &  & =S\sin(R)
+\end{alignat*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中：
+
+\begin_inset Formula 
+\[
+R=D\bar{R}D^{\dagger}\quad\text{和}\quad S=D^{*}\bar{S}D^{\dagger}:=\mathrm{e}^{-\mathrm{i}F}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $S$
+\end_inset
+
+是酉的，
+
+\begin_inset Formula $R$
+\end_inset
+
+和
+\begin_inset Formula $F$
+\end_inset
+
+是厄米的。
+
+\end_layout
+
+\begin_layout Standard
+我们现在可以定义一个厄米算符
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+：
+
+\begin_inset Formula 
+\[
+\hat{T}=\sum_{k<k^{\prime}}T_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+\text{h.c.}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这个算符只有二准粒子部分。
+
+\begin_inset Formula $T$
+\end_inset
+
+矩阵可以由它的“极分解”给出：
+
+\begin_inset Formula 
+\[
+T=\mathrm{i}R\mathrm{e}^{\mathrm{i}F}=\mathrm{i}\mathrm{e}^{\mathrm{i}F}R^{*}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用公式
+\begin_inset Formula $\mathrm{e}^{A}B\mathrm{e}^{-A}=B+[A,B]+(1/2!)[A,[A,B]]+\dots$
+\end_inset
+
+，
+很容易可以得到：
+
+\begin_inset Formula 
+\[
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta_{k}^{\dagger}\mathrm{e}^{-\mathrm{i}\hat{T}}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+首先我们要看
+\begin_inset Formula $T_{kk^{\prime}}$
+\end_inset
+
+的性质，
+利用交换
+\begin_inset Formula $\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}$
+\end_inset
+
+的位置变号即可得到
+\begin_inset Formula $T_{kk^{\prime}}=-T_{k^{\prime}k}$
+\end_inset
+
+。
+此外，
+
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+的厄米性不会构成对
+\begin_inset Formula $T_{kk^{\prime}}$
+\end_inset
+
+的任何限制，
+它只要求
+\begin_inset Formula $\beta_{k}\beta_{k^{\prime}}$
+\end_inset
+
+的系数为
+\begin_inset Formula $T_{k^{\prime}k}^{*}$
+\end_inset
+
+。
+我们知道它我们现在要做的是计算左边的式子，
+为此，
+我们先计算：
+
+\begin_inset Formula 
+\begin{align*}
+[\mathrm{i}\hat{T},\beta_{k}^{\dagger}] & =\frac{\mathrm{i}}{2}\sum_{k_{1}k_{2}}T_{k_{2}k_{1}}^{*}[\beta_{k_{1}}\beta_{k_{2}},\beta_{k}^{\dagger}]\\
+ & =\mathrm{i}\sum_{k_{1}}T_{kk_{1}}^{*}\beta_{k_{1}}=\mathrm{i}T^{*}\beta
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+最后一步我们写成了矩阵乘法的形式。
+类似的，
+我们计算：
+
+\begin_inset Formula 
+\begin{align*}
+[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},\beta_{k}^{\dagger}]] & =-\sum_{k_{1}k_{2}k_{3}}T_{kk_{1}}^{*}T_{k_{2}k_{3}}[\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger},\beta_{k_{1}}]\\
+ & =\sum_{k_{1}k_{2}}T_{kk_{1}}^{*}T_{k_{1}k_{2}}\beta_{k_{2}}^{\dagger}=T^{*}T\beta^{\dagger}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+再多计算几项，
+可以总结出规律：
+
+\begin_inset Formula 
+\begin{align*}
+[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},[\mathrm{i}\hat{T},\beta_{k}^{\dagger}]]] & =\mathrm{i}\sum_{k_{1}k_{2}k_{3}}T_{kk_{1}}^{*}T_{k_{1}k_{2}}T_{k_{2}k_{3}}^{*}\beta_{k_{3}}=\mathrm{i}T^{*}TT^{*}\beta\\
+ & \dots
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+根据
+\begin_inset Formula $T$
+\end_inset
+
+的表达式，
+我们可以得到：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+T^{*}T & =(-\mathrm{i}R^{*}\mathrm{e}^{-\mathrm{i}F^{*}})(\mathrm{i}\mathrm{e}^{\mathrm{i}F}R^{*})\\
+ & =-(R^{\mathrm{T}})^{2}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+由此：
+
+\begin_inset Formula 
+\begin{align*}
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta^{\dagger}\mathrm{e}^{-\mathrm{i}\hat{T}} & =\beta^{\dagger}-R^{\mathrm{T}}\mathrm{e}^{-\mathrm{i}F}\beta-\frac{1}{2!}(R^{\mathrm{T}})^{2}\beta^{\dagger}+\frac{1}{3}(R^{\mathrm{T}})^{3}\mathrm{e}^{\mathrm{-\mathrm{i}F}}\beta+\dots\\
+ & =\cos(R^{\mathrm{T}})\beta^{\dagger}-\sin(R^{\mathrm{T}})\mathrm{e}^{-\mathrm{i}F}\beta\\
+ & =U^{\mathrm{T}}\beta^{\dagger}+V^{\mathrm{T}}\beta\\
+\mathrm{e}^{\mathrm{i}\hat{T}}\beta_{k}^{\dagger}\mathrm{e}^{-\mathrm{i}\hat{T}} & =\sum_{k^{\prime}}U_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+于是我们证明了
+\begin_inset Formula $\gamma_{k}^{\dagger}=\mathrm{e}^{\mathrm{i}\hat{T}}\beta_{k}^{\dagger}\mathrm{e}^{-\mathrm{i\hat{T}}}$
+\end_inset
+
+，
+因此有
+\begin_inset Formula $\gamma_{k}=\mathrm{e}^{\mathrm{i}\hat{T}}\beta_{k}\mathrm{e}^{-\mathrm{i}\hat{T}}$
+\end_inset
+
+，
+自然
+\begin_inset Formula $\gamma_{k}\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle=0$
+\end_inset
+
+，
+证明完毕。
+
+\end_layout
+
+\begin_layout Standard
+Thouless定理中的矩阵
+\begin_inset Formula $Z$
+\end_inset
+
+可以利用
+\begin_inset Formula $R$
+\end_inset
+
+和
+\begin_inset Formula $F$
+\end_inset
+
+表示
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+利用
+\begin_inset Formula $Z=-(U^{\dagger})^{-1}V^{\dagger}$
+\end_inset
+
+。
+
+\end_layout
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\[
+Z=-(\mathop{\text{tg}}R)\mathrm{e}^{\mathrm{i}F}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这说明如果
+\begin_inset Formula $R$
+\end_inset
+
+的本征值
+\begin_inset Formula $r_{k}=\mathrm{\pi}/2$
+\end_inset
+
+也就是说
+\begin_inset Formula $u_{k}=0$
+\end_inset
+
+的时候
+\begin_inset Formula $Z$
+\end_inset
+
+会发散。
+变换
+\begin_inset Formula $\mathrm{e}^{\hat{Z}}$
+\end_inset
+
+的优点是它被
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+唯一确定。
+然而矩阵
+\begin_inset Formula $T$
+\end_inset
+
+只有我们限制
+\begin_inset Formula $R$
+\end_inset
+
+的本征值
+\begin_inset Formula $0\leq r_{k}<\mathrm{\pi}/2$
+\end_inset
+
+时才是唯一的。
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我不知道他在说什么。
+按照我的理解，
+
+\begin_inset Formula $U$
+\end_inset
+
+必须是没有非零本征值时才能找到一个
+\begin_inset Formula $\hat{Z}$
+\end_inset
+
+，
+使得
+\begin_inset Formula $|\Phi_{1}\rangle=\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle$
+\end_inset
+
+。
+然而你总可以找到一个
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+，
+使得
+\begin_inset Formula $|\Phi_{1}\rangle=\mathrm{e}^{\mathrm{i}\hat{T}}|\Phi_{0}\rangle$
+\end_inset
+
+。
+肯定是
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+更好。
+而且我也没发现
+\begin_inset Formula $T$
+\end_inset
+
+如何不唯一。
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这些讨论都是Balian和Brézin[BB 69,
+ HI 79]的一个普适的公式的特殊情况，
+这一普适公式对任意关于
+\begin_inset Formula $\beta_{k}$
+\end_inset
+
+和
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+
+的双线性形式的单粒子厄米算符
+\begin_inset Formula $\hat{S}$
+\end_inset
+
+都成立：
+
+\begin_inset Formula 
+\[
+\hat{S}=\sum_{kk^{\prime}}S_{kk^{\prime}}^{11}\beta_{k}^{\dagger}\beta_{k^{\prime}}+\sum_{k<k^{\prime}}(S_{kk^{\prime}}^{20}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}+\text{h.c.})
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+酉算符
+\begin_inset Formula $\mathrm{e}^{\mathrm{i}\hat{S}}$
+\end_inset
+
+可以写为：
+
+\begin_inset Formula 
+\[
+\mathrm{e}^{\mathrm{i}\hat{S}}=\langle\mathrm{e}^{\mathrm{i}\hat{S}}\rangle\mathrm{e}^{\hat{Z}}\mathrm{e}^{\mathrm{i}\hat{Y}}\mathrm{e}^{\hat{X}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\beta|\rangle=0$
+\end_inset
+
+并且：
+
+\begin_inset Formula 
+\begin{align*}
+\hat{X} & =\sum_{k<k^{\prime}}X_{kk^{\prime}}\beta_{k^{\prime}}\beta_{k}\\
+\hat{Y} & =\sum_{kk^{\prime}}Y_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}\\
+\hat{Z} & =\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这些矩阵
+\begin_inset Formula $X$
+\end_inset
+
+，
+
+\begin_inset Formula $Y$
+\end_inset
+
+和
+\begin_inset Formula $Z$
+\end_inset
+
+可以从
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+
+的酉变换的系数矩阵
+\begin_inset Formula $U$
+\end_inset
+
+和
+\begin_inset Formula $V$
+\end_inset
+
+中得到：
+
+\begin_inset Formula 
+\[
+\mathrm{e}^{\mathrm{i}\hat{S}}\beta_{k}^{\dagger}\mathrm{e}^{-\mathrm{i}\hat{S}}=\sum_{k^{\prime}}U_{k^{\prime}k}\beta_{k^{\prime}}^{\dagger}+V_{k^{\prime}k}\beta_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+也就是说：
+
+\begin_inset Formula 
+\begin{align*}
+X & =V^{\mathrm{T}}(U^{\dagger})^{-1}\\
+Z & =V^{*}(U^{*})^{-1}\\
+\mathrm{e}^{\mathrm{i}Y} & =(U^{\dagger})^{-1}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+矩阵
+\begin_inset Formula $U$
+\end_inset
+
+和
+\begin_inset Formula $V$
+\end_inset
+
+可以用
+\begin_inset Formula $S^{11}$
+\end_inset
+
+和
+\begin_inset Formula $S^{20}$
+\end_inset
+
+表示：
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}U & V^{*}\\
+V & U^{*}
+\end{bmatrix}=\exp\left(\mathrm{i}\begin{bmatrix}S^{11} & S^{20}\\
+-S^{20*} & -S^{11*}
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+Onishi公式
+\end_layout
+
+\begin_layout Standard
+在许多问题中（例如GCM方法），
+我们需要单位算符和其它算符的交叠积分
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $\langle\Phi_{1}|\hat{O}|\Phi_{0}\rangle$
+\end_inset
+
+，
+这里
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+是广义直积波函数。
+在Slater行列式的情况下，
+公式由Löwdin
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lo55"
+literal "true"
+
+\end_inset
+给出。
+推广到HFB波函数的情况由Onishi和Yoshida给出
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OY66"
+literal "true"
+
+\end_inset
+。
+玻色子的情况由Balian和Brézin
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BB69"
+literal "true"
+
+\end_inset
+给出了一个优雅的证明。
+
+\end_layout
+
+\begin_layout Standard
+这些公式只有当
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+不为零的时候才可以使用。
+当它为零时我们可以使用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Phi1 orthogonal"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+来表示
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+。
+
+\end_layout
+
+\begin_layout Standard
+利用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:UV UV01"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Z UV"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:UV RS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+可以给出
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+由于波函数
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+和
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+给出的时候有一个相位的不确定性，
+下面的公式也有一个不确定的相位。
+我们假设
+\begin_inset Formula $U$
+\end_inset
+
+是厄米且正定的。
+
+\end_layout
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\begin{equation}
+\langle\Phi_{1}|\Phi_{0}\rangle=\sqrt{\det U}=\sqrt{\det(U_{0}^{\dagger}U_{1}+V_{0}^{\dagger}V_{1})}=\sqrt{\det(\cos R)}\label{eq:inner of Phi1 Phi0}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在我们证明这个式子之前，
+我们把它重写成另一种形式。
+在一组使
+\begin_inset Formula $U$
+\end_inset
+
+是对角的基下，
+可以有：
+
+\begin_inset Formula 
+\[
+\det(U)=\exp(\mathop{\text{Tr}}\ln U)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:beta gamma c"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+，
+我们可以把波函数
+\begin_inset Formula $|\Phi_{i}\rangle(i=0,1)$
+\end_inset
+
+表示为
+\begin_inset Formula $c_{l}^{\dagger}$
+\end_inset
+
+和
+\begin_inset Formula $|\rangle$
+\end_inset
+
+（当
+\begin_inset Formula $\langle\Phi_{i}|-\rangle\neq0$
+\end_inset
+
+时）。
+已知
+\begin_inset Formula $Z_{i}=(V_{i}U_{i}^{-1})^{*}$
+\end_inset
+
+从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:inner of Phi1 Phi0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+可以得到：
+
+\begin_inset Formula 
+\[
+\langle|\mathrm{e}^{\hat{Z}_{1}^{\dagger}}\mathrm{e}^{\hat{Z}_{0}}|\rangle=\exp\left(\frac{1}{2}\mathop{\text{Tr}}\left(\ln(1-Z_{1}^{*}Z_{0})\right)\right)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用
+\begin_inset Formula $|\Phi_{i}\rangle=\langle|\Phi_{i}\rangle\mathrm{e}^{\hat{Z}_{i}}|\rangle=\sqrt{\det U_{i}}\mathrm{e}^{\hat{Z}_{i}}|\rangle$
+\end_inset
+
+得到：
+
+\begin_inset Formula 
+\[
+\langle\Phi_{1}|\Phi_{0}\rangle=\sqrt{\det U_{1}\det U_{0}}\langle|\mathrm{e}^{\hat{Z}_{1}^{\dagger}}\mathrm{e}^{\hat{Z}_{0}}|\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+于是：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\langle|\mathrm{e}^{\hat{Z}_{1}^{\dagger}}\mathrm{e}^{\hat{Z}_{0}}|\rangle & =\sqrt{\det U_{1}^{-1}\det U_{0}^{-1}\det U}\\
+ & =\sqrt{\det((U_{1}^{\mathrm{T}})^{-1}U(U_{0}^{*})^{-1})}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这里利用了行列式的一些性质。
+接下来我们利用
+\begin_inset Formula $U=U_{0}^{\dagger}U_{1}+V_{0}^{\dagger}V_{1}$
+\end_inset
+
+，
+再利用行列式的一些性质：
+
+\begin_inset Formula 
+\begin{align*}
+\langle|\mathrm{e}^{\hat{Z}_{1}^{\dagger}}\mathrm{e}^{\hat{Z}_{0}}|\rangle & =\sqrt{\det((U_{1}^{\mathrm{T}})^{-1}(U_{1}^{\mathrm{T}}U_{0}^{*}+V_{1}^{\mathrm{T}}V_{0}^{*})(U_{0}^{*})^{-1})}\\
+ & =\sqrt{\det(1+(U_{1}^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}V_{0}^{*}(U_{0}^{*})^{-1})}\\
+ & =\sqrt{\det(1-Z_{1}^{*}Z_{0})}\\
+ & =\exp\left(\frac{1}{2}\mathop{\text{Tr}}(\ln(1-Z_{1}^{*}Z_{0}))\right)
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+接下来我们给出有关Hamilton量的交叠积分
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里应该是需要推广Wick定理。
+
+\end_layout
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\[
+\langle\Phi_{1}|H|\Phi_{0}\rangle=\langle\Phi_{1}|\Phi_{0}\rangle\left(\mathop{\text{Tr}}(\varepsilon\rho^{10})+\frac{1}{2}\mathop{\text{Tr}}_{1}\mathop{\text{Tr}}_{1}(\rho^{10}\bar{v}\rho^{10})+\frac{1}{4}\mathop{\text{Tr}}_{2}\mathop{\text{Tr}}_{2}(\kappa^{01*}\bar{v}\kappa^{10})\right)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+定义转移矩阵
+\begin_inset Formula $\rho^{10}$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa^{10}$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa^{01}$
+\end_inset
+
+：
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{ll^{\prime}}^{10} & =\frac{\langle\Phi_{1}|c_{l^{\prime}}^{\dagger}c_{l}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}\\
+\kappa_{ll^{\prime}}^{10} & =\frac{\langle\Phi_{1}|c_{l^{\prime}}c_{l}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}\\
+\kappa_{ll^{\prime}}^{01*} & =\frac{\langle\Phi_{1}|c_{l}^{\dagger}c_{l^{\prime}}^{\dagger}|\Phi_{0}\rangle}{\langle\Phi_{1}|\Phi_{0}\rangle}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这些矩阵可以用密度
+\begin_inset Formula $\rho_{0}$
+\end_inset
+
+和
+\begin_inset Formula $\kappa_{0}$
+\end_inset
+
+，
+
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+的HFB系数
+\begin_inset Formula $U_{0}$
+\end_inset
+
+和
+\begin_inset Formula $V_{0}$
+\end_inset
+
+，
+Thouless矩阵
+\begin_inset Formula $Z$
+\end_inset
+
+表示，
+也可以在利用
+\begin_inset Formula $U_{0}$
+\end_inset
+
+，
+
+\begin_inset Formula $V_{0}$
+\end_inset
+
+，
+
+\begin_inset Formula $U_{1}$
+\end_inset
+
+和
+\begin_inset Formula $V_{1}$
+\end_inset
+
+的正交关系后用
+\begin_inset Formula $Z_{0}$
+\end_inset
+
+和
+\begin_inset Formula $Z_{1}$
+\end_inset
+
+表示成更对称的形式：
+
+\begin_inset Formula 
+\begin{alignat}{4}
+\rho^{10} & =\rho_{0}-V_{0}^{*}Z^{*}U_{0}^{\dagger} &  & = & -Z_{0} & (1-Z_{1}^{*}Z_{0})^{-1}Z_{1}^{*} &  & =V_{0}^{*}(U^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}\nonumber \\
+\kappa^{10} & =\kappa_{0}-V_{0}^{*}Z^{*}V_{0}^{\dagger} &  & = & Z_{0} & (1-Z_{1}^{*}Z_{0})^{-1} &  & =V_{0}^{*}(U^{\mathrm{T}})^{-1}U_{1}^{\mathrm{T}}\label{eq:10 density and abnormal density}\\
+\kappa^{01*} & =\kappa_{0}^{*}+U_{0}^{*}Z^{*}U_{0}^{\dagger} &  & = &  & (1-Z_{1}^{*}Z_{0})^{-1}Z_{1}^{*} &  & =-U_{0}^{*}(U^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}\nonumber 
+\end{alignat}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这里我们不去计算等式的第一步（留在后面计算），
+而是从第一步出发得到后面的等式，
+即相当于已知：
+
+\begin_inset Formula 
+\[
+\rho_{ll^{\prime}}^{10}=\rho_{0}-V_{0}^{*}Z^{*}U_{0}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用
+\begin_inset Formula $\rho=V^{*}V^{\mathrm{T}}$
+\end_inset
+
+，
+
+\begin_inset Formula $Z=-(U^{\dagger})^{-1}V^{\dagger}$
+\end_inset
+
+，
+得到：
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{ll^{\prime}}^{10} & =V_{0}^{*}V_{0}^{\mathrm{T}}+V_{0}^{*}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}U_{0}^{\dagger}\\
+ & =V_{0}^{*}(U^{\mathrm{T}})^{-1}U^{\mathrm{T}}V_{0}^{\mathrm{T}}+V_{0}^{*}(U^{\mathrm{T}})^{-1}V^{\mathrm{T}}U_{0}^{\dagger}\\
+ & =V_{0}^{*}(U^{\mathrm{T}})^{-1}(U^{\mathrm{T}}V_{0}^{\mathrm{T}}+V^{\mathrm{T}}U_{0}^{\dagger})
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:UV UV01"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+，
+得到：
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{ll^{\prime}}^{10} & =V_{0}^{*}(U^{\mathrm{T}})^{-1}(U^{\mathrm{T}}V_{0}^{\mathrm{T}}+V^{\dagger}U_{0}^{\dagger})\\
+ & =V_{0}^{*}(U^{\mathrm{T}})^{-1}[(U_{1}^{\mathrm{T}}U_{0}^{*}+V_{1}^{\mathrm{T}}V_{0}^{*})V_{0}^{\mathrm{T}}+(U_{1}^{\mathrm{T}}V_{0}+V_{1}^{\mathrm{T}}U_{0})U_{0}^{\dagger}]\\
+ & =V_{0}^{*}(U^{\mathrm{T}})^{-1}[U_{1}^{\mathrm{T}}(U_{0}^{*}V_{0}^{\mathrm{T}}+V_{0}U_{0}^{\dagger})+V_{1}^{\mathrm{T}}(V_{0}^{*}V_{0}^{\mathrm{T}}+U_{0}U_{0}^{\dagger})]
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+再利用正交关系，
+即可得到：
+
+\begin_inset Formula 
+\[
+\rho_{ll^{\prime}}^{10}=V_{0}^{*}(U^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+根据前面的推导我们知道：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\[
+(U_{1}^{\mathrm{T}})^{-1}U(U_{0}^{*})^{-1}=1-Z_{1}^{*}Z_{0}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+由此：
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{ll^{\prime}}^{10}=V_{0}^{*}(U^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}} & =V_{0}^{*}(U_{0}^{*})^{-1}U_{0}^{*}(U^{\mathrm{T}})^{-1}U_{1}^{\mathrm{T}}(U_{1}^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}\\
+ & =V_{0}^{*}(U_{0}^{*})^{-1}(1-Z_{1}^{*}Z_{0})^{-1}(U_{1}^{\mathrm{T}})^{-1}V_{1}^{\mathrm{T}}\\
+ & =-Z_{0}(1-Z_{1}^{*}Z_{0})^{-1}Z_{1}^{*}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这样我们就证明了第一个等式，
+其它两个等式类似。
+
+\end_layout
+
+\begin_layout Standard
+可以看出，
+把
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+替换为
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+
+，
+即可得到通常的密度
+\begin_inset Formula $\rho$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa$
+\end_inset
+
+和
+\begin_inset Formula $\kappa^{*}$
+\end_inset
+
+。
+用这种方式我们可以计算
+\begin_inset Formula $c_{l}^{\dagger}$
+\end_inset
+
+和
+\begin_inset Formula $c_{l}$
+\end_inset
+
+表示的任意算符的交叠积分。
+我们首先必须得到它相较于一个HFB波函数的期待值。
+根据Wick定理，
+我们可以把表达式展开成缩并的期待值，
+即
+\begin_inset Formula $\rho$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa$
+\end_inset
+
+和
+\begin_inset Formula $\kappa^{*}$
+\end_inset
+
+。
+为了计算这种不同基态的交叠积分，
+我们只需要把
+\begin_inset Formula $\rho$
+\end_inset
+
+替换成
+\begin_inset Formula $\rho^{10}$
+\end_inset
+
+，
+把
+\begin_inset Formula $\kappa$
+\end_inset
+
+替换成
+\begin_inset Formula $\kappa^{10}$
+\end_inset
+
+，
+把
+\begin_inset Formula $\kappa^{*}$
+\end_inset
+
+替换成
+\begin_inset Formula $\kappa^{01*}$
+\end_inset
+
+，
+并乘上
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+。
+显然，
+当我们把真空替换成任意HFB波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+
+和相应的准粒子算符
+\begin_inset Formula $c^{\dagger}$
+\end_inset
+
+和
+\begin_inset Formula $c$
+\end_inset
+
+时这些结论也成立。
+
+\end_layout
+
+\begin_layout Standard
+接下来我们给出
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:inner of Phi1 Phi0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+的推导：
+
+\end_layout
+
+\begin_layout Standard
+为了得到
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+我们在正则基下写
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+
+。
+这就是
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Phi1 in caonnical basis"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+。
+由于
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+不为零
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+是零的话行列式
+\begin_inset Formula $\det U$
+\end_inset
+
+也为零，
+因此还是相等。
+
+\end_layout
+
+\end_inset
+
+，
+因此没有阻塞能级，
+我们得到
+\begin_inset Formula $\langle\Phi_{1}|\Phi_{0}\rangle$
+\end_inset
+
+就是所有正实数
+\begin_inset Formula $u_{p}$
+\end_inset
+
+的乘积，
+这就是矩阵
+\begin_inset Formula $U$
+\end_inset
+
+的二重简并的本征值：
+
+\begin_inset Formula 
+\[
+\langle\Phi_{1}|\Phi_{0}\rangle=\prod_{p>0}u_{p}=\left(\prod_{p\gtrless0}u_{p}\right)^{1/2}=(\det U)^{1/2}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+现在我们导出用算符
+\begin_inset Formula $c$
+\end_inset
+
+和
+\begin_inset Formula $c^{\dagger}$
+\end_inset
+
+表示的任意算符的交叠积分。
+利用Thouless定理，
+我们得到：
+
+\begin_inset Formula 
+\begin{align*}
+|\Phi_{1}\rangle & =\mathrm{e}^{\hat{Z}}|\Phi_{0}\rangle\langle\Phi_{0}|\Phi_{1}\rangle\\
+\mathrm{e}^{-\hat{Z}^{\dagger}}|\Phi_{0}\rangle & =|\Phi_{0}\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+和：
+
+\begin_inset Formula 
+\[
+\langle\Phi_{1}|c_{l_{1}}^{\dagger}\dots c_{l_{p}}^{\dagger}c_{k_{1}}\dots c_{k_{q}}|\Phi_{0}\rangle=\langle\Phi_{1}|\Phi_{0}\rangle\langle\Phi_{0}|\bar{d}_{l_{1}}\dots\bar{d}_{l_{p}}d_{k_{1}}\dots d_{k_{1}}|\Phi_{0}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里我们引入了算符：
+
+\begin_inset Formula 
+\begin{align*}
+\bar{d}_{l} & =\mathrm{e}^{\hat{Z}^{\dagger}}c_{l}^{\dagger}\mathrm{e}^{-\hat{Z}^{\dagger}}\\
+d_{l} & =\mathrm{e}^{\hat{Z}^{\dagger}}c_{l}\mathrm{e}^{-\hat{Z}^{\dagger}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这些算符满足Fermi对易关系，
+因此我们可以利用Wick定理来计算矩阵元。
+这意味着我们只需要缩并
+\begin_inset Formula $\wick{\c1{\bar{d}}\c1{d}}$
+\end_inset
+
+，
+
+\begin_inset Formula $\wick{\c1{d}\c1{d}}$
+\end_inset
+
+和
+\begin_inset Formula $\wick{\c1{\bar{d}}\c1{\bar{d}}}$
+\end_inset
+
+，
+这给出了
+\begin_inset Formula $\rho^{10}$
+\end_inset
+
+，
+
+\begin_inset Formula $\kappa^{10}$
+\end_inset
+
+和
+\begin_inset Formula $\kappa^{01*}$
+\end_inset
+
+。
+把
+\begin_inset Formula $d$
+\end_inset
+
+和
+\begin_inset Formula $\bar{d}$
+\end_inset
+
+用
+\begin_inset Formula $\beta$
+\end_inset
+
+和
+\begin_inset Formula $\beta^{\dagger}$
+\end_inset
+
+表示，
+即可用于计算
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:10 density and abnormal density"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+：
+
+\begin_inset Formula 
+\begin{align*}
+\bar{d}_{l} & =\sum_{k}U_{0lk}^{*}\beta_{k}^{\dagger}+\sum_{k}(V_{0}+U_{0}^{*}Z^{*})_{lk}\beta_{k}\\
+d_{l} & =\sum_{k}(U_{0}+V_{0}^{*}Z^{*})_{lk}\beta_{k}+\sum_{k}V_{0lk}^{*}\beta_{k}^{\dagger}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+计算缩并即可得到：
+
+\begin_inset Formula 
+\begin{align*}
+\rho_{ll^{\prime}}^{10} & =\wick{\c1{\bar{d}_{l^{\prime}}}\c1{d_{l}}}=V_{0}^{*}(V_{0}^{\mathrm{T}}+Z^{\dagger}U_{0}^{\dagger})=\rho_{ll^{\prime}}-V_{0}^{*}Z^{*}U_{0}^{\dagger}\\
+\kappa_{ll^{\prime}}^{10} & =\wick{\c1{d_{l^{\prime}}}\c1{d_{l}}}=V_{0}^{*}(U_{0}^{\mathrm{T}}+Z^{\dagger}V_{0}^{\dagger})=\kappa_{ll^{\prime}}-V_{0}^{*}Z^{*}V_{0}^{\dagger}\\
+\kappa_{ll^{\prime}}^{10*} & =\wick{\c1{\bar{d}_{l}}\c1{\bar{d}_{l^{\prime}}}}=(V_{0}+U_{0}^{*}Z^{*})U_{0}^{\dagger}=\kappa_{ll^{\prime}}^{*}+U_{0}^{*}Z^{*}U_{0}^{\dagger}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+于是这证明了前面的公式。
+
+\end_layout
+
+\end_body
+\end_document

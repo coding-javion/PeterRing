@@ -1,0 +1,114 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings, decorations.pathmorphing, patterns}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  },
+  phonon/.style={
+    decorate,
+    decoration={snake, amplitude=1.1pt, segment length=4.6pt}
+  },
+  crossmark/.pic={
+    \draw[thick, line width=1pt] (-0.1, -0.1) -- (0.1, 0.1);
+    \draw[thick, line width=1pt] (-0.1, 0.1) -- (0.1, -0.1);
+  }
+]
+
+  % ========================================================
+  % Term 1: LHS Dressed Vertex
+  % ========================================================
+  \begin{scope}[shift={(0, 0)}]
+    \pic at (-1.2, 0) {crossmark};
+    \draw[thick, line width=1pt, dashed] (-1.1, 0) -- (-0.4, 0);
+
+    % Hatched blob
+    \fill[pattern=north east lines] (0, 0) circle (0.4);
+    \draw[thick, line width=1pt] (0, 0) circle (0.4);
+
+    % Outgoing k
+    \draw[thick, line width=1pt, arrowed] (45:0.4) -- +(0.65, 0.8) node[right=1pt, font=\small] {$k$};
+
+    % Incoming l
+    \draw[thick, line width=1pt, arrowed] ([shift={(0.65, -0.8)}]-45:0.4) node[right=1pt, font=\small] {$l$} -- (-45:0.4);
+  \end{scope}
+
+  % Equals sign
+  \node[font=\large] at (1.5, 0) {$=$};
+
+  % ========================================================
+  % Term 2: Bare vertex
+  % ========================================================
+  \begin{scope}[shift={(3.2, 0)}]
+    \pic at (-1.2, 0) {crossmark};
+    \draw[thick, line width=1pt, dashed] (-1.1, 0) -- (0, 0);
+
+    % Outgoing k
+    \draw[thick, line width=1pt, arrowed] (0, 0) -- (0.8, 0.95) node[right=1pt, font=\small] {$k$};
+
+    % Incoming l
+    \draw[thick, line width=1pt, arrowed] (0.8, -0.95) node[right=1pt, font=\small] {$l$} -- (0, 0);
+  \end{scope}
+
+  % Plus sign
+  \node[font=\large] at (4.9, 0) {$+$};
+
+  % ========================================================
+  % Term 3: Phonon to k
+  % ========================================================
+  \begin{scope}[shift={(6.7, 0)}]
+    \pic at (-1.2, 0) {crossmark};
+    \draw[thick, line width=1pt, dashed] (-1.1, 0) -- (-0.1, 0);
+
+    \coordinate (V) at (0.45, 0.55);
+
+    % Phonon wavy line going up to vertex V
+    \draw[thick, line width=1pt, phonon] (-0.1, 0) to[out=0, in=-115] (V);
+    \node[left=2pt, font=\small] at (0.05, 0.35) {$\mu$};
+
+    % Lower fermion line
+    \draw[thick, line width=1pt, arrowed] (0.8, -0.95) node[right=1pt, font=\small] {$l$} -- (V);
+
+    % Upper fermion line
+    \draw[thick, line width=1pt, arrowed] (V) -- (0.7, 1.15) node[right=1pt, font=\small] {$k$};
+  \end{scope}
+
+  % Plus sign
+  \node[font=\large] at (8.7, 0) {$+$};
+
+  % ========================================================
+  % Term 4: Phonon to l
+  % ========================================================
+  \begin{scope}[shift={(10.6, 0)}]
+    \pic at (-1.2, 0) {crossmark};
+    \draw[thick, line width=1pt, dashed] (-1.1, 0) -- (-0.1, 0);
+
+    \coordinate (V) at (0.45, -0.55);
+
+    % Phonon wavy line going down to vertex V
+    \draw[thick, line width=1pt, phonon] (-0.1, 0) to[out=0, in=115] (V);
+    \node[left=2pt, font=\small] at (0.05, -0.35) {$\mu$};
+
+    % Lower fermion line
+    \draw[thick, line width=1pt, arrowed] (0.7, -1.15) node[right=1pt, font=\small] {$l$} -- (V);
+
+    % Upper fermion line
+    \draw[thick, line width=1pt, arrowed] (V) -- (0.8, 0.95) node[right=1pt, font=\small] {$k$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

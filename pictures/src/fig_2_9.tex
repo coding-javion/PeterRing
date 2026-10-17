@@ -1,0 +1,72 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Column x-centers
+  \def\xA{2.0}
+  \def\xB{6.0}
+  \def\xC{10.0}
+  \def\w{1.1} % half-width of level lines
+
+  % --- 10Be (Left column) ---
+  % 0+ ground state
+  \draw[line width=1.4pt] ({\xA - \w}, 2.1) -- ({\xA + \w}, 2.1) node[above=1.5pt, midway, font=\normalsize] {$0^+$};
+  % 2+ excited state
+  \draw[line width=1.4pt] ({\xA - \w}, 5.1) -- ({\xA + \w}, 5.1) node[above=1.5pt, midway, font=\normalsize] {$2^+$};
+
+  % --- 10B (Center column) ---
+  % 3+ ground state (T=0)
+  \draw[line width=1.4pt] ({\xB - \w}, 0.6) -- ({\xB + \w}, 0.6) node[above=1.5pt, midway, font=\normalsize] {$3^+$};
+  % 1+ first excited (T=0)
+  \draw[line width=1.4pt] ({\xB - \w}, 1.4) -- ({\xB + \w}, 1.4) node[above=1.5pt, midway, font=\normalsize] {$1^+$};
+  % 0+ analog state (T=1)
+  \draw[line width=1.4pt] ({\xB - \w}, 2.3) -- ({\xB + \w}, 2.3) node[above=1.5pt, midway, font=\normalsize] {$0^+$};
+  % 1+ third excited (T=0)
+  \draw[line width=1.4pt] ({\xB - \w}, 3.2) -- ({\xB + \w}, 3.2) node[above=1.5pt, midway, font=\normalsize] {$1^+$};
+  % 2+ analog state (T=1)
+  \draw[line width=1.4pt] ({\xB - \w}, 5.3) -- ({\xB + \w}, 5.3) node[above=1.5pt, midway, font=\normalsize] {$2^+$};
+
+  % --- 10C (Right column) ---
+  % 0+ ground state
+  \draw[line width=1.4pt] ({\xC - \w}, 2.15) -- ({\xC + \w}, 2.15) node[above=1.5pt, midway, font=\normalsize] {$0^+$};
+  % 2+ excited state
+  \draw[line width=1.4pt] ({\xC - \w}, 5.1) -- ({\xC + \w}, 5.1) node[above=1.5pt, midway, font=\normalsize] {$2^+$};
+
+  % --- Dashed connecting lines between analog states ---
+  % 0+ triplet
+  \draw[line width=1.0pt, dashed] ({\xA + \w}, 2.1) -- ({\xB - \w}, 2.3);
+  \draw[line width=1.0pt, dashed] ({\xB + \w}, 2.3) -- ({\xC - \w}, 2.15);
+
+  % 2+ triplet
+  \draw[line width=1.0pt, dashed] ({\xA + \w}, 5.1) -- ({\xB - \w}, 5.3);
+  \draw[line width=1.0pt, dashed] ({\xB + \w}, 5.3) -- ({\xC - \w}, 5.1);
+
+  % --- Isospin T labels on far right ---
+  \node[right=14pt, font=\large] at ({\xC + \w}, 5.1) {$T = 1$};
+  \node[right=14pt, font=\large] at ({\xC + \w}, 3.2) {$T = 0$};
+  \node[right=14pt, font=\large] at ({\xC + \w}, 2.3) {$T = 1$};
+  \node[right=14pt, font=\large] at ({\xC + \w}, 1.4) {$T = 0$};
+  \node[right=14pt, font=\large] at ({\xC + \w}, 0.6) {$T = 0$};
+
+  % --- Nucleus labels and T3 labels ---
+  \node[font=\bfseries\LARGE] at (\xA, -0.2) {$^{10}\mathrm{Be}$};
+  \node[font=\large] at (\xA, -0.9) {$T_3 = -1$};
+
+  \node[font=\bfseries\LARGE] at (\xB, -0.9) {$^{10}\mathrm{B}$};
+  \node[font=\large] at (\xB, -1.6) {$T_3 = 0$};
+
+  \node[font=\bfseries\LARGE] at (\xC, -0.2) {$^{10}\mathrm{C}$};
+  \node[font=\large] at (\xC, -0.9) {$T_3 = 1$};
+
+\end{tikzpicture}
+\end{document}

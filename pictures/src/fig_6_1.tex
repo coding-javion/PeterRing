@@ -1,0 +1,255 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions
+  % Energy scale: 1 MeV = 2.0 cm
+  \def\yscale{2.0}
+  \def\w{0.36} % half-width of level bar: 2*\w = 0.72 cm
+
+  % Bounding box coordinates
+  \coordinate (BL) at (0, -0.8);
+  \coordinate (TR) at (15.5, 9.0);
+
+  % Draw outer frame
+  \draw[line width=0.8pt] (BL) rectangle (TR);
+
+  % Y-axis ticks and labels on left border (x = 0)
+  \foreach \y in {0, 1, 2, 3, 4} {
+    \draw[line width=0.7pt] (0, {\y * \yscale}) -- (0.18, {\y * \yscale});
+    \node[left=4pt, font=\small] at (0, {\y * \yscale}) {$\y$};
+  }
+
+  % Y-axis Title
+  \node[font=\small, align=center] at (-0.65, {3.5 * \yscale}) {$E$\\[2pt]\scriptsize(MeV)};
+
+  % Column positions
+  \def\xone{1.3}
+  \def\xtwo{3.0}
+  \def\xthree{5.7}
+  \def\xfour{7.8}
+  \def\xfive{10.3}
+  \def\xsix{12.4}
+  \def\xseven{14.4}
+
+  % Bottom labels for isotopes
+  \node[font=\small] at (\xone, -0.4) {$^{115}\text{Sn}$};
+  \node[font=\small] at (\xtwo, -0.4) {$^{116}\text{Sn}$};
+  \node[font=\small] at (\xthree, -0.4) {$^{117}\text{Sn}$};
+  \node[font=\small] at (\xfour, -0.4) {$^{118}\text{Sn}$};
+  \node[font=\small] at (\xfive, -0.4) {$^{119}\text{Sn}$};
+  \node[font=\small] at (\xsix, -0.4) {$^{120}\text{Sn}$};
+  \node[font=\small] at (\xseven, -0.4) {$^{121}\text{Sn}$};
+
+  % ----------------------------------------------------
+  % Column 1: 115Sn
+  % ----------------------------------------------------
+  % 1.83 MeV: 1/2+
+  \draw[line width=1.1pt] ({\xone-\w}, {1.83*\yscale}) -- ({\xone+\w}, {1.83*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xone+\w}, {1.83*\yscale}) {$1/2^+$};
+
+  % 2.32 MeV: (3/2+)
+  \draw[line width=1.1pt] ({\xone-\w}, {2.32*\yscale}) -- ({\xone+\w}, {2.32*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xone+\w}, {2.32*\yscale}) {$(3/2^+)$};
+
+  % ----------------------------------------------------
+  % Column 2: 116Sn
+  % ----------------------------------------------------
+  % 0.00: 0+
+  \draw[line width=1.1pt] ({\xtwo-\w}, {0.00*\yscale}) -- ({\xtwo+\w}, {0.00*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {0.00*\yscale}) {$0^+$};
+
+  % 1.25: 2+
+  \draw[line width=1.1pt] ({\xtwo-\w}, {1.25*\yscale}) -- ({\xtwo+\w}, {1.25*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {1.25*\yscale}) {$2^+$};
+
+  % 2.05: 2+
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.05*\yscale}) -- ({\xtwo+\w}, {2.05*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {2.05*\yscale}) {$2^+$};
+
+  % 2.15, 2.22
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.15*\yscale}) -- ({\xtwo+\w}, {2.15*\yscale});
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.22*\yscale}) -- ({\xtwo+\w}, {2.22*\yscale});
+
+  % 2.28: (4+)
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.28*\yscale}) -- ({\xtwo+\w}, {2.28*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {2.28*\yscale}) {$(4^+)$};
+
+  % 2.40: dashed (4+)
+  \draw[line width=1.1pt, dashed] ({\xtwo-\w}, {2.40*\yscale}) -- ({\xtwo+\w}, {2.40*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {2.40*\yscale}) {$(4^+)$};
+
+  % 2.44
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.44*\yscale}) -- ({\xtwo+\w}, {2.44*\yscale});
+
+  % 2.70: (4+)
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.70*\yscale}) -- ({\xtwo+\w}, {2.70*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {2.70*\yscale}) {$(4^+)$};
+
+  % 2.78
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.78*\yscale}) -- ({\xtwo+\w}, {2.78*\yscale});
+
+  % 2.97: (4+)
+  \draw[line width=1.1pt] ({\xtwo-\w}, {2.97*\yscale}) -- ({\xtwo+\w}, {2.97*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xtwo+\w}, {2.97*\yscale}) {$(4^+)$};
+
+  % ----------------------------------------------------
+  % Column 3: 117Sn
+  % ----------------------------------------------------
+  % 2.12: 1/2+
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.12*\yscale}) -- ({\xthree+\w}, {2.12*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xthree+\w}, {2.12*\yscale}) {$1/2^+$};
+
+  % 2.28: 3/2+ (label on left)
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.28*\yscale}) -- ({\xthree+\w}, {2.28*\yscale});
+  \node[left=2pt, font=\scriptsize] at ({\xthree-\w}, {2.28*\yscale}) {$3/2^+$};
+
+  % 2.45: 11/2-
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.45*\yscale}) -- ({\xthree+\w}, {2.45*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xthree+\w}, {2.45*\yscale}) {$11/2^-$};
+
+  % 2.84: 7/2+ (label on right)
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.84*\yscale}) -- ({\xthree+\w}, {2.84*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xthree+\w}, {2.84*\yscale}) {$7/2^+$};
+
+  % 2.93: (1/2+, 3/2+) (label on left)
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.93*\yscale}) -- ({\xthree+\w}, {2.93*\yscale});
+  \node[left=2pt, font=\scriptsize, align=right] at ({\xthree-\w}, {2.93*\yscale}) {$\substack{(1/2^+\!,\\3/2^+)}$};
+
+  % 2.96
+  \draw[line width=1.1pt] ({\xthree-\w}, {2.98*\yscale}) -- ({\xthree+\w}, {2.98*\yscale});
+
+  % 3.03: 3/2+, 5/2+
+  \draw[line width=1.1pt] ({\xthree-\w}, {3.04*\yscale}) -- ({\xthree+\w}, {3.04*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xthree+\w}, {3.04*\yscale}) {$3/2^+, 5/2^+$};
+
+  % 3.19: 3/2+, 5/2+
+  \draw[line width=1.1pt] ({\xthree-\w}, {3.19*\yscale}) -- ({\xthree+\w}, {3.19*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xthree+\w}, {3.19*\yscale}) {$3/2^+, 5/2^+$};
+
+  % ----------------------------------------------------
+  % Column 4: 118Sn
+  % ----------------------------------------------------
+  % 0.28: 0+
+  \draw[line width=1.1pt] ({\xfour-\w}, {0.28*\yscale}) -- ({\xfour+\w}, {0.28*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {0.28*\yscale}) {$0^+$};
+
+  % 1.51: 2+
+  \draw[line width=1.1pt] ({\xfour-\w}, {1.51*\yscale}) -- ({\xfour+\w}, {1.51*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {1.51*\yscale}) {$2^+$};
+
+  % 2.00: 0+, 1+
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.00*\yscale}) -- ({\xfour+\w}, {2.00*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {2.00*\yscale}) {$0^+\!,1^+$};
+
+  % 2.28: 0+, 1+
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.28*\yscale}) -- ({\xfour+\w}, {2.28*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {2.28*\yscale}) {$0^+\!,1^+$};
+
+  % 2.48: 4(+)
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.48*\yscale}) -- ({\xfour+\w}, {2.48*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {2.48*\yscale}) {$4^{(+)}$};
+
+  % 2.72: 0+, 1+
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.72*\yscale}) -- ({\xfour+\w}, {2.72*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {2.72*\yscale}) {$0^+\!,1^+$};
+
+  % 2.76
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.76*\yscale}) -- ({\xfour+\w}, {2.76*\yscale});
+
+  % 2.80: 5(+)
+  \draw[line width=1.1pt] ({\xfour-\w}, {2.80*\yscale}) -- ({\xfour+\w}, {2.80*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfour+\w}, {2.83*\yscale}) {$5^{(+)}$};
+
+  % ----------------------------------------------------
+  % Column 5: 119Sn
+  % ----------------------------------------------------
+  % 2.71: 3/2+ (left), 11/2- (right)
+  \draw[line width=1.1pt] ({\xfive-\w}, {2.71*\yscale}) -- ({\xfive+\w}, {2.71*\yscale});
+  \node[left=2pt, font=\scriptsize] at ({\xfive-\w}, {2.71*\yscale}) {$3/2^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xfive+\w}, {2.71*\yscale}) {$11/2^-$};
+
+  % 2.77
+  \draw[line width=1.1pt] ({\xfive-\w}, {2.77*\yscale}) -- ({\xfive+\w}, {2.77*\yscale});
+
+  % 2.81
+  \draw[line width=1.1pt] ({\xfive-\w}, {2.81*\yscale}) -- ({\xfive+\w}, {2.81*\yscale});
+
+  % 3.44: dashed
+  \draw[line width=1.1pt, dashed] ({\xfive-\w}, {3.44*\yscale}) -- ({\xfive+\w}, {3.44*\yscale});
+
+  % 3.51
+  \draw[line width=1.1pt] ({\xfive-\w}, {3.51*\yscale}) -- ({\xfive+\w}, {3.51*\yscale});
+  \node[left=2pt, font=\scriptsize] at ({\xfive-\w}, {3.54*\yscale}) {$(7/2^+)$};
+
+  % 3.61: 3/2+ (right)
+  \draw[line width=1.1pt] ({\xfive-\w}, {3.61*\yscale}) -- ({\xfive+\w}, {3.61*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xfive+\w}, {3.61*\yscale}) {$3/2^+$};
+
+  % ----------------------------------------------------
+  % Column 6: 120Sn
+  % ----------------------------------------------------
+  % 0.43: 0+
+  \draw[line width=1.1pt] ({\xsix-\w}, {0.43*\yscale}) -- ({\xsix+\w}, {0.43*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {0.43*\yscale}) {$0^+$};
+
+  % 1.62: 2+
+  \draw[line width=1.1pt] ({\xsix-\w}, {1.62*\yscale}) -- ({\xsix+\w}, {1.62*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {1.62*\yscale}) {$2^+$};
+
+  % 2.28: 0+, 1+
+  \draw[line width=1.1pt] ({\xsix-\w}, {2.28*\yscale}) -- ({\xsix+\w}, {2.28*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {2.28*\yscale}) {$0^+\!,1^+$};
+
+  % 2.56: 0+, 1+
+  \draw[line width=1.1pt] ({\xsix-\w}, {2.56*\yscale}) -- ({\xsix+\w}, {2.56*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {2.56*\yscale}) {$0^+\!,1^+$};
+
+  % 2.63: 4+
+  \draw[line width=1.1pt] ({\xsix-\w}, {2.63*\yscale}) -- ({\xsix+\w}, {2.63*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {2.63*\yscale}) {$4^+$};
+
+  % 2.81: 6+
+  \draw[line width=1.1pt] ({\xsix-\w}, {2.81*\yscale}) -- ({\xsix+\w}, {2.81*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {2.81*\yscale}) {$6^+$};
+
+  % 2.91: 7-
+  \draw[line width=1.1pt] ({\xsix-\w}, {2.91*\yscale}) -- ({\xsix+\w}, {2.91*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {2.91*\yscale}) {$7^-$};
+
+  % 3.01: 0+, 1+
+  \draw[line width=1.1pt] ({\xsix-\w}, {3.01*\yscale}) -- ({\xsix+\w}, {3.01*\yscale});
+  \node[right=2pt, font=\scriptsize] at ({\xsix+\w}, {3.01*\yscale}) {$0^+\!,1^+$};
+
+  % ----------------------------------------------------
+  % Column 7: 121Sn
+  % ----------------------------------------------------
+  % 3.12, 3.15, 3.20: (7/2+), 5/2+
+  \draw[line width=1.1pt] ({\xseven-\w}, {3.12*\yscale}) -- ({\xseven+\w}, {3.12*\yscale});
+  \draw[line width=1.1pt] ({\xseven-\w}, {3.15*\yscale}) -- ({\xseven+\w}, {3.15*\yscale});
+  \draw[line width=1.1pt, dashed] ({\xseven-\w}, {3.20*\yscale}) -- ({\xseven+\w}, {3.20*\yscale});
+  \node[left=2pt, font=\scriptsize] at ({\xseven-\w}, {3.30*\yscale}) {$(7/2^+)$};
+  \node[left=2pt, font=\scriptsize] at ({\xseven-\w}, {3.12*\yscale}) {$5/2^+$};
+
+  % 3.29: dashed
+  \draw[line width=1.1pt, dashed] ({\xseven-\w}, {3.29*\yscale}) -- ({\xseven+\w}, {3.29*\yscale});
+
+  % 3.69: solid
+  \draw[line width=1.1pt] ({\xseven-\w}, {3.69*\yscale}) -- ({\xseven+\w}, {3.69*\yscale});
+
+  % 4.22: dashed
+  \draw[line width=1.1pt, dashed] ({\xseven-\w}, {4.22*\yscale}) -- ({\xseven+\w}, {4.22*\yscale});
+
+\end{tikzpicture}
+\end{document}

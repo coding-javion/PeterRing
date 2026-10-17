@@ -1,0 +1,240 @@
+\documentclass[tikz,border=16pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{15.0}
+  \def\h{11.5}
+
+  % Outer frame rectangle
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Three horizontal baselines at E=0
+  % Top zero line
+  \draw[line width=0.65pt] (0, 10.113) -- (\w, 10.113);
+  % Middle zero line
+  \draw[line width=0.65pt] (0, 8.087) -- (\w, 8.087);
+  % Bottom zero line
+  \draw[line width=0.65pt] (0, 1.348) -- (\w, 1.348);
+
+  % Ticks on top and bottom borders (Mass Number A)
+  \foreach \A in {140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340} {
+    \pgfmathsetmacro{\xpos}{(\A - 140.0) * \w / 200.0}
+    \draw[line width=0.65pt] (\xpos, 0) -- (\xpos, 0.14);
+    \draw[line width=0.65pt] (\xpos, \h) -- (\xpos, \h - 0.14);
+    \node[below=3pt, font=\small] at (\xpos, 0) {$\A$};
+  }
+  \node[below=17pt, font=\normalsize] at ({\w / 2}, 0) {Mass \quad Number \quad $A$};
+
+  % ==================== TICKS & LABELS: TOP PANEL ====================
+  \foreach \e/\lbl in {2/{2}, 0/{0}, -2/{-2}} {
+    \pgfmathsetmacro{\ypos}{10.113 + \e * 0.3388}
+    \draw[line width=0.65pt] (0, \ypos) -- (0.14, \ypos);
+    \draw[line width=0.65pt] (\w, \ypos) -- (\w - 0.14, \ypos);
+    \node[left=3pt, font=\small] at (0, \ypos) {$\lbl$};
+  }
+  \foreach \e in {1, -1} {
+    \pgfmathsetmacro{\ypos}{10.113 + \e * 0.3388}
+    \draw[line width=0.5pt] (0, \ypos) -- (0.08, \ypos);
+    \draw[line width=0.5pt] (\w, \ypos) -- (\w - 0.08, \ypos);
+  }
+  \node[rotate=90, font=\small, align=center] at (-1.35, 10.113) {Expt. shell\\[1pt]{\scriptsize $(M_{\mathrm{exp}} - M_{\mathrm{liquid\ drop}})$}\\[1pt]{\footnotesize $(\mathrm{MeV})$}};
+
+  % ==================== TICKS & LABELS: MIDDLE PANEL ====================
+  \foreach \e in {0, -2, -4, -6, -8, -10, -12, -14} {
+    \pgfmathsetmacro{\ypos}{8.087 + \e * 0.3388}
+    \draw[line width=0.65pt] (0, \ypos) -- (0.14, \ypos);
+    \draw[line width=0.65pt] (\w, \ypos) -- (\w - 0.14, \ypos);
+    \node[left=3pt, font=\small] at (0, \ypos) {$\e$};
+  }
+  \foreach \e in {-1, -3, -5, -7, -9, -11, -13} {
+    \pgfmathsetmacro{\ypos}{8.087 + \e * 0.3388}
+    \draw[line width=0.5pt] (0, \ypos) -- (0.08, \ypos);
+    \draw[line width=0.5pt] (\w, \ypos) -- (\w - 0.08, \ypos);
+  }
+  \node[rotate=90, font=\small, align=center] at (-1.35, 5.7) {Theoretical shell\\[2pt]{\footnotesize $(\mathrm{MeV})$}};
+
+  % ==================== TICKS & LABELS: BOTTOM PANEL ====================
+  \foreach \e/\lbl in {2/{2}, 0/{0}, -2/{-2}} {
+    \pgfmathsetmacro{\ypos}{1.348 + \e * 0.3388}
+    \draw[line width=0.65pt] (0, \ypos) -- (0.14, \ypos);
+    \draw[line width=0.65pt] (\w, \ypos) -- (\w - 0.14, \ypos);
+    \node[left=3pt, font=\small] at (0, \ypos) {$\lbl$};
+  }
+  \foreach \e in {1, -1} {
+    \pgfmathsetmacro{\ypos}{1.348 + \e * 0.3388}
+    \draw[line width=0.5pt] (0, \ypos) -- (0.08, \ypos);
+    \draw[line width=0.5pt] (\w, \ypos) -- (\w - 0.08, \ypos);
+  }
+  \node[rotate=90, font=\small, align=center] at (-1.35, 1.348) {Discrepancy\\[2pt]{\footnotesize $(\mathrm{MeV})$}};
+
+
+  % --- TOP PANEL CURVES (DASHED EXPERIMENTAL) ---
+  \draw[line width=0.65pt, dashed] (0.9, 10.575) -- (1.05, 10.642) -- (1.2, 10.541);
+  \draw[line width=0.65pt, dashed] (1.05, 10.473) -- (1.2, 10.541) -- (1.35, 10.371) -- (1.5, 10.168);
+  \draw[line width=0.65pt, dashed] (1.35, 10.609) -- (1.5, 10.473) -- (1.65, 10.405) -- (1.8, 10.27);
+  \draw[line width=0.65pt, dashed] (1.65, 10.49) -- (1.8, 10.422) -- (1.95, 10.304) -- (2.1, 9.999) -- (2.25, 9.88);
+  \draw[line width=0.65pt, dashed] (1.95, 10.304) -- (2.1, 10.202) -- (2.25, 10.049) -- (2.4, 9.897) -- (2.55, 9.863) -- (2.7, 9.761);
+  \draw[line width=0.65pt, dashed] (2.4, 10.1) -- (2.55, 10.016) -- (2.7, 9.914) -- (2.85, 9.863) -- (3.0, 9.931);
+  \draw[line width=0.65pt, dashed] (2.85, 9.914) -- (3.0, 9.829) -- (3.15, 9.728) -- (3.3, 9.694) -- (3.45, 9.575);
+  \draw[line width=0.65pt, dashed] (3.3, 9.66) -- (3.45, 9.609) -- (3.6, 9.507) -- (3.75, 9.372);
+  \draw[line width=0.65pt, dashed] (3.6, 9.66) -- (3.75, 9.575) -- (3.9, 9.49);
+  \draw[line width=0.65pt, dashed] (4.05, 9.507) -- (4.2, 9.27) -- (4.35, 8.965) -- (4.5, 8.626) -- (4.65, 8.355) -- (4.8, 8.118) -- (4.95, 7.915) -- (5.062, 7.796) -- (5.175, 8.152) -- (5.325, 8.559) -- (5.475, 8.931) -- (5.625, 9.236) -- (5.85, 9.609) -- (6.075, 9.914) -- (6.3, 10.151) -- (6.45, 10.236);
+  \draw[line width=0.65pt, dashed] (6.45, 10.236) -- (6.6, 10.27) -- (6.75, 10.253) -- (6.9, 10.168) -- (7.05, 10.049);
+  \draw[line width=0.65pt, dashed] (6.9, 10.236) -- (7.05, 10.168) -- (7.2, 10.016) -- (7.35, 9.897) -- (7.5, 9.863);
+  \draw[line width=0.65pt, dashed] (7.2, 9.897) -- (7.35, 9.829) -- (7.5, 9.694) -- (7.65, 9.643) -- (7.8, 9.626);
+  \draw[line width=0.65pt, dashed] (7.5, 9.897) -- (7.65, 9.846) -- (7.8, 9.761) -- (7.95, 9.728) -- (8.1, 9.677);
+  \draw[line width=0.65pt, dashed] (7.8, 9.66) -- (7.95, 9.609) -- (8.1, 9.49) -- (8.25, 9.44) -- (8.4, 9.389);
+  \draw[line width=0.65pt, dashed] (8.25, 9.457) -- (8.4, 9.355) -- (8.55, 9.338) -- (8.7, 9.27);
+
+  % --- MIDDLE PANEL CURVES (SOLID CALCULATED) ---
+  \draw[line width=0.65pt] (0.75, 7.785) -- (0.9, 7.887) -- (1.05, 7.955) -- (1.2, 7.955);
+  \draw[line width=0.65pt] (1.05, 7.87) -- (1.2, 7.938) -- (1.35, 7.938) -- (1.5, 7.836);
+  \draw[line width=0.65pt] (1.2, 7.972) -- (1.35, 7.938) -- (1.5, 7.836) -- (1.65, 7.752) -- (1.8, 7.667) -- (1.95, 7.599);
+  \draw[line width=0.65pt] (1.5, 7.989) -- (1.65, 7.921) -- (1.8, 7.802) -- (1.95, 7.684) -- (2.1, 7.582) -- (2.25, 7.497);
+  \draw[line width=0.65pt] (1.8, 8.023) -- (1.95, 7.904) -- (2.1, 7.752) -- (2.25, 7.599) -- (2.4, 7.497) -- (2.55, 7.464) -- (2.7, 7.447);
+  \draw[line width=0.65pt] (2.25, 7.701) -- (2.4, 7.633) -- (2.55, 7.548) -- (2.7, 7.48) -- (2.85, 7.48) -- (3.0, 7.531);
+  \draw[line width=0.65pt] (2.7, 7.548) -- (2.85, 7.514) -- (3.0, 7.514) -- (3.15, 7.548) -- (3.3, 7.548) -- (3.45, 7.497);
+  \draw[line width=0.65pt] (3.0, 7.548) -- (3.15, 7.548) -- (3.3, 7.514) -- (3.45, 7.447) -- (3.6, 7.362) -- (3.75, 7.26);
+  \draw[line width=0.65pt] (3.45, 7.616) -- (3.6, 7.548) -- (3.75, 7.48) -- (3.9, 7.379) -- (4.05, 7.243) -- (4.2, 7.04);
+  \draw[line width=0.65pt] (3.9, 7.616) -- (4.05, 7.514) -- (4.2, 7.311) -- (4.35, 7.04) -- (4.5, 6.566) -- (4.65, 6.125) -- (4.8, 5.549);
+  \draw[line width=0.65pt] (4.05, 7.525) -- (4.125, 7.033) -- (4.2, 6.874) -- (4.275, 6.694) -- (4.35, 6.511) -- (4.425, 6.305) -- (4.5, 6.071) -- (4.575, 5.942) -- (4.65, 5.637) -- (4.725, 5.373) -- (4.8, 5.058) -- (4.875, 4.861) -- (4.95, 4.601) -- (5.025, 4.343) -- (5.1, 3.916) -- (5.175, 4.343) -- (5.25, 4.634) -- (5.325, 4.899) -- (5.4, 5.193) -- (5.475, 5.36) -- (5.55, 5.664);
+  \draw[line width=0.65pt] (4.8, 5.99) -- (4.875, 5.719) -- (5.025, 5.214) -- (5.175, 4.875) -- (5.25, 4.634) -- (5.4, 5.193) -- (5.55, 5.38) -- (5.7, 5.448);
+  \draw[line width=0.65pt] (5.1, 5.18) -- (5.25, 4.973) -- (5.4, 4.899) -- (5.55, 5.024) -- (5.7, 5.109);
+  \draw[line width=0.65pt] (5.55, 5.664) -- (5.7, 6.227) -- (5.85, 6.735) -- (6.0, 7.142) -- (6.15, 7.48) -- (6.3, 7.718) -- (6.45, 7.887);
+  \draw[line width=0.65pt] (6.15, 7.548) -- (6.3, 7.718) -- (6.45, 7.87) -- (6.6, 7.904) -- (6.75, 7.87) -- (6.9, 7.785) -- (7.05, 7.684);
+  \draw[line width=0.65pt] (6.6, 7.785) -- (6.75, 7.718) -- (6.9, 7.633) -- (7.05, 7.565) -- (7.2, 7.48) -- (7.35, 7.413) -- (7.5, 7.362);
+  \draw[line width=0.65pt] (7.05, 7.565) -- (7.2, 7.48) -- (7.35, 7.413) -- (7.5, 7.328) -- (7.65, 7.26) -- (7.8, 7.209) -- (7.95, 7.159);
+  \draw[line width=0.65pt] (7.35, 7.379) -- (7.5, 7.311) -- (7.65, 7.243) -- (7.8, 7.159) -- (7.95, 7.074) -- (8.1, 6.989) -- (8.25, 6.921);
+  \draw[line width=0.65pt] (7.8, 7.04) -- (7.95, 6.989) -- (8.1, 6.921) -- (8.25, 6.854) -- (8.4, 6.803) -- (8.55, 6.735) -- (8.7, 6.684);
+  \draw[line width=0.65pt] (8.25, 6.803) -- (8.4, 6.752) -- (8.55, 6.701) -- (8.7, 6.65) -- (8.85, 6.617) -- (9.0, 6.566) -- (9.15, 6.515);
+  \draw[line width=0.65pt] (8.7, 6.667) -- (8.85, 6.65) -- (9.0, 6.65) -- (9.15, 6.684) -- (9.3, 6.752) -- (9.45, 6.854) -- (9.6, 6.989);
+  \draw[line width=0.65pt] (9.15, 6.871) -- (9.3, 6.938) -- (9.45, 7.023) -- (9.6, 7.125) -- (9.75, 7.243) -- (9.9, 7.362) -- (10.05, 7.464);
+  \draw[line width=0.65pt] (9.45, 7.243) -- (9.6, 7.328) -- (9.75, 7.43) -- (9.9, 7.531) -- (10.05, 7.599) -- (10.2, 7.667) -- (10.35, 7.701);
+  \draw[line width=0.65pt] (9.9, 7.582) -- (10.05, 7.633) -- (10.2, 7.667) -- (10.35, 7.667) -- (10.5, 7.633) -- (10.65, 7.565) -- (10.8, 7.464);
+  \draw[line width=0.65pt] (10.8, 7.464) -- (10.95, 7.294) -- (11.1, 7.209) -- (11.25, 7.172) -- (11.4, 7.006) -- (11.55, 6.752) -- (11.7, 6.464) -- (11.85, 6.227);
+  \draw[line width=0.65pt] (11.55, 6.532) -- (11.7, 6.43) -- (11.85, 6.329) -- (12.0, 6.176);
+  \draw[line width=0.65pt] (11.55, 6.227) -- (11.7, 6.125) -- (11.85, 6.024) -- (12.0, 5.888) -- (12.15, 5.719);
+  \draw[line width=0.65pt] (11.25, 7.172) -- (11.4, 6.972) -- (11.55, 6.735) -- (11.7, 6.464) -- (11.85, 6.227) -- (12.0, 5.99);
+  \draw[line width=0.65pt] (11.55, 5.99) -- (11.7, 5.854) -- (11.85, 5.719) -- (12.0, 5.583) -- (12.15, 5.481);
+  \draw[line width=0.65pt] (11.55, 5.786) -- (11.7, 5.651) -- (11.85, 5.515) -- (12.0, 5.38) -- (12.15, 5.312);
+  \draw[line width=0.65pt] (11.55, 6.532) -- (11.55, 5.786);
+  \draw[line width=0.65pt] (11.7, 6.43) -- (11.7, 5.651);
+  \draw[line width=0.65pt] (11.85, 6.329) -- (11.85, 5.515);
+  \draw[line width=0.65pt] (12.0, 6.176) -- (12.0, 5.38);
+  \draw[line width=0.65pt] (12.15, 5.719) -- (12.15, 5.312);
+  \draw[line width=0.65pt] (12.15, 5.312) -- (12.3, 5.414) -- (12.45, 5.481) -- (12.6, 5.481) -- (12.9, 5.481) -- (13.2, 5.448);
+  \draw[line width=0.65pt] (13.2, 5.448) -- (13.35, 5.617) -- (13.5, 6.057) -- (13.65, 6.464) -- (13.8, 6.905);
+  \draw[line width=0.65pt] (13.65, 6.905) -- (13.8, 7.243) -- (13.95, 7.48) -- (14.1, 7.582) -- (14.25, 7.599) -- (14.4, 7.582);
+  \draw[line width=0.65pt] (14.25, 7.582) -- (14.4, 7.565) -- (14.55, 7.514) -- (14.7, 7.447) -- (14.85, 7.379);
+
+  % --- BOTTOM PANEL CURVES (SOLID DIFFERENCE) ---
+  \draw[line width=0.65pt] (0.9, 1.382) -- (1.05, 1.399) -- (1.2, 1.382) -- (1.35, 1.331) -- (1.5, 1.298);
+  \draw[line width=0.65pt] (1.2, 1.467) -- (1.35, 1.382) -- (1.5, 1.298) -- (1.65, 1.23);
+  \draw[line width=0.65pt] (1.5, 1.636) -- (1.65, 1.586) -- (1.8, 1.535) -- (1.95, 1.467);
+  \draw[line width=0.65pt] (1.8, 1.467) -- (1.95, 1.365) -- (2.1, 1.281);
+  \draw[line width=0.65pt] (2.1, 1.569) -- (2.25, 1.518) -- (2.4, 1.45) -- (2.55, 1.416);
+  \draw[line width=0.65pt] (2.55, 1.67) -- (2.7, 1.772) -- (2.85, 1.789) -- (3.0, 1.704);
+  \draw[line width=0.65pt] (3.0, 1.569) -- (3.15, 1.467) -- (3.3, 1.399) -- (3.45, 1.315);
+  \draw[line width=0.65pt] (3.45, 1.535) -- (3.6, 1.467) -- (3.75, 1.281);
+  \draw[line width=0.65pt] (3.6, 1.094) -- (3.75, 1.01) -- (3.9, 0.959) -- (4.05, 0.959) -- (4.2, 0.959) -- (4.35, 0.959);
+  \draw[line width=0.65pt] (4.2, 0.959) -- (4.35, 0.857) -- (4.5, 0.772) -- (4.65, 0.722) -- (4.8, 0.806) -- (4.95, 0.976);
+  \draw[line width=0.65pt] (4.95, 0.976) -- (5.1, 1.128) -- (5.25, 1.433) -- (5.4, 1.738) -- (5.55, 1.891) -- (5.7, 2.009);
+  \draw[line width=0.65pt] (5.55, 1.891) -- (5.7, 2.009) -- (5.85, 1.975) -- (6.0, 1.857) -- (6.15, 1.704) -- (6.3, 1.603) -- (6.45, 1.501);
+  \draw[line width=0.65pt] (6.45, 1.501) -- (6.6, 1.484) -- (6.75, 1.569) -- (6.9, 1.636) -- (7.05, 1.704);
+  \draw[line width=0.65pt] (7.05, 1.704) -- (7.2, 1.772) -- (7.35, 1.84) -- (7.5, 1.891);
+  \draw[line width=0.65pt] (7.2, 1.586) -- (7.35, 1.603) -- (7.5, 1.636) -- (7.65, 1.67) -- (7.8, 1.704);
+  \draw[line width=0.65pt] (7.5, 1.586) -- (7.65, 1.619) -- (7.8, 1.67) -- (7.95, 1.738) -- (8.1, 1.806);
+  \draw[line width=0.65pt] (7.95, 1.704) -- (8.1, 1.755) -- (8.25, 1.823) -- (8.4, 1.874);
+  \draw[line width=0.65pt] (8.25, 1.738) -- (8.4, 1.789) -- (8.55, 1.857) -- (8.7, 1.907);
+
+  % --- ISOTOPIC LABELS Z ---
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (0.975, 10.354) {62};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.275, 9.982) {64};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.5, 10.49) {66};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.025, 10.405) {68};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.475, 10.354) {70};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.925, 10.236) {72};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.375, 9.761) {74};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.6, 9.507) {76};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.9, 9.66) {78};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (4.35, 9.101) {80};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.062, 7.644) {82};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.325, 8.694) {84};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.7, 9.406) {86};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (6.075, 10.016) {88};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (6.9, 10.371) {90};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.425, 10.27) {92};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.35, 9.897) {94};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.95, 9.897) {96};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.175, 9.558) {98};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.7, 9.457) {100};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (0.825, 7.65) {62};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.2, 7.616) {64};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.575, 8.023) {66};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.95, 7.87) {68};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.325, 7.802) {70};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.775, 7.65) {72};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.375, 7.599) {74};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.6, 7.277) {76};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.975, 7.413) {78};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (4.2, 5.786) {80};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.025, 3.787) {82};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.175, 5.075) {84};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.625, 5.82) {86};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (6.075, 6.735) {88};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (6.75, 7.989) {90};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.35, 7.65) {92};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.65, 7.413) {94};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.25, 7.209) {96};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.4, 6.972) {98};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.925, 6.871) {100};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (9.22, 7.25) {102};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (9.68, 7.10) {104};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (9.9, 7.074) {106};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (10.425, 7.006) {108};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (9.3, 6.43) {106};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (11.175, 7.277) {114};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (11.85, 6.633) {108};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (12.225, 6.329) {110};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (11.438, 6.125) {116};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (11.438, 5.786) {118};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (11.625, 5.549) {114};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (12.9, 5.583) {120};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (13.2, 5.82) {122};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (13.575, 6.464) {124};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (14.025, 7.311) {126};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (14.7, 7.311) {128};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (0.9, 1.433) {62};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.35, 1.23) {64};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (1.65, 1.67) {66};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.025, 1.264) {68};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.4, 1.653) {70};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (2.85, 1.84) {72};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.15, 1.467) {74};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.6, 1.603) {76};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (3.9, 0.857) {78};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (4.35, 0.62) {80};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (4.875, 0.857) {82};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (4.95, 1.467) {84};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.25, 1.874) {86};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (5.625, 1.975) {88};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (6.6, 1.535) {90};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.275, 1.891) {92};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.20, 1.58) {94};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (7.85, 1.636) {96};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.1, 1.721) {98};
+  \node[font=\scriptsize, fill=white, inner sep=0.6pt] at (8.625, 1.772) {100};
+
+\end{tikzpicture}
+\end{document}

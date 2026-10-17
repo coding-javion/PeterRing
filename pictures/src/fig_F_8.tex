@@ -1,0 +1,97 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=butt, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5pt, width=3.5pt]}}
+    },
+    postaction={decorate}
+  },
+  arrowed_double/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5.5pt, width=4.8pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % Term 1: Second-order hole-pairing mode scattering
+  % ========================================================
+  \begin{scope}[shift={(-2.6, 0)}]
+    \coordinate (VL) at (-1.1, 0);
+    \coordinate (VR) at (1.1, 0);
+
+    % Incoming pairing mode (double line)
+    \draw[thick, line width=0.9pt, double, double distance=1.6pt, arrowed_double] 
+      (-2.4, 0.5) to[out=0, in=135] (VL);
+
+    % Outgoing pairing mode (double line)
+    \draw[thick, line width=0.9pt, double, double distance=1.6pt, arrowed_double] 
+      (VR) to[out=45, in=180] (2.4, 0.5);
+
+    % Intermediate pairing mode arch (double line)
+    \draw[thick, line width=0.9pt, double, double distance=1.6pt, arrowed_double] 
+      (VL) to[out=60, in=120] (VR);
+
+    % Incoming hole line (dashed, from bottom-right)
+    \draw[thick, dashed, line width=1pt, arrowed] 
+      (2.4, -0.5) to[out=180, in=-45] (VR);
+
+    % Outgoing hole line (dashed, to bottom-left)
+    \draw[thick, dashed, line width=1pt, arrowed] 
+      (VL) to[out=-135, in=0] (-2.4, -0.5);
+
+    % Intermediate hole line arch (dashed, from VR to VL)
+    \draw[thick, dashed, line width=1pt, arrowed] 
+      (VR) to[out=-120, in=-60] (VL);
+
+    % Vertices
+    \filldraw[black] (VL) circle (2.2pt);
+    \filldraw[black] (VR) circle (2.2pt);
+  \end{scope}
+
+  % Plus sign
+  \node[font=\large] at (1.0, 0) {$+$};
+
+  % ========================================================
+  % Term 2: Contact hole-pairing mode scattering
+  % ========================================================
+  \begin{scope}[shift={(3.4, 0)}]
+    \coordinate (V) at (0, 0);
+
+    % Incoming pairing mode (double line)
+    \draw[thick, line width=0.9pt, double, double distance=1.6pt, arrowed_double] 
+      (-1.4, 0.45) to[out=0, in=135] (V);
+
+    % Outgoing pairing mode (double line)
+    \draw[thick, line width=0.9pt, double, double distance=1.6pt, arrowed_double] 
+      (V) to[out=45, in=180] (1.4, 0.45);
+
+    % Incoming hole line (dashed)
+    \draw[thick, dashed, line width=1pt, arrowed] 
+      (1.4, -0.45) to[out=180, in=-45] (V);
+
+    % Outgoing hole line (dashed)
+    \draw[thick, dashed, line width=1pt, arrowed] 
+      (V) to[out=-135, in=0] (-1.4, -0.45);
+
+    % Vertex
+    \filldraw[black] (V) circle (2.2pt);
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

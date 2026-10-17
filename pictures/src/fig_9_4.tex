@@ -1,0 +1,136 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % LEFT: Energy Spectrum of 76Se
+  % ========================================================
+  \def\yscaleL{2.5}  % 1 MeV = 2.5 cm
+  \def\wL{0.65}      % half-width of level bar
+
+  % Y-axis (Left)
+  \draw[line width=0.9pt, ->] (0, 0) -- (0, {2.75 * \yscaleL});
+  \node[font=\small, align=center] at (-0.5, {2.65 * \yscaleL}) {$E$\\[1pt]\scriptsize(MeV)};
+
+  % Y-axis ticks (Left)
+  \foreach \y in {0, 1, 2} {
+    \draw[line width=0.7pt] (0, {\y * \yscaleL}) -- (-0.15, {\y * \yscaleL});
+    \node[left=3pt, font=\small] at (-0.15, {\y * \yscaleL}) {$\y$};
+  }
+
+  % Column positions
+  \def\xExp{1.5}
+  \def\xTheor{3.6}
+
+  % Headers
+  \node[font=\normalsize\bfseries] at (\xExp, {2.7 * \yscaleL}) {Exp.};
+  \node[font=\normalsize\bfseries] at (\xTheor, {2.7 * \yscaleL}) {Theor.};
+
+  % --- Exp. Column ---
+  % 0.00: 0+
+  \draw[line width=1.1pt] ({\xExp-\wL}, 0) -- ({\xExp+\wL}, 0) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, 0) {$0^+$};
+  % 0.56: 2+
+  \draw[line width=1.1pt] ({\xExp-\wL}, {0.56*\yscaleL}) -- ({\xExp+\wL}, {0.56*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {0.56*\yscaleL}) {$2^+$};
+  % Triplet: 1.12 (0+), 1.22 (2+), 1.33 (4+)
+  \draw[line width=1.1pt] ({\xExp-\wL}, {1.12*\yscaleL}) -- ({\xExp+\wL}, {1.12*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {1.12*\yscaleL}) {$0^+$};
+  \draw[line width=1.1pt] ({\xExp-\wL}, {1.22*\yscaleL}) -- ({\xExp+\wL}, {1.22*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {1.22*\yscaleL}) {$2^+$};
+  \draw[line width=1.1pt] ({\xExp-\wL}, {1.33*\yscaleL}) -- ({\xExp+\wL}, {1.33*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {1.33*\yscaleL}) {$4^+$};
+  % 1.69 (3+), 1.79 (2+)
+  \draw[line width=1.1pt] ({\xExp-\wL}, {1.69*\yscaleL}) -- ({\xExp+\wL}, {1.69*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {1.69*\yscaleL}) {$3^+$};
+  \draw[line width=1.1pt] ({\xExp-\wL}, {1.79*\yscaleL}) -- ({\xExp+\wL}, {1.79*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {1.79*\yscaleL}) {$2^+$};
+  % 2.03: 4+
+  \draw[line width=1.1pt] ({\xExp-\wL}, {2.03*\yscaleL}) -- ({\xExp+\wL}, {2.03*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {2.03*\yscaleL}) {$4^+$};
+  % 2.27: 6+
+  \draw[line width=1.1pt] ({\xExp-\wL}, {2.27*\yscaleL}) -- ({\xExp+\wL}, {2.27*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {2.27*\yscaleL}) {$6^+$};
+  % 2.45: (4+)
+  \draw[line width=1.1pt] ({\xExp-\wL}, {2.45*\yscaleL}) -- ({\xExp+\wL}, {2.45*\yscaleL}) node[left=2pt, font=\scriptsize] at ({\xExp-\wL}, {2.45*\yscaleL}) {$(4^+)$};
+
+  % --- Theor. Column ---
+  % 0.00: 0+
+  \draw[line width=1.1pt] ({\xTheor-\wL}, 0) -- ({\xTheor+\wL}, 0) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, 0) {$0^+$};
+  % 0.55: 2+
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {0.55*\yscaleL}) -- ({\xTheor+\wL}, {0.55*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {0.55*\yscaleL}) {$2^+$};
+  % 1.15 (0+), 1.21 (2+), 1.33 (4+)
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.15*\yscaleL}) -- ({\xTheor+\wL}, {1.15*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.15*\yscaleL}) {$0^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.21*\yscaleL}) -- ({\xTheor+\wL}, {1.21*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.21*\yscaleL}) {$2^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.33*\yscaleL}) -- ({\xTheor+\wL}, {1.33*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.33*\yscaleL}) {$4^+$};
+  % 1.76 (2+), 1.79 (3+)
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.76*\yscaleL}) -- ({\xTheor+\wL}, {1.76*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.73*\yscaleL}) {$2^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.80*\yscaleL}) -- ({\xTheor+\wL}, {1.80*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.82*\yscaleL}) {$3^+$};
+  % 1.91: 0+
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {1.91*\yscaleL}) -- ({\xTheor+\wL}, {1.91*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {1.91*\yscaleL}) {$0^+$};
+  % 2.02: 4+
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.02*\yscaleL}) -- ({\xTheor+\wL}, {2.02*\yscaleL}) node[right=2pt, font=\scriptsize] at ({\xTheor+\wL}, {2.02*\yscaleL}) {$4^+$};
+  % Tight group: 2.22 (2+), 2.26 (0+), 2.30 (4+), 2.34 (6+)
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.22*\yscaleL}) -- ({\xTheor+\wL}, {2.22*\yscaleL}) node[right=2pt, font=\fontsize{6}{6.8}\selectfont] at ({\xTheor+\wL}, {2.21*\yscaleL}) {$2^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.26*\yscaleL}) -- ({\xTheor+\wL}, {2.26*\yscaleL}) node[right=12pt, font=\fontsize{6}{6.8}\selectfont] at ({\xTheor+\wL}, {2.28*\yscaleL}) {$0^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.30*\yscaleL}) -- ({\xTheor+\wL}, {2.30*\yscaleL}) node[right=2pt, font=\fontsize{6}{6.8}\selectfont] at ({\xTheor+\wL}, {2.29*\yscaleL}) {$4^+$};
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.34*\yscaleL}) -- ({\xTheor+\wL}, {2.34*\yscaleL}) node[right=2pt, font=\fontsize{6}{6.8}\selectfont] at ({\xTheor+\wL}, {2.37*\yscaleL}) {$6^+$};
+  % 2.42: 4+
+  \draw[line width=1.1pt] ({\xTheor-\wL}, {2.42*\yscaleL}) -- ({\xTheor+\wL}, {2.42*\yscaleL}) node[right=2pt, font=\fontsize{6}{6.8}\selectfont] at ({\xTheor+\wL}, {2.45*\yscaleL}) {$4^+$};
+
+  % ========================================================
+  % RIGHT: Potential Energy Surface V(beta)
+  % ========================================================
+  \def\xR{5.8}       % X origin of right plot
+  \def\yscaleR{0.95} % 1 MeV = 0.95 cm
+  \def\yZero{0.95}   % Y coordinate where E = 0 (since E starts at -1)
+
+  \begin{scope}[shift={(\xR, \yZero)}]
+    % Y-axis (Right)
+    \draw[line width=0.9pt, ->] (0, {-1 * \yscaleR}) -- (0, {6.7 * \yscaleR});
+    \node[font=\small, align=center] at (-0.5, {6.5 * \yscaleR}) {$E$\\[1pt]\scriptsize(MeV)};
+
+    % Y-axis ticks
+    \foreach \y in {-1, 0, 1, 2, 3, 4, 5, 6} {
+      \draw[line width=0.7pt] (0, {\y * \yscaleR}) -- (-0.15, {\y * \yscaleR});
+      \node[left=3pt, font=\small] at (-0.15, {\y * \yscaleR}) {$\y$};
+    }
+
+    % Centerline at beta = 0
+    \def\xCenter{3.8}
+    \draw[dashed, line width=0.7pt] (\xCenter, {-0.8 * \yscaleR}) -- (\xCenter, {6.6 * \yscaleR});
+
+    % --- Solid curve ---
+    \draw[line width=1.2pt]
+      (0.5, {6.0 * \yscaleR})
+      .. controls (0.7, {3.0 * \yscaleR}) and (1.5, {0.2 * \yscaleR}) ..
+      (2.5, {-0.35 * \yscaleR})
+      .. controls (3.0, {-0.4 * \yscaleR}) and (3.3, {0.0 * \yscaleR}) ..
+      (\xCenter, {0.0 * \yscaleR})
+      .. controls (4.3, {0.0 * \yscaleR}) and (4.8, {-0.95 * \yscaleR}) ..
+      (5.6, {-0.95 * \yscaleR})
+      .. controls (6.4, {-0.95 * \yscaleR}) and (7.0, {2.0 * \yscaleR}) ..
+      (7.5, {5.8 * \yscaleR});
+
+    % --- Dashed curve ---
+    \draw[line width=1.0pt, dashed]
+      (0.45, {6.2 * \yscaleR})
+      .. controls (0.65, {3.0 * \yscaleR}) and (1.4, {0.0 * \yscaleR}) ..
+      (2.5, {-0.52 * \yscaleR})
+      .. controls (3.0, {-0.6 * \yscaleR}) and (3.4, {0.0 * \yscaleR}) ..
+      (\xCenter, {0.0 * \yscaleR})
+      .. controls (4.2, {0.0 * \yscaleR}) and (4.8, {-1.15 * \yscaleR}) ..
+      (5.6, {-1.15 * \yscaleR})
+      .. controls (6.4, {-1.15 * \yscaleR}) and (7.0, {2.0 * \yscaleR}) ..
+      (7.55, {6.0 * \yscaleR});
+
+    % Beta axis and arrow (shortened to clear the potential well curve)
+    \draw[line width=0.85pt, ->] (0, 0) -- (1.5, 0) node[right=2pt, font=\normalsize, fill=white, inner sep=1.0pt] {$\beta$};
+    \draw[line width=0.7pt] (0.8, 0) -- (0.8, -0.12) node[below=1pt, font=\scriptsize] {$0.1$};
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

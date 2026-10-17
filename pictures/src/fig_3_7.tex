@@ -1,0 +1,115 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % =============================================================
+  % PANEL (a) Strong Coupling Scheme
+  % =============================================================
+  \begin{scope}[shift={(0,0)}]
+    \def\angSym{32}
+    \def\angRot{122}
+
+    % Axes 3 (symmetry) and 1 (rotation)
+    \draw[line width=0.8pt] ({-2.2*cos(\angSym)}, {-2.2*sin(\angSym)}) -- ({4.6*cos(\angSym)}, {4.6*sin(\angSym)})
+      node[anchor=south, font=\large] {$3$};
+    \draw[line width=0.8pt] ({-1.8*cos(\angRot)}, {-1.8*sin(\angRot)}) -- ({3.6*cos(\angRot)}, {3.6*sin(\angRot)})
+      node[anchor=south west, font=\large] {$1$};
+
+    % Nuclear core ellipse rotated by \angSym
+    \draw[line width=1.1pt, rotate around={\angSym:(0,0)}, fill=white] (0, 0) ellipse (1.6 and 0.82);
+
+    % Vectors:
+    % R along axis 1 (length ~ 1.8)
+    \coordinate (R) at ({1.8*cos(\angRot)}, {1.8*sin(\angRot)});
+    % j vector tilted towards 3
+    \coordinate (J) at (1.1, 2.3);
+    % Total I = R + J
+    \coordinate (I) at ($(R) + (J)$);
+
+    % Parallelogram lines
+    \draw[line width=0.6pt] (R) -- (I);
+    \draw[line width=0.6pt] (J) -- (I);
+
+    % Projection of j onto axis 3
+    % Vector along 3 has direction (cos 32, sin 32)
+    % Dot product: (1.1*cos 32 + 2.3*sin 32) = 1.1*0.848 + 2.3*0.530 = 0.933 + 1.219 = 2.152
+    \coordinate (Jproj) at ({2.152*cos(\angSym)}, {2.152*sin(\angSym)});
+    \draw[line width=0.6pt] (J) -- (Jproj);
+
+    % Precession cone of j around axis 3: base ellipse centered at Jproj
+    \draw[line width=0.7pt, rotate around={(\angSym+90):(Jproj)}] (Jproj) ellipse (1.05 and 0.32);
+    % Cone sides from origin
+    \draw[line width=0.6pt, dash pattern=on 3pt off 2pt]
+      (0, 0) -- ($(Jproj) + ({1.05*cos(\angSym+90)}, {1.05*sin(\angSym+90)})$);
+    \draw[line width=0.6pt, dash pattern=on 3pt off 2pt]
+      (0, 0) -- ($(Jproj) - ({1.05*cos(\angSym+90)}, {1.05*sin(\angSym+90)})$);
+
+    % Right-angle mark at Jproj
+    \draw[line width=0.6pt]
+      ($(Jproj) + ({-0.15*cos(\angSym)}, {-0.15*sin(\angSym)})$) --
+      ++({-0.15*cos(\angRot)}, {-0.15*sin(\angRot)}) --
+      ++({0.15*cos(\angSym)}, {0.15*sin(\angSym)});
+
+    % Projection arrow for \Omega = K
+    \draw[line width=0.9pt, ->] (0, 0) -- ($(Jproj) + ({0.1*cos(\angSym)}, {0.1*sin(\angSym)})$);
+    \node[anchor=north west, font=\normalsize, fill=white, inner sep=1pt] at ({1.0*cos(\angSym)}, {1.0*sin(\angSym)}) {$\Omega=K$};
+
+    % Main vectors with arrows
+    \draw[line width=1.6pt, ->] (0, 0) -- (R) node[midway, left=4pt, font=\large] {$\vec{R}$};
+    \draw[line width=1.6pt, ->] (0, 0) -- (J) node[anchor=south, font=\large, fill=white, inner sep=0.8pt] {$\vec{j}$};
+    \draw[line width=1.8pt, ->] (0, 0) -- (I) node[anchor=south, font=\LARGE] {$\vec{I}$};
+
+    \node[anchor=north, font=\large] at (0, -2.4) {a)};
+  \end{scope}
+
+  % =============================================================
+  % PANEL (b) Decoupled Scheme
+  % =============================================================
+  \begin{scope}[shift={(6.2,0)}]
+    \def\angSym{32}
+    \def\angRot{122}
+
+    % Axes 3 and 1
+    \draw[line width=0.8pt] ({-2.2*cos(\angSym)}, {-2.2*sin(\angSym)}) -- ({4.6*cos(\angSym)}, {4.6*sin(\angSym)})
+      node[anchor=south, font=\large] {$3$};
+    \draw[line width=0.8pt] ({-1.8*cos(\angRot)}, {-1.8*sin(\angRot)}) -- ({3.6*cos(\angRot)}, {3.6*sin(\angRot)})
+      node[anchor=south west, font=\large] {$1$};
+
+    % Nuclear core ellipse rotated by \angSym
+    \draw[line width=1.1pt, rotate around={\angSym:(0,0)}, fill=white] (0, 0) ellipse (1.6 and 0.82);
+
+    % In decoupled scheme: j is aligned near 1-axis (precessing around 1-axis)
+    \coordinate (Rdec) at ({1.4*cos(\angRot)}, {1.4*sin(\angRot)});
+    \coordinate (Jdec) at (-0.2, 2.3);
+    \coordinate (Idec) at ($(Rdec) + (Jdec)$);
+
+    % Precession cone of j around axis 1: center at (Rdec)
+    \draw[line width=0.7pt, dashed, rotate around={(\angRot+90):(Rdec)}] (Rdec) ellipse (0.55 and 0.22);
+    \node[anchor=east, font=\normalsize, fill=white, inner sep=0.8pt] at (-1.1, 1.45) {$\alpha$};
+
+    % Parallelogram lines
+    \draw[line width=0.6pt] (Rdec) -- (Idec);
+    \draw[line width=0.6pt] (Jdec) -- (Idec);
+
+    % Vectors
+    \draw[line width=1.6pt, ->] (0, 0) -- (Rdec);
+    \node[anchor=east, font=\large, fill=white, inner sep=0.6pt] at (-0.95, 0.95) {$\vec{R}$};
+    \draw[line width=1.6pt, ->] (0, 0) -- (Jdec) node[anchor=south west, font=\large] {$\vec{j}$};
+    \draw[line width=1.8pt, ->] (0, 0) -- (Idec) node[anchor=south, font=\LARGE] {$\vec{I}$};
+
+    \node[anchor=north, font=\large] at (0, -2.4) {b)};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

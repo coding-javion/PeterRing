@@ -1,0 +1,174 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: q in fm (0 to 7.6), p in fm^-1 (0 to 2.7)
+  \def\xscale{1.15}
+  \def\yscale{2.55}
+
+  % Outer bounding frame
+  \draw[line width=0.95pt] (0, 0) rectangle (7.7*\xscale, 2.7*\yscale);
+
+  % Y-axis ticks and labels (left)
+  \foreach \p/\lbl in {0.0/0.0, 0.5/0.5, 1.0/1.0, 1.5/1.5, 2.0/2.0, 2.5/2.5} {
+    \draw[line width=0.65pt] (0, \p*\yscale) -- (0.16, \p*\yscale);
+    \node[anchor=east, font=\small] at (-0.08, \p*\yscale) {$\lbl$};
+  }
+  \node[anchor=south east, font=\normalsize] at (-0.08, 2.7*\yscale) {$p\,(\mathrm{fm}^{-1})$};
+
+  % X-axis ticks and labels (bottom)
+  \foreach \q in {0, 1, 2, 3, 4, 5, 6, 7} {
+    \draw[line width=0.65pt] (\q*\xscale, 0) -- (\q*\xscale, 0.16);
+    \node[anchor=north, font=\small] at (\q*\xscale, -0.08) {$\q$};
+  }
+  \node[anchor=north west, font=\normalsize] at (7.35*\xscale, -0.08) {$q\,(\mathrm{fm})$};
+
+  % Title / variable label at top right
+  \node[anchor=north east, font=\normalsize, align=center] at (7.55*\xscale, 2.65*\yscale) {$\Delta(q, p)$\\[1pt]\small$(\mathrm{MeV})$};
+
+  % ========================================================
+  % DASH-DOTTED CURVE: p_F(q)
+  % ========================================================
+  \draw[line width=1.1pt, dash pattern=on 5pt off 2pt on 1.5pt off 2pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 1.38*\yscale)
+      (2.0*\xscale, 1.38*\yscale)
+      (3.5*\xscale, 1.38*\yscale)
+      (4.5*\xscale, 1.37*\yscale)
+      (5.0*\xscale, 1.35*\yscale)
+      (5.6*\xscale, 1.28*\yscale)
+      (6.1*\xscale, 1.15*\yscale)
+      (6.6*\xscale, 0.92*\yscale)
+      (7.0*\xscale, 0.55*\yscale)
+      (7.28*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (0.8*\xscale, 1.55*\yscale) {$p_F(q)$};
+
+  % ========================================================
+  % SOLID CONTOURS: Delta(q, p)
+  % ========================================================
+
+  % Contour 0.2
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 2.52*\yscale)
+      (3.0*\xscale, 2.52*\yscale)
+      (4.5*\xscale, 2.51*\yscale)
+      (5.5*\xscale, 2.48*\yscale)
+      (6.2*\xscale, 2.38*\yscale)
+      (6.8*\xscale, 1.95*\yscale)
+      (7.1*\xscale, 1.40*\yscale)
+      (7.35*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (2.4*\xscale, 2.60*\yscale) {$0.2$};
+
+  % Contour 0.4
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 2.06*\yscale)
+      (3.0*\xscale, 2.05*\yscale)
+      (4.5*\xscale, 2.05*\yscale)
+      (5.5*\xscale, 2.06*\yscale)
+      (6.0*\xscale, 2.08*\yscale)
+      (6.5*\xscale, 1.95*\yscale)
+      (6.9*\xscale, 1.45*\yscale)
+      (7.32*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (2.4*\xscale, 2.15*\yscale) {$0.4$};
+
+  % Contour 0.6
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 1.68*\yscale)
+      (3.0*\xscale, 1.68*\yscale)
+      (4.5*\xscale, 1.69*\yscale)
+      (5.4*\xscale, 1.74*\yscale)
+      (6.0*\xscale, 1.82*\yscale)
+      (6.5*\xscale, 1.68*\yscale)
+      (6.9*\xscale, 1.25*\yscale)
+      (7.28*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (2.4*\xscale, 1.78*\yscale) {$0.6$};
+
+  % Contour 0.8
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 1.30*\yscale)
+      (3.0*\xscale, 1.30*\yscale)
+      (4.5*\xscale, 1.32*\yscale)
+      (5.2*\xscale, 1.40*\yscale)
+      (6.0*\xscale, 1.55*\yscale)
+      (6.4*\xscale, 1.48*\yscale)
+      (6.8*\xscale, 1.15*\yscale)
+      (7.24*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (2.4*\xscale, 1.20*\yscale) {$0.8$};
+
+  % Contour 1.0
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 0.83*\yscale)
+      (3.0*\xscale, 0.84*\yscale)
+      (4.2*\xscale, 0.88*\yscale)
+      (5.0*\xscale, 1.02*\yscale)
+      (5.7*\xscale, 1.28*\yscale)
+      (6.2*\xscale, 1.38*\yscale)
+      (6.6*\xscale, 1.22*\yscale)
+      (6.9*\xscale, 0.85*\yscale)
+      (7.20*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (2.4*\xscale, 0.72*\yscale) {$1.0$};
+
+  % Contour 1.2 (Dome)
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (5.0*\xscale, 0.0*\yscale)
+      (5.2*\xscale, 0.50*\yscale)
+      (5.6*\xscale, 1.00*\yscale)
+      (6.1*\xscale, 1.28*\yscale)
+      (6.4*\xscale, 1.25*\yscale)
+      (6.7*\xscale, 0.98*\yscale)
+      (6.9*\xscale, 0.60*\yscale)
+      (7.15*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (6.35*\xscale, 1.15*\yscale) {$1.2$};
+
+  % Contour 1.4 (Dome)
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (5.45*\xscale, 0.0*\yscale)
+      (5.7*\xscale, 0.45*\yscale)
+      (6.05*\xscale, 0.82*\yscale)
+      (6.35*\xscale, 0.88*\yscale)
+      (6.65*\xscale, 0.75*\yscale)
+      (6.85*\xscale, 0.40*\yscale)
+      (7.02*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (6.35*\xscale, 0.68*\yscale) {$1.4$};
+
+  % Contour 1.6 (Dome)
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (5.88*\xscale, 0.0*\yscale)
+      (6.1*\xscale, 0.32*\yscale)
+      (6.35*\xscale, 0.48*\yscale)
+      (6.55*\xscale, 0.32*\yscale)
+      (6.72*\xscale, 0.0*\yscale)
+    };
+  \node[font=\small, fill=white, inner sep=1.2pt] at (6.35*\xscale, 0.32*\yscale) {$1.6$};
+
+\end{tikzpicture}
+\end{document}

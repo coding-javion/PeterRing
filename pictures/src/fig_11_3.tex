@@ -1,0 +1,67 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % 3D Coordinate Axes
+  % x-axis (pointing down-left)
+  \draw[thick, ->] (0, 0) -- (-2.4, -2.4) node[left=2pt, font=\Large] {$x$};
+  % y-axis (pointing right)
+  \draw[thick, ->] (0, 0) -- (4.2, 0) node[right=2pt, font=\Large] {$y$};
+  % z-axis (pointing up)
+  \draw[thick] (0, 0) -- (0, 3.1);
+  \draw[thick, ->] (0, 3.3) -- (0, 4.6) node[left=2pt, font=\Large] {$z$};
+
+  % Horizontal circle (ellipse) at height Sz = 3.2
+  \draw[thick, line width=1.1pt] (0, 3.2) ellipse [x radius=3.1cm, y radius=0.68cm];
+
+  % Tip of total quasispin vector S
+  % Front-right rim of the circle: x = 2.65, y = 3.2 - 0.45 = 2.75
+  \coordinate (Stip) at (2.65, 2.75);
+  \coordinate (Scenter) at (0, 3.2);
+  % Projection of Stip onto xy-plane: x_proj = 2.65, y_proj = -0.58
+  \coordinate (Sproj) at (2.65, -0.58);
+
+  % Dashed radius to vector tip
+  \draw[dashed, line width=0.8pt] (Scenter) -- (Stip);
+
+  % Dashed vertical drop from Stip to Sproj
+  \draw[dashed, line width=0.8pt] (Stip) -- (Sproj);
+
+  % Projection vector S_perp in xy-plane
+  \draw[thick, line width=1.1pt, ->] (0, 0) -- (Sproj) node[below=2pt, font=\Large] {$\boldsymbol{S}_\perp$};
+
+  % Angle phi arc from x-axis to S_perp
+  \draw[thick, ->] (-1.1, -1.1) arc [start angle=-135, end angle=-12, x radius=1.55cm, y radius=1.0cm];
+  \node[font=\Large] at (0.1, -0.65) {$\varphi$};
+
+  % Vertical dimension arrow for S_z on the left of z-axis
+  \draw[{Latex}-{Latex}, line width=0.8pt] (-0.18, 0.05) -- (-0.18, 3.15);
+  \node[left=3pt, font=\large] at (-0.18, 1.6) {$S_z = (N - \Omega)/2$};
+
+  % Microscopic quasispin sum path s^{(m)}
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (0, 0) -- (0.45, 0.05);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (0.45, 0.05) -- (0.7, 0.35);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (0.7, 0.35) -- (0.7, 0.85);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (0.7, 0.85) -- (1.4, 0.85);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (1.4, 0.85) -- (1.65, 1.65);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (1.65, 1.65) -- (2.1, 2.2);
+  \draw[thick, line width=0.85pt, -{Latex[scale=0.75]}] (2.1, 2.2) -- (Stip);
+  \node[right=2pt, font=\large] at (1.45, 1.25) {$\boldsymbol{s}^{(m)}$};
+
+  % Total quasispin vector S
+  \draw[line width=1.8pt, ->] (0, 0) -- (Stip);
+  \node[above=3pt, font=\Large] at (Stip) {$\boldsymbol{S}$};
+
+\end{tikzpicture}
+\end{document}

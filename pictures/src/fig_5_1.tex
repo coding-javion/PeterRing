@@ -1,0 +1,54 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Geometry parameters
+  \def\wBar{1.6}
+  \def\yUp{1.1}
+  \def\yDown{-1.1}
+  
+  % Level 1 labels on left
+  \node[anchor=east, font=\large] at (-0.3, \yUp) {$\epsilon/2$};
+  \node[anchor=east, font=\large] at (-0.3, \yDown) {$-\epsilon/2$};
+  
+  % Upper level bars (thick solid)
+  \draw[line width=1.4pt] (0.0, \yUp) -- ++(\wBar, 0);
+  \draw[line width=1.4pt] (2.4, \yUp) -- ++(\wBar, 0);
+  
+  % Three dots upper level
+  \fill (4.6, \yUp) circle (1.8pt);
+  \fill (5.2, \yUp) circle (1.8pt);
+  \fill (5.8, \yUp) circle (1.8pt);
+  
+  \draw[line width=1.4pt] (6.4, \yUp) -- ++(\wBar, 0);
+  \node[anchor=west, font=\large] at (8.3, \yUp) {$\Omega\text{ fold}$};
+
+  % Lower level bars (thick solid)
+  \draw[line width=1.4pt] (0.0, \yDown) -- ++(\wBar, 0);
+  \draw[line width=1.4pt] (2.4, \yDown) -- ++(\wBar, 0);
+  
+  % Three dots lower level
+  \fill (4.6, \yDown) circle (1.8pt);
+  \fill (5.2, \yDown) circle (1.8pt);
+  \fill (5.8, \yDown) circle (1.8pt);
+  
+  \draw[line width=1.4pt] (6.4, \yDown) -- ++(\wBar, 0);
+  \node[anchor=west, font=\large] at (8.3, \yDown) {$\Omega\text{ fold}$};
+
+  % Fermi level dashed line
+  \draw[line width=0.8pt, dash pattern=on 6pt off 4pt] (0.0, 0) -- (9.8, 0);
+  \node[fill=white, inner sep=2.5pt, font=\normalsize] at (1.5, 0) {Fermi level};
+
+\end{tikzpicture}
+\end{document}

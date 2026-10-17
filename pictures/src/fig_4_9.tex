@@ -1,0 +1,37 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Axes
+  \draw[thick, ->] (0, 0) -- (4.8, 0) node[above=4pt, font=\Large] {$\theta_{12}$};
+  \draw[thick, ->] (0, -0.8) -- (0, 4.2) node[above=2pt, font=\Large] {$P_l(\cos\theta_{12})$};
+
+  % Origin label
+  \node[below left=2pt, font=\large] at (0, 0) {$0$};
+
+  % Legendre polynomial curve P_l(cos theta_12)
+  \draw[very thick, line width=1.4pt, smooth]
+    plot coordinates {
+      (0, 3.2) (0.3, 3.12) (0.6, 2.85) (0.9, 2.25) (1.2, 1.3)
+      (1.45, 0.45) (1.6, 0.0) (1.8, -0.38) (2.1, -0.52) (2.4, -0.35)
+      (2.65, 0.0) (2.9, 0.22) (3.2, 0.28) (3.5, 0.15) (3.75, 0.0)
+      (4.0, -0.08) (4.25, -0.04)
+    };
+
+  % Width indicator 1/l
+  \draw[{Latex}-{Latex}, thick] (0, 1.25) -- (1.2, 1.25);
+  \node[fill=white, inner sep=1.5pt, font=\Large] at (0.6, 1.25) {$1/l$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,256 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale: y = 0.6 + E * 0.0026 cm (E in keV)
+  \def\yzero{0.6}
+  \def\yscale{0.0026}
+
+  % =========================================================================
+  % ============================= LEFT: THEORY ==============================
+  % =========================================================================
+
+  % Header
+  \node[font=\Huge\bfseries] at (2.4, 8.3) {Theory};
+  \node[font=\huge\bfseries] at (2.4, 7.4) {$h_{9/2}\text{ system}$};
+
+  % Baseline
+  \draw[line width=1.4pt] (0.4, \yzero) -- (8.6, \yzero);
+  \node[above=2pt, font=\small] at (8.3, \yzero) {$0$};
+
+  % Ground state: 9/2 at 0
+  \draw[line width=1.4pt] (3.0, \yzero) -- (3.4, \yzero);
+  \node[below=2pt, font=\scriptsize] at (3.2, \yzero) {$9/2$};
+
+  % --- Branch 1 ---
+  % 5/2 (49)
+  \draw[line width=1.2pt] (1.8, {\yzero + 49*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$5/2$} -- (2.35, {\yzero + 49*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$49$};
+  % 1/2 (299)
+  \draw[line width=1.2pt] (0.9, {\yzero + 299*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1/2$} -- (1.45, {\yzero + 299*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$299$};
+  % 3/2 (478)
+  \draw[line width=1.2pt] (0.9, {\yzero + 478*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$3/2$} -- (1.45, {\yzero + 478*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$478$};
+  % 7/2 (420)
+  \draw[line width=1.2pt] (1.8, {\yzero + 420*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$7/2$} -- (2.35, {\yzero + 420*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$420$};
+  % 5/2 (775)
+  \draw[line width=1.2pt] (1.2, {\yzero + 775*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$5/2$} -- (1.75, {\yzero + 775*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$775$};
+  % 3/2 (927)
+  \draw[line width=1.2pt] (0.5, {\yzero + 927*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$3/2$} -- (1.05, {\yzero + 927*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$927$};
+
+  % --- Branch 2 ---
+  % 11/2 (516)
+  \draw[line width=1.2pt] (2.7, {\yzero + 516*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$11/2$} -- (3.25, {\yzero + 516*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$516$};
+  % 13/2 (989)
+  \draw[line width=1.2pt] (2.6, {\yzero + 989*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$13/2$} -- (3.15, {\yzero + 989*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$989$};
+  % 15/2 (1385)
+  \draw[line width=1.2pt] (2.5, {\yzero + 1385*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$15/2$} -- (3.05, {\yzero + 1385*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1385$};
+
+  % --- Branch 3 ---
+  % 13/2 (159)
+  \draw[line width=1.2pt] (3.8, {\yzero + 159*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$13/2$} -- (4.35, {\yzero + 159*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$159$};
+  % 17/2 (518)
+  \draw[line width=1.2pt] (5.1, {\yzero + 518*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$17/2$} -- (5.65, {\yzero + 518*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$518$};
+  % 15/2 (780)
+  \draw[line width=1.2pt] (3.9, {\yzero + 780*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$15/2$} -- (4.45, {\yzero + 780*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$780$};
+  % 19/2 (1215)
+  \draw[line width=1.2pt] (4.8, {\yzero + 1215*\yscale}) node[below=1pt, font=\scriptsize] {$1215$} -- (5.35, {\yzero + 1215*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$19/2$};
+  % 17/2 (1309)
+  \draw[line width=1.2pt] (3.9, {\yzero + 1309*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$17/2$} -- (4.45, {\yzero + 1309*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1309$};
+
+  % --- Branch 4 ---
+  % 21/2 (1060)
+  \draw[line width=1.2pt] (6.1, {\yzero + 1060*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$21/2$} -- (6.65, {\yzero + 1060*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1060$};
+  % 23/2 (1814)
+  \draw[line width=1.2pt] (6.0, {\yzero + 1814*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$23/2$} -- (6.55, {\yzero + 1814*\yscale});
+  \node[above=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at (6.18, {\yzero + 1814*\yscale}) {$1814$};
+  % 25/2 (1747)
+  \draw[line width=1.2pt] (7.0, {\yzero + 1747*\yscale}) -- (7.55, {\yzero + 1747*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1747$};
+  \node[below=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at (7.25, {\yzero + 1747*\yscale}) {$25/2$};
+  % 27/2 (2569)
+  \draw[line width=1.2pt] (6.4, {\yzero + 2569*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$27/2$} -- (6.95, {\yzero + 2569*\yscale});
+  \node[above=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at (6.68, {\yzero + 2569*\yscale}) {$2569$};
+  \node[below=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at (6.75, {\yzero + 2569*\yscale}) {$29/2$};
+  % 2540
+  \draw[line width=1.2pt] (7.4, {\yzero + 2540*\yscale}) -- (7.95, {\yzero + 2540*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$2540$};
+
+  % Transitions (Theory)
+  % 49 -> 0
+  \draw[->, line width=1.2pt] (2.05, {\yzero + 49*\yscale}) -- (3.15, \yzero);
+  % 299 -> 49 & 420 -> 49
+  \draw[->, line width=0.7pt] (1.2, {\yzero + 299*\yscale}) -- (1.95, {\yzero + 49*\yscale});
+  \draw[->, line width=0.7pt] (2.05, {\yzero + 420*\yscale}) -- (2.15, {\yzero + 49*\yscale});
+  % 478 -> 299 & 478 -> 49
+  \draw[->, line width=0.7pt] (1.15, {\yzero + 478*\yscale}) -- (1.15, {\yzero + 299*\yscale});
+  \draw[->, line width=0.7pt] (1.3, {\yzero + 478*\yscale}) -- (2.0, {\yzero + 49*\yscale});
+  % 775 -> 478 (dash) & 775 -> 420 (solid)
+  \draw[->, line width=0.7pt, dashed] (1.4, {\yzero + 775*\yscale}) -- (1.3, {\yzero + 478*\yscale});
+  \draw[->, line width=0.7pt] (1.6, {\yzero + 775*\yscale}) -- (2.0, {\yzero + 420*\yscale});
+  % 927 -> 478 (solid) & 927 -> 299 (dash)
+  \draw[->, line width=0.7pt] (0.85, {\yzero + 927*\yscale}) -- (1.1, {\yzero + 478*\yscale});
+  \draw[->, line width=0.7pt, dashed] (0.75, {\yzero + 927*\yscale}) -- (1.0, {\yzero + 299*\yscale});
+
+  % 159 -> 0
+  \draw[->, line width=1.2pt] (3.9, {\yzero + 159*\yscale}) -- (3.3, \yzero);
+  % 516 -> 0 & 516 -> 159 (dash)
+  \draw[->, line width=0.7pt] (2.95, {\yzero + 516*\yscale}) -- (3.25, \yzero);
+  \draw[->, line width=0.7pt, dashed] (3.1, {\yzero + 516*\yscale}) -- (3.95, {\yzero + 159*\yscale});
+  % 989 -> 516 (dash) & 989 -> 159 (dash)
+  \draw[->, line width=0.7pt, dashed] (2.85, {\yzero + 989*\yscale}) -- (2.95, {\yzero + 516*\yscale});
+  \draw[->, line width=0.7pt, dashed] (3.0, {\yzero + 989*\yscale}) -- (4.0, {\yzero + 159*\yscale});
+  % 1385 -> 989 (solid) & 1385 -> 516 (dash)
+  \draw[->, line width=0.7pt] (2.75, {\yzero + 1385*\yscale}) -- (2.85, {\yzero + 989*\yscale});
+  \draw[->, line width=0.7pt, dashed] (2.9, {\yzero + 1385*\yscale}) -- (3.1, {\yzero + 516*\yscale});
+
+  % 518 -> 159 (solid)
+  \draw[->, line width=0.8pt] (5.2, {\yzero + 518*\yscale}) -- (4.25, {\yzero + 159*\yscale});
+  % 780 -> 159 (solid) & 780 -> 518 (dash)
+  \draw[->, line width=0.8pt] (4.1, {\yzero + 780*\yscale}) -- (4.1, {\yzero + 159*\yscale});
+  \draw[->, line width=0.7pt, dashed] (4.3, {\yzero + 780*\yscale}) -- (5.2, {\yzero + 518*\yscale});
+  % 1309 -> 780 (solid) & 1309 -> 518 (dash)
+  \draw[->, line width=0.8pt] (4.15, {\yzero + 1309*\yscale}) -- (4.15, {\yzero + 780*\yscale});
+  \draw[->, line width=0.7pt, dashed] (4.35, {\yzero + 1309*\yscale}) -- (5.3, {\yzero + 518*\yscale});
+  % 1215 -> 518 (solid)
+  \draw[->, line width=0.8pt] (5.0, {\yzero + 1215*\yscale}) -- (5.35, {\yzero + 518*\yscale});
+
+  % 1060 -> 518 (solid)
+  \draw[->, line width=0.8pt] (6.2, {\yzero + 1060*\yscale}) -- (5.5, {\yzero + 518*\yscale});
+  % 1747 -> 1060 (solid) & 1814 -> 1060 (solid) & 1814 -> 518 (dash)
+  \draw[->, line width=0.8pt] (7.15, {\yzero + 1747*\yscale}) -- (6.55, {\yzero + 1060*\yscale});
+  \draw[->, line width=0.8pt] (6.1, {\yzero + 1814*\yscale}) -- (6.35, {\yzero + 1060*\yscale});
+  \draw[->, line width=0.7pt, dashed] (6.05, {\yzero + 1814*\yscale}) -- (5.55, {\yzero + 518*\yscale});
+  % 2540 -> 1747 & 2569 -> 1747 & 2569 -> 1814
+  \draw[->, line width=0.8pt] (7.5, {\yzero + 2540*\yscale}) -- (7.3, {\yzero + 1747*\yscale});
+  \draw[->, line width=0.8pt] (6.8, {\yzero + 2569*\yscale}) -- (7.15, {\yzero + 1747*\yscale});
+  \draw[->, line width=0.8pt] (6.55, {\yzero + 2569*\yscale}) -- (6.50, {\yzero + 1814*\yscale});
+
+  % =========================================================================
+  % =========================== RIGHT: EXPERIMENT ===========================
+  % =========================================================================
+
+  \def\xS{9.2}
+
+  % Header
+  \node[font=\Huge\bfseries] at ({\xS + 2.4}, 8.3) {Experiment};
+  \node[font=\huge\bfseries] at ({\xS + 2.4}, 7.4) {$^{187}\mathrm{Ir}$};
+
+  % Baseline
+  \draw[line width=1.4pt] ({\xS + 0.4}, \yzero) -- ({\xS + 8.6}, \yzero);
+  \node[above=2pt, font=\small] at ({\xS + 7.8}, \yzero) {$0\ (+186)$};
+
+  % Ground state: 9/2 at 0
+  \draw[line width=1.4pt] ({\xS + 3.0}, \yzero) -- ({\xS + 3.4}, \yzero);
+  \node[below=2pt, font=\scriptsize] at ({\xS + 3.2}, \yzero) {$9/2$};
+
+  % --- Branch 1 ---
+  % 5/2 (15)
+  \draw[line width=1.2pt] ({\xS + 1.8}, {\yzero + 15*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$5/2$} -- ({\xS + 2.35}, {\yzero + 15*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$15$};
+  % 1/2 (202)
+  \draw[line width=1.2pt] ({\xS + 0.9}, {\yzero + 202*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1/2$} -- ({\xS + 1.45}, {\yzero + 202*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$202$};
+  % 3/2 (300)
+  \draw[line width=1.2pt] ({\xS + 0.9}, {\yzero + 300*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$3/2$} -- ({\xS + 1.45}, {\yzero + 300*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$300$};
+  % (5/2) (545)
+  \draw[line width=1.2pt] ({\xS + 1.55}, {\yzero + 545*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$(5/2)$} -- ({\xS + 2.10}, {\yzero + 545*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$545$};
+  % (1/2, 3/2) (630)
+  \draw[line width=1.2pt] ({\xS + 0.65}, {\yzero + 630*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$(1/2, 3/2)$} -- ({\xS + 1.45}, {\yzero + 630*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$630$};
+
+  % --- Branch 2 ---
+  % 11/2 (434)
+  \draw[line width=1.2pt] ({\xS + 2.7}, {\yzero + 434*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$11/2$} -- ({\xS + 3.25}, {\yzero + 434*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$434$};
+  % 822
+  \draw[line width=1.2pt] ({\xS + 2.6}, {\yzero + 822*\yscale}) -- ({\xS + 3.15}, {\yzero + 822*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$822$};
+  % 1061
+  \draw[line width=1.2pt] ({\xS + 2.5}, {\yzero + 1061*\yscale}) -- ({\xS + 3.05}, {\yzero + 1061*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1061$};
+
+  % --- Branch 3 ---
+  % 13/2 (164)
+  \draw[line width=1.2pt] ({\xS + 3.8}, {\yzero + 164*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$13/2$} -- ({\xS + 4.35}, {\yzero + 164*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$164$};
+  % 17/2 (489)
+  \draw[line width=1.2pt] ({\xS + 5.1}, {\yzero + 489*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$17/2$} -- ({\xS + 5.65}, {\yzero + 489*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$489$};
+  % 15/2 (715)
+  \draw[line width=1.2pt] ({\xS + 3.9}, {\yzero + 715*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$15/2$} -- ({\xS + 4.45}, {\yzero + 715*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$715$};
+  % 19/2 (1135)
+  \draw[line width=1.2pt] ({\xS + 4.7}, {\yzero + 1135*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$19/2$} -- ({\xS + 5.25}, {\yzero + 1135*\yscale});
+  \node[above=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at ({\xS + 5.0}, {\yzero + 1135*\yscale}) {$1135$};
+  % 1131
+  \draw[line width=1.2pt] ({\xS + 5.7}, {\yzero + 1131*\yscale}) -- ({\xS + 6.25}, {\yzero + 1131*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1131$};
+
+  % --- Branch 4 ---
+  % 21/2 (953)
+  \draw[line width=1.2pt] ({\xS + 6.1}, {\yzero + 953*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$21/2$} -- ({\xS + 6.65}, {\yzero + 953*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$953$};
+  % 23/2 (1661)
+  \draw[line width=1.2pt] ({\xS + 6.0}, {\yzero + 1661*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$23/2$} -- ({\xS + 6.55}, {\yzero + 1661*\yscale});
+  \node[above=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at ({\xS + 6.18}, {\yzero + 1661*\yscale}) {$1661$};
+  % 25/2 (1534)
+  \draw[line width=1.2pt] ({\xS + 7.0}, {\yzero + 1534*\yscale}) -- ({\xS + 7.55}, {\yzero + 1534*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$1534$};
+  \node[below=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at ({\xS + 7.25}, {\yzero + 1534*\yscale}) {$25/2$};
+  % 27/2 (2434)
+  \draw[line width=1.2pt] ({\xS + 6.4}, {\yzero + 2434*\yscale}) node[left=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$27/2$} -- ({\xS + 6.95}, {\yzero + 2434*\yscale});
+  \node[above=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at ({\xS + 6.68}, {\yzero + 2434*\yscale}) {$2434$};
+  \node[below=1pt, font=\scriptsize, fill=white, inner sep=0.6pt] at ({\xS + 6.75}, {\yzero + 2434*\yscale}) {$29/2$};
+  % 2319
+  \draw[line width=1.2pt] ({\xS + 7.4}, {\yzero + 2319*\yscale}) -- ({\xS + 7.95}, {\yzero + 2319*\yscale}) node[right=1.5pt, font=\scriptsize, fill=white, inner sep=0.6pt] {$2319$};
+
+  % Transitions (Experiment)
+  % 15 -> 0
+  \draw[->, line width=1.2pt] ({\xS + 2.05}, {\yzero + 15*\yscale}) -- ({\xS + 3.15}, \yzero);
+  % 202 -> 15
+  \draw[->, line width=0.7pt] ({\xS + 1.2}, {\yzero + 202*\yscale}) -- ({\xS + 1.95}, {\yzero + 15*\yscale});
+  % 300 -> 202 & 300 -> 15
+  \draw[->, line width=0.7pt] ({\xS + 1.15}, {\yzero + 300*\yscale}) -- ({\xS + 1.15}, {\yzero + 202*\yscale});
+  \draw[->, line width=0.7pt] ({\xS + 1.3}, {\yzero + 300*\yscale}) -- ({\xS + 2.0}, {\yzero + 15*\yscale});
+  % 545 -> 300 & 545 -> 15
+  \draw[->, line width=0.7pt] ({\xS + 1.7}, {\yzero + 545*\yscale}) -- ({\xS + 1.35}, {\yzero + 300*\yscale});
+  \draw[->, line width=0.7pt] ({\xS + 1.85}, {\yzero + 545*\yscale}) -- ({\xS + 2.15}, {\yzero + 15*\yscale});
+  % 630 -> 300 & 630 -> 202
+  \draw[->, line width=0.7pt] ({\xS + 1.1}, {\yzero + 630*\yscale}) -- ({\xS + 1.15}, {\yzero + 300*\yscale});
+  \draw[->, line width=0.7pt] ({\xS + 1.2}, {\yzero + 630*\yscale}) -- ({\xS + 1.25}, {\yzero + 202*\yscale});
+
+  % 164 -> 0
+  \draw[->, line width=1.2pt] ({\xS + 3.9}, {\yzero + 164*\yscale}) -- ({\xS + 3.3}, \yzero);
+  % 434 -> 0 & 434 -> 164 (dash)
+  \draw[->, line width=0.7pt] ({\xS + 2.95}, {\yzero + 434*\yscale}) -- ({\xS + 3.25}, \yzero);
+  \draw[->, line width=0.7pt, dashed] ({\xS + 3.1}, {\yzero + 434*\yscale}) -- ({\xS + 3.95}, {\yzero + 164*\yscale});
+  % 822 -> 434 (dash) & 822 -> 164 (dash)
+  \draw[->, line width=0.7pt, dashed] ({\xS + 2.85}, {\yzero + 822*\yscale}) -- ({\xS + 2.95}, {\yzero + 434*\yscale});
+  \draw[->, line width=0.7pt, dashed] ({\xS + 3.0}, {\yzero + 822*\yscale}) -- ({\xS + 4.0}, {\yzero + 164*\yscale});
+  % 1061 -> 822 & 1061 -> 434 (dash)
+  \draw[->, line width=0.7pt] ({\xS + 2.75}, {\yzero + 1061*\yscale}) -- ({\xS + 2.85}, {\yzero + 822*\yscale});
+  \draw[->, line width=0.7pt, dashed] ({\xS + 2.9}, {\yzero + 1061*\yscale}) -- ({\xS + 3.1}, {\yzero + 434*\yscale});
+
+  % 489 -> 164 (solid)
+  \draw[->, line width=0.8pt] ({\xS + 5.2}, {\yzero + 489*\yscale}) -- ({\xS + 4.25}, {\yzero + 164*\yscale});
+  % 715 -> 164 (solid) & 715 -> 489 (dash)
+  \draw[->, line width=0.8pt] ({\xS + 4.1}, {\yzero + 715*\yscale}) -- ({\xS + 4.1}, {\yzero + 164*\yscale});
+  \draw[->, line width=0.7pt, dashed] ({\xS + 4.3}, {\yzero + 715*\yscale}) -- ({\xS + 5.2}, {\yzero + 489*\yscale});
+  % 1135 -> 715 (solid) & 1135 -> 489 (dash)
+  \draw[->, line width=0.8pt] ({\xS + 4.15}, {\yzero + 1135*\yscale}) -- ({\xS + 4.15}, {\yzero + 715*\yscale});
+  \draw[->, line width=0.7pt, dashed] ({\xS + 4.35}, {\yzero + 1135*\yscale}) -- ({\xS + 5.3}, {\yzero + 489*\yscale});
+  % 1131 -> 489 (solid)
+  \draw[->, line width=0.8pt] ({\xS + 5.85}, {\yzero + 1131*\yscale}) -- ({\xS + 5.45}, {\yzero + 489*\yscale});
+
+  % 953 -> 489 (solid)
+  \draw[->, line width=0.8pt] ({\xS + 6.2}, {\yzero + 953*\yscale}) -- ({\xS + 5.5}, {\yzero + 489*\yscale});
+  % 1534 -> 953 (solid) & 1661 -> 953 (solid) & 1661 -> 489 (dash)
+  \draw[->, line width=0.8pt] ({\xS + 7.15}, {\yzero + 1534*\yscale}) -- ({\xS + 6.55}, {\yzero + 953*\yscale});
+  \draw[->, line width=0.8pt] ({\xS + 6.1}, {\yzero + 1661*\yscale}) -- ({\xS + 6.35}, {\yzero + 953*\yscale});
+  \draw[->, line width=0.7pt, dashed] ({\xS + 6.05}, {\yzero + 1661*\yscale}) -- ({\xS + 5.55}, {\yzero + 489*\yscale});
+  % 2319 -> 1534 & 2434 -> 1534 & 2434 -> 1661
+  \draw[->, line width=0.8pt] ({\xS + 7.5}, {\yzero + 2319*\yscale}) -- ({\xS + 7.3}, {\yzero + 1534*\yscale});
+  \draw[->, line width=0.8pt] ({\xS + 6.8}, {\yzero + 2434*\yscale}) -- ({\xS + 7.15}, {\yzero + 1534*\yscale});
+  \draw[->, line width=0.8pt] ({\xS + 6.55}, {\yzero + 2434*\yscale}) -- ({\xS + 6.50}, {\yzero + 1661*\yscale});
+
+  % ==================== PARAMETER FOOTER ====================
+  \node[font=\LARGE\bfseries] at (8.8, -0.6) {$\beta = 0.23 \quad \gamma = 16^\circ \quad \lambda = 0 \quad \Delta = 0.7\,\textnormal{MeV}$};
+
+\end{tikzpicture}
+\end{document}

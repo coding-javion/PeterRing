@@ -1,0 +1,195 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: z in fm (horizontal), x in fm (vertical)
+  \def\zscale{0.46}
+  \def\xscale{0.58}
+
+  % Axes with arrows
+  \draw[->, line width=0.85pt] (-10.8*\zscale, 0) -- (11.2*\zscale, 0) node[right=1pt, font=\normalsize] {$z\,[\mathrm{fm}]$};
+  \draw[->, line width=0.85pt] (0, -5.6*\xscale) -- (0, 6.2*\xscale) node[above=1pt, font=\normalsize] {$x\,[\mathrm{fm}]$};
+
+  % Ticks on z-axis (horizontal)
+  \foreach \z in {-10, -9, ..., 10} {
+    \draw[line width=0.55pt] (\z*\zscale, -0.08) -- (\z*\zscale, 0.08);
+  }
+  \foreach \z in {-10, -5, 5, 10} {
+    \draw[line width=0.75pt] (\z*\zscale, -0.14) -- (\z*\zscale, 0.14);
+    \node[anchor=north, font=\small] at (\z*\zscale, -0.14) {$\z$};
+  }
+
+  % Ticks on x-axis (vertical)
+  \foreach \x in {-5, -4, ..., 5} {
+    \draw[line width=0.55pt] (-0.08, \x*\xscale) -- (0.08, \x*\xscale);
+  }
+  \foreach \x in {-5, 5} {
+    \draw[line width=0.75pt] (-0.14, \x*\xscale) -- (0.14, \x*\xscale);
+    \node[anchor=east, font=\small] at (-0.14, \x*\xscale) {$\x$};
+  }
+
+  % ========================================================
+  % DASHED CONTOURS (Semiclassical - Stationary Phase Method)
+  % ========================================================
+  \draw[line width=0.95pt, dashed] (0, 0) ellipse [x radius=9.6*\zscale, y radius=4.45*\xscale];
+  \draw[line width=0.95pt, dashed] (0, 0) ellipse [x radius=8.0*\zscale, y radius=3.75*\xscale];
+  \draw[line width=0.95pt, dashed] (0, 0) ellipse [x radius=6.3*\zscale, y radius=2.95*\xscale];
+  \draw[line width=0.95pt, dashed] (0, 0) ellipse [x radius=4.6*\zscale, y radius=2.15*\xscale];
+  \draw[line width=0.95pt, dashed] (0, 0) ellipse [x radius=3.1*\zscale, y radius=1.45*\xscale];
+
+  % ========================================================
+  % SOLID CONTOURS (Exact Quantum Densities)
+  % ========================================================
+
+  % Contour 2.0 (Outer)
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (9.7*\zscale, 0*\xscale)
+      (9.1*\zscale, 1.8*\xscale)
+      (7.6*\zscale, 3.4*\xscale)
+      (5.5*\zscale, 4.3*\xscale)
+      (3.0*\zscale, 4.65*\xscale)
+      (0*\zscale, 4.75*\xscale)
+      (-3.0*\zscale, 4.65*\xscale)
+      (-5.5*\zscale, 4.3*\xscale)
+      (-7.6*\zscale, 3.4*\xscale)
+      (-9.1*\zscale, 1.8*\xscale)
+      (-9.7*\zscale, 0*\xscale)
+      (-9.1*\zscale, -1.8*\xscale)
+      (-7.6*\zscale, -3.4*\xscale)
+      (-5.5*\zscale, -4.3*\xscale)
+      (-3.0*\zscale, -4.65*\xscale)
+      (0*\zscale, -4.75*\xscale)
+      (3.0*\zscale, -4.65*\xscale)
+      (5.5*\zscale, -4.3*\xscale)
+      (7.6*\zscale, -3.4*\xscale)
+      (9.1*\zscale, -1.8*\xscale)
+    };
+
+  % Contour 3.0
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (8.2*\zscale, 0*\xscale)
+      (7.7*\zscale, 1.5*\xscale)
+      (6.6*\zscale, 2.8*\xscale)
+      (4.8*\zscale, 3.65*\xscale)
+      (2.5*\zscale, 3.85*\xscale)
+      (0*\zscale, 3.9*\xscale)
+      (-2.5*\zscale, 3.85*\xscale)
+      (-4.8*\zscale, 3.65*\xscale)
+      (-6.6*\zscale, 2.8*\xscale)
+      (-7.7*\zscale, 1.5*\xscale)
+      (-8.2*\zscale, 0*\xscale)
+      (-7.7*\zscale, -1.5*\xscale)
+      (-6.6*\zscale, -2.8*\xscale)
+      (-4.8*\zscale, -3.65*\xscale)
+      (-2.5*\zscale, -3.85*\xscale)
+      (0*\zscale, -3.9*\xscale)
+      (2.5*\zscale, -3.85*\xscale)
+      (4.8*\zscale, -3.65*\xscale)
+      (6.6*\zscale, -2.8*\xscale)
+      (7.7*\zscale, -1.5*\xscale)
+    };
+
+  % Contour 4.0
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (6.6*\zscale, 0*\xscale)
+      (6.3*\zscale, 1.2*\xscale)
+      (5.2*\zscale, 2.3*\xscale)
+      (3.6*\zscale, 3.1*\xscale)
+      (2.0*\zscale, 3.0*\xscale)
+      (0*\zscale, 2.85*\xscale)
+      (-2.0*\zscale, 3.0*\xscale)
+      (-3.6*\zscale, 3.1*\xscale)
+      (-5.2*\zscale, 2.3*\xscale)
+      (-6.3*\zscale, 1.2*\xscale)
+      (-6.6*\zscale, 0*\xscale)
+      (-6.3*\zscale, -1.2*\xscale)
+      (-5.2*\zscale, -2.3*\xscale)
+      (-3.6*\zscale, -3.1*\xscale)
+      (-2.0*\zscale, -3.0*\xscale)
+      (0*\zscale, -2.85*\xscale)
+      (2.0*\zscale, -3.0*\xscale)
+      (3.6*\zscale, -3.1*\xscale)
+      (5.2*\zscale, -2.3*\xscale)
+      (6.3*\zscale, -1.2*\xscale)
+    };
+
+  % Contour 5.0
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (5.1*\zscale, 0*\xscale)
+      (4.8*\zscale, 0.8*\xscale)
+      (4.2*\zscale, 1.6*\xscale)
+      (2.6*\zscale, 2.1*\xscale)
+      (1.2*\zscale, 2.25*\xscale)
+      (0*\zscale, 2.0*\xscale)
+      (-1.2*\zscale, 2.25*\xscale)
+      (-2.6*\zscale, 2.1*\xscale)
+      (-4.2*\zscale, 1.6*\xscale)
+      (-4.8*\zscale, 0.8*\xscale)
+      (-5.1*\zscale, 0*\xscale)
+      (-4.8*\zscale, -0.8*\xscale)
+      (-4.2*\zscale, -1.6*\xscale)
+      (-2.6*\zscale, -2.1*\xscale)
+      (-1.2*\zscale, -2.25*\xscale)
+      (0*\zscale, -2.0*\xscale)
+      (1.2*\zscale, -2.25*\xscale)
+      (2.6*\zscale, -2.1*\xscale)
+      (4.2*\zscale, -1.6*\xscale)
+      (4.8*\zscale, -0.8*\xscale)
+    };
+
+  % Contour 5.5: Two separate peanut/bean lobes
+  % Right lobe
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (1.4*\zscale, 0*\xscale)
+      (1.5*\zscale, 0.65*\xscale)
+      (2.0*\zscale, 1.35*\xscale)
+      (2.6*\zscale, 1.15*\xscale)
+      (2.75*\zscale, 0*\xscale)
+      (2.6*\zscale, -1.15*\xscale)
+      (2.0*\zscale, -1.35*\xscale)
+      (1.5*\zscale, -0.65*\xscale)
+    };
+
+  % Left lobe
+  \draw[line width=1.15pt]
+    plot[smooth cycle] coordinates {
+      (-1.4*\zscale, 0*\xscale)
+      (-1.5*\zscale, 0.65*\xscale)
+      (-2.0*\zscale, 1.35*\xscale)
+      (-2.6*\zscale, 1.15*\xscale)
+      (-2.75*\zscale, 0*\xscale)
+      (-2.6*\zscale, -1.15*\xscale)
+      (-2.0*\zscale, -1.35*\xscale)
+      (-1.5*\zscale, -0.65*\xscale)
+    };
+
+  % ========================================================
+  % LABELS WITH WHITE MASKS
+  % ========================================================
+  \node[font=\small, fill=white, inner sep=1.2pt] at (7.1*\zscale, 3.8*\xscale) {$2.0$};
+  \node[font=\small, fill=white, inner sep=1.2pt] at (6.0*\zscale, 3.1*\xscale) {$3.0$};
+  \node[font=\small, fill=white, inner sep=1.2pt] at (4.9*\zscale, 2.4*\xscale) {$4.0$};
+  \node[font=\small, fill=white, inner sep=1.2pt] at (3.9*\zscale, 1.7*\xscale) {$5.0$};
+  \node[font=\small, fill=white, inner sep=1.2pt] at (3.1*\zscale, 0.6*\xscale) {$5.5$};
+  \node[font=\small, fill=white, inner sep=1.2pt] at (-3.1*\zscale, 0.6*\xscale) {$5.5$};
+
+\end{tikzpicture}
+\end{document}

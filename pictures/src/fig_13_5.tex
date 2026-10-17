@@ -1,0 +1,141 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: r in fm, V in MeV
+  \def\xscale{0.36}
+  \def\yscale{0.080}
+
+  % Panel width
+  \def\pw{11.5*\xscale}
+  \def\gap{0.35}
+
+  % Woods-Saxon potential curve definition (coordinates)
+  \def\wsCurve{
+    plot[smooth] coordinates {
+      (0*\xscale, -44.0*\yscale)
+      (3.0*\xscale, -44.0*\yscale)
+      (4.5*\xscale, -43.8*\yscale)
+      (5.5*\xscale, -42.2*\yscale)
+      (6.5*\xscale, -36.5*\yscale)
+      (7.2*\xscale, -27.5*\yscale)
+      (7.8*\xscale, -17.5*\yscale)
+      (8.4*\xscale, -8.5*\yscale)
+      (9.0*\xscale, -3.8*\yscale)
+      (9.8*\xscale, -1.0*\yscale)
+      (10.5*\xscale, -0.2*\yscale)
+    }
+  }
+
+  % --------------------------------------------------------
+  % PANEL 1 (LEFT)
+  % --------------------------------------------------------
+  \begin{scope}[shift={(0, 0)}]
+
+    % Top horizontal axis (V = 0)
+    \draw[->, line width=0.85pt] (0, 0) -- (\pw, 0);
+
+    % Left vertical axis (V(r))
+    \draw[->, line width=0.85pt] (0, -45*\yscale) -- (0, 6*\yscale) node[above, font=\normalsize] {$V(r)$};
+
+    % Y-axis ticks and labels
+    \foreach \y in {-10, -20, -30, -40} {
+      \draw[line width=0.65pt] (0, \y*\yscale) -- (0.15, \y*\yscale);
+      \node[anchor=east, font=\small] at (-0.08, \y*\yscale) {$\y$};
+    }
+
+    % X-axis ticks (pointing up)
+    \foreach \x in {5, 10} {
+      \draw[line width=0.65pt] (\x*\xscale, 0) -- (\x*\xscale, 0.15);
+      \node[anchor=south, font=\small] at (\x*\xscale, 0.10) {$\x$};
+    }
+
+    % Woods-Saxon potential (Solid)
+    \draw[line width=1.15pt] \wsCurve;
+
+    % Parabola tangent at r0 = 5.2 (Dotted)
+    \draw[line width=1.2pt, dotted]
+      plot[smooth, domain=0.2:8.8, samples=30]
+      (\x*\xscale, {(-43.4 + 1.35 * (\x - 4.5)^2)*\yscale});
+
+  \end{scope}
+
+  % --------------------------------------------------------
+  % PANEL 2 (MIDDLE)
+  % --------------------------------------------------------
+  \begin{scope}[shift={(\pw + \gap, 0)}]
+
+    % Top horizontal axis (V = 0)
+    \draw[->, line width=0.85pt] (0, 0) -- (\pw, 0);
+
+    % Left border line
+    \draw[line width=0.85pt] (0, -45*\yscale) -- (0, 0);
+
+    % Y-axis ticks
+    \foreach \y in {-10, -20, -30, -40} {
+      \draw[line width=0.65pt] (0, \y*\yscale) -- (0.15, \y*\yscale);
+    }
+
+    % X-axis ticks (pointing up)
+    \foreach \x in {5, 10} {
+      \draw[line width=0.65pt] (\x*\xscale, 0) -- (\x*\xscale, 0.15);
+      \node[anchor=south, font=\small] at (\x*\xscale, 0.10) {$\x$};
+    }
+
+    % Woods-Saxon potential (Solid)
+    \draw[line width=1.15pt] \wsCurve;
+
+    % Parabola tangent at r0 = 7.1 (Dotted) - restricted domain
+    \draw[line width=1.2pt, dotted]
+      plot[smooth, domain=2.6:8.25, samples=30]
+      (\x*\xscale, {(-46.5 + 4.13 * (\x - 5.1)^2)*\yscale});
+
+  \end{scope}
+
+  % --------------------------------------------------------
+  % PANEL 3 (RIGHT)
+  % --------------------------------------------------------
+  \begin{scope}[shift={(2*\pw + 2*\gap, 0)}]
+
+    % Top horizontal axis (V = 0)
+    \draw[->, line width=0.85pt] (0, 0) -- (\pw + 0.3, 0) node[right=2pt, font=\normalsize] {$r\,[\mathrm{fm}]$};
+
+    % Left border line
+    \draw[line width=0.85pt] (0, -45*\yscale) -- (0, 0);
+
+    % Y-axis ticks
+    \foreach \y in {-10, -20, -30, -40} {
+      \draw[line width=0.65pt] (0, \y*\yscale) -- (0.15, \y*\yscale);
+    }
+
+    % X-axis ticks (pointing up)
+    \foreach \x in {5, 10} {
+      \draw[line width=0.65pt] (\x*\xscale, 0) -- (\x*\xscale, 0.15);
+      \node[anchor=south, font=\small] at (\x*\xscale, 0.10) {$\x$};
+    }
+
+    % Woods-Saxon potential (Solid)
+    \draw[line width=1.15pt] \wsCurve;
+
+    % Inverted parabola tangent at r0 = 9.0 (Dotted)
+    \draw[line width=1.2pt, dotted]
+      plot[smooth, domain=6.5:10.9, samples=30]
+      (\x*\xscale, {(-1.8 - 3.51 * (\x - 9.8)^2)*\yscale});
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

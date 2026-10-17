@@ -1,0 +1,140 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions of plot box
+  \def\W{14.8}
+  \def\H{8.2}
+
+  % Outer rectangular frame
+  \draw[line width=1.1pt] (0, 0) rectangle (\W, \H);
+
+  % Y-axis ticks and labels (0 to 2500 keV in steps of 500)
+  % Ground state is elevated to y0 = 0.55 cm for clean clearance from bottom border
+  \def\yzero{0.55}
+  \def\yscale{0.00296}
+
+  \foreach \E in {0, 500, 1000, 1500, 2000, 2500} {
+    \pgfmathsetmacro{\ypos}{\yzero + \E * \yscale}
+    \draw[line width=0.8pt] (0, \ypos) -- (0.15, \ypos);
+    \draw[line width=0.8pt] (\W, \ypos) -- (\W - 0.15, \ypos);
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {\E};
+  }
+  % Y-axis label placed between 2500 and 2000 ticks with generous clearance
+  \node[font=\large\bfseries, align=center] at (-1.25, {\yzero + 2250 * \yscale}) {$E$\\[-2pt]\normalsize($\mathrm{keV}$)};
+
+  % Helper macro for level drawing:
+  % #1: x_left, #2: x_right, #3: Energy in keV, #4: label
+  \newcommand{\levelBa}[4]{%
+    \pgfmathsetmacro{\y}{\yzero + #3 * \yscale}
+    \draw[line width=1.2pt] (#1, \y) node[left=1.5pt, font=\footnotesize] {$#4$} -- (#2, \y);%
+  }
+  \newcommand{\levelLa}[4]{%
+    \pgfmathsetmacro{\y}{\yzero + #3 * \yscale}
+    \draw[line width=1.2pt] (#1, \y) -- (#2, \y) node[right=1.5pt, font=\footnotesize] {$#4$};%
+  }
+
+  % ==================== PAIR 1: 124Ba & 125La ====================
+  \def\xBaL{1.15} \def\xBaR{1.60}
+  \def\xLaL{1.80} \def\xLaR{2.25}
+
+  \levelBa{\xBaL}{\xBaR}{0}{0^+}
+  \levelBa{\xBaL}{\xBaR}{230}{2^+}
+  \levelBa{\xBaL}{\xBaR}{650}{4^+}
+  \levelBa{\xBaL}{\xBaR}{1225}{6^+}
+
+  \levelLa{\xLaL}{\xLaR}{0}{11/2^-}
+  \levelLa{\xLaL}{\xLaR}{245}{15/2^-}
+  \levelLa{\xLaL}{\xLaR}{690}{19/2^-}
+  \levelLa{\xLaL}{\xLaR}{1285}{23/2^-}
+
+  \node[below=4pt, font=\footnotesize] at (1.30, 0) {$^{124}\mathrm{Ba}$};
+  \node[below=4pt, font=\footnotesize] at (2.10, 0) {$^{125}\mathrm{La}$};
+
+  % ==================== PAIR 2: 126Ba & 127La ====================
+  \def\xBbaL{4.05} \def\xBbaR{4.50}
+  \def\xLbaL{4.70} \def\xLbaR{5.15}
+
+  \levelBa{\xBbaL}{\xBbaR}{0}{0^+}
+  \levelBa{\xBbaL}{\xBbaR}{256}{2^+}
+  \levelBa{\xBbaL}{\xBbaR}{711}{4^+}
+  \levelBa{\xBbaL}{\xBbaR}{1315}{6^+}
+  \levelBa{\xBbaL}{\xBbaR}{2035}{8^+}
+
+  \levelLa{\xLbaL}{\xLbaR}{0}{11/2^-}
+  \levelLa{\xLbaL}{\xLbaR}{260}{15/2^-}
+  \levelLa{\xLbaL}{\xLbaR}{720}{19/2^-}
+  \levelLa{\xLbaL}{\xLbaR}{1335}{23/2^-}
+  \levelLa{\xLbaL}{\xLbaR}{2110}{27/2^-}
+
+  \node[below=4pt, font=\footnotesize] at (4.20, 0) {$^{126}\mathrm{Ba}$};
+  \node[below=4pt, font=\footnotesize] at (5.00, 0) {$^{127}\mathrm{La}$};
+
+  % ==================== PAIR 3: 128Ba & 129La ====================
+  \def\xCbaL{6.95} \def\xCbaR{7.40}
+  \def\xClaL{7.60} \def\xClaR{8.05}
+
+  \levelBa{\xCbaL}{\xCbaR}{0}{0^+}
+  \levelBa{\xCbaL}{\xCbaR}{284}{2^+}
+  \levelBa{\xCbaL}{\xCbaR}{763}{4^+}
+  \levelBa{\xCbaL}{\xCbaR}{1400}{6^+}
+  \levelBa{\xCbaL}{\xCbaR}{2170}{8^+}
+
+  \levelLa{\xClaL}{\xClaR}{0}{11/2^-}
+  \levelLa{\xClaL}{\xClaR}{280}{15/2^-}
+  \levelLa{\xClaL}{\xClaR}{750}{19/2^-}
+  \levelLa{\xClaL}{\xClaR}{1375}{23/2^-}
+  \levelLa{\xClaL}{\xClaR}{2150}{27/2^-}
+
+  \node[below=4pt, font=\footnotesize] at (7.10, 0) {$^{128}\mathrm{Ba}$};
+  \node[below=4pt, font=\footnotesize] at (7.90, 0) {$^{129}\mathrm{La}$};
+
+  % ==================== PAIR 4: 130Ba & 131La ====================
+  \def\xDbaL{9.85}  \def\xDbaR{10.30}
+  \def\xDlaL{10.50} \def\xDlaR{10.95}
+
+  \levelBa{\xDbaL}{\xDbaR}{0}{0^+}
+  \levelBa{\xDbaL}{\xDbaR}{357}{2^+}
+  \levelBa{\xDbaL}{\xDbaR}{902}{4^+}
+  \levelBa{\xDbaL}{\xDbaR}{1590}{6^+}
+  \levelBa{\xDbaL}{\xDbaR}{2375}{8^+}
+
+  \levelLa{\xDlaL}{\xDlaR}{0}{11/2^-}
+  \levelLa{\xDlaL}{\xDlaR}{330}{15/2^-}
+  \levelLa{\xDlaL}{\xDlaR}{870}{19/2^-}
+  \levelLa{\xDlaL}{\xDlaR}{1530}{23/2^-}
+  \levelLa{\xDlaL}{\xDlaR}{2300}{27/2^-}
+
+  \node[below=4pt, font=\footnotesize] at (10.00, 0) {$^{130}\mathrm{Ba}$};
+  \node[below=4pt, font=\footnotesize] at (10.80, 0) {$^{131}\mathrm{La}$};
+
+  % ==================== PAIR 5: 132Ba & 133La ====================
+  \def\xEbaL{12.65} \def\xEbaR{13.10}
+  \def\xElaL{13.30} \def\xElaR{13.75}
+
+  \levelBa{\xEbaL}{\xEbaR}{0}{0^+}
+  \levelBa{\xEbaL}{\xEbaR}{464}{2^+}
+  \levelBa{\xEbaL}{\xEbaR}{1128}{4^+}
+  \levelBa{\xEbaL}{\xEbaR}{1928}{6^+}
+
+  \levelLa{\xElaL}{\xElaR}{0}{11/2^-}
+  \levelLa{\xElaL}{\xElaR}{440}{15/2^-}
+  \levelLa{\xElaL}{\xElaR}{1120}{19/2^-}
+  \levelLa{\xElaL}{\xElaR}{1900}{23/2^-}
+
+  \node[below=4pt, font=\footnotesize] at (12.80, 0) {$^{132}\mathrm{Ba}$};
+  \node[below=4pt, font=\footnotesize] at (13.60, 0) {$^{133}\mathrm{La}$};
+
+\end{tikzpicture}
+\end{document}

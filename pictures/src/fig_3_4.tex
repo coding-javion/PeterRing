@@ -1,0 +1,120 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+  \begin{axis}[
+    width=9.5cm, height=11.5cm,
+    xmin=0, xmax=0.125,
+    ymin=15, ymax=165,
+    axis lines=box,
+    xtick={0, 0.05, 0.10},
+    xticklabels={$0$, $0.05$, $0.10$},
+    minor x tick num=4,
+    ytick={50, 100, 150},
+    yticklabels={$50$, $100$, $150$},
+    minor y tick num=4,
+    tick pos=left,
+    tick align=inside,
+    tick style={line width=0.8pt, black},
+    xlabel={\large $\hbar^2\omega^2(\mathrm{MeV}^2)$},
+    ylabel={\large \begin{tabular}{c}$\displaystyle\frac{2\mathcal{J}}{\hbar^2}$\\[4pt]$(\mathrm{MeV}^{-1})$\end{tabular}},
+    every axis x label/.style={at={(axis cs:0.125, 15)}, anchor=north east, yshift=-16pt},
+    every axis y label/.style={at={(axis cs:0, 165)}, anchor=south east, xshift=10pt, yshift=4pt},
+    clip=false
+  ]
+
+    % --- Curve 1: 174Hf (smooth, solid line with filled circles) ---
+    \addplot[line width=1.1pt, black, smooth, tension=0.4] coordinates {
+      (0.003, 65)
+      (0.012, 68)
+      (0.026, 72)
+      (0.041, 76)
+      (0.058, 80)
+      (0.073, 87)
+      (0.084, 94)
+      (0.095, 102)
+      (0.105, 108)
+    };
+
+    \addplot[only marks, mark=*, mark size=2.2pt, black] coordinates {
+      (0.003, 65)
+      (0.012, 68)
+      (0.026, 72)
+      (0.041, 76)
+      (0.058, 80)
+      (0.073, 87)
+      (0.084, 94)
+      (0.095, 102)
+      (0.105, 108)
+    };
+
+    % Spin labels for 174Hf (below marks)
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.003, 62) {$2$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.012, 65) {$4$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.026, 69) {$6$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.041, 73) {$8$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.058, 77) {$10$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.073, 84) {$12$};
+    \node[anchor=south east, font=\footnotesize, fill=white, inner sep=1.2pt] at (axis cs:0.083, 96) {$14$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.095, 99) {$16$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.105, 105) {$18$};
+
+    % Label 174Hf
+    \node[anchor=west, font=\LARGE] at (axis cs:0.100, 88) {$^{174}\mathrm{Hf}$};
+
+    % --- Curve 2: 158Er (backbending, smooth curve with open circles) ---
+    \addplot[line width=1.1pt, black, smooth, tension=0.4] coordinates {
+      (0.012, 30)
+      (0.030, 42)
+      (0.050, 50)
+      (0.068, 58)
+      (0.084, 66)
+      (0.093, 75)
+      (0.082, 92)
+      (0.064, 106)
+      (0.053, 126)
+      (0.056, 135)
+      (0.080, 128)
+    };
+
+    \addplot[only marks, mark=o, mark size=2.2pt, line width=0.9pt, fill=white, draw=black] coordinates {
+      (0.012, 30)
+      (0.030, 42)
+      (0.050, 50)
+      (0.068, 58)
+      (0.084, 66)
+      (0.093, 75)
+      (0.064, 106)
+      (0.056, 135)
+      (0.080, 128)
+    };
+
+    % Spin labels for 158Er
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.012, 27) {$2$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.030, 39) {$4$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.050, 47) {$6$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.068, 55) {$8$};
+    \node[anchor=north, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.084, 63) {$10$};
+    \node[anchor=west, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.095, 75) {$12$};
+    \node[anchor=north east, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.065, 105) {$14$};
+    \node[anchor=south, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.056, 138) {$16$};
+    \node[anchor=south, font=\footnotesize, fill=white, inner sep=1pt] at (axis cs:0.080, 131) {$18$};
+
+    % Label 158Er
+    \node[anchor=south, font=\LARGE] at (axis cs:0.056, 142) {$^{158}\mathrm{Er}$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

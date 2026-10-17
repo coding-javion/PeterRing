@@ -1,0 +1,98 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Frame box
+  \draw[line width=0.95pt] (0, -3.8) rectangle (9.6, 2.7);
+
+  % Middle axis (y = 0)
+  \draw[line width=0.85pt] (0, 0) -- (9.6, 0);
+
+  % Y-axis ticks on left (0 to 3, 0 to -4)
+  \foreach \y/\val in {2.4/3, 1.6/2, 0.8/1, 0/0, -0.8/-1, -1.6/-2, -2.4/-3, -3.2/-4} {
+    \draw[line width=0.6pt] (0, \y) -- (0.15, \y);
+  }
+  \node[anchor=east, font=\small] at (-0.08, 2.4) {$3$};
+  \node[anchor=east, font=\small] at (-0.08, 1.6) {$2$};
+  \node[anchor=east, font=\small] at (-0.08, 0.8) {$1$};
+  \node[anchor=east, font=\small] at (-0.08, 0) {$0$};
+  \node[anchor=east, font=\small] at (-0.08, -0.8) {$-1$};
+  \node[anchor=east, font=\small] at (-0.08, -1.6) {$-2$};
+  \node[anchor=east, font=\small] at (-0.08, -2.4) {$-3$};
+  \node[anchor=east, font=\small] at (-0.08, -3.2) {$-4$};
+
+  % Label g / fm inside top-left
+  \node[anchor=north west, font=\small, align=center] at (0.15, 2.6) {$\displaystyle\frac{g}{\mathrm{fm}}$};
+
+  % Ticks on middle axis (r = 5.0, 4.5, 4.0, 3.5, 3.0, 2.5, 2.0)
+  \foreach \x/\val in {0.7/5, 2.0/4.5, 3.3/4, 4.6/3.5, 5.9/3, 7.2/2.5, 8.5/2} {
+    \draw[line width=0.6pt] (\x, -0.1) -- (\x, 0.1);
+    \node[anchor=south, font=\footnotesize] at (\x, 0.05) {$\val$};
+  }
+
+  % Energy scale on right (below middle line)
+  \node[anchor=west, font=\small] at (9.6, 0) {$0$};
+  \draw[line width=0.6pt] (9.6, -1.8) -- (9.45, -1.8);
+  \node[anchor=west, font=\small] at (9.6, -1.8) {$-50$};
+  \draw[line width=0.6pt] (9.6, -3.6) -- (9.45, -3.6);
+  \node[anchor=west, font=\small] at (9.6, -3.6) {$-100$};
+  \node[anchor=north west, font=\small, align=center] at (9.6, -3.7) {$E$\\[-1pt]$(\mathrm{MeV})$};
+
+  % --- V(r) CURVE (LONG DASHED) ---
+  \draw[dash pattern=on 7pt off 3.5pt, line width=0.95pt]
+    (1.0, 0)
+    to[out=-35, in=170] (3.8, -2.4)
+    to[out=-10, in=180] (6.7, -3.7)
+    to[out=0, in=-135] (8.3, -1.5)
+    to[out=45, in=-170] (9.0, 0);
+
+  % --- g0(r) CURVE (SOLID) ---
+  \draw[line width=1.05pt]
+    (3.6, 0)
+    to[out=15, in=180] (6.7, 2.25)
+    to[out=0, in=165] (9.0, 0);
+
+  % --- g1(r) CURVE (SHORT DASHED) ---
+  \draw[dashed, dash pattern=on 3.5pt off 2.5pt, line width=0.95pt]
+    (2.8, 0)
+    to[out=25, in=180] (5.6, 2.25)
+    to[out=0, in=120] (6.7, 0)
+    to[out=-60, in=180] (7.6, -1.6)
+    to[out=0, in=-165] (9.0, 0);
+
+  % --- g2(r) CURVE (DASH-DOTTED) ---
+  \draw[dash pattern=on 5pt off 2.5pt on 1.5pt off 2.5pt, line width=0.95pt]
+    (0.0, 0)
+    to[out=35, in=180] (0.35, 0.1)
+    to[out=0, in=150] (0.8, 0)
+    to[out=-30, in=155] (2.6, -1.0)
+    to[out=-25, in=180] (4.4, -2.55)
+    to[out=0, in=-110] (6.0, 0)
+    to[out=70, in=180] (6.9, 1.5)
+    to[out=0, in=115] (7.5, 0)
+    to[out=-65, in=180] (8.0, -1.35)
+    to[out=0, in=-160] (8.95, 0);
+
+  % --- MONOPOLE POINTER LINE ---
+  \draw[dashed, line width=0.65pt] (7.8, 1.45) -- (7.2, 0.35);
+
+  % --- LABELS (drawn on top of all curves with protective white masks) ---
+  \node[anchor=west, font=\small, fill=white, inner sep=1.2pt] at (7.4, -3.6) {$V(r)$};
+  \node[anchor=south west, font=\small, fill=white, inner sep=1.0pt] at (6.6, 2.05) {$g_0(r)$};
+  \node[anchor=south east, font=\small, fill=white, inner sep=1.0pt] at (4.9, 2.25) {$g_1(r)$};
+  \node[anchor=north east, font=\small, fill=white, inner sep=1.2pt] at (5.1, -1.8) {$g_2(r)$};
+  \node[anchor=south, font=\small, align=center, fill=white, inner sep=1.2pt] at (8.1, 1.55) {$^{16}\mathrm{O}$ monopole};
+
+\end{tikzpicture}
+\end{document}

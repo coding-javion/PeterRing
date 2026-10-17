@@ -1,0 +1,65 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Column positions
+  \def\xone{1.6}
+  \def\xtwo{6.2}
+  \def\w{1.0} % half-width of level line
+
+  % Headers
+  \node[font=\Large\bfseries] at (\xone, 4.3) {$^{208}\text{Pb}$};
+  \node[font=\Large\bfseries] at (\xtwo, 4.3) {$^{209}\text{Bi}$};
+
+  % --- 208 Pb ---
+  % Ground state: 0+
+  \draw[line width=1.2pt] ({\xone-\w}, 0) -- ({\xone+\w}, 0);
+  \node[left=3pt, font=\normalsize] at ({\xone-\w}, 0) {$0^+$};
+
+  % Excited state: 3- at 2.61 MeV
+  \def\yThree{3.15}
+  \draw[line width=1.2pt] ({\xone-\w}, \yThree) -- ({\xone+\w}, \yThree);
+  \node[left=3pt, font=\normalsize] at ({\xone-\w}, \yThree) {$3^-$};
+
+  % Vertical arrow with 2.61 [MeV]
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, line width=0.85pt] 
+    ({\xone-0.2}, 0.05) -- ({\xone-0.2}, {\yThree-0.05})
+    node[midway, right=3pt, font=\normalsize] {$2.61\,\text{[MeV]}$};
+
+  % --- 209 Bi ---
+  % Ground state: 9/2-
+  \draw[line width=1.2pt] ({\xtwo-\w}, 0) -- ({\xtwo+\w}, 0) node[right=3pt, font=\normalsize] {$9/2^-$};
+
+  % Septuplet levels: 7 levels
+  % Lowest is 3/2+, highest is 15/2+
+  \def\ySepA{2.70}
+  \def\ySepB{3.00}
+  \def\ySepC{3.18}
+  \def\ySepD{3.30}
+  \def\ySepE{3.40}
+  \def\ySepF{3.50}
+  \def\ySepG{3.65}
+
+  % Fan of dashed lines from (x1+w, yThree) to each level
+  \foreach \y in {\ySepA, \ySepB, \ySepC, \ySepD, \ySepE, \ySepF, \ySepG} {
+    \draw[dashed, line width=0.7pt] ({\xone+\w}, \yThree) -- ({\xtwo-\w}, \y);
+    \draw[line width=1.1pt] ({\xtwo-\w}, \y) -- ({\xtwo+\w}, \y);
+  }
+
+  % Labels for septuplet extremes
+  \node[right=3pt, font=\normalsize] at ({\xtwo+\w}, \ySepA) {$3/2^+$};
+  \node[right=3pt, font=\normalsize] at ({\xtwo+\w}, \ySepG) {$15/2^+$};
+
+\end{tikzpicture}
+\end{document}

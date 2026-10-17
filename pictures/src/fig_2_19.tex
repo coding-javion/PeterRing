@@ -1,0 +1,55 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Origin of coordinates: (0,0) is at delta=0 on the delta axis
+  \def\yzero{2.3} % intersection point at delta=0
+
+  % Axes
+  \draw[line width=1.1pt, ->] (-2.4, 0) -- (3.5, 0) node[below=4pt, font=\large] {$\delta$};
+  \draw[line width=1.1pt] (0, 0) -- (0, 4.2) node[above=2pt, font=\large] {$\varepsilon(n_z n_\rho m_l)$};
+
+  % Four levels intersecting at (0, \yzero)
+  % nz = 0: slope +0.42
+  \draw[line width=1.4pt] (-1.8, {\yzero - 1.8 * (-0.75)}) -- (2.0, {\yzero + 2.0 * 0.52});
+  % 4 ticks for degeneracy 4 at nz=0
+  \foreach \d in {0, 0.08, 0.16, 0.24} {
+    \draw[line width=1.0pt] ({2.0 + \d}, {\yzero + (2.0+\d)*0.52 - 0.12}) -- ({2.0 + \d}, {\yzero + (2.0+\d)*0.52 + 0.12});
+  }
+  \node[right=12pt, font=\large] at (2.0, {\yzero + 2.0 * 0.52}) {$n_z = 0$};
+
+  % nz = 1: slope 0 (horizontal)
+  \draw[line width=1.4pt] (-2.2, \yzero) -- (2.4, \yzero);
+  % 3 ticks for degeneracy 3
+  \foreach \d in {0, 0.08, 0.16} {
+    \draw[line width=1.0pt] ({2.4 + \d}, {\yzero - 0.12}) -- ({2.4 + \d}, {\yzero + 0.12});
+  }
+  \node[right=10pt, font=\large] at (2.4, \yzero) {$n_z = 1$};
+
+  % nz = 2: slope -0.50
+  \draw[line width=1.4pt] (-2.2, {\yzero - (-2.2) * 0.42}) -- (2.1, {\yzero + 2.1 * (-0.50)});
+  % 2 ticks for degeneracy 2
+  \foreach \d in {0, 0.08} {
+    \draw[line width=1.0pt] ({2.1 + \d}, {\yzero + (2.1+\d)*(-0.50) - 0.12}) -- ({2.1 + \d}, {\yzero + (2.1+\d)*(-0.50) + 0.12});
+  }
+  \node[right=8pt, font=\large] at (2.1, {\yzero + 2.1 * (-0.50)}) {$n_z = 2$};
+
+  % nz = 3: slope -0.92
+  \draw[line width=1.4pt] (-1.8, {\yzero - (-1.8) * 0.92}) -- (1.75, {\yzero + 1.75 * (-0.92)});
+  % 1 tick for degeneracy 1
+  \draw[line width=1.0pt] (1.83, {\yzero + 1.83*(-0.92) - 0.12}) -- (1.83, {\yzero + 1.83*(-0.92) + 0.12});
+  \node[right=8pt, font=\large] at (1.75, {\yzero + 1.75 * (-0.92)}) {$n_z = 3$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,180 @@
+%% 导入宏包
+\usepackage[a4paper, scale=0.8]{geometry} %纸张大小和页边距
+\usepackage{fancyhdr} %页眉和页脚
+\usepackage{graphicx} %导入图片，graphicx是graphics的拓展，graphics自动加载
+\usepackage{amsmath, amssymb, amsthm} %amsmath提供数学公式的优化以及部分功能，amssymb定义了新的数学符号，amsthm提供了数学环境，amssymb包含了amsfonts
+\usepackage{mathtools} %mathtools包含了amsmath，加在mathtools可以不加载amsmath
+\usepackage[mathrm=sym,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math} %提供数学字体
+\usepackage{enumitem} %调整列表的宏包
+\usepackage{physics} %物理学公式常用宏包，可能与sinuitx冲突(\qty命令)
+\usepackage[version=3]{mhchem} %化学宏包，主要用来写同位素核素等符号，version=3是为了不和lyx冲突
+\usepackage{framed} %加边框
+\usepackage{float} %让浮动体强制固定在此处
+\usepackage{subfigure} %子图宏包
+\usepackage{listings} %代码环境
+\usepackage{import} %主要为配合incfig命令使用
+\hypersetup{unicode=true} %超链接功能
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backreftwosep}{ 与~}
+\renewcommand*{\backreflastsep}{，以及~}
+\renewcommand*{\backrefsep}{，}
+\renewcommand*{\backrefalt}[4]{%
+  \ifcase #1 %
+  \or
+    \textit{（见第~#2~页）}%
+  \else
+    \textit{（见第~#2~页）}%
+  \fi
+}
+\usepackage{tensor} %张量功能
+\usepackage[export]{adjustbox} %为了在公式中使用图片
+\usepackage{Titlepage} %绘制封面
+\usepackage{simpler-wick} %wick缩并功能，调用了tikz宏包
+\usepackage{tikz} %绘图宏包，由于titlepage中导入且可选项不同所以不加
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote}
+\usepackage{multicol} %多栏排版（用于主题索引）
+\usepackage{longtable} %长表格（用于专有术语对照表）
+\usepackage{booktabs} %三线表优化
+\usepackage{etoolbox} %环境钩子宏包
+\AtBeginEnvironment{table}{\centering} %默认所有表格浮动体自动居中
+\AtBeginEnvironment{table*}{\centering}
+
+% 索引与术语表排版宏
+\newcommand{\indexentry}[3]{%
+  \noindent\hangindent=1.5em\hangafter=1\textbf{#1}\ifstrempty{#2}{}{（#2）}\dotfill #3\par
+}
+\newcommand{\indexparent}[2]{%
+  \noindent\hangindent=1.5em\hangafter=1\textbf{#1}\ifstrempty{#2}{}{（#2）}\par
+}
+\newcommand{\indexsubentry}[3]{%
+  \noindent\hangindent=2.5em\hangafter=1\hspace*{1.2em}\textendash~#1\ifstrempty{#2}{}{（#2）}\dotfill #3\par
+}
+\newcommand{\indexentrysee}[3]{%
+  \noindent\hangindent=1.5em\hangafter=1\textbf{#1}\ifstrempty{#2}{}{（#2）}\dotfill\textit{#3}\par
+}
+
+%% 内容格式设置
+%利用Unicode-math的字体解决方案，来源：许兆晖
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setsansfont{texgyreheros-regular.otf}[
+    BoldFont = texgyreheros-bold.otf,
+    ItalicFont = texgyreheros-italic.otf,
+    BoldItalicFont = texgyreheros-bolditalic.otf
+]
+\setmonofont{texgyrecursor-regular.otf}[
+    BoldFont = texgyrecursor-bold.otf,
+    ItalicFont = texgyrecursor-italic.otf,
+    BoldItalicFont = texgyrecursor-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\setmathfont{XITSMath-Regular.otf}[
+    BoldFont = XITSMath-Bold.otf,
+    range = {scr, bfscr},
+]
+\setmathfont{XITSMath-Regular.otf}[
+    BoldFont = XITSMath-Bold.otf,
+    FakeSlant = -.25,
+    range = \ell,
+]
+% Prefer Cambria when available; use bundled Pagella Math on other systems.
+\IfFontExistsTF{Cambria Math}{
+\setmathfont{Cambria Math}[
+    range = {\setminus},
+]
+\setmathfont{Cambria Math}[
+    range = {cal,bfcal},
+    Scale = 1.05,
+]
+}{
+\setmathfont{texgyrepagella-math.otf}[
+    range = {\setminus},
+]
+\setmathfont{texgyrepagella-math.otf}[
+    range = {cal,bfcal},
+    Scale = 1.05,
+]
+}
+
+% 设置数学字体的斜粗体
+\renewcommand{\boldsymbol}[1]{
+    \begingroup
+        \let\symup\symbfup\let\mathrm\mathbfup
+        \let\symit\symbfit\let\mathit\mathbfit
+        \let\symbf\symbfsf\let\mathsf\mathbfsf
+        \symbfit{#1}
+    \endgroup
+}
+
+% 设置页眉与页脚，需要fancyhdr宏包
+\pagestyle{fancy}
+\lhead{技术物理系}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\setlength{\headheight}{15pt} %设置页眉到页面顶部的长度，可能需要geometry宏包
+% 设置列表样式，需要enumitem宏包
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+% 设置为无首行缩进
+\setlength{\parindent}{0pt}
+% 设置图片路径
+\graphicspath{{pictures/}}
+%% 非必要的设置
+% 设置代码样式，需要listings宏包
+\lstset{
+    language = Python,
+    numbers=left, 
+    numberstyle= \small, 
+    keywordstyle= \color{green},
+    commentstyle= \color{brown}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{green!20!} ,
+    escapeinside=``, % 英文分号中可写入中文
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em,
+    framexrightmargin = 1em,
+    breaklines %自动换行
+}
+\definecolor{green}{RGB}{57,174,169}
+\definecolor{brown}{RGB}{202,149,92}
+
+%% 自定义的数学有关命令
+\AtBeginDocument{
+    \renewcommand{\Re}{\mathop{\text{Re}}}
+    \renewcommand{\Im}{\mathop{\text{Im}}}
+}
+% 交叉引用的设置
+\AtBeginDocument{
+\let\ref\autoref
+\renewcommand\equationautorefname{式}
+\renewcommand\figureautorefname{图}
+\renewcommand\tableautorefname{表}
+\renewcommand\sectionautorefname{节}
+\renewcommand\subsectionautorefname{小节}
+}
+
+%% 自定义超大括号
+\makeatletter
+\newcommand{\biggg}{\bBigg@{3}}
+\def\bigggl{\mathopen\biggg}
+\def\bigggm{\mathrel\biggg}
+\def\bigggr{\mathclose\biggg}
+\newcommand{\Biggg}{\bBigg@{3.5}}
+\def\Bigggl{\mathopen\Biggg}
+\def\Bigggm{\mathrel\Biggg}
+\def\Bigggr{\mathclose\Biggg}
+\newcommand{\bigggg}{\bBigg@{4}}
+\def\biggggl{\mathopen\bigggg}
+\def\biggggm{\mathrel\bigggg}
+\def\biggggr{\mathclose\bigggg}
+\newcommand{\Bigggg}{\bBigg@{4.5}}
+\def\Biggggl{\mathopen\Bigggg}
+\def\Biggggm{\mathrel\Bigggg}
+\def\Biggggr{\mathclose\Bigggg}
+\makeatother

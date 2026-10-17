@@ -1,0 +1,156 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,reqno]{ctexbook}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\PassOptionsToPackage{version=3}{mhchem}
+\usepackage{mhchem}
+\usepackage[pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand\textquotedblplain{%
+  \bgroup\addfontfeatures{Mapping=}\char34\egroup}
+%% Special footnote code from the package 'stblftnt.sty'
+%% Author: Robin Fairbairns -- Last revised Dec 13 1996
+\let\SF@@footnote\footnote
+\def\footnote{\ifx\protect\@typeset@protect
+    \expandafter\SF@@footnote
+  \else
+    \expandafter\SF@gobble@opt
+  \fi
+}
+\expandafter\def\csname SF@gobble@opt \endcsname{\@ifnextchar[%]
+  \SF@gobble@twobracket
+  \@gobble
+}
+\edef\SF@gobble@opt{\noexpand\protect
+  \expandafter\noexpand\csname SF@gobble@opt \endcsname}
+\def\SF@gobble@twobracket[#1]#2{}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\RequirePackage[dvipsnames,svgnames,x11names,table]{xcolor} %丑陋的为了避免冲突的解决方法
+    \usepackage{thmtools}
+    \usepackage[framemethod=TikZ]{mdframed}
+    
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    %  Color from Nordtexnotes
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    \definecolor{nordOne}{HTML}{3B4252}
+    \definecolor{nordSix}{HTML}{ECEFF4} 
+    
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    %  Fix mdframed skipbelow
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    % https://tex.stackexchange.com/a/292090/143086
+    \usepackage{xpatch}
+
+    \makeatletter
+    \xpatchcmd{\endmdframed}
+    {\aftergroup\endmdf@trivlist\color@endgroup}
+    {\endmdf@trivlist\color@endgroup\@doendpe}
+    {}{}
+    \makeatother
+
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    %	BOX GEOMETRY
+    %=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    \declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{nordOne}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=nordOne, backgroundcolor=nordSix!50,
+        }
+    ]{booknotebox}
+\declaretheorem[style=booknotebox, name=\protect\booknotename, numbered=no]{booknote*}
+\usepackage{environ}
+\NewEnviron{comment}{\footnote{\begingroup\bfseries\sffamily\color{nordOne}锐评：\endgroup \BODY}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\input{./preamble.tex}
+
+\title{原\hspace{1em}子\hspace{1em}核\hspace{1em}理\hspace{1em}论}
+\author{Peter Ring（陈佳炜、甄昕译注）}
+\subtitle{读书笔记}
+\edition{V0.00}
+\bookseries{理\hspace{1em}论\hspace{1em}核\hspace{1em}物\hspace{1em}理}
+% Added by lyx2lyx
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+
+\makeatother
+
+\providecommand{\booknotename}{备注}
+
+\begin{document}
+\makecover
+
+\tableofcontents{}
+
+\part{}
+
+\include{Chapter1液滴模型}
+
+\include{Chapter2壳模型}
+
+\include{Chapter3转动与单粒子运动}
+
+\include{Chapter4核力}
+
+\include{Chapter5Hartree-Fock方法}
+
+\include{Chapter6对关联与超流核}
+
+\include{Chapter7推广的单粒子模型（HFB理论）}
+
+\include{Chapter8简谐振动}
+
+\include{Chapter9玻色展开方法}
+
+\include{Chapter10生成坐标法}
+
+\include{Chapter11对称性的恢复}
+
+\include{Chapter12时间相关Hartree-Fock方法}
+
+\include{Chapter13核物理中的半经典方法}
+
+\part{Appendix}
+\appendix
+
+\include{附录A}
+
+\include{附录B}
+
+\include{附录C}
+
+\include{附录D}
+
+\include{附录E}
+
+\include{附录F}
+
+\bibliographystyle{alpha}
+\nocite{*}
+\bibliography{PeterRing}
+
+\include{专有术语对照表}
+
+\include{主题索引}
+\end{document}

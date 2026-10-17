@@ -1,0 +1,148 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5pt, width=3.5pt]}}
+    },
+    postaction={decorate}
+  },
+  arrowedpos/.style={
+    decoration={
+      markings,
+      mark=at position #1 with {\arrow{Stealth[length=5pt, width=3.5pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % ROW 1: Bethe-Salpeter equation in pp channel
+  % ========================================================
+  \begin{scope}[shift={(0, 1.4)}]
+
+    % LHS: pp 4-point function (circle)
+    \begin{scope}[shift={(-4.8, 0)}]
+      \draw[thick, line width=1pt, arrowed] (-1.1, 0.35) -- (-0.42, 0.35);
+      \draw[thick, line width=1pt, arrowed] (-1.1, -0.35) -- (-0.42, -0.35);
+      \draw[thick, line width=1pt, arrowed] (0.42, 0.35) -- (1.1, 0.35);
+      \draw[thick, line width=1pt, arrowed] (0.42, -0.35) -- (1.1, -0.35);
+      \draw[thick, fill=white] (0,0) circle (0.46);
+    \end{scope}
+
+    % Equals sign
+    \node[font=\large] at (-3.2, 0) {$=$};
+
+    % Term 1: Direct free pp propagators
+    \begin{scope}[shift={(-2.0, 0)}]
+      \draw[thick, line width=1pt, arrowed] (-0.7, 0.35) -- (0.7, 0.35);
+      \draw[thick, line width=1pt, arrowed] (-0.7, -0.35) -- (0.7, -0.35);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (-0.8, 0) {$+$};
+
+    % Term 2: Exchange free pp propagators
+    \begin{scope}[shift={(0.4, 0)}]
+      \draw[thick, line width=1pt, arrowedpos=0.4] (-0.7, 0.35) -- (0.7, -0.35);
+      \draw[thick, line width=1pt, arrowedpos=0.4] (-0.7, -0.35) -- (0.7, 0.35);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (1.6, 0) {$+$};
+
+    % Term 3: K^{pp} + intermediate lines + circle
+    \begin{scope}[shift={(2.5, 0)}]
+      % Incoming legs to K^{pp}
+      \draw[thick, line width=1pt, arrowed] (0, 0.35) -- (0.7, 0.35);
+      \draw[thick, line width=1pt, arrowed] (0, -0.35) -- (0.7, -0.35);
+
+      % Box K^{pp}
+      \draw[thick, fill=white] (0.7, -0.42) rectangle (1.7, 0.42);
+      \node[font=\normalsize] at (1.2, 0) {$K^{\mathrm{pp}}$};
+
+      % Intermediate legs
+      \draw[thick, line width=1pt, arrowed] (1.7, 0.35) -- (2.58, 0.35);
+      \draw[thick, line width=1pt, arrowed] (1.7, -0.35) -- (2.58, -0.35);
+
+      % Circle
+      \draw[thick, fill=white] (3.0, 0) circle (0.46);
+
+      % Outgoing legs
+      \draw[thick, line width=1pt, arrowed] (3.42, 0.35) -- (4.2, 0.35);
+      \draw[thick, line width=1pt, arrowed] (3.42, -0.35) -- (4.2, -0.35);
+    \end{scope}
+
+  \end{scope}
+
+  % ========================================================
+  % ROW 2: Expansion of irreducible pp kernel K^{pp}
+  % ========================================================
+  \begin{scope}[shift={(0, -1.2)}]
+
+    % LHS: Box K^{pp}
+    \begin{scope}[shift={(-4.8, 0)}]
+      \draw[thick, line width=1pt, arrowed] (-1.1, 0.35) -- (-0.5, 0.35);
+      \draw[thick, line width=1pt, arrowed] (-1.1, -0.35) -- (-0.5, -0.35);
+      \draw[thick, line width=1pt, arrowed] (0.5, 0.35) -- (1.1, 0.35);
+      \draw[thick, line width=1pt, arrowed] (0.5, -0.35) -- (1.1, -0.35);
+
+      \draw[thick, fill=white] (-0.5, -0.42) rectangle (0.5, 0.42);
+      \node[font=\normalsize] at (0, 0) {$K^{\mathrm{pp}}$};
+    \end{scope}
+
+    % Approx sign
+    \node[font=\large] at (-3.2, 0) {$\simeq$};
+
+    % Term 1: 4-point vertex
+    \begin{scope}[shift={(-2.0, 0)}]
+      \coordinate (C) at (0, 0);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.7, 0.4) to[out=0, in=140] (C);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.7, -0.4) to[out=0, in=-140] (C);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (C) to[out=40, in=180] (0.7, 0.4);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (C) to[out=-40, in=180] (0.7, -0.4);
+      \filldraw[black] (C) circle (2pt);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (-0.8, 0) {$+$};
+
+    % Term 2: particle-hole loop between pp lines
+    \begin{scope}[shift={(0.8, 0)}]
+      \coordinate (VT) at (-0.35, 0.35);
+      \coordinate (VB) at (0.35, -0.35);
+
+      % Top straight line
+      \draw[thick, line width=1pt, arrowedpos=0.35] (-1.0, 0.35) -- (VT);
+      \draw[thick, line width=1pt, arrowedpos=0.65] (VT) -- (1.0, 0.35);
+
+      % Bottom straight line
+      \draw[thick, line width=1pt, arrowedpos=0.35] (-1.0, -0.35) -- (VB);
+      \draw[thick, line width=1pt, arrowedpos=0.65] (VB) -- (1.0, -0.35);
+
+      % Loop between VT and VB: circulating loop
+      % Left arc: pointing up-right from VB to VT
+      \draw[thick, line width=1pt, arrowed] (VB) to[out=160, in=-100] (VT);
+      % Right arc: pointing down-right from VT to VB
+      \draw[thick, line width=1pt, arrowed] (VT) to[out=-20, in=80] (VB);
+
+      \filldraw[black] (VT) circle (2pt);
+      \filldraw[black] (VB) circle (2pt);
+    \end{scope}
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

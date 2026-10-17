@@ -1,0 +1,60 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions
+  \def\xmax{9.6}
+  \def\ymax{5.8}
+
+  % Coordinate axes with arrows
+  \draw[->, line width=0.95pt] (0, 0) -- (\xmax, 0);
+  \draw[->, line width=0.95pt] (0, 0) -- (0, \ymax);
+
+  % Axis labels
+  \node[anchor=south, font=\small\bfseries, rotate=90] at (-0.35, 2.7) {ENERGY GAP $\Delta$};
+  \node[anchor=north, font=\small\bfseries] at (4.5, -0.15) {EFFECTIVE PAIRING STRENGTH};
+  \node[anchor=north west, font=\normalsize] at (7.6, -0.1) {$G_{\mathrm{eff}}$};
+
+  % --- PAIRING VIBRATIONAL STATE CURVE ---
+  \draw[line width=1.1pt]
+    (0, 0)
+    to[out=70, in=180] (2.6, 3.4)
+    to[out=0, in=145] (4.6, 1.7)
+    to[out=-35, in=180] (8.8, 0.15);
+
+  \node[anchor=north, font=\small, align=center] at (8.7, 1.15) {pairing\\[-1pt]vib.\,state};
+
+  % --- GROUND STATE CURVE ---
+  \draw[line width=1.1pt]
+    (0, 0)
+    to[out=10, in=-140] (4.6, 1.7)
+    to[out=40, in=185] (9.0, 4.45);
+
+  \node[anchor=north, font=\small, align=center] at (8.7, 4.3) {ground\\[-1pt]state};
+
+  % --- NUCLEI INDICATOR ARROWS ---
+  % 44Ti
+  \draw[->, line width=0.95pt] (2.6, 4.8) -- (2.6, 3.8);
+  \node[anchor=east, font=\small] at (2.4, 4.4) {$^{44}\mathrm{Ti}$};
+
+  % 52Cr
+  \draw[->, line width=0.95pt] (4.8, 4.8) -- (4.8, 3.8);
+  \node[anchor=east, font=\small] at (4.6, 4.4) {$^{52}\mathrm{Cr}$};
+
+  % 166Yb
+  \draw[->, line width=0.95pt] (7.0, 5.4) -- (7.0, 4.4);
+  \node[anchor=east, font=\small] at (6.8, 5.0) {$^{166}\mathrm{Yb}$};
+
+\end{tikzpicture}
+\end{document}

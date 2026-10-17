@@ -1,0 +1,191 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Frame dimensions
+  \def\w{12.6}
+  \def\h{6.8}
+
+  % Outer boundary frame
+  \draw[thick] (0, 0) rectangle (\w, \h);
+
+  % ========================================================
+  % Fixed coordinates for grid
+  % c = 1.0 (1.4), 1.3 (3.8), 1.6 (6.2), 1.9 (8.6), 2.2 (11.0)
+  % h = -0.3 (1.2), 0 (3.4), 0.3 (5.6)
+  % ========================================================
+
+  % Bottom and top ticks for c
+  \foreach \xc/\c in {1.4/1.0, 3.8/1.3, 6.2/1.6, 8.6/1.9, 11.0/2.2} {
+    \draw[thick] (\xc, 0) -- (\xc, 0.15);
+    \draw[thick] (\xc, \h) -- (\xc, \h - 0.15);
+    \node[below=4pt, font=\large] at (\xc, 0) {$\c$};
+  }
+  \node[below=22pt, font=\LARGE] at ({0.5*\w}, 0) {$c$};
+
+  % Left and right ticks for h
+  \foreach \yh/\hh in {1.2/-0.3, 3.4/0, 5.6/0.3} {
+    \draw[thick] (0, \yh) -- (0.15, \yh);
+    \draw[thick] (\w, \yh) -- (\w - 0.15, \yh);
+    \node[left=4pt, font=\large] at (0, \yh) {$\hh$};
+  }
+  \node[left=24pt, font=\LARGE] at (0, 3.4) {$h$};
+
+  % Center cross macro strictly on grid
+  \newcommand{\crossmark}{
+    \draw[thick] (-0.1, 0) -- (0.1, 0);
+    \draw[thick] (0, -0.1) -- (0, 0.1);
+  }
+
+  % ========================================================
+  % ROW 1: h = 0.3 (Waisted / Necked shapes)
+  % ========================================================
+  % (1.0, 0.3) -> (1.4, 5.6)
+  \begin{scope}[shift={(1.4, 5.6)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt]
+      plot[domain=0:360, samples=100, smooth] (\x: {0.72 * (1.0 - 0.08 * cos(4*\x))});
+    \draw[thick, dashed, line width=1.0pt]
+      plot[domain=0:360, samples=100, smooth] (\x: {0.72 * (1.0 - 0.08 * cos(4*\x) + 0.08 * cos(\x))});
+  \end{scope}
+
+  % (1.3, 0.3) -> (3.8, 5.6)
+  \begin{scope}[shift={(3.8, 5.6)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(-0.85, 0.4) (-0.4, 0.52) (0, 0.44) (0.4, 0.52) (0.85, 0.4)
+                   (0.95, 0) (0.85, -0.4) (0.4, -0.52) (0, -0.44) (-0.4, -0.52) (-0.85, -0.4) (-0.95, 0)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.82, 0.36) (-0.4, 0.48) (0, 0.45) (0.45, 0.56) (0.92, 0.43)
+                   (1.02, 0) (0.92, -0.43) (0.45, -0.56) (0, -0.45) (-0.4, -0.48) (-0.82, -0.36) (-0.9, 0)};
+  \end{scope}
+
+  % (1.6, 0.3) -> (6.2, 5.6)
+  \begin{scope}[shift={(6.2, 5.6)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(-0.85, 0.45) (-0.35, 0.52) (0, 0.22) (0.35, 0.52) (0.85, 0.45)
+                   (0.98, 0) (0.85, -0.45) (0.35, -0.52) (0, -0.22) (-0.35, -0.52) (-0.85, -0.45) (-0.98, 0)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.80, 0.38) (-0.35, 0.46) (0, 0.22) (0.4, 0.56) (0.92, 0.48)
+                   (1.05, 0) (0.92, -0.48) (0.4, -0.56) (0, -0.22) (-0.35, -0.46) (-0.80, -0.38) (-0.92, 0)};
+  \end{scope}
+
+  % (1.9, 0.3) -> (8.6, 5.6)
+  \begin{scope}[shift={(8.6, 5.6)}]
+    \crossmark
+    % Left fragment
+    \draw[very thick, line width=1.2pt] (-0.6, 0) ellipse (0.32cm and 0.55cm);
+    \draw[thick, dashed, line width=1.0pt] (-0.6, 0) ellipse (0.28cm and 0.48cm);
+    % Right fragment
+    \draw[very thick, line width=1.2pt] (0.6, 0) ellipse (0.35cm and 0.58cm);
+    \draw[thick, dashed, line width=1.0pt] (0.62, 0) ellipse (0.40cm and 0.65cm);
+  \end{scope}
+
+  % (2.2, 0.3) -> (11.0, 5.6)
+  \begin{scope}[shift={(11.0, 5.6)}]
+    \crossmark
+    % Right fragment shown at c = 2.2
+    \draw[very thick, line width=1.2pt] (0.65, 0) ellipse (0.34cm and 0.58cm);
+    \draw[thick, dashed, line width=1.0pt] (0.67, 0) ellipse (0.40cm and 0.66cm);
+  \end{scope}
+
+  % ========================================================
+  % ROW 2: h = 0 (Smooth fission progression)
+  % ========================================================
+  % (1.0, 0) -> (1.4, 3.4)
+  \begin{scope}[shift={(1.4, 3.4)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] (0, 0) circle (0.68cm);
+    \draw[thick, dashed, line width=1.0pt]
+      plot[domain=0:360, samples=80, smooth] (\x: {0.68 * (1.0 + 0.08 * cos(\x))});
+  \end{scope}
+
+  % (1.3, 0) -> (3.8, 3.4)
+  \begin{scope}[shift={(3.8, 3.4)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] (0, 0) ellipse (0.88cm and 0.56cm);
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.85, 0) (-0.5, 0.48) (0, 0.56) (0.55, 0.58) (0.95, 0)
+                   (0.55, -0.58) (0, -0.56) (-0.5, -0.48)};
+  \end{scope}
+
+  % (1.6, 0) -> (6.2, 3.4)
+  \begin{scope}[shift={(6.2, 3.4)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(-0.95, 0) (-0.5, 0.42) (0, 0.36) (0.5, 0.42) (0.95, 0)
+                   (0.5, -0.42) (0, -0.36) (-0.5, -0.42)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.9, 0) (-0.5, 0.38) (0, 0.36) (0.55, 0.46) (1.02, 0)
+                   (0.55, -0.46) (0, -0.36) (-0.5, -0.38)};
+  \end{scope}
+
+  % (1.9, 0) -> (8.6, 3.4)
+  \begin{scope}[shift={(8.6, 3.4)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(-0.95, 0) (-0.55, 0.38) (0, 0.18) (0.55, 0.38) (0.95, 0)
+                   (0.55, -0.38) (0, -0.18) (-0.55, -0.38)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.85, 0) (-0.5, 0.3) (0, 0.18) (0.55, 0.45) (1.05, 0)
+                   (0.55, -0.45) (0, -0.18) (-0.5, -0.3)};
+  \end{scope}
+
+  % (2.2, 0) -> (11.0, 3.4)
+  \begin{scope}[shift={(11.0, 3.4)}]
+    \crossmark
+    % Left small droplet
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(-0.65, 0) (-0.45, 0.28) (-0.25, 0.18) (-0.1, 0) (-0.25, -0.18) (-0.45, -0.28)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(-0.62, 0) (-0.45, 0.24) (-0.25, 0.15) (-0.12, 0) (-0.25, -0.15) (-0.45, -0.24)};
+    % Right larger droplet
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(0.2, 0) (0.55, 0.38) (0.85, 0.45) (1.0, 0) (0.85, -0.45) (0.55, -0.38)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(0.2, 0) (0.55, 0.42) (0.9, 0.52) (1.08, 0) (0.9, -0.52) (0.55, -0.42)};
+  \end{scope}
+
+  % ========================================================
+  % ROW 3: h = -0.3 (Diamond / Pointed shapes)
+  % ========================================================
+  % (1.0, -0.3) -> (1.4, 1.2)
+  \begin{scope}[shift={(1.4, 1.2)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(0, 0.72) (0.55, 0) (0, -0.72) (-0.55, 0)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(0, 0.72) (0.6, 0) (0, -0.72) (-0.5, 0)};
+  \end{scope}
+
+  % (1.3, -0.3) -> (3.8, 1.2)
+  \begin{scope}[shift={(3.8, 1.2)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(0, 0.6) (0.85, 0) (0, -0.6) (-0.85, 0)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(0, 0.62) (0.92, 0) (0, -0.62) (-0.78, 0)};
+  \end{scope}
+
+  % (1.6, -0.3) -> (6.2, 1.2)
+  \begin{scope}[shift={(6.2, 1.2)}]
+    \crossmark
+    \draw[very thick, line width=1.2pt] plot[smooth cycle]
+      coordinates {(0, 0.48) (1.05, 0) (0, -0.48) (-1.05, 0)};
+    \draw[thick, dashed, line width=1.0pt] plot[smooth cycle]
+      coordinates {(0, 0.52) (1.12, 0) (0, -0.52) (-0.95, 0)};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

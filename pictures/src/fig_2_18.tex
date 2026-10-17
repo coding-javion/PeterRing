@@ -1,0 +1,249 @@
+\documentclass[tikz,border=14pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{11.5}
+  \def\h{16.0}
+  
+  \def\nmin{0}
+  \def\nmax{145}
+  \def\qmin{-10.5}
+  \def\qmax{34.0}
+
+  \pgfmathsetmacro{\sx}{\w / (\nmax - \nmin)}
+  \pgfmathsetmacro{\sy}{\h / (\qmax - \qmin)}
+
+  % Outer frame box
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Zero line Q = 0
+  \pgfmathsetmacro{\yzero}{(0 - \qmin) * \sy}
+  \draw[line width=0.7pt] (0, \yzero) -- (\w, \yzero);
+
+  % X-axis ticks: 0, 20, 40, 60, 80, 100, 120, 140
+  \foreach \n in {20, 40, 60, 80, 100, 120, 140} {
+    \pgfmathsetmacro{\xpos}{(\n - \nmin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, {\h - 0.16});
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\n$};
+  }
+  \node[below=36pt, font=\large] at ({\w * 0.5}, 0) {No. of odd nucleons};
+
+  % Y-axis ticks: -10, -5, 0, 5, 10, 15, 20, 25, 30
+  \foreach \q in {-10, -5, 0, 5, 10, 15, 20, 25, 30} {
+    \pgfmathsetmacro{\ypos}{(\q - \qmin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- ({\w - 0.16}, \ypos);
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {$\q$};
+  }
+
+  % Y-axis label
+  \draw[line width=0.85pt, ->] (-0.85, {\yzero - 0.8}) -- (-0.85, {\yzero + 2.5});
+  \node[left=3pt, font=\Large] at (-0.85, {\yzero + 0.85}) {$\displaystyle\frac{Q}{Z R^2}$};
+  \node[above right=1pt and -6pt, font=\normalsize] at (0, \h) {$\times 10^{-28}\ \mathrm{cm}^{-2}$};
+
+  % Magic number arrows at bottom: 8, 16, 20, 28, 50, 82, 126
+  \foreach \m in {8, 20, 28, 82, 126} {
+    \pgfmathsetmacro{\xm}{(\m - \nmin) * \sx}
+    \draw[line width=0.9pt, ->] (\xm, -0.6) -- (\xm, -0.15);
+    \node[below=4pt, font=\small] at (\xm, -0.6) {$\m$};
+  }
+% (Removed erroneous subshell 16 arrow to avoid collision with magic 20)
+
+  % Magic 50 arrow points down near bottom
+  \pgfmathsetmacro{\xmfifty}{(50 - \nmin) * \sx}
+  \draw[line width=0.9pt, ->] (\xmfifty, -0.15) -- (\xmfifty, -0.6);
+  \node[below=2pt, font=\small] at (\xmfifty, -0.6) {$50$};
+
+  % Open circle style
+  \tikzset{
+    nuc/.style={circle, draw=black, fill=white, line width=0.7pt, inner sep=1.4pt}
+  }
+
+  % Segment 1: B10 -> O17 -> Al27 -> Cl37
+  \draw[line width=1.1pt] 
+    ({(5.5 - \nmin)*\sx}, {(22.2 - \qmin)*\sy}) --
+    ({(9.0 - \nmin)*\sx}, {(-3.8 - \qmin)*\sy}) --
+    ({(13.0 - \nmin)*\sx}, {(8.7 - \qmin)*\sy}) --
+    ({(15.0 - \nmin)*\sx}, {(8.2 - \qmin)*\sy}) --
+    ({(17.5 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) --
+    ({(19.0 - \nmin)*\sx}, {(-3.0 - \qmin)*\sy});
+
+  % Dashed transition 1
+  \draw[line width=0.85pt, dashed]
+    ({(19.0 - \nmin)*\sx}, {(-3.0 - \qmin)*\sy}) -- 
+    ({(22.0 - \nmin)*\sx}, {(5.0 - \qmin)*\sy});
+
+  % Segment 2: Mn55 -> As75 -> Br -> Ge73 -> Sb123
+  \draw[line width=1.1pt] 
+    ({(22.0 - \nmin)*\sx}, {(5.0 - \qmin)*\sy}) --
+    ({(25.0 - \nmin)*\sx}, {(10.6 - \qmin)*\sy}) --
+    ({(27.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) --
+    ({(29.0 - \nmin)*\sx}, {(-0.5 - \qmin)*\sy})
+    .. controls ({(31.0 - \nmin)*\sx}, {(0.0 - \qmin)*\sy}) and ({(32.0 - \nmin)*\sx}, {(2.0 - \qmin)*\sy}) ..
+    ({(34.0 - \nmin)*\sx}, {(2.7 - \qmin)*\sy})
+    .. controls ({(35.5 - \nmin)*\sx}, {(3.4 - \qmin)*\sy}) ..
+    ({(37.0 - \nmin)*\sx}, {(3.5 - \qmin)*\sy}) --
+    ({(43.0 - \nmin)*\sx}, {(-1.5 - \qmin)*\sy}) --
+    ({(47.0 - \nmin)*\sx}, {(-3.2 - \qmin)*\sy}) --
+    ({(51.0 - \nmin)*\sx}, {(-9.5 - \qmin)*\sy});
+
+  % Segment 3: Sb123 -> Lu176 -> Ir191 -> Ac227
+  \draw[line width=1.1pt]
+    ({(51.0 - \nmin)*\sx}, {(-9.5 - \qmin)*\sy}) --
+    ({(54.0 - \nmin)*\sx}, {(0.0 - \qmin)*\sy}) --
+    ({(63.0 - \nmin)*\sx}, {(4.6 - \qmin)*\sy}) --
+    ({(71.5 - \nmin)*\sx}, {(25.0 - \qmin)*\sy}) --
+    ({(74.0 - \nmin)*\sx}, {(10.0 - \qmin)*\sy}) --
+    ({(77.0 - \nmin)*\sx}, {(3.6 - \qmin)*\sy}) --
+    ({(82.0 - \nmin)*\sx}, {(-1.5 - \qmin)*\sy}) --
+    ({(88.0 - \nmin)*\sx}, {(-3.5 - \qmin)*\sy});
+
+  % Segment 4: Ac227 -> Er167 -> rare-earth tail
+  \draw[line width=1.1pt]
+    ({(88.0 - \nmin)*\sx}, {(-3.5 - \qmin)*\sy}) --
+    ({(99.7 - \nmin)*\sx}, {(32.2 - \qmin)*\sy})
+    .. controls ({(101.5 - \nmin)*\sx}, {(20.0 - \qmin)*\sy}) and ({(104.0 - \nmin)*\sx}, {(10.0 - \qmin)*\sy}) ..
+    ({(108.0 - \nmin)*\sx}, {(6.5 - \qmin)*\sy})
+    .. controls ({(114.0 - \nmin)*\sx}, {(3.0 - \qmin)*\sy}) ..
+    ({(126.0 - \nmin)*\sx}, {(0.0 - \qmin)*\sy});
+
+  % Dashed tail
+  \draw[line width=0.85pt, dashed]
+    ({(126.0 - \nmin)*\sx}, {(0.0 - \qmin)*\sy}) -- 
+    ({(131.0 - \nmin)*\sx}, {(-1.8 - \qmin)*\sy});
+
+  % Nuclei Data Points & Labels
+  % 10B
+  \node[nuc] (B10) at ({(5.5 - \nmin)*\sx}, {(22.2 - \qmin)*\sy}) {};
+  \node[above=2pt, font=\small] at (B10) {$^{10}\mathrm{B}$};
+
+  % 17O
+  \node[nuc] (O17) at ({(9.0 - \nmin)*\sx}, {(-3.8 - \qmin)*\sy}) {};
+  \node[below=2pt, font=\small] at (O17) {$^{17}\mathrm{O}$};
+
+  % 11B, 28Na, 2H
+  \node[nuc] at ({(6.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {};
+  \node[left=2pt, font=\small] at ({(6.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {$^{11}\mathrm{B}$};
+  \node[nuc] at ({(2.0 - \nmin)*\sx}, {(8.5 - \qmin)*\sy}) {};
+  \node[below=1pt, font=\small] at ({(2.0 - \nmin)*\sx}, {(8.5 - \qmin)*\sy}) {$^{2}\mathrm{H}$};
+  \node[nuc] at ({(7.0 - \nmin)*\sx}, {(1.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(7.0 - \nmin)*\sx}, {(1.8 - \qmin)*\sy}) {$^{14}\mathrm{N}$};
+
+  % 27Al
+  \node[nuc] (Al27) at ({(13.0 - \nmin)*\sx}, {(8.7 - \qmin)*\sy}) {};
+  \node[above=2pt, font=\small] at (Al27) {$^{27}\mathrm{Al}$};
+
+  % 39K, 41K
+  \node[nuc] at ({(19.0 - \nmin)*\sx}, {(3.2 - \qmin)*\sy}) {};
+  \node[left=2pt, font=\small, fill=white, inner sep=0.6pt] at ({(19.0 - \nmin)*\sx}, {(3.2 - \qmin)*\sy}) {$^{41}\mathrm{K}$};
+  \node[nuc] at ({(19.0 - \nmin)*\sx}, {(2.3 - \qmin)*\sy}) {};
+  \node[left=2pt, font=\small] at ({(19.0 - \nmin)*\sx}, {(2.3 - \qmin)*\sy}) {$^{39}\mathrm{K}$};
+
+  % 33S, 35Cl, 37Cl
+  \node[nuc] at ({(16.0 - \nmin)*\sx}, {(-2.5 - \qmin)*\sy}) {};
+  \node[above left=0pt and 1pt, font=\small, fill=white, inner sep=0.6pt] at ({(16.0 - \nmin)*\sx}, {(-2.5 - \qmin)*\sy}) {$^{33}\mathrm{S}$};
+  \node[nuc] at ({(17.5 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {};
+  \node[below=2pt, font=\small, fill=white, inner sep=0.6pt] at ({(17.5 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {$^{35}\mathrm{Cl}$};
+  \node[nuc] at ({(19.0 - \nmin)*\sx}, {(-3.0 - \qmin)*\sy}) {};
+  \node[below right=-1pt and 0pt, font=\small] at ({(19.0 - \nmin)*\sx}, {(-3.0 - \qmin)*\sy}) {$^{37}\mathrm{Cl}$};
+
+  % 55Mn, 59Co
+  \node[nuc] (Mn55) at ({(25.0 - \nmin)*\sx}, {(10.6 - \qmin)*\sy}) {};
+  \node[above=2pt, font=\small] at (Mn55) {$^{55}\mathrm{Mn}$};
+  \node[nuc] at ({(27.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(27.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {$^{59}\mathrm{Co}$};
+
+  % 63Cu, 65Cu, 75As, 79Br, 81Br
+  \node[nuc] at ({(29.0 - \nmin)*\sx}, {(-2.2 - \qmin)*\sy}) {};
+  \node[above right=-1pt and 1pt, font=\small] at ({(29.0 - \nmin)*\sx}, {(-2.2 - \qmin)*\sy}) {$^{65}\mathrm{Cu}$};
+  \node[nuc] at ({(29.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {};
+  \node[below right=-1pt and 1pt, font=\small] at ({(29.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {$^{63}\mathrm{Cu}$};
+  \node[nuc] at ({(33.0 - \nmin)*\sx}, {(2.7 - \qmin)*\sy}) {};
+  \node[above left=1pt and -2pt, font=\small] at ({(33.0 - \nmin)*\sx}, {(2.7 - \qmin)*\sy}) {$^{75}\mathrm{As}$};
+  \node[nuc] at ({(35.0 - \nmin)*\sx}, {(3.4 - \qmin)*\sy}) {};
+  \node[above=2pt, font=\small] at ({(35.0 - \nmin)*\sx}, {(3.4 - \qmin)*\sy}) {$^{79}\mathrm{Br}$};
+  \node[nuc] at ({(37.0 - \nmin)*\sx}, {(3.6 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(37.0 - \nmin)*\sx}, {(3.6 - \qmin)*\sy}) {$^{81}\mathrm{Br}$};
+
+  % 73Ge, 113In, 115In
+  \node[nuc] at ({(41.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {};
+  \node[below=2pt, font=\small] at ({(41.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {$^{73}\mathrm{Ge}$};
+  \node[nuc] at ({(49.0 - \nmin)*\sx}, {(7.0 - \qmin)*\sy}) {};
+  \node[above right=0pt and 1pt, font=\small] at ({(49.0 - \nmin)*\sx}, {(7.0 - \qmin)*\sy}) {$^{115}\mathrm{In}$};
+  \node[nuc] at ({(49.0 - \nmin)*\sx}, {(4.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(49.0 - \nmin)*\sx}, {(4.8 - \qmin)*\sy}) {$^{113}\mathrm{In}$};
+
+  % 121Sb, 123Sb
+  \node[nuc] (Sb121) at ({(51.0 - \nmin)*\sx}, {(-7.0 - \qmin)*\sy}) {};
+  \node[right=3pt, font=\small] at (Sb121) {$^{121}\mathrm{Sb}$};
+  \node[nuc] (Sb123) at ({(51.0 - \nmin)*\sx}, {(-9.5 - \qmin)*\sy}) {};
+  \node[right=3pt, font=\small] at (Sb123) {$^{123}\mathrm{Sb}$};
+
+  % 125I, 127I, 129I, 131I
+  \node[nuc] at ({(53.0 - \nmin)*\sx}, {(-3.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(53.0 - \nmin)*\sx}, {(-3.8 - \qmin)*\sy}) {$^{125}\mathrm{I}$};
+  \node[nuc] at ({(53.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(53.0 - \nmin)*\sx}, {(-2.8 - \qmin)*\sy}) {$^{127}\mathrm{I}$};
+  \node[nuc] at ({(53.0 - \nmin)*\sx}, {(-1.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(53.0 - \nmin)*\sx}, {(-1.8 - \qmin)*\sy}) {$^{129}\mathrm{I}$};
+  \node[nuc] at ({(53.0 - \nmin)*\sx}, {(-1.0 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small, fill=white, inner sep=0.8pt] at ({(53.0 - \nmin)*\sx}, {(-1.0 - \qmin)*\sy}) {$^{131}\mathrm{I}$};
+
+  % 151Eu, 175Lu, 176Lu
+  \node[nuc] at ({(63.0 - \nmin)*\sx}, {(4.6 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(63.0 - \nmin)*\sx}, {(4.6 - \qmin)*\sy}) {$^{151}\mathrm{Eu}$};
+  \node[nuc] (Lu175) at ({(71.5 - \nmin)*\sx}, {(17.5 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at (Lu175) {$^{175}\mathrm{Lu}$};
+  \node[nuc] (Lu176) at ({(71.5 - \nmin)*\sx}, {(25.0 - \qmin)*\sy}) {};
+  \node[above left=-1pt and 0pt, font=\small] at (Lu176) {$^{176}\mathrm{Lu}$};
+
+  % 181Ta, 185Re, 187Re, 191Ir, 193Ir
+  \node[nuc] at ({(73.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(73.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {$^{181}\mathrm{Ta}$};
+  \node[nuc] at ({(75.0 - \nmin)*\sx}, {(7.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(75.0 - \nmin)*\sx}, {(7.8 - \qmin)*\sy}) {$^{185}\mathrm{Re}$};
+  \node[nuc] at ({(75.0 - \nmin)*\sx}, {(6.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(75.0 - \nmin)*\sx}, {(6.8 - \qmin)*\sy}) {$^{187}\mathrm{Re}$};
+  \node[nuc] at ({(77.0 - \nmin)*\sx}, {(4.0 - \qmin)*\sy}) {};
+  \node[above right=-1pt and 1pt, font=\small] at ({(77.0 - \nmin)*\sx}, {(4.0 - \qmin)*\sy}) {$^{191}\mathrm{Ir}$};
+  \node[nuc] at ({(77.0 - \nmin)*\sx}, {(3.4 - \qmin)*\sy}) {};
+  \node[below right=-1pt and 1pt, font=\small] at ({(77.0 - \nmin)*\sx}, {(3.4 - \qmin)*\sy}) {$^{193}\mathrm{Ir}$};
+
+  % 209Bi, 227Ac
+  \node[nuc] at ({(83.0 - \nmin)*\sx}, {(-1.5 - \qmin)*\sy}) {};
+  \node[left=2pt, font=\small] at ({(83.0 - \nmin)*\sx}, {(-1.5 - \qmin)*\sy}) {$^{209}\mathrm{Bi}$};
+  \node[nuc] at ({(88.0 - \nmin)*\sx}, {(-3.5 - \qmin)*\sy}) {};
+  \node[below=2pt, font=\small] at ({(88.0 - \nmin)*\sx}, {(-3.5 - \qmin)*\sy}) {$^{227}\mathrm{Ac}$};
+
+  % 167Er (Peak)
+  \node[nuc] (Er167) at ({(99.7 - \nmin)*\sx}, {(32.2 - \qmin)*\sy}) {};
+  \node[above=2pt, font=\small] at (Er167) {$^{167}\mathrm{Er}$};
+
+  % 173Yb, 177Hf, 179Hf
+  \node[nuc] at ({(103.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(103.0 - \nmin)*\sx}, {(9.5 - \qmin)*\sy}) {$^{173}\mathrm{Yb}$};
+  \node[nuc] at ({(105.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {};
+  \node[below left=-1pt and 0pt, font=\small] at ({(105.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {$^{177}\mathrm{Hf}$};
+  \node[nuc] at ({(106.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {};
+  \node[below right=-1pt and 0pt, font=\small] at ({(106.0 - \nmin)*\sx}, {(8.8 - \qmin)*\sy}) {$^{179}\mathrm{Hf}$};
+
+  % 189Os, 201Hg
+  \node[nuc] at ({(113.0 - \nmin)*\sx}, {(1.5 - \qmin)*\sy}) {};
+  \node[left=2pt, font=\small] at ({(113.0 - \nmin)*\sx}, {(1.5 - \qmin)*\sy}) {$^{189}\mathrm{Os}$};
+  \node[nuc] at ({(127.0 - \nmin)*\sx}, {(0.8 - \qmin)*\sy}) {};
+  \node[right=2pt, font=\small] at ({(127.0 - \nmin)*\sx}, {(0.8 - \qmin)*\sy}) {$^{201}\mathrm{Hg}$};
+
+\end{tikzpicture}
+\end{document}

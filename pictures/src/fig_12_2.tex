@@ -1,0 +1,126 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{11.0}
+  \def\h{11.38}
+
+  % Outer frame box
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % X-axis: Time (10^{-21} sec)
+  % Ticks at 0, 0.5, 1.0, 1.5, 2.0
+  \foreach \t/\x in {0/0, 0.5/2.75, 1.0/5.50, 1.5/8.25, 2.0/11.0} {
+    \draw[line width=0.7pt] (\x, 0) -- (\x, 0.16);
+    \node[below=3pt, font=\small] at (\x, 0) {$\t$};
+  }
+  % Minor ticks every 0.1
+  \foreach \i in {1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19} {
+    \draw[line width=0.5pt] ({\i*0.55}, 0) -- ({\i*0.55}, 0.10);
+  }
+  \node[below=16pt, font=\normalsize] at (5.50, 0) {$\mathrm{Time}\ (10^{-21}\ \mathrm{sec})$};
+
+  % Y-axis ticks
+  \draw[line width=0.7pt] (0, 11.042) -- (0.16, 11.042);
+  \node[left=3pt, font=\small] at (0, 11.042) {5.0};
+  \draw[line width=0.7pt] (0, 9.891) -- (0.16, 9.891);
+  \node[left=3pt, font=\small] at (0, 9.891) {4.5};
+  \draw[line width=0.7pt] (0, 8.740) -- (0.16, 8.740);
+  \node[left=3pt, font=\small] at (0, 8.740) {4.0};
+  \draw[line width=0.7pt] (0, 7.589) -- (0.16, 7.589);
+  \node[left=3pt, font=\small] at (0, 7.589) {3.5};
+  \draw[line width=0.7pt] (0, 6.604) -- (0.16, 6.604);
+  \node[left=3pt, font=\small] at (0, 6.604) {4.0};
+  \draw[line width=0.7pt] (0, 5.202) -- (0.16, 5.202);
+  \node[left=3pt, font=\small] at (0, 5.202) {3.5};
+  \draw[line width=0.7pt] (0, 3.799) -- (0.16, 3.799);
+  \node[left=3pt, font=\small] at (0, 3.799) {3.0};
+  \draw[line width=0.7pt] (0, 3.144) -- (0.16, 3.144);
+  \node[left=3pt, font=\small] at (0, 3.144) {3.5};
+  \draw[line width=0.7pt] (0, 1.628) -- (0.16, 1.628);
+  \node[left=3pt, font=\small] at (0, 1.628) {3.0};
+  \draw[line width=0.7pt] (0, 1.075) -- (0.16, 1.075);
+  \node[left=3pt, font=\small] at (0, 1.075) {3.5};
+  \draw[line width=0.7pt] (0, 0.205) -- (0.16, 0.205);
+  \node[left=3pt, font=\small] at (0, 0.205) {3.0};
+  \draw[line width=0.5pt] (0, 7.819) -- (0.10, 7.819);
+  \draw[line width=0.5pt] (0, 8.049) -- (0.10, 8.049);
+  \draw[line width=0.5pt] (0, 8.280) -- (0.10, 8.280);
+  \draw[line width=0.5pt] (0, 8.510) -- (0.10, 8.510);
+  \draw[line width=0.5pt] (0, 8.970) -- (0.10, 8.970);
+  \draw[line width=0.5pt] (0, 9.200) -- (0.10, 9.200);
+  \draw[line width=0.5pt] (0, 9.431) -- (0.10, 9.431);
+  \draw[line width=0.5pt] (0, 9.661) -- (0.10, 9.661);
+  \draw[line width=0.5pt] (0, 10.121) -- (0.10, 10.121);
+  \draw[line width=0.5pt] (0, 10.351) -- (0.10, 10.351);
+  \draw[line width=0.5pt] (0, 10.582) -- (0.10, 10.582);
+  \draw[line width=0.5pt] (0, 10.812) -- (0.10, 10.812);
+  \draw[line width=0.5pt] (0, 4.080) -- (0.10, 4.080);
+  \draw[line width=0.5pt] (0, 4.360) -- (0.10, 4.360);
+  \draw[line width=0.5pt] (0, 4.640) -- (0.10, 4.640);
+  \draw[line width=0.5pt] (0, 4.921) -- (0.10, 4.921);
+  \draw[line width=0.5pt] (0, 5.482) -- (0.10, 5.482);
+  \draw[line width=0.5pt] (0, 5.763) -- (0.10, 5.763);
+  \draw[line width=0.5pt] (0, 6.043) -- (0.10, 6.043);
+  \draw[line width=0.5pt] (0, 6.323) -- (0.10, 6.323);
+  \draw[line width=0.5pt] (0, 1.931) -- (0.10, 1.931);
+  \draw[line width=0.5pt] (0, 2.234) -- (0.10, 2.234);
+  \draw[line width=0.5pt] (0, 2.538) -- (0.10, 2.538);
+  \draw[line width=0.5pt] (0, 2.841) -- (0.10, 2.841);
+  \draw[line width=0.5pt] (0, 0.379) -- (0.10, 0.379);
+  \draw[line width=0.5pt] (0, 0.553) -- (0.10, 0.553);
+  \draw[line width=0.5pt] (0, 0.727) -- (0.10, 0.727);
+  \draw[line width=0.5pt] (0, 0.901) -- (0.10, 0.901);
+  % Break at y = 7.10
+  \fill[white] (-0.08, 6.950) rectangle (0.08, 7.250);
+  \node[font=\footnotesize] at (0, 7.100) {$\approx$};
+  % Break at y = 3.48
+  \fill[white] (-0.08, 3.330) rectangle (0.08, 3.630);
+  \node[font=\footnotesize] at (0, 3.480) {$\approx$};
+  % Break at y = 1.35
+  \fill[white] (-0.08, 1.200) rectangle (0.08, 1.500);
+  \node[font=\footnotesize] at (0, 1.350) {$\approx$};
+
+  % Y-axis Title
+  \node[rotate=90, font=\normalsize] at (-1.1, 5.69) {$\langle Z^2(t)\rangle^{1/2}\ (\mathrm{fm})$};
+
+  % Labels for alpha
+  \node[font=\normalsize] at (8.4, 10.3) {$\alpha = 0.06\ \mathrm{fm}^{-2}$};
+  \node[font=\normalsize] at (8.2, 7.9) {$\alpha = 0.04$};
+  \node[font=\normalsize] at (8.2, 4.4) {$\alpha = 0.02$};
+  \node[font=\normalsize] at (8.2, 2.4) {$\alpha = 0.01$};
+
+  % Curves
+  % 1. alpha = 0.06
+  \draw[very thick, line width=1.1pt] plot[smooth] coordinates {
+    (0.000,7.359) (0.220,8.280) (0.440,9.776) (0.660,10.996) (0.880,11.594) (1.100,11.525) (1.375,11.088) (1.650,10.582) (1.925,10.075) (2.200,9.431) (2.475,8.556) (2.750,7.589) (2.915,7.198) (3.135,7.474) (3.410,8.510) (3.685,9.316) (3.960,9.592) (4.235,9.477) (4.565,9.085) (4.950,8.648) (5.280,8.372) (5.610,8.303) (5.940,8.464) (6.270,8.855) (6.600,9.292) (6.875,9.523) (7.150,9.385) (7.425,8.970) (7.700,8.510) (7.920,8.280) (8.195,8.464) (8.470,8.970) (8.690,9.546) (8.910,9.799) (9.130,9.707) (9.405,9.200) (9.625,8.740) (9.790,8.579) (10.010,8.740) (10.230,9.108) (10.450,9.246) (10.670,9.154) (10.835,8.924) (11.000,8.694)
+  };
+
+  % 2. alpha = 0.04
+  \draw[very thick, line width=1.1pt] plot[smooth] coordinates {
+    (0.000,4.921) (0.220,6.099) (0.440,7.109) (0.660,7.558) (0.880,7.333) (1.100,6.464) (1.375,4.921) (1.650,3.575) (1.925,4.080) (2.200,5.622) (2.530,6.884) (2.805,6.744) (3.080,5.482) (3.300,4.360) (3.465,3.855) (3.740,4.500) (4.070,5.903) (4.400,6.716) (4.675,6.604) (4.950,5.622) (5.170,4.500) (5.390,3.855) (5.665,4.500) (5.995,6.043) (6.325,7.165) (6.600,6.884) (6.875,5.482) (7.150,4.080) (7.370,3.350) (7.590,3.939) (7.920,6.043) (8.250,7.445) (8.525,7.165) (8.800,5.763) (9.020,4.500) (9.240,3.743) (9.515,4.360) (9.900,6.043) (10.230,6.884) (10.505,6.548) (10.780,5.342) (11.000,4.304)
+  };
+
+  % 3. alpha = 0.02
+  \draw[very thick, line width=1.1pt] plot[smooth] coordinates {
+    (0.000,2.689) (0.275,3.447) (0.550,3.902) (0.825,3.599) (1.100,2.689) (1.430,1.628) (1.760,2.386) (2.090,3.629) (2.420,3.508) (2.750,2.598) (3.025,1.871) (3.410,2.538) (3.795,3.478) (4.125,3.387) (4.455,2.598) (4.730,1.931) (5.170,2.598) (5.665,3.478) (5.995,3.387) (6.325,2.598) (6.600,1.840) (6.985,2.598) (7.425,3.720) (7.755,3.447) (7.975,2.386) (8.140,1.567) (8.525,2.538) (9.020,3.841) (9.350,3.508) (9.625,2.477) (9.900,1.628) (10.340,2.598) (10.835,3.720) (11.000,3.296)
+  };
+
+  % 4. alpha = 0.01
+  \draw[very thick, line width=1.1pt] plot[smooth] coordinates {
+    (0.000,0.727) (0.220,0.936) (0.495,1.040) (0.825,0.866) (1.265,0.414) (1.650,0.640) (2.090,0.971) (2.475,0.814) (2.915,0.449) (3.300,0.657) (3.740,0.936) (4.180,0.797) (4.620,0.483) (5.005,0.692) (5.445,0.936) (5.885,0.797) (6.325,0.449) (6.765,0.692) (7.205,0.988) (7.590,0.831) (8.030,0.431) (8.470,0.692) (8.910,1.005) (9.350,0.831) (9.735,0.414) (10.175,0.692) (10.615,1.005) (11.000,0.640)
+  };
+
+\end{tikzpicture}
+\end{document}

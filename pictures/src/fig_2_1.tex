@@ -1,0 +1,726 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ==================== TOP PANEL: S_n vs N ====================
+  \begin{scope}[shift={(0, 9.2)}]
+    \def\w{14.0}
+    \def\h{5.6}
+    \def\nmin{0.0}
+    \def\nmax{160.0}
+    \def\smin{-1.5}
+    \def\smax{15.8}
+    \pgfmathsetmacro{\sx}{\w / (\nmax - \nmin)}
+    \pgfmathsetmacro{\sy}{\h / (\smax - \smin)}
+
+    \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+    % Ticks on bottom and top
+    \foreach \n in {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150} {
+      \pgfmathsetmacro{\xpos}{(\n - \nmin) * \sx}
+      \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.14);
+      \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.14);
+      \node[below=3pt, font=\small] at (\xpos, 0) {$\n$};
+    }
+    \node[below=3pt, font=\small] at (\w, 0) {$N$};
+
+    % Ticks on left and right
+    \foreach \s in {0, 5, 10, 15} {
+      \pgfmathsetmacro{\ypos}{(\s - \smin) * \sy}
+      \draw[line width=0.7pt] (0, \ypos) -- (0.14, \ypos);
+      \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.14, \ypos);
+      \node[left=3pt, font=\small] at (0, \ypos) {$\s$};
+    }
+    \node[left=18pt, font=\normalsize, align=center] at (0, {(7.5 - \smin)*\sy}) {$S_n$\\[2pt]{\footnotesize $\mathrm{MeV}$}};
+
+    % Formula header inside
+    \node[font=\normalsize] at ({ (90 - \nmin)*\sx }, \h - 0.6) {$S_n(N,Z) = B(N,Z) - B(N-1,Z)\quad \begin{subarray}{l} N\ \text{odd} \\ Z\ \text{even} \end{subarray}$};
+
+    \draw[line width=0.65pt] ({(3 - \nmin)*\sx}, {(11.13 - \smin)*\sy}) -- ({(5 - \nmin)*\sx}, {(13.09 - \smin)*\sy}) -- ({(7 - \nmin)*\sx}, {(13.07 - \smin)*\sy}) -- ({(9 - \nmin)*\sx}, {(11.69 - \smin)*\sy});
+    \fill ({(3 - \nmin)*\sx}, {(11.13 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(5 - \nmin)*\sx}, {(13.09 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(7 - \nmin)*\sx}, {(13.07 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(9 - \nmin)*\sx}, {(11.69 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(3 - \nmin)*\sx}, {(-1.0 - \smin)*\sy}) -- ({(5 - \nmin)*\sx}, {(1.62 - \smin)*\sy}) -- ({(7 - \nmin)*\sx}, {(4.82 - \smin)*\sy}) -- ({(9 - \nmin)*\sx}, {(4.15 - \smin)*\sy}) -- ({(11 - \nmin)*\sx}, {(6.67 - \smin)*\sy}) -- ({(13 - \nmin)*\sx}, {(7.33 - \smin)*\sy}) -- ({(15 - \nmin)*\sx}, {(8.42 - \smin)*\sy}) -- ({(17 - \nmin)*\sx}, {(8.54 - \smin)*\sy}) -- ({(19 - \nmin)*\sx}, {(8.67 - \smin)*\sy}) -- ({(21 - \nmin)*\sx}, {(8.36 - \smin)*\sy}) -- ({(23 - \nmin)*\sx}, {(9.41 - \smin)*\sy}) -- ({(25 - \nmin)*\sx}, {(10.31 - \smin)*\sy}) -- ({(27 - \nmin)*\sx}, {(10.36 - \smin)*\sy}) -- ({(29 - \nmin)*\sx}, {(10.18 - \smin)*\sy});
+    \fill ({(3 - \nmin)*\sx}, {(-1.0 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(5 - \nmin)*\sx}, {(1.62 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(7 - \nmin)*\sx}, {(4.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(9 - \nmin)*\sx}, {(4.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(11 - \nmin)*\sx}, {(6.67 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \nmin)*\sx}, {(7.33 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \nmin)*\sx}, {(8.42 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \nmin)*\sx}, {(8.54 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \nmin)*\sx}, {(8.67 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(21 - \nmin)*\sx}, {(8.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \nmin)*\sx}, {(9.41 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \nmin)*\sx}, {(10.31 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(27 - \nmin)*\sx}, {(10.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \nmin)*\sx}, {(10.18 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(7 - \nmin)*\sx}, {(0.43 - \smin)*\sy}) -- ({(9 - \nmin)*\sx}, {(1.15 - \smin)*\sy}) -- ({(11 - \nmin)*\sx}, {(3.89 - \smin)*\sy}) -- ({(13 - \nmin)*\sx}, {(5.09 - \smin)*\sy}) -- ({(15 - \nmin)*\sx}, {(6.4 - \smin)*\sy}) -- ({(17 - \nmin)*\sx}, {(6.5 - \smin)*\sy}) -- ({(19 - \nmin)*\sx}, {(6.89 - \smin)*\sy}) -- ({(21 - \nmin)*\sx}, {(6.58 - \smin)*\sy}) -- ({(23 - \nmin)*\sx}, {(7.84 - \smin)*\sy}) -- ({(25 - \nmin)*\sx}, {(8.8 - \smin)*\sy}) -- ({(27 - \nmin)*\sx}, {(9.16 - \smin)*\sy}) -- ({(29 - \nmin)*\sx}, {(9.25 - \smin)*\sy}) -- ({(31 - \nmin)*\sx}, {(8.98 - \smin)*\sy}) -- ({(33 - \nmin)*\sx}, {(9.18 - \smin)*\sy}) -- ({(35 - \nmin)*\sx}, {(9.77 - \smin)*\sy}) -- ({(37 - \nmin)*\sx}, {(9.92 - \smin)*\sy}) -- ({(39 - \nmin)*\sx}, {(10.04 - \smin)*\sy});
+    \fill ({(7 - \nmin)*\sx}, {(0.43 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(9 - \nmin)*\sx}, {(1.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(11 - \nmin)*\sx}, {(3.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \nmin)*\sx}, {(5.09 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \nmin)*\sx}, {(6.4 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \nmin)*\sx}, {(6.5 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \nmin)*\sx}, {(6.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(21 - \nmin)*\sx}, {(6.58 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \nmin)*\sx}, {(7.84 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \nmin)*\sx}, {(8.8 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(27 - \nmin)*\sx}, {(9.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \nmin)*\sx}, {(9.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \nmin)*\sx}, {(8.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \nmin)*\sx}, {(9.18 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \nmin)*\sx}, {(9.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \nmin)*\sx}, {(9.92 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \nmin)*\sx}, {(10.04 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(11 - \nmin)*\sx}, {(13.4 - \smin)*\sy}) -- ({(13 - \nmin)*\sx}, {(13.25 - \smin)*\sy}) -- ({(15 - \nmin)*\sx}, {(12.91 - \smin)*\sy}) -- ({(17 - \nmin)*\sx}, {(13.13 - \smin)*\sy}) -- ({(19 - \nmin)*\sx}, {(13.76 - \smin)*\sy});
+    \fill ({(11 - \nmin)*\sx}, {(13.4 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \nmin)*\sx}, {(13.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \nmin)*\sx}, {(12.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \nmin)*\sx}, {(13.13 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \nmin)*\sx}, {(13.76 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(21 - \nmin)*\sx}, {(4.43 - \smin)*\sy}) -- ({(23 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) -- ({(25 - \nmin)*\sx}, {(7.35 - \smin)*\sy}) -- ({(27 - \nmin)*\sx}, {(8.02 - \smin)*\sy}) -- ({(29 - \nmin)*\sx}, {(7.82 - \smin)*\sy}) -- ({(31 - \nmin)*\sx}, {(7.59 - \smin)*\sy}) -- ({(33 - \nmin)*\sx}, {(7.75 - \smin)*\sy}) -- ({(35 - \nmin)*\sx}, {(7.96 - \smin)*\sy}) -- ({(37 - \nmin)*\sx}, {(8.49 - \smin)*\sy}) -- ({(39 - \nmin)*\sx}, {(8.52 - \smin)*\sy});
+    \fill ({(21 - \nmin)*\sx}, {(4.43 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \nmin)*\sx}, {(7.35 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(27 - \nmin)*\sx}, {(8.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \nmin)*\sx}, {(7.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \nmin)*\sx}, {(7.59 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \nmin)*\sx}, {(7.75 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \nmin)*\sx}, {(7.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \nmin)*\sx}, {(8.49 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \nmin)*\sx}, {(8.52 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(27 - \nmin)*\sx}, {(7.21 - \smin)*\sy}) -- ({(29 - \nmin)*\sx}, {(6.28 - \smin)*\sy}) -- ({(31 - \nmin)*\sx}, {(6.24 - \smin)*\sy}) -- ({(33 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) -- ({(35 - \nmin)*\sx}, {(6.78 - \smin)*\sy}) -- ({(37 - \nmin)*\sx}, {(6.99 - \smin)*\sy}) -- ({(39 - \nmin)*\sx}, {(7.41 - \smin)*\sy}) -- ({(41 - \nmin)*\sx}, {(8.05 - \smin)*\sy}) -- ({(43 - \nmin)*\sx}, {(8.53 - \smin)*\sy}) -- ({(45 - \nmin)*\sx}, {(9.25 - \smin)*\sy}) -- ({(47 - \nmin)*\sx}, {(9.81 - \smin)*\sy});
+    \fill ({(27 - \nmin)*\sx}, {(7.21 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \nmin)*\sx}, {(6.28 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \nmin)*\sx}, {(6.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \nmin)*\sx}, {(6.78 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \nmin)*\sx}, {(6.99 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \nmin)*\sx}, {(7.41 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \nmin)*\sx}, {(8.05 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \nmin)*\sx}, {(8.53 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \nmin)*\sx}, {(9.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \nmin)*\sx}, {(9.81 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(35 - \nmin)*\sx}, {(5.63 - \smin)*\sy}) -- ({(37 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) -- ({(39 - \nmin)*\sx}, {(6.47 - \smin)*\sy}) -- ({(41 - \nmin)*\sx}, {(6.83 - \smin)*\sy}) -- ({(43 - \nmin)*\sx}, {(7.35 - \smin)*\sy}) -- ({(45 - \nmin)*\sx}, {(7.95 - \smin)*\sy}) -- ({(47 - \nmin)*\sx}, {(8.64 - \smin)*\sy}) -- ({(49 - \nmin)*\sx}, {(8.14 - \smin)*\sy}) -- ({(51 - \nmin)*\sx}, {(7.22 - \smin)*\sy}) -- ({(53 - \nmin)*\sx}, {(7.33 - \smin)*\sy}) -- ({(55 - \nmin)*\sx}, {(7.47 - \smin)*\sy}) -- ({(57 - \nmin)*\sx}, {(7.6 - \smin)*\sy}) -- ({(59 - \nmin)*\sx}, {(7.95 - \smin)*\sy});
+    \fill ({(35 - \nmin)*\sx}, {(5.63 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \nmin)*\sx}, {(6.47 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \nmin)*\sx}, {(6.83 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \nmin)*\sx}, {(7.35 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \nmin)*\sx}, {(7.95 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \nmin)*\sx}, {(8.64 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \nmin)*\sx}, {(8.14 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \nmin)*\sx}, {(7.22 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \nmin)*\sx}, {(7.33 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \nmin)*\sx}, {(7.47 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \nmin)*\sx}, {(7.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \nmin)*\sx}, {(7.95 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(41 - \nmin)*\sx}, {(6.06 - \smin)*\sy}) -- ({(43 - \nmin)*\sx}, {(6.54 - \smin)*\sy}) -- ({(45 - \nmin)*\sx}, {(6.93 - \smin)*\sy}) -- ({(47 - \nmin)*\sx}, {(7.72 - \smin)*\sy}) -- ({(49 - \nmin)*\sx}, {(8.88 - \smin)*\sy}) -- ({(51 - \nmin)*\sx}, {(5.49 - \smin)*\sy}) -- ({(53 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) -- ({(55 - \nmin)*\sx}, {(4.61 - \smin)*\sy}) -- ({(57 - \nmin)*\sx}, {(5.47 - \smin)*\sy}) -- ({(59 - \nmin)*\sx}, {(5.34 - \smin)*\sy}) -- ({(61 - \nmin)*\sx}, {(5.9 - \smin)*\sy}) -- ({(63 - \nmin)*\sx}, {(6.15 - \smin)*\sy}) -- ({(65 - \nmin)*\sx}, {(6.55 - \smin)*\sy}) -- ({(67 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) -- ({(69 - \nmin)*\sx}, {(6.98 - \smin)*\sy}) -- ({(71 - \nmin)*\sx}, {(6.93 - \smin)*\sy}) -- ({(73 - \nmin)*\sx}, {(7.2 - \smin)*\sy}) -- ({(75 - \nmin)*\sx}, {(7.63 - \smin)*\sy});
+    \fill ({(41 - \nmin)*\sx}, {(6.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \nmin)*\sx}, {(6.54 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \nmin)*\sx}, {(6.93 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \nmin)*\sx}, {(7.72 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \nmin)*\sx}, {(8.88 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \nmin)*\sx}, {(5.49 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \nmin)*\sx}, {(4.61 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \nmin)*\sx}, {(5.47 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \nmin)*\sx}, {(5.34 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \nmin)*\sx}, {(5.9 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \nmin)*\sx}, {(6.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \nmin)*\sx}, {(6.55 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \nmin)*\sx}, {(6.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \nmin)*\sx}, {(6.93 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \nmin)*\sx}, {(7.2 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \nmin)*\sx}, {(7.63 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(45 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) -- ({(47 - \nmin)*\sx}, {(6.79 - \smin)*\sy}) -- ({(49 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) -- ({(51 - \nmin)*\sx}, {(6.4 - \smin)*\sy}) -- ({(53 - \nmin)*\sx}, {(6.73 - \smin)*\sy}) -- ({(55 - \nmin)*\sx}, {(6.85 - \smin)*\sy}) -- ({(57 - \nmin)*\sx}, {(6.82 - \smin)*\sy}) -- ({(59 - \nmin)*\sx}, {(7.06 - \smin)*\sy}) -- ({(61 - \nmin)*\sx}, {(7.37 - \smin)*\sy}) -- ({(63 - \nmin)*\sx}, {(7.76 - \smin)*\sy}) -- ({(65 - \nmin)*\sx}, {(7.67 - \smin)*\sy}) -- ({(67 - \nmin)*\sx}, {(7.67 - \smin)*\sy}) -- ({(69 - \nmin)*\sx}, {(7.68 - \smin)*\sy}) -- ({(71 - \nmin)*\sx}, {(5.5 - \smin)*\sy}) -- ({(73 - \nmin)*\sx}, {(5.89 - \smin)*\sy}) -- ({(75 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) -- ({(77 - \nmin)*\sx}, {(6.6 - \smin)*\sy}) -- ({(79 - \nmin)*\sx}, {(7.1 - \smin)*\sy}) -- ({(81 - \nmin)*\sx}, {(7.44 - \smin)*\sy}) -- ({(83 - \nmin)*\sx}, {(4.83 - \smin)*\sy}) -- ({(85 - \nmin)*\sx}, {(4.74 - \smin)*\sy}) -- ({(87 - \nmin)*\sx}, {(4.69 - \smin)*\sy}) -- ({(89 - \nmin)*\sx}, {(4.96 - \smin)*\sy}) -- ({(91 - \nmin)*\sx}, {(5.69 - \smin)*\sy}) -- ({(93 - \nmin)*\sx}, {(5.73 - \smin)*\sy}) -- ({(95 - \nmin)*\sx}, {(5.97 - \smin)*\sy}) -- ({(97 - \nmin)*\sx}, {(6.21 - \smin)*\sy}) -- ({(99 - \nmin)*\sx}, {(6.39 - \smin)*\sy}) -- ({(101 - \nmin)*\sx}, {(6.7 - \smin)*\sy}) -- ({(103 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) -- ({(105 - \nmin)*\sx}, {(7.26 - \smin)*\sy});
+    \fill ({(45 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \nmin)*\sx}, {(6.79 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \nmin)*\sx}, {(6.4 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \nmin)*\sx}, {(6.73 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \nmin)*\sx}, {(6.85 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \nmin)*\sx}, {(6.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \nmin)*\sx}, {(7.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \nmin)*\sx}, {(7.37 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \nmin)*\sx}, {(7.76 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \nmin)*\sx}, {(7.67 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \nmin)*\sx}, {(7.67 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \nmin)*\sx}, {(7.68 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \nmin)*\sx}, {(5.5 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \nmin)*\sx}, {(5.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \nmin)*\sx}, {(6.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \nmin)*\sx}, {(7.1 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \nmin)*\sx}, {(7.44 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \nmin)*\sx}, {(4.83 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \nmin)*\sx}, {(4.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \nmin)*\sx}, {(4.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \nmin)*\sx}, {(4.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \nmin)*\sx}, {(5.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(93 - \nmin)*\sx}, {(5.73 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \nmin)*\sx}, {(5.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \nmin)*\sx}, {(6.21 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(99 - \nmin)*\sx}, {(6.39 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(101 - \nmin)*\sx}, {(6.7 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(103 - \nmin)*\sx}, {(6.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(105 - \nmin)*\sx}, {(7.26 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(51 - \nmin)*\sx}, {(8.06 - \smin)*\sy}) -- ({(53 - \nmin)*\sx}, {(8.06 - \smin)*\sy}) -- ({(55 - \nmin)*\sx}, {(8.71 - \smin)*\sy}) -- ({(57 - \nmin)*\sx}, {(8.42 - \smin)*\sy});
+    \fill ({(51 - \nmin)*\sx}, {(8.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \nmin)*\sx}, {(8.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \nmin)*\sx}, {(8.71 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \nmin)*\sx}, {(8.42 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(53 - \nmin)*\sx}, {(5.96 - \smin)*\sy}) -- ({(55 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) -- ({(57 - \nmin)*\sx}, {(5.94 - \smin)*\sy}) -- ({(59 - \nmin)*\sx}, {(6.2 - \smin)*\sy}) -- ({(61 - \nmin)*\sx}, {(6.52 - \smin)*\sy}) -- ({(63 - \nmin)*\sx}, {(7.01 - \smin)*\sy});
+    \fill ({(53 - \nmin)*\sx}, {(5.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \nmin)*\sx}, {(5.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \nmin)*\sx}, {(6.2 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \nmin)*\sx}, {(6.52 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \nmin)*\sx}, {(7.01 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(63 - \nmin)*\sx}, {(5.5 - \smin)*\sy}) -- ({(65 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) -- ({(67 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) -- ({(69 - \nmin)*\sx}, {(6.52 - \smin)*\sy});
+    \fill ({(63 - \nmin)*\sx}, {(5.5 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \nmin)*\sx}, {(6.52 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(69 - \nmin)*\sx}, {(5.74 - \smin)*\sy}) -- ({(71 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) -- ({(73 - \nmin)*\sx}, {(6.6 - \smin)*\sy}) -- ({(75 - \nmin)*\sx}, {(6.94 - \smin)*\sy}) -- ({(77 - \nmin)*\sx}, {(7.36 - \smin)*\sy}) -- ({(79 - \nmin)*\sx}, {(7.82 - \smin)*\sy}) -- ({(81 - \nmin)*\sx}, {(7.94 - \smin)*\sy}) -- ({(83 - \nmin)*\sx}, {(6.37 - \smin)*\sy}) -- ({(85 - \nmin)*\sx}, {(7.74 - \smin)*\sy}) -- ({(87 - \nmin)*\sx}, {(7.71 - \smin)*\sy}) -- ({(89 - \nmin)*\sx}, {(7.06 - \smin)*\sy}) -- ({(91 - \nmin)*\sx}, {(6.29 - \smin)*\sy}) -- ({(93 - \nmin)*\sx}, {(6.81 - \smin)*\sy}) -- ({(95 - \nmin)*\sx}, {(6.9 - \smin)*\sy}) -- ({(97 - \nmin)*\sx}, {(6.99 - \smin)*\sy}) -- ({(99 - \nmin)*\sx}, {(6.77 - \smin)*\sy});
+    \fill ({(69 - \nmin)*\sx}, {(5.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \nmin)*\sx}, {(6.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \nmin)*\sx}, {(6.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \nmin)*\sx}, {(7.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \nmin)*\sx}, {(7.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \nmin)*\sx}, {(7.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \nmin)*\sx}, {(6.37 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \nmin)*\sx}, {(7.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \nmin)*\sx}, {(7.71 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \nmin)*\sx}, {(7.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \nmin)*\sx}, {(6.29 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(93 - \nmin)*\sx}, {(6.81 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \nmin)*\sx}, {(6.9 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \nmin)*\sx}, {(6.99 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(99 - \nmin)*\sx}, {(6.77 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(71 - \nmin)*\sx}, {(7.6 - \smin)*\sy}) -- ({(73 - \nmin)*\sx}, {(7.98 - \smin)*\sy}) -- ({(75 - \nmin)*\sx}, {(8.4 - \smin)*\sy}) -- ({(77 - \nmin)*\sx}, {(5.66 - \smin)*\sy}) -- ({(79 - \nmin)*\sx}, {(5.82 - \smin)*\sy}) -- ({(81 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) -- ({(83 - \nmin)*\sx}, {(6.97 - \smin)*\sy}) -- ({(85 - \nmin)*\sx}, {(6.94 - \smin)*\sy}) -- ({(87 - \nmin)*\sx}, {(7.25 - \smin)*\sy});
+    \fill ({(71 - \nmin)*\sx}, {(7.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \nmin)*\sx}, {(7.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \nmin)*\sx}, {(8.4 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \nmin)*\sx}, {(5.66 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \nmin)*\sx}, {(5.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \nmin)*\sx}, {(6.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \nmin)*\sx}, {(6.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \nmin)*\sx}, {(7.25 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(75 - \nmin)*\sx}, {(5.77 - \smin)*\sy}) -- ({(77 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) -- ({(79 - \nmin)*\sx}, {(6.52 - \smin)*\sy}) -- ({(81 - \nmin)*\sx}, {(6.93 - \smin)*\sy});
+    \fill ({(75 - \nmin)*\sx}, {(5.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \nmin)*\sx}, {(6.52 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \nmin)*\sx}, {(6.93 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(85 - \nmin)*\sx}, {(6.28 - \smin)*\sy}) -- ({(87 - \nmin)*\sx}, {(6.5 - \smin)*\sy});
+    \fill ({(85 - \nmin)*\sx}, {(6.28 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \nmin)*\sx}, {(6.5 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(85 - \nmin)*\sx}, {(5.09 - \smin)*\sy}) -- ({(87 - \nmin)*\sx}, {(5.28 - \smin)*\sy}) -- ({(89 - \nmin)*\sx}, {(5.54 - \smin)*\sy});
+    \fill ({(85 - \nmin)*\sx}, {(5.09 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \nmin)*\sx}, {(5.28 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \nmin)*\sx}, {(5.54 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(87 - \nmin)*\sx}, {(5.85 - \smin)*\sy}) -- ({(89 - \nmin)*\sx}, {(6.36 - \smin)*\sy}) -- ({(91 - \nmin)*\sx}, {(6.79 - \smin)*\sy});
+    \fill ({(87 - \nmin)*\sx}, {(5.85 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \nmin)*\sx}, {(6.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \nmin)*\sx}, {(6.79 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(93 - \nmin)*\sx}, {(6.25 - \smin)*\sy}) -- ({(95 - \nmin)*\sx}, {(6.44 - \smin)*\sy}) -- ({(97 - \nmin)*\sx}, {(6.59 - \smin)*\sy});
+    \fill ({(93 - \nmin)*\sx}, {(6.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \nmin)*\sx}, {(6.44 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \nmin)*\sx}, {(6.59 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(99 - \nmin)*\sx}, {(5.69 - \smin)*\sy}) -- ({(101 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) -- ({(103 - \nmin)*\sx}, {(6.29 - \smin)*\sy}) -- ({(105 - \nmin)*\sx}, {(6.44 - \smin)*\sy}) -- ({(107 - \nmin)*\sx}, {(6.78 - \smin)*\sy}) -- ({(109 - \nmin)*\sx}, {(6.89 - \smin)*\sy}) -- ({(111 - \nmin)*\sx}, {(7.16 - \smin)*\sy}) -- ({(113 - \nmin)*\sx}, {(7.45 - \smin)*\sy}) -- ({(115 - \nmin)*\sx}, {(7.75 - \smin)*\sy}) -- ({(117 - \nmin)*\sx}, {(7.9 - \smin)*\sy}) -- ({(119 - \nmin)*\sx}, {(8.13 - \smin)*\sy}) -- ({(121 - \nmin)*\sx}, {(7.88 - \smin)*\sy}) -- ({(123 - \nmin)*\sx}, {(8.21 - \smin)*\sy}) -- ({(125 - \nmin)*\sx}, {(7.64 - \smin)*\sy}) -- ({(127 - \nmin)*\sx}, {(7.79 - \smin)*\sy}) -- ({(129 - \nmin)*\sx}, {(4.87 - \smin)*\sy}) -- ({(131 - \nmin)*\sx}, {(5.27 - \smin)*\sy}) -- ({(133 - \nmin)*\sx}, {(5.23 - \smin)*\sy}) -- ({(135 - \nmin)*\sx}, {(5.66 - \smin)*\sy}) -- ({(137 - \nmin)*\sx}, {(6.02 - \smin)*\sy}) -- ({(139 - \nmin)*\sx}, {(6.35 - \smin)*\sy}) -- ({(141 - \nmin)*\sx}, {(6.77 - \smin)*\sy}) -- ({(143 - \nmin)*\sx}, {(5.23 - \smin)*\sy}) -- ({(145 - \nmin)*\sx}, {(5.15 - \smin)*\sy}) -- ({(147 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) -- ({(149 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) -- ({(151 - \nmin)*\sx}, {(5.74 - \smin)*\sy}) -- ({(153 - \nmin)*\sx}, {(5.82 - \smin)*\sy}) -- ({(155 - \nmin)*\sx}, {(5.89 - \smin)*\sy}) -- ({(157 - \nmin)*\sx}, {(5.51 - \smin)*\sy});
+    \fill ({(99 - \nmin)*\sx}, {(5.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(101 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(103 - \nmin)*\sx}, {(6.29 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(105 - \nmin)*\sx}, {(6.44 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(107 - \nmin)*\sx}, {(6.78 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(109 - \nmin)*\sx}, {(6.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(111 - \nmin)*\sx}, {(7.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(113 - \nmin)*\sx}, {(7.45 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(115 - \nmin)*\sx}, {(7.75 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(117 - \nmin)*\sx}, {(7.9 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(119 - \nmin)*\sx}, {(8.13 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(121 - \nmin)*\sx}, {(7.88 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(123 - \nmin)*\sx}, {(8.21 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(125 - \nmin)*\sx}, {(7.64 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(127 - \nmin)*\sx}, {(7.79 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(129 - \nmin)*\sx}, {(4.87 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(131 - \nmin)*\sx}, {(5.27 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(133 - \nmin)*\sx}, {(5.23 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(135 - \nmin)*\sx}, {(5.66 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(137 - \nmin)*\sx}, {(6.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(139 - \nmin)*\sx}, {(6.35 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(141 - \nmin)*\sx}, {(6.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(143 - \nmin)*\sx}, {(5.23 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(145 - \nmin)*\sx}, {(5.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(147 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(149 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(151 - \nmin)*\sx}, {(5.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(153 - \nmin)*\sx}, {(5.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(155 - \nmin)*\sx}, {(5.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(157 - \nmin)*\sx}, {(5.51 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(105 - \nmin)*\sx}, {(5.84 - \smin)*\sy}) -- ({(107 - \nmin)*\sx}, {(6.02 - \smin)*\sy}) -- ({(109 - \nmin)*\sx}, {(6.2 - \smin)*\sy}) -- ({(111 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) -- ({(113 - \nmin)*\sx}, {(6.59 - \smin)*\sy}) -- ({(115 - \nmin)*\sx}, {(7.1 - \smin)*\sy}) -- ({(117 - \nmin)*\sx}, {(7.53 - \smin)*\sy});
+    \fill ({(105 - \nmin)*\sx}, {(5.84 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(107 - \nmin)*\sx}, {(6.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(109 - \nmin)*\sx}, {(6.2 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(111 - \nmin)*\sx}, {(6.31 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(113 - \nmin)*\sx}, {(6.59 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(115 - \nmin)*\sx}, {(7.1 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(117 - \nmin)*\sx}, {(7.53 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(109 - \nmin)*\sx}, {(5.84 - \smin)*\sy}) -- ({(111 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) -- ({(113 - \nmin)*\sx}, {(5.97 - \smin)*\sy}) -- ({(115 - \nmin)*\sx}, {(5.77 - \smin)*\sy}) -- ({(117 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) -- ({(119 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) -- ({(121 - \nmin)*\sx}, {(6.83 - \smin)*\sy}) -- ({(123 - \nmin)*\sx}, {(6.97 - \smin)*\sy}) -- ({(125 - \nmin)*\sx}, {(6.99 - \smin)*\sy});
+    \fill ({(109 - \nmin)*\sx}, {(5.84 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(111 - \nmin)*\sx}, {(5.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(113 - \nmin)*\sx}, {(5.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(115 - \nmin)*\sx}, {(5.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(117 - \nmin)*\sx}, {(6.05 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(119 - \nmin)*\sx}, {(6.51 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(121 - \nmin)*\sx}, {(6.83 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(123 - \nmin)*\sx}, {(6.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(125 - \nmin)*\sx}, {(6.99 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(119 - \nmin)*\sx}, {(7.09 - \smin)*\sy}) -- ({(121 - \nmin)*\sx}, {(7.37 - \smin)*\sy}) -- ({(123 - \nmin)*\sx}, {(7.49 - \smin)*\sy});
+    \fill ({(119 - \nmin)*\sx}, {(7.09 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(121 - \nmin)*\sx}, {(7.37 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(123 - \nmin)*\sx}, {(7.49 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(119 - \nmin)*\sx}, {(5.78 - \smin)*\sy}) -- ({(121 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) -- ({(123 - \nmin)*\sx}, {(5.85 - \smin)*\sy}) -- ({(125 - \nmin)*\sx}, {(6.5 - \smin)*\sy}) -- ({(127 - \nmin)*\sx}, {(4.56 - \smin)*\sy});
+    \fill ({(119 - \nmin)*\sx}, {(5.78 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(121 - \nmin)*\sx}, {(5.58 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(123 - \nmin)*\sx}, {(5.85 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(125 - \nmin)*\sx}, {(6.5 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(127 - \nmin)*\sx}, {(4.56 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(121 - \nmin)*\sx}, {(6.13 - \smin)*\sy}) -- ({(123 - \nmin)*\sx}, {(6.55 - \smin)*\sy});
+    \fill ({(121 - \nmin)*\sx}, {(6.13 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(123 - \nmin)*\sx}, {(6.55 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(125 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) -- ({(127 - \nmin)*\sx}, {(5.43 - \smin)*\sy}) -- ({(129 - \nmin)*\sx}, {(5.3 - \smin)*\sy});
+    \fill ({(125 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(127 - \nmin)*\sx}, {(5.43 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(129 - \nmin)*\sx}, {(5.3 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(127 - \nmin)*\sx}, {(6.09 - \smin)*\sy}) -- ({(129 - \nmin)*\sx}, {(6.3 - \smin)*\sy}) -- ({(131 - \nmin)*\sx}, {(5.69 - \smin)*\sy});
+    \fill ({(127 - \nmin)*\sx}, {(6.09 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(129 - \nmin)*\sx}, {(6.3 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(131 - \nmin)*\sx}, {(5.69 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(129 - \nmin)*\sx}, {(4.27 - \smin)*\sy}) -- ({(131 - \nmin)*\sx}, {(4.61 - \smin)*\sy}) -- ({(133 - \nmin)*\sx}, {(4.11 - \smin)*\sy}) -- ({(135 - \nmin)*\sx}, {(4.39 - \smin)*\sy}) -- ({(137 - \nmin)*\sx}, {(4.78 - \smin)*\sy}) -- ({(139 - \nmin)*\sx}, {(5.24 - \smin)*\sy}) -- ({(141 - \nmin)*\sx}, {(5.73 - \smin)*\sy}) -- ({(143 - \nmin)*\sx}, {(5.96 - \smin)*\sy}) -- ({(145 - \nmin)*\sx}, {(6.13 - \smin)*\sy}) -- ({(147 - \nmin)*\sx}, {(6.24 - \smin)*\sy}) -- ({(149 - \nmin)*\sx}, {(6.25 - \smin)*\sy}) -- ({(151 - \nmin)*\sx}, {(6.27 - \smin)*\sy}) -- ({(153 - \nmin)*\sx}, {(6.54 - \smin)*\sy}) -- ({(155 - \nmin)*\sx}, {(5.44 - \smin)*\sy});
+    \fill ({(129 - \nmin)*\sx}, {(4.27 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(131 - \nmin)*\sx}, {(4.61 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(133 - \nmin)*\sx}, {(4.11 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(135 - \nmin)*\sx}, {(4.39 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(137 - \nmin)*\sx}, {(4.78 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(139 - \nmin)*\sx}, {(5.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(141 - \nmin)*\sx}, {(5.73 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(143 - \nmin)*\sx}, {(5.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(145 - \nmin)*\sx}, {(6.13 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(147 - \nmin)*\sx}, {(6.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(149 - \nmin)*\sx}, {(6.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(151 - \nmin)*\sx}, {(6.27 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(153 - \nmin)*\sx}, {(6.54 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(155 - \nmin)*\sx}, {(5.44 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(135 - \nmin)*\sx}, {(4.96 - \smin)*\sy}) -- ({(137 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) -- ({(139 - \nmin)*\sx}, {(5.71 - \smin)*\sy}) -- ({(141 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) -- ({(143 - \nmin)*\sx}, {(6.35 - \smin)*\sy});
+    \fill ({(135 - \nmin)*\sx}, {(4.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(137 - \nmin)*\sx}, {(5.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(139 - \nmin)*\sx}, {(5.71 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(141 - \nmin)*\sx}, {(6.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(143 - \nmin)*\sx}, {(6.35 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(149 - \nmin)*\sx}, {(4.95 - \smin)*\sy}) -- ({(151 - \nmin)*\sx}, {(5.15 - \smin)*\sy}) -- ({(153 - \nmin)*\sx}, {(5.35 - \smin)*\sy});
+    \fill ({(149 - \nmin)*\sx}, {(4.95 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(151 - \nmin)*\sx}, {(5.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(153 - \nmin)*\sx}, {(5.35 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(153 - \nmin)*\sx}, {(4.68 - \smin)*\sy}) -- ({(155 - \nmin)*\sx}, {(4.8 - \smin)*\sy}) -- ({(157 - \nmin)*\sx}, {(4.88 - \smin)*\sy});
+    \fill ({(153 - \nmin)*\sx}, {(4.68 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(155 - \nmin)*\sx}, {(4.8 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(157 - \nmin)*\sx}, {(4.88 - \smin)*\sy}) circle (1.1pt);
+
+    % Chain labels (N-Z)
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.6pt] at ({ (20 - \nmin)*\sx }, { (13.8 - \smin)*\sy }) {$N-Z = -1$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.6pt] at ({ (27 - \nmin)*\sx }, { (10.4 - \smin)*\sy }) {$N-Z = 1$};
+    \node[above right=-1pt and 0pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (35 - \nmin)*\sx }, { (10.0 - \smin)*\sy }) {$3$};
+    \node[above right=-1pt and 0pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (43 - \nmin)*\sx }, { (9.3 - \smin)*\sy }) {$5$};
+    \node[above right=-1pt and 0pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (49 - \nmin)*\sx }, { (10.3 - \smin)*\sy }) {$7$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (57 - \nmin)*\sx }, { (8.6 - \smin)*\sy }) {$9$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (60 - \nmin)*\sx }, { (7.9 - \smin)*\sy }) {$11$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (65 - \nmin)*\sx }, { (8.2 - \smin)*\sy }) {$13$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (69 - \nmin)*\sx }, { (7.8 - \smin)*\sy }) {$15$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (75 - \nmin)*\sx }, { (8.5 - \smin)*\sy }) {$17$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (82 - \nmin)*\sx }, { (7.9 - \smin)*\sy }) {$19$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (86 - \nmin)*\sx }, { (8.4 - \smin)*\sy }) {$21$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (89 - \nmin)*\sx }, { (7.1 - \smin)*\sy }) {$23$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (93 - \nmin)*\sx }, { (8.2 - \smin)*\sy }) {$25$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (97 - \nmin)*\sx }, { (7.0 - \smin)*\sy }) {$27$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (101 - \nmin)*\sx }, { (8.0 - \smin)*\sy }) {$29$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (104 - \nmin)*\sx }, { (6.8 - \smin)*\sy }) {$31$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (119 - \nmin)*\sx }, { (8.5 - \smin)*\sy }) {$33$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (123 - \nmin)*\sx }, { (7.8 - \smin)*\sy }) {$35$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (126 - \nmin)*\sx }, { (8.5 - \smin)*\sy }) {$37$};
+    \node[right=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (127 - \nmin)*\sx }, { (6.2 - \smin)*\sy }) {$39$};
+    \node[right=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (129 - \nmin)*\sx }, { (5.4 - \smin)*\sy }) {$41$};
+    \node[right=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (131 - \nmin)*\sx }, { (4.7 - \smin)*\sy }) {$43$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (138 - \nmin)*\sx }, { (6.8 - \smin)*\sy }) {$45$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (142 - \nmin)*\sx }, { (6.3 - \smin)*\sy }) {$47$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (146 - \nmin)*\sx }, { (6.9 - \smin)*\sy }) {$49$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (150 - \nmin)*\sx }, { (6.3 - \smin)*\sy }) {$51$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (153 - \nmin)*\sx }, { (6.8 - \smin)*\sy }) {$53$};
+    \node[right=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (155 - \nmin)*\sx }, { (5.5 - \smin)*\sy }) {$55$};
+    \node[right=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (155 - \nmin)*\sx }, { (4.6 - \smin)*\sy }) {$57$};
+
+    % Magic number arrows for Top Panel (placed below axis tick numbers)
+    \foreach \m in {2, 8, 20, 28, 50, 82, 126} {
+      \pgfmathsetmacro{\xpos}{(\m - \nmin) * \sx}
+      \draw[line width=1.0pt, ->] (\xpos, -1.25) -- (\xpos, -0.75);
+      \node[below=2pt, font=\small] at (\xpos, -1.25) {$\m$};
+    }
+  \end{scope}
+
+  % ==================== BOTTOM PANEL: S_p vs Z ====================
+  \begin{scope}[shift={(0, 0)}]
+    \def\w{11.0}
+    \def\h{6.2}
+    \def\zmin{0.0}
+    \def\zmax{105.0}
+    \def\smin{-1.9}
+    \def\smax{17.7}
+    \pgfmathsetmacro{\sx}{\w / (\zmax - \zmin)}
+    \pgfmathsetmacro{\sy}{\h / (\smax - \smin)}
+
+    \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+    % Ticks on bottom and top
+    \foreach \z in {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100} {
+      \pgfmathsetmacro{\xpos}{(\z - \zmin) * \sx}
+      \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.14);
+      \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.14);
+      \node[below=3pt, font=\small] at (\xpos, 0) {$\z$};
+    }
+    \node[below=3pt, font=\small] at (\w, 0) {$Z$};
+
+    % Ticks on left and right
+    \foreach \s in {0, 5, 10, 15} {
+      \pgfmathsetmacro{\ypos}{(\s - \smin) * \sy}
+      \draw[line width=0.7pt] (0, \ypos) -- (0.14, \ypos);
+      \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.14, \ypos);
+      \node[left=3pt, font=\small] at (0, \ypos) {$\s$};
+    }
+    \node[left=18pt, font=\normalsize, align=center] at (0, {(7.5 - \smin)*\sy}) {$S_p$\\[2pt]{\footnotesize $\mathrm{MeV}$}};
+
+    % Formula header inside
+    \node[font=\normalsize] at ({ (65 - \zmin)*\sx }, \h - 0.6) {$S_p(N,Z) = B(N,Z) - B(N,Z-1)\quad \begin{subarray}{l} N\ \text{even} \\ Z\ \text{odd} \end{subarray}$};
+
+    \draw[line width=0.65pt] ({(3 - \zmin)*\sx}, {(16.17 - \smin)*\sy}) -- ({(5 - \zmin)*\sx}, {(14.22 - \smin)*\sy}) -- ({(7 - \zmin)*\sx}, {(12.15 - \smin)*\sy});
+    \fill ({(3 - \zmin)*\sx}, {(16.17 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(5 - \zmin)*\sx}, {(14.22 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(7 - \zmin)*\sx}, {(12.15 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(5 - \zmin)*\sx}, {(10.75 - \smin)*\sy}) -- ({(7 - \zmin)*\sx}, {(9.39 - \smin)*\sy});
+    \fill ({(5 - \zmin)*\sx}, {(10.75 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(7 - \zmin)*\sx}, {(9.39 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(5 - \zmin)*\sx}, {(0.24 - \smin)*\sy}) -- ({(7 - \zmin)*\sx}, {(1.74 - \smin)*\sy});
+    \fill ({(5 - \zmin)*\sx}, {(0.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(7 - \zmin)*\sx}, {(1.74 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(9 - \zmin)*\sx}, {(10.86 - \smin)*\sy}) -- ({(11 - \zmin)*\sx}, {(10.53 - \smin)*\sy}) -- ({(13 - \zmin)*\sx}, {(9.98 - \smin)*\sy}) -- ({(15 - \zmin)*\sx}, {(9.0 - \smin)*\sy}) -- ({(17 - \zmin)*\sx}, {(8.16 - \smin)*\sy}) -- ({(19 - \zmin)*\sx}, {(7.44 - \smin)*\sy});
+    \fill ({(9 - \zmin)*\sx}, {(10.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(11 - \zmin)*\sx}, {(10.53 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \zmin)*\sx}, {(9.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \zmin)*\sx}, {(9.0 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \zmin)*\sx}, {(8.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \zmin)*\sx}, {(7.44 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(11 - \zmin)*\sx}, {(8.51 - \smin)*\sy}) -- ({(13 - \zmin)*\sx}, {(7.77 - \smin)*\sy}) -- ({(15 - \zmin)*\sx}, {(7.0 - \smin)*\sy});
+    \fill ({(11 - \zmin)*\sx}, {(8.51 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \zmin)*\sx}, {(7.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \zmin)*\sx}, {(7.0 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(11 - \zmin)*\sx}, {(2.39 - \smin)*\sy}) -- ({(13 - \zmin)*\sx}, {(2.36 - \smin)*\sy}) -- ({(15 - \zmin)*\sx}, {(2.68 - \smin)*\sy}) -- ({(17 - \zmin)*\sx}, {(2.29 - \smin)*\sy}) -- ({(19 - \zmin)*\sx}, {(1.74 - \smin)*\sy});
+    \fill ({(11 - \zmin)*\sx}, {(2.39 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(13 - \zmin)*\sx}, {(2.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(15 - \zmin)*\sx}, {(2.68 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \zmin)*\sx}, {(2.29 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \zmin)*\sx}, {(1.74 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(15 - \zmin)*\sx}, {(10.74 - \smin)*\sy}) -- ({(17 - \zmin)*\sx}, {(9.94 - \smin)*\sy}) -- ({(19 - \zmin)*\sx}, {(8.97 - \smin)*\sy}) -- ({(21 - \zmin)*\sx}, {(8.26 - \smin)*\sy}) -- ({(23 - \zmin)*\sx}, {(8.0 - \smin)*\sy}) -- ({(25 - \zmin)*\sx}, {(7.74 - \smin)*\sy}) -- ({(27 - \zmin)*\sx}, {(6.89 - \smin)*\sy}) -- ({(29 - \zmin)*\sx}, {(5.8 - \smin)*\sy}) -- ({(31 - \zmin)*\sx}, {(5.03 - \smin)*\sy}) -- ({(33 - \zmin)*\sx}, {(4.56 - \smin)*\sy});
+    \fill ({(15 - \zmin)*\sx}, {(10.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(17 - \zmin)*\sx}, {(9.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(19 - \zmin)*\sx}, {(8.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(21 - \zmin)*\sx}, {(8.26 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \zmin)*\sx}, {(8.0 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \zmin)*\sx}, {(7.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(27 - \zmin)*\sx}, {(6.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \zmin)*\sx}, {(5.8 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \zmin)*\sx}, {(5.03 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \zmin)*\sx}, {(4.56 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(21 - \zmin)*\sx}, {(9.72 - \smin)*\sy}) -- ({(23 - \zmin)*\sx}, {(9.66 - \smin)*\sy}) -- ({(25 - \zmin)*\sx}, {(9.08 - \smin)*\sy});
+    \fill ({(21 - \zmin)*\sx}, {(9.72 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \zmin)*\sx}, {(9.66 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \zmin)*\sx}, {(9.08 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(21 - \zmin)*\sx}, {(6.82 - \smin)*\sy}) -- ({(23 - \zmin)*\sx}, {(6.69 - \smin)*\sy}) -- ({(25 - \zmin)*\sx}, {(6.32 - \smin)*\sy}) -- ({(27 - \zmin)*\sx}, {(5.62 - \smin)*\sy}) -- ({(29 - \zmin)*\sx}, {(4.48 - \smin)*\sy}) -- ({(31 - \zmin)*\sx}, {(3.93 - \smin)*\sy}) -- ({(33 - \zmin)*\sx}, {(3.57 - \smin)*\sy}) -- ({(35 - \zmin)*\sx}, {(7.26 - \smin)*\sy}) -- ({(37 - \zmin)*\sx}, {(7.02 - \smin)*\sy}) -- ({(39 - \zmin)*\sx}, {(7.23 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(6.71 - \smin)*\sy}) -- ({(43 - \zmin)*\sx}, {(6.39 - \smin)*\sy}) -- ({(45 - \zmin)*\sx}, {(6.01 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(5.52 - \smin)*\sy}) -- ({(49 - \zmin)*\sx}, {(4.57 - \smin)*\sy}) -- ({(51 - \zmin)*\sx}, {(7.1 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(6.55 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(6.04 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(5.55 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(5.12 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) -- ({(63 - \zmin)*\sx}, {(4.17 - \smin)*\sy}) -- ({(65 - \zmin)*\sx}, {(6.61 - \smin)*\sy}) -- ({(67 - \zmin)*\sx}, {(5.97 - \smin)*\sy}) -- ({(69 - \zmin)*\sx}, {(5.41 - \smin)*\sy}) -- ({(71 - \zmin)*\sx}, {(4.88 - \smin)*\sy});
+    \fill ({(21 - \zmin)*\sx}, {(6.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \zmin)*\sx}, {(6.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \zmin)*\sx}, {(6.32 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(27 - \zmin)*\sx}, {(5.62 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \zmin)*\sx}, {(4.48 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \zmin)*\sx}, {(3.93 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \zmin)*\sx}, {(3.57 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \zmin)*\sx}, {(7.26 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \zmin)*\sx}, {(7.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \zmin)*\sx}, {(7.23 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(6.71 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \zmin)*\sx}, {(6.39 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \zmin)*\sx}, {(6.01 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(5.52 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \zmin)*\sx}, {(4.57 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \zmin)*\sx}, {(7.1 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(6.55 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(6.04 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(5.55 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(5.12 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \zmin)*\sx}, {(4.17 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \zmin)*\sx}, {(6.61 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \zmin)*\sx}, {(5.97 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \zmin)*\sx}, {(5.41 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \zmin)*\sx}, {(4.88 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(21 - \zmin)*\sx}, {(5.0 - \smin)*\sy}) -- ({(23 - \zmin)*\sx}, {(5.2 - \smin)*\sy}) -- ({(25 - \zmin)*\sx}, {(5.18 - \smin)*\sy});
+    \fill ({(21 - \zmin)*\sx}, {(5.0 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(23 - \zmin)*\sx}, {(5.2 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(25 - \zmin)*\sx}, {(5.18 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(27 - \zmin)*\sx}, {(4.47 - \smin)*\sy}) -- ({(29 - \zmin)*\sx}, {(3.22 - \smin)*\sy}) -- ({(31 - \zmin)*\sx}, {(7.41 - \smin)*\sy}) -- ({(33 - \zmin)*\sx}, {(6.66 - \smin)*\sy}) -- ({(35 - \zmin)*\sx}, {(6.22 - \smin)*\sy}) -- ({(37 - \zmin)*\sx}, {(6.03 - \smin)*\sy}) -- ({(39 - \zmin)*\sx}, {(5.6 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(5.14 - \smin)*\sy}) -- ({(43 - \zmin)*\sx}, {(4.77 - \smin)*\sy}) -- ({(45 - \zmin)*\sx}, {(4.45 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(4.02 - \smin)*\sy}) -- ({(49 - \zmin)*\sx}, {(6.74 - \smin)*\sy}) -- ({(51 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(4.64 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(4.22 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(6.11 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(5.68 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(5.21 - \smin)*\sy}) -- ({(63 - \zmin)*\sx}, {(4.86 - \smin)*\sy}) -- ({(65 - \zmin)*\sx}, {(4.59 - \smin)*\sy}) -- ({(67 - \zmin)*\sx}, {(4.16 - \smin)*\sy}) -- ({(69 - \zmin)*\sx}, {(3.57 - \smin)*\sy}) -- ({(71 - \zmin)*\sx}, {(5.45 - \smin)*\sy}) -- ({(73 - \zmin)*\sx}, {(5.02 - \smin)*\sy}) -- ({(75 - \zmin)*\sx}, {(4.42 - \smin)*\sy}) -- ({(77 - \zmin)*\sx}, {(3.98 - \smin)*\sy}) -- ({(79 - \zmin)*\sx}, {(3.86 - \smin)*\sy}) -- ({(81 - \zmin)*\sx}, {(3.14 - \smin)*\sy}) -- ({(83 - \zmin)*\sx}, {(3.5 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(3.33 - \smin)*\sy}) -- ({(87 - \zmin)*\sx}, {(3.12 - \smin)*\sy}) -- ({(89 - \zmin)*\sx}, {(2.99 - \smin)*\sy}) -- ({(91 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) -- ({(93 - \zmin)*\sx}, {(4.33 - \smin)*\sy}) -- ({(95 - \zmin)*\sx}, {(3.95 - \smin)*\sy}) -- ({(97 - \zmin)*\sx}, {(4.4 - \smin)*\sy}) -- ({(99 - \zmin)*\sx}, {(4.04 - \smin)*\sy});
+    \fill ({(27 - \zmin)*\sx}, {(4.47 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(29 - \zmin)*\sx}, {(3.22 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \zmin)*\sx}, {(7.41 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \zmin)*\sx}, {(6.66 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \zmin)*\sx}, {(6.22 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \zmin)*\sx}, {(6.03 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \zmin)*\sx}, {(5.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(5.14 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \zmin)*\sx}, {(4.77 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \zmin)*\sx}, {(4.45 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(4.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \zmin)*\sx}, {(6.74 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(4.64 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(4.22 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(6.11 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(5.68 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(5.21 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \zmin)*\sx}, {(4.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \zmin)*\sx}, {(4.59 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \zmin)*\sx}, {(4.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \zmin)*\sx}, {(3.57 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \zmin)*\sx}, {(5.45 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \zmin)*\sx}, {(5.02 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \zmin)*\sx}, {(4.42 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \zmin)*\sx}, {(3.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \zmin)*\sx}, {(3.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \zmin)*\sx}, {(3.14 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \zmin)*\sx}, {(3.5 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(3.33 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \zmin)*\sx}, {(3.12 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \zmin)*\sx}, {(2.99 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(93 - \zmin)*\sx}, {(4.33 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \zmin)*\sx}, {(3.95 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \zmin)*\sx}, {(4.4 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(99 - \zmin)*\sx}, {(4.04 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(29 - \zmin)*\sx}, {(7.08 - \smin)*\sy}) -- ({(31 - \zmin)*\sx}, {(6.15 - \smin)*\sy}) -- ({(33 - \zmin)*\sx}, {(5.42 - \smin)*\sy}) -- ({(35 - \zmin)*\sx}, {(5.05 - \smin)*\sy}) -- ({(37 - \zmin)*\sx}, {(4.64 - \smin)*\sy}) -- ({(39 - \zmin)*\sx}, {(4.42 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(4.28 - \smin)*\sy}) -- ({(43 - \zmin)*\sx}, {(3.98 - \smin)*\sy}) -- ({(45 - \zmin)*\sx}, {(6.82 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(6.37 - \smin)*\sy}) -- ({(49 - \zmin)*\sx}, {(6.11 - \smin)*\sy});
+    \fill ({(29 - \zmin)*\sx}, {(7.08 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(31 - \zmin)*\sx}, {(6.15 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \zmin)*\sx}, {(5.42 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(35 - \zmin)*\sx}, {(5.05 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(37 - \zmin)*\sx}, {(4.64 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \zmin)*\sx}, {(4.42 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(4.28 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \zmin)*\sx}, {(3.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \zmin)*\sx}, {(6.82 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(6.37 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \zmin)*\sx}, {(6.11 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(31 - \zmin)*\sx}, {(8.39 - \smin)*\sy}) -- ({(33 - \zmin)*\sx}, {(7.71 - \smin)*\sy});
+    \fill ({(31 - \zmin)*\sx}, {(8.39 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(33 - \zmin)*\sx}, {(7.71 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(37 - \zmin)*\sx}, {(10.31 - \smin)*\sy}) -- ({(39 - \zmin)*\sx}, {(6.56 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(5.92 - \smin)*\sy}) -- ({(43 - \zmin)*\sx}, {(5.6 - \smin)*\sy}) -- ({(45 - \zmin)*\sx}, {(5.28 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(4.84 - \smin)*\sy});
+    \fill ({(37 - \zmin)*\sx}, {(10.31 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \zmin)*\sx}, {(6.56 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(5.92 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \zmin)*\sx}, {(5.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \zmin)*\sx}, {(5.28 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(4.84 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(37 - \zmin)*\sx}, {(9.1 - \smin)*\sy}) -- ({(39 - \zmin)*\sx}, {(8.03 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(8.43 - \smin)*\sy});
+    \fill ({(37 - \zmin)*\sx}, {(9.1 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(39 - \zmin)*\sx}, {(8.03 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(8.43 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(39 - \zmin)*\sx}, {(8.91 - \smin)*\sy}) -- ({(41 - \zmin)*\sx}, {(7.47 - \smin)*\sy}) -- ({(43 - \zmin)*\sx}, {(7.25 - \smin)*\sy});
+    \fill ({(39 - \zmin)*\sx}, {(8.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(41 - \zmin)*\sx}, {(7.47 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(43 - \zmin)*\sx}, {(7.25 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(43 - \zmin)*\sx}, {(8.19 - \smin)*\sy}) -- ({(45 - \zmin)*\sx}, {(7.49 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(6.99 - \smin)*\sy});
+    \fill ({(43 - \zmin)*\sx}, {(8.19 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(45 - \zmin)*\sx}, {(7.49 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(6.99 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(45 - \zmin)*\sx}, {(8.34 - \smin)*\sy}) -- ({(47 - \zmin)*\sx}, {(7.78 - \smin)*\sy});
+    \fill ({(45 - \zmin)*\sx}, {(8.34 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(47 - \zmin)*\sx}, {(7.78 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(47 - \zmin)*\sx}, {(8.6 - \smin)*\sy}) -- ({(49 - \zmin)*\sx}, {(3.72 - \smin)*\sy}) -- ({(51 - \zmin)*\sx}, {(5.75 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(5.45 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(5.42 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(4.56 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(4.06 - \smin)*\sy}) -- ({(63 - \zmin)*\sx}, {(3.6 - \smin)*\sy}) -- ({(65 - \zmin)*\sx}, {(5.9 - \smin)*\sy}) -- ({(67 - \zmin)*\sx}, {(5.29 - \smin)*\sy}) -- ({(69 - \zmin)*\sx}, {(4.72 - \smin)*\sy});
+    \fill ({(47 - \zmin)*\sx}, {(8.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(49 - \zmin)*\sx}, {(3.72 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(51 - \zmin)*\sx}, {(5.75 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(5.45 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(5.42 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(4.56 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(4.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \zmin)*\sx}, {(3.6 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \zmin)*\sx}, {(5.9 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \zmin)*\sx}, {(5.29 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \zmin)*\sx}, {(4.72 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(51 - \zmin)*\sx}, {(8.26 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(7.92 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(7.49 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(6.87 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(6.27 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(6.01 - \smin)*\sy}) -- ({(63 - \zmin)*\sx}, {(5.8 - \smin)*\sy}) -- ({(65 - \zmin)*\sx}, {(5.25 - \smin)*\sy}) -- ({(67 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) -- ({(69 - \zmin)*\sx}, {(4.14 - \smin)*\sy}) -- ({(71 - \zmin)*\sx}, {(6.24 - \smin)*\sy}) -- ({(73 - \zmin)*\sx}, {(6.46 - \smin)*\sy}) -- ({(75 - \zmin)*\sx}, {(5.89 - \smin)*\sy}) -- ({(77 - \zmin)*\sx}, {(5.43 - \smin)*\sy}) -- ({(79 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) -- ({(81 - \zmin)*\sx}, {(5.0 - \smin)*\sy}) -- ({(83 - \zmin)*\sx}, {(5.03 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(5.19 - \smin)*\sy});
+    \fill ({(51 - \zmin)*\sx}, {(8.26 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(7.92 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(7.49 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(6.87 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(6.27 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(6.01 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \zmin)*\sx}, {(5.8 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(65 - \zmin)*\sx}, {(5.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \zmin)*\sx}, {(4.14 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(71 - \zmin)*\sx}, {(6.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(73 - \zmin)*\sx}, {(6.46 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \zmin)*\sx}, {(5.89 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \zmin)*\sx}, {(5.43 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \zmin)*\sx}, {(5.06 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \zmin)*\sx}, {(5.0 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \zmin)*\sx}, {(5.03 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(5.19 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(51 - \zmin)*\sx}, {(7.65 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(7.19 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(6.66 - \smin)*\sy});
+    \fill ({(51 - \zmin)*\sx}, {(7.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(7.19 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(6.66 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(51 - \zmin)*\sx}, {(6.45 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(5.95 - \smin)*\sy});
+    \fill ({(51 - \zmin)*\sx}, {(6.45 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(5.95 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(51 - \zmin)*\sx}, {(4.17 - \smin)*\sy}) -- ({(53 - \zmin)*\sx}, {(3.86 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(3.6 - \smin)*\sy});
+    \fill ({(51 - \zmin)*\sx}, {(4.17 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(53 - \zmin)*\sx}, {(3.86 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(3.6 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(53 - \zmin)*\sx}, {(8.69 - \smin)*\sy}) -- ({(55 - \zmin)*\sx}, {(8.03 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(7.55 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(7.17 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(6.91 - \smin)*\sy}) -- ({(63 - \zmin)*\sx}, {(6.45 - \smin)*\sy});
+    \fill ({(53 - \zmin)*\sx}, {(8.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(55 - \zmin)*\sx}, {(8.03 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(7.55 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(7.17 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(6.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(63 - \zmin)*\sx}, {(6.45 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(55 - \zmin)*\sx}, {(4.84 - \smin)*\sy}) -- ({(57 - \zmin)*\sx}, {(4.38 - \smin)*\sy}) -- ({(59 - \zmin)*\sx}, {(4.04 - \smin)*\sy}) -- ({(61 - \zmin)*\sx}, {(3.4 - \smin)*\sy});
+    \fill ({(55 - \zmin)*\sx}, {(4.84 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(57 - \zmin)*\sx}, {(4.38 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(59 - \zmin)*\sx}, {(4.04 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(61 - \zmin)*\sx}, {(3.4 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(65 - \zmin)*\sx}, {(7.38 - \smin)*\sy}) -- ({(67 - \zmin)*\sx}, {(6.78 - \smin)*\sy}) -- ({(69 - \zmin)*\sx}, {(6.09 - \smin)*\sy});
+    \fill ({(65 - \zmin)*\sx}, {(7.38 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(67 - \zmin)*\sx}, {(6.78 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(69 - \zmin)*\sx}, {(6.09 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(73 - \zmin)*\sx}, {(5.96 - \smin)*\sy}) -- ({(75 - \zmin)*\sx}, {(5.25 - \smin)*\sy}) -- ({(77 - \zmin)*\sx}, {(4.66 - \smin)*\sy}) -- ({(79 - \zmin)*\sx}, {(4.24 - \smin)*\sy});
+    \fill ({(73 - \zmin)*\sx}, {(5.96 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(75 - \zmin)*\sx}, {(5.25 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \zmin)*\sx}, {(4.66 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \zmin)*\sx}, {(4.24 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(75 - \zmin)*\sx}, {(7.11 - \smin)*\sy}) -- ({(77 - \zmin)*\sx}, {(6.73 - \smin)*\sy}) -- ({(79 - \zmin)*\sx}, {(6.3 - \smin)*\sy}) -- ({(81 - \zmin)*\sx}, {(5.64 - \smin)*\sy}) -- ({(83 - \zmin)*\sx}, {(2.92 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(2.98 - \smin)*\sy}) -- ({(87 - \zmin)*\sx}, {(0.98 - \smin)*\sy});
+    \fill ({(75 - \zmin)*\sx}, {(7.11 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(77 - \zmin)*\sx}, {(6.73 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \zmin)*\sx}, {(6.3 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \zmin)*\sx}, {(5.64 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \zmin)*\sx}, {(2.92 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(2.98 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \zmin)*\sx}, {(0.98 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(77 - \zmin)*\sx}, {(5.94 - \smin)*\sy}) -- ({(79 - \zmin)*\sx}, {(7.21 - \smin)*\sy});
+    \fill ({(77 - \zmin)*\sx}, {(5.94 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(79 - \zmin)*\sx}, {(7.21 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(79 - \zmin)*\sx}, {(6.79 - \smin)*\sy}) -- ({(81 - \zmin)*\sx}, {(6.36 - \smin)*\sy});
+    \fill ({(79 - \zmin)*\sx}, {(6.79 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(81 - \zmin)*\sx}, {(6.36 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(81 - \zmin)*\sx}, {(4.36 - \smin)*\sy}) -- ({(83 - \zmin)*\sx}, {(4.38 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) -- ({(87 - \zmin)*\sx}, {(4.69 - \smin)*\sy}) -- ({(89 - \zmin)*\sx}, {(4.49 - \smin)*\sy}) -- ({(91 - \zmin)*\sx}, {(4.26 - \smin)*\sy});
+    \fill ({(81 - \zmin)*\sx}, {(4.36 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(83 - \zmin)*\sx}, {(4.38 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(4.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \zmin)*\sx}, {(4.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \zmin)*\sx}, {(4.49 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \zmin)*\sx}, {(4.26 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(83 - \zmin)*\sx}, {(2.18 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(2.62 - \smin)*\sy}) -- ({(87 - \zmin)*\sx}, {(3.91 - \smin)*\sy}) -- ({(89 - \zmin)*\sx}, {(3.79 - \smin)*\sy}) -- ({(91 - \zmin)*\sx}, {(3.57 - \smin)*\sy});
+    \fill ({(83 - \zmin)*\sx}, {(2.18 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(2.62 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(87 - \zmin)*\sx}, {(3.91 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \zmin)*\sx}, {(3.79 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \zmin)*\sx}, {(3.57 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(83 - \zmin)*\sx}, {(1.58 - \smin)*\sy}) -- ({(85 - \zmin)*\sx}, {(0.96 - \smin)*\sy});
+    \fill ({(83 - \zmin)*\sx}, {(1.58 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(85 - \zmin)*\sx}, {(0.96 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(87 - \zmin)*\sx}, {(5.24 - \smin)*\sy}) -- ({(89 - \zmin)*\sx}, {(5.01 - \smin)*\sy});
+    \fill ({(87 - \zmin)*\sx}, {(5.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(89 - \zmin)*\sx}, {(5.01 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(89 - \zmin)*\sx}, {(5.71 - \smin)*\sy}) -- ({(91 - \zmin)*\sx}, {(5.57 - \smin)*\sy}) -- ({(93 - \zmin)*\sx}, {(5.24 - \smin)*\sy}) -- ({(95 - \zmin)*\sx}, {(5.16 - \smin)*\sy}) -- ({(97 - \zmin)*\sx}, {(4.74 - \smin)*\sy});
+    \fill ({(89 - \zmin)*\sx}, {(5.71 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(91 - \zmin)*\sx}, {(5.57 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(93 - \zmin)*\sx}, {(5.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \zmin)*\sx}, {(5.16 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \zmin)*\sx}, {(4.74 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(93 - \zmin)*\sx}, {(6.24 - \smin)*\sy}) -- ({(95 - \zmin)*\sx}, {(4.55 - \smin)*\sy});
+    \fill ({(93 - \zmin)*\sx}, {(6.24 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \zmin)*\sx}, {(4.55 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(93 - \zmin)*\sx}, {(5.69 - \smin)*\sy}) -- ({(95 - \zmin)*\sx}, {(5.49 - \smin)*\sy});
+    \fill ({(93 - \zmin)*\sx}, {(5.69 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \zmin)*\sx}, {(5.49 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(93 - \zmin)*\sx}, {(4.99 - \smin)*\sy}) -- ({(95 - \zmin)*\sx}, {(4.83 - \smin)*\sy});
+    \fill ({(93 - \zmin)*\sx}, {(4.99 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(95 - \zmin)*\sx}, {(4.83 - \smin)*\sy}) circle (1.1pt);
+    \draw[line width=0.65pt] ({(95 - \zmin)*\sx}, {(3.65 - \smin)*\sy}) -- ({(97 - \zmin)*\sx}, {(3.29 - \smin)*\sy}) -- ({(99 - \zmin)*\sx}, {(2.86 - \smin)*\sy});
+    \fill ({(95 - \zmin)*\sx}, {(3.65 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(97 - \zmin)*\sx}, {(3.29 - \smin)*\sy}) circle (1.1pt);
+    \fill ({(99 - \zmin)*\sx}, {(2.86 - \smin)*\sy}) circle (1.1pt);
+
+    % Chain labels (N-Z)
+    \node[above right=-2pt and 0pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.6pt] at ({ (5 - \zmin)*\sx }, { (16.2 - \smin)*\sy }) {$N-Z = 3$};
+    \node[below right=-2pt and 0pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.6pt] at ({ (3 - \zmin)*\sx }, { (9.9 - \smin)*\sy }) {$N-Z = 1$};
+    \node[right=2pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.6pt] at ({ (20 - \zmin)*\sx }, { (1.8 - \smin)*\sy }) {$N-Z = -1$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (13 - \zmin)*\sx }, { (10.6 - \smin)*\sy }) {$5$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (17 - \zmin)*\sx }, { (9.5 - \smin)*\sy }) {$7$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (27 - \zmin)*\sx }, { (8.8 - \smin)*\sy }) {$9$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (31 - \zmin)*\sx }, { (9.1 - \smin)*\sy }) {$11$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (34 - \zmin)*\sx }, { (8.5 - \smin)*\sy }) {$13$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (35 - \zmin)*\sx }, { (9.9 - \smin)*\sy }) {$15$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (35 - \zmin)*\sx }, { (11.2 - \smin)*\sy }) {$17$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (43 - \zmin)*\sx }, { (8.8 - \smin)*\sy }) {$19$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (46 - \zmin)*\sx }, { (9.2 - \smin)*\sy }) {$21$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (47 - \zmin)*\sx }, { (7.9 - \smin)*\sy }) {$23$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (49 - \zmin)*\sx }, { (8.6 - \smin)*\sy }) {$25$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (51 - \zmin)*\sx }, { (8.3 - \smin)*\sy }) {$27$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (53 - \zmin)*\sx }, { (7.5 - \smin)*\sy }) {$29$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (60 - \zmin)*\sx }, { (8.2 - \smin)*\sy }) {$31$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (63 - \zmin)*\sx }, { (7.2 - \smin)*\sy }) {$33$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (66 - \zmin)*\sx }, { (8.0 - \smin)*\sy }) {$35$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (69 - \zmin)*\sx }, { (7.0 - \smin)*\sy }) {$37$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (72 - \zmin)*\sx }, { (7.8 - \smin)*\sy }) {$39$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (75 - \zmin)*\sx }, { (6.6 - \smin)*\sy }) {$41$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (77 - \zmin)*\sx }, { (5.9 - \smin)*\sy }) {$43$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (79 - \zmin)*\sx }, { (7.7 - \smin)*\sy }) {$45$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (83 - \zmin)*\sx }, { (4.7 - \smin)*\sy }) {$47$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (83 - \zmin)*\sx }, { (5.7 - \smin)*\sy }) {$49$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (88 - \zmin)*\sx }, { (7.0 - \smin)*\sy }) {$51$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (91 - \zmin)*\sx }, { (5.9 - \smin)*\sy }) {$53$};
+    \node[above=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (93 - \zmin)*\sx }, { (6.9 - \smin)*\sy }) {$55$};
+    \node[below=1pt, font=\scriptsize, fill=white, fill opacity=0.85, text opacity=1, inner sep=0.5pt] at ({ (95 - \zmin)*\sx }, { (5.7 - \smin)*\sy }) {$57$};
+
+    % Magic number arrows for Bottom Panel (placed below axis tick numbers)
+    \foreach \m in {2, 8, 20, 28, 50, 82} {
+      \pgfmathsetmacro{\xpos}{(\m - \zmin) * \sx}
+      \draw[line width=1.0pt, ->] (\xpos, -1.25) -- (\xpos, -0.75);
+      \node[below=2pt, font=\small] at (\xpos, -1.25) {$\m$};
+    }
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

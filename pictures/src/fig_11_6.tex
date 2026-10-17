@@ -1,0 +1,86 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \begin{axis}[
+    width=9.5cm,
+    height=6.6cm,
+    xmin=2.8, xmax=28.6,
+    ymin=0.0, ymax=0.41,
+    axis line style={line width=0.85pt},
+    xtick={4, 8, 12, 16, 20, 24, 28},
+    xticklabels={$4$, $8$, $12$, $16$, $20$, $24$, $28$},
+    xticklabel style={below=2pt, font=\small},
+    minor x tick num=1,
+    ytick={0.1, 0.2, 0.3, 0.4},
+    yticklabels={$0.1$, $0.2$, $0.3$, $0.4$},
+    yticklabel style={left=2pt, font=\small},
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=4pt,
+    minor tick length=2.5pt,
+    clip=false
+  ]
+
+    % Axis titles
+    \node[anchor=south west, font=\small] at (axis cs:2.8, 0.34) {$W_N = \langle\Phi|\hat{P}^N|\Phi\rangle$};
+    \node[anchor=north, font=\small] at (axis cs:26.0, -0.02) {$N$};
+
+    % --- N = 12 curve (Gaussian) ---
+    % Analytical Gaussian curve: y = 0.355 * exp( -((x-12)/3.1)^2 )
+    \addplot[smooth, domain=4:21, samples=60, line width=1.0pt]
+      {0.355 * exp(-((x-12)/3.15)^2)};
+
+    % Discrete data points for N = 12
+    \addplot[only marks, mark=*, mark size=1.8pt, mark options={fill=black}]
+      coordinates {
+        (4, 0.0)
+        (6, 0.003)
+        (8, 0.055)
+        (10, 0.270)
+        (12, 0.355)
+        (14, 0.218)
+        (16, 0.070)
+        (18, 0.005)
+        (20, 0.0)
+      };
+
+    \node[anchor=west, font=\small, fill=white, inner sep=1.2pt] at (axis cs:13.2, 0.355) {$\langle N\rangle = 12$};
+
+    % --- N = 20 curve (Gaussian) ---
+    % Analytical Gaussian curve: y = 0.315 * exp( -((x-20)/3.55)^2 )
+    \addplot[smooth, domain=11:28.5, samples=60, line width=1.0pt]
+      {0.315 * exp(-((x-20)/3.55)^2)};
+
+    % Discrete data points for N = 20 (square markers)
+    \addplot[only marks, mark=square*, mark size=1.7pt, mark options={fill=black}]
+      coordinates {
+        (12, 0.0)
+        (14, 0.008)
+        (16, 0.085)
+        (18, 0.230)
+        (20, 0.315)
+        (22, 0.225)
+        (24, 0.090)
+        (26, 0.020)
+        (28, 0.002)
+      };
+
+    \node[anchor=west, font=\small, fill=white, inner sep=1.2pt] at (axis cs:21.2, 0.315) {$\langle N\rangle = 20$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

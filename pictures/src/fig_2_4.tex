@@ -1,0 +1,208 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % Top titles
+  \node[align=center, font=\bfseries\large] at (3.0, 18.2) {Isotropic harmonic\\oscillator levels};
+  \node[align=center, font=\bfseries\large] at (12.2, 18.2) {Square well levels\\(Infinite walls)};
+
+  % Vertical dash-dotted partition lines
+  \draw[line width=1.0pt, dash dot] (5.2, 0.2) -- (5.2, 17.5);
+  \draw[line width=1.0pt, dash dot] (10.2, 0.2) -- (10.2, 17.5);
+
+  % ==========================================
+  % LEFT: Harmonic oscillator levels
+  % ==========================================
+  % Shell 0: 1s
+  \node[font=\normalsize] at (0.8, 0.8) {$(1s)$};
+  \node[font=\normalsize] at (2.2, 0.8) {$(2)$};
+  \node[font=\normalsize] at (3.2, 0.8) {$0\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 0.8) {$(2)$};
+  \draw[line width=1.5pt] (3.8, 0.8) -- (5.2, 0.8);
+
+  % Shell 1: 1p
+  \node[font=\normalsize] at (0.8, 2.8) {$(1p)$};
+  \node[font=\normalsize] at (2.2, 2.8) {$(6)$};
+  \node[font=\normalsize] at (3.2, 2.8) {$1\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 2.8) {$(8)$};
+  \draw[line width=1.5pt] (3.8, 2.8) -- (5.2, 2.8);
+
+  % Shell 2: 1d, 2s
+  \node[font=\normalsize] at (0.8, 5.2) {$(1d, 2s)$};
+  \node[font=\normalsize] at (2.2, 5.2) {$(12)$};
+  \node[font=\normalsize] at (3.2, 5.2) {$2\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 5.2) {$(20)$};
+  \draw[line width=1.5pt] (3.8, 5.2) -- (5.2, 5.2);
+
+  % Shell 3: 1f, 2p
+  \node[font=\normalsize] at (0.8, 7.8) {$(1f, 2p)$};
+  \node[font=\normalsize] at (2.2, 7.8) {$(20)$};
+  \node[font=\normalsize] at (3.2, 7.8) {$3\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 7.8) {$(40)$};
+  \draw[line width=1.5pt] (3.8, 7.8) -- (5.2, 7.8);
+
+  % Shell 4: 1g, 2d, 3s
+  \node[font=\normalsize] at (0.8, 10.4) {$(1g, 2d, 3s)$};
+  \node[font=\normalsize] at (2.2, 10.4) {$(30)$};
+  \node[font=\normalsize] at (3.2, 10.4) {$4\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 10.4) {$(70)$};
+  \draw[line width=1.5pt] (3.8, 10.4) -- (5.2, 10.4);
+
+  % Shell 5: 1h, 2f, 3p
+  \node[font=\normalsize] at (0.8, 13.0) {$(1h, 2f, 3p)$};
+  \node[font=\normalsize] at (2.2, 13.0) {$(42)$};
+  \node[font=\normalsize] at (3.2, 13.0) {$5\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 13.0) {$(112)$};
+  \draw[line width=1.5pt] (3.8, 13.0) -- (5.2, 13.0);
+
+  % Shell 6: 1i, 2g, 3d, 4s
+  \node[font=\normalsize] at (0.8, 15.6) {$(1i, 2g, 3d, 4s)$};
+  \node[font=\normalsize] at (2.2, 15.6) {$(56)$};
+  \node[font=\normalsize] at (3.2, 15.6) {$6\hbar\omega$};
+  \node[above=1pt, font=\normalsize] at (4.6, 15.6) {$(168)$};
+  \draw[line width=1.5pt] (3.8, 15.6) -- (5.2, 15.6);
+
+  % Upward continuation dashed lines from 6 hbar omega
+  \draw[line width=1.0pt, dashed] (5.2, 15.6) -- (6.1, 17.2);
+  \draw[line width=1.0pt, dashed] (5.2, 15.6) -- (6.2, 16.0);
+
+  % ==========================================
+  % MIDDLE: Intermediate potential levels
+  % ==========================================
+  \def\wmid{0.75}
+
+  % 1s (2)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 0.8) -- ({7.3 + \wmid}, 0.8) node[above=1pt, midway, font=\normalsize] {$1s\ (2)$};
+  \draw[line width=1.0pt, dashed] (5.2, 0.8) -- ({7.3 - \wmid}, 0.8);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 0.8) -- (10.2, 0.8);
+
+  % 1p (8)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 2.45) -- ({7.3 + \wmid}, 2.45) node[above=1pt, midway, font=\normalsize] {$1p\ (8)$};
+  \draw[line width=1.0pt, dashed] (5.2, 2.8) -- ({7.3 - \wmid}, 2.45);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 2.45) -- (10.2, 2.2);
+
+  % 1d (18) & 2s (20)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 4.6) -- ({7.3 + \wmid}, 4.6) node[above=1pt, midway, font=\normalsize] {$1d\ (18)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 5.4) -- ({7.3 + \wmid}, 5.4) node[above=1pt, midway, font=\normalsize] {$2s\ (20)$};
+  \draw[line width=1.0pt, dashed] (5.2, 5.2) -- ({7.3 - \wmid}, 4.6);
+  \draw[line width=1.0pt, dashed] (5.2, 5.2) -- ({7.3 - \wmid}, 5.4);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 4.6) -- (10.2, 3.9);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 5.4) -- (10.2, 4.9);
+
+  % 1f (34) & 2p (40)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 6.9) -- ({7.3 + \wmid}, 6.9) node[above=1pt, midway, font=\normalsize] {$1f\ (34)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 7.9) -- ({7.3 + \wmid}, 7.9) node[above=1pt, midway, font=\normalsize] {$2p\ (40)$};
+  \draw[line width=1.0pt, dashed] (5.2, 7.8) -- ({7.3 - \wmid}, 6.9);
+  \draw[line width=1.0pt, dashed] (5.2, 7.8) -- ({7.3 - \wmid}, 7.9);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 6.9) -- (10.2, 6.3);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 7.9) -- (10.2, 7.6);
+
+  % 1g (58), 2d (68), 3s (70)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 9.3) -- ({7.3 + \wmid}, 9.3) node[above=1pt, midway, font=\normalsize] {$1g\ (58)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 10.4) -- ({7.3 + \wmid}, 10.4) node[above=1pt, midway, font=\normalsize] {$2d\ (68)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 11.2) -- ({7.3 + \wmid}, 11.2) node[above=1pt, midway, font=\normalsize] {$3s\ (70)$};
+  \draw[line width=1.0pt, dashed] (5.2, 10.4) -- ({7.3 - \wmid}, 9.3);
+  \draw[line width=1.0pt, dashed] (5.2, 10.4) -- ({7.3 - \wmid}, 10.4);
+  \draw[line width=1.0pt, dashed] (5.2, 10.4) -- ({7.3 - \wmid}, 11.2);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 9.3) -- (10.2, 8.6);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 10.4) -- (10.2, 10.2);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 11.2) -- (10.2, 11.4);
+
+  % 1h (92), 2f (106), 3p (112)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 12.0) -- ({7.3 + \wmid}, 12.0) node[above=1pt, midway, font=\normalsize] {$1h\ (92)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 13.1) -- ({7.3 + \wmid}, 13.1) node[above=1pt, midway, font=\normalsize] {$2f\ (106)$};
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 14.1) -- ({7.3 + \wmid}, 14.1) node[above=1pt, midway, font=\normalsize] {$3p\ (112)$};
+  \draw[line width=1.0pt, dashed] (5.2, 13.0) -- ({7.3 - \wmid}, 12.0);
+  \draw[line width=1.0pt, dashed] (5.2, 13.0) -- ({7.3 - \wmid}, 13.1);
+  \draw[line width=1.0pt, dashed] (5.2, 13.0) -- ({7.3 - \wmid}, 14.1);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 12.0) -- (10.2, 11.0);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 13.1) -- (10.2, 12.8);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 14.1) -- (10.2, 15.6);
+
+  % 1i (138)
+  \draw[line width=1.4pt] ({7.3 - \wmid}, 14.9) -- ({7.3 + \wmid}, 14.9) node[above=1pt, midway, font=\normalsize] {$1i\ (138)$};
+  \draw[line width=1.0pt, dashed] (5.2, 15.6) -- ({7.3 - \wmid}, 14.9);
+  \draw[line width=1.0pt, dashed] ({7.3 + \wmid}, 14.9) -- (10.2, 13.4);
+
+  % ==========================================
+  % RIGHT: Infinite spherical square well
+  % ==========================================
+  \def\wsq{1.4}
+  
+  % 1s
+  \draw[line width=1.5pt] (10.2, 0.8) -- ({10.2 + \wsq}, 0.8);
+  \node[above=1pt, font=\normalsize] at (10.8, 0.8) {$(2)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 0.8) {$1s\ (2)$};
+
+  % 1p
+  \draw[line width=1.5pt] (10.2, 2.2) -- ({10.2 + \wsq}, 2.2);
+  \node[above=1pt, font=\normalsize] at (10.8, 2.2) {$(8)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 2.2) {$1p\ (6)$};
+
+  % 1d
+  \draw[line width=1.5pt] (10.2, 3.9) -- ({10.2 + \wsq}, 3.9);
+  \node[above=0.5pt, font=\normalsize, fill=white, inner sep=0.8pt] at (10.8, 3.9) {$(18)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 3.9) {$1d\ (10)$};
+
+  % 2s
+  \draw[line width=1.5pt] (10.2, 4.9) -- ({10.2 + \wsq}, 4.9);
+  \node[above=1pt, font=\normalsize] at (10.8, 4.9) {$(20)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 4.9) {$2s\ (2)$};
+
+  % 1f
+  \draw[line width=1.5pt] (10.2, 6.3) -- ({10.2 + \wsq}, 6.3);
+  \node[above=1pt, font=\normalsize] at (10.8, 6.3) {$(34)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 6.3) {$1f\ (14)$};
+
+  % 2p
+  \draw[line width=1.5pt] (10.2, 7.6) -- ({10.2 + \wsq}, 7.6);
+  \node[above=1pt, font=\normalsize] at (10.8, 7.6) {$(40)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 7.6) {$2p\ (6)$};
+
+  % 1g
+  \draw[line width=1.5pt] (10.2, 8.6) -- ({10.2 + \wsq}, 8.6);
+  \node[above=1pt, font=\normalsize] at (10.8, 8.6) {$(58)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 8.6) {$1g\ (18)$};
+
+  % 2d
+  \draw[line width=1.5pt] (10.2, 10.2) -- ({10.2 + \wsq}, 10.2);
+  \node[above=0.5pt, font=\normalsize, fill=white, inner sep=0.8pt] at (10.8, 10.2) {$(68)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 10.2) {$2d\ (10)$};
+
+  % 1h
+  \draw[line width=1.5pt] (10.2, 11.0) -- ({10.2 + \wsq}, 11.0);
+  \node[above=0.5pt, font=\normalsize, fill=white, inner sep=0.8pt] at (10.8, 11.0) {$(92)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 11.0) {$1h\ (22)$};
+
+  % 3s
+  \draw[line width=1.5pt] (10.2, 11.4) -- ({10.2 + \wsq}, 11.4);
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 11.4) {$3s\ (2)$};
+
+  % 2f
+  \draw[line width=1.5pt] (10.2, 12.8) -- ({10.2 + \wsq}, 12.8);
+  \node[above=0.5pt, font=\normalsize, fill=white, inner sep=0.8pt] at (10.8, 12.8) {$(106)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 12.8) {$2f\ (14)$};
+
+  % 1i
+  \draw[line width=1.5pt] (10.2, 13.4) -- ({10.2 + \wsq}, 13.4);
+  \node[above=0.5pt, font=\normalsize, fill=white, inner sep=0.8pt] at (10.8, 13.4) {$(132)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 13.4) {$1i\ (26)$};
+
+  % 3p
+  \draw[line width=1.5pt] (10.2, 15.6) -- ({10.2 + \wsq}, 15.6);
+  \node[above=1pt, font=\normalsize] at (10.8, 15.6) {$(138)$};
+  \node[right=3pt, font=\normalsize] at ({10.2 + \wsq}, 15.6) {$3p\ (6)$};
+
+\end{tikzpicture}
+\end{document}

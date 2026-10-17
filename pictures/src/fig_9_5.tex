@@ -1,0 +1,231 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Dimensions
+  \def\yscale{2.2}   % 1 MeV = 2.2 cm
+  \def\w{0.38}       % half-width of level bar: 0.76 cm
+
+  % ========================================================
+  % Main Axis: Energy (Left)
+  % ========================================================
+  \draw[line width=0.85pt] (0, 0) -- (0, {1.7 * \yscale});
+  \node[font=\small, align=center] at (-0.6, {1.7 * \yscale}) {$E(\text{MeV})$};
+
+  % Y-axis ticks
+  \draw[line width=0.7pt] (0, 0) -- (-0.15, 0);
+  \node[left=3pt, font=\small] at (-0.15, 0) {$0$};
+  \draw[line width=0.7pt] (0, {1.0 * \yscale}) -- (-0.15, {1.0 * \yscale});
+  \node[left=3pt, font=\small] at (-0.15, {1.0 * \yscale}) {$1.0$};
+
+  % Baselines at E = 0
+  \draw[dashdotted, line width=0.75pt] (0, 0) -- (5.48, 0);
+  \draw[dashdotted, line width=0.75pt] (6.8, 0) -- (11.78, 0);
+
+  % ========================================================
+  % Titles
+  % ========================================================
+  \node[font=\Large\bfseries] at (3.2, 4.9) {Sm};
+  \node[font=\large\bfseries] at (3.2, 4.2) {Experiment};
+  \node[font=\large\bfseries] at (9.45, 4.2) {Theory};
+
+  % ========================================================
+  % EXPERIMENT
+  % ========================================================
+  \def\xEone{1.2}
+  \def\xEtwo{2.5}
+  \def\xEthree{3.8}
+  \def\xEfour{5.1}
+
+  % Bottom labels
+  \node[font=\small] at (0.6, -0.35) {$A=148$};
+  \node[font=\small] at (\xEtwo, -0.35) {$150$};
+  \node[font=\small] at (\xEthree, -0.35) {$152$};
+  \node[font=\small] at (\xEfour, -0.35) {$154$};
+
+  % 2+ levels (Exp)
+  \def\yEtwoA{0.55} \def\yEtwoB{0.33} \def\yEtwoC{0.12} \def\yEtwoD{0.082}
+  \draw[line width=1.1pt] ({\xEone-\w}, {\yEtwoA*\yscale}) -- ({\xEone+\w}, {\yEtwoA*\yscale});
+  \draw[line width=1.1pt] ({\xEtwo-\w}, {\yEtwoB*\yscale}) -- ({\xEtwo+\w}, {\yEtwoB*\yscale});
+  \draw[line width=1.1pt] ({\xEthree-\w}, {\yEtwoC*\yscale}) -- ({\xEthree+\w}, {\yEtwoC*\yscale});
+  \draw[line width=1.1pt] ({\xEfour-\w}, {\yEtwoD*\yscale}) -- ({\xEfour+\w}, {\yEtwoD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xEone+\w}, {\yEtwoA*\yscale}) -- ({\xEtwo-\w}, {\yEtwoB*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xEtwo+\w}, {\yEtwoB*\yscale}) -- ({\xEthree-\w}, {\yEtwoC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xEthree+\w}, {\yEtwoC*\yscale}) -- ({\xEfour-\w}, {\yEtwoD*\yscale});
+
+  % 4+ levels (Exp)
+  \def\yEfourA{1.18} \def\yEfourB{0.77} \def\yEfourC{0.37} \def\yEfourD{0.267}
+  \draw[line width=1.1pt] ({\xEone-\w}, {\yEfourA*\yscale}) -- ({\xEone+\w}, {\yEfourA*\yscale});
+  \draw[line width=1.1pt] ({\xEtwo-\w}, {\yEfourB*\yscale}) -- ({\xEtwo+\w}, {\yEfourB*\yscale});
+  \draw[line width=1.1pt] ({\xEthree-\w}, {\yEfourC*\yscale}) -- ({\xEthree+\w}, {\yEfourC*\yscale});
+  \draw[line width=1.1pt] ({\xEfour-\w}, {\yEfourD*\yscale}) -- ({\xEfour+\w}, {\yEfourD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xEone+\w}, {\yEfourA*\yscale}) -- ({\xEtwo-\w}, {\yEfourB*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xEtwo+\w}, {\yEfourB*\yscale}) -- ({\xEthree-\w}, {\yEfourC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xEthree+\w}, {\yEfourC*\yscale}) -- ({\xEfour-\w}, {\yEfourD*\yscale});
+
+  % 6+ levels (Exp)
+  \def\yEsixB{1.25} \def\yEsixC{0.71} \def\yEsixD{0.54}
+  \draw[line width=1.1pt] ({\xEtwo-\w}, {\yEsixB*\yscale}) -- ({\xEtwo+\w}, {\yEsixB*\yscale});
+  \draw[line width=1.1pt] ({\xEthree-\w}, {\yEsixC*\yscale}) -- ({\xEthree+\w}, {\yEsixC*\yscale});
+  \draw[line width=1.1pt] ({\xEfour-\w}, {\yEsixD*\yscale}) -- ({\xEfour+\w}, {\yEsixD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xEtwo+\w}, {\yEsixB*\yscale}) -- ({\xEthree-\w}, {\yEsixC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xEthree+\w}, {\yEsixC*\yscale}) -- ({\xEfour-\w}, {\yEsixD*\yscale});
+
+  % 8+ levels (Exp)
+  \def\yEeightC{1.13} \def\yEeightD{0.95}
+  \draw[line width=1.1pt] ({\xEthree-\w}, {\yEeightC*\yscale}) -- ({\xEthree+\w}, {\yEeightC*\yscale});
+  \draw[line width=1.1pt] ({\xEfour-\w}, {\yEeightD*\yscale}) -- ({\xEfour+\w}, {\yEeightD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xEthree+\w}, {\yEeightC*\yscale}) -- ({\xEfour-\w}, {\yEeightD*\yscale});
+
+  % Spin-parity labels (Exp)
+  \node[right=2pt, font=\scriptsize, fill=white, inner sep=0.8pt] at ({\xEfour+\w}, 0) {$0^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xEfour+\w}, {\yEtwoD*\yscale}) {$2^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xEfour+\w}, {\yEfourD*\yscale}) {$4^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xEfour+\w}, {\yEsixD*\yscale}) {$6^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xEfour+\w}, {\yEeightD*\yscale}) {$8^+$};
+
+  % ========================================================
+  % THEORY
+  % ========================================================
+  \def\xTone{7.5}
+  \def\xTtwo{8.8}
+  \def\xTthree{10.1}
+  \def\xTfour{11.4}
+
+  % Bottom labels
+  \node[font=\small] at (\xTone, -0.35) {$148$};
+  \node[font=\small] at (\xTtwo, -0.35) {$150$};
+  \node[font=\small] at (\xTthree, -0.35) {$152$};
+  \node[font=\small] at (\xTfour, -0.35) {$154$};
+
+  % 2+ levels (Theor)
+  \def\yTtwoA{0.47} \def\yTtwoB{0.30} \def\yTtwoC{0.15} \def\yTtwoD{0.08}
+  \draw[line width=1.1pt] ({\xTone-\w}, {\yTtwoA*\yscale}) -- ({\xTone+\w}, {\yTtwoA*\yscale});
+  \draw[line width=1.1pt] ({\xTtwo-\w}, {\yTtwoB*\yscale}) -- ({\xTtwo+\w}, {\yTtwoB*\yscale});
+  \draw[line width=1.1pt] ({\xTthree-\w}, {\yTtwoC*\yscale}) -- ({\xTthree+\w}, {\yTtwoC*\yscale});
+  \draw[line width=1.1pt] ({\xTfour-\w}, {\yTtwoD*\yscale}) -- ({\xTfour+\w}, {\yTtwoD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xTone+\w}, {\yTtwoA*\yscale}) -- ({\xTtwo-\w}, {\yTtwoB*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xTtwo+\w}, {\yTtwoB*\yscale}) -- ({\xTthree-\w}, {\yTtwoC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xTthree+\w}, {\yTtwoC*\yscale}) -- ({\xTfour-\w}, {\yTtwoD*\yscale});
+
+  % 4+ levels (Theor)
+  \def\yTfourA{1.02} \def\yTfourB{0.67} \def\yTfourC{0.44} \def\yTfourD{0.25}
+  \draw[line width=1.1pt] ({\xTone-\w}, {\yTfourA*\yscale}) -- ({\xTone+\w}, {\yTfourA*\yscale});
+  \draw[line width=1.1pt] ({\xTtwo-\w}, {\yTfourB*\yscale}) -- ({\xTtwo+\w}, {\yTfourB*\yscale});
+  \draw[line width=1.1pt] ({\xTthree-\w}, {\yTfourC*\yscale}) -- ({\xTthree+\w}, {\yTfourC*\yscale});
+  \draw[line width=1.1pt] ({\xTfour-\w}, {\yTfourD*\yscale}) -- ({\xTfour+\w}, {\yTfourD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xTone+\w}, {\yTfourA*\yscale}) -- ({\xTtwo-\w}, {\yTfourB*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xTtwo+\w}, {\yTfourB*\yscale}) -- ({\xTthree-\w}, {\yTfourC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xTthree+\w}, {\yTfourC*\yscale}) -- ({\xTfour-\w}, {\yTfourD*\yscale});
+
+  % 6+ levels (Theor)
+  \def\yTsixB{1.17} \def\yTsixC{0.92} \def\yTsixD{0.53}
+  \draw[line width=1.1pt] ({\xTtwo-\w}, {\yTsixB*\yscale}) -- ({\xTtwo+\w}, {\yTsixB*\yscale});
+  \draw[line width=1.1pt] ({\xTthree-\w}, {\yTsixC*\yscale}) -- ({\xTthree+\w}, {\yTsixC*\yscale});
+  \draw[line width=1.1pt] ({\xTfour-\w}, {\yTsixD*\yscale}) -- ({\xTfour+\w}, {\yTsixD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xTtwo+\w}, {\yTsixB*\yscale}) -- ({\xTthree-\w}, {\yTsixC*\yscale});
+  \draw[dashed, line width=0.8pt] ({\xTthree+\w}, {\yTsixC*\yscale}) -- ({\xTfour-\w}, {\yTsixD*\yscale});
+
+  % 8+ levels (Theor)
+  \def\yTeightC{1.48} \def\yTeightD{0.96}
+  \draw[line width=1.1pt] ({\xTthree-\w}, {\yTeightC*\yscale}) -- ({\xTthree+\w}, {\yTeightC*\yscale});
+  \draw[line width=1.1pt] ({\xTfour-\w}, {\yTeightD*\yscale}) -- ({\xTfour+\w}, {\yTeightD*\yscale});
+
+  \draw[dashed, line width=0.8pt] ({\xTthree+\w}, {\yTeightC*\yscale}) -- ({\xTfour-\w}, {\yTeightD*\yscale});
+
+  % Spin-parity labels (Theor)
+  \node[right=2pt, font=\scriptsize, fill=white, inner sep=0.8pt] at ({\xTfour+\w}, 0) {$0^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xTfour+\w}, {\yTtwoD*\yscale}) {$2^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xTfour+\w}, {\yTfourD*\yscale}) {$4^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xTfour+\w}, {\yTsixD*\yscale}) {$6^+$};
+  \node[right=2pt, font=\scriptsize] at ({\xTfour+\w}, {\yTeightD*\yscale}) {$8^+$};
+
+  % ========================================================
+  % POTENTIAL INSETS (Above Theory columns)
+  % ========================================================
+  \def\yInset{4.8} % baseline Y for insets
+
+  % --- Inset 1 (148Sm) ---
+  \begin{scope}[shift={(\xTone - 0.15, \yInset)}]
+    % Axes
+    \draw[line width=0.55pt] (-0.45, 0) -- (0.6, 0);
+    \draw[line width=0.55pt] (0, -0.2) -- (0, 1.15) node[above=1pt, font=\tiny] {$V(\text{MeV})$};
+    \draw[line width=0.55pt] (-0.05, 0.85) -- (0.05, 0.85) node[left=1pt, font=\tiny] {$5$};
+    % Beta arrow & tick
+    \draw[line width=0.55pt, ->] (0.15, 0) -- (0.65, 0) node[above=0.5pt, font=\tiny] {$\beta$};
+    \draw[line width=0.55pt] (0.35, 0) -- (0.35, -0.06) node[below=0.5pt, font=\tiny] {$0.2$};
+    % Parabolic curve
+    \draw[line width=0.85pt] plot[domain=-0.4:0.55, samples=25] (\x, {2.6 * \x * \x});
+  \end{scope}
+
+  % --- Inset 2 (150Sm) ---
+  \begin{scope}[shift={(\xTtwo - 0.05, \yInset)}]
+    % Axes
+    \draw[line width=0.55pt] (-0.4, 0) -- (0.6, 0);
+    \draw[line width=0.55pt] (0, -0.25) -- (0, 1.15);
+    \draw[line width=0.55pt] (-0.05, 0.85) -- (0.05, 0.85) node[left=1pt, font=\tiny] {$5$};
+    % Curve with shallow deformed minimum
+    \draw[line width=0.85pt] 
+      (-0.35, 1.05) .. controls (-0.28, 0.35) and (-0.08, 0.18) .. (0, 0.13)
+      .. controls (0.08, 0.08) and (0.16, -0.15) .. (0.28, -0.15)
+      .. controls (0.42, -0.15) and (0.48, 0.35) .. (0.58, 1.05);
+    % Dashed line for ground state
+    \draw[dashed, line width=0.5pt] (-0.08, 0.25) -- (0.52, 0.25);
+  \end{scope}
+
+  % --- Inset 3 (152Sm) ---
+  \begin{scope}[shift={(\xTthree + 0.05, \yInset)}]
+    % Axes
+    \draw[line width=0.55pt] (-0.4, 0) -- (0.65, 0);
+    \draw[line width=0.55pt] (0, -0.4) -- (0, 1.15);
+    \draw[line width=0.55pt] (-0.05, 0.85) -- (0.05, 0.85) node[left=1pt, font=\tiny] {$5$};
+    \draw[line width=0.55pt] (-0.05, -0.18) -- (0.05, -0.18) node[left=1pt, font=\tiny] {$-1$};
+    % Curve with deeper minimum
+    \draw[line width=0.85pt] 
+      (-0.35, 1.1) .. controls (-0.25, 0.25) and (-0.08, 0.05) .. (0, 0.05)
+      .. controls (0.08, 0.05) and (0.2, -0.32) .. (0.35, -0.32)
+      .. controls (0.49, -0.32) and (0.58, 0.15) .. (0.65, 1.1);
+    % Dashed line for ground state
+    \draw[dashed, line width=0.5pt] (0.05, -0.08) -- (0.58, -0.08);
+    % Beta tick
+    \draw[line width=0.55pt] (0.40, 0) -- (0.40, -0.06) node[below=0.5pt, font=\tiny, fill=white, inner sep=0.4pt] {$0.3$};
+  \end{scope}
+
+  % --- Inset 4 (154Sm) ---
+  \begin{scope}[shift={(\xTfour + 0.15, \yInset)}]
+    % Axes
+    \draw[line width=0.55pt] (-0.4, 0) -- (0.65, 0);
+    \draw[line width=0.55pt] (0, -0.85) -- (0, 1.15);
+    \draw[line width=0.55pt] (-0.05, 0.85) -- (0.05, 0.85) node[left=1pt, font=\tiny] {$5$};
+    \draw[line width=0.55pt] (-0.05, -0.7) -- (0.05, -0.7) node[left=1pt, font=\tiny] {$-5$};
+    % Deep prolate well
+    \draw[line width=0.85pt] 
+      (-0.38, 1.1) .. controls (-0.3, 0.15) and (-0.08, -0.07) .. (0, -0.07)
+      .. controls (0.08, -0.07) and (0.2, -0.75) .. (0.38, -0.75)
+      .. controls (0.52, -0.75) and (0.60, 0.15) .. (0.67, 1.1);
+    % Dashed line for ground state
+    \draw[dashed, line width=0.5pt] (0.08, -0.4) -- (0.58, -0.4);
+    % Beta tick
+    \draw[line width=0.55pt] (0.40, 0) -- (0.40, -0.06) node[below=0.5pt, font=\tiny, fill=white, inner sep=0.4pt] {$0.3$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

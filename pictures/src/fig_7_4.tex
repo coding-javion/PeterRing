@@ -1,0 +1,137 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \begin{axis}[
+    width=11.2cm,
+    height=8.5cm,
+    xmin=-28, xmax=140,
+    ymin=-1802, ymax=-1784,
+    xtick={-20, 0, 20, 40, 60, 80, 100, 120},
+    xticklabels={, 0, , 40, , 80, 100, },
+    extra x ticks={-20, 20, 60, 120},
+    extra x tick labels={},
+    ytick={-1800, -1795, -1790, -1785},
+    yticklabels={$-1800$, $-1795$, $-1790$, $-1785$},
+    minor y tick num=4,
+    tick pos=both,
+    tick align=inside,
+    tick style={line width=0.6pt, color=black},
+    major tick length=5pt,
+    minor tick length=3pt,
+    axis line style={line width=0.9pt},
+    xlabel={$q$},
+    xlabel style={at={(ticklabel* cs:0.96)}, anchor=north, font=\normalsize},
+    clip=false
+  ]
+
+    % Labels inside
+    \node[font=\bfseries\large, anchor=west] at (axis cs:-18, -1786.0) {$^{240}\mathrm{Pu}$};
+    \node[font=\bfseries\Large, anchor=center] at (axis cs:55, -1786.8) {SIII};
+
+    % 1. E_HF (solid thick line)
+    \addplot[line width=1.3pt, black, smooth, tension=0.7] coordinates {
+      (-28, -1790.6)
+      (-20, -1790.4)
+      (-10, -1789.8)
+      (0,   -1789.4)
+      (8,   -1791.5)
+      (15,  -1795.0)
+      (22,  -1798.5)
+      (28,  -1801.5)
+      (35,  -1799.0)
+      (45,  -1794.8)
+      (55,  -1792.4)
+      (65,  -1793.5)
+      (74,  -1796.8)
+      (80,  -1797.8)
+      (88,  -1796.8)
+      (98,  -1794.6)
+      (110, -1791.5)
+      (122, -1788.0)
+      (130, -1787.2)
+      (137, -1787.5)
+      (140, -1788.0)
+    };
+
+    % 2. \bar{E} (dashed line)
+    \addplot[line width=1.1pt, black, dashed, dash pattern=on 5pt off 2.5pt, smooth, tension=0.7] coordinates {
+      (-25, -1796.8)
+      (-15, -1797.5)
+      (0,   -1798.2)
+      (15,  -1795.5)
+      (25,  -1794.3)
+      (40,  -1793.2)
+      (55,  -1792.0)
+      (70,  -1790.6)
+      (85,  -1788.6)
+      (100, -1786.5)
+      (115, -1785.4)
+      (125, -1785.4)
+      (135, -1786.0)
+      (140, -1786.8)
+    };
+
+    % 3. E_LD (dash-dotted line)
+    \addplot[line width=1.1pt, black, dash pattern=on 6pt off 2.5pt on 1.5pt off 2.5pt, smooth, tension=0.7] coordinates {
+      (-25, -1796.5)
+      (-15, -1797.4)
+      (0,   -1798.2)
+      (15,  -1797.0)
+      (30,  -1795.2)
+      (45,  -1794.2)
+      (60,  -1793.5)
+      (75,  -1792.0)
+      (90,  -1790.0)
+      (105, -1787.5)
+      (118, -1785.8)
+      (128, -1786.0)
+      (135, -1786.8)
+      (140, -1787.5)
+    };
+
+    % 4. E_LD^(0) (dotted line)
+    \addplot[line width=1.2pt, black, dotted, dash pattern=on 1.5pt off 2pt, smooth, tension=0.7] coordinates {
+      (-25, -1796.5)
+      (-15, -1797.5)
+      (0,   -1798.3)
+      (15,  -1797.3)
+      (30,  -1796.2)
+      (50,  -1794.8)
+      (70,  -1794.0)
+      (90,  -1793.5)
+      (110, -1793.3)
+      (130, -1793.4)
+      (140, -1793.6)
+    };
+
+    % Legend in bottom-right corner
+    \node[font=\small, anchor=east, fill=white, inner sep=1.2pt] at (axis cs:125, -1795.0) {$E_{\mathrm{HF}}$};
+    \draw[line width=1.1pt] (axis cs:127, -1795.0) -- (axis cs:139, -1795.0);
+
+    \node[font=\small, anchor=east, fill=white, inner sep=1.2pt] at (axis cs:125, -1797.0) {$\bar{E}$};
+    \draw[line width=1.1pt, dashed, dash pattern=on 5pt off 2.5pt] (axis cs:127, -1797.0) -- (axis cs:139, -1797.0);
+
+    \node[font=\small, anchor=east, fill=white, inner sep=1.2pt] at (axis cs:125, -1799.0) {$E_{\mathrm{LD}}$};
+    \draw[line width=1.1pt, dash pattern=on 6pt off 2.5pt on 1.5pt off 2.5pt] (axis cs:127, -1799.0) -- (axis cs:139, -1799.0);
+
+    \node[font=\small, anchor=east, fill=white, inner sep=1.2pt] at (axis cs:125, -1801.0) {$E_{\mathrm{LD}}^{(0)}$};
+    \draw[line width=1.2pt, dotted, dash pattern=on 1.5pt off 2pt] (axis cs:127, -1801.0) -- (axis cs:139, -1801.0);
+
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5.5pt, width=3.8pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % LHS equation symbol
+  \node[font=\large] at (-2.2, 0) {$M^{(2)} \equiv$};
+
+  % Coordinates of vertices
+  \coordinate (VL) at (-1.2, 0);
+  \coordinate (VR) at (1.2, 0);
+
+  % Top curved propagator
+  \draw[thick, line width=1.1pt, arrowed] (VL) to[out=60, in=120] (VR);
+
+  % Middle straight propagator
+  \draw[thick, line width=1.1pt, arrowed] (VL) -- (VR);
+
+  % Bottom curved propagator
+  \draw[thick, line width=1.1pt, arrowed] (VL) to[out=-60, in=-120] (VR);
+
+  % Vertices
+  \filldraw[black] (VL) circle (2.2pt);
+  \filldraw[black] (VR) circle (2.2pt);
+
+\end{tikzpicture}
+\end{document}

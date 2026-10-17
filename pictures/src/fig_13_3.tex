@@ -1,0 +1,78 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: N from 30 to 155, y from -0.8 to 2.8 MeV
+  \def\xscale{0.080}
+  \def\yscale{0.75}
+
+  \def\xmin{30}
+  \def\xmax{155}
+  \def\ymin{-0.8}
+  \def\ymax{2.8}
+
+  % Outer bounding frame
+  \draw[line width=0.95pt] (\xmin*\xscale, \ymin*\yscale) rectangle (\xmax*\xscale, \ymax*\yscale);
+
+  % Zero baseline
+  \draw[line width=0.75pt] (\xmin*\xscale, 0) -- (\xmax*\xscale, 0);
+
+  % Y-axis ticks and labels on left
+  \foreach \y in {0, 2} {
+    \draw[line width=0.65pt] (\xmin*\xscale, \y*\yscale) -- (\xmin*\xscale + 0.25, \y*\yscale);
+    \draw[line width=0.65pt] (\xmax*\xscale, \y*\yscale) -- (\xmax*\xscale - 0.25, \y*\yscale);
+    \node[anchor=east, font=\small] at (\xmin*\xscale - 0.1, \y*\yscale) {$\y$};
+  }
+
+  % Y-axis label placed beside 2 and 0
+  \node[anchor=east, font=\normalsize] at (\xmin*\xscale - 0.65, 1.8*\yscale) {$\Delta\tilde{E}_K$};
+  \node[anchor=east, font=\small] at (\xmin*\xscale - 0.65, 0.4*\yscale) {$(\mathrm{MeV})$};
+
+  % X-axis ticks (every 10) on bottom and top
+  \foreach \x in {40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150} {
+    \draw[line width=0.65pt] (\x*\xscale, \ymin*\yscale) -- (\x*\xscale, \ymin*\yscale + 0.22);
+    \draw[line width=0.65pt] (\x*\xscale, \ymax*\yscale) -- (\x*\xscale, \ymax*\yscale - 0.22);
+  }
+
+  % X-axis labels at 50, 100, 150
+  \foreach \x in {50, 100, 150} {
+    \node[anchor=north, font=\small] at (\x*\xscale, \ymin*\yscale - 0.08) {$\x$};
+  }
+
+  % X-axis variable label N
+  \node[anchor=north, font=\normalsize] at (138*\xscale, \ymin*\yscale - 0.42) {$N$};
+
+  % Coordinates of data points
+  \coordinate (P1) at (36*\xscale, 0.55*\yscale);
+  \coordinate (P2) at (50*\xscale, 0.25*\yscale);
+  \coordinate (P3) at (60*\xscale, 0.08*\yscale);
+  \coordinate (P4) at (72*\xscale, 0.55*\yscale);
+  \coordinate (P5) at (82*\xscale, 0.35*\yscale);
+  \coordinate (P6) at (96*\xscale, 1.05*\yscale);
+  \coordinate (P7) at (112*\xscale, 0.95*\yscale);
+  \coordinate (P8) at (126*\xscale, 1.75*\yscale);
+  \coordinate (P9) at (146*\xscale, 0.50*\yscale);
+
+  % Line connecting the points
+  \draw[line width=1.1pt] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- (P7) -- (P8) -- (P9);
+
+  % Markers: open circles
+  \foreach \p in {P1, P2, P3, P4, P5, P6, P7, P8, P9} {
+    \filldraw[fill=white, draw=black, line width=1.1pt] (\p) circle (2.2pt);
+  }
+
+\end{tikzpicture}
+\end{document}

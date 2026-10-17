@@ -1,0 +1,111 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings, decorations.pathmorphing}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  },
+  phonon/.style={
+    decorate,
+    decoration={snake, amplitude=1.3pt, segment length=4.2pt}
+  }
+]
+
+  % ========================================================
+  % Diagram a)
+  % ========================================================
+  \begin{scope}[shift={(-4.8, 0)}]
+    \coordinate (VB) at (0, -0.5);
+    \coordinate (VT) at (0, 0.5);
+
+    % Bottom
+    \draw[thick, line width=1pt, phonon] (-0.55, -1.4) node[left=1pt, font=\small] {$\mu$} -- (VB);
+    \draw[thick, line width=1pt, arrowed] (0.55, -1.4) node[right=1pt, font=\small] {$p$} -- (VB);
+
+    % Intermediate vertical line
+    \draw[thick, line width=1pt, arrowed] (VB) -- (VT) node[midway, right=1pt, font=\small] {$n$};
+
+    % Top
+    \draw[thick, line width=1pt, phonon] (VT) -- (-0.55, 1.4) node[left=1pt, font=\small] {$\mu$};
+    \draw[thick, line width=1pt, arrowed] (VT) -- (0.55, 1.4) node[right=1pt, font=\small] {$p$};
+
+    \node[font=\large] at (0, -1.9) {$\mathrm{a)}$};
+  \end{scope}
+
+  % ========================================================
+  % Diagram b)
+  % ========================================================
+  \begin{scope}[shift={(-1.6, 0)}]
+    \coordinate (VL) at (-0.55, -0.4);
+    \coordinate (VR) at (0.55, 0.4);
+
+    % Left line: particle from bottom, phonon to top
+    \draw[thick, line width=1pt, arrowed] (-0.55, -1.4) node[below=1pt, font=\small] {$p$} -- (VL);
+    \draw[thick, line width=1pt, phonon] (VL) -- (-0.55, 1.4) node[left=1pt, font=\small] {$\mu$};
+
+    % Right line: phonon from bottom, particle to top
+    \draw[thick, line width=1pt, phonon] (0.55, -1.4) node[below=1pt, font=\small] {$\mu$} -- (VR);
+    \draw[thick, line width=1pt, arrowed] (VR) -- (0.55, 1.4) node[right=1pt, font=\small] {$p$};
+
+    % Slanted intermediate line n
+    \draw[thick, line width=1pt, arrowed] (VL) -- (VR) node[midway, below right=-1pt, font=\small] {$n$};
+
+    \node[font=\large] at (0, -1.9) {$\mathrm{b)}$};
+  \end{scope}
+
+  % ========================================================
+  % Diagram c)
+  % ========================================================
+  \begin{scope}[shift={(1.6, 0)}]
+    \coordinate (VL) at (-0.55, 0.4);
+    \coordinate (VR) at (0.55, -0.4);
+
+    % Left line: particle to VL, phonon to top
+    \draw[thick, line width=1pt, arrowed] (-0.55, -1.4) node[below=1pt, font=\small] {$p$} -- (VL);
+    \draw[thick, line width=1pt, phonon] (VL) -- (-0.55, 1.4) node[left=1pt, font=\small] {$\mu$};
+
+    % Right line: phonon to VR, particle to top
+    \draw[thick, line width=1pt, phonon] (0.55, -1.4) node[below=1pt, font=\small] {$\mu$} -- (VR);
+    \draw[thick, line width=1pt, arrowed] (VR) -- (0.55, 1.4) node[right=1pt, font=\small] {$p$};
+
+    % Slanted intermediate hole line i (arrow pointing down-right)
+    \draw[thick, line width=1pt, arrowed] (VL) -- (VR) node[midway, below left=-1pt, font=\small] {$i$};
+
+    \node[font=\large] at (0, -1.9) {$\mathrm{c)}$};
+  \end{scope}
+
+  % ========================================================
+  % Diagram d)
+  % ========================================================
+  \begin{scope}[shift={(4.8, 0)}]
+    \coordinate (VT) at (-0.35, 0.35);
+    \coordinate (VB) at (0.35, -0.35);
+
+    % Particle line: incoming to VT, intermediate to VB, outgoing from VB
+    \draw[thick, line width=1pt, arrowed] (-0.85, -1.4) node[below=1pt, font=\small] {$p$} -- (VT);
+    \draw[thick, line width=1pt, arrowed] (VT) -- (VB) node[midway, below left=-1pt, font=\small] {$i$};
+    \draw[thick, line width=1pt, arrowed] (VB) -- (0.85, 1.4) node[above=1pt, font=\small] {$p$};
+
+    % Phonons: from VT going straight down, from VB going straight up
+    \draw[thick, line width=1pt, phonon] (VT) -- (-0.35, -1.4) node[below=1pt, font=\small] {$\mu$};
+    \draw[thick, line width=1pt, phonon] (VB) -- (0.35, 1.4) node[above=1pt, font=\small] {$\mu$};
+
+    \node[font=\large] at (0, -1.9) {$\mathrm{d)}$};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

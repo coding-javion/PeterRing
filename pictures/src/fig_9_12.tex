@@ -1,0 +1,206 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Define energy scale: y = E(MeV) * 22 cm
+  % 0.1 MeV = 2.2 cm
+  \def\yscale{22}
+  
+  % y-axis
+  \draw[line width=0.9pt, ->] (0, {-0.34*\yscale}) -- (0, {0.26*\yscale}) node[above left=1pt] {(MeV)};
+
+  % Ticks and labels on y-axis
+  \foreach \e/\lbl in {0.2/0.2, 0.1/0.1, 0/0, -0.1/-0.1, -0.2/-0.2, -0.3/-0.3} {
+    \draw[line width=0.8pt] (0, {\e*\yscale}) -- (0.15, {\e*\yscale});
+    \node[left=3pt, font=\small] at (0, {\e*\yscale}) {\lbl};
+  }
+
+  % Nucleus label
+  \node at (8.0, {0.18*\yscale}) {\Large\textbf{$^{209}$Bi}};
+
+  % Styling for levels
+  \tikzset{
+    lvl/.style={line width=1.1pt},
+    lbl/.style={font=\fontsize{6.5}{7.5}\selectfont, inner sep=0.8pt}
+  }
+
+  % Column positions
+  % w = half width = 0.38
+  \def\hw{0.38}
+
+  % ==========================================
+  % Column 1: exp (x = 1.25)
+  % ==========================================
+  \def\xone{1.3}
+  \node[lbl, font=\small\bfseries, anchor=north] at (\xone, {-0.35*\yscale}) {exp};
+  % 15/2 at +0.130
+  \draw[lvl] (\xone-\hw, {0.130*\yscale}) -- (\xone+\hw, {0.130*\yscale});
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {0.130*\yscale}) {$15/2$};
+  % 5/2 at +0.003
+  \draw[lvl] (\xone-\hw, {0.003*\yscale}) -- (\xone+\hw, {0.003*\yscale});
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {0.003*\yscale}) {$5/2$};
+  % 13/2 and 11/2 at -0.015 (line with 13/2 on left, 11/2 on right)
+  \draw[lvl] (\xone-\hw, {-0.015*\yscale}) -- (\xone+\hw, {-0.015*\yscale});
+  \node[lbl, anchor=east] at (\xone-\hw-0.05, {-0.015*\yscale}) {$13/2$};
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {-0.015*\yscale}) {$11/2$};
+  % 7/2 at -0.030
+  \draw[lvl] (\xone-\hw, {-0.030*\yscale}) -- (\xone+\hw, {-0.030*\yscale});
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {-0.030*\yscale}) {$7/2$};
+  % 9/2 at -0.049
+  \draw[lvl] (\xone-\hw, {-0.049*\yscale}) -- (\xone+\hw, {-0.049*\yscale});
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {-0.049*\yscale}) {$9/2$};
+  % 3/2 at -0.121
+  \draw[lvl] (\xone-\hw, {-0.121*\yscale}) -- (\xone+\hw, {-0.121*\yscale});
+  \node[lbl, anchor=west] at (\xone+\hw+0.05, {-0.121*\yscale}) {$3/2$};
+
+  % ==========================================
+  % Column 2: [BRB 77] (x = 3.0)
+  % ==========================================
+  \def\xtwo{3.0}
+  \node[lbl, font=\small\bfseries, anchor=north] at (\xtwo, {-0.35*\yscale}) {[BRB 77]};
+  % 15/2 at +0.190
+  \draw[lvl] (\xtwo-\hw, {0.190*\yscale}) -- (\xtwo+\hw, {0.190*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {0.190*\yscale}) {$15/2$};
+  % 7/2 at +0.031
+  \draw[lvl] (\xtwo-\hw, {0.031*\yscale}) -- (\xtwo+\hw, {0.031*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {0.031*\yscale}) {$7/2$};
+  % 11/2 at -0.020
+  \draw[lvl] (\xtwo-\hw, {-0.020*\yscale}) -- (\xtwo+\hw, {-0.020*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {-0.020*\yscale}) {$11/2$};
+  % 5/2 at -0.046
+  \draw[lvl] (\xtwo-\hw, {-0.046*\yscale}) -- (\xtwo+\hw, {-0.046*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {-0.046*\yscale}) {$5/2$};
+  % 13/2 at -0.080
+  \draw[lvl] (\xtwo-\hw, {-0.080*\yscale}) -- (\xtwo+\hw, {-0.080*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {-0.080*\yscale}) {$13/2$};
+  % 9/2 at -0.090
+  \draw[lvl] (\xtwo-\hw, {-0.090*\yscale}) -- (\xtwo+\hw, {-0.090*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {-0.090*\yscale}) {$9/2$};
+  % 3/2 at -0.137
+  \draw[lvl] (\xtwo-\hw, {-0.137*\yscale}) -- (\xtwo+\hw, {-0.137*\yscale});
+  \node[lbl, anchor=west] at (\xtwo+\hw+0.05, {-0.137*\yscale}) {$3/2$};
+
+  % ==========================================
+  % Column 3: [AH 71 a] (x = 4.8)
+  % ==========================================
+  \def\xthree{4.8}
+  \node[lbl, font=\small\bfseries, anchor=north] at (\xthree, {-0.35*\yscale}) {[AH 71 a]};
+  % 15/2 at +0.240
+  \draw[lvl] (\xthree-\hw, {0.240*\yscale}) -- (\xthree+\hw, {0.240*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {0.240*\yscale}) {$15/2$};
+  % 11/2 at +0.010
+  \draw[lvl] (\xthree-\hw, {0.010*\yscale}) -- (\xthree+\hw, {0.010*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {0.010*\yscale}) {$11/2$};
+  % 5/2 at -0.010
+  \draw[lvl] (\xthree-\hw, {-0.010*\yscale}) -- (\xthree+\hw, {-0.010*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {-0.008*\yscale}) {$5/2$};
+  % 7/2 at -0.020
+  \draw[lvl] (\xthree-\hw, {-0.020*\yscale}) -- (\xthree+\hw, {-0.020*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {-0.022*\yscale}) {$7/2$};
+  % 9/2 at -0.040
+  \draw[lvl] (\xthree-\hw, {-0.040*\yscale}) -- (\xthree+\hw, {-0.040*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {-0.040*\yscale}) {$9/2$};
+  % 13/2 at -0.120
+  \draw[lvl] (\xthree-\hw, {-0.120*\yscale}) -- (\xthree+\hw, {-0.120*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {-0.116*\yscale}) {$13/2$};
+  % 3/2 at -0.130
+  \draw[lvl] (\xthree-\hw, {-0.130*\yscale}) -- (\xthree+\hw, {-0.130*\yscale});
+  \node[lbl, anchor=west] at (\xthree+\hw+0.05, {-0.134*\yscale}) {$3/2$};
+
+  % ==========================================
+  % Column 4: [Za 74 b] (x = 6.6)
+  % ==========================================
+  \def\xfour{6.6}
+  \node[lbl, font=\small\bfseries, anchor=north] at (\xfour, {-0.35*\yscale}) {[Za 74 b]};
+  % 15/2 at +0.136
+  \draw[lvl] (\xfour-\hw, {0.136*\yscale}) -- (\xfour+\hw, {0.136*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {0.136*\yscale}) {$15/2$};
+  % 11/2 at +0.010
+  \draw[lvl] (\xfour-\hw, {0.010*\yscale}) -- (\xfour+\hw, {0.010*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {0.015*\yscale}) {$11/2$};
+  % 5/2 at +0.004
+  \draw[lvl] (\xfour-\hw, {0.004*\yscale}) -- (\xfour+\hw, {0.004*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {0.003*\yscale}) {$5/2$};
+  % 13/2 at -0.000
+  \draw[lvl] (\xfour-\hw, {0.000*\yscale}) -- (\xfour+\hw, {0.000*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {-0.009*\yscale}) {$13/2$};
+  % 7/2 at -0.020
+  \draw[lvl] (\xfour-\hw, {-0.020*\yscale}) -- (\xfour+\hw, {-0.020*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {-0.021*\yscale}) {$7/2$};
+  % 9/2 at -0.028
+  \draw[lvl] (\xfour-\hw, {-0.028*\yscale}) -- (\xfour+\hw, {-0.028*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {-0.033*\yscale}) {$9/2$};
+  % 3/2 at -0.128
+  \draw[lvl] (\xfour-\hw, {-0.128*\yscale}) -- (\xfour+\hw, {-0.128*\yscale});
+  \node[lbl, anchor=west] at (\xfour+\hw+0.05, {-0.128*\yscale}) {$3/2$};
+
+  % ==========================================
+  % Column 5: [IRS 80] (x = 8.4)
+  % ==========================================
+  \def\xfive{8.4}
+  \node[lbl, font=\small\bfseries, anchor=north] at (\xfive, {-0.35*\yscale}) {[IRS 80]};
+  % 15/2 at +0.129
+  \draw[lvl] (\xfive-\hw, {0.129*\yscale}) -- (\xfive+\hw, {0.129*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {0.129*\yscale}) {$15/2$};
+  % 7/2 at +0.018
+  \draw[lvl] (\xfive-\hw, {0.018*\yscale}) -- (\xfive+\hw, {0.018*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {0.018*\yscale}) {$7/2$};
+  % 13/2 at -0.003
+  \draw[lvl] (\xfive-\hw, {-0.003*\yscale}) -- (\xfive+\hw, {-0.003*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {0.001*\yscale}) {$13/2$};
+  % 11/2 at -0.012
+  \draw[lvl] (\xfive-\hw, {-0.012*\yscale}) -- (\xfive+\hw, {-0.012*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {-0.011*\yscale}) {$11/2$};
+  % 5/2 at -0.020
+  \draw[lvl] (\xfive-\hw, {-0.020*\yscale}) -- (\xfive+\hw, {-0.020*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {-0.023*\yscale}) {$5/2$};
+  % 9/2 at -0.038
+  \draw[lvl] (\xfive-\hw, {-0.038*\yscale}) -- (\xfive+\hw, {-0.038*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {-0.038*\yscale}) {$9/2$};
+  % 3/2 at -0.142
+  \draw[lvl] (\xfive-\hw, {-0.142*\yscale}) -- (\xfive+\hw, {-0.142*\yscale});
+  \node[lbl, anchor=west] at (\xfive+\hw+0.05, {-0.142*\yscale}) {$3/2$};
+
+  % ==========================================
+  % Column 6: [Without B] (x = 10.4)
+  % ==========================================
+  \def\xsix{10.4}
+  \node[lbl, align=center, anchor=north] at (\xsix, {-0.35*\yscale}) {
+    \textbf{[Without B]} \\
+    \scriptsize $p\text{-}ph\quad p\text{-}ph$
+  };
+  % 13/2 at +0.046
+  \draw[lvl] (\xsix-\hw, {0.046*\yscale}) -- (\xsix+\hw, {0.046*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {0.046*\yscale}) {$13/2$};
+  % 9/2 at -0.016
+  \draw[lvl] (\xsix-\hw, {-0.016*\yscale}) -- (\xsix+\hw, {-0.016*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.016*\yscale}) {$9/2$};
+  % 5/2 at -0.080
+  \draw[lvl] (\xsix-\hw, {-0.080*\yscale}) -- (\xsix+\hw, {-0.080*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.080*\yscale}) {$5/2$};
+  % 7/2 at -0.111
+  \draw[lvl] (\xsix-\hw, {-0.111*\yscale}) -- (\xsix+\hw, {-0.111*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.111*\yscale}) {$7/2$};
+  % 11/2 at -0.126
+  \draw[lvl] (\xsix-\hw, {-0.126*\yscale}) -- (\xsix+\hw, {-0.126*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.126*\yscale}) {$11/2$};
+  % 15/2 at -0.157
+  \draw[lvl] (\xsix-\hw, {-0.157*\yscale}) -- (\xsix+\hw, {-0.157*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.157*\yscale}) {$15/2$};
+  % 3/2 at -0.316
+  \draw[lvl] (\xsix-\hw, {-0.316*\yscale}) -- (\xsix+\hw, {-0.316*\yscale});
+  \node[lbl, anchor=west] at (\xsix+\hw+0.05, {-0.316*\yscale}) {$3/2$};
+
+\end{tikzpicture}
+\end{document}

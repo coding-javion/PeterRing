@@ -1,0 +1,43 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{8.5}
+  \def\h{6.2}
+
+  % Coordinate axes
+  \draw[line width=0.85pt, ->] (0, 0) -- (\w + 0.6, 0);
+  \draw[line width=0.85pt, ->] (0, 0) -- (0, \h + 0.6);
+
+  % Axis labels
+  \node[right=3pt, font=\large] at (\w + 0.6, 0) {$\varepsilon$};
+  \node[right=4pt, font=\large] at (0, \h + 0.4) {$g(\varepsilon)$};
+
+  % Smooth average level density \tilde{g}(\varepsilon) (dashed)
+  \draw[line width=1.1pt, dashed]
+    plot[domain=0:5.8, samples=80, smooth] (\x, {0.14 * \x * \x + 0.18 * \x});
+
+  % Oscillating level density g(\varepsilon) (solid)
+  % Positive everywhere, with shell spacing \hbar\omega_0 = 2.6 cm
+  \draw[line width=1.3pt]
+    plot[domain=0:5.9, samples=120, smooth]
+      (\x, {0.14 * \x * \x + 0.18 * \x + (0.25 + 0.06 * \x) * sin(\x / 2.6 * 360)});
+
+  % Double arrow indicating \hbar\omega_0
+  % Peak 1 is at ~ 1.6, Peak 2 is at ~ 4.2
+  \draw[line width=0.85pt, <->] (1.6, 3.8) -- (4.2, 3.8);
+  \node[above=3pt, font=\large] at ({ (1.6 + 4.2) / 2 }, 3.8) {$\hbar\omega_0$};
+
+\end{tikzpicture}
+\end{document}

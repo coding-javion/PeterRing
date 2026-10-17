@@ -1,0 +1,51 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Parameters
+  \def\Rzero{4.2}
+  \def\Vzero{3.2}
+  \def\a{0.48}
+
+  % Axes
+  \draw[line width=0.9pt, ->] (-0.3, 0) -- (6.8, 0) node[anchor=west, font=\large] {$r$};
+  \draw[line width=0.9pt, ->] (0, -3.8) -- (0, 0.9) node[anchor=south east, font=\large] {$V(r)$};
+
+  % Origin 0
+  \filldraw[line width=0.8pt, fill=white] (0, 0) circle (2.2pt);
+  \node[anchor=south east, font=\normalsize] at (-0.05, 0.05) {$0$};
+
+  % Woods-Saxon potential curve: V(r) = -V0 / (1 + exp((r - R0)/a))
+  \draw[line width=1.3pt, domain=0:6.3, samples=100, smooth]
+    plot (\x, {-\Vzero / (1 + exp((\x - \Rzero)/\a))});
+
+  % Depth -V0 on y-axis
+  \draw[line width=0.8pt] (-0.1, {-\Vzero}) -- (0.1, {-\Vzero});
+  \node[anchor=east, font=\large] at (-0.15, {-\Vzero}) {$-V_0$};
+
+  % Radius R0: dashed vertical line at inflection point
+  \draw[line width=0.7pt, dashed] (\Rzero, {-0.5*\Vzero}) -- (\Rzero, 0);
+  \node[anchor=south, font=\large] at (\Rzero, 0.05) {$R_0$};
+
+  % Surface thickness 4a
+  \def\yBar{-3.9}
+  \def\xBarL{\Rzero - 1.0}
+  \def\xBarR{\Rzero + 1.0}
+  \draw[line width=0.8pt] (\xBarL, \yBar - 0.15) -- (\xBarL, \yBar + 0.15);
+  \draw[line width=0.8pt] (\xBarR, \yBar - 0.15) -- (\xBarR, \yBar + 0.15);
+  \draw[line width=0.8pt, <->] (\xBarL, \yBar) -- (\xBarR, \yBar)
+    node[midway, fill=white, inner sep=2pt, font=\large] {$4a$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,288 @@
+
+\chapter{二次量子化\label{chap:=004E8C=006B21=0091CF=005B50=005316}}
+
+\section{产生与湮灭算符}
+
+“二次量子化”这个名称具有误导性。这种形式理论与量子力学的进一步量子化无关。它仅仅是通常量子力学的一种等价表述形式，而事实证明它在处理多体问题时非常有用。它既可用于玻色子也可用于费米子，下面我们将给出一个简要介绍以及一些重要公式。
+
+我们首先从一组完全正交的单粒子态$|\nu\rangle$出发，其中$\nu$代表一组量子数，例如：
+\begin{enumerate}
+\item 空间坐标$\boldsymbol{r}$，自旋$s\equiv s_{z}\quad|\boldsymbol{r},s\rangle$；
+\item 谐振子基底的量子数$|nljm\rangle$。
+\end{enumerate}
+正交性与完全性表示为：
+\begin{equation}
+\langle\nu|\nu^{\prime}\rangle=\delta_{\nu\nu^{\prime}},\quad\sum_{\nu}|\nu\rangle\langle\nu|=1\label{eq:appendix_c_orthogonality_completeness}
+\end{equation}
+（对于连续量子数例如$\boldsymbol{r}$，$\delta_{\nu\nu^{\prime}}$表示$\delta(\boldsymbol{r}-\boldsymbol{r}^{\prime})$，求和$\sum_{\nu}$需替换为$\int\mathrm{d}^{3}r$。）
+
+态$|\nu\rangle$的坐标表象由下式给出：
+\begin{equation}
+\varphi_{\nu}(1)\equiv\varphi_{\nu}(\boldsymbol{r}_{1},s_{1})=\langle\boldsymbol{r}_{1},s_{1}|\nu\rangle\label{eq:appendix_c_coord_rep}
+\end{equation}
+从这组单粒子态出发，我们可以构造完全对称的$N$体波函数的一组完全正交基：
+\begin{equation}
+\Phi_{\nu_{1}\dots\nu_{N}}(1,\dots,N)=\mathfrak{N}\sum_{P}P\{\varphi_{\nu_{1}}(1)\dots\varphi_{\nu_{N}}(N)\}\label{eq:appendix_c_boson_basis}
+\end{equation}
+其中求和遍历数$(1\dots N)$的所有置换$(\nu_{1}\dots\nu_{N})$，$\mathfrak{N}$为归一化常数。
+
+任何任意的完全对称$N$体波函数都可以在此基底中表示：
+\begin{equation}
+\Psi(1,\dots,N)=\sum_{\nu_{1}\dots\nu_{N}}c_{\nu_{1}\dots\nu_{N}}\Phi_{\nu_{1}\dots\nu_{N}}(1,\dots,N)\label{eq:appendix_c_arbitrary_symmetric_wf}
+\end{equation}
+我们也可以给每一个单粒子态编一个序号$(\nu=1,2,\dots)$（对于连续量子数的情况，我们必须首先引入一个有限大盒子），并通过“占据数”$\{n_{\nu}\}$来表征波函数$\Phi_{\nu_{1}\dots\nu_{N}}$，占据数指明特定序号$\nu$在这$N$个数$(\nu_{1},\dots,\nu_{N})$中出现的次数。显然我们有：
+\begin{equation}
+\sum_{\nu}n_{\nu}=N\label{eq:appendix_c_total_number}
+\end{equation}
+且
+\begin{align}
+\Phi_{\{n_{\nu}\}}(1,\dots,N) & =\Phi_{\nu_{1}\dots\nu_{N}}(1,\dots,N)\nonumber \\
+ & =\frac{1}{\sqrt{N!}}\frac{1}{\sqrt{n_{1}!n_{2}!\dots}}\sum_{P}P\{\varphi_{\nu_{1}}(1)\dots\varphi_{\nu_{N}}(N)\}\label{eq:appendix_c_boson_occupation_rep}
+\end{align}
+这样的态描述玻色子系统。完全类似地，我们可以构造完全反对称的基波函数：
+\begin{equation}
+\Phi_{\{n_{\nu}\}}(1,\dots,N)=\frac{1}{\sqrt{N!}}\sum_{P}\mathrm{sgn}(P)P\{\varphi_{\nu_{1}}(1)\dots\varphi_{\nu_{N}}(N)\}\label{eq:appendix_c_slater_det}
+\end{equation}
+它们被称为Slater行列式，描述费米子系统。在这种情况下，数$n_{\nu}$只能取值$0$或$1$，否则式 (C.7) 恒等于零。
+
+现在我们可以构造一个Hilbert空间，它包含真空态（无粒子）$|-\rangle$、所有的单粒子态、所有对称化（或反对称化）的两粒子态，等等：
+\begin{equation}
+\mathcal{H}=\{\mathcal{H}_{0},\mathcal{H}_{1},\mathcal{H}_{2},\dots\}\label{eq:appendix_c_fock_space}
+\end{equation}
+波函数$\Phi_{\{n_{\nu}\}}$对应于此Hilbert空间中的基态$|n_{1},n_{2},\dots\rangle$，它们由占据数来表征（占据数表象），使得
+\begin{equation}
+\Phi_{\{n_{\nu}\}}(1,\dots,N)=\langle1,\dots,N|n_{1},n_{2},\dots\rangle\label{eq:appendix_c_overlap_basis}
+\end{equation}
+这些态是正交归一的：
+\begin{equation}
+\langle n^{\prime}_{1},n^{\prime}_{2},\dots,n^{\prime}_{\nu},\dots|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\delta_{n_{1}n^{\prime}_{1}}\delta_{n_{2}n^{\prime}_{2}}\dots\delta_{n_{\nu}n^{\prime}_{\nu}}\dots\label{eq:appendix_c_orthonormality}
+\end{equation}
+我们首先研究玻色子系统，并通过下式定义一个“湮灭算符”$B_{\nu}$：
+\begin{equation}
+B_{\nu}|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\sqrt{n_{\nu}}|n_{1},n_{2},\dots,n_{\nu}-1,\dots\rangle\label{eq:appendix_c_boson_annihilation}
+\end{equation}
+算符$B_{\nu}$使序号为$\nu$的态上的占据数减$1$。一个$N$体态转变为一个$(N-1)$体态。
+
+$B_{\nu}$的矩阵元为：
+\begin{equation}
+\langle n^{\prime}_{1},n^{\prime}_{2},\dots,n^{\prime}_{\nu},\dots|B_{\nu}|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\sqrt{n_{\nu}}\delta_{n_{1}n^{\prime}_{1}}\dots\delta_{n^{\prime}_{\nu},n_{\nu}-1}\dots\label{eq:appendix_c_boson_annihilation_matrix}
+\end{equation}
+或
+\begin{equation}
+\langle n_{1},n_{2},\dots,n_{\nu},\dots|B^{\dagger}_{\nu}|n^{\prime}_{1},n^{\prime}_{2},\dots,n^{\prime}_{\nu},\dots\rangle=\sqrt{n^{\prime}_{\nu}+1}\delta_{n_{1}n^{\prime}_{1}}\dots\delta_{n_{\nu},n^{\prime}_{\nu}+1}\dots\label{eq:appendix_c_boson_creation_matrix}
+\end{equation}
+这对于所有基态$\langle n_{1},n_{2},\dots|$均成立。因此我们发现：
+\begin{equation}
+B^{\dagger}_{\nu}|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\sqrt{n_{\nu}+1}|n_{1},n_{2},\dots,n_{\nu}+1,\dots\rangle\label{eq:appendix_c_boson_creation}
+\end{equation}
+$B^{\dagger}_{\nu}$在序号为$\nu$的态中“产生”一个粒子。因此，它被称为态$\nu$上的“产生算符”。它是算符$B_{\nu}$的厄米共轭。
+
+从这个定义我们得到以下事实：
+\begin{align}
+ & (B_{\mu}B^{\dagger}_{\nu}-B^{\dagger}_{\nu}B_{\mu})|n_{1},n_{2},\dots,n_{\nu},\dots,n_{\mu},\dots\rangle\nonumber \\
+ & =\begin{cases}
+(\sqrt{n_{\nu}+1}\sqrt{n_{\mu}}-\sqrt{n_{\mu}}\sqrt{n_{\nu}+1})|n_{1},\dots,n_{\nu}+1,\dots,n_{\mu}-1,\dots\rangle=0 & (\nu\neq\mu),\\
+(\sqrt{n_{\nu}+1}\sqrt{n_{\nu}+1}-\sqrt{n_{\nu}}\sqrt{n_{\nu}})|n_{1},\dots,n_{\nu},\dots\rangle & (\nu=\mu),
+\end{cases}\label{eq:appendix_c_boson_comm_action}
+\end{align}
+从而得到对易关系：
+\begin{equation}
+[B_{\mu},B^{\dagger}_{\nu}]=B_{\mu}B^{\dagger}_{\nu}-B^{\dagger}_{\nu}B_{\mu}=\delta_{\mu\nu}\label{eq:appendix_c_boson_commutator}
+\end{equation}
+用同样的方法，我们可以证明：
+\begin{equation}
+[B_{\mu},B_{\nu}]=[B^{\dagger}_{\mu},B^{\dagger}_{\nu}]=0\label{eq:appendix_c_boson_other_commutators}
+\end{equation}
+占据数为$|0,0,\dots\rangle=|-\rangle$的态是真空态。于是对所有$\nu$有：
+\begin{equation}
+B_{\nu}|-\rangle=0\label{eq:appendix_c_vacuum_annihilation}
+\end{equation}
+且
+\begin{equation}
+|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\frac{1}{\sqrt{n_{1}!n_{2}!\dots n_{\nu}!\dots}}\prod_{\mu}(B^{\dagger}_{\mu})^{n_{\mu}}|-\rangle\label{eq:appendix_c_boson_state_creation}
+\end{equation}
+关系式 (C.11) 可以从式 (C.16) 至 (C.19) 导出，后者正是我们对算符$B_{\nu}$的定义。因此我们也可以反向进行，从满足玻色对易关系的一组算符$B_{\nu},B^{\dagger}_{\nu}$出发，并从式
+(C.17) 和式 (C.18) 构造多体Hilbert空间。
+
+算符$B^{\dagger}_{\nu}B_{\nu}$被称为态$\nu$的粒子数算符：
+\begin{equation}
+B^{\dagger}_{\nu}B_{\nu}|n_{1},\dots,n_{\nu},\dots\rangle=n_{\nu}|n_{1},\dots,n_{\nu},\dots\rangle\label{eq:appendix_c_boson_number_op}
+\end{equation}
+现在我们将注意力转向费米子系统。我们将使用小写拉丁字母$a^{\dagger}_{\nu},a_{\nu}$表示费米子的产生和湮灭算符。由于$n_{\nu}$只能取值$0$和$1$，我们可以将算符的作用定义为：
+\begin{equation}
+a_{\nu}|n_{1},\dots,n_{\nu}=1,\dots\rangle=|n_{1},\dots,n_{\nu}=0,\dots\rangle,\quad a_{\nu}|n_{1},\dots,n_{\nu}=0,\dots\rangle=0\label{eq:appendix_c_fermion_annihilation}
+\end{equation}
+由此我们得到：
+\begin{equation}
+a^{\dagger}_{\nu}|n_{1},\dots,n_{\nu}=0,\dots\rangle=|n_{1},\dots,n_{\nu}=1,\dots\rangle,\quad a^{\dagger}_{\nu}|n_{1},\dots,n_{\nu}=1,\dots\rangle=0\label{eq:appendix_c_fermion_creation}
+\end{equation}
+以及
+\begin{align}
+[a_{\mu},a^{\dagger}_{\nu}]_{+} & :\,=\{a_{\mu},a^{\dagger}_{\nu}\}:=a_{\mu}a^{\dagger}_{\nu}+a^{\dagger}_{\nu}a_{\mu}=\delta_{\mu\nu},\nonumber \\{}
+[a_{\mu},a_{\nu}]_{+} & =[a^{\dagger}_{\mu},a^{\dagger}_{\nu}]_{+}=0\label{eq:appendix_c_fermion_anticommutators}
+\end{align}
+真空态同样由$|-\rangle=|0,0,\dots\rangle$给出，且对于所有$\nu$有：
+\begin{equation}
+a_{\nu}|-\rangle=0\label{eq:appendix_c_fermion_vacuum}
+\end{equation}
+从而
+\begin{equation}
+|n_{1},\dots,n_{\nu},\dots\rangle=\prod_{\mu}(a^{\dagger}_{\mu})^{n_{\mu}}|-\rangle=a^{\dagger}_{\nu_{1}}\dots a^{\dagger}_{\nu_{N}}|-\rangle\label{eq:appendix_c_fermion_state_creation}
+\end{equation}
+
+
+\section{坐标空间中的场算符\protect\footnote{在下文中我们只考察费米子的情况。类似的考量也适用于玻色子。}}
+
+利用式 (C.2) 中的单粒子波函数$\varphi_{\nu}(\boldsymbol{r},s)$，我们可以定义依赖于坐标$\boldsymbol{r}$和$s$的产生和湮灭算符$a^{\dagger}(\boldsymbol{r},s),a(\boldsymbol{r},s)$\footnote{该定义与约定$\varphi_{\nu}(\boldsymbol{r})=\langle\boldsymbol{r}|\nu\rangle$一致，并且根据式
+(5.18) 关于算符$a^{\dagger}_{\nu}$幺正变换的定义，$\varphi_{\nu}(\boldsymbol{r})$对应于$D^{*}_{\nu\boldsymbol{r}}$。}：
+\begin{equation}
+a(\boldsymbol{r},s)=\sum_{\nu}\varphi_{\nu}(\boldsymbol{r},s)a_{\nu};\quad a^{\dagger}(\boldsymbol{r},s)=\sum_{\nu}\varphi^{*}_{\nu}(\boldsymbol{r},s)a^{\dagger}_{\nu}\label{eq:creation and annihilation at coordinates representation}
+\end{equation}
+利用式 (C.1) 我们可以反转此关系：
+\begin{equation}
+a_{\nu}=\sum_{s}\int\mathrm{d}^{3}r\,\varphi^{*}_{\nu}(\boldsymbol{r},s)a(\boldsymbol{r},s),\quad a^{\dagger}_{\nu}=\sum_{s}\int\mathrm{d}^{3}r\,\varphi_{\nu}(\boldsymbol{r},s)a^{\dagger}(\boldsymbol{r},s)\label{eq:appendix_c_invert_field_op}
+\end{equation}
+并获得反对易子：
+\begin{equation}
+[a(\boldsymbol{r},s),a^{\dagger}(\boldsymbol{r}^{\prime},s^{\prime})]_{+}=\sum_{\nu\nu^{\prime}}\varphi_{\nu}(\boldsymbol{r},s)\varphi^{*}_{\nu^{\prime}}(\boldsymbol{r}^{\prime},s^{\prime})[a_{\nu},a^{\dagger}_{\nu^{\prime}}]_{+}=\delta_{ss^{\prime}}\delta(\boldsymbol{r}-\boldsymbol{r}^{\prime})\label{eq:appendix_c_field_anticomm_1}
+\end{equation}
+以及
+\begin{equation}
+[a(\boldsymbol{r},s),a(\boldsymbol{r}^{\prime},s^{\prime})]_{+}=[a^{\dagger}(\boldsymbol{r},s),a^{\dagger}(\boldsymbol{r}^{\prime},s^{\prime})]_{+}=0\label{eq:appendix_c_field_anticomm_2}
+\end{equation}
+我们可以将多体波函数 (C.7) 表示为：
+\begin{equation}
+\Phi_{\{n_{\nu}\}}(1,\dots,N)=\frac{1}{\sqrt{N!}}\langle-|a(N)\dots a(1)|n_{1},n_{2},\dots,n_{\nu},\dots\rangle\label{eq:appendix_c_many_body_field_overlap}
+\end{equation}
+以及
+\begin{equation}
+|n_{1},n_{2},\dots,n_{\nu},\dots\rangle=\int\mathrm{d}1\dots\mathrm{d}N\,\frac{1}{\sqrt{N!}}\Phi_{\{n_{\nu}\}}(1,\dots,N)a^{\dagger}(1)\dots a^{\dagger}(N)|-\rangle\label{eq:appendix_c_many_body_state_from_field}
+\end{equation}
+
+
+\section{算符的表示}
+
+从真空态$|-\rangle$出发，我们已经用产生和湮灭算符$a^{\dagger}_{\nu},a_{\nu}$表示了多体Hilbert空间$\mathcal{H}$中的所有态。在下文中，我们将对算符进行同样的处理。我们必须区分单体算符与两体算符。
+
+例如，一个$N$粒子系统的动能或总动量等单体算符，由$N$个算符$\hat{f}_{i}$之和给出，其中$\hat{f}_{i}$始终作用在粒子$i$的坐标上：
+\begin{equation}
+\hat{F}=\sum^{N}_{i=1}\hat{f}_{i}\label{eq:One-body operator}
+\end{equation}
+它在$|\nu\rangle$表象中的矩阵元为：
+\begin{equation}
+f_{\nu\nu^{\prime}}=\langle\nu|\hat{f}|\nu^{\prime}\rangle\label{eq:appendix_c_f_matrix_el}
+\end{equation}
+即
+\begin{equation}
+\hat{f}_{i}\varphi_{\nu^{\prime}}(i)=\sum_{\nu}f_{\nu\nu^{\prime}}\varphi_{\nu}(i)\label{eq:appendix_c_f_action}
+\end{equation}
+$\hat{F}$在算符$a^{\dagger}_{\nu},a_{\nu}$下的表示由下式给出：
+\begin{equation}
+\hat{F}=\sum_{\nu\nu^{\prime}}f_{\nu\nu^{\prime}}a^{\dagger}_{\nu}a_{\nu^{\prime}}\label{eq:appendix_c_one_body_second_quant}
+\end{equation}
+为了说明这一点，我们必须证明：
+\begin{equation}
+\sum_{i}\hat{f}_{i}\Phi(1,\dots,N)=\langle1,\dots,N|\sum_{\nu\nu^{\prime}}f_{\nu\nu^{\prime}}a^{\dagger}_{\nu}a_{\nu^{\prime}}|\Phi\rangle\label{eq:appendix_c_one_body_proof_eq}
+\end{equation}
+在左边，根据式 (C.30)、(C.26) 和 (C.34)，忽略因子$1/\sqrt{N!}$，我们得到：
+\begin{align}
+\sum_{i}\hat{f}_{i}\langle-|a(N)\dots a(i)\dots a(1)|\Phi\rangle & =\sum_{i}\sum_{\nu_{1}\dots\nu_{N}}\hat{f}_{i}\varphi_{\nu_{N}}(N)\dots\varphi_{\nu_{i}}(i)\dots\varphi_{\nu_{1}}(1)\langle-|a_{\nu_{N}}\dots a_{\nu_{1}}|\Phi\rangle\nonumber \\
+ & =\sum_{i}\sum_{\nu}\sum_{\nu_{1}\dots\nu_{N}}f_{\nu\nu_{i}}\varphi_{\nu_{N}}(N)\dots\varphi_{\nu}(i)\dots\varphi_{\nu_{1}}(1)\langle-|a_{\nu_{N}}\dots a_{\nu_{1}}|\Phi\rangle\label{eq:appendix_c_one_body_lhs}
+\end{align}
+这与右边完全相同：
+\begin{align}
+ & \sum_{\nu\nu^{\prime}}\sum_{\nu_{1}\dots\nu_{N}}f_{\nu\nu^{\prime}}\varphi_{\nu_{N}}(N)\dots\varphi_{\nu_{1}}(1)\langle-|a_{\nu_{N}}\dots a_{\nu_{1}}a^{\dagger}_{\nu}a_{\nu^{\prime}}|\Phi\rangle\nonumber \\
+ & =\sum_{i}\sum_{\nu}\sum_{\nu_{1}\dots\nu_{N}}f_{\nu\nu_{i}}\varphi_{\nu_{N}}(N)\dots\varphi_{\nu}(i)\dots\varphi_{\nu_{1}}(1)\langle-|a_{\nu_{N}}\dots a_{\nu_{1}}|\Phi\rangle\label{eq:appendix_c_one_body_rhs}
+\end{align}
+
+接下来我们给出几个例子：
+
+动能：
+\begin{equation}
+\hat{T}=\sum_{i}\hat{t}_{i}=\sum_{i}\frac{-\hbar^{2}}{2m}\Delta_{i}\label{eq:appendix_c_kinetic_sum}
+\end{equation}
+\begin{align}
+\hat{T} & =\sum_{\nu\nu^{\prime}}\sum_{s}\int\mathrm{d}^{3}r\,\varphi^{*}_{\nu}(\boldsymbol{r},s)\frac{-\hbar^{2}}{2m}\Delta\varphi_{\nu^{\prime}}(\boldsymbol{r},s)a^{\dagger}_{\nu}a_{\nu^{\prime}}\nonumber \\
+ & =\sum_{s}\int\mathrm{d}^{3}r\,a^{\dagger}(\boldsymbol{r},s)\frac{-\hbar^{2}}{2m}\Delta a(\boldsymbol{r},s)\label{eq:appendix_c_kinetic_field}
+\end{align}
+单粒子密度（参见附录D）：
+\begin{equation}
+\hat{\rho}(\boldsymbol{r})=\sum^{N}_{i=1}\delta(\boldsymbol{r}-\hat{\boldsymbol{r}}_{i})\label{eq:appendix_c_density_op}
+\end{equation}
+$\hat{\boldsymbol{r}}_{i}$是第$i$个粒子的坐标算符；$\boldsymbol{r}$是一个数。
+\begin{equation}
+\hat{\rho}(\boldsymbol{r})=\sum_{\nu\nu^{\prime}}\sum_{s}\int\mathrm{d}^{3}r^{\prime}\,\varphi^{*}_{\nu}(\boldsymbol{r}^{\prime},s)\delta(\boldsymbol{r}-\boldsymbol{r}^{\prime})\varphi_{\nu^{\prime}}(\boldsymbol{r}^{\prime},s)a^{\dagger}_{\nu}a_{\nu^{\prime}}=\sum_{s}a^{\dagger}(\boldsymbol{r},s)a(\boldsymbol{r},s)\label{eq:appendix_c_density_field}
+\end{equation}
+粒子数：
+\begin{align}
+\hat{N} & =\sum_{\nu}a^{\dagger}_{\nu}a_{\nu}=\sum_{\nu}\sum_{ss^{\prime}}\int\mathrm{d}^{3}r\,\mathrm{d}^{3}r^{\prime}\,\varphi_{\nu}(\boldsymbol{r},s)\varphi^{*}_{\nu}(\boldsymbol{r}^{\prime},s^{\prime})a^{\dagger}(\boldsymbol{r},s)a(\boldsymbol{r}^{\prime},s^{\prime})\nonumber \\
+ & =\int\hat{\rho}(\boldsymbol{r})\,\mathrm{d}^{3}r\label{eq:appendix_c_number_op}
+\end{align}
+在最一般的情况下，$\hat{f}$将是一个积分算符（“非定域”单粒子算符）：
+\begin{equation}
+\hat{f}\varphi(\boldsymbol{r},s)=\sum_{s^{\prime}}\int\mathrm{d}^{3}r^{\prime}\,f_{ss^{\prime}}(\boldsymbol{r},\boldsymbol{r}^{\prime})\varphi(\boldsymbol{r}^{\prime},s^{\prime})\label{eq:appendix_c_nonlocal_f}
+\end{equation}
+两粒子算符，例如两体相互作用，由作用在粒子$i$和$j$的坐标上的算符$v_{ij}$之和给出：
+\begin{equation}
+V=\sum^{N}_{i<j=1}v_{ij}\label{eq:appendix_c_two_body_sum}
+\end{equation}
+在最一般的情况下，$v_{ij}$将是含两个变量的积分算符，其矩阵元为：
+\begin{equation}
+v_{\mu\nu\mu^{\prime}\nu^{\prime}}=\langle\mu\nu|v|\mu^{\prime}\nu^{\prime}\rangle=\int\mathrm{d}1\,\mathrm{d}2\,\mathrm{d}3\,\mathrm{d}4\,\varphi^{*}_{\mu}(1)\varphi^{*}_{\nu}(2)v(1,2,3,4)\varphi_{\mu^{\prime}}(3)\varphi_{\nu^{\prime}}(4)\label{eq:appendix_c_v_matrix_el}
+\end{equation}
+完全类比于式 (C.35)，我们可以证明$V$可以写为：
+\begin{equation}
+V=\frac{1}{2}\sum_{\mu\nu\mu^{\prime}\nu^{\prime}}v_{\mu\nu\mu^{\prime}\nu^{\prime}}a^{\dagger}_{\mu}a^{\dagger}_{\nu}a_{\nu^{\prime}}a_{\mu^{\prime}}=\frac{1}{4}\sum_{\mu\nu\mu^{\prime}\nu^{\prime}}\bar{v}_{\mu\nu\mu^{\prime}\nu^{\prime}}a^{\dagger}_{\mu}a^{\dagger}_{\nu}a_{\nu^{\prime}}a_{\mu^{\prime}}\label{eq:appendix_c_two_body_second_quant}
+\end{equation}
+其中反对称化矩阵元为：
+\begin{equation}
+\bar{v}_{\mu\nu\mu^{\prime}\nu^{\prime}}=\langle\mu\nu|v|\mu^{\prime}\nu^{\prime}\rangle-langle\mu\nu|v|\nu^{\prime}\mu^{\prime}\rangle\label{eq:appendix_c_v_antisymm}
+\end{equation}
+我们常常使用形式如下的定域两体相互作用（忽略自旋）：
+\begin{equation}
+v_{ij}=v(\boldsymbol{r}_{i},\boldsymbol{r}_{j})\label{eq:appendix_c_local_two_body}
+\end{equation}
+在这种情况下，我们可以利用式 (C.40) 立即验证式 (C.45)：
+\begin{align}
+\frac{1}{2}\sum_{\mu\nu\mu^{\prime}\nu^{\prime}}v_{\mu\nu\mu^{\prime}\nu^{\prime}}a^{\dagger}_{\mu}a^{\dagger}_{\nu}a_{\nu^{\prime}}a_{\mu^{\prime}} & =\frac{1}{2}\int\mathrm{d}^{3}r\,\mathrm{d}^{3}r^{\prime}\,a^{\dagger}(\boldsymbol{r})a^{\dagger}(\boldsymbol{r}^{\prime})v(\boldsymbol{r},\boldsymbol{r}^{\prime})a(\boldsymbol{r}^{\prime})a(\boldsymbol{r})\nonumber \\
+ & =\frac{1}{2}\left(\int\mathrm{d}^{3}r\,\mathrm{d}^{3}r^{\prime}\,v(\boldsymbol{r},\boldsymbol{r}^{\prime})\hat{\rho}(\boldsymbol{r})\hat{\rho}(\boldsymbol{r}^{\prime})-\int\mathrm{d}^{3}r\,v(\boldsymbol{r},\boldsymbol{r})\hat{\rho}(\boldsymbol{r})\right)\nonumber \\
+ & =\frac{1}{2}\left(\sum_{i\neq j}v(\boldsymbol{r}_{i},\boldsymbol{r}_{j})-\sum_{i}v(\boldsymbol{r}_{i},\boldsymbol{r}_{i})\right)=\sum^{N}_{i<j=1}v(\boldsymbol{r}_{i},\boldsymbol{r}_{j})\label{eq:appendix_c_local_two_body_verify}
+\end{align}
+
+
+\section{Wick定理}
+
+在二次量子化的实际应用中，Wick定理被证明是非常有用的。它是一条规则，允许对一组$N$个算符$a$或$a^{\dagger}$进行非常简单的重新排序，这些算符具有这样的性质：该集合中任意挑选的两个算符的对易子（在玻色子情况下）或反对易子（在费米子情况下）是一个数。
+
+我们首先定义算符积$a(t_{2}),a(t_{3}),a^{\dagger}(t_{1})\dots$的$T$积（编时积），它是将场算符按时间参数从右到左递增的方式重新排列后的乘积（奇置换给出一个负号）：
+\begin{equation}
+T\{a(t_{1})a^{\dagger}(t_{3})a(t_{2})a^{\dagger}(t_{4})\}=-a(t_{1})a(t_{2})a^{\dagger}(t_{3})a^{\dagger}(t_{4})\quad(t_{1}>t_{2}>t_{3}>t_{4})\label{eq:appendix_c_t_product_example}
+\end{equation}
+在正规乘积（正规序乘积）中，场算符按照所有产生算符都在所有湮灭算符左侧的方式排序\footnote{除了记号$N\{\dots\}$之外，我们也经常使用双冒号$:\dots:$。}（同样，奇置换给出一个负号）：
+\begin{equation}
+N\{a_{\nu}a_{\mu}a_{\rho}a^{\dagger}_{\sigma}\}=:\!a_{\nu}a_{\mu}a_{\rho}a^{\dagger}_{\sigma}\!:=-a^{\dagger}_{\sigma}a_{\nu}a_{\mu}a_{\rho}\label{eq:appendix_c_normal_order_example}
+\end{equation}
+两个场算符$U$和$V$的缩并$\wick{\c1{U}\c1{V}}$定义为：
+\begin{equation}
+\wick{\c1{U}\c1{V}}=T\{UV\}-N\{UV\}\label{eq:appendix_c_contraction_def}
+\end{equation}
+有了这些定义，Wick定理 \cite{Wi50} 可以陈述为：
+\begin{align}
+T\{UVW\dots XYZ\} & =N\{UVW\dots XYZ\}+N\{\wick{\c1{U}\c1{V}}W\dots XYZ\}\nonumber \\
+ & \quad+\dots+N\{UVW\dots\wick{\c1{X}\c1{Y}}Z\}+N\{\wick{\c1{U}\c1{V}}W\dots\wick{\c1{X}\c1{Y}}Z\}\nonumber \\
+ & \quad+\dots+N\{\wick{\c1{U}\c1{V}\c2{W}\dots\c3{X}\c2{Y}\c3{Z}}\}+\dots\label{eq:appendix_c_wick_theorem}
+\end{align}
+因此，场算符的编时积等于其正规乘积，加上带有一个缩并的正规乘积（遍历所有可能的缩并方式），加上带有两个缩并的正规乘积，依此类推。将一个缩并移出正规乘积时必须小心，因为这可能产生一个负号：
+\begin{equation}
+N\{\wick{\c1{U}V\c1{X}Y}\}=\wick{\c1{U}\c1{X}}N\{VY\};\quad N\{\wick{U\c1{V}\c1{X}Y}\}=-\wick{\c1{V}\c1{X}}N\{UY\}\label{eq:appendix_c_contraction_sign}
+\end{equation}
+（关于Wick定理的证明，参见例如 Thouless \cite{Th61b}。）
+
+Wick定理对于计算场算符编时积的基态期望值特别有用（例如第 6 章中粒子算符关于准粒子真空态的期望值）。其结果等于式 (C.52)
+的右边，其中所有算符都以所有可能的方式被缩并。
+
+如果存在不含时的场算符，如式 (C.45) 中那样，则给定的次序被定义为编时次序。不含时算符的缩并特别简单；例如，我们得到：
+\begin{equation}
+\wick{\c1{a}_{\mu}\c1{a}^{\dagger}_{\nu}}=a_{\mu}a^{\dagger}_{\nu}-N\{a_{\mu}a^{\dagger}_{\nu}\}=\delta_{\mu\nu}\label{eq:appendix_c_time_independent_contraction}
+\end{equation}
+

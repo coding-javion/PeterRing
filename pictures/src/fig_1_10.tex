@@ -1,0 +1,61 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Origin is center of nucleus
+  \coordinate (O) at (0,0);
+
+  % Negative vertical axis (below nucleus)
+  \draw[thick] (0, -2.4) -- (0, -1.28);
+
+  % Negative symmetry axis 3 (behind/below nucleus)
+  \draw[thick] (30:-3.0) -- (30:-2.3);
+
+  % Deformed nucleus (ellipsoid) rotated by 30 deg
+  \draw[very thick, fill=white, rotate=30] (0,0) ellipse (2.3cm and 1.15cm);
+
+  % 3D surface curvature rings on bottom face of ellipsoid
+  \draw[thick, rotate=30] (-1.2, -0.6) arc (-150:-30:1.3cm and 0.5cm);
+  \draw[thick, rotate=30] (-1.0, -0.75) arc (-150:-30:1.1cm and 0.45cm);
+
+  % Puncture ellipse for z-axis at (0, 1.276)
+  \draw[thick, rotate=30] ({1.276*cos(60)}, {1.276*sin(60)}) ellipse (0.08cm and 0.04cm);
+  \draw[thick, ->] (0, 1.30) -- (0, 4.6) node[above=2pt, font=\Large] {$z$};
+
+  % Vector I
+  % Direction of I: angle 65 deg, surface puncture at r = 1.632, tip at length 3.9
+  \coordinate (I_tip) at (65:3.9);
+  \draw[thick, rotate=30] ({1.632*cos(35)}, {1.632*sin(35)}) ellipse (0.08cm and 0.04cm);
+  \draw[very thick, ->] (65:1.66) -- (I_tip) node[above right=1pt, font=\Large] {$I$};
+
+  % Symmetry axis 3
+  % Surface puncture at (30:2.3)
+  \draw[thick, rotate=30] (2.3, 0) ellipse (0.04cm and 0.08cm);
+  \draw[thick, ->] (30:2.34) -- (30:4.9) node[right=2pt, font=\Large] {$\mathbf{3}$};
+
+  % Projection on z-axis: point M
+  % I_tip coordinates: (3.9*cos(65), 3.9*sin(65)) = (1.648, 3.535)
+  \coordinate (M) at (0, {3.9*sin(65)});
+  \draw[thick, dashed] (I_tip) -- (M);
+  \node[left=3pt, font=\Large] at (M) {$M$};
+
+  % Projection on axis 3: point K
+  % Angle between I and axis 3 is 35 deg
+  % Projection length along axis 3 = 3.9 * cos(35 deg) = 3.195
+  \coordinate (K) at (30:3.195);
+  \draw[thick, dashed] (I_tip) -- (K);
+  \node[below right=2pt, font=\Large] at (K) {$K$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,6763 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+% Added by lyx2lyx
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\end_preamble
+\use_default_options false
+\begin_modules
+beautiful-booknotes
+\end_modules
+\maintain_unincluded_children no
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-cjk
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3.18cm
+\topmargin 2.54cm
+\rightmargin 3.18cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+推广的单粒子模型（HFB理论）
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:推广的单粒子模型（HFB理论）"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+导论
+\end_layout
+
+\begin_layout Standard
+正如我们在前两章所看到的，
+原子核的许多性质，
+都可以通过独立粒子模型描述，
+该模型中引入了一个强烈依赖于物质分布的平均场，
+独立的核子在其中运动。
+我们发现，
+在半满壳中粒子之间有额外的关联。
+而在BCS模型中我们学会了利用推广的单粒子图像来处理这些关联，
+只需引入准粒子和一种新的场—
+—
+对场。
+
+\end_layout
+
+\begin_layout Standard
+Hartree-Fock-Bogoliubov（HFB）理论推广并统一了这两种方法。
+在这个理论中我们寻找由独立运动的准粒子组成的最一般的乘积波函数。
+准粒子的波函数通过变分原理确定，
+并且在静态的单粒子图像的前提下考虑了尽可能多的关联。
+事实证明，
+在这个近似中，
+Hamilton 量简化为两个平均势，
+即我们已经从 Hartree-Fock 理论中知道的自洽场
+\begin_inset Formula $\Gamma$
+\end_inset
+，
+以及从 BCS 理论中知道的对场
+\begin_inset Formula $\Delta$
+\end_inset
+。
+自洽场
+\begin_inset Formula $\Gamma$
+\end_inset
+包含所有最终导致形变基态（相变）的长程ph关联。
+另一方面，
+
+\begin_inset Formula $\Delta$
+\end_inset
+包含了所有可能导致相变和超流态的短程对关联。
+HFB理论现在统一了这两种描述，
+并处理了它们的相互依存关系。
+因此，
+它有能力同时处理平均场近似下的所有可能的相变。
+
+\end_layout
+
+\begin_layout Standard
+由于HFB理论是Hartree-Fock理论和BCS理论的结合，
+因此许多相关问题在前面的章节中已经讨论过。
+因此，
+我们可以用相当形式化的方式推导出本章开头出现的必要公式。
+在第 7.2 节中，
+我们介绍了一个一般的准粒子图像。
+所研究的核波函数被定义为合适的准粒子算子的真空，
+并讨论了其形式性质。
+在这种情况下，
+我们在附录 E中证明了许多公式和一些重要的定理。
+在7.3 节中，
+我们推导出了确定波函数的 HFB 方程，
+并提出了几种求解它们的方法。
+在第 7.4 节中我们介绍了对-四极模型
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+pairing-plus-quadrupole model不知道叫什么名字。
+
+\end_layout
+
+\end_inset
+作为示例，
+该模型显示了实际计算的许多重要特征。
+最后几节讨论了该理论的几个应用，
+一个是形变核基态性质的约束Hartree-Fock理论（CHF）计算，
+用于研究裂变背景下的能量面，
+另外一个是自洽Cranking（SCC）模型下转动谱的计算。
+
+\end_layout
+
+\begin_layout Section
+推广的Bogoliubov变换
+\end_layout
+
+\begin_layout Subsection
+准粒子算符
+\end_layout
+
+\begin_layout Standard
+任何准粒子概念的基本思想都是将原子核的基态表示为准粒子真空，
+准粒子由相邻原子核的低能激发态定义。
+这正是Landau和Migdal [La 59，
+Mi 67]的概念，
+他们根据多体系统的精确本征态来定义真空和准粒子。
+因此，
+费米液体的这个理论原则上是一个精确的理论；
+然而，
+它的一个重要缺点是这些Landau-Migdal准粒子与系统的“裸”粒子（由一些基本的算符
+\begin_inset Formula $c_{l}^{\dagger}$
+\end_inset
+，
+
+\begin_inset Formula $c_{l}$
+\end_inset
+给出，
+例如，
+可能是平面波态或谐振子态）之间没有简单的数学关系。
+
+\end_layout
+
+\begin_layout Standard
+在本章中，
+我们使用了所谓的Bogoliubov准粒子[Bo 58，
+Bo 59a+b，
+BS 59，
+Va 61]，
+它与裸粒子具有线性关系。
+它们很容易处理，
+但相应的真空和单粒子态现在只是多体 Hamilton 量的精确本征态的近似。
+
+\end_layout
+
+\begin_layout Standard
+我们已经在BCS模型中定义了一种非常特殊类型的准粒子（方程6.67）。
+在对关联消失的极限下（
+\begin_inset Formula $u_{k},v_{k}=0$
+\end_inset
+）中，
+它们要么是粒子（
+\begin_inset Formula $\varepsilon_{k}>\varepsilon_{\text{F}}$
+\end_inset
+）要么是空穴（
+\begin_inset Formula $\varepsilon_{k}\leq\varepsilon_{\text{F}}$
+\end_inset
+）。
+这些BCS准粒子的自然拓展是由从裸粒子算符
+\begin_inset Formula $c_{l}^{\dagger}$
+\end_inset
+，
+
+\begin_inset Formula $c_{l}$
+\end_inset
+到准粒子算符
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+，
+
+\begin_inset Formula $\beta_{k}$
+\end_inset
+的最一般线性变换给出的：
+
+\begin_inset Formula 
+\[
+\beta_{k}^{\dagger}=\sum_{l}U_{lk}c_{l}^{\dagger}+V_{lk}c_{l}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+指标
+\begin_inset Formula $k$
+\end_inset
+和
+\begin_inset Formula $l$
+\end_inset
+取遍整个组态空间（
+\begin_inset Formula $k=1,\dots,M$
+\end_inset
+）。
+方程的厄米共轭给出算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+。
+我们因此得到了一个从
+\begin_inset Formula $2M$
+\end_inset
+维空间上的算符
+\begin_inset Formula $(c_{1}\dots c_{M},c_{1}^{\dagger}\dots c_{M}^{\dagger})$
+\end_inset
+到算符
+\begin_inset Formula $(\beta_{1}\dots\beta_{M},\beta_{1}^{\dagger}\dots\beta_{M}^{\dagger})$
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+的变换（
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+方程（7.2）中矩阵的定义似乎有些不寻常;然而，
+它与定义（7.1）一致，
+并且使得我们可以在下面使用矩阵乘法规则。
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+）：
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}\beta\\
+\beta^{\dagger}
+\end{bmatrix}=\begin{bmatrix}U^{\dagger} & V^{\dagger}\\
+V^{\mathrm{T}} & U^{\mathrm{T}}
+\end{bmatrix}\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix}=\mathcal{W}^{\dagger}\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这一变换由矩阵
+\begin_inset Formula $\mathcal{W}$
+\end_inset
+表征：
+
+\begin_inset Formula 
+\[
+\mathcal{W}=\begin{bmatrix}U & V^{*}\\
+V & U^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+现在系数
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+并不完全是任意的，
+因为新算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+，
+
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+需要满足和之前相同的费米对易关系。
+这使得矩阵
+\begin_inset Formula $\mathcal{W}$
+\end_inset
+必须是酉矩阵。
+
+\begin_inset Formula 
+\[
+\mathcal{W}^{\dagger}\mathcal{W}=1\quad\text{和}\quad\mathcal{W}\mathcal{W}^{\dagger}=1
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+或者可以写为：
+
+\begin_inset Formula 
+\begin{align}
+U^{\dagger}U+V^{\dagger}V & =1\label{eq:orthogonality of UV}\\
+UU^{\dagger}+V^{*}V^{\mathrm{T}} & =1\nonumber \\
+U^{\mathrm{T}}V+V^{\mathrm{T}}U & =0\nonumber \\
+UV^{\dagger}+V^{*}U^{\mathrm{T}} & =0\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这使得我们可以写出逆变换：
+
+\begin_inset Formula 
+\[
+c_{l}^{\dagger}=\sum_{k}U_{lk}^{*}\beta_{k}^{\dagger}+V_{lk}\beta_{k}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bloch和Messiah有一个著名的定理[Zu 62，
+BM 62]，
+它指出，
+形式的（7.3）的酉矩阵总是可以分解为三个非常特殊形式的矩阵：
+
+\begin_inset Formula 
+\begin{equation}
+\mathcal{W}=\begin{bmatrix}D & 0\\
+0 & D^{*}
+\end{bmatrix}\begin{bmatrix}\bar{U} & \bar{V}\\
+\bar{V} & \bar{U}
+\end{bmatrix}\begin{bmatrix}C & 0\\
+0 & C^{*}
+\end{bmatrix}\label{eq:decomposition of W}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+或者写为：
+
+\begin_inset Formula 
+\begin{align*}
+U & =D\bar{U}C\\
+V & =D^{*}\bar{V}C
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $D$
+\end_inset
+和
+\begin_inset Formula $C$
+\end_inset
+是酉矩阵，
+
+\begin_inset Formula $\bar{U}$
+\end_inset
+和
+\begin_inset Formula $\bar{V}$
+\end_inset
+是具有如下形式的实矩阵：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\bar{U} & =\left[\begin{array}{rrrrrrr}
+\ddots\\
+ & 0 &  &  &  & 0\\
+ &  & \begin{array}{cc}
+\text{\makebox[0pt][]{\ensuremath{u_{1}}}} & 0\\
+0 & \text{\makebox[0pt][]{\ensuremath{u_{1}}}}
+\end{array}\\
+ &  &  & \ddots\\
+ &  &  &  & \begin{array}{cc}
+\text{\makebox[0pt][]{\ensuremath{u_{n}}}} & 0\\
+0 & \text{\makebox[0pt][]{\ensuremath{u_{n}}}}
+\end{array}\\
+ & 0 &  &  &  & 1\\
+ &  &  &  &  &  & \ddots
+\end{array}\right]\label{eq:form of UV}\\
+\bar{V} & =\left[\begin{array}{rrrrrrr}
+\ddots\\
+ & 1 &  &  &  & 0\\
+ &  & \begin{array}{cc}
+0 & \text{\makebox[0pt][]{\ensuremath{v_{1}}}}\\
+\text{\makebox[0pt][]{\ensuremath{-v_{1}}}} & 0
+\end{array}\\
+ &  &  & \ddots\\
+ &  &  &  & \begin{array}{cc}
+0 & \text{\makebox[0pt][]{\ensuremath{v_{n}}}}\\
+\text{\makebox[0pt][]{\ensuremath{-v_{n}}}} & 0
+\end{array}\\
+ & 0 &  &  &  & 0\\
+ &  &  &  &  &  & \ddots
+\end{array}\right]\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+然而使用下面这种形式的矩阵会使得证明更加简单，
+也没有本质区别：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\[
+\bar{V}=\left[\begin{array}{rrrrrrrr}
+\ddots\\
+ & 0 & \makebox[0pt][]{\ensuremath{1}} &  &  &  & 0\\
+ & \makebox[0pt][]{\ensuremath{-1}} & \text{0}\\
+ &  &  & \begin{array}{cc}
+0 & \text{\makebox[0pt][]{\ensuremath{v_{1}}}}\\
+\text{\makebox[0pt][]{\ensuremath{-v_{1}}}} & 0
+\end{array}\\
+ &  &  &  & \ddots\\
+ &  &  &  &  & \begin{array}{cc}
+0 & \text{\makebox[0pt][]{\ensuremath{v_{n}}}}\\
+\text{\makebox[0pt][]{\ensuremath{-v_{n}}}} & 0
+\end{array}\\
+ & 0 &  &  &  &  & 0\\
+ &  &  &  &  &  &  & \ddots
+\end{array}\right]
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这个定理的证明在附录E.1中给出。
+这个定理意味着这个变换可以分解成三个部分：
+
+\begin_inset Formula 
+\begin{align*}
+\begin{array}{ccc}
+\left.\begin{array}{cc}
+c & \rightarrow a\\
+c^{\dagger} & \rightarrow a^{\dagger}
+\end{array}\right\}  & \longrightarrow & \left\{ \begin{array}{cc}
+\alpha & \rightarrow\beta\\
+\alpha^{\dagger} & \rightarrow\beta^{\dagger}
+\end{array}\right.\\
+D & \bar{U},\bar{V} & C
+\end{array}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+一个粒子算符
+\begin_inset Formula $c^{\dagger}$
+\end_inset
+内部的酉变换，
+跟HF的情形一样：
+
+\begin_inset Formula 
+\[
+a_{k}^{\dagger}=\sum_{l}D_{lk}c_{l}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+它定义了一组新的基，
+叫正则基（叫这个名字是因为反对称对张量
+\begin_inset Formula $\kappa$
+\end_inset
+在这组基下是正则形式。
+），
+在附录E中有更详细的解释。
+它很方便使用，
+因为在这组基下密度矩阵
+\begin_inset Formula $\rho$
+\end_inset
+是对角的。
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+一个特殊的Bogoliubov变换，
+
+\begin_inset Formula 
+\begin{align}
+\alpha_{p}^{\dagger} & =u_{p}a_{p}^{\dagger}-v_{p}a_{\bar{p}}\nonumber \\
+\alpha_{\bar{p}}^{\dagger} & =u_{p}a_{\bar{p}}^{\dagger}+v_{p}a_{p}\label{eq:special Bogoliuboc transformation 1}
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+这里
+\begin_inset Formula $(p,\bar{p})$
+\end_inset
+定义为
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:form of UV"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+中的（
+\begin_inset Formula $2\times2$
+\end_inset
+）矩阵和阻塞能级，
+即被完全占据（
+\begin_inset Formula $v_{i}=1,u_{i}=0$
+\end_inset
+）或者完全未占据（
+\begin_inset Formula $v_{m}=0,u_{m}=1$
+\end_inset
+）的态：
+
+\begin_inset Formula 
+\begin{align}
+\alpha_{i}^{\dagger} & =a_{i},\quad\alpha_{m}^{\dagger}=a_{m}^{\dagger}\nonumber \\
+\alpha_{i} & =a_{i}^{\dagger},\quad\alpha_{m}=a_{m}\label{eq:special Bogoliubov transformation 2}
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:special Bogoliuboc transformation 1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+和BCS变换相关。
+正交性关系保证了实占据数
+\begin_inset Formula $v_{p}$
+\end_inset
+和
+\begin_inset Formula $u_{p}$
+\end_inset
+是归一化的。
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+一个准粒子算符
+\begin_inset Formula $\alpha_{k}^{\dagger}$
+\end_inset
+内部的酉变换：
+
+\begin_inset Formula 
+\[
+\beta_{k}^{\dagger}=\sum_{k^{\prime}}C_{k^{\prime}k}\alpha_{k^{\prime}}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+从这个定理可以看出，
+一个推广的Bogoliubov变换不过是在一组合适的基—
+—
+由变换矩阵
+\begin_inset Formula $D$
+\end_inset
+定义的正则基，
+上的BCS变换。
+特别地
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+In particular，
+这里是什么意思？
+
+\end_layout
+
+\end_inset
+，
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:decomposition of W"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+中的分解确定了完全占据能级（
+\begin_inset Formula $i$
+\end_inset
+）、完全未占据能级（
+\begin_inset Formula $m$
+\end_inset
+）以及具有正则共轭
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+正则共轭？
+标准共轭？
+
+\end_layout
+
+\end_inset
+态
+\begin_inset Formula $p$
+\end_inset
+和
+\begin_inset Formula $\bar{p}$
+\end_inset
+的对能级（
+\begin_inset Formula $p$
+\end_inset
+）。
+在许多有时间反演对称性的问题中，
+我们可以选择时间反演算符为正则共轭。
+然而，
+也有一些情况（例如旋转坐标系中的HFB理论）我们不知道正则共轭是什么。
+这时我们就需要首先确定整个HFB变换，
+然后再应用Bloch-Messiah定理计算正则基。
+我们将在7.2.2节看到，
+这个分解是如何被应用到实际情况的，
+这会帮助我们更深刻的理解波函数的物理内涵。
+
+\end_layout
+
+\begin_layout Subsection
+准粒子真空态
+\end_layout
+
+\begin_layout Standard
+上一节中的准粒子算符至今为止还是高度数学化的。
+为了从得到这一变换中的物理信息，
+我们必须计算一个波函数。
+正如上面讨论的，
+多体系统的基态
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+应该可以表示为准粒子真空：
+
+\begin_inset Formula 
+\begin{equation}
+\beta_{k}|\Phi\rangle=0\quad\text{对所有}k=1,\dots,M\label{eq:def of quasi-particle vacuum}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+满足这一系列条件的波函数被称为HFB波函数。
+
+\end_layout
+
+\begin_layout Standard
+在我们更详细的研究这个波函数的结构之前，
+我们首先想知道这个定义是不是存在且唯一的：
+很容易能构建一个满足上式的波函数，
+只需要在裸真空
+\begin_inset Formula $|0\rangle$
+\end_inset
+上乘上一系列的湮灭算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+：
+
+\begin_inset Formula 
+\begin{equation}
+|\Phi\rangle=\prod_{k}\beta_{k}|0\rangle\label{eq:def of HFB wave function}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $k$
+\end_inset
+取遍所有的
+\begin_inset Formula $k=1,\dots,M$
+\end_inset
+值，
+那么条件
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of quasi-particle vacuum"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+当然能被满足。
+然而在许多情况下我们只是得到了零。
+例如在
+\begin_inset Formula $HF$
+\end_inset
+态上，
+这个乘积事实上只能包含所有的空穴态的湮灭算符
+\begin_inset Formula 
+\[
+|\Phi_{\text{HF}}\rangle=\prod_{i}\alpha_{i}|0\rangle=\prod_{i}a_{i}^{\dagger}|0\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+任意粒子态的湮灭算符
+\begin_inset Formula $\alpha_{m}=a_{m}$
+\end_inset
+都会让
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+变为零。
+因此在定义
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of HFB wave function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+中我们把求和范围取成所有不会使得
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+为零的准粒子湮灭算符，
+这使得任何湮灭算符作用到上面都为零
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+意译，
+意译。
+
+\end_layout
+
+\end_inset
+。
+这一范围视具体物理情形而定。
+我们后面将会看到它实际上由
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:blocking structure"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+确定。
+如果湮灭算符数目是偶数，
+那么波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+描述了偶核（正如我们将看到的，可以是基态或激发态
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+接下来才知道你在这里讲干什么！
+
+\end_layout
+
+\end_inset
+），
+如果湮灭算符数目是奇数，
+那么波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+描述了奇核。
+从这个定义中，
+我们永远可以构造出一个波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+来满足
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of quasi-particle vacuum"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+。
+由于基矢
+\begin_inset Formula $c_{l_{1}}^{\dagger},\dots,c_{l_{N}}^{\dagger}(N=0,\dots,M)$
+\end_inset
+和
+\begin_inset Formula $\beta_{k_{1}}^{\dagger},\dots,\beta_{k_{N}}^{\dagger}(N=0,\dots,M)$
+\end_inset
+都是多体Hilbert空间的完备正交基，
+由此从
+\begin_inset Formula $\beta_{k}(k=1,\dots,M)$
+\end_inset
+得到的
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的定义一定是唯一的。
+
+\end_layout
+
+\begin_layout Standard
+但是反过来是不正确的：
+
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+并不能唯一的确定准粒子算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+。
+任何这些算符自身的变换（例如
+\begin_inset Formula $C$
+\end_inset
+-变换）都会保持准粒子真空不变。
+这也意味着，
+我们可以用正则基下的准粒子算符
+\begin_inset Formula $\alpha_{k}$
+\end_inset
+来定义
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+因此，
+
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+由正则基下的单粒子算符
+\begin_inset Formula $a_{k}$
+\end_inset
+和占据概率
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+完全确定。
+
+\end_layout
+
+\begin_layout Standard
+特别的，
+我们现在可以用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:def of HFB wave function"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+来构建更精确的
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的形式。
+显然我们需要省略掉
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:special Bogoliubov transformation 2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+中的所有未占据态的算符
+\begin_inset Formula $\alpha$
+\end_inset
+.在进行了正确的归一化后，
+我们发现：
+
+\begin_inset Formula 
+\begin{equation}
+|\Phi\rangle=\mathcal{N}\prod_{k}\alpha_{k}|0\rangle=\prod_{i}a_{i}^{\dagger}\prod_{p}(u_{p}+v_{p}a_{p}^{\dagger}a_{\bar{p}}^{\dagger})|0\rangle\label{eq:blocking structure}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+根据定义，
+这里
+\begin_inset Formula $u_{p}$
+\end_inset
+不为零。
+根据占据态是奇还是偶，
+波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+是奇态或偶态的叠加。
+我们称这一量子数为粒子数宇称
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我自己翻译的。
+
+\end_layout
+
+\end_inset
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BMR73"
+literal "true"
+
+\end_inset
+。显然，奇粒子数宇称的波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+只能描述奇核，
+反之亦然。
+
+\end_layout
+
+\begin_layout Standard
+我们通常假定
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+描述了偶
+\begin_inset Formula $A$
+\end_inset
+核的基态，
+但是我们在推导中并没有用到这一点。
+我们现在看到，
+根据决定了波函数的Bogoliubov变换中的系数
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+的不同，
+我们可以得到奇的或者偶的粒子数宇称。
+这些系数由能量期待值的变分得到，
+并且在7.3.1中我们将由此推出HFB方程。
+这一组方程是非线性的，
+有很多个解。
+通常，
+最低能量的解的系数
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+使得相应的真空描述了偶核的基态，
+也就是说，
+在正则基中，
+态
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:blocking structure"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+可以表示为 BCS 态 (6.31)
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这句话极其费解。
+姑且先这么写下来吧。
+
+\end_layout
+
+\end_inset
+。
+然而有时候我们想要描述奇核的基态。
+这种时候我们就需要注意使用保证波函数
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+具有奇粒子数宇称的系数
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+。
+也就是说，
+
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+可以写成一个基于正确选择的有偶粒子数宇称的基态
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+的单准粒子态。
+
+\end_layout
+
+\begin_layout Standard
+实践中，
+这非常容易做到[BMR 73,
+ Ma 75a]。
+我们从一个具有偶粒子数宇称的完全成对的真空
+\begin_inset Formula $|\Phi_{0}\rangle=\beta_{1}\beta_{2}\dots\beta_{M}|0\rangle$
+\end_inset
+开始。
+单准粒子态
+\begin_inset Formula 
+\[
+|\Phi_{1}\rangle=\beta_{1}^{\dagger}|\Phi_{0}\rangle
+\]
+
+\end_inset
+是算符
+\begin_inset Formula $(\tilde{\beta}_{1},\tilde{\beta}_{2},\dots,\tilde{\beta}_{M})$
+\end_inset
+的真空态，
+这里：
+
+\begin_inset Formula 
+\[
+\tilde{\beta}_{1}=\beta_{1}^{\dagger},\tilde{\beta}_{2}=\beta_{1},\dots,\tilde{\beta}_{M}=\beta_{M}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+准粒子产生算符
+\begin_inset Formula $\beta_{1}^{\dagger}$
+\end_inset
+和相应的湮灭算符
+\begin_inset Formula $\beta_{1}$
+\end_inset
+的交换意味着
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+中相应的列发生了交换：
+
+\begin_inset Formula 
+\begin{equation}
+(U_{l1},V_{l1})\leftrightarrow(V_{l1}^{*},U_{l1}^{*})\label{eq:change columns of U V}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此，
+仅仅是做了这样一个替换，
+我们就改变了相应的真空的粒子数宇称并且得到了一个单准粒子态。
+这一操作可以继续下去，
+只需简单交换HFB系数中相应的列我们就可以从全成对的基态得到各个多准粒子态。
+利用这个技巧，
+我们可以用正确定义的新准粒子算符来表示相应于HFB真空的准粒子激发态。
+
+\end_layout
+
+\begin_layout Standard
+当然，
+在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:change columns of U V"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+的替换中，
+变换矩阵
+\begin_inset Formula $C$
+\end_inset
+，
+
+\begin_inset Formula $\bar{U}$
+\end_inset
+，
+
+\begin_inset Formula $\bar{V}$
+\end_inset
+和
+\begin_inset Formula $D$
+\end_inset
+也要改变。
+特别的，
+
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+的正则基和
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+一般是不同的。
+只有当
+\begin_inset Formula $C$
+\end_inset
+矩阵为1时（例如
+\begin_inset Formula $|\Phi_{1}\rangle=\alpha_{1}|\Phi_{0}\rangle$
+\end_inset
+）两个波函数的正则基相同。
+
+\end_layout
+
+\begin_layout Subsection
+密度矩阵和对张量
+\end_layout
+
+\begin_layout Standard
+正如我们在上一节看到的，
+一般的Bogoliubov变换，
+或者说系数
+\begin_inset Formula $U_{lk}$
+\end_inset
+和
+\begin_inset Formula $V_{lk}$
+\end_inset
+是不能被HFB波函数唯一确定的，
+有一个
+\begin_inset Formula $C$
+\end_inset
+变换矩阵的自由度。
+
+\end_layout
+
+\begin_layout Standard
+现在定义两个量，
+它们不含多余的信息，
+并且能够完全唯一确定波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+它们被称为正常密度和反常密度
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+不清楚怎么翻译。
+
+\end_layout
+
+\end_inset
+（或者密度矩阵和对张量），
+它们的分量由下式给出：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho_{ll^{\prime}}=\langle\Phi|c_{l^{\prime}}^{\dagger}c_{l}|\Phi\rangle,\quad\kappa_{ll^{\prime}}=\langle\Phi|c_{l^{\prime}}c_{l}|\Phi\rangle\label{eq:单粒子密度矩阵}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+或者用矩阵符号：
+
+\begin_inset Formula 
+\[
+\rho=V^{*}V^{\mathrm{T}},\quad\kappa=V^{*}U^{\mathrm{T}}=-UV^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+直接计算证明即可，
+首先计算密度矩阵：
+
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|c_{l^{\prime}}^{\dagger}c_{l}|\Phi\rangle & =\sum_{kk^{\prime}}D_{lk}D_{l^{\prime}k^{\prime}}^{*}\langle\Phi|a_{k^{\prime}}^{\dagger}a_{k}|\Phi\rangle\\
+ & =\sum_{pp^{\prime}}D_{lp}D_{l^{\prime}p^{\prime}}^{*}v_{p}^{2}\delta_{pp^{\prime}}+\sum_{ii^{\prime}}D_{li}D_{l^{\prime}i^{\prime}}^{*}\delta_{ii^{\prime}}\\
+ & =D\bar{V}\bar{V}^{\mathrm{T}}D^{\dagger}=V^{*}V^{\mathrm{T}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+然后计算对张量：
+
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|c_{l^{\prime}}c_{l}|\Phi\rangle & =\sum_{kk^{\prime}}D_{lk}D_{l^{\prime}k^{\prime}}\langle\Phi|a_{k^{\prime}}a_{k}|\Phi\rangle\\
+ & =\sum_{p}D_{lp}D_{l^{\prime}\bar{p}}v_{p}u_{p}-D_{l\bar{p}}D_{l^{\prime}p}v_{p}u_{p}\\
+ & =D\bar{V}\bar{U}D^{\mathrm{T}}=V^{*}U^{\mathrm{T}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rho$
+\end_inset
+是厄米的（
+\begin_inset Formula $\rho^{\dagger}=\rho$
+\end_inset
+），
+
+\begin_inset Formula $\kappa$
+\end_inset
+是反对称的（
+\begin_inset Formula $\kappa^{\mathrm{T}}=-\kappa$
+\end_inset
+）。
+
+\end_layout
+
+\begin_layout Standard
+利用Bloch-Messiah定理的分解和酉矩阵
+\begin_inset Formula $C$
+\end_inset
+的性质，
+我们发现
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+我这里改了一下，
+我觉得原书可能不太对。
+另外上面的计算应该已经用到了这个性质，
+这应该出现在上面的式子之前。
+
+\end_layout
+
+\end_inset
+：
+
+\begin_inset Formula 
+\begin{equation}
+\rho=D\bar{V}\bar{V}^{\mathrm{T}}D^{\dagger},\quad\kappa=D\bar{V}\bar{U}D^{\mathrm{T}}\label{eq:rho kappa under BM decomposition}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这意味着
+\begin_inset Formula $\rho$
+\end_inset
+在正则基下是对角的。
+
+\begin_inset Formula $\rho$
+\end_inset
+的本征值是占据数
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+，
+本征矢是变换成正则基时的系数
+\begin_inset Formula $D_{lk}$
+\end_inset
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rho kappa under BM decomposition"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+说明
+\begin_inset Formula $\rho$
+\end_inset
+在酉变换下像线性算符，
+
+\begin_inset Formula $\kappa$
+\end_inset
+像反线性算符。
+HFB理论和反线性算符的关系参考[HV 68,
+ VH 70]。
+
+\end_layout
+
+\end_inset
+。
+于此同时，
+
+\begin_inset Formula $\kappa$
+\end_inset
+是正则形式的，
+它可以分解为
+\begin_inset Formula $(2\times2)$
+\end_inset
+的矩阵：
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}0 & u_{k}v_{k}\\
+-u_{k}v_{k} & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+由两个重要的关系：
+
+\begin_inset Formula 
+\[
+\rho^{2}-\rho=-\kappa\kappa^{\dagger},\quad\rho\kappa=\kappa\rho^{*}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+定义一个
+\begin_inset Formula $2M$
+\end_inset
+-维的广义密度矩阵是有用的[Sch 61,
+ Va 61]
+\begin_inset Formula 
+\[
+\mathcal{R}=\begin{bmatrix}\langle\Phi|c_{l^{\prime}}^{\dagger}c_{l}|\Phi\rangle & \langle\Phi|c_{l^{\prime}}c_{l}|\Phi\rangle\\
+\langle\Phi|c_{l^{\prime}}^{\dagger}c_{l}^{\dagger}|\Phi\rangle & \langle\Phi|c_{l^{\prime}}c_{l}^{\dagger}|\Phi\rangle
+\end{bmatrix}=\begin{bmatrix}\rho & \kappa\\
+-\kappa^{*} & 1-\rho^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+它是厄米且幂等的：
+
+\begin_inset Formula 
+\[
+\mathcal{R}^{2}=\mathcal{R}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+它的本征值是零的本征矢是准粒子产生算符的HFB系数
+\begin_inset Formula $\left[\begin{smallmatrix}U\\
+V
+\end{smallmatrix}\right]$
+\end_inset
+，
+本征值为
+\begin_inset Formula $1$
+\end_inset
+的本征矢是准粒子湮灭算符系数
+\begin_inset Formula $\left[\begin{smallmatrix}V^{*}\\
+U^{*}
+\end{smallmatrix}\right]$
+\end_inset
+：
+
+\begin_inset Formula 
+\[
+\mathcal{W}^{\dagger}\mathcal{R}\mathcal{W}=\begin{bmatrix}\langle\Phi|\beta_{k^{\prime}}^{\dagger}\beta_{k}|\Phi\rangle & \langle\Phi|\beta_{l^{\prime}}\beta_{l}|\Phi\rangle\\
+\langle\Phi|\beta_{k^{\prime}}^{\dagger}\beta_{k}^{\dagger}|\Phi\rangle & \langle\Phi|\beta_{l^{\prime}}\beta_{l}^{\dagger}|\Phi\rangle
+\end{bmatrix}=\begin{bmatrix}0 & 0\\
+0 & 1
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+本征矢只能在在相应的本征空间上差一个酉变换的程度上确定下来，
+也就是说，
+差一个
+\begin_inset Formula $C$
+\end_inset
+-变换。
+这说明
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+唯一的确定了
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+
+\end_layout
+
+\begin_layout Standard
+在接下来的章节我们将会看到，
+通过将原来的
+\begin_inset Formula $\rho$
+\end_inset
+替换为
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+，
+最初在HF纯Slater行列式中发展的许多理论可以直接推广到HFB有对关联的情况。
+
+\end_layout
+
+\begin_layout Section
+Hartree-Fock-Bogoliubov方程
+\end_layout
+
+\begin_layout Subsection
+HFB方程的导出
+\end_layout
+
+\begin_layout Standard
+目前为止我们仅仅已经研究了HFB变换的形式结构和相应的真空态
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+在这一节我们推导关于系数
+\begin_inset Formula $U_{lk}$
+\end_inset
+和
+\begin_inset Formula $V_{lk}$
+\end_inset
+满足的方程，
+这些系数定义了准粒子和波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+
+\end_layout
+
+\begin_layout Standard
+我们假定
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+是 Hamilton 量精确基态的近似，
+Hamilton 量为：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H=\sum_{l_{1}l_{2}}t_{l_{1}l_{2}}c_{l_{1}}^{\dagger}c_{l_{2}}+\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}c_{l_{4}}c_{l_{3}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用Ritz变分法（第5.2节）。
+在我们这种情况，
+在我们这里，
+试探波函数是所有HFB型推广的直积波函数的集合。
+
+\end_layout
+
+\begin_layout Standard
+在BCS模型中，
+波函数违反了粒子数守恒（第6.3节）。
+这里也一样，
+所以我们必须对粒子数
+\begin_inset Formula $N$
+\end_inset
+施加限制，
+对
+\begin_inset Formula $H^{\prime}=H-\lambda N$
+\end_inset
+变分。
+为了简化记号，
+我们接下来忽略
+\begin_inset Formula $H^{\prime}$
+\end_inset
+上的撇，
+现在让我们研究下限制条件下的变分。
+
+\end_layout
+
+\begin_layout Standard
+从变分原理开始：
+
+\begin_inset Formula 
+\[
+\delta\frac{\langle\Phi|H|\Phi\rangle}{\langle\Phi|\Phi\rangle}=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们必须研究
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+邻域内的所有变化
+\begin_inset Formula $|\delta\Phi\rangle$
+\end_inset
+。
+由于我们只考虑HFB型的波函数，
+我么可以利用Thouless的定理（附录E）并把函数
+\begin_inset Formula $|\Phi^{\prime}\rangle=|\Phi\rangle+|\delta\Phi\rangle$
+\end_inset
+表示成：
+
+\begin_inset Formula 
+\[
+|\Phi^{\prime}\rangle=\exp\left(\sum_{k<k^{\prime}}Z_{kk^{\prime}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}\right)|\Phi\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+系数
+\begin_inset Formula $U_{lk}$
+\end_inset
+和
+\begin_inset Formula $V_{lk}$
+\end_inset
+满足
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:orthogonality of UV"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+中的关系，
+并不是独立的，
+但
+\begin_inset Formula $Z_{kk^{\prime}}(k<k^{\prime})$
+\end_inset
+是独立的。
+真实的解对应
+\begin_inset Formula $Z_{kk^{\prime}}=0$
+\end_inset
+。
+对无穷小变分，
+我们可以展开到二阶。
+利用 Hamilton 量的准粒子表示：
+
+\begin_inset Formula 
+\[
+H=H^{0}+\sum_{k_{1}k_{2}}H_{k_{1}k_{2}}^{11}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}+\sum_{k_{1}<k_{2}}(H_{k_{1}k_{2}}^{20}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}+\text{h.c.})+H_{\text{int}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们得到：
+
+\begin_inset Formula 
+\begin{equation}
+\frac{\langle\Phi^{\prime}|H|\Phi^{\prime}\rangle}{\langle\Phi^{\prime}|\Phi^{\prime}\rangle}=H^{0}+\begin{bmatrix}H^{20*} & H^{20}\end{bmatrix}\begin{bmatrix}Z\\
+Z^{*}
+\end{bmatrix}+\frac{1}{2}\begin{bmatrix}Z^{*} & Z\end{bmatrix}\begin{bmatrix}A & B\\
+B^{*} & A^{*}
+\end{bmatrix}\begin{bmatrix}Z\\
+Z^{*}
+\end{bmatrix}\label{eq:HFB hamiltion expectation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里矢量和矩阵的指标取遍所有的对
+\begin_inset Formula $k<k^{\prime}$
+\end_inset
+并且：
+
+\begin_inset Formula 
+\begin{align*}
+H^{0} & =\langle\Phi|H|\Phi\rangle\\
+H_{kk^{\prime}}^{20} & =\langle\Phi|[\beta_{k^{\prime}}\beta_{k},H]|\Phi\rangle\\
+A_{kk^{\prime}ll^{\prime}} & =\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[H,\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}]]|\Phi\rangle\\
+B_{kk^{\prime}ll^{\prime}} & =-\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[H,\beta_{l^{\prime}}\beta_{l}]]|\Phi\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+首先验证或者计算上面的四个等式，
+第一个非常简单，
+直接验证第二个：
+
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|[\beta_{k^{\prime}}\beta_{k},H]|\Phi\rangle & =\sum_{k_{1}<k_{2}}H_{k_{1}k_{2}}^{20}\langle\Phi|[\beta_{k^{\prime}}\beta_{k},\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}]|\Phi\rangle\\
+ & =\sum_{k_{1}<k_{2}}H_{k_{1}k_{2}}^{20}\langle\Phi|\beta_{k^{\prime}}\beta_{k}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}|\Phi\rangle\\
+ & =H_{kk^{\prime}}^{20}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+计算第三个等式中
+\begin_inset Formula $A_{kk^{\prime}ll^{\prime}}$
+\end_inset
+的值：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[H,\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}]]|\Phi\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}H_{k_{1}k_{2}k_{3}k_{4}}^{22}\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{4}}\beta_{k_{3}},\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}]]|\Phi\rangle\\
+ & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}H_{k_{1}k_{2}k_{3}k_{4}}^{22}\langle\Phi|\beta_{k^{\prime}}\beta_{k}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{4}}\beta_{k_{3}}\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}|\Phi\rangle\\
+ & =H_{kk^{\prime}ll^{\prime}}^{22}=A_{kk^{\prime}ll^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+计算第四个等式中
+\begin_inset Formula $B_{kk^{\prime}ll^{\prime}}$
+\end_inset
+的值：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+-\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[H,\beta_{l^{\prime}}\beta_{l}]]|\Phi\rangle & =-\sum_{k_{1}k_{2}k_{3}k_{4}}H_{k_{1}k_{2}k_{3}k_{4}}^{40}\langle\Phi|[\beta_{k^{\prime}}\beta_{k},[\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger}\beta_{k_{4}}^{\dagger},\beta_{l^{\prime}}\beta_{l}]]|\Phi\rangle\\
+ & =\sum_{k_{1}k_{2}k_{3}k_{4}}H_{k_{1}k_{2}k_{3}k_{4}}^{40}\langle\Phi|\beta_{k^{\prime}}\beta_{k}\beta_{l^{\prime}}\beta_{l}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger}\beta_{k_{4}}^{\dagger}|\Phi\rangle\\
+ & =24H_{kk^{\prime}ll^{\prime}}^{40}=B_{kk^{\prime}ll^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+现在计算分子：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi^{\prime}|H|\Phi^{\prime}\rangle & =\langle\Phi|\mathrm{e}^{\hat{Z}^{\dagger}}H\mathrm{e}^{\hat{Z}}|\Phi\rangle\\
+ & =\langle\Phi|(1+\hat{Z}^{\dagger}+\frac{1}{2}\hat{Z}^{\dagger2})H(1+\hat{Z}+\frac{1}{2}\hat{Z}^{2})|\Phi\rangle\\
+ & =\langle\Phi|H+\hat{Z}^{\dagger}H+H\hat{Z}+\hat{Z}^{\dagger}H\hat{Z}+\frac{1}{2}\hat{Z}^{\dagger2}H+\frac{1}{2}H\hat{Z}^{2}|\Phi\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+线性项为：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|\hat{Z}^{\dagger}H|\Phi\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}}\sum_{kk^{\prime}}H_{k_{1}k_{2}}^{20}Z_{kk^{\prime}}^{*}\langle\Phi|\beta_{k}\beta_{k^{\prime}}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}|\Phi\rangle\\
+ & =\sum_{k<k^{\prime}}H_{k^{\prime}k}^{20}Z_{kk^{\prime}}^{*}\\
+\langle\Phi|H\hat{Z}|\Phi\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}}\sum_{kk^{\prime}}H_{k_{1}k_{2}}^{20}Z_{kk^{\prime}}\langle\Phi|\beta_{k_{1}}\beta_{k_{2}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}|\Phi\rangle\\
+ & =\sum_{k<k^{\prime}}H_{k^{\prime}k}^{20*}Z_{kk^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+二次项为：
+
+\end_layout
+
+\begin_layout Booknote*
+\begin_inset Formula 
+\begin{align*}
+\langle\Phi|H\hat{Z}^{2}|\Phi\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\sum_{kk^{\prime}}\sum_{ll^{\prime}}H_{k_{1}k_{2}k_{3}k_{4}}^{40*}Z_{kk^{\prime}}Z_{ll^{\prime}}\langle\Phi|\beta_{k_{1}}\beta_{k_{2}}\beta_{k_{3}}\beta_{k_{4}}\beta_{k}^{\dagger}\beta_{k^{\prime}}^{\dagger}\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}|\Phi\rangle\\
+ & =6\sum_{kk^{\prime}ll^{\prime}}H_{kk^{\prime}ll^{\prime}}^{40*}Z_{kk^{\prime}}Z_{ll^{\prime}}=\sum_{k<k^{\prime}}\sum_{l<l^{\prime}}B_{kk^{\prime}ll^{\prime}}^{*}Z_{kk^{\prime}}Z_{ll^{\prime}}\\
+\langle\Phi|\hat{Z}^{\dagger2}H|\Phi\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\sum_{kk^{\prime}}\sum_{ll^{\prime}}H_{k_{1}k_{2}k_{3}k_{4}}^{40}Z_{k^{\prime}k}^{*}Z_{l^{\prime}l}^{*}\langle\Phi|\beta_{k}\beta_{k^{\prime}}\beta_{l}\beta_{l^{\prime}}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{3}}^{\dagger}\beta_{k_{4}}^{\dagger}|\Phi\rangle\\
+ & =6\sum_{kk^{\prime}ll^{\prime}}H_{kk^{\prime}ll^{\prime}}^{40}Z_{kk^{\prime}}^{*}Z_{ll^{\prime}}^{*}=\sum_{k<k^{\prime}}\sum_{l<l^{\prime}}B_{kk^{\prime}ll^{\prime}}Z_{kk^{\prime}}^{*}Z_{ll^{\prime}}^{*}\\
+\langle\Phi|\hat{Z}^{\dagger}H\hat{Z}|\Phi\rangle & =\frac{1}{16}\sum_{k_{1}k_{2}k_{3}k_{4}}\sum_{kk^{\prime}}\sum_{ll^{\prime}}H_{k_{1}k_{2}k_{3}k_{4}}^{22}Z_{k^{\prime}k}^{*}Z_{ll^{\prime}}\langle\Phi|\beta_{k^{\prime}}\beta_{k}\beta_{k_{1}}^{\dagger}\beta_{k_{2}}^{\dagger}\beta_{k_{4}}\beta_{k_{3}}\beta_{l}^{\dagger}\beta_{l^{\prime}}^{\dagger}|\Phi\rangle\\
+ & =\frac{1}{4}\sum_{kk^{\prime}ll^{\prime}}H_{kk^{\prime}ll^{\prime}}^{22}Z_{k^{\prime}k}^{*}Z_{ll^{\prime}}=\sum_{k<k^{\prime}}\sum_{l<l^{\prime}}A_{kk^{\prime}ll^{\prime}}Z_{k^{\prime}k}^{*}Z_{ll^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+用
+\begin_inset Formula $\sum_{k<k^{\prime}}$
+\end_inset
+代替通常的指标求和中的
+\begin_inset Formula $\sum_{i}$
+\end_inset
+，
+即可写成
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+并没有分母的事儿。
+
+\end_layout
+
+\end_inset
+：
+
+\begin_inset Formula 
+\[
+\frac{\langle\Phi^{\prime}|H|\Phi^{\prime}\rangle}{\langle\Phi^{\prime}|\Phi^{\prime}\rangle}=H^{0}+\begin{bmatrix}H^{20*} & H^{20}\end{bmatrix}\begin{bmatrix}Z\\
+Z^{*}
+\end{bmatrix}+\frac{1}{2}\begin{bmatrix}Z^{*} & Z\end{bmatrix}\begin{bmatrix}A & B\\
+B^{*} & A^{*}
+\end{bmatrix}\begin{bmatrix}Z\\
+Z^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HFB hamiltion expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+给出了
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+邻域内的多维能量曲面的二次近似。
+相对于
+\begin_inset Formula $Z_{kk^{\prime}}^{*}$
+\end_inset
+的变分给出
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Be59"
+literal "true"
+
+\end_inset
+：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial}{\partial Z_{kk^{\prime}}^{*}}\left.\frac{\langle\Phi^{\prime}|H|\Phi^{\prime}\rangle}{\langle\Phi^{\prime}|\Phi^{\prime}\rangle}\right|_{Z=0}=H_{kk^{\prime}}^{20}=0\label{eq:HFB variation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这意味着在稳定点附近线性项为零。
+为了验证这是极小值点还是鞍点，
+我们必须检查二次项。
+矩阵：
+
+\begin_inset Formula 
+\[
+\mathscr{S}=\begin{bmatrix}A & B\\
+B^{*} & A^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+被称为稳定性矩阵（或曲率张量）。
+如果是极小值点，
+这个矩阵必须是正定的。
+
+\end_layout
+
+\begin_layout Standard
+一个准粒子内部的
+\begin_inset Formula $C$
+\end_inset
+-变换并不影响变分方程。
+因此
+\begin_inset Formula $H^{20}$
+\end_inset
+只是确定了Bloch-Messiah的前两个变换。
+第三个变换可以用来对角化
+\begin_inset Formula $H^{11}$
+\end_inset
+。
+于是和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HFB variation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+一起，
+相当于对角化如下的矩阵：
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}H^{11} & H^{20}\\
+-H^{20*} & -H^{11*}
+\end{bmatrix}=\begin{bmatrix}\langle\Phi|\{[\beta_{k},H],\beta_{k^{\prime}}^{\dagger}\}|\Phi\rangle & \langle\Phi|\{[\beta_{k},H],\beta_{k^{\prime}}\}|\Phi\rangle\\
+\langle\Phi|\{\beta_{k}^{\dagger},H\},\beta_{k^{\prime}}^{\dagger}|\Phi\rangle & \langle\Phi|\{[\beta_{k}^{\dagger},H],\beta_{k^{\prime}}\}|\Phi\rangle
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在
+\begin_inset Formula $c_{l}$
+\end_inset
+和
+\begin_inset Formula $c_{l}^{\dagger}$
+\end_inset
+算符为基时，
+矩阵有如下形式：
+
+\begin_inset Formula 
+\[
+\mathcal{H}=\mathcal{W}\begin{bmatrix}H^{11} & H^{20}\\
+-H^{20*} & -H^{11*}
+\end{bmatrix}\mathcal{W}^{\dagger}=\begin{bmatrix}h & \Delta\\
+-\Delta^{*} & -h^{*}
+\end{bmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+
+\begin_inset Formula 
+\begin{align*}
+h_{ll^{\prime}} & =\langle\Phi|\{[c_{l},H],c_{l^{\prime}}^{\dagger}\}|\Phi\rangle\\
+\Delta_{ll^{\prime}} & =\langle\Phi|\{[c_{l},H],c_{l^{\prime}}\}|\Phi\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用Wick定理（附录C.4），
+我们可以得到
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+化学势
+\begin_inset Formula $\lambda$
+\end_inset
+由粒子数
+\begin_inset Formula $\mathop{\text{Tr}}\rho=N$
+\end_inset
+确定。
+
+\end_layout
+
+\end_inset
+：
+
+\begin_inset Formula 
+\begin{align}
+h & =\varepsilon+\Gamma-\lambda\nonumber \\
+\Gamma_{ll^{\prime}} & =\sum_{qq^{\prime}}\bar{v}_{lq^{\prime}l^{\prime}q}\rho_{qq^{\prime}}\label{eq:单粒子Hamilton量与对密度}\\
+\Delta_{ll^{\prime}} & =\frac{1}{2}\sum_{qq^{\prime}}\bar{v}_{ll^{\prime}qq^{\prime}}\kappa_{qq^{\prime}}\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们因此把问题转化成了矩阵
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+的对角化问题，
+也就是HFB方程：
+
+\begin_inset Formula 
+\begin{equation}
+\begin{bmatrix}h & \Delta\\
+-\Delta^{*} & -h^{*}
+\end{bmatrix}\begin{bmatrix}U_{k}\\
+V_{k}
+\end{bmatrix}=\begin{bmatrix}U_{k}\\
+V_{k}
+\end{bmatrix}\cdot E_{k}\label{eq:HFB equation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $U_{k}$
+\end_inset
+和
+\begin_inset Formula $V_{k}$
+\end_inset
+的列决定了准粒子算符
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+。
+在准粒子算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+相应的基下，
+
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+和
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+都是对角的。
+因此我们得到
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HFB variation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+的一个等价形式
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BS59"
+literal "true"
+
+\end_inset
+：
+
+\begin_inset Formula 
+\[
+[\mathcal{H},\mathcal{R}]=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这和HF方程的（5.36）形式是一致的。
+
+\end_layout
+
+\begin_layout Standard
+Hamilton 量现在具有形式：
+
+\begin_inset Formula 
+\[
+H=H^{0}+\sum_{k}E_{k}\beta_{k}^{\dagger}\beta_{k}+H_{\text{int}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $H_{\text{int}}$
+\end_inset
+包含了
+\begin_inset Formula $H^{40},H^{31},H^{22}$
+\end_inset
+项。
+它们在HFB方法中被扔掉了。
+这种情况下，
+
+\begin_inset Formula $H$
+\end_inset
+是对角的。
+它的本征态也是准粒子真空
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+，
+单准粒子态
+\begin_inset Formula $|\Phi_{k}\rangle=\beta_{k}^{\dagger}|\Phi\rangle$
+\end_inset
+具有能量
+\begin_inset Formula $E_{k}$
+\end_inset
+，
+二准粒子态及其它粒子态也类似。
+
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的激发态具有偶数准粒子数。
+有奇数准粒子的态描述了相邻的核（
+\begin_inset Formula $A\pm1$
+\end_inset
+）。
+
+\end_layout
+
+\begin_layout Standard
+然而这些关于激发态的考虑仅仅是初步的。
+事实上，
+单准粒子态并不能自洽的确定，
+我们在下一节会研究如何改进这一点。
+
+\end_layout
+
+\begin_layout Standard
+在我们讨论HFB的性质之前，
+让我们给出另一种更简单一些的推导，
+它反映了这个理论一些有趣的地方。
+
+\end_layout
+
+\begin_layout Standard
+利用Wick定理（附录C.4），
+我们把 Hamilton 量根据基态
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的正规序展开。
+然后可以得到单粒子算符：
+
+\begin_inset Formula 
+\begin{align*}
+c_{l}^{\dagger}c_{l^{\prime}} & =\langle\Phi|c_{l}^{\dagger}c_{l^{\prime}}|\Phi\rangle+:\mathrel{c_{l}^{\dagger}c_{l^{\prime}}}:\\
+ & =\rho_{l^{\prime}l}+:\mathrel{c_{l}^{\dagger}c_{l^{\prime}}}:
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+两体算符
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+原书这里有一点指标错误。
+
+\end_layout
+
+\end_inset
+：
+
+\begin_inset Formula 
+\begin{align*}
+c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}c_{l_{4}}c_{l_{3}} & =\rho_{l_{3}l_{1}}\rho_{l_{4}l_{2}}-\rho_{l_{3}l_{2}}\rho_{l_{4}l_{1}}+\kappa_{l_{1}l_{2}}^{*}\kappa_{l_{3}l_{4}}\\
+ & +\rho_{l_{3}l_{1}}:\mathrel{c_{l_{2}}^{\dagger}c_{l_{4}}}:+\rho_{l_{4}l_{2}}:\mathrel{c_{l_{1}}^{\dagger}c_{l_{3}}}:-(l_{3}\leftrightarrow l_{4})\\
+ & +\kappa_{l_{1}l_{2}}^{*}:\mathrel{c_{l_{4}}c_{l_{3}}}:+\kappa_{l_{3}l_{4}}:\mathrel{c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}}:\\
+ & +:\mathrel{c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}c_{l_{4}}c_{l_{3}}}:
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用
+\begin_inset Formula $\Gamma$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+的定义，
+我们立刻得到：
+
+\begin_inset Formula 
+\[
+H=H^{0}+\frac{1}{2}:\mathrel{\begin{bmatrix}c^{\dagger} & c\end{bmatrix}\begin{bmatrix}h & \Delta\\
+-\Delta^{*} & -h^{*}
+\end{bmatrix}\begin{bmatrix}c\\
+c^{\dagger}
+\end{bmatrix}}:+\frac{1}{4}\sum_{l_{1}l_{2}l_{3}l_{4}}\bar{v}_{l_{1}l_{2}l_{3}l_{4}}:\mathrel{c_{l_{1}}^{\dagger}c_{l_{2}}^{\dagger}c_{l_{4}}c_{l_{3}}}:
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+最后一项仅仅包含四准粒子算符的积。
+它和
+\begin_inset Formula $H^{40},H^{31}$
+\end_inset
+和
+\begin_inset Formula $H^{22}$
+\end_inset
+有关。
+在推广的单粒子模型里，
+准粒子之间的相互作用被忽略了。
+剩余的
+\begin_inset Formula $c$
+\end_inset
+和
+\begin_inset Formula $c^{\dagger}$
+\end_inset
+的二次项可以用广义Bogoliubov变换严格对角化。
+ 于是我们又一次得到了HFB方程。
+ 
+\end_layout
+
+\begin_layout Subsection
+HFB方程的性质
+\end_layout
+
+\begin_layout Standard
+HFB方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HFB equation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+是一组2M维的非线性方程。
+它们几乎和HF方程有一样的性质，
+所以第五章中涉及的许多点因此对HFB方程来说仍然是正确的。
+特别的，
+我们也能利用对
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+的变分得到密度依赖核力的HFB方程（7.5节）。
+
+\end_layout
+
+\begin_layout Standard
+然而，
+也有一些地方是和HF理论不一样的，
+我们接下来将会讨论。
+
+\end_layout
+
+\begin_layout Standard
+这些方程中含有一个化学势
+\begin_inset Formula $\lambda$
+\end_inset
+，
+必须通过粒子数守恒的条件来确定。
+因此，
+我们必须限制HFB方程，
+这么做的方法参照第（7.3.3）和（7.6）节。
+
+\end_layout
+
+\begin_layout Standard
+另外，
+HFB方程中含有两个势
+\begin_inset Formula $\Gamma$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+。
+
+\begin_inset Formula $\Gamma$
+\end_inset
+和HF势相关，
+描述了核的形状（球形或者形变），
+而
+\begin_inset Formula $\Delta$
+\end_inset
+决定了对关联。
+和BCS理论不同的是，
+
+\begin_inset Formula $\Delta$
+\end_inset
+不再是由一个数
+\begin_inset Formula $\Delta_{k}$
+\end_inset
+给出，
+而是一个混合了不同能级的矩阵。
+由于我们已经看到HFB波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+在正则基下有BCS波函数的形式，
+研究这组基下的HFB方程也是有趣的。
+因此我们用矩阵
+\begin_inset Formula $\bar{U}$
+\end_inset
+和
+\begin_inset Formula $\bar{V}$
+\end_inset
+来得到有对关联的情况的正则基下
+\begin_inset Formula $H_{k\bar{k}}^{20}$
+\end_inset
+的对角矩阵元（对实矩阵元
+\begin_inset Formula $\Delta_{k\bar{k}}$
+\end_inset
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta_{k\bar{k}}=\frac{1}{2}\sum_{pq}\bar{v}_{lmpq}\kappa_{pq}$
+\end_inset
+，
+在正则基下
+\begin_inset Formula $\kappa$
+\end_inset
+是实的，
+
+\begin_inset Formula $\bar{v}$
+\end_inset
+一般也是实的（没有自旋轨道耦合项即是实的）。
+
+\end_layout
+
+\end_inset
+）：
+在正则基下
+\begin_inset Formula $\kappa$
+\end_inset
+是实的，
+
+\begin_inset Formula $\bar{v}$
+\end_inset
+一般也是实的（没有自旋轨道耦合项即是实的））：
+
+\begin_inset Formula 
+\[
+u_{k}v_{k}(h_{kk}+h_{\bar{k}\bar{k}})+\Delta_{k\bar{k}}(u_{k}^{2}-v_{k}^{2})=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+它有一个和（6.52）类似的解：
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}u_{k}^{2}\\
+v_{k}^{2}
+\end{bmatrix}=\frac{1}{2}\left(1\pm\frac{\frac{1}{2}(h_{kk}+h_{\bar{k}\bar{k}})}{\sqrt{\frac{1}{4}(h_{kk}+h_{\bar{k}\bar{k}})^{2}+\Delta_{k\bar{k}}^{2}}}\right)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们可以看出，
+决定了占据数的量是正则基下的矩阵对角元
+\begin_inset Formula $h_{kk}$
+\end_inset
+，
+
+\begin_inset Formula $h_{\bar{k}\bar{k}}$
+\end_inset
+和
+\begin_inset Formula $\Delta_{k\bar{k}}$
+\end_inset
+。
+然而这并不意味着其它矩阵元都为零，
+并且我们还需要一个非平凡的
+\begin_inset Formula $C$
+\end_inset
+-变换来对角化
+\begin_inset Formula $H^{11}$
+\end_inset
+。
+
+\end_layout
+
+\begin_layout Standard
+存在一种特殊情况，此时
+\begin_inset Formula $H^{11}$
+\end_inset
+在正则基下直接就是对角的。
+正如我们从关于
+\begin_inset Formula $H^{20}$
+\end_inset
+的式 (E.22) 中所看到的，
+这发生在时间反演对称的情况下，
+只要在正则基下
+\begin_inset Formula $\Delta$
+\end_inset
+唯一的非零矩阵元是
+\begin_inset Formula $\Delta_{k\bar{k}}$
+\end_inset
+。
+在这些情况下，
+在正则基下
+\begin_inset Formula $h$
+\end_inset
+的非对角矩阵元也为零，
+从而对于准粒子能量我们得到：
+
+\begin_inset Formula 
+\begin{equation}
+E_{k}=\sqrt{h_{kk}^{2}+\Delta_{k\bar{k}}^{2}}.\label{eq:准粒子能量_对角}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+例如，
+这发生在所有具有时间反演不变性且采用单极对力来计算配对场
+\begin_inset Formula $\Delta$
+\end_inset
+的情形中（参见第 7.4 节）。
+在这些情况下，
+全部的 HFB 方程 (7.42) 可以通过求解 HF 方程 (5.39) 来解决，
+其中包括适当的占据因子
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+，
+而这些占据因子本身在迭代的每一步中都由 BCS 方程确定。
+然而在一般情况下并非如此：
+Bloch-Messiah 定理（第 7.2.1 节）并不意味着 HFB 可以被耦合的 HF-BCS 方程所取代
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go79"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+我们要强调的是，
+在推导 HFB 方程时，
+我们仅仅利用了函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的一般乘积结构以及平稳性条件 (7.31)。
+解究竟对应于多维能量面中的绝对极小值（参见第 7.3.3 节），
+还是仅对应于局部极小值，
+抑或只是一个鞍点，
+取决于我们如何求解这些方程，
+特别是取决于迭代求解的初始条件。
+例如，
+如果我们在第 5.5 节的意义下使用自洽对称性，
+我们将永远无法得到破坏这种对称性的可能绝对极小值。
+在这种情况下，
+HFB 方程的解将是一个局部极小值或鞍点。
+\end_layout
+
+\begin_layout Standard
+这一事实经常被用来近似体系基态波函数以外的其它函数。
+如果存在对称性算符（例如角动量或
+\begin_inset Formula $K$
+\end_inset
+量子数），
+多体 Hamilton 量
+\begin_inset Formula $H$
+\end_inset
+可以在该对称性的各个本征空间中分别对角化，
+我们可以在每种情况下应用 HFB 近似。
+在这些情况下，
+在每个子空间中分别求解 HFB 方程为我们提供了具有相应对称性的最低本征态的近似。
+\end_layout
+
+\begin_layout Standard
+一个例子是粒子数宇称（参见第 7.2.2 节）。
+如果我们以使
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+在每一步都具有奇粒子数宇称的方式运行迭代，
+我们将得到奇质量核波函数的近似。
+这对应于奇质量核 HFB 方程的自洽解
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RBM70,RMB74"
+literal "true"
+
+\end_inset
+。
+它特别包含了阻塞效应（参见第 6.3.4 节）以及由于奇粒子引起的平均势的改变（极化效应）。
+在实际中如何实现此类计算将在本节稍后讨论。
+\end_layout
+
+\begin_layout Standard
+另一个例子是轴对称偶体系中的双准粒子态。
+如果这样一个态的
+\begin_inset Formula $K$
+\end_inset
+值不为零，
+它自动与
+\begin_inset Formula $K=0$
+\end_inset
+的基态正交。
+为了计算
+\begin_inset Formula $K=0$
+\end_inset
+的双准粒子态，
+我们必须认识到这些态对应于基态能量面上的不同驻点。
+它们可以通过在波函数与基态波函数正交的约束下进行变分来求得
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSR76,EMR80a"
+literal "true"
+
+\end_inset
+。
+只有当它们位于具有近似正交波函数且充分分离的谷底极小值处时，
+我们才可以忽略这一约束。
+\end_layout
+
+\begin_layout Standard
+我们看到，
+HFB 方程 (7.42) 原则上可以用于对
+\begin_inset Formula $H$
+\end_inset
+的所有波函数具有广义乘积结构的本征态进行自洽近似。
+\end_layout
+
+\begin_layout Standard
+在通过方程 (7.42) 的迭代对角化进行实际求解时，
+我们会遇到这样的问题：
+方程是
+\begin_inset Formula $2M$
+\end_inset
+维的，
+并且具有
+\begin_inset Formula $2M$
+\end_inset
+个本征值和本征矢量。
+为了构造一组准粒子算符
+\begin_inset Formula $\{\beta_{1}^{\dagger}\dots\beta_{M}^{\dagger}\}$
+\end_inset
+，
+以及为了在式 (7.23) 中计算
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+，
+我们必须从中选择
+\begin_inset Formula $M$
+\end_inset
+个。
+然而容易看出，
+对于具有本征值
+\begin_inset Formula $E_{k}$
+\end_inset
+的每个本征矢量
+\begin_inset Formula $(V_{k},U_{k})$
+\end_inset
+，
+都对应着一个具有本征值
+\begin_inset Formula $-E_{k}$
+\end_inset
+的本征矢量
+\begin_inset Formula $(V_{k}^{*},U_{k}^{*})$
+\end_inset
+。
+我们在第 7.2.2 节中看到，
+交换这两个本征矢量对应于将算符
+\begin_inset Formula $\beta_{k}^{\dagger}$
+\end_inset
+替换为
+\begin_inset Formula $\beta_{k}$
+\end_inset
+，
+反之亦然。
+禁止同时选取
+\begin_inset Formula $E_{k}$
+\end_inset
+和
+\begin_inset Formula $-E_{k}$
+\end_inset
+（否则不可能满足算符
+\begin_inset Formula $\beta,\beta^{\dagger}$
+\end_inset
+的 Fermi 对易关系）。
+因此，
+对于每个
+\begin_inset Formula $k$
+\end_inset
+（
+\begin_inset Formula $k=1\dots M$
+\end_inset
+），
+我们必须决定是选取具有本征矢量
+\begin_inset Formula $(U_{k},V_{k})$
+\end_inset
+的本征值
+\begin_inset Formula $E_{k}$
+\end_inset
+，
+还是选取具有本征矢量
+\begin_inset Formula $(V_{k}^{*},U_{k}^{*})$
+\end_inset
+的
+\begin_inset Formula $-E_{k}$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+在纯 HF 情况下，
+这种选择对应于在计算密度矩阵
+\begin_inset Formula $\rho$
+\end_inset
+时保持能级被占据或为空的自由度。
+当然，
+在这样的计算中，
+通常根据能级能量进行填充以获得最低总能量。
+这对应于体系所有激发能量均为正的情况。
+\end_layout
+
+\begin_layout Standard
+以同样的方式，
+在偶粒子数的 HFB 情况下，
+我们通常选择
+\begin_inset Formula $M$
+\end_inset
+个正本征值
+\begin_inset Formula $E_{k}$
+\end_inset
+。
+此时体系的激发态（其最低者为双准粒子态）具有正能量。
+通过这种选择，
+在迭代的每一步中，
+我们通常会找到一个完全配对的态，
+它对应于能量面中最深的极小值。
+\end_layout
+
+\begin_layout Standard
+如果我们想要求解奇核的 HFB 方程，
+我们可以从相邻偶体系的解和一个纯准粒子态开始作为迭代的输入。
+正如我们在第 7.2.2 节中已经看到的，
+通过将本征矢量之一
+\begin_inset Formula $(U_{k},V_{k})$
+\end_inset
+与
+\begin_inset Formula $(V_{k}^{*},U_{k}^{*})$
+\end_inset
+对调，
+这样一个态可以被解释为一组新准粒子算符
+\begin_inset Formula $\tilde{\beta}$
+\end_inset
+的“真空”[参见式 (7.20)]。
+因此，
+在奇体系 HFB 方程每次对角化后的求解中，
+我们必须选择负能量
+\begin_inset Formula $-E_{k}$
+\end_inset
+之一以及相应的本征矢量
+\begin_inset Formula $(V_{k}^{*},U_{k}^{*})$
+\end_inset
+以获得被阻塞的 HFB 函数。
+我们选取
+\begin_inset Formula $k$
+\end_inset
+的哪个值取决于我们想要描述的准粒子态。
+它们代表能量面中的不同局部极小值。
+通过这样的对换，
+我们因此从一个谷跳到了另一个谷。
+\end_layout
+
+\begin_layout Standard
+当这些谷不再良好分离时（例如偶核中的带交叉现象），
+可能会发生某个准粒子能量变得非常小甚至为负的情况（参见图 7.8d）。
+在这些情况下，
+我们甚至必须对偶体系采用负的准粒子能量。
+我们不被允许只选择正的能量，
+因为后者将对应于跳入具有奇粒子数宇称的不同谷中。
+因此，
+我们必须在迭代的每一步中考察体系的阻塞结构
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BMR73"
+literal "true"
+
+\end_inset
+。
+在下一小节中，
+我们将研究一种避免此类问题的方法。
+\end_layout
+
+\begin_layout Subsection
+梯度法
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:梯度法"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+HFB 方程 (7.42) 通常通过迭代对角化来求解。
+在上一小节中，
+我们讨论了这种方法中可能出现的问题。
+该过程通常相当耗时，
+并且收敛性并不总是有保证（参见例如第 5.4 节），
+而在存在一个或多个附加条件的情况下，
+它会变得特别复杂。
+\end_layout
+
+\begin_layout Standard
+下面我们将介绍求解 HF 或 HFB 方程的梯度法
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSR76,EMR80a"
+literal "true"
+
+\end_inset
+。
+它基于我们对多维能量面的局部极小值感兴趣这一事实
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+亦参见 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mc56,Mc60,BTR77"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+。
+从对应于该能量面上一点的任意初始波函数
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+出发，
+该方法寻找最速下降方向，
+并在迭代步中沿着该方向前进，
+直到达到极小值。
+\end_layout
+
+\begin_layout Standard
+因此，
+我们所需要的是能量面的合适且唯一的参数化，
+至少在点
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+的邻域内。
+我们使用 Thouless 定理（参见附录 E.3），
+该定理表明，
+与
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+不正交的每个 HFB 类型的波函数都可以表示为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|\Phi(Z)\rangle\propto\exp\left(\sum_{k<k'}Z_{kk'}\beta_{k}^{\dagger}\beta_{k'}^{\dagger}\right)|\Phi_{0}\rangle,\label{eq:thouless_representation_hfb}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中算符
+\begin_inset Formula $\beta_{k}$
+\end_inset
+湮灭
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+，
+并且在
+\begin_inset Formula $M(M-1)/2$
+\end_inset
+个参数
+\begin_inset Formula $Z_{kk'}$
+\end_inset
+（
+\begin_inset Formula $k<k'$
+\end_inset
+）与 HFB 函数
+\begin_inset Formula $|\Phi(Z)\rangle$
+\end_inset
+之间存在一一对应关系。
+正如附录 E.3 中所讨论的，
+与
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+正交的函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+在某种意义上具有矩阵
+\begin_inset Formula $Z$
+\end_inset
+发散的准粒子激发结构。
+因此，
+它们在能量面上距离
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+“非常遥远”，
+无法使用有限的
+\begin_inset Formula $Z$
+\end_inset
+达到。
+因此，
+在这种方法中，
+不可能一步跳跃到与
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+正交的态上，
+而在对角化方法中有时会发生这种情况。
+尽管如此，
+仍有可能在几个步骤中达到所有 HFB 波函数，
+因为在迭代的每一点都可以再次应用 Thouless 定理。
+这对应于在每一步中对能量面进行新的参数化。
+\end_layout
+
+\begin_layout Standard
+从
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+出发（例如由 HFB 系数
+\begin_inset Formula $U_{0},V_{0}$
+\end_inset
+给出），
+我们第一步走向对应于参数
+\begin_inset Formula $Z_{1}$
+\end_inset
+的函数
+\begin_inset Formula $|\Phi_{1}\rangle$
+\end_inset
+，
+该参数沿最速下降方向选取，
+即平行于能量的梯度[参见式 (7.36)]：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{1kk'}=-\eta\left.\frac{\partial}{\partial Z_{kk'}^{*}}E(Z)\right|_{Z=0}=-\eta H_{kk'}^{20}.\label{eq:gradient_step_z1}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+参数
+\begin_inset Formula $\eta$
+\end_inset
+决定了步长的大小。
+它在开始时有些任意，
+并在接下来的迭代中根据能量
+\begin_inset Formula $E(Z_{i})$
+\end_inset
+的实际值予以减小或增大。
+为了得到对应于函数
+\begin_inset Formula $|\Phi_{1}\rangle=|\Phi(Z_{1})\rangle$
+\end_inset
+的新系数
+\begin_inset Formula $U_{1},V_{1}$
+\end_inset
+，
+我们利用式 (E.30) 并计算：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+U_{1} & =U_{0}+V_{0}^{*}Z_{1}^{\dagger},\nonumber \\
+V_{1} & =V_{0}+U_{0}^{*}Z_{1}^{\dagger}.\label{eq:u1_v1_thouless}
+\end{align}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $Z_{1kk'}$
+\end_inset
+的一般值，
+系数
+\begin_inset Formula $U_{1}$
+\end_inset
+和
+\begin_inset Formula $V_{1}$
+\end_inset
+对应于湮灭
+\begin_inset Formula $|\Phi(Z_{1})\rangle$
+\end_inset
+但不满足 Fermi 对易关系的准粒子算符
+\begin_inset Formula $\gamma_{k}$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\{\gamma_{k},\gamma_{k'}\}=0;\qquad\{\gamma_{k},\gamma_{k'}^{\dagger}\}=\delta_{kk'}-(Z_{1}Z_{1}^{\dagger})_{kk'}.\label{eq:gamma_anticommutation}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此，
+我们必须在迭代的每一步中通过
+\begin_inset Formula $C$
+\end_inset
+-变换 (7.14) 对矢量
+\begin_inset Formula $\begin{pmatrix}U_{1}\\
+V_{1}
+\end{pmatrix}$
+\end_inset
+进行正交归一化。
+\end_layout
+
+\begin_layout Standard
+这一过程持续进行，
+直到实现收敛，
+即直到梯度
+\begin_inset Formula $H^{20}$
+\end_inset
+恒等于零，
+这对应于条件 (7.36)。
+\end_layout
+
+\begin_layout Standard
+在必须满足附加条件（例如粒子数条件
+\begin_inset Formula $\langle\hat{N}\rangle=N$
+\end_inset
+）的情况下，
+该方法极其有用。
+从具有任意粒子数
+\begin_inset Formula $N_{0}$
+\end_inset
+的
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+出发，
+我们不单独沿着梯度
+\begin_inset Formula $H^{20}$
+\end_inset
+的方向前进，
+而是掺入粒子数梯度的贡献
+\begin_inset Formula $N^{20}$
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{1}=-\eta(H^{20}-\lambda N^{20}).\label{eq:gradient_with_particle_constraint}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+参数
+\begin_inset Formula $\lambda$
+\end_inset
+的确定方式应使
+\begin_inset Formula $\Phi(Z_{1})$
+\end_inset
+在
+\begin_inset Formula $Z_{1}$
+\end_inset
+的线性阶内具有正确的粒子数
+\begin_inset Formula $N$
+\end_inset
+。
+这给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N-N_{0}=\sum_{k<k'}Z_{1kk'}^{*}N_{kk'}^{20}+\text{c.c.}=Z_{1}\cdot N^{20}=-\eta(H^{20}\cdot N^{20}-\lambda N^{20}\cdot N^{20})\label{eq:particle_number_linear_order}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+或
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lambda=\frac{H^{20}\cdot N^{20}}{N^{20}\cdot N^{20}}+\frac{N-N_{0}}{\eta\cdot N^{20}\cdot N^{20}},\label{eq:lambda_determination}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\begin_inset Formula $Z\cdot N$
+\end_inset
+表示矢量
+\begin_inset Formula $(Z,Z^{*})$
+\end_inset
+与
+\begin_inset Formula $(N,N^{*})$
+\end_inset
+的标量积。
+在
+\begin_inset Formula $|\Phi_{0}\rangle$
+\end_inset
+已经具有正确粒子数
+\begin_inset Formula $N$
+\end_inset
+的情况下，
+我们得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{1}=-\eta\left(H^{20}-\frac{H^{20}\cdot N^{20}}{N^{20}\cdot N^{20}}N^{20}\right),\label{eq:projected_gradient}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+也就是说，
+我们选取投影到与
+\begin_inset Formula $N$
+\end_inset
+的梯度正交的超曲面上的梯度方向，
+这意味着它具有恒定的粒子数。
+如果实现收敛，
+我们像在带有 Lagrange 参数
+\begin_inset Formula $\lambda$
+\end_inset
+的变分中一样发现：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(H-\lambda N)^{20}=0.\label{eq:h_lambda_n_20_zero}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+将该方法推广到多个附加条件是很容易的。
+\end_layout
+
+\begin_layout Standard
+在梯度法中在能量面上选取的路径可能与对角化方法的路径大不相同。
+图 5.3 给出了一个例子。
+\end_layout
+
+\begin_layout Section
+对-四极模型
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:配对加四极模型"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在推导 HFB 方程 (7.42) 时，
+我们从 Hamilton 量 (7.30) 出发，
+得到了两个势
+\begin_inset Formula $\Gamma$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+[式 (7.41)]。
+这两个势都是从同一个核相互作用
+\begin_inset Formula $v(1,2)$
+\end_inset
+计算出来的。
+我们在第 5 章中看到，
+裸核子-核子力不能用于计算 HF 势
+\begin_inset Formula $\Gamma$
+\end_inset
+。
+Brueckner 形式理论（第 4 章）表明，
+我们必须应用有效相互作用，
+即对部分高阶过程进行求和的
+\begin_inset Formula $G$
+\end_inset
+-矩阵。
+显然，
+类似的论证对配对场也成立。
+Green 函数技术（参见附录 F）同样允许推导 HFB 方程
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go58,AGD63,Mi67"
+literal "true"
+
+\end_inset
+，
+由此我们看到用于计算自洽场
+\begin_inset Formula $\Gamma$
+\end_inset
+和配对场
+\begin_inset Formula $\Delta$
+\end_inset
+的有效相互作用可能不同。
+因此，
+在唯象模型中对这两个势采用不同的有效力似乎是有意义的。
+\end_layout
+
+\begin_layout Standard
+对-四极模型（pairing-plus-quadrupole model）最初由 Bohr 和 Mottelson 提出，
+后来被 Kisslinger 和 Sorensen 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KS60"
+literal "true"
+
+\end_inset
+、Baranger 和 Kumar 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BK65,BK68"
+literal "true"
+
+\end_inset
+ 以及许多其他作者广泛使用（综述参见 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BS69"
+literal "true"
+
+\end_inset
+）。
+它在核多体体系的任何平均场理论中区分了三种重要效应：
+\end_layout
+
+\begin_layout Standard
+(i) 粒子之间的相互作用作为第一步近似可以通过在空间中定域并破缺平移不变性的平均球形单粒子势来求和。
+\end_layout
+
+\begin_layout Standard
+(ii) 在开壳核中，
+存在两类额外的关联：
+长程
+\begin_inset Formula $ph$
+\end_inset
+-关联可以通过平均场的形变来考虑。
+在此时转动对称性丧失。
+\end_layout
+
+\begin_layout Standard
+(iii) 短程
+\begin_inset Formula $pp$
+\end_inset
+-关联通过破坏粒子数对称性的自洽对势
+\begin_inset Formula $\Delta$
+\end_inset
+来处理。
+\end_layout
+
+\begin_layout Standard
+这三种效应在对-四极模型中以最简单的方式包含在内。
+平均球形势由带有
+\begin_inset Formula $\boldsymbol{l}\cdot\boldsymbol{s}$
+\end_inset
+和
+\begin_inset Formula $\boldsymbol{l}^{2}$
+\end_inset
+项的球形谐振子势来近似，
+即在零形变下的 Nilsson 势（第 2 章），
+并具有相应的单粒子能量
+\begin_inset Formula $\epsilon_{k}$
+\end_inset
+。
+只有每个宇称的主壳层内的核子感受到剩余相互作用。
+剩余相互作用有两个部分，
+一部分对
+\begin_inset Formula $\Gamma$
+\end_inset
+有贡献（在此仅仅是超出已包含在单粒子能量
+\begin_inset Formula $\epsilon_{k}$
+\end_inset
+中的球形部分的场），
+第二部分对
+\begin_inset Formula $\Delta$
+\end_inset
+有贡献。
+\end_layout
+
+\begin_layout Standard
+相互作用的两部分都被选为在相应指标上可分离的形式。
+由于最重要的形变是四极性质的，
+并且最重要的对关联是
+\begin_inset Formula $I=0$
+\end_inset
+对的关联，
+此类最简单的 Hamilton 量具有如下形式（亦参见第 4.4.7 节）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H=\sum_{k}\epsilon_{k}c_{k}^{\dagger}c_{k}-\frac{1}{2}\chi\sum_{\mu=-2}^{2}:Q_{\mu}^{\dagger}Q_{\mu}:-GP^{\dagger}P,\label{eq:hamiltonian_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中四极算符为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{\mu}=\sum_{kk'}\langle k|r^{2}Y_{2\mu}|k'\rangle c_{k}^{\dagger}c_{k'},\label{eq:quadrupole_operator_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Cooper 对的产生算符为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P^{\dagger}=\sum_{k>0}c_{k}^{\dagger}c_{\bar{k}}^{\dagger}.\label{eq:cooper_pair_creation_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\bar{k}$
+\end_inset
+是
+\begin_inset Formula $k$
+\end_inset
+的时间反演态。
+采用了 BCS 相位[参见式 (4.138)]。
+力常数
+\begin_inset Formula $\chi$
+\end_inset
+和
+\begin_inset Formula $G$
+\end_inset
+的实际数值取决于所考虑的组态空间（参见例如 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BK68"
+literal "true"
+
+\end_inset
+），
+并由实验数据拟合调节。
+\end_layout
+
+\begin_layout Standard
+在下文中，
+我们（根据模型的定义）忽略
+\begin_inset Formula $Q^{\dagger}\cdot Q$
+\end_inset
+的单粒子部分、对力对势
+\begin_inset Formula $\Gamma$
+\end_inset
+的贡献，
+以及
+\begin_inset Formula $QQ$
+\end_inset
+-力对势
+\begin_inset Formula $\Delta$
+\end_inset
+和
+\begin_inset Formula $\Gamma$
+\end_inset
+中 Fock 项的贡献。
+后几项通常相当小。
+从式 (7.41) 和 (7.48)，
+我们随后获得具有如下形式的 HFB 单粒子 Hamilton 量：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_{\text{HFB}}=\sum_{k}\epsilon_{k}c_{k}^{\dagger}c_{k}-\frac{1}{2}\sum_{\mu=-2}^{2}q_{\mu}(Q_{\mu}^{\dagger}+Q_{\mu})-p_{0}(P^{\dagger}+P),\label{eq:hfb_hamiltonian_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+q_{\mu}=\chi\langle\Phi|Q_{\mu}|\Phi\rangle\qquad\text{以及}\qquad p_{0}=G\langle\Phi|P|\Phi\rangle,\label{eq:q_mu_p0_def}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里我们假定了参数
+\begin_inset Formula $q_{\mu}$
+\end_inset
+和
+\begin_inset Formula $p_{0}$
+\end_inset
+是实的。
+HFB Hamilton 量算符是一个破坏粒子数和转动对称性的单粒子算符。
+在固定的“形变”参数
+\begin_inset Formula $q_{\mu}$
+\end_inset
+和
+\begin_inset Formula $p_{0}$
+\end_inset
+下，
+它类似于 Nilsson Hamilton 量。
+然而在式 (7.65) 中，
+\begin_inset Formula $q_{\mu}$
+\end_inset
+和
+\begin_inset Formula $p_{0}$
+\end_inset
+依赖于解
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+，
+即依赖于
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+。
+它们必须通过迭代来确定，
+或者在可分离力的情况下等价地——通过对能量
+\begin_inset Formula $E(q_{\mu},p_{0})$
+\end_inset
+关于这些参数求极小值来确定。
+\end_layout
+
+\begin_layout Standard
+选取密度分布的主轴作为我们坐标系的主轴（这意味着
+\begin_inset Formula $q_{1}=q_{-1}=0$
+\end_inset
+且
+\begin_inset Formula $q_{2}=q_{-2}$
+\end_inset
+），
+并在关于绕
+\begin_inset Formula $x$
+\end_inset
+轴转动
+\begin_inset Formula $180^{\circ}$
+\end_inset
+对称化的基中工作（
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RBM70,Go74"
+literal "true"
+
+\end_inset
+；亦参见式 (1.57)），
+是十分便利的：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|k\rangle=\frac{1}{\sqrt{2}}(|nljm\rangle-\mathrm{i}\mathrm{e}^{\mathrm{i}\pi j_{x}}|nljm\rangle);\qquad|\bar{k}\rangle=T|k\rangle.\label{eq:symmetrized_basis_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+假设
+\begin_inset Formula $R_{x}=\mathrm{e}^{\mathrm{i}\pi J_{x}}$
+\end_inset
+为第 5.5 节意义下的自洽对称性，
+并按
+\begin_inset Formula $(k_{1},k_{2},\dots,\bar{k}_{1},\bar{k}_{2},\dots)$
+\end_inset
+的顺序排列能级，
+我们一般发现密度
+\begin_inset Formula $\rho$
+\end_inset
+、
+\begin_inset Formula $\kappa$
+\end_inset
+以及势
+\begin_inset Formula $\Gamma$
+\end_inset
+、
+\begin_inset Formula $\Delta$
+\end_inset
+具有如下形式：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho=\begin{pmatrix}\rho_{1} & 0\\
+0 & \rho_{2}
+\end{pmatrix},\quad\kappa=\begin{pmatrix}0 & \kappa_{2}\\
+\kappa_{1} & 0
+\end{pmatrix},\quad\Gamma=\begin{pmatrix}\Gamma_{1} & 0\\
+0 & \Gamma_{2}
+\end{pmatrix},\quad\Delta=\begin{pmatrix}0 & \Delta_{2}\\
+\Delta_{1} & 0
+\end{pmatrix},\label{eq:block_form_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\begin_inset Formula $\rho_{i}^{\dagger}=\rho_{i}$
+\end_inset
+，
+\begin_inset Formula $\Gamma_{i}^{\dagger}=\Gamma_{i}$
+\end_inset
+；
+\begin_inset Formula $\kappa_{2}=-\kappa_{1}^{\mathrm{T}}$
+\end_inset
+，
+以及
+\begin_inset Formula $\Delta_{2}=-\Delta_{1}^{\mathrm{T}}$
+\end_inset
+。
+\begin_inset Formula $\rho$
+\end_inset
+的对角化给出 Bloch-Messiah 定理 (7.7) 的第一个变换：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D=\begin{pmatrix}D_{1} & 0\\
+0 & D_{2}
+\end{pmatrix}.\label{eq:d_first_bm_transformation}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Hamilton 量 (7.61) 具有时间反演不变性，
+这蕴含：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\rho_{2} & =\rho_{1}^{*}; & \kappa_{1}^{\dagger} & =\kappa_{1}; & \Gamma_{2} & =\Gamma_{1}^{*};\nonumber \\
+D_{2} & =D_{1}^{*}; & \Delta_{1}^{\dagger} & =\Delta_{1}.\label{eq:time_reversal_relations_ppq}
+\end{align}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+对于纯配对力，
+由于
+\begin_inset Formula $\Delta_{1}=p_{0}\cdot1$
+\end_inset
+是单位矩阵的倍数，
+我们在正则基下发现
+\begin_inset Formula $\Delta\to D^{\dagger}\Delta D^{*}$
+\end_inset
+或
+\begin_inset Formula $\Delta_{1}\to D_{2}^{\mathrm{T}}\Delta_{1}D_{1}^{*}=p_{0}\cdot1$
+\end_inset
+，
+也就是说，
+\begin_inset Formula $\Delta$
+\end_inset
+在第一个 Bloch-Messiah 变换下是不变的。
+\end_layout
+
+\begin_layout Standard
+为了确定变换
+\begin_inset Formula $D$
+\end_inset
+，
+因此只需对角化自洽场：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h=\epsilon-\lambda+\Gamma=\epsilon-\lambda-q_{0}Q_{0}-q_{2}(Q_{2}+Q_{-2}).\label{eq:h_field_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+对于固定的形变参数
+\begin_inset Formula $q_{0},q_{2}$
+\end_inset
+，
+这正是 Nilsson Hamilton 量 (2.89)。
+因此，
+在这种情况下，
+正则基就是具有本征值
+\begin_inset Formula $\tilde{\epsilon}_{k}$
+\end_inset
+的 Nilsson 基。
+在此基下，
+HFB 方程 (7.42) 分裂为
+\begin_inset Formula $(2\times2)$
+\end_inset
+矩阵：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{pmatrix}\tilde{\epsilon}_{k} & \Delta\\
+-\Delta & -\tilde{\epsilon}_{k}
+\end{pmatrix}\begin{pmatrix}u_{k}\\
+v_{k}
+\end{pmatrix}=\begin{pmatrix}u_{k}\\
+v_{k}
+\end{pmatrix}E_{k}\label{eq:hfb_2x2_ppq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其能隙参数
+\begin_inset Formula $\Delta=p_{0}$
+\end_inset
+[式 (7.65)]，
+具有 BCS 解 (6.59)。
+\end_layout
+
+\begin_layout Standard
+综上所述，
+对-四极模型中 HFB 方程的完全解对应于带有可变形变参数
+\begin_inset Formula $q_{0}$
+\end_inset
+和
+\begin_inset Formula $q_{2}$
+\end_inset
+的 Nilsson 对角化、随后的常能隙参数
+\begin_inset Formula $\Delta=p_{0}$
+\end_inset
+的 BCS 计算，
+以及总能量关于参数
+\begin_inset Formula $q_{0},q_{2}$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+的极小化：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E(q_{0},q_{2},\Delta)=\langle\Phi|H|\Phi\rangle=\sum_{k}\tilde{\epsilon}_{k}v_{k}^{2}+\frac{1}{2\chi}(q_{0}^{2}+2q_{2}^{2})-\frac{\Delta^{2}}{G}.\label{eq:energy_ppq_min}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+必须加上
+\begin_inset Formula $(1/2\chi)\cdot(q_{0}^{2}+2q_{2}^{2})$
+\end_inset
+项，
+因为在对单粒子能量求和时，
+我们重复计算了（负的）相互作用能量[式 (5.40)]。
+\end_layout
+
+\begin_layout Standard
+这种相互作用非常优美地解释了具有 BCS 占据几率的 Nilsson 模型，
+并且通过适当选择常数
+\begin_inset Formula $G$
+\end_inset
+和
+\begin_inset Formula $\chi$
+\end_inset
+，
+人们因而能够重现其所有结果。
+然而我们必须强调，
+它只是针对特定现象构造的模型，
+即四极形变和
+\begin_inset Formula $I=0$
+\end_inset
+对关联以及这些自由度之间的相互作用。
+对于这些现象，
+它包含了更现实方法的所有主要特征。
+\end_layout
+
+\begin_layout Section
+HFB理论应用于基态
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HFB理论应用于基态"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+关于轻核已有大量的 HFB 研究（参见例如 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WFS71,BKD73"
+literal "true"
+
+\end_inset
+）。
+研究中使用了各种各样的相互作用。
+在许多情况下，
+必须对角动量和粒子数进行投影（例如 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GGF73"
+literal "true"
+
+\end_inset
+ 或 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GGA74"
+literal "true"
+
+\end_inset
+；亦参见第 11 章）。
+我们在此不详述细节，
+但在此提及所谓的质子-中子配对（proton-neutron pairing，综述参见 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go79"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\begin_layout Standard
+在轻核中，
+质子和中子占据相同的能级。
+因此，
+我们不仅能够构造密度分布具有大空间重叠的
+\begin_inset Formula $pp$
+\end_inset
+-对和
+\begin_inset Formula $nn$
+\end_inset
+-对，
+还可以构造
+\begin_inset Formula $pn$
+\end_inset
+-对
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go64"
+literal "true"
+
+\end_inset
+。
+因此我们有两类配对关联：
+仅针对
+\begin_inset Formula $pn$
+\end_inset
+-对的
+\begin_inset Formula $T=0$
+\end_inset
+配对，
+以及针对
+\begin_inset Formula $pp$
+\end_inset
+-对、
+\begin_inset Formula $nn$
+\end_inset
+-对和
+\begin_inset Formula $pn$
+\end_inset
+-对的
+\begin_inset Formula $T=1$
+\end_inset
+配对。
+在重核中，
+仅有
+\begin_inset Formula $T=1$
+\end_inset
+配对是重要的。
+带有一般相互作用力的完全 HFB 方程 (7.42) 同时包含了所有这些类型的配对。
+然而，
+这需要复的势
+\begin_inset Formula $\Gamma$
+\end_inset
+、
+\begin_inset Formula $\Delta$
+\end_inset
+以及复的 HFB 系数
+\begin_inset Formula $U$
+\end_inset
+和
+\begin_inset Formula $V$
+\end_inset
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GSB70"
+literal "true"
+
+\end_inset
+。
+在
+\begin_inset Formula $N=Z$
+\end_inset
+核中，
+不仅存在时间反演不变性，
+还存在电荷共轭不变性。
+在这种情况下，
+可以解析地证明
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go72"
+literal "true"
+
+\end_inset
+，
+对每个粒子都存在三种可能性：
+质子可以与 (i) 处于时间反演态的同种粒子配对（
+\begin_inset Formula $p\bar{p}$
+\end_inset
+），
+(ii) 处于时间反演态的异种粒子配对（
+\begin_inset Formula $p\bar{n}$
+\end_inset
+），
+以及 (iii) 处于相同态的异种粒子配对（
+\begin_inset Formula $pn$
+\end_inset
+）。
+最后一种可能性并不被 Pauli 原理所排斥；
+然而，
+它破坏了轴对称性，
+因为它混合了具有不同
+\begin_inset Formula $K$
+\end_inset
+值（
+\begin_inset Formula $+K$
+\end_inset
+与
+\begin_inset Formula $-K$
+\end_inset
+）的态。
+这些不同模式具有三个不同的能隙参数，
+它们的模方相加等于总能隙的平方。
+\end_layout
+
+\begin_layout Standard
+若干作者使用许多不同类型的力研究了轻核中的不同配对关联
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GK65,CCJ65,CCJ66,CG67,GSG68,BGG69,WFS70,WFS71"
+literal "true"
+
+\end_inset
+。
+这些计算表明，
+\begin_inset Formula $T=0$
+\end_inset
+配对在确定平衡形状方面具有显著作用。
+我们发现对于
+\begin_inset Formula $N=Z$
+\end_inset
+核，
+\begin_inset Formula $T=0$
+\end_inset
+配对是最重要的。
+对于小的中子过剩，
+存在
+\begin_inset Formula $T=0$
+\end_inset
+和
+\begin_inset Formula $T=1$
+\end_inset
+配对之间的竞争。
+对于具有很大中子过剩的重核，
+由于 Fermi 面处的质子和中子占据不同的壳层，
+\begin_inset Formula $T=0$
+\end_inset
+配对不再重要，
+只剩下第 6 章讨论的在
+\begin_inset Formula $p\bar{p}$
+\end_inset
+和
+\begin_inset Formula $n\bar{n}$
+\end_inset
+对中的通常
+\begin_inset Formula $T=1$
+\end_inset
+配对。
+\end_layout
+
+\begin_layout Standard
+为了讨论进一步的应用，
+我们将把注意力限制在重形变核的几个例子上。
+根据此类计算中所使用的唯象程度，
+我们必须区分为以下几种：
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(a) 模型空间中的计算
+\series default
+。
+在这种情况下，
+人们从有限的组态空间和球形单粒子能量出发。
+引入产生形变和对关联的唯象剩余相互作用。
+这样的理论永远无法给出正确的基态能量。
+\end_layout
+
+\begin_layout Standard
+此类模型的最简单形式是第 7.4 节讨论的对-四极模型。
+通过调节力参数，
+可以以这种方式重现形变和能隙参数。
+\end_layout
+
+\begin_layout Standard
+在下一步中，
+Dietrich、Mang 和 Pradal 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DMP66"
+literal "true"
+
+\end_inset
+ 使用了具有有限力程和自旋-同位旋交换的更现实剩余相互作用。
+他们应用了两种方法来确定 HFB 波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+在第一种情况下，
+他们使用了依赖于两个参数
+\begin_inset Formula $\beta$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+的 Nilsson + BCS 波函数
+\begin_inset Formula $|\Phi(\beta,\Delta)\rangle$
+\end_inset
+，
+并使能量
+\begin_inset Formula $\langle\Phi(\beta,\Delta)|H|\Phi(\beta,\Delta)\rangle$
+\end_inset
+关于这两个参数达到极小。
+在图 7.1 中，
+我们展示了作为
+\begin_inset Formula $\beta$
+\end_inset
+的函数的“能量面”。
+我们看到长椭球和扁椭球形变的两个极小值，
+它们在能量上相当接近。
+\end_layout
+
+\begin_layout Standard
+在第二种情况下，
+他们求解了完全的 HFB 方程
+\begin_inset Formula $H^{20}=0$
+\end_inset
+。
+由于该过程允许更普遍的波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+，
+所得的能量更低（由图 7.1 中的水平线给出）。
+在两种情况下能量差异都不是很大，
+并且对波函数的进一步考察表明，
+完全 HFB 波函数被“Nilsson + BCS”函数近似得相当好。
+\end_layout
+
+\begin_layout Standard
+虽然第二种方法计算的形变参数很好地反映了趋势，
+但由于受限的组态空间，
+它们与实验数据并不完全一致。
+在考虑了惰性核芯的贡献后，
+可以发现完全的一致。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_1.pdf
+	width 60line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_1_Sm152结合能"
+
+\end_inset
+作为形变函数的结合能（针对 
+\begin_inset Formula $\ce{^{152}Sm}$
+\end_inset
+）。极小值之外的横线为自洽计算的解（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DMP66"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(b) 采用 Skyrme 力的计算
+\series default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+利用第 5.6.1.2 节讨论的 Negele 力也进行了类似的计算
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NR77"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+。
+我们在第 5.6.2 节中看到，
+带有密度依赖 Skyrme 力的 HF 理论能够重现球形核的基态性质。
+因此它们也被应用于形变情况
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Va73"
+literal "true"
+
+\end_inset
+。
+正如第 7.4 节所讨论的，
+没有先验的理由对
+\begin_inset Formula $\Gamma$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+的计算采用相同的力。
+因此，
+第一步是使用纯配对力 (4.140) 来计算
+\begin_inset Formula $\Delta$
+\end_inset
+。
+在时间反演不变的情况下，
+我们再次发现（如同在对-四极模型中）正则基与
+\begin_inset Formula $h$
+\end_inset
+为对角矩阵的 HF 基一致。
+因此，
+在迭代的每一步中对角化
+\begin_inset Formula $h$
+\end_inset
+就足够了。
+与普通 HF 计算唯一的区别在于，
+在计算密度
+\begin_inset Formula $\rho,\tau,\boldsymbol{J}$
+\end_inset
+时，
+我们必须考虑配对能和占据几率
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+。
+代替式 (5.84)，
+例如我们得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho(\boldsymbol{r})=\sum_{ist}^{\infty}v_{i}^{2}|\varphi_{i}(\boldsymbol{r},s,t)|^{2},\label{eq:skyrme_density_with_pairing}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{i}^{2}=\frac{1}{2}\left(1-\frac{\epsilon_{i}-\lambda}{\sqrt{(\epsilon_{i}-\lambda)^{2}+\Delta^{2}}}\right).\label{eq:vi2_skyrme_bcs}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在此
+\begin_inset Formula $\lambda$
+\end_inset
+同样由粒子数条件确定。
+原则上，
+\begin_inset Formula $\Delta$
+\end_inset
+应当由能隙方程 (6.60) 确定。
+Vautherin 采取了相反的途径，
+采用从实验中选取的固定能隙
+\begin_inset Formula $\Delta$
+\end_inset
+，
+并利用式 (6.60) 计算了相应的力常数。
+与球形核 HF 计算的巨大差异在于，
+在形变核中微分方程 (5.100) 在径向坐标
+\begin_inset Formula $r$
+\end_inset
+与角度
+\begin_inset Formula $\theta,\phi$
+\end_inset
+之间不再是可分离的。
+它现在是一个偏微分方程。
+Vautherin 通过在各向异性谐振子基中进行对角化求解了该方程。
+只有矩阵元是在坐标空间中通过高斯积分计算的。
+轴对称性允许将其分解为具有良好量子数
+\begin_inset Formula $\Omega$
+\end_inset
+的子空间。
+尽管如此，
+这些计算仍然需要巨大的计算工作量
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+关于坐标空间中形变 HF 方程的求解，参见 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HN77"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+计算结果显示出与实验结合能和半径令人满意的符合。
+特别地，
+人们能够重现形变重核测得的四极矩和十六极矩
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQV73"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(c) 完全 HFB 计算
+\series default
+。
+正如我们在第 6 章中所见，
+配对关联不仅取决于有效配对力的性质，
+还取决于单粒子能级密度。
+因此，
+自洽场和配对场由同一种力导出的完全 HFB 计算，
+仅在 HF 场产生合理的单粒子谱时才具有物理意义。
+正如第 5 章所讨论的，
+进行这项任务需要密度依赖的有效力。
+另一方面，
+由于现有版本的 Skyrme 力的
+\begin_inset Formula $\delta$
+\end_inset
+-力性质，
+它们不适用于完全的 HFB 计算。
+因此，
+Gogny 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go73,Go75b,DGG75,DG80"
+literal "true"
+
+\end_inset
+ 引入了一种带有有限力程部分的新型密度依赖相互作用（参见第 4.4.4 节）。
+这种力的高斯形式允许在谐振子基中快速计算矩阵元
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go75a"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+在推导 HFB 方程时，
+迄今为止我们尚未采用密度依赖力。
+仿照第 5.6 节，
+在此时我们必须将能量计算为密度
+\begin_inset Formula $\rho$
+\end_inset
+和
+\begin_inset Formula $\kappa$
+\end_inset
+的泛函[我们使用式 (E.19) 中定义的约定
+\begin_inset Formula $\mathrm{Tr}_{1}$
+\end_inset
+和
+\begin_inset Formula $\mathrm{Tr}_{2}$
+\end_inset
+]：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E'(\rho,\kappa)=\langle\Phi|T+V(\rho)-\lambda\hat{N}|\Phi\rangle=\mathrm{Tr}\,(t-\lambda)\rho+\frac{1}{2}\mathrm{Tr}_{1}\mathrm{Tr}_{1}\rho\bar{v}\rho+\frac{1}{4}\mathrm{Tr}_{2}\mathrm{Tr}_{2}\kappa^{*}\bar{v}\kappa,\label{eq:energy_functional_hfb_density_dep}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+并从变分原理导出 HFB 方程。
+这通过使用超矩阵
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+ (7.27) 最容易实现。
+我们将
+\begin_inset Formula $(i<k)$
+\end_inset
+的
+\begin_inset Formula $\rho_{ii},\rho_{ik},\rho_{ik}^{*},\kappa_{ik},\kappa_{ik}^{*}$
+\end_inset
+作为独立变量，
+并通过 Lagrange 参数矩阵施加关系 (7.28) 作为附加条件（该过程也可以用来推导第 5 章中的普通 HF 方程）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta\left(E'(\rho,\kappa)-\mathrm{Tr}(\Lambda(\mathcal{R}^{2}-\mathcal{R}))\right)=0.\label{eq:variational_principle_lagrange_R}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们求得：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta E'=\mathrm{Tr}(\mathcal{H}\cdot\delta\mathcal{R})\label{eq:delta_E_prime}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta\mathcal{R}=\begin{pmatrix}\delta\rho & \delta\kappa\\
+-\delta\kappa^{*} & -\delta\rho^{*}
+\end{pmatrix},\qquad\mathcal{H}=\begin{pmatrix}h & \Delta\\
+-\Delta^{*} & -h^{*}
+\end{pmatrix}\label{eq:delta_R_supermatrix}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+且
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+h_{ik}=\frac{\delta E'}{\delta\rho_{ki}},\qquad\Delta_{ik}=\frac{\delta E'}{\delta\kappa_{ik}^{*}},\label{eq:hik_deltaik_derivatives}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在与密度无关力的情况下与式 (7.41) 一致。
+从式 (7.76) 得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathrm{Tr}((\mathcal{H}-\Lambda\mathcal{R}-\mathcal{R}\Lambda+\Lambda)\delta\mathcal{R})=0.\label{eq:tr_lambda_R}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $\delta\mathcal{R}$
+\end_inset
+是独立变分，
+这等价于：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{H}=\Lambda\mathcal{R}+\mathcal{R}\Lambda-\Lambda.\label{eq:H_lambda_R_relation}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+通过条件
+\begin_inset Formula $\mathcal{R}^{2}=\mathcal{R}$
+\end_inset
+消去
+\begin_inset Formula $\Lambda$
+\end_inset
+，
+结果为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+[\mathcal{H},\mathcal{R}]=0.\label{eq:H_R_commutator_zero}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这正是式 (7.43)。
+它等价于式 (7.36)，
+并且可以按照求解 HFB 方程 (7.42) 的相同方法求解。
+然而，
+在相互作用
+\begin_inset Formula $v(1,2)$
+\end_inset
+依赖于
+\begin_inset Formula $\rho$
+\end_inset
+的情况下，
+我们得到对自洽场
+\begin_inset Formula $\Gamma$
+\end_inset
+有贡献的额外项。
+从式 (7.75) 和 (7.79) 可以看出，
+它们具有如下形式：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{4}\frac{\partial}{\partial\rho_{ki}}\mathrm{Tr}_{2}\mathrm{Tr}_{2}(\kappa^{*}\bar{v}[\rho]\kappa).\label{eq:rearrangement_term_pairing}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+通过以合适的方式调节力参数（表 4.4），
+Gogny 能够重现球形核以及形变核的性质。
+特别地，
+他得到了正确的形变与能隙参数（参见表 7.1）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:7_1_结合能电荷四极矩能隙比较"
+
+\end_inset
+结合能 
+\begin_inset Formula $E$
+\end_inset
+、电荷四极矩 
+\begin_inset Formula $Q$
+\end_inset
+ 以及质子和中子的能隙参数 
+\begin_inset Formula $\Delta$
+\end_inset
+ 的实验值与计算值比较（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Go75b"
+literal "true"
+
+\end_inset
+）
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+核素
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{\text{HFB}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{\text{EXP}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{\text{HFB}}$
+\end_inset
+ [\text{fm}^{2}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{\text{EXP}}$
+\end_inset
+ [\text{fm}^{2}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta_{p,\text{HFB}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta_{p,\text{EXP}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta_{n,\text{HFB}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta_{n,\text{EXP}}$
+\end_inset
+ [\text{MeV}]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{150}Sm}$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1235.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1239.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+383
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+367
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.13
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{152}Sm}$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1249.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1253.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+572
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+590
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{166}Er}$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1348.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1351.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+770
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+770
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ce{^{184}W}$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1468.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1472.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+631
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+627
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.86
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.86
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.73
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+结合能仍应当针对转动对称性和粒子数破缺所引起的赝贡献进行修正（参见第 11 章）。
+这些修正可以达到 5 MeV 的数量级
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQV73"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+总结这些结果，
+我们发现带有密度依赖力的 HFB 理论能够在元素周期表的整个范围内重现球形核与形变核的所有基本基态性质。
+在下一节中，
+我们将看到如何将该理论推广到裂变过程能量面的微观计算。
+\end_layout
+
+\begin_layout Section
+约束Hartree-Fock理论
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:约束Hartree-Fock理论"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+无约束的 HF 和 HFB 计算仅给出能量面上的一个点，
+即局部极小值。
+我们通常也对能量面上的其它点感兴趣：
+我们可以施加某些附加条件，
+并寻求能量在由它们定义的超曲面上的极小值。
+有时我们希望将能量面计算为一个（或若干个）集体参数
+\begin_inset Formula $q$
+\end_inset
+的函数，
+例如四极或十六极形变。
+正如我们在第 1 章中所看到的，
+这是导出集体 Hamilton 量（用于描述集体振动或裂变过程）的第一步。
+我们将在第 10 章结合生成坐标法更详细地讨论这一点。
+\end_layout
+
+\begin_layout Standard
+在所有这些情况下，
+我们都对在某个单粒子算符
+\begin_inset Formula $\hat{Q}$
+\end_inset
+具有固定期望值的约束下使总能量极小化的波函数
+\begin_inset Formula $|\Phi(q)\rangle$
+\end_inset
+感兴趣：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+q=\langle\Phi|\hat{Q}|\Phi\rangle.\label{eq:constraint_expectation_q}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+求解该问题的最简单方法是将条件 (7.84) 带有 Lagrange 乘符
+\begin_inset Formula $\lambda$
+\end_inset
+加到 Hamilton 量
+\begin_inset Formula $H$
+\end_inset
+中，
+并求下式的极小值：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\langle H'\rangle=\langle H\rangle-\lambda\langle\hat{Q}\rangle.\label{eq:linear_constraint_H_prime}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在该问题求解之后，
+\begin_inset Formula $\lambda$
+\end_inset
+由条件 (7.84) 确定。
+该方法也称为线性约束变分。
+它对应于考察处于合适地使其发生形变的外场
+\begin_inset Formula $\hat{Q}$
+\end_inset
+中的多体体系。
+\end_layout
+
+\begin_layout Standard
+该方法已经应用于 BCS 理论（第 6.3.2 节）中，
+以获得具有粒子数正确期望值的波函数。
+与式 (6.41) 类似，
+我们发现 Lagrange 乘符
+\begin_inset Formula $\lambda$
+\end_inset
+是能量
+\begin_inset Formula $E=\langle\Phi|H|\Phi\rangle$
+\end_inset
+对
+\begin_inset Formula $q$
+\end_inset
+的导数：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lambda=\frac{\mathrm{d}E}{\mathrm{d}q}.\label{eq:lambda_dE_dq}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+正如我们从图 7.2 所看到的，
+线性约束的方法意味着我们必须在点
+\begin_inset Formula $q=q_{0}$
+\end_inset
+处作能量面
+\begin_inset Formula $E(q)$
+\end_inset
+的切线，
+并将该切线作为旋转了角度
+\begin_inset Formula $\alpha$
+\end_inset
+（其中
+\begin_inset Formula $\tan\alpha=\lambda$
+\end_inset
+）的新坐标系的
+\begin_inset Formula $x$
+\end_inset
+轴。
+新坐标系中的
+\begin_inset Formula $y$
+\end_inset
+轴对应于
+\begin_inset Formula $\langle H'\rangle$
+\end_inset
+。
+对
+\begin_inset Formula $\langle H'\rangle$
+\end_inset
+进行无约束变分给出了旋转坐标系中能量面的极值。
+\end_layout
+
+\begin_layout Standard
+显然，
+只要函数
+\begin_inset Formula $E(q)$
+\end_inset
+具有正的二阶导数，
+该过程就可以有效工作。
+在曲线向下凹的情况下——例如在裂变路径上的鞍点附近或在回弯区（图 3.4）——该方法将不再有效。
+在这些情况下，
+旋转坐标系中的能量在点
+\begin_inset Formula $q_{1}$
+\end_inset
+处具有极大值，
+它永远不会是 HF 方程的稳定解。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_2.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_2_能量面约束示意图"
+
+\end_inset
+示意性能量面，展示了线性约束（a）与二次约束（b）的方法。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们还认识到，
+在拐点附近总是存在若干个具有平行切线的点（即具有相同的
+\begin_inset Formula $\lambda$
+\end_inset
+，
+但具有不同的
+\begin_inset Formula $q$
+\end_inset
+值），
+也就是说，
+\begin_inset Formula $q$
+\end_inset
+不再是 Lagrange 参数的单值函数（参见图 3.6）。
+\end_layout
+
+\begin_layout Standard
+存在若干种避免该问题并寻找能量面上此类点的波函数的方法：
+\end_layout
+
+\begin_layout Standard
+(i) 梯度法（如第 7.3 节所讨论）允许我们沿着垂直于对
+\begin_inset Formula $\hat{Q}$
+\end_inset
+的梯度的最速下降线前进。
+因此，
+对于每个
+\begin_inset Formula $q$
+\end_inset
+值，
+我们都能找到相应的能量极小值。
+\end_layout
+
+\begin_layout Standard
+(ii) 二次约束法
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GLW70,FQK73"
+literal "true"
+
+\end_inset
+采用对函数
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E''=\langle H\rangle+\frac{1}{2}C(\langle\hat{Q}\rangle-\mu)^{2}\label{eq:quadratic_constraint_function}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+的无约束变分。
+如图 7.2b 所示，
+这里我们在能量面上添加了一条对称轴为
+\begin_inset Formula $q=\mu$
+\end_inset
+的抛物线。
+它产生了一个在
+\begin_inset Formula $\mu$
+\end_inset
+附近具有极值的新曲面
+\begin_inset Formula $E''$
+\end_inset
+。
+如果其宽度充分小（
+\begin_inset Formula $C>|\mathrm{d}^{2}E/\mathrm{d}q^{2}|$
+\end_inset
+），
+这始终是一个真正的极小值。
+\begin_inset Formula $E''$
+\end_inset
+的变分给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta\langle H\rangle-C(\mu-\langle\hat{Q}\rangle)\delta\langle\hat{Q}\rangle=0.\label{eq:variation_E_double_prime}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这意味着二次约束等价于具有
+\begin_inset Formula $\lambda=C(\mu-\langle\hat{Q}\rangle)$
+\end_inset
+的线性约束。
+在两种情况下，
+我们得到相同的能量面。
+对于作为
+\begin_inset Formula $\langle\hat{Q}\rangle$
+\end_inset
+的函数的任何约束，
+这都是正确的。
+采用二次约束，
+\begin_inset Formula $\lambda$
+\end_inset
+的有效值在迭代过程中自动改变。
+\end_layout
+
+\begin_layout Standard
+(iii) 第三种方法
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BW71"
+literal "true"
+
+\end_inset
+使用线性约束，
+但在迭代的每一步中改变
+\begin_inset Formula $\lambda$
+\end_inset
+的值，
+使得条件 (7.84) 得到满足。
+该方法应用于带有粒子数约束的 BCS 计算中。
+然而，
+它需要在每一步进行额外的迭代。
+\end_layout
+
+\begin_layout Standard
+约束 Hartree-Fock 理论（CHF）已被用于计算原子核在基态附近的能量面
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BKS67,CLF73,CS73,FQK73,GG78"
+literal "true"
+
+\end_inset
+以及裂变过程
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQV74,KCS74,BFV74"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+在后一种情况下，
+通常必须面对应当使用何种约束算符
+\begin_inset Formula $\hat{Q}$
+\end_inset
+的问题。
+容易证明，
+通过使用合适的约束算符
+\begin_inset Formula $\hat{Q}_{\Phi}$
+\end_inset
+进行 CHF 计算，
+我们可以找到任何乘积波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+。
+我们只需使用双准粒子部分
+\begin_inset Formula $Q^{20}$
+\end_inset
+被定义为
+\begin_inset Formula $H^{20}$
+\end_inset
+的倍数的算符。
+随后我们得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{20}-\lambda Q^{20}=0,\label{eq:chf_q20_condition}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+也就是说，
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+作为相应 CHF 方程的解。
+当然，
+这对于计算
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+没有太大的实用价值，
+但它表明存在种类繁多的约束算符，
+它们产生相同的波函数，
+仅在它们的
+\begin_inset Formula $Q^{11}$
+\end_inset
+-矩阵元上有所不同。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_3.pdf
+	width 65line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_3_qh能量面裂变谷"
+
+\end_inset
+
+\begin_inset Formula $(q,h)$
+\end_inset
+ 平面内的能量面示例，表明仅对 
+\begin_inset Formula $q$
+\end_inset
+ 加约束并不能精确跟踪裂变谷（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQK73"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+另一方面，
+对一种形变的约束（例如四极形变
+\begin_inset Formula $q=\langle\Phi|Q_{20}|\Phi\rangle$
+\end_inset
+）并不意味着另一种形变（例如十六极形变
+\begin_inset Formula $h=\langle\Phi|Q_{40}|\Phi\rangle$
+\end_inset
+）保持不变。
+这在图 7.3 中示意性地给出。
+只要我们对
+\begin_inset Formula $q$
+\end_inset
+使用约束，
+我们就沿着线
+\begin_inset Formula $h^{1}(q)=\langle\Phi(q)|Q_{40}|\Phi(q)\rangle$
+\end_inset
+行进。
+它连接了每个等势面上的垂直切点，
+因为对于恒定的
+\begin_inset Formula $q$
+\end_inset
+，
+\begin_inset Formula $E$
+\end_inset
+必须对所有其它自由度达到极小，
+这意味着特别是
+\begin_inset Formula $\mathrm{d}E/\mathrm{d}h|_{q=\text{const}}=0$
+\end_inset
+。
+这条线
+\begin_inset Formula $h^{1}(q)$
+\end_inset
+通常与裂变谷底不同，
+后者对应于最速下降线
+\begin_inset Formula $h^{0}(q)$
+\end_inset
+。
+两条线都穿过能量面的驻点，
+例如基态极小值或鞍点。
+如果裂变谷平行于
+\begin_inset Formula $q$
+\end_inset
+轴，
+这两条线非常接近；
+但如果裂变谷平行于
+\begin_inset Formula $h$
+\end_inset
+轴，
+它们可能会发生相当剧烈的偏离。
+尽管如此，
+与液滴模型和 Strutinsky 式计算（参见第 2.9 节）相比，
+我们认识到 CHF 计算的巨大优势：
+在 CHF 计算中，
+我们只需追踪单参数曲线，
+就能获得在许多情况下与裂变谷底非常接近的波函数，
+而在其它方法中我们必须计算多维能量面。
+\end_layout
+
+\begin_layout Standard
+在 CHF 计算中，
+我们当然应该优化约束算符的选择。
+在第 10 章中，
+我们将研究实现这一目标的方法。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_4.pdf
+	width 65line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_4_Pu240形变能曲线"
+
+\end_inset
+利用 Skyrme III 相互作用作为质量四极矩 
+\begin_inset Formula $q$
+\end_inset
+ 的函数计算出的 
+\begin_inset Formula $\ce{^{240}Pu}$
+\end_inset
+ 形变能曲线。详细说明见正文（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BQ75a"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+图 7.4 展示了利用带有质量四极矩
+\begin_inset Formula $q$
+\end_inset
+约束的 Skyrme 力计算得到的原子核
+\begin_inset Formula $\ce{^{240}Pu}$
+\end_inset
+的形变能（实线
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQV74"
+literal "true"
+
+\end_inset
+）。
+对关联通过简单的对力来考虑，
+其常数
+\begin_inset Formula $G$
+\end_inset
+选为与核表面积成正比。
+该计算重现了基态极小值和第二极小值。
+势垒的高度在定量上与实验数据不符，
+但我们必须记住，
+在计算中保持了轴对称性和空间反射宇称，
+而有迹象表明实际的裂变路径在内鞍点破坏了轴对称性，
+在外界鞍点破坏了空间反射宇称。
+\end_layout
+
+\begin_layout Standard
+为了将这些结果与液滴模型计算进行比较，
+计算了 Strutinski 平均的 HF 能量（虚线）并显示在图 7.4 中。
+它显示出微小的起伏波动。
+然而，
+这些起伏并不是由壳效应引起的，
+它们也存在于对应于相同形变
+\begin_inset Formula $q$
+\end_inset
+和
+\begin_inset Formula $h$
+\end_inset
+的液滴能量中（点划线），
+因为该曲线与侧谷相交。
+裂变谷底的液滴能量（点线）是非常平滑的。
+\end_layout
+
+\begin_layout Standard
+图 7.5 显示了同一原子核在不同形变下的质子密度分布。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_5.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_5_Pu240质子密度分布"
+
+\end_inset
+
+\begin_inset Formula $\ce{^{240}Pu}$
+\end_inset
+ 在不同形变 
+\begin_inset Formula $q=\langle Q_{20}\rangle$
+\end_inset
+ 下的质子密度分布（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FQV74"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+若干作者
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FS76,BSV76"
+literal "true"
+
+\end_inset
+指出，
+如果允许波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+在空间中扩展得非常远，
+带有具有无界能谱约束算符（例如当
+\begin_inset Formula $r\to\infty$
+\end_inset
+时发散的
+\begin_inset Formula $Q\sim r^{2}Y_{20}$
+\end_inset
+）的此类 CHF 计算可能会给出非常虚假的解。
+然而，
+CHF 方法的所有实际应用都是在有限组态空间中进行的，
+这确保了波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+定域在原子核的区域内。
+\end_layout
+
+\begin_layout Standard
+因此，
+在组态空间的选择上，
+我们受到来自两方面的限制：
+为了获得结合能的收敛，
+通常需要大的组态空间；
+但另一方面，
+我们不应该能够表象上述的虚假解。
+看来迄今为止进行的 CHF 计算都保持在这些限制之内。
+\end_layout
+
+\begin_layout Standard
+保持核波函数定域的另一种可能途径是引入第二个约束
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GL77"
+literal "true"
+
+\end_inset
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{H}'=\hat{H}-\lambda\hat{Q}+\mu\hat{Q}^{2}.\label{eq:second_constraint_operator}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Lagrange 参数
+\begin_inset Formula $\mu$
+\end_inset
+将允许我们改变波函数中的
+\begin_inset Formula $\langle\Delta\hat{Q}^{2}\rangle$
+\end_inset
+涨落。
+\end_layout
+
+\begin_layout Section
+转动系下的HFB理论
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:转动系下的HFB理论"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在第 3 章中，
+我们在纯单粒子壳模型的框架内讨论了 cranking 模型。
+它为我们提供了微观计算转动惯量的可能性。
+显而易见如何将该理论推广到自洽多体体系：
+我们必须在角动量算符
+\begin_inset Formula $J_{x}$
+\end_inset
+具有确定期望值的附加条件下，
+对多体 Hamilton 量
+\begin_inset Formula $H$
+\end_inset
+的期望值进行变分。
+这给出了方程（亦参见第 11.4 节）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\delta\langle\Phi|H-\omega J_{x}|\Phi\rangle=0.\label{eq:cranking_variation_scc}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+cranking 频率
+\begin_inset Formula $\omega$
+\end_inset
+依赖于角动量
+\begin_inset Formula $I$
+\end_inset
+，
+并由下式确定：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\langle\Phi_{\omega}|J_{x}|\Phi_{\omega}\rangle=\sqrt{I(I+1)}.\label{eq:cranking_frequency_condition}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在第 11 章中我们将看到，
+该问题的解
+\begin_inset Formula $|\Phi_{\omega(I)}\rangle$
+\end_inset
+必须被理解为内禀波函数，
+在实验室坐标系中通过投影到好的角动量上可以从中获得
+\begin_inset Formula $\boldsymbol{J}^{2}$
+\end_inset
+的本征函数。
+\end_layout
+
+\begin_layout Standard
+在 HFB 理论中，
+我们将变分函数的集合
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+限制为 HFB 类型的广义乘积函数，
+这样我们便面对一个带有约束的 HFB 问题。
+类似于单粒子情况下的 cranking 模型，
+该方法被称为自洽 cranking 模型（self-consistent cranking model, SCC）。
+在上一节中，
+我们已经非常详细地讨论了约束 HF 方法的问题。
+在回弯区（参见第 3 章以及 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CMR75"
+literal "true"
+
+\end_inset
+），
+式 (7.91) 的解对应于在恒定
+\begin_inset Formula $\omega$
+\end_inset
+下能量面上的鞍点。
+因此，
+我们必须应用梯度法或二次约束以在回折分支上获得解。
+\end_layout
+
+\begin_layout Standard
+与迄今为止所讨论的 HFB 理论的应用不同，
+波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+的时间反演对称性被算符
+\begin_inset Formula $\omega J_{x}$
+\end_inset
+破坏。
+因此，
+我们无法先验地知道正则基中的共轭态，
+从而必须在转动系中求解完全的 HFB 问题
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RBM70"
+literal "true"
+
+\end_inset
+，
+即：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{pmatrix}h-\omega j_{x} & \Delta\\
+-\Delta^{*} & -h^{*}+\omega j_{x}^{*}
+\end{pmatrix}\begin{pmatrix}U_{k}\\
+V_{k}
+\end{pmatrix}=\begin{pmatrix}U_{k}\\
+V_{k}
+\end{pmatrix}E_{k}.\label{eq:cranking_hfb_equation}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用被 cranking Hamilton 量所保持的对称性
+\begin_inset Formula $\mathrm{e}^{\mathrm{i}\pi j_{x}}$
+\end_inset
+，
+矩阵
+\begin_inset Formula $\rho,\kappa,\Gamma$
+\end_inset
+以及
+\begin_inset Formula $\Delta$
+\end_inset
+具有形式 (7.67)。
+由于时间反演对称性
+\begin_inset Formula $T$
+\end_inset
+被破坏，
+代替式 (7.69)，
+我们有：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho_{2}\ne\rho_{1}^{*};\qquad\Gamma_{2}\ne\Gamma_{1}^{*};\qquad D_{2}\ne D_{1}^{*};\qquad\kappa_{1}^{\dagger}\ne\kappa_{1};\qquad\Delta_{1}^{\dagger}\ne\Delta_{1}.\label{eq:time_reversal_broken_relations}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此，
+密度和势具有时间偶部分和时间奇部分，
+例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho^{(+)}=\rho_{1}+\rho_{2}^{*};\qquad\rho^{(-)}=\rho_{1}-\rho_{2}^{*}.\label{eq:rho_time_even_odd}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在
+\begin_inset Formula $\omega=0$
+\end_inset
+时二重简并的准粒子能量
+\begin_inset Formula $E_{k}$
+\end_inset
+（参见第 2.8 节），
+在有限的 cranking 频率下发生分裂（图 7.8d），
+并且不再由公式 (7.51) 给出。
+然而，
+根据 Bloch-Messiah 定理 (7.7)，
+存在一个正则基，
+可以通过对角化密度
+\begin_inset Formula $\rho$
+\end_inset
+找到。
+正如我们从式 (7.50) 可以看出的，
+在此基下的占据几率
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+由下式给出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{k}^{2}=\frac{1}{2}\left[1-\frac{\epsilon_{k}-\omega j_{x_{k}}}{\sqrt{(\epsilon_{k}-\omega j_{x_{k}})^{2}+\Delta_{k\bar{k}}^{2}}}\right],\label{eq:vk2_cranking_canonical}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中
+\begin_inset Formula $\epsilon_{k}=\frac{1}{2}(h_{kk}+h_{\bar{k}\bar{k}})$
+\end_inset
+且
+\begin_inset Formula $j_{x_{k}}=\frac{1}{2}(j_{x_{kk}}+j_{x_{\bar{k}\bar{k}}})$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+这表明在正则基下的对角矩阵元
+\begin_inset Formula $h_{kk},j_{x_{kk}},h_{\bar{k}\bar{k}},j_{x_{\bar{k}\bar{k}}}$
+\end_inset
+以及
+\begin_inset Formula $\Delta_{k\bar{k}}$
+\end_inset
+是决定占据几率的关键量。
+矩阵
+\begin_inset Formula $h,j_{x}$
+\end_inset
+和
+\begin_inset Formula $\Delta$
+\end_inset
+本身在此基下通常不是对角的。
+人们还会注意到，
+具有较大正矩阵元
+\begin_inset Formula $j_{x_{k}}$
+\end_inset
+的能级比较大负值的能级具有更大的占据几率。
+\end_layout
+
+\begin_layout Standard
+自洽 cranking 模型对于描述高自旋区发现的异常现象非常有用
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+最近，cranking 模型用于描述带交叉的有效性已成为讨论的对象 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ha76,Ha77,MG78,GSF78b,CDS78"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+，
+这些现象在第 3 章中曾予以讨论。
+它足够普遍，
+能够涵盖种类繁多的物理效应。
+为了说明这一点，
+我们将讨论原子核
+\begin_inset Formula $\ce{^{164}Er}$
+\end_inset
+的某些效应，
+该核在近几年中在实验上得到了非常深入的研究
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LCS76,KSM78"
+literal "true"
+
+\end_inset
+。
+人们已经发现了延伸至相当高自旋值的若干条转动带（参见图 7.6）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_6.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_6_Er164转动带能谱"
+
+\end_inset
+
+\begin_inset Formula $\ce{^{164}Er}$
+\end_inset
+ 中的转动带能谱。除基态带（gs）外，还展示了由对准的 
+\begin_inset Formula $i_{13/2}$
+\end_inset
+ 中子对构成的 Stephens-Simon 带（ss）、负宇称带和 
+\begin_inset Formula $\gamma$
+\end_inset
+ 带 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KSM78"
+literal "true"
+
+\end_inset
+。Yrast 线（虚线所示）沿着每个 
+\begin_inset Formula $I$
+\end_inset
+ 值的最低能级。右侧给出了 SCC 方法的理论计算结果 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSR76,EMR80a,EMR80b"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+方程 (7.91) 的变分给出了每个
+\begin_inset Formula $I$
+\end_inset
+值的最低能量。
+根据定义，
+这就是 yrast 线（图 7.6 中的虚线）。
+正如我们所见，
+它仅在
+\begin_inset Formula $I=14$
+\end_inset
+之前跟随基态带。
+在
+\begin_inset Formula $I=14$
+\end_inset
+与
+\begin_inset Formula $I=16$
+\end_inset
+之间，
+出现了一个带交叉，
+也就是说，
+如果我们沿着 yrast 线就会发生回弯（参见图 7.7）。
+相交叉的带具有带有两个对准的
+\begin_inset Formula $i_{13/2}$
+\end_inset
+中子的双准粒子带的结构。
+因此，
+yrast 线改变了它的性质：
+它在
+\begin_inset Formula $I=14$
+\end_inset
+之前跟随基态带，
+而对于所有
+\begin_inset Formula $I\geqslant16$
+\end_inset
+的值对应于对准带。
+在自洽 cranking 模型内沿着 yrast 线的能级计算展现出以下特征：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_7.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_7_Er164_Yb168回弯图"
+
+\end_inset
+原子核 
+\begin_inset Formula $\ce{^{164}Er}$
+\end_inset
+ 和 
+\begin_inset Formula $\ce{^{168}Yb}$
+\end_inset
+ 的回弯图。虚线代表实验数据，实线为 SCC 理论的计算结果 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSR76"
+literal "true"
+
+\end_inset
+。转动惯量 
+\begin_inset Formula $\mathcal{J}$
+\end_inset
+ 和角频率 
+\begin_inset Formula $\omega$
+\end_inset
+ 的定义见式 (3.3)。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(i) 伸展效应（The Stretching Effect）
+\series default
+代表转动过程中核形变可能发生的变化。
+它由自洽势
+\begin_inset Formula $\Gamma$
+\end_inset
+所描述，
+该势依赖于密度，
+因而依赖于 cranking 频率。
+图 7.8a 显示了在
+\begin_inset Formula $\ce{^{164}Er}$
+\end_inset
+的 SCC 计算中发现的有效核形变
+\begin_inset Formula $\beta$
+\end_inset
+和
+\begin_inset Formula $\gamma$
+\end_inset
+。
+在此自旋区域内形变
+\begin_inset Formula $\beta$
+\end_inset
+的改变相当小。
+对于许多良好形变的稀土核也是如此。
+另一方面，
+\begin_inset Formula $\gamma$
+\end_inset
+-形变增加至
+\begin_inset Formula $\gamma\sim10^{\circ}$
+\end_inset
+，
+但这强烈依赖于具体原子核，
+其它原子核对于
+\begin_inset Formula $\gamma$
+\end_inset
+-形变可能相当刚硬。
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(ii) Coriolis 反配对效应（The Coriolis Antipairing Effect, CAP）
+\series default
+意味着核内的对关联被 Coriolis 力削弱。
+在第 6 章中我们看到，
+对关联主要来源于相反自旋的核子对（Cooper 对），
+由于它们具有大的空间重叠而感受到强相互作用。
+由于 Coriolis 力在相反方向作用于两个角动量上（图 7.9），
+我们应当预期至少会出现部分对准以及相应的配对能
+\begin_inset Formula $\Delta$
+\end_inset
+随自旋增加而降低。
+这在计算中得到了证实（图 7.8b），
+并解释了低自旋值下转动惯量的适度增加。
+正如磁场中的超导体一样，
+在某一临界角动量下，
+我们发现了向正常流体态的相变。
+这种核 Meissner 效应由 Mottelson 和 Valatin 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MV60"
+literal "true"
+
+\end_inset
+ 所预言，
+并在许多计算中（例如 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CV66,RBM70,Wa70a,Ku72,Fr76"
+literal "true"
+
+\end_inset
+）在各不相同的自旋值下被发现。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_8.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_8_Er164理论参数变化"
+
+\end_inset
+
+\begin_inset Formula $\ce{^{164}Er}$
+\end_inset
+ 计算得到的形变参数（a）、能隙参数（b）、角动量期望值 
+\begin_inset Formula $J_{x}$
+\end_inset
+（c）以及转动系中的准粒子能量 
+\begin_inset Formula $E_{k}$
+\end_inset
+（d）随角动量的变化（引自 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSR76"
+literal "true"
+
+\end_inset
+）。
+\begin_inset Formula $\beta$
+\end_inset
+ 形变的值归一化为 
+\begin_inset Formula $I=0$
+\end_inset
+ 时的 0.3。部分（b）显示了质子和中子在正则基下的平均能隙参数 
+\begin_inset Formula $\tilde{\Delta}_{p}$
+\end_inset
+ 与 
+\begin_inset Formula $\tilde{\Delta}_{n}$
+\end_inset
+ [式 (7.97)] 以及对准对的能隙参数 
+\begin_inset Formula $\Delta_{\alpha\bar{\alpha}}$
+\end_inset
+（虚线）。更详细的说明见正文。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/7_9.pdf
+	width 45line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7_9_CAP效应示意图"
+
+\end_inset
+Coriolis 反配对效应（CAP）的示意图。
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+回弯现象曾被认为是由这种相变引起的
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KS73"
+literal "true"
+
+\end_inset
+。
+然而，
+允许一对或几对核子发生解耦过程的更现实计算表明，
+配对能隙
+\begin_inset Formula $\Delta$
+\end_inset
+在回弯区域并没有完全消失（图 7.8b，在
+\begin_inset Formula $I=12$
+\end_inset
+和
+\begin_inset Formula $I=16$
+\end_inset
+之间）。
+由于对准过程，
+它仅仅是减小了。
+这对应于向具有相应阻塞效应的双准粒子带的转变（参见第 6.3.4 节）。
+在图 7.8b 中，
+我们展示了平均能隙：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{\Delta}=\frac{1}{M'}\sum_{k>0}^{M'}\Delta_{k\bar{k}}.\label{eq:average_gap_def}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+（
+\begin_inset Formula $M'=M/2$
+\end_inset
+是组态空间中
+\begin_inset Formula $k>0$
+\end_inset
+的能级数。）即使对于在原始基下具有常数配对矩阵元
+\begin_inset Formula $\Delta$
+\end_inset
+的常数配对力，
+在正则基下的所有矩阵元
+\begin_inset Formula $\Delta_{k\bar{k}}$
+\end_inset
+也并不都相等。
+特别地，
+对准对的矩阵元
+\begin_inset Formula $\Delta_{\alpha\bar{\alpha}}$
+\end_inset
+趋向于零（图 7.8b 中的虚线）。
+这种效应对于仅作用于
+\begin_inset Formula $I=0$
+\end_inset
+对的纯配对力表现得最为显著（参见第 4.4.7 节）。
+极高自旋态的现实计算仍有待进行。
+然而，
+模型计算和实验数据
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BSC75"
+literal "true"
+
+\end_inset
+表明，
+剩余的对关联仍然存在，
+有时甚至维持到相当高的自旋值（
+\begin_inset Formula $I\sim40\text{--}50\hbar$
+\end_inset
+）。
+\end_layout
+
+\begin_layout Standard
+\noindent
+\series bold
+(iii) 对准过程（Alignment Processes）
+\series default
+（Stephens-Simon 效应，
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SS72a"
+literal "true"
+
+\end_inset
+；参见第 3.2 节）。
+由于 HFB 波函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+是最普遍的单粒子态的乘积（具有相应的占据几率），
+它们不仅可以代表基态带，
+还可以代表部分或完全对准的双准粒子带的态。
+因此，
+它们是在微观上研究此类解耦过程的合适工具。
+然而显然，
+我们必须允许轴对称性的破坏以描述此类对准态，
+它们是许多不同
+\begin_inset Formula $\Omega$
+\end_inset
+值的混合（参见第 3.3 节）。
+这在 cranking 计算中不成问题，
+因为 Coriolis 项
+\begin_inset Formula $\omega j_{x}$
+\end_inset
+无论如何都破坏了这种对称性。
+\end_layout
+
+\begin_layout Standard
+对准的程度由两粒子在正则基下的矩阵元
+\begin_inset Formula $j_{x_{\alpha\alpha}}$
+\end_inset
+和
+\begin_inset Formula $j_{x_{\bar{\alpha}\bar{\alpha}}}$
+\end_inset
+来量度。
+图 7.8c 展示了这些数值[乘以相应的占据几率 (7.96)，
+后者事实上非常接近于 1]以及
+\begin_inset Formula $J_{x}$
+\end_inset
+的总期望值。
+人们注意到，
+在回弯区，
+\begin_inset Formula $J_{x}$
+\end_inset
+总增量的大部分以上来自于这一对粒子。
+其余粒子的贡献减少，
+这对应于该区域内角频率
+\begin_inset Formula $\omega$
+\end_inset
+的减小。
+对于更高的自旋值，
+对准对的贡献相当稳定在
+\begin_inset Formula $5.8+4.8\simeq10.6$
+\end_inset
+，
+而一个完全对准的
+\begin_inset Formula $i_{13/2}$
+\end_inset
+对将给出
+\begin_inset Formula $13/2+11/2=12$
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+\noindent
+(iv) 最后，图 7.8d 展示了转动系中的某些准粒子能量 
+\begin_inset Formula $E_{k}$
+\end_inset
+}，
+它们是式 (7.93) 的本征值随角动量的变化。
+它们不再是二重简并的，
+而在时间反演不变的情况下是二重简并的。
+在大角动量下，
+可能会发生这些能量之一趋于零并变为负值的情况。
+由于配对势在该区域并未消失，
+该现象被称为无能隙超导（gapless superconductivity）
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+在金属超导体中也出现类似的现象 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AG61"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GLS67,Gr74,CMR75"
+literal "true"
+
+\end_inset
+。
+然而，
+这并不意味着存在更低能量的激发态，
+因为偶体系中的激发能始终是两个准粒子能量之和。
+我们看到，
+对于式 (7.93) 的每个本征值
+\begin_inset Formula $E_{k}$
+\end_inset
+，
+我们也有一个本征值
+\begin_inset Formula $-E_{k}$
+\end_inset
+（虚线）。
+这些“非物理”本征值之一在回弯区变为正值。
+然而，
+我们不被允许选取这个正本征值，
+因为（正如在第 7.3.2 节中所讨论的）这将对应于向奇粒子数体系波函数的转变。
+我们还在图 7.8d 中（通过细线）标出了带交叉现象，
+该现象与回弯区从基态带向双准粒子带的转变相关联。
+\end_layout
+
+\begin_layout Standard
+在稀土区的所有原子核中都发现了类似的特征
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+关于 SCC 理论在轻核中的应用，参见 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PM76,NS78,Zi78"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\end_inset
+。
+然而，
+在回弯图上存在显著的差异（参见图 7.7），
+因为此类图对能谱能级间距的微小改变非常敏感。
+在许多情况下，
+此类对准过程确实发生而并不伴随回弯现象。
+正如模型计算
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CMR75"
+literal "true"
+
+\end_inset
+所示，
+是否发生回弯取决于底层的单粒子能级密度以及两个相交叉带之间的剩余相互作用：
+弱相互作用和低能级密度给出突然对准，
+因而导致回弯。
+在其它情况（例如
+\begin_inset Formula $\ce{^{168}Yb}$
+\end_inset
+）下，
+我们具有平滑的对准过程而没有回弯（亦参见第 122 页的脚注）。
+\end_layout
+
+\begin_layout Standard
+此类计算最初由慕尼黑小组
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BMR73"
+literal "true"
+
+\end_inset
+在有限组态空间中利用对-四极相互作用完成。
+与此同时，
+该理论已通过粒子数投影得到了改进
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DBM73,FDG76"
+literal "true"
+
+\end_inset
+。
+正如第 11 章所讨论的，
+这在对关联经历剧烈改变的区域中似乎是必要的。
+定量上与实验的符合通过此类计算得到了一定程度的改善，
+但上面讨论的定性图像没有任何改变。
+将四极对力包含在内也是如此
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WF78a"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+人们还使用了更现实的力，
+如在有限空间中从 Reid 软芯势导出的
+\begin_inset Formula $G$
+\end_inset
+-矩阵
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GVS76,Go76a"
+literal "true"
+
+\end_inset
+或 Skyrme 类型的相互作用
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FMR79"
+literal "true"
+
+\end_inset
+。
+发现了定性上相似的结果。
+\end_layout
+
+\begin_layout Standard
+在第 7.3.2 节中我们看到，
+我们不仅可以将 HFB 类型的函数
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+用于偶核基态以及沿着 yrast 线的态，
+还可以用于偶核和奇核中的所有类型的准粒子态。
+因此，
+在 SCC 方法中，
+我们还可以描述奇核中的转动带以及偶核中的一般双准粒子带。
+特别地，
+我们可以研究所有类型的对准过程。
+\end_layout
+
+\begin_layout Standard
+第 11 章中对 cranking 模型更基本的推导表明，
+我们应当使用附加条件：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\langle J_{x}\rangle=\sqrt{I(I+1)-\langle J_{z}^{2}\rangle}\label{eq:cranking_condition_exact_projection}
+\end{equation}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+代替式 (7.92)。
+对于良好近似下轴对称的偶核基态带，
+\begin_inset Formula $\langle J_{z}^{2}\rangle$
+\end_inset
+相当小。
+在这些情况下，
+式 (7.98) 等价于式 (7.92)。
+利用这一附加条件计算了奇核中严重受扰动的转动带
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RMB74,FDB77"
+literal "true"
+
+\end_inset
+，
+并发现与实验能谱很好地符合（图 3.11）。
+特别地，
+在该模型中无需对 Coriolis 相互作用进行任何衰减因子修正
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RM74,Ri77"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+图 7.6 给出了具有负宇称的双准粒子带的例子。
+在这里一个中子位于
+\begin_inset Formula $i_{13/2}$
+\end_inset
+壳层，
+另一个中子位于负宇称壳层。
+我们再次观察到一个
+\begin_inset Formula $i_{13/2}$
+\end_inset
+中子的对准过程，
+这引起该带较低能级具有小的能级间距。
+由于宇称选择定则，
+相应的波函数自动与基态正交。
+这在引起回弯现象的所谓“第二”带的计算中是不同的。
+它是一个激发带，
+在回弯点处其特征从对准的双准粒子带转变为基态带。
+该带具有与 yrast 带相同的对称性。
+因此，
+我们必须施加额外的约束，
+即其波函数与 yrast 带的相应波函数正交
+\begin_inset CommandInset citation
+LatexCommand cite
+key "EMR80a"
+literal "true"
+
+\end_inset
+。
+\end_layout
+
+\begin_layout Standard
+图 7.6 还展示了一条
+\begin_inset Formula $\gamma$
+\end_inset
+-带。
+正如我们将在下一章看到的，
+此类集体振动无法由纯乘积波函数来描述。
+然而，
+这并不意味着建立在此类振动上的转动带不能用 cranking 模型进行研究。
+我们只需对
+\begin_inset Formula $|\Phi\rangle$
+\end_inset
+采用更复杂结构的波函数（例如下一章讨论的 TDA 或 RPA 波函数；
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ho68,CMR75,Ma77a,ERM78,ERM80b"
+literal "true"
+
+\end_inset
+）。
+\end_layout
+
+\begin_layout Standard
+让我们以如下总结性评述结束本章：
+HFB 理论是一种在推广的静态单粒子图像中包含尽可能多的关联的方法。
+因此，
+它定义了两个自洽确定的场[即序参量（参见第 11 章）]：
+用于
+\begin_inset Formula $ph$
+\end_inset
+-关联的平均势
+\begin_inset Formula $\Gamma$
+\end_inset
+，
+以及用于
+\begin_inset Formula $pp$
+\end_inset
+-关联的配对势
+\begin_inset Formula $\Delta$
+\end_inset
+。
+在这一理论框架内，
+我们能够重现球形核与形变核的基态性质。
+它还可以用于描述具有广义乘积类型波函数的激发态，
+例如纯准粒子激发或良好形变核中的转动态。
+在后一种情况下，
+必须对平均角动量施加约束。
+然而，
+我们应该记住，
+形变波函数必须被理解为内禀波函数，
+在实验室坐标系中通过投影到角动量本征态上可以从中获得波函数（参见第 11.4 节）。
+\end_layout
+
+\begin_layout Standard
+此外，
+HFB 理论可用于为处理进一步关联的更复杂方法提供最优基。
+这将在后续章节中进行。
+\end_layout
+
+\end_body
+\end_document

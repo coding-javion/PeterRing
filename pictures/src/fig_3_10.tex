@@ -1,0 +1,110 @@
+\documentclass[tikz,border=14pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{axis}[
+    width=14.0cm, height=9.8cm,
+    xmin=-0.355, xmax=0.355,
+    ymin=-2.0, ymax=10.4,
+    axis line style={line width=0.9pt},
+    tick style={line width=0.8pt, black},
+    tick align=inside,
+    tick pos=both,
+    xtick={-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3},
+    xticklabels={$-0.3$, $-0.2$, $-0.1$, $0$, $0.1$, $0.2$, $0.3$},
+    ytick={-2, 0, 2, 4, 6, 8, 10},
+    yticklabels={$-2$, $0$, $2$, $4$, $6$, $8$, $10$},
+    ticklabel style={font=\normalsize},
+    xlabel={$\beta$},
+    xlabel style={at={(axis description cs:0.5,-0.06)}, font=\Large},
+    ylabel={$\dfrac{E_I - E_{11/2}}{E_{2^+}}$},
+    ylabel style={at={(axis description cs:-0.08,0.5)}, font=\Large},
+    clip=true
+  ]
+    % Central title (using normalsize font to fit within the empty headroom)
+    \node[anchor=north, font=\normalsize] at (axis cs:0.04, 10.15) {$h_{11/2},\quad \lambda = -4.5\,\mathrm{MeV}$};
+
+    % Central flat segments
+    \draw[line width=0.7pt, black] (axis cs:-0.05, 1.01) -- (axis cs:0.05, 1.01);
+    \draw[line width=0.7pt, black] (axis cs:-0.05, 3.35) -- (axis cs:0.05, 3.35);
+    \draw[line width=0.7pt, black] (axis cs:-0.05, 7.05) -- (axis cs:0.05, 7.05);
+
+    % Thick curves
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (-0.350, 0.00) (-0.300, 0.09) (-0.200, 0.09) (-0.100, 0.10) (0.000, 0.09) (0.100, 0.09) (0.200, 0.09) (0.300, 0.05) (0.350, -0.05) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (-0.350, 4.38) (-0.300, 4.38) (-0.250, 4.19) (-0.200, 3.57) (-0.150, 2.72) (-0.100, 1.45) (-0.050, 1.01) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (-0.350, 9.86) (-0.300, 9.86) (-0.250, 9.45) (-0.200, 7.05) (-0.150, 5.83) (-0.100, 4.10) (-0.050, 3.35) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (-0.145, 10.20) (-0.130, 8.90) (-0.100, 7.91) (-0.050, 7.05) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (0.050, 1.01) (0.100, 0.97) (0.150, 1.00) (0.200, 1.10) (0.250, 1.26) (0.300, 1.45) (0.350, 1.50) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (0.050, 3.35) (0.100, 3.28) (0.150, 3.26) (0.200, 3.53) (0.250, 3.79) (0.300, 4.12) (0.350, 4.25) };
+    \addplot[line width=1.4pt, black, smooth, tension=0.4] coordinates { (0.050, 7.05) (0.100, 6.91) (0.150, 7.00) (0.200, 7.24) (0.250, 7.83) (0.300, 8.09) (0.350, 8.50) };
+
+    % Thin curves
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.350, 2.05) (-0.300, 2.05) (-0.250, 1.91) (-0.200, 1.69) (-0.150, 1.31) (-0.100, 1.05) (-0.050, 1.01) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.350, 6.98) (-0.300, 6.98) (-0.250, 6.69) (-0.200, 5.67) (-0.150, 4.41) (-0.100, 3.62) (-0.050, 3.35) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.240, 8.40) (-0.200, 8.12) (-0.150, 4.08) (-0.100, 1.69) (-0.050, 1.01) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.195, 10.20) (-0.170, 8.50) (-0.150, 6.45) (-0.100, 2.03) (-0.050, 1.01) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.180, 10.20) (-0.160, 8.50) (-0.150, 7.24) (-0.100, 4.19) (-0.050, 3.35) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.165, 10.20) (-0.150, 8.93) (-0.120, 6.50) (-0.100, 4.45) (-0.050, 3.35) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.155, 10.20) (-0.140, 8.80) (-0.100, 7.45) (-0.050, 7.05) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.130, 10.20) (-0.110, 8.80) (-0.100, 8.17) (-0.050, 7.05) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (-0.105, 10.20) (-0.080, 8.50) (-0.050, 7.05) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 1.01) (0.100, 0.79) (0.150, 0.66) (0.200, 0.33) (0.250, 0.10) (0.320, -0.15) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 3.35) (0.100, 2.91) (0.150, 2.48) (0.200, 2.02) (0.250, 1.48) (0.300, 0.85) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 3.35) (0.100, 3.09) (0.150, 3.02) (0.200, 3.19) (0.250, 3.57) (0.300, 4.12) (0.350, 4.25) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 1.01) (0.100, 1.48) (0.150, 2.16) (0.200, 3.19) (0.250, 3.79) (0.300, 4.36) (0.350, 4.65) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 7.05) (0.100, 6.52) (0.150, 5.97) (0.200, 5.62) (0.250, 4.48) (0.300, 3.95) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 1.01) (0.100, 1.78) (0.150, 4.50) (0.200, 5.52) (0.250, 6.20) (0.300, 6.70) (0.350, 6.85) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 7.05) (0.100, 7.24) (0.150, 8.02) (0.200, 9.41) (0.250, 9.70) (0.300, 9.80) (0.350, 9.85) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.080, 7.05) (0.120, 8.20) (0.150, 9.20) (0.170, 10.20) };
+    \addplot[line width=0.7pt, black, smooth, tension=0.4] coordinates { (0.050, 1.01) (0.120, 3.80) (0.200, 7.20) (0.260, 9.20) (0.290, 10.20) };
+
+    % Labels Left (placed cleanly with white padding)
+    \node[anchor=center, font=\scriptsize, fill=white, inner sep=0.8pt] at (axis cs:-0.320, 9.86) {$\frac{19}{2}$};
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:-0.235, 8.45) {$\frac{9}{2}$};
+    \node[anchor=south west, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:-0.345, 7.02) {$\frac{17}{2}$};
+    \node[anchor=south west, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:-0.345, 4.42) {$\frac{15}{2}$};
+    \node[anchor=south west, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:-0.345, 2.08) {$\frac{13}{2}$};
+    \node[anchor=south west, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:-0.345, 0.12) {$\frac{11}{2}$};
+
+    % Labels Top Left (staggered in 2 tiers to eliminate horizontal crowding)
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.200, 10.05) {$\frac{11}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.180, 9.25) {$\frac{7}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.165, 10.05) {$\frac{5}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.153, 9.25) {$\frac{3}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.138, 10.05) {$\frac{23}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.126, 9.25) {$\frac{21}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.5pt] at (axis cs:-0.105, 10.05) {$\frac{1}{2}$};
+
+    % Labels Top Right
+    \node[anchor=north east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.165, 9.85) {$\frac{21}{2}$};
+    \node[anchor=north east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.280, 9.85) {$\frac{11}{2}$};
+    \node[anchor=north east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.330, 9.60) {$\frac{17}{2}$};
+
+    % Labels Right (well spaced vertically, clear of crossing curves)
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, 8.55) {$\frac{23}{2}$};
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, 6.90) {$\frac{13}{2}$};
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, 4.70) {$\frac{9}{2}$};
+    \node[anchor=north east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, 4.15) {$\frac{19}{2}$};
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, 1.55) {$\frac{15}{2}$};
+    \node[anchor=south east, font=\scriptsize, fill=white, inner sep=0.6pt] at (axis cs:0.345, -0.02) {$\frac{11}{2}$};
+
+    % Labels inside right
+    \node[anchor=south west, font=\scriptsize, fill=white, inner sep=0.8pt] at (axis cs:0.22, 5.0) {$\frac{1}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.8pt] at (axis cs:0.16, 2.9) {$\frac{5}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.8pt] at (axis cs:0.23, 1.8) {$\frac{3}{2}$};
+    \node[anchor=north, font=\scriptsize, fill=white, inner sep=0.8pt] at (axis cs:0.14, 0.6) {$\frac{7}{2}$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

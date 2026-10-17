@@ -1,0 +1,106 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale factors: x in fm (0 to 11), y in 10^-2 fm^-3 (0 to 9.6)
+  \def\xscale{0.82}
+  \def\yscale{0.82}
+
+  % Outer bounding frame
+  \draw[line width=0.95pt] (0, 0) rectangle (10.8*\xscale, 9.6*\yscale);
+
+  % Y-axis ticks and labels (pointing inward)
+  \foreach \y in {0, 2, 4, 6, 8} {
+    \draw[line width=0.65pt] (0, \y*\yscale) -- (0.20*\xscale, \y*\yscale);
+    \node[anchor=east, font=\small] at (-0.1, \y*\yscale) {$\y$};
+  }
+  \node[anchor=north west, font=\normalsize] at (0.08*\xscale, 9.50*\yscale) {$\rho \times 10^{-2}\,(\mathrm{fm}^{-3})$};
+
+  % X-axis ticks and labels (pointing inward)
+  \foreach \x in {2, 4, 6, 10} {
+    \draw[line width=0.65pt] (\x*\xscale, 0) -- (\x*\xscale, 0.20*\yscale);
+    \node[anchor=north, font=\small] at (\x*\xscale, -0.1) {$\x$};
+  }
+  % Tick for 8 and r_cl
+  \draw[line width=0.65pt] (8*\xscale, 0) -- (8*\xscale, 0.20*\yscale);
+  \node[anchor=north east, font=\small] at (7.95*\xscale, -0.08) {$8$};
+
+  \draw[line width=0.75pt] (8.22*\xscale, 0) -- (8.22*\xscale, 0.20*\yscale);
+  \node[anchor=north west, font=\small] at (8.25*\xscale, -0.08) {$r_{\mathrm{cl}}$};
+
+  % X-axis label
+  \node[anchor=south east, font=\normalsize] at (10.6*\xscale, 0.2*\yscale) {$r\,(\mathrm{fm})$};
+
+  % --- CURVE 2: Local Harmonic Approximation (Dashed) ---
+  \draw[line width=1.05pt, dashed]
+    plot[smooth] coordinates {
+      (0*\xscale, 7.50*\yscale)
+      (1.5*\xscale, 7.50*\yscale)
+      (3.0*\xscale, 7.48*\yscale)
+      (4.0*\xscale, 7.42*\yscale)
+      (4.6*\xscale, 7.22*\yscale)
+      (5.2*\xscale, 6.75*\yscale)
+      (5.8*\xscale, 5.85*\yscale)
+      (6.4*\xscale, 4.40*\yscale)
+      (7.0*\xscale, 2.55*\yscale)
+      (7.6*\xscale, 1.10*\yscale)
+      (8.2*\xscale, 0.38*\yscale)
+      (8.8*\xscale, 0.10*\yscale)
+      (9.5*\xscale, 0.025*\yscale)
+      (10.2*\xscale, 0.005*\yscale)
+    };
+
+  % --- CURVE 3: Thomas-Fermi Density (Dotted) ---
+  \draw[line width=1.2pt, dotted]
+    plot[smooth] coordinates {
+      (4.6*\xscale, 7.22*\yscale)
+      (5.2*\xscale, 6.78*\yscale)
+      (5.8*\xscale, 6.00*\yscale)
+      (6.4*\xscale, 4.85*\yscale)
+      (7.0*\xscale, 3.25*\yscale)
+      (7.4*\xscale, 2.05*\yscale)
+      (7.8*\xscale, 0.90*\yscale)
+      (8.12*\xscale, 0.25*\yscale)
+      (8.22*\xscale, 0.00*\yscale)
+    };
+
+  % --- CURVE 1: Quantum Exact Density (Solid) ---
+  \draw[line width=1.15pt]
+    plot[smooth] coordinates {
+      (0*\xscale, 8.60*\yscale)
+      (0.6*\xscale, 8.28*\yscale)
+      (1.2*\xscale, 7.50*\yscale)
+      (1.8*\xscale, 6.82*\yscale)
+      (2.2*\xscale, 6.72*\yscale)
+      (2.7*\xscale, 6.95*\yscale)
+      (3.3*\xscale, 7.08*\yscale)
+      (3.8*\xscale, 6.92*\yscale)
+      (4.3*\xscale, 6.88*\yscale)
+      (4.8*\xscale, 7.22*\yscale)
+      (5.3*\xscale, 7.40*\yscale)
+      (5.8*\xscale, 6.88*\yscale)
+      (6.2*\xscale, 5.80*\yscale)
+      (6.7*\xscale, 4.10*\yscale)
+      (7.2*\xscale, 2.30*\yscale)
+      (7.7*\xscale, 0.98*\yscale)
+      (8.2*\xscale, 0.38*\yscale)
+      (8.8*\xscale, 0.12*\yscale)
+      (9.6*\xscale, 0.02*\yscale)
+      (10.4*\xscale, 0.002*\yscale)
+    };
+
+\end{tikzpicture}
+\end{document}

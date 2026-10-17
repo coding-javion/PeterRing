@@ -1,0 +1,177 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.5pt, width=3.2pt]}}
+    },
+    postaction={decorate}
+  },
+  arrowedpos/.style={
+    decoration={
+      markings,
+      mark=at position #1 with {\arrow{Stealth[length=4.5pt, width=3.2pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % ROW 1: LHS and Terms 1, 2, 3
+  % ========================================================
+  \begin{scope}[shift={(0, 1.6)}]
+
+    % --- LHS: Circle R ---
+    \begin{scope}[shift={(0,0)}]
+      % Legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.3, 0.5) node[left=-1pt, font=\small] {$3$} to[out=0, in=145] (-0.38, 0.28);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.3, 0) node[left=-1pt, font=\small] {$2$} -- (-0.45, 0);
+      \draw[thick, line width=1pt, arrowedpos=0.4] (-0.38, -0.28) to[out=-145, in=0] (-1.3, -0.5) node[left=-1pt, font=\small] {$1'$};
+
+      \draw[thick, line width=1pt, arrowedpos=0.6] (0.38, 0.28) to[out=35, in=180] (1.3, 0.5) node[right=-1pt, font=\small] {$3'$};
+      \draw[thick, line width=1pt, arrowedpos=0.6] (0.45, 0) -- (1.3, 0) node[right=-1pt, font=\small] {$2'$};
+      \draw[thick, line width=1pt, arrowedpos=0.4] (1.3, -0.5) node[right=-1pt, font=\small] {$1$} to[out=180, in=-35] (0.38, -0.28);
+
+      % Circle R
+      \draw[thick, fill=white] (0,0) circle (0.48);
+      \node[font=\large] at (0,0) {$R$};
+    \end{scope}
+
+    % Approx sign
+    \node[font=\large] at (2.0, 0) {$\simeq$};
+
+    % --- Term 1: Three disconnected lines ---
+    \begin{scope}[shift={(3.7, 0)}]
+      \draw[thick, line width=1pt, arrowed] (-0.8, 0.5) node[left=-1pt, font=\small] {$3$} -- (0.8, 0.5) node[right=-1pt, font=\small] {$3'$};
+      \draw[thick, line width=1pt, arrowed] (-0.8, 0) node[left=-1pt, font=\small] {$2$} -- (0.8, 0) node[right=-1pt, font=\small] {$2'$};
+      \draw[thick, line width=1pt, arrowed] (0.8, -0.5) node[right=-1pt, font=\small] {$1$} -- (-0.8, -0.5) node[left=-1pt, font=\small] {$1'$};
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (5.2, 0) {$+$};
+
+    % --- Term 2: 2-3 interaction (vertex) ---
+    \begin{scope}[shift={(6.7, 0)}]
+      % Top two lines meet at (0, 0.25)
+      \draw[thick, line width=1pt, arrowedpos=0.55] (-0.8, 0.55) to[out=0, in=140] (0, 0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (-0.8, -0.05) to[out=0, in=-140] (0, 0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0, 0.25) to[out=40, in=180] (0.8, 0.55);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0, 0.25) to[out=-40, in=180] (0.8, -0.05);
+      \filldraw[black] (0, 0.25) circle (1.8pt);
+
+      % Bottom line
+      \draw[thick, line width=1pt, arrowed] (0.8, -0.5) -- (-0.8, -0.5);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (8.2, 0) {$+$};
+
+    % --- Term 3: 2-3 bubble ---
+    \begin{scope}[shift={(9.8, 0)}]
+      % Left legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.9, 0.55) to[out=0, in=140] (-0.45, 0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.9, -0.05) to[out=0, in=-140] (-0.45, 0.25);
+      % Bubble
+      \draw[thick, line width=1pt, arrowed] (-0.45, 0.25) to[out=55, in=125] (0.45, 0.25);
+      \draw[thick, line width=1pt, arrowed] (-0.45, 0.25) to[out=-55, in=-125] (0.45, 0.25);
+      % Right legs
+      \draw[thick, line width=1pt, arrowedpos=0.5] (0.45, 0.25) to[out=40, in=180] (0.9, 0.55);
+      \draw[thick, line width=1pt, arrowedpos=0.5] (0.45, 0.25) to[out=-40, in=180] (0.9, -0.05);
+
+      \filldraw[black] (-0.45, 0.25) circle (1.8pt);
+      \filldraw[black] (0.45, 0.25) circle (1.8pt);
+
+      % Bottom line
+      \draw[thick, line width=1pt, arrowed] (0.9, -0.5) -- (-0.9, -0.5);
+    \end{scope}
+
+  \end{scope}
+
+  % ========================================================
+  % ROW 2: Terms 4, 5, 6
+  % ========================================================
+  \begin{scope}[shift={(0, -1.6)}]
+
+    % Plus sign
+    \node[font=\large] at (2.0, 0) {$+$};
+
+    % --- Term 4: 1-2 interaction (vertex) ---
+    \begin{scope}[shift={(3.7, 0)}]
+      % Top line 3
+      \draw[thick, line width=1pt, arrowed] (-0.8, 0.5) -- (0.8, 0.5);
+
+      % Lines 2 and 1 meet at (0, -0.25)
+      \draw[thick, line width=1pt, arrowedpos=0.55] (-0.8, 0.05) to[out=0, in=140] (0, -0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0, -0.25) to[out=40, in=180] (0.8, 0.05);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0.8, -0.55) to[out=180, in=-40] (0, -0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0, -0.25) to[out=-140, in=0] (-0.8, -0.55);
+
+      \filldraw[black] (0, -0.25) circle (1.8pt);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (5.2, 0) {$+$};
+
+    % --- Term 5: 1-2 bubble ---
+    \begin{scope}[shift={(6.7, 0)}]
+      % Top line 3
+      \draw[thick, line width=1pt, arrowed] (-0.9, 0.5) -- (0.9, 0.5);
+
+      % Left legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.9, 0.05) to[out=0, in=140] (-0.45, -0.25);
+      \draw[thick, line width=1pt, arrowedpos=0.5] (-0.45, -0.25) to[out=-140, in=0] (-0.9, -0.55);
+      % Bubble
+      \draw[thick, line width=1pt, arrowed] (-0.45, -0.25) to[out=55, in=125] (0.45, -0.25);
+      \draw[thick, line width=1pt, arrowed] (0.45, -0.25) to[out=-125, in=-55] (-0.45, -0.25);
+      % Right legs
+      \draw[thick, line width=1pt, arrowedpos=0.5] (0.45, -0.25) to[out=40, in=180] (0.9, 0.05);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (0.9, -0.55) to[out=180, in=-40] (0.45, -0.25);
+
+      \filldraw[black] (-0.45, -0.25) circle (1.8pt);
+      \filldraw[black] (0.45, -0.25) circle (1.8pt);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (8.2, 0) {$+$};
+
+    % --- Term 6: Non-factorizable crossed diagram ---
+    \begin{scope}[shift={(9.8, 0)}]
+      % Coordinates of upper and lower vertices
+      \coordinate (Vtop) at (-0.2, 0.25);
+      \coordinate (Vbot) at (0.2, -0.25);
+
+      % Left incoming legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.9, 0.55) to[out=0, in=140] (Vtop);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.9, -0.05) to[out=0, in=-140] (Vtop);
+
+      % Upper vertex to top-right
+      \draw[thick, line width=1pt, arrowedpos=0.6] (Vtop) to[out=30, in=180] (0.9, 0.55);
+
+      % Connecting propagator between vertices
+      \draw[thick, line width=1pt, arrowed] (Vtop) -- (Vbot);
+
+      % Lower vertex legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (0.9, -0.55) to[out=180, in=-40] (Vbot);
+      \draw[thick, line width=1pt, arrowedpos=0.5] (Vbot) to[out=40, in=180] (0.9, -0.05);
+      \draw[thick, line width=1pt, arrowedpos=0.5] (Vbot) to[out=-140, in=0] (-0.9, -0.55);
+
+      \filldraw[black] (Vtop) circle (1.8pt);
+      \filldraw[black] (Vbot) circle (1.8pt);
+    \end{scope}
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

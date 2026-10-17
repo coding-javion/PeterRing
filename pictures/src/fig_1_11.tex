@@ -1,0 +1,112 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % Horizontal reference dashed lines connecting heights
+  % ========================================================
+  \draw[dashed, thin, black!60] (-0.3, 5.0) -- (6.0, 5.0);
+  \draw[dashed, thin, black!60] (-0.3, 2.0) -- (6.0, 2.0);
+
+  % ========================================================
+  % LEFT COLUMN: beta-vibration
+  % ========================================================
+  \begin{scope}[shift={(0,0)}]
+    % --- Top: 2-3 plane ---
+    \begin{scope}[shift={(0, 3.5)}]
+      % External axis arrows
+      \draw[thick, ->] (0, 2.2) -- (0, 2.6) node[right=2pt, font=\large] {$3$};
+      \draw[thick, ->] (1.35, 0) -- (1.75, 0) node[right=2pt, font=\large] {$2$};
+
+      % Ellipses: beta vibration oscillates along axis 3
+      % Solid: more elongated along 3, narrower along 2
+      \draw[very thick, line width=1.3pt] (0,0) ellipse (0.95cm and 2.1cm);
+      % Dashed: less elongated along 3, wider along 2
+      \draw[thick, dashed, line width=1.1pt] (0,0) ellipse (1.25cm and 1.5cm);
+
+      % Double arrow showing oscillation along 3
+      \draw[{Latex}-{Latex}, thick] (0, 1.45) -- (0, 2.05);
+      \draw[{Latex}-{Latex}, thick] (0, -1.45) -- (0, -2.05);
+    \end{scope}
+
+    % Connecting vertical dashed lines from top to bottom
+    \draw[dashed, thin, black!60] (-1.25, 2.0) -- (-1.25, -0.4);
+    \draw[dashed, thin, black!60] (-0.95, 2.0) -- (-0.95, -0.4);
+    \draw[dashed, thin, black!60] (0.95, 2.0) -- (0.95, -0.4);
+    \draw[dashed, thin, black!60] (1.25, 2.0) -- (1.25, -0.4);
+
+    % --- Bottom: 1-2 plane ---
+    \begin{scope}[shift={(0, -1.6)}]
+      % External axis arrows
+      \draw[thick, ->] (0, -1.35) -- (0, -1.75) node[right=2pt, font=\large] {$1$};
+      \draw[thick, ->] (1.35, 0) -- (1.75, 0) node[right=2pt, font=\large] {$2$};
+
+      % Axially symmetric -> circles!
+      \draw[very thick, line width=1.3pt] (0,0) circle (0.95cm);
+      \draw[thick, dashed, line width=1.1pt] (0,0) circle (1.25cm);
+
+      % Double arrow showing radial oscillation
+      \draw[{Latex}-{Latex}, thick] (0, 0.95) -- (0, 1.25);
+    \end{scope}
+
+    % Column Label
+    \node[font=\Large] at (0, -4.0) {$\beta$-vibration};
+  \end{scope}
+
+  % ========================================================
+  % RIGHT COLUMN: gamma-vibration
+  % ========================================================
+  \begin{scope}[shift={(5.2,0)}]
+    % --- Top: 2-3 plane ---
+    \begin{scope}[shift={(0, 3.5)}]
+      % External axis arrows
+      \draw[thick, ->] (0, 1.9) -- (0, 2.3) node[right=2pt, font=\large] {$3$};
+      \draw[thick, ->] (1.45, 0) -- (1.85, 0) node[right=2pt, font=\large] {$2$};
+
+      % Ellipses: height along 3 is strictly fixed (1.8 cm), width along 2 oscillates
+      \draw[very thick, line width=1.3pt] (0,0) ellipse (1.35cm and 1.8cm);
+      \draw[thick, dashed, line width=1.1pt] (0,0) ellipse (0.95cm and 1.8cm);
+
+      % Double arrow showing oscillation along 2
+      \draw[{Latex}-{Latex}, thick] (0.95, 0) -- (1.35, 0);
+    \end{scope}
+
+    % Connecting vertical dashed lines from top to bottom
+    \draw[dashed, thin, black!60] (-1.35, 2.0) -- (-1.35, -0.4);
+    \draw[dashed, thin, black!60] (-0.95, 2.0) -- (-0.95, -0.4);
+    \draw[dashed, thin, black!60] (0.95, 2.0) -- (0.95, -0.4);
+    \draw[dashed, thin, black!60] (1.35, 2.0) -- (1.35, -0.4);
+
+    % --- Bottom: 1-2 plane ---
+    \begin{scope}[shift={(0, -1.6)}]
+      % External axis arrows
+      \draw[thick, ->] (0, -1.45) -- (0, -1.85) node[right=2pt, font=\large] {$1$};
+      \draw[thick, ->] (1.45, 0) -- (1.85, 0) node[right=2pt, font=\large] {$2$};
+
+      % Quadrupole deformation in 1-2 plane:
+      % Solid: stretched along 1, compressed along 2
+      \draw[very thick, line width=1.3pt] (0,0) ellipse (0.95cm and 1.35cm);
+      % Dashed: stretched along 2, compressed along 1
+      \draw[thick, dashed, line width=1.1pt] (0,0) ellipse (1.35cm and 0.95cm);
+
+      % Double arrows showing oscillation along 1 and 2
+      \draw[{Latex}-{Latex}, thick] (0, 0.95) -- (0, 1.35);
+    \end{scope}
+
+    % Column Label
+    \node[font=\Large] at (0, -4.0) {$\gamma$-vibration};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+  \begin{axis}[
+    width=13.0cm, height=9.5cm,
+    xmin=0, xmax=330,
+    ymin=0, ymax=110,
+    axis line style={line width=0.9pt},
+    tick style={line width=0.8pt, black},
+    tick align=inside,
+    tick pos=both,
+    xtick={100, 200, 300},
+    xticklabels={$100$, $200$, $300$},
+    ytick={20, 40, 60, 80, 100},
+    yticklabels={$20$, $40$, $60$, $80$, $100$},
+    ticklabel style={font=\normalsize},
+    xlabel={$A$},
+    xlabel style={at={(axis cs:312,0)}, anchor=north west, font=\Large},
+    clip=true
+  ]
+    % Solid Curves
+    \addplot[line width=1.2pt, black, smooth, tension=0.3] coordinates { (0, 0.0) (10, 10.3) (20, 20.0) (30, 29.6) (40, 39.2) (50, 48.6) (60, 58.0) (70, 67.0) (80, 75.0) (90, 81.4) (100, 87.0) (110, 91.5) (120, 94.6) (130, 96.1) (135, 96.6) (140, 96.2) (150, 94.5) (160, 92.0) (170, 89.5) (180, 87.2) (190, 85.6) (200, 84.5) (210, 83.5) (220, 81.5) (230, 78.5) (240, 74.8) (250, 70.2) (260, 64.5) (270, 57.5) (280, 49.0) (290, 39.0) (300, 27.0) (308, 15.0) (314, 5.5) (318, 0.0) };
+    \addplot[line width=1.2pt, black, smooth, tension=0.3] coordinates { (0, 0.0) (10, 5.6) (20, 12.0) (30, 18.5) (40, 25.0) (50, 31.3) (60, 37.6) (70, 43.9) (80, 49.5) (90, 54.6) (100, 59.8) (110, 64.4) (120, 68.8) (130, 72.8) (140, 76.5) (150, 79.8) (160, 82.5) (170, 84.2) (180, 85.0) (190, 85.0) (200, 84.5) };
+
+    % Dashed Curve
+    \addplot[line width=1.0pt, dashed, black, smooth, tension=0.3] coordinates { (0, 0.0) (10, 8.0) (20, 15.5) (30, 22.7) (40, 30.2) (50, 37.7) (60, 45.2) (70, 52.7) (80, 59.0) (90, 64.3) (100, 68.5) (110, 71.6) (120, 74.2) (130, 76.1) (138, 76.8) (145, 76.5) (150, 75.8) (160, 73.8) (170, 70.2) (180, 65.0) (190, 58.0) (200, 48.5) (210, 36.5) (216, 24.0) (221, 11.0) (224, 4.0) (226, 0.0) };
+
+    % Curve Labels
+    \node[above=2pt, font=\Large] at (axis cs:135, 96.6) {$I_{\mathrm{II}}$};
+    \node[below right=2pt, font=\Large] at (axis cs:90, 54.6) {$I_{\mathrm{I}}$};
+
+    % Y-axis Title inside plot at top left
+    \node[below right=4pt, font=\Large] at (axis cs:0, 110) {$I(\hbar)$};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

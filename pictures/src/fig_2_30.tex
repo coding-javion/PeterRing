@@ -1,0 +1,116 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{10.5}
+  \def\h{7.2}
+
+  \def\gmin{0.0}
+  \def\gmax{5.0}
+  \def\emin{-13.2}
+  \def\emax{2.0}
+
+  \pgfmathsetmacro{\sx}{\w / (\gmax - \gmin)}
+  \pgfmathsetmacro{\sy}{\h / (\emax - \emin)}
+
+  % Outer box frame
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Ticks on bottom and top (inwards)
+  \foreach \g in {1, 2, 3, 4, 5} {
+    \pgfmathsetmacro{\xpos}{(\g - \gmin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.16);
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\g$};
+  }
+  % Axis label gamma (hbar omega_0) placed clearly below the axis
+  \node[below=4pt, font=\normalsize] at ({ (4.5 - \gmin)*\sx }, 0) {$\gamma\,(\hbar\omega_0)$};
+
+  % Ticks on left and right (inwards)
+  \foreach \e in {0, -5, -10} {
+    \pgfmathsetmacro{\ypos}{(\e - \emin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.16, \ypos);
+    \node[left=4pt, font=\normalsize] at (0, \ypos) {$\e$};
+  }
+
+  % Axis label E_osc (MeV) placed cleanly above tick 0 with proper clearance
+  \node[anchor=south east, align=right, font=\normalsize] at (-0.2, {(0 - \emin)*\sy + 0.15}) {$E_{\mathrm{osc}}$\\[-2pt]{\small $(\mathrm{MeV})$}};
+
+  % Header text positioned cleanly with ample spacing
+  \node[font=\normalsize] at ({(2.2 - \gmin)*\sx}, \h - 0.55) {HARMONIC OSCILLATOR POTENTIAL};
+  \node[font=\normalsize] at ({(2.2 - \gmin)*\sx}, \h - 1.15) {(spherical)};
+  \node[font=\normalsize] at ({(4.5 - \gmin)*\sx}, \h - 0.55) {$N = 70$};
+  \node[font=\normalsize] at ({(4.4 - \gmin)*\sx}, \h - 1.15) {$\hbar\omega_0 = 6\ \mathrm{MeV}$};
+
+  % Curve M = 1
+  \draw[line width=1.1pt]
+    plot[smooth, tension=0.7] coordinates {
+      ({(0.00 - \gmin)*\sx}, {(0.00 - \emin)*\sy})
+      ({(0.20 - \gmin)*\sx}, {(-0.20 - \emin)*\sy})
+      ({(0.35 - \gmin)*\sx}, {(-1.50 - \emin)*\sy})
+      ({(0.50 - \gmin)*\sx}, {(-6.39 - \emin)*\sy})
+      ({(0.65 - \gmin)*\sx}, {(-8.35 - \emin)*\sy})
+      ({(0.80 - \gmin)*\sx}, {(-9.05 - \emin)*\sy})
+      ({(1.00 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(1.15 - \gmin)*\sx}, {(-9.40 - \emin)*\sy})
+      ({(1.35 - \gmin)*\sx}, {(-10.40 - \emin)*\sy})
+      ({(1.55 - \gmin)*\sx}, {(-11.80 - \emin)*\sy})
+      ({(1.75 - \gmin)*\sx}, {(-13.20 - \emin)*\sy})
+    };
+  \node[fill=white, inner sep=1.1pt, font=\normalsize] at ({(1.55 - \gmin)*\sx - 0.4}, {(-11.50 - \emin)*\sy}) {$(M=1)$};
+
+  % Curve M = 2
+  \draw[line width=1.1pt]
+    plot[smooth, tension=0.7] coordinates {
+      ({(0.00 - \gmin)*\sx}, {(0.00 - \emin)*\sy})
+      ({(0.25 - \gmin)*\sx}, {(0.25 - \emin)*\sy})
+      ({(0.40 - \gmin)*\sx}, {(-0.20 - \emin)*\sy})
+      ({(0.55 - \gmin)*\sx}, {(-4.50 - \emin)*\sy})
+      ({(0.70 - \gmin)*\sx}, {(-8.02 - \emin)*\sy})
+      ({(0.85 - \gmin)*\sx}, {(-9.10 - \emin)*\sy})
+      ({(1.05 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(2.00 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(3.10 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(3.40 - \gmin)*\sx}, {(-9.35 - \emin)*\sy})
+      ({(3.70 - \gmin)*\sx}, {(-9.65 - \emin)*\sy})
+      ({(4.00 - \gmin)*\sx}, {(-10.33 - \emin)*\sy})
+      ({(4.25 - \gmin)*\sx}, {(-11.50 - \emin)*\sy})
+      ({(4.45 - \gmin)*\sx}, {(-13.20 - \emin)*\sy})
+    };
+  \node[above right=-2pt and 3pt, font=\normalsize] at ({(4.15 - \gmin)*\sx}, {(-11.00 - \emin)*\sy}) {$(M=2)$};
+
+  % Curve M = 3
+  \draw[line width=1.1pt]
+    plot[smooth, tension=0.7] coordinates {
+      ({(0.00 - \gmin)*\sx}, {(0.00 - \emin)*\sy})
+      ({(0.20 - \gmin)*\sx}, {(0.15 - \emin)*\sy})
+      ({(0.38 - \gmin)*\sx}, {(0.70 - \emin)*\sy})
+      ({(0.50 - \gmin)*\sx}, {(0.50 - \emin)*\sy})
+      ({(0.65 - \gmin)*\sx}, {(-4.50 - \emin)*\sy})
+      ({(0.80 - \gmin)*\sx}, {(-8.10 - \emin)*\sy})
+      ({(0.95 - \gmin)*\sx}, {(-9.10 - \emin)*\sy})
+      ({(1.10 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(2.00 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(3.10 - \gmin)*\sx}, {(-9.20 - \emin)*\sy})
+      ({(3.50 - \gmin)*\sx}, {(-9.00 - \emin)*\sy})
+      ({(3.80 - \gmin)*\sx}, {(-8.59 - \emin)*\sy})
+      ({(4.10 - \gmin)*\sx}, {(-7.70 - \emin)*\sy})
+      ({(4.40 - \gmin)*\sx}, {(-6.15 - \emin)*\sy})
+      ({(4.70 - \gmin)*\sx}, {(-2.50 - \emin)*\sy})
+    };
+  \node[right=2pt, fill=white, inner sep=1.1pt, font=\normalsize] at ({(4.30 - \gmin)*\sx}, {(-6.15 - \emin)*\sy}) {$(M=3)$};
+
+\end{tikzpicture}
+\end{document}

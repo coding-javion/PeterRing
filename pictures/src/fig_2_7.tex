@@ -1,0 +1,74 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Parameters
+  \def\Rn{1.7}
+  \def\Rp{1.7}
+  \def\a{0.22}
+
+  % Horizontal line E = 0
+  \draw[line width=0.8pt] (-3.4, 0) -- (3.6, 0);
+
+  % Vertical energy axis
+  \draw[line width=0.9pt, ->] (0, -4.6) -- (0, 1.8) node[anchor=west, font=\large] {$E$};
+
+  % Origin circle
+  \filldraw[line width=0.8pt, fill=white] (0, 0) circle (2.2pt);
+
+  % Labels (n) and (p) circled at top
+  \node[draw, circle, line width=0.8pt, inner sep=1.8pt, font=\normalsize] at (-1.6, 1.2) {$\mathrm{n}$};
+  \node[draw, circle, line width=0.8pt, inner sep=1.8pt, font=\normalsize] at (1.9, 1.2) {$\mathrm{p}$};
+
+  % --- LEFT SIDE: Neutron potential ---
+  % Depth -3.4
+  \draw[line width=1.3pt, domain=-2.8:0, samples=80, smooth]
+    plot (\x, {-3.4 / (1 + exp((abs(\x) - \Rn)/\a))});
+
+  % --- RIGHT SIDE: Proton potential components ---
+  % 1. Dashed deeper nuclear potential: depth -4.4
+  \draw[line width=0.9pt, dashed]
+    (0, -4.4) -- (0.8, -4.4) to[out=0, in=-95] (1.7, -1.0) to[out=85, in=180] (2.8, -0.05);
+
+  % 2. Dashed Coulomb potential V_c: starts at 1.2, falls to 0
+  \draw[line width=0.8pt, dashed]
+    (0, 1.2) to[out=0, in=150] (1.7, 0.55) to[out=-30, in=170] (3.3, 0.08);
+  \node[anchor=south, font=\normalsize] at (1.0, 1.05) {$V_c$};
+
+  % 3. Solid combined proton potential: depth -3.0 inside, barrier at 1.8 reaching +0.38
+  \draw[line width=1.3pt]
+    (0, -3.0) -- (0.8, -3.0)
+    to[out=0, in=-95] (1.68, 0)
+    to[out=85, in=170] (1.95, 0.38)
+    to[out=-10, in=165] (3.3, 0.08);
+
+  % --- Single-particle levels across the well ---
+  % Level 1: y = -2.8
+  \draw[line width=0.8pt] (-1.45, -2.8) -- (1.25, -2.8);
+  % Level 2: y = -2.3
+  \draw[line width=0.8pt] (-1.60, -2.3) -- (1.45, -2.3);
+  % Level 3: y = -1.8
+  \draw[line width=0.8pt] (-1.68, -1.8) -- (1.55, -1.8);
+  % Level 4: y = -1.3
+  \draw[line width=0.8pt] (-1.77, -1.3) -- (1.62, -1.3);
+  % Level 5: y = -0.85 (Fermi level E_F)
+  \draw[line width=0.9pt] (-1.88, -0.85) -- (1.68, -0.85);
+  % Level 6: y = -0.42
+  \draw[line width=0.8pt] (-2.02, -0.42) -- (1.71, -0.42);
+
+  % Fermi level label E_F on the left
+  \node[anchor=east, font=\large] at (-2.0, -0.85) {$E_F$};
+
+\end{tikzpicture}
+\end{document}

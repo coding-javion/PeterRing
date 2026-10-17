@@ -1,0 +1,49 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Rotation angle of the ellipsoid body axis 3
+  \def\rotang{28}
+
+  % Axis 3: lower tail extending outside the nucleus
+  \draw[thick] ({-3.2*cos(\rotang)}, {-3.2*sin(\rotang)}) -- ({-2.6*cos(\rotang)}, {-2.6*sin(\rotang)});
+
+  % Ellipsoid outline and internal 3D rings
+  \begin{scope}[rotate=\rotang]
+    % Outer boundary of the prolate ellipsoid
+    \draw[very thick, line width=1.4pt, fill=white] (0, 0) ellipse [x radius=2.6cm, y radius=1.15cm];
+
+    % Transverse surface rings (bulging towards negative x / bottom-left)
+    % Rings at x = -1.6, -0.7, 0.3, 1.3
+    \foreach \x in {-1.6, -0.7, 0.3, 1.3} {
+      \pgfmathsetmacro{\yradius}{1.15 * sqrt(1 - (\x/2.6)*(\x/2.6))}
+      \pgfmathsetmacro{\xradius}{0.5 * \yradius}
+      \draw[thick, line width=1.0pt]
+        ({\x}, {\yradius}) arc [start angle=90, end angle=270, x radius={\xradius cm}, y radius={\yradius cm}];
+    }
+  \end{scope}
+
+  % Axis 3: upper arrow exiting the ellipsoid
+  \draw[thick, ->] ({2.5*cos(\rotang)}, {2.5*sin(\rotang)}) -- ({3.5*cos(\rotang)}, {3.5*sin(\rotang)})
+    node[right=2pt, font=\Large] {$3$};
+
+  % Vertical z-axis: emerges from inside the ellipsoid and points straight up
+  \draw[thick, ->] (0, 0.1) -- (0, 2.2) node[left=3pt, font=\Large] {$z$};
+
+  % Rotation arrow Omega: above the nucleus, curved counter-clockwise
+  \draw[thick, ->] (1.4, 2.6) arc [start angle=20, end angle=125, x radius=1.05cm, y radius=0.6cm];
+  \node[below=2pt, font=\Large] at (0.8, 2.65) {$\Omega$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  \begin{axis}[
+    width=13.0cm, height=6.8cm,
+    xmin=4, xmax=102,
+    ymin=0, ymax=4.6,
+    axis line style={line width=0.9pt},
+    tick style={line width=0.8pt, black},
+    tick align=inside,
+    tick pos=both,
+    xtick={10, 20, 30, 40, 50, 60, 70, 80, 90, 100},
+    minor xtick={6, 8, 12, 14, 16, 18, 22, 24, 26, 28, 32, 34, 36, 38, 42, 44, 46, 48, 52, 54, 56, 58, 62, 64, 66, 68, 72, 74, 76, 78, 82, 84, 86, 88, 92, 94, 96, 98},
+    ytick={1, 2, 3, 4},
+    minor ytick={0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6, 1.8, 2.2, 2.4, 2.6, 2.8, 3.2, 3.4, 3.6, 3.8, 4.2, 4.4},
+    ticklabel style={font=\normalsize},
+    xlabel={$Z$},
+    xlabel style={at={(axis description cs:0.5,-0.10)}, font=\normalsize},
+    ylabel={$\Delta_p\ \mathrm{(MeV)}$},
+    ylabel style={at={(axis description cs:-0.07,0.5)}, font=\normalsize},
+    clip=false
+  ]
+
+    % Vertical guidelines for magic and subshell closures
+    % Z = 8
+    \draw[line width=0.6pt, black] (axis cs:8, 0) -- (axis cs:8, 4.0);
+    \node[anchor=south west, font=\small] at (axis cs:5.0, 4.0) {$Z=8$};
+
+    % Z = 20
+    \draw[line width=0.6pt, black] (axis cs:20, 0) -- (axis cs:20, 3.1);
+    \node[anchor=south, font=\small] at (axis cs:20, 3.15) {$Z=20$};
+
+    % Z = 28
+    \draw[line width=0.6pt, black] (axis cs:28, 0) -- (axis cs:28, 2.65);
+    \node[anchor=south, font=\small] at (axis cs:28, 2.70) {$Z=28$};
+
+    % Z = 40
+    \draw[line width=0.6pt, black] (axis cs:40, 0) -- (axis cs:40, 2.25);
+    \node[anchor=south, font=\small] at (axis cs:40, 2.30) {$Z=40$};
+
+    % Z = 50
+    \draw[line width=0.6pt, black] (axis cs:50, 0) -- (axis cs:50, 2.10);
+    \node[anchor=south, font=\small] at (axis cs:50, 2.15) {$Z=50$};
+
+    % Z = 66
+    \draw[line width=0.6pt, black] (axis cs:66, 0) -- (axis cs:66, 1.80);
+    \node[anchor=south, font=\small] at (axis cs:66, 1.85) {$Z=66$};
+
+    % Z = 82
+    \draw[line width=0.6pt, black] (axis cs:82, 0) -- (axis cs:82, 1.65);
+    \node[anchor=south, font=\small] at (axis cs:82, 1.70) {$Z=82$};
+
+    % Experimental dots
+    \addplot[only marks, mark=*, mark size=1.0pt, fill=black] coordinates {
+      (9.0, 3.78) (9.1, 3.26) (10.2, 3.88) (11.0, 3.36) (11.1, 2.45) (12.1, 3.15) (13.1, 3.23) (14.1, 3.12) (15.1, 2.75) (15.1, 2.06) (16.0, 1.57) (16.9, 1.77) (18.0, 1.86) (18.0, 1.55) (18.1, 2.29) (19.0, 1.58) (20.3, 2.41) (20.3, 2.12) (20.3, 2.05) (21.0, 2.28) (21.1, 2.39) (21.9, 2.25) (22.0, 2.01) (22.9, 2.17) (23.0, 2.0) (23.9, 3.29) (24.0, 1.9) (26.0, 1.88) (27.1, 1.81) (29.9, 1.48) (29.9, 1.37) (31.0, 1.44) (32.9, 1.82) (33.9, 1.75) (34.8, 1.88) (34.8, 1.79) (34.9, 1.7) (35.7, 1.56) (35.9, 1.84) (36.8, 1.72) (36.9, 1.16) (37.8, 1.23) (38.0, 1.7) (38.0, 1.52) (39.7, 1.25) (39.7, 0.48) (40.8, 1.61) (41.9, 1.64) (41.9, 1.56) (42.0, 1.46) (42.8, 1.62) (44.0, 1.74) (44.9, 1.72) (45.0, 1.59) (45.0, 1.46) (46.0, 1.56) (46.9, 1.6) (48.0, 1.62) (49.1, 1.66) (51.1, 1.86) (52.0, 1.31) (52.1, 1.56) (52.1, 1.4) (53.0, 1.34) (54.0, 1.42) (54.0, 1.29) (55.0, 1.27) (55.1, 1.47) (56.0, 1.4) (56.0, 1.28) (57.0, 1.26) (58.0, 1.39) (58.0, 1.29) (59.0, 1.46) (59.0, 1.33) (59.9, 1.45) (61.0, 1.46) (62.1, 1.52) (62.1, 1.29) (63.0, 1.61) (63.0, 1.5) (63.1, 1.29) (64.0, 1.38) (64.2, 0.98) (66.4, 1.0) (67.1, 0.99) (69.0, 0.95) (70.2, 0.96) (72.2, 0.89) (73.3, 0.79) (75.1, 1.12) (76.1, 1.21) (77.1, 1.25) (78.1, 1.29) (79.2, 1.11) (80.2, 1.22) (80.2, 1.12) (81.1, 1.07) (82.5, 1.24) (83.2, 1.47) (83.2, 1.32) (84.1, 1.21) (85.2, 1.16) (86.1, 1.23) (86.3, 1.06) (87.1, 1.13) (87.1, 1.05) (87.2, 1.22) (88.2, 1.1) (88.3, 1.24) (89.2, 1.06) (90.3, 1.01) (90.9, 1.0) (91.9, 1.0) (93.1, 1.0) (93.2, 0.83) (94.1, 1.0) (94.2, 0.8) (95.3, 0.76) (95.3, 0.69) (96.4, 0.8) (97.4, 0.83) (98.4, 0.83) (99.4, 0.78)
+    };
+
+    % Smooth theoretical curve Delta = 12 A^(-1/2)
+    \addplot[line width=0.9pt, black, smooth, tension=0.6] coordinates {
+      (6.0, 3.1) (8.0, 2.85) (10.0, 2.62) (14.0, 2.25) (18.0, 1.98) (22.0, 1.8) (26.0, 1.66) (30.0, 1.54) (35.0, 1.42) (40.0, 1.32) (45.0, 1.24) (50.0, 1.17) (55.0, 1.11) (60.0, 1.06) (65.0, 1.02) (70.0, 0.98) (75.0, 0.94) (80.0, 0.91) (85.0, 0.87) (90.0, 0.84) (95.0, 0.81) (100.0, 0.78)
+    };
+
+    % Formula label and arrow
+    \node[anchor=south, font=\normalsize] at (axis cs:36, 3.05) {$\Delta = 12\,A^{-1/2}$};
+    \draw[->, >=stealth, line width=0.8pt] (axis cs:36, 3.05) -- (axis cs:30.5, 1.58);
+
+  \end{axis}
+
+\end{tikzpicture}
+\end{document}

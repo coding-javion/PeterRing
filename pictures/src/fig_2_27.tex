@@ -1,0 +1,67 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Column (a): Equidistant levels
+  \def\xaL{0.0}
+  \def\xaR{1.4}
+  \def\xbL{4.8}
+  \def\xbR{6.2}
+
+  % 41 levels in (a), y from 0.5 to 6.5
+  \foreach \i in {0,...,40} {
+    \pgfmathsetmacro{\y}{0.5 + \i * (6.0 / 40)}
+    \draw[line width=0.75pt] (\xaL, \y) -- (\xaR, \y);
+  }
+
+  % Bunched levels in (b): modulated density
+  % Levels pulled into shell bunches around y ~ 1.8 and y ~ 5.2, opening a gap in middle
+  \foreach \i in {0,...,40} {
+    \pgfmathsetmacro{\ya}{0.5 + \i * (6.0 / 40)}
+    \pgfmathsetmacro{\yb}{\ya + 0.36 * sin((\ya - 0.5) / 6.0 * 720)}
+    \draw[line width=0.75pt] (\xbL, \yb) -- (\xbR, \yb);
+  }
+
+  % Level 1 (lower)
+  \def\yaOne{2.3}
+  \pgfmathsetmacro{\ybOne}{\yaOne + 0.36 * sin((\yaOne - 0.5) / 6.0 * 720)}
+
+  \draw[line width=0.8pt, densely dashed] (\xaR, \yaOne) -- (\xaR + 0.3, \yaOne);
+  \draw[line width=0.85pt] (\xaR + 0.3, \yaOne) -- (2.7, \yaOne);
+  \draw[line width=0.8pt, densely dashed] (2.7, \yaOne) -- (3.3, \ybOne);
+  \draw[line width=0.85pt] (3.3, \ybOne) -- (\xbL - 0.3, \ybOne);
+  \draw[line width=0.8pt, densely dashed] (\xbL - 0.3, \ybOne) -- (\xbL, \ybOne);
+
+  \node[below=3pt, font=\large] at (2.0, \yaOne) {$1$};
+  \node[above=3pt, font=\large] at (4.0, \ybOne) {$1$};
+
+  % Level 2 (upper)
+  \def\yaTwo{4.7}
+  \pgfmathsetmacro{\ybTwo}{\yaTwo + 0.36 * sin((\yaTwo - 0.5) / 6.0 * 720)}
+
+  \draw[line width=0.8pt, densely dashed] (\xaR, \yaTwo) -- (\xaR + 0.3, \yaTwo);
+  \draw[line width=0.85pt] (\xaR + 0.3, \yaTwo) -- (2.7, \yaTwo);
+  \draw[line width=0.8pt, densely dashed] (2.7, \yaTwo) -- (3.3, \ybTwo);
+  \draw[line width=0.85pt] (3.3, \ybTwo) -- (\xbL - 0.3, \ybTwo);
+  \draw[line width=0.8pt, densely dashed] (\xbL - 0.3, \ybTwo) -- (\xbL, \ybTwo);
+
+  \node[above=3pt, font=\large] at (2.0, \yaTwo) {$2$};
+  \node[below=3pt, font=\large] at (4.0, \ybTwo) {$2$};
+
+  % Subfigure labels
+  \node[font=\large] at ({(\xaL + \xaR)/2}, -0.2) {(a)};
+  \node[font=\large] at ({(\xbL + \xbR)/2}, -0.2) {(b)};
+
+\end{tikzpicture}
+\end{document}

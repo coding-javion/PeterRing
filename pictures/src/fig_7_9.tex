@@ -1,0 +1,57 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % ========================================================
+  % Upper part: Nuclear rotation axis J_x
+  % ========================================================
+  \draw[line width=1.4pt, ->] (0, 0) -- (0, 2.4) node[right=3pt, font=\Large] {$J_x$};
+
+  % Rotation loop around J_x
+  % Back half
+  \draw[line width=1.0pt] (-0.6, 1.25) arc[start angle=180, end angle=75, x radius=0.62cm, y radius=0.20cm];
+  % Front half with arrow pointing counter-clockwise
+  \draw[line width=1.0pt, ->] (-0.6, 1.25) arc[start angle=180, end angle=390, x radius=0.62cm, y radius=0.20cm];
+
+  % ========================================================
+  % Coriolis alignment curved arrows on left and right
+  % ========================================================
+  \draw[line width=1.2pt, ->] (-1.6, 0.4) to[out=65, in=-120] (-1.2, 1.25);
+  \draw[line width=1.2pt, ->] ( 1.6, 0.4) to[out=115, in=-60] ( 1.2, 1.25);
+
+  % ========================================================
+  % Lower part: Pair of time-reversed particle orbits
+  % ========================================================
+  \def\ycross{-1.6}
+  \def\vx{1.9}
+  \def\vy{0.6}
+
+  % Vector pointing to top-right
+  \draw[line width=1.3pt, ->] (-\vx, {\ycross - \vy}) -- (\vx, {\ycross + \vy});
+
+  % Vector pointing to top-left
+  \draw[line width=1.3pt, ->] (\vx, {\ycross - \vy}) -- (-\vx, {\ycross + \vy});
+
+  % Open curl around right vector (pointing to top-right)
+  \begin{scope}[shift={(1.0, {\ycross + 0.31})}, rotate=17.5]
+    \draw[line width=1.0pt, ->] (-0.18, 0.22) arc[start angle=130, end angle=380, x radius=0.24cm, y radius=0.22cm];
+  \end{scope}
+
+  % Open curl around left vector (pointing to top-left)
+  \begin{scope}[shift={(-1.0, {\ycross + 0.31})}, rotate=-17.5]
+    \draw[line width=1.0pt, ->] (0.18, 0.22) arc[start angle=50, end angle=-200, x radius=0.24cm, y radius=0.22cm];
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

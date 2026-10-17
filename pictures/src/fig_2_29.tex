@@ -1,0 +1,110 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  \def\w{11.2}
+  \def\h{6.2}
+
+  \def\emin{-13.5}
+  \def\emax{3.3}
+  \def\nmin{-0.60}
+  \def\nmax{0.60}
+
+  \pgfmathsetmacro{\sx}{\w / (\emax - \emin)}
+  \pgfmathsetmacro{\sy}{\h / (\nmax - \nmin)}
+
+  % Outer box frame
+  \draw[line width=0.85pt] (0, 0) rectangle (\w, \h);
+
+  % Baseline: delta n_i = 0
+  \draw[line width=0.85pt] (0, {(0 - \nmin)*\sy}) -- (\w, {(0 - \nmin)*\sy});
+
+  % Ticks on bottom and top (inwards)
+  \foreach \e in {-12.5, -10.0, -7.5, -5.0, -2.5, 0.0, 2.5} {
+    \pgfmathsetmacro{\xpos}{(\e - \emin) * \sx}
+    \draw[line width=0.7pt] (\xpos, 0) -- (\xpos, 0.16);
+    \draw[line width=0.7pt] (\xpos, \h) -- (\xpos, \h - 0.16);
+  }
+  % Tick labels on bottom
+  \foreach \e in {-10, -5, 0} {
+    \pgfmathsetmacro{\xpos}{(\e - \emin) * \sx}
+    \node[below=4pt, font=\normalsize] at (\xpos, 0) {$\e$};
+  }
+  % Axis label E (MeV)
+  \node[above left=3pt and 4pt, font=\normalsize] at (\w, 0) {$E\ (\mathrm{MeV})$};
+
+  % Ticks on left and right (inwards)
+  \foreach \n in {-0.5, 0.0, 0.5} {
+    \pgfmathsetmacro{\ypos}{(\n - \nmin) * \sy}
+    \draw[line width=0.7pt] (0, \ypos) -- (0.16, \ypos);
+    \draw[line width=0.7pt] (\w, \ypos) -- (\w - 0.16, \ypos);
+  }
+  % Tick labels on left
+  \node[left=4pt, font=\normalsize] at (0, {(-0.5 - \nmin)*\sy}) {$-0.5$};
+  \node[left=4pt, font=\normalsize] at (0, {(0.0 - \nmin)*\sy}) {$0$};
+  \node[left=4pt, font=\normalsize] at (0, {(0.5 - \nmin)*\sy}) {$0.5$};
+
+  % Axis label delta n_i
+  \node[above left=1pt and 2pt, font=\large] at (0, \h) {$\delta n_i$};
+
+  % Header text
+  \node[below right=8pt and 10pt, font=\normalsize] at (0, \h) {WOODS - SAXON POTENTIAL};
+  \node[below right=22pt and 16pt, font=\normalsize] at (0, \h) {$c = 1.48\quad (h = 0,\ \alpha = 0)$};
+  \node[below left=8pt and 50pt, font=\normalsize] at (\w, \h) {$Z = 94$};
+
+  % Dashed envelope curves
+  % Left branch: E in [-13.2, -5.3]
+  \draw[line width=0.9pt, dashed]
+    plot[domain=-13.2:-5.3, samples=60, smooth]
+      ({(\x - \emin)*\sx}, {(-0.05 + 0.0133 * (\x + 11.3)*(\x + 11.3) - \nmin)*\sy});
+
+  % Vertical discontinuity line at lambda = -5.3
+  \draw[line width=0.85pt]
+    ({(-5.3 - \emin)*\sx}, {(-0.48 - \nmin)*\sy}) -- ({(-5.3 - \emin)*\sx}, {(0.43 - \nmin)*\sy});
+
+  % Right branch: E in [-5.3, 2.5]
+  \draw[line width=0.9pt, dashed]
+    plot[domain=-5.3:2.5, samples=60, smooth]
+      ({(\x - \emin)*\sx}, {(0.05 - 0.0147 * (\x - 0.7)*(\x - 0.7) - \nmin)*\sy});
+
+  % Vertical bars (teeth)
+  % Left branch bars (E < -5.3)
+  \foreach \e in {-12.8, -12.1, -11.5, -10.6, -9.8, -8.6, -7.8, -7.2, -6.6, -6.0, -5.5} {
+    \pgfmathsetmacro{\dn}{-0.05 + 0.0133 * (\e + 11.3)*(\e + 11.3)}
+    \draw[line width=0.85pt]
+      ({(\e - \emin)*\sx}, {(0 - \nmin)*\sy}) -- ({(\e - \emin)*\sx}, {(\dn - \nmin)*\sy});
+  }
+
+  % Right branch bars (E > -5.3)
+  \foreach \e in {-5.1, -4.7, -4.3, -3.8, -3.3, -2.6, -1.8, -0.3, 0.4, 1.0, 1.5, 2.0, 2.4} {
+    \pgfmathsetmacro{\dn}{0.05 - 0.0147 * (\e - 0.7)*(\e - 0.7)}
+    \draw[line width=0.85pt]
+      ({(\e - \emin)*\sx}, {(0 - \nmin)*\sy}) -- ({(\e - \emin)*\sx}, {(\dn - \nmin)*\sy});
+  }
+
+  % Indicator arrows and labels
+  % lambda - gamma at E = -11.3
+  \draw[line width=0.75pt, ->] ({(-11.3 - \emin)*\sx}, {(0.10 - \nmin)*\sy}) -- ({(-11.3 - \emin)*\sx}, {(0.01 - \nmin)*\sy});
+  \node[above=2pt, font=\normalsize] at ({(-11.3 - \emin)*\sx}, {(0.10 - \nmin)*\sy}) {$\lambda - \gamma$};
+
+  % lambda at E = -5.3 (Fermi energy)
+  \draw[line width=0.75pt, ->] ({(-5.1 - \emin)*\sx}, {(0.01 - \nmin)*\sy}) -- ({(-5.1 - \emin)*\sx}, {(0.09 - \nmin)*\sy});
+  \node[above=2pt, font=\normalsize] at ({(-5.1 - \emin)*\sx}, {(0.09 - \nmin)*\sy}) {$\lambda$};
+
+  % lambda + gamma at E = 0.7
+  \draw[line width=0.75pt, ->] ({(0.7 - \emin)*\sx}, {(-0.11 - \nmin)*\sy}) -- ({(0.7 - \emin)*\sx}, {(-0.02 - \nmin)*\sy});
+  \node[below=2pt, font=\normalsize] at ({(0.7 - \emin)*\sx}, {(-0.11 - \nmin)*\sy}) {$\lambda + \gamma$};
+
+\end{tikzpicture}
+\end{document}

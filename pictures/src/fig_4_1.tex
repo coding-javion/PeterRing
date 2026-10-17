@@ -1,0 +1,41 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[
+  >=Stealth, line cap=round, line join=round,
+  fermion/.style={
+    thick,
+    decoration={markings, mark=at position 0.55 with {\arrow{Stealth}}},
+    postaction={decorate}
+  }
+]
+
+  % Circle radius R = 0.42 cm
+  % Border contact points at slope = 0.5:
+  % x = 0.42 * 2 / sqrt(5) = 0.37566 cm
+  % y = 0.42 * 1 / sqrt(5) = 0.18783 cm
+
+  % Incoming lines with arrow pointing towards T in the middle
+  \draw[fermion] (-1.8, 0.9) node[left=3pt, font=\large] {$\boldsymbol{k}_1$} -- (-0.3757, 0.1878);
+  \draw[fermion] (-1.8, -0.9) node[left=3pt, font=\large] {$\boldsymbol{k}_2$} -- (-0.3757, -0.1878);
+
+  % Outgoing lines with arrow pointing away from T in the middle
+  \draw[fermion] (0.3757, 0.1878) -- (1.8, 0.9) node[right=3pt, font=\large] {$\boldsymbol{k}_1'$};
+  \draw[fermion] (0.3757, -0.1878) -- (1.8, -0.9) node[right=3pt, font=\large] {$\boldsymbol{k}_2'$};
+
+  % Draw central T-matrix circle on top with fill=white to guarantee zero penetration
+  \draw[thick, fill=white] (0,0) circle (0.42);
+  \node[font=\large] at (0,0) {$T$};
+
+\end{tikzpicture}
+\end{document}

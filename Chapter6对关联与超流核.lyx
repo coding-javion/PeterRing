@@ -1,0 +1,4916 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\end_preamble
+\use_default_options false
+\begin_modules
+beautiful-booknotes
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-cjk
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3.18cm
+\topmargin 2.54cm
+\rightmargin 3.18cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+对关联与超流核
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:对关联与超流核"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+简介和实验基础
+\end_layout
+
+\begin_layout Standard
+在第五章我们研究了描述核的基态的波函数。认为基态是直积波函数
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+Slater行列式。
+\end_layout
+
+\end_inset
+并且使能量最低，我们就得到了Hartree-Fock方法。正如我们所见，相关方程的解把一组单粒子基转换成了一组更好的单粒子基。变分原理等价于是说要求在基态和最低
+的激发态-单粒子空穴态之间的矩阵元为零。因此，正如我们在第四章所讨论的，Hartree-Fock方法部分地把相互作用的单粒子-空穴部分也就是说力的长程部分考虑了
+进去。在我们转而讨论关联导致的激发时，我们需要考虑导致了粒子粒子关联的力的短程部分（见第四章）。我们将会证明，可以通过形式上和单粒子空穴部分的力非常像的方法做到
+这一点，只需引入“准粒子”构成的广义的直积波函数。
+\end_layout
+
+\begin_layout Standard
+当然我们通常必须同时考虑长程和短程关联，这是在下章的Hartree-Fock-Bogoliubov理论的框架下完成。我们姑且仅仅考虑纯粹的短程（粒子粒子或者对）
+关联，仅仅如此就能让我们理解Hartree-Fock图像最难以描述的效应。
+\end_layout
+
+\begin_layout Standard
+现在我们总结一下与对关联相关的最重要的实验现象：
+\end_layout
+
+\begin_layout Itemize
+能隙。奇核和偶核在形变核的谱上有非常明显的区别。偶偶核只有少数可达
+\begin_inset Formula $1.5\,\text{MeV}$
+\end_inset
+
+的（集体）能级。它们可以被很好地描述为转动和振动能带。然而奇偶核非常不一样，它们在相同的能区有许多集体和单粒子态。
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:同位素的能谱"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+展示了一些锡同位素的能谱作为例子。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_1.pdf
+	width 65line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:同位素的能谱"
+
+\end_inset
+\begin_inset Formula $\ce{_{50}Sn}$
+\end_inset
+
+同位素的能谱
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+能级密度。如果我们假设在给定
+\begin_inset Formula $j$
+\end_inset
+
+下的壳中只有少量核子，由于角动量耦合有各种可能，而耦合得到的态能量都一样，因此是强简并的。单位能量态的数目可以很容易的估计，然而我们发现，在低激发能区域，我们估
+计的能级密度是实验值的接近两倍。
+\end_layout
+
+\begin_layout Itemize
+奇偶效应。一个奇偶核的总结合能比相邻（算术意义上）的两个偶偶核的小。因此我们可以有关于临近核的质量的如下关系：
+\begin_inset Formula 
+\[
+M_{(A\text{ odd})}>\frac{M_{A-1}+M_{A+1}}{2}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+这被称为奇偶效应。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+形变原子核的惯性矩可以从旋转带的能级结构中测得。基于单粒子模型推导的结果和实验值差了一个两倍的因子。如果对效应被考虑近来，理论和实验可以很好的符合。
+\end_layout
+
+\begin_layout Itemize
+形变。在壳模型里，如果我们对不同的核质量数计算核子密度分布，我们会发现，球对称形状的闭壳核逐渐变成了有大形变的半满壳核。核子数和闭壳核差距不大的核至少在基态的时
+候都是球形的。逐渐往壳层里填核子，会有一个区域，原子核有非常剧烈的形变，并且在半满的时候达到极大。
+\end_layout
+
+\begin_layout Itemize
+低能
+\begin_inset Formula $2^{+}$
+\end_inset
+
+态。我们发现在偶数核
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+怀疑是偶偶核。
+\end_layout
+
+\end_inset
+里，在闭壳核附近，总是有一个角动量为
+\begin_inset Formula $2$
+\end_inset
+
+、宇称为正的能级。这些能级既不可以被解释为旋转能级，也不能被解释为单粒子激发能级。事实上，它们是振动的特征，这和对关联有很强的关系
+\end_layout
+
+\begin_layout Standard
+为了理解所有这些现象，我们必须考虑核力短程部分引起的关联。正如在第二章提到的，偶偶核拥有自旋为零的基态，并且奇偶核的自旋可以由奇数核子的角动量确定。这些观察启示
+Go
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+
+\begin_inset Quotes erd
+\end_inset
+
+\end_layout
+
+\end_inset
+
+ppert Mayer
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ma50"
+literal "true"
+
+\end_inset
+做了一些初步的计算，计算显示，对于短程吸引的两体力来说，在一个给定
+\begin_inset Formula $j$
+\end_inset
+
+的壳层中，两个核子能量角度上讲更倾向于形成
+\begin_inset Formula $I=0$
+\end_inset
+
+的对而不是别的组合。如果忽略自旋，并且考虑
+\begin_inset Formula $|lm\rangle$
+\end_inset
+
+态和
+\begin_inset Formula $|l,-m\rangle$
+\end_inset
+
+的密度分布，这就可以很容易的理解，正如在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:给定磁量子数下的核子密度分布"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+（或者是4.4.7中的讨论）中系统展示的那样。对于这些密度分布，很明显是在两个核子有着相同
+\begin_inset Formula $|m|$
+\end_inset
+
+的时候，它们密度的空间分布交叠达到最大。对于一个短程力来说，两个核子
+\begin_inset Formula $\left|m\right|$
+\end_inset
+
+相同但符号相反的时候能量是最低的
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这似乎不是很容易精确证明？
+\end_layout
+
+\end_inset
+（它们方向相同的时候明显不符合Pauli不相容原理，在第三章中角动量
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+不知道是啥
+\end_layout
+
+\end_inset
+）。这里，符号相反意味着耦合后
+\begin_inset Formula $I=0$
+\end_inset
+
+。不考虑前面的系数，核子对的耦合成
+\begin_inset Formula $I=0$
+\end_inset
+
+，
+\begin_inset Formula $M=0$
+\end_inset
+
+角向部分为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_2.pdf
+	width 60line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:给定磁量子数下的核子密度分布"
+
+\end_inset
+给定磁量子数下的核子密度分布
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\langle\theta_{1}\varphi_{1},\theta_{2}\varphi_{2}|nljjI=0,M=0\rangle & \propto\sum_{m=-l}^{l}(-1)^{m}Y_{lm}(\theta_{1},\varphi_{1})Y_{l,-m}(\theta_{2},\varphi_{2})\label{eq:angular part of pair}\\
+ & =\frac{2l+1}{4\mathrm{\pi}}P_{l}(\cos\theta_{12})\nonumber 
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\theta_{12}$
+\end_inset
+
+是两个核子的夹角。
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里有点没搞清楚是怎么来的。
+\end_layout
+
+\end_inset
+从上式可以看出，核子对的波函数只依赖于相对角度
+\begin_inset Formula $\theta_{12}$
+\end_inset
+
+。因此对于一个固定的
+\begin_inset Formula $\theta_{12}$
+\end_inset
+
+，核子对的波函数是一个核周围的均匀分布。由于两个核子的径向函数是相同的，通常不能得知关于核子对在空间中的位置更详细的信息，径向依赖性很大程度上是核子波函数的节点
+结构问题
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这一句话是什么意思？
+\end_layout
+
+\end_inset
+。正如我们在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:阶Legendre多项式关于夹角的函数"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中所看到的，
+\begin_inset Formula $P_{l}(\cos\theta_{12})$
+\end_inset
+
+在
+\begin_inset Formula $\theta_{12}$
+\end_inset
+
+处有一个宽度为
+\begin_inset Formula $1/l$
+\end_inset
+
+的峰。因此，两个核子有在角度上靠近的趋势。由于核力的短程性，这对于空间分布交叠取最大值是必须的。另一方面，因为不确定性原理的限制，两个核子也不能靠的太近。
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+可以非常简单的确定，如果
+\begin_inset Formula $\psi(\boldsymbol{r}_{1},\boldsymbol{r}_{2})\sim\delta(\boldsymbol{r}_{1}-\boldsymbol{r}_{2})$
+\end_inset
+
+，那么动量将会趋向于无穷大。
+\end_layout
+
+\end_inset
+
+我们因此可以说，由于相互作用的短程性，两个核子想靠的尽可能的近，然而动能又想使核子分开，两者之间有一个妥协。
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $j$
+\end_inset
+
+壳层有不止一对核子， 泡利原理会稍微阻碍（
+\begin_inset Formula $I=0$
+\end_inset
+
+）电子对的形成，因为一些成对所需的
+\begin_inset Formula $m$
+\end_inset
+
+态已经被另一对核子占据。这种对的相互作用产生了某些特殊的性质，我们将在后面研究，但这并不破坏
+\begin_inset Formula $j$
+\end_inset
+
+壳层的处于的成对态的性质。此外，一些跃迁概率这样的典型性质与我们在给定的
+\begin_inset Formula $j$
+\end_inset
+
+壳层中拥有的对的数目成正比。如果我们考虑粒子和空穴之间的对称性，即既考虑粒子-粒子对也考虑空穴-空穴对，那么半满壳层是集体性最大的情况
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+这里集体性最大是什么意思？
+\end_layout
+
+\end_inset
+，而闭壳核则不可能形成对
+。
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+为什么？
+\end_layout
+
+\end_inset
+\end_layout
+
+\begin_layout Standard
+对于闭壳核之外的核，能量最低的态应当是所有核子都成对的态（除了奇偶核情况下的最后一个核子
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+奇奇核呢？
+\end_layout
+
+\end_inset
+）。为了激发偶偶核，我们必须打破一个对，然而对于奇偶核则只需要把单独的那个核子放到一个很低的能级上。由于对的结合能是
+\begin_inset Formula $1-2\,\text{MeV}$
+\end_inset
+
+，因此偶偶核和奇偶核第一激发态和基态的能量差就可以被定性的解释了。
+\end_layout
+
+\begin_layout Standard
+其它上面提到的现象也可以利用对模型理解。由于偶偶核能谱底部能隙的存在，能级密度和实验符合的好多了，奇偶效应由此也非常显而易见。正如我们
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:angular part of pair"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中看到的，
+\begin_inset Formula $I=0$
+\end_inset
+
+的对更倾向于球形（即没有方位偏好）。因此，由于对效应阻碍了形变，闭壳核附近的核也是球形的。而在远离闭壳核时则不是球形。事实上，更为精确的描述非常依赖于对力相对于
+长程（p-h）力的强度。尽管如此，从球形核到形变核的这一突变已经是可以理解的了。
+\end_layout
+
+\begin_layout Standard
+与之紧密相关的还有开壳偶偶核能谱底部
+\begin_inset Formula $2^{+}$
+\end_inset
+
+态的存在。因为回复力，也即对效应和形变效应的差，非常小，闭壳核附近的球形核可以很容易激发出一个在它们平衡位形附近的形状振动。因此这些核会形变成一个椭球并且在球形
+附近以一个很低的频率振动（振动能级
+\begin_inset Formula $2^{+}$
+\end_inset
+
+）。
+\end_layout
+
+\begin_layout Standard
+对相互作用的对角化并不能解释为像Hartree-Fock势那样的形式的平均静态能量的贡献。它是一种全新的效应，导致了所谓的对势。这一现象和金属中的超导现象类似。
+这就是Bohr，Mottelson和Pines
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BMP58"
+literal "true"
+
+\end_inset
+和Belyaev
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Be59"
+literal "true"
+
+\end_inset
+成功把Barden, Cooper和Schrieffer[BCS
+ 57]关于超导的理论应用于原子核的原因。
+\end_layout
+
+\begin_layout Section
+辛弱数模型
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:6.2_Seniority方案"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+正如我们在引言中说的，对关联是由于核子核子相互作用中的短程部分，并且这个相互作用对
+\begin_inset Formula $I=0$
+\end_inset
+
+的对最有效。在4.4.7节我们研究了一下这个问题；为了更进一步的研究对现象，我们考虑
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pure pairing force"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中的模型力，并考虑
+\begin_inset Formula $N$
+\end_inset
+
+个处在
+\begin_inset Formula $2j+1$
+\end_inset
+
+重简并的
+\begin_inset Formula $j$
+\end_inset
+
+壳的粒子，通过这个模型力相互作用。如果我们令
+\begin_inset Formula $j$
+\end_inset
+
+壳的能量为零，相应的 Hamilton 量应该具有这种形式
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+注意到接下来我们使用了BCS相位
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS phases"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。
+\end_layout
+
+\end_inset
+
+：
+\begin_inset Formula 
+\begin{equation}
+H=-G\sum_{m,m^{\prime}>0}a_{m^{\prime}}^{\dagger}a_{-m^{\prime}}^{\dagger}a_{-m}a_{m}=-GS_{+}S_{-}\label{eq:Seniority Hamiltonian}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+\begin_inset Formula 
+\begin{equation}
+S_{+}=\sum_{m>0}a_{m}^{\dagger}a_{-m}^{\dagger};\quad S_{-}=(S_{+})^{\dagger}\label{eq:quasi spin ladder operator}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们引入这两个算符，是因为它们可以被认为是假想的角动量的升降算符，我们称之为准自旋（就如同第五章中Lipkin模型中的情况）。它和真正的自旋没有任何关系，但是引
+入它对
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Seniority Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+的求解很有帮助
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ke61"
+literal "true"
+
+\end_inset
+。同样是为了方便求解，我们继续对每个态
+\begin_inset Formula $m(m>0)$
+\end_inset
+
+都引入三个量：
+\begin_inset Formula 
+\begin{align*}
+s_{+}^{(m)} & =a_{m}^{\dagger}a_{-m}^{\dagger}\\
+s_{-}^{(m)} & =a_{-m}a_{m}\\
+s_{0}^{(m)} & =\frac{1}{2}(a_{m}^{\dagger}a_{m}+a_{-m}^{\dagger}a_{-m}-1)
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+理由算符
+\begin_inset Formula $a_{m}$
+\end_inset
+
+和
+\begin_inset Formula $a_{m}^{\dagger}$
+\end_inset
+
+的对易关系，我们可以推导出相应的对易关系：
+\begin_inset Formula 
+\begin{align*}
+[s_{+}^{(m)},s_{-}^{(m)}] & =2s_{0}^{(m)}\\{}
+[s_{0}^{(m)},s_{+}^{(m)}] & =s_{+}^{(m)}\\{}
+[s_{0}^{(m)},s_{-}^{(m)}] & =-s_{-}^{(m)}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此我们发现
+\begin_inset Formula $s_{+}^{(m)},s_{-}^{(m)},s_{0}^{(m)}$
+\end_inset
+
+有着和角动量算符相同的对易关系。
+\begin_inset Formula $s_{+}^{(m)}$
+\end_inset
+
+和
+\begin_inset Formula $s_{-}^{(m)}$
+\end_inset
+
+是和
+\begin_inset Formula $j_{+}$
+\end_inset
+
+与
+\begin_inset Formula $j_{-}$
+\end_inset
+
+类比的升降算符。而
+\begin_inset Formula $s_{0}^{(m)}$
+\end_inset
+
+是和
+\begin_inset Formula $j_{0}$
+\end_inset
+
+类比的
+\begin_inset Formula $z$
+\end_inset
+
+方向的角动量算符。我们因此可以看出我们为什么称
+\begin_inset Formula $\boldsymbol{s}^{(m)}$
+\end_inset
+
+为
+\begin_inset Formula $m$
+\end_inset
+
+能级的准自旋算符了。
+\end_layout
+
+\begin_layout Standard
+从
+\begin_inset Formula $s_{0}^{(m)}$
+\end_inset
+
+的定义中我们还可以发现它的本征值是
+\begin_inset Formula $\pm\frac{1}{2}$
+\end_inset
+
+，和
+\begin_inset Formula $(m,-m)$
+\end_inset
+
+是否是占据的有关。因此
+\begin_inset Formula $\boldsymbol{s}^{(m)}$
+\end_inset
+
+在
+\begin_inset Formula $m$
+\end_inset
+
+能级
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+原书为
+\begin_inset Formula $j$
+\end_inset
+
+-level。
+\end_layout
+
+\end_inset
+有零个或两个粒子的时候准自旋为
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+。如果只有一个粒子，那么
+\begin_inset Formula $\boldsymbol{s}^{(m)}$
+\end_inset
+
+的所有分量都为零，因此
+\begin_inset Formula $\boldsymbol{s}^{(m)}$
+\end_inset
+
+准自旋为零。
+\end_layout
+
+\begin_layout Standard
+总准自旋算符
+\begin_inset Formula $\boldsymbol{S}$
+\end_inset
+
+定义为：
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{S}=\sum_{m>0}\boldsymbol{s}^{(m)}\label{eq:total quasi spin operator}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这当然也是一个角动量算符，由此对 Hamilton 量
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Seniority Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+可以方便地写为：
+\begin_inset Formula 
+\[
+H=-G(\boldsymbol{S}\cdot\boldsymbol{S}-S_{0}^{2}+S_{0})
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们又注意到：
+\begin_inset Formula 
+\begin{equation}
+S_{0}=\frac{1}{2}\sum_{m>0}(a_{m}^{\dagger}a_{m}+a_{-m}^{\dagger}a_{-m}-1)=\frac{1}{2}(\hat{N}-\Omega)\label{eq:S0}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $\Omega=j+\frac{1}{2}$
+\end_inset
+
+，是该壳层可能存在的对的数目
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+原书仅为“对的数目”。
+\end_layout
+
+\end_inset
+。因此
+\begin_inset Formula $S_{0}$
+\end_inset
+
+的本征值是整数或者半整数。进一步，根据角动量代数的性质我们可以得到：
+\begin_inset Formula 
+\[
+S\geq\left|S_{0}\right|=\frac{1}{2}\left|N-\Omega\right|
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+根据
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:total quasi spin operator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，
+\begin_inset Formula $S$
+\end_inset
+
+的最大值是
+\begin_inset Formula $S=\Omega/2$
+\end_inset
+
+，因此我们可以看出
+\begin_inset Formula $S$
+\end_inset
+
+可以取
+\begin_inset Formula $\Omega/2,\Omega/2-1,\Omega/2-2,\dots,\left|\Omega/2-N/2\right|$
+\end_inset
+
+中的所有值。于是一个态可以用
+\begin_inset Formula $S$
+\end_inset
+
+和
+\begin_inset Formula $S_{0}$
+\end_inset
+
+标记，能量本征值因此为：
+\begin_inset Formula 
+\[
+E(S)=-G[S(S+1)-\frac{1}{4}(N-\Omega)^{2}+\frac{1}{2}(N-\Omega)]
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+为了替代准自旋
+\begin_inset Formula $S$
+\end_inset
+
+，我们也可以引入一个量子数——辛弱数
+\begin_inset Formula $s$
+\end_inset
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ra43"
+literal "true"
+
+\end_inset
+。它由下式给出：
+\begin_inset Formula 
+\[
+S=\frac{1}{2}(\Omega-s)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+\begin_inset Formula 
+\begin{align*}
+s & =0,2,4,\dots,N\quad\text{如果}N\text{是偶数}\\
+s & =1,3,5,\dots,N\quad\text{如果}N\text{是奇数}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+总能量关于辛弱数的关系可以如下给出：
+\begin_inset Formula 
+\begin{align}
+E(N,s) & =-\frac{G}{4}(N-s)(2\Omega-s-N+2)\nonumber \\
+ & =-\frac{G}{4}(s^{2}-2s(\Omega+1)+2N(\Omega+1)-N^{2})\label{eq:E to seniority}
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这一力的典型特点是能量的表达式中只有辛弱数量子数，而对其它所有量子数（除了
+\begin_inset Formula $N$
+\end_inset
+
+）都是简并的。此外，尽管能量的值强烈依赖于粒子数，谱并不如此。由于相邻能级的总准自旋差
+\begin_inset Formula $1$
+\end_inset
+
+，因此能量差为：
+\begin_inset Formula 
+\begin{equation}
+E(S-1)-E(S)=2GS\label{eq:energy difference to S}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+给定
+\begin_inset Formula $N$
+\end_inset
+
+，结合能随
+\begin_inset Formula $S$
+\end_inset
+
+增大而增加，因此基态就是所有的准自旋同向的情况，也就是说
+\begin_inset Formula $S=\frac{1}{2}\Omega$
+\end_inset
+
+或者
+\begin_inset Formula $s=0$
+\end_inset
+
+的情况。对于一个偶数粒子数的系统，第一个激发态的
+\begin_inset Formula $s=2$
+\end_inset
+
+，从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E to seniority"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+或
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:energy difference to S"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+我们可以得到：
+\begin_inset Formula 
+\begin{equation}
+E(N,s=2)-E(N,s=0)=G\Omega\label{eq:energy gap}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此激发能与
+\begin_inset Formula $j$
+\end_inset
+
+壳的粒子数无关。
+\end_layout
+
+\begin_layout Standard
+如果我们在
+\begin_inset Formula $j$
+\end_inset
+
+壳只有两个粒子，辛弱数可以取
+\begin_inset Formula $s=0,2$
+\end_inset
+
+。两个全同核子可以耦合成
+\begin_inset Formula $I=0,2,4,\dots,2j-1$
+\end_inset
+
+。而只有
+\begin_inset Formula $I=0$
+\end_inset
+
+的态被影响了——它的能量被对相互作用降低了。其它的态都没有被影响，因此是简并的。因此我们看到基态（
+\begin_inset Formula $s=0$
+\end_inset
+
+）有
+\begin_inset Formula $I=0$
+\end_inset
+
+而激发态（
+\begin_inset Formula $s=2$
+\end_inset
+
+）有
+\begin_inset Formula $I=2,4,6,\dots$
+\end_inset
+
+，这意味着在基态，两个核子“成对”了，而在激发态发生了“拆对”。在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:(a)纯对力的两粒子谱。(b)210Po的能谱"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中展示了这一事实，同时为了比较，我们也展示了
+\begin_inset Formula $\ce{^{210}Po}$
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+（
+\begin_inset Formula $1h9/2$
+\end_inset
+
+壳中有两个中子）的低激发谱。一般的，基态结合能关于
+\begin_inset Formula $N$
+\end_inset
+
+的函数可以写成：
+\begin_inset Formula 
+\begin{equation}
+E(N,s=N)-E(N,s=0)=-E(N,s=0)=G\Omega\frac{N}{2}\left(1-\frac{N-2}{2\Omega}\right)\label{eq:E to N}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_3.pdf
+	width 65line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:(a)纯对力的两粒子谱。(b)210Po的能谱"
+
+\end_inset
+(a)纯对力的两粒子谱。(b)
+\begin_inset Formula $\ce{^{210}Po}$
+\end_inset
+
+（
+\begin_inset Formula $1h9/2$
+\end_inset
+
+壳中的2
+\begin_inset Formula $p$
+\end_inset
+
+）的能谱
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+可以看出，当粒子数远小于壳的简并度的时候，结合能随对的数目（
+\begin_inset Formula $n=N/2$
+\end_inset
+
+）是线性增长的，也就是说总能量就是一个对的结合能乘上对的数目。如果我们画出基态能量关于
+\begin_inset Formula $n$
+\end_inset
+
+的函数，我们将会得到一个谐振子谱
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:对振动的谐振子谱"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。这就是对振动谱，在诸如铅附近的区域被发现，我们将会在8.3.5广泛的讨论这一点。所有的
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:对振动的谐振子谱"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中的态都是准自旋最大的态（
+\begin_inset Formula $s=0$
+\end_inset
+
+），也就是基态，我们称之为
+\begin_inset Formula $s=0$
+\end_inset
+
+带。当然，这意味着也有
+\begin_inset Formula $s=2$
+\end_inset
+
+带等等。可以得到，两粒子在同一个带的不同态之间跃迁比在不同带间更容易
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+可能在后面有？
+\end_layout
+
+\end_inset
+。如果对的数目增加，由于Pauli不相容原理，
+\begin_inset Formula $I=0$
+\end_inset
+
+对的互相干扰会变得重要，因此谱
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E to N"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+不再是谐振子的。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_4.pdf
+	width 40line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:对振动的谐振子谱"
+
+\end_inset
+对振动的谐振子谱
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们可以看出，第一激发态的激发能和一个对的结合能相同，因此我们也可以说在第一激发态（
+\begin_inset Formula $s=2$
+\end_inset
+
+）两个核子拆对了。（不可能通过使对激发到能量更高的态上来得到第一激发态，因为我们的模型中只有一个能级。）推而广之，我们可以说辛弱数
+\begin_inset Formula $s$
+\end_inset
+
+的态有
+\begin_inset Formula $s$
+\end_inset
+
+个未成对的粒子（不论
+\begin_inset Formula $s$
+\end_inset
+
+是奇的还是偶的）。
+\end_layout
+
+\begin_layout Standard
+显然，基态一定是非简并的，因为只有一种方式使得
+\begin_inset Formula $\Omega$
+\end_inset
+
+个
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+准自旋耦合成
+\begin_inset Formula $S=\Omega/2$
+\end_inset
+
+总准自旋。而要耦合出
+\begin_inset Formula $s=2$
+\end_inset
+
+的态却有
+\begin_inset Formula $\Omega-1$
+\end_inset
+
+种方式：
+\begin_inset Formula 
+\[
+t_{2}=\Omega-1=\begin{pmatrix}\Omega\\
+1
+\end{pmatrix}-\begin{pmatrix}\Omega\\
+0
+\end{pmatrix}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+考虑一个例子会更方便理解，例如
+\begin_inset Formula $\Omega=4$
+\end_inset
+
+。
+\begin_inset Formula $s=2$
+\end_inset
+
+的态可以表示为
+\begin_inset Formula $\overset{1}{\rightarrow}\overset{2}{\rightarrow}\overset{3}{\rightarrow}\overset{a}{\leftarrow}$
+\end_inset
+
+。有
+\begin_inset Formula $4-1=3$
+\end_inset
+
+种可能性把
+\begin_inset Formula $a$
+\end_inset
+
+和其它准自旋组合在一起，分别是
+\begin_inset Formula $a1,a2,a3$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+可以确定，对任意偶数
+\begin_inset Formula $s$
+\end_inset
+
+，简并度可以由下式给出
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BS68a"
+literal "true"
+
+\end_inset
+：
+\begin_inset Formula 
+\[
+t_{s}=\begin{pmatrix}\Omega\\
+s/2
+\end{pmatrix}-\begin{pmatrix}\Omega\\
+s/2-1
+\end{pmatrix},\quad s\leq N
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+辛弱数 Hamilton 量
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Seniority Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+对应的波函数也可以通过准自旋得到。对于
+\begin_inset Formula $N=0$
+\end_inset
+
+（空壳）和
+\begin_inset Formula $N=2\Omega$
+\end_inset
+
+（满壳），准自旋的第三分量分别全为
+\begin_inset Formula $-\frac{1}{2}$
+\end_inset
+
+或
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+。因此，真空态是
+\begin_inset Formula $S=\frac{1}{2}\Omega,S_{0}=-\frac{1}{2}\Omega$
+\end_inset
+
+的态：
+\begin_inset Formula 
+\[
+|\rangle=|\frac{1}{2}\Omega,-\frac{1}{2}\Omega\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+满壳是
+\begin_inset Formula $S=\frac{1}{2}\Omega,S_{0}=\frac{1}{2}\Omega$
+\end_inset
+
+的态
+\begin_inset Formula $|\Omega/2,\Omega/2\rangle$
+\end_inset
+
+。如果我们用
+\begin_inset Formula $|SS_{0}\rangle$
+\end_inset
+
+表示任意一个准自旋态（这里
+\begin_inset Formula $S_{0}=\frac{1}{2}(N-\Omega)$
+\end_inset
+
+），不同偶数
+\begin_inset Formula $N$
+\end_inset
+
+的基态（
+\begin_inset Formula $S=\Omega/2$
+\end_inset
+
+）可以写为：
+\begin_inset Formula 
+\begin{equation}
+|\frac{1}{2}\Omega,S_{0}\rangle=|\frac{1}{2}\Omega,\frac{N-\Omega}{2}\rangle\propto S_{+}^{N/2}|\rangle\label{eq:ground state of seniority model}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{+}$
+\end_inset
+
+的每次作用使得粒子数提高
+\begin_inset Formula $2$
+\end_inset
+
+。基态是
+\begin_inset Formula $S^{2}$
+\end_inset
+
+和
+\begin_inset Formula $S_{0}$
+\end_inset
+
+和
+\begin_inset Formula $H$
+\end_inset
+
+的本征态， 并且仅仅是
+\begin_inset Formula $n=N/2$
+\end_inset
+
+个对态的乘积。因此，我们可以说基态是对凝聚。
+\end_layout
+
+\begin_layout Standard
+对于奇粒子系统，最后总有一个粒子无法成对，所以有一个准自旋必须为零。由此
+\begin_inset Formula $S$
+\end_inset
+
+可能的最大值将是
+\begin_inset Formula $\frac{1}{2}(\Omega-1)$
+\end_inset
+
+，基态为：
+\begin_inset Formula 
+\[
+|\frac{\Omega-1}{2},S_{0}\rangle\propto S_{+}^{\frac{1}{2}(N-1)}a_{m}^{\dagger}|\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $m$
+\end_inset
+
+可以取
+\begin_inset Formula $2\Omega$
+\end_inset
+
+个不同的值
+\begin_inset Formula $-j\leq m\leq j$
+\end_inset
+
+，奇
+\begin_inset Formula $N$
+\end_inset
+
+粒子系统的基态因此是
+\begin_inset Formula $2\Omega$
+\end_inset
+
+简并的（与偶核的非简并相反）。这可以解释为什么奇核的基态附近能级密度很大，而偶核基态总是存在一个能隙。
+\end_layout
+
+\begin_layout Standard
+正如我们已经看到的那样，辛弱数为2的态（
+\begin_inset Formula $S=\frac{1}{2}\Omega-1$
+\end_inset
+
+）是偶粒子的第一激发态。它们也可以用准自旋算符构建。
+\end_layout
+
+\begin_layout Standard
+我们首先考虑
+\begin_inset Formula $N=2$
+\end_inset
+
+的情况，利用以下算符构建具有好的角动量量子数的态：
+\begin_inset Formula 
+\[
+A_{IM}^{\dagger}=\frac{1}{\sqrt{2}}\sum_{m_{1}m_{2}}C_{m_{1}m_{1}M}^{jjI}a_{m_{1}}^{\dagger}a_{m_{2}}^{\dagger}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+将其作用到真空态即可：
+\begin_inset Formula 
+\begin{equation}
+|IM\rangle=A_{IM}^{\dagger}|\rangle\label{eq:|IM>}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $A_{00}^{\dagger}\propto S_{+}$
+\end_inset
+
+（我们利用BCS相，
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS phases"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+）,它们是准自旋算符的本征态，对
+\begin_inset Formula $I=0$
+\end_inset
+
+，有
+\begin_inset Formula $S=\Omega/2$
+\end_inset
+
+，对
+\begin_inset Formula $I\neq0$
+\end_inset
+
+，则有
+\begin_inset Formula $S=\frac{1}{2}\Omega-1$
+\end_inset
+
+。为了看出这一点，我们计算：
+\begin_inset Formula 
+\[
+S^{2}|IM\rangle=[S^{2},A_{IM}^{\dagger}]|\rangle+\frac{1}{2}\Omega\left(\frac{1}{2}\Omega+1\right)|IM\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+右边第一项为：
+\begin_inset Formula 
+\begin{align*}
+[S^{2},A_{IM}^{\dagger}]|\rangle & =[S_{+}S_{-},A_{IM}^{\dagger}]|\rangle+[S_{0}^{2}-S_{0},A_{IM}^{\dagger}]|\rangle\\
+ & =S_{+}[S_{-},A_{IM}^{\dagger}]|\rangle+[S_{0}^{2}-S_{0},A_{IM}^{\dagger}]|\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $S_{-}$
+\end_inset
+
+正比于
+\begin_inset Formula $A_{00}$
+\end_inset
+
+，可以从Clebsch-Gordon系数的正交关系
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ed57"
+literal "true"
+
+\end_inset
+中得到，对于
+\begin_inset Formula $I\neq0$
+\end_inset
+
+：
+\begin_inset Formula 
+\[
+[S_{-},A_{IM}^{\dagger}]|\rangle=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+利用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:S0"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，我们最终得到对于
+\begin_inset Formula $I\neq0$
+\end_inset
+
+的情况来说：
+\begin_inset Formula 
+\begin{align*}
+S^{2}|IM\rangle & =-\Omega|IM\rangle+\frac{\Omega}{2}\left(\frac{\Omega}{2}+1\right)|IM\rangle\\
+ & =\left(\frac{\Omega}{2}-1\right)\frac{\Omega}{2}|IM\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此，两粒子态
+\begin_inset Formula $|IM\rangle$
+\end_inset
+
+在
+\begin_inset Formula $I\neq0$
+\end_inset
+
+的情况下是
+\begin_inset Formula $S^{2}$
+\end_inset
+
+的本征值为
+\begin_inset Formula $S=\Omega/2-1$
+\end_inset
+
+（或
+\begin_inset Formula $s=2$
+\end_inset
+
+）的本征态，也就是说，这两个粒子在
+\begin_inset Formula $I\neq0$
+\end_inset
+
+的情况下是不成对的。
+\end_layout
+
+\begin_layout Standard
+由于算符
+\begin_inset Formula $S_{+}$
+\end_inset
+
+不改变
+\begin_inset Formula $S$
+\end_inset
+
+，只增加两个粒子，因此很容易构建偶
+\begin_inset Formula $N$
+\end_inset
+
+粒子系统（
+\begin_inset Formula $N>2$
+\end_inset
+
+）的第一激发态：
+\begin_inset Formula 
+\[
+|\frac{1}{2}\Omega-1,S_{0}\rangle\propto S_{+}^{\frac{1}{2}(N-2)}A_{IM}^{\dagger}|\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $S_{+}$
+\end_inset
+
+是二阶球张量，因此这些
+\begin_inset Formula $I\neq0$
+\end_inset
+
+的态的角动量量子数为
+\begin_inset Formula $I,M$
+\end_inset
+
+，辛弱数为
+\begin_inset Formula $2\text{。}$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+当然，这些态是Hamilton 量
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Seniority Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+的本征能量为
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E to seniority"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+的本征态。我们可以看出能量不依赖于
+\begin_inset Formula $I,M$
+\end_inset
+
+。正如我们之前说明的，更高的激发态是由未成对的粒子数标记的，也就是辛弱数
+\begin_inset Formula $s$
+\end_inset
+
+。这样的态可以通过算符
+\begin_inset Formula $A_{IM}^{\dagger}$
+\end_inset
+
+的相乘很容易的得到，但是样构造的态与低激发态的正交性，以及角动量守恒的特性并不显然。
+\end_layout
+
+\begin_layout Standard
+许多情况下，我们并不需要精确构造波函数（例如，许多矩阵元可以通过角动量耦合的技巧得到。），这也是准自旋这套框架的优点。
+\end_layout
+
+\begin_layout Standard
+举个例子，我们尝试计算四极算符的矩阵元：
+\begin_inset Formula 
+\begin{align*}
+Q_{20} & =\sum_{m=-j}^{n}q_{m}a_{m}^{\dagger}a_{m}=\sum_{m>0}q_{m}s_{0}^{(m)}\\
+q_{m} & =\langle jm|r^{2}Y_{20}|jm\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由上式我们可以看出
+\begin_inset Formula $Q_{20}$
+\end_inset
+
+在准自旋空间是一个矢量
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+什么意思？
+\end_layout
+
+\end_inset
+。这一事实意味着四极算符的矩阵元关于对
+\begin_inset Formula $S_{0}=\frac{1}{2}(N-\Omega)$
+\end_inset
+
+的依赖（也就是对粒子数的依赖）可以由Wigner-Eckart定理
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ed57"
+literal "true"
+
+\end_inset
+给出：
+\begin_inset Formula 
+\[
+\langle SS_{0}|Q_{20}|S^{\prime}S_{0}\rangle=(-)^{S-S_{0}}\begin{pmatrix}S & 1 & S^{\prime}\\
+-S_{0} & 0 & S_{0}
+\end{pmatrix}\langle S||Q_{2}||S^{\prime}\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+由于四极跃迁是从辛弱数
+\begin_inset Formula $s=0$
+\end_inset
+
+的基态到
+\begin_inset Formula $s=2$
+\end_inset
+
+的激发态（由上式的选择定则给出），我们得到四极跃迁概率：
+\begin_inset Formula 
+\begin{align*}
+\left|\langle s=2|Q_{20}|s=0\rangle\right|^{2} & \propto\begin{pmatrix}\Omega/2 & 1 & \Omega/2-1\\
+-S_{0} & 0 & S_{0}
+\end{pmatrix}^{2}\propto\left(\frac{\Omega}{2}-S_{0}\right)\left(\frac{\Omega}{2}+S_{0}\right)=\frac{N}{2}\left(\Omega-\frac{N}{2}\right)
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+从上式我们可以看出在引言中提到的跃迁概率的集体效应：它正比于核子对数
+\begin_inset Formula $N/2$
+\end_inset
+
+和空穴对数
+\begin_inset Formula $(\Omega-N/2)$
+\end_inset
+
+的乘积。因此，由于前面提到的基态的对的凝聚，集体效应在闭壳层的中间最为显著。实验上也发现闭壳层中间的核四极跃迁概率显著比壳模型计算的结果要高，我们与之符合的很好
+。
+\end_layout
+
+\begin_layout Standard
+这一节我们提出的模型实际上非常简单，实际上情况当然要复杂的多。例如，我们必须考虑更多的能级和更现实的核力。尽管如此，我们想强调的是辛弱数模型的许多特点在更实际的
+情况下也是存在的，此外，这一模型在数学和物理上的简明性也比更为抽象的准粒子框架更好的反映了实际情况。准粒子框架正是我们下一节要介绍的，我们通常用它来处理更为复杂
+的情形。
+\end_layout
+
+\begin_layout Section
+BCS模型
+\end_layout
+
+\begin_layout Subsection
+波函数
+\end_layout
+
+\begin_layout Standard
+辛弱数模型不紧急可以用在
+\begin_inset Formula $j^{N}$
+\end_inset
+
+组态。如果存在一些闭壳核芯上一些接近简并的
+\begin_inset Formula $j$
+\end_inset
+
+-壳，这一模型也可以推广
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ta71,Ta76,LA74,Lo75"
+literal "true"
+
+\end_inset
+。然而，在远离闭壳核的情况下，原子核形变很大，能级也不再是均匀分布，辛弱数模型就完全失
+效了。
+\end_layout
+
+\begin_layout Standard
+然而，辛弱数模型的结果告诉我们原子核中的对关联在开壳中是十分重要的，有理由相信远离闭壳核的时候这依然是正确的。接下来我们提出一个方法，这一方法既可以处理原子核中
+所有的核子，也可以简单的推广到不同类型的相互作用的情况。这一方法不能提供一个本征值问题的精确解，但是它像Hartree-Fock一样可以从变分原理得到。因此，对
+基态波函数做一个正确的拟设是很重要的。类比Bardeen，Cooper和Schrieffer
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BCS57"
+literal "true"
+
+\end_inset
+在超导问题中给出的基态，我们试着把偶偶核的基态表示成
+：
+\begin_inset Formula 
+\begin{equation}
+|\text{BCS}\rangle=\prod_{k>0}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|\rangle\label{eq:BCS wave function}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+是变分参数。这里的乘积取遍了一半的组态空间，用
+\begin_inset Formula $k>0$
+\end_inset
+
+表示。对每一个大于零的
+\begin_inset Formula $k$
+\end_inset
+
+态，都有一个共轭态
+\begin_inset Formula $\bar{k}<0$
+\end_inset
+
+，并且
+\begin_inset Formula $\{k,\bar{k}\}$
+\end_inset
+
+生成了整个单粒子态空间。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+和
+\begin_inset Formula $u_{k}^{2}$
+\end_inset
+
+代表了一个对
+\begin_inset Formula $(k,\bar{k})$
+\end_inset
+
+占据或不占据的概率，它们是令能量期望值最小得到的。它们不是独立的，上述态归一化的要求给出：
+\begin_inset Formula 
+\begin{equation}
+|u_{k}|^{2}+|v_{k}|^{2}=1\label{eq:normalization of BCS}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+归一化使得：
+\begin_inset Formula 
+\begin{align*}
+\langle\text{BCS}|\text{BCS}\rangle & =\langle|\prod_{i>0}(u_{i}^{*}+v_{i}^{*}a_{\bar{i}}a_{i})\prod_{i^{\prime}>0}(u_{i^{\prime}}+v_{i^{\prime}}a_{i^{\prime}}^{\dagger}a_{\bar{j}}^{\dagger})|\rangle\\
+ & =\prod_{i>0}(|u_{i}|^{2}+|v_{i}|^{2})=1
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+因此一个可选的方案就是令
+\begin_inset Formula $|u_{i}|^{2}+|v_{i}|^{2}=1$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+由于BCS波函数只是在差一个相因子的情况下确定的，因此总是可以取系数
+\begin_inset Formula $u_{k}$
+\end_inset
+
+是正实数。原则上
+\begin_inset Formula $v_{k}$
+\end_inset
+
+的相位必须通过令能量期望值最小得到。然而后面（6.3.4节）我们将会证明，只要对相互作用给出一些合理的限定，
+\begin_inset Formula $v_{k}$
+\end_inset
+
+就会是正实数。拟设中只用到了
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+在
+\begin_inset Formula $k>0$
+\end_inset
+
+时候的值。下面我们将会看到对
+\begin_inset Formula $\bar{k}<0$
+\end_inset
+
+的情况定义
+\begin_inset Formula $u_{\bar{k}}:=u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{\bar{k}}:=-v_{k}$
+\end_inset
+
+将会是比较方便的。
+\end_layout
+
+\begin_layout Standard
+在许多情况下，特别是Hamilton 量在时间反演下不变的时候，时间反演态就是共轭态
+\begin_inset CommandInset citation
+LatexCommand cite
+after "第XV章"
+key "Me61"
+literal "true"
+
+\end_inset
+:
+\begin_inset Formula 
+\[
+|\bar{k}\rangle=\mathsf{T}|k\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在球谐函数基的情况下（利用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS phases"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中的BCS相）：
+\begin_inset Formula 
+\begin{equation}
+|k\rangle=|nljm\rangle,\quad|\bar{k}\rangle=|nlj,-m\rangle,\quad m>0\label{eq:conj state}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+当然，接下来的公式对Hamilton 量没有时间反演对称性的情况也成立（第7.7节）。
+\end_layout
+
+\begin_layout Standard
+目前为止，这一变分假设看起来还十分任意。下一章我们将会看到它来自于对Hartree-Fock的拟设做一点点改动。可以看出，这里粒子也是成对出现的，就像辛弱数模型
+中的基态
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ground state of seniority model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+一样。不同的是
+\begin_inset Formula $|\text{BCS}\rangle$
+\end_inset
+
+是一系列不同对数的态的叠加，因此，粒子数不再守恒。这在核物理里面是一个很大的缺点。
+\end_layout
+
+\begin_layout Standard
+这一乘积可以写成：
+\begin_inset Formula 
+\begin{equation}
+|\text{BCS}\rangle\propto|\rangle+\sum_{k>0}\frac{v_{k}}{u_{k}}a_{k}^{\dagger}a_{\bar{k}}^{\dagger}|\rangle+\frac{1}{2}\sum_{kk^{\prime}>0}\frac{v_{k}v_{k^{\prime}}}{u_{k}u_{k^{\prime}}}a_{k}^{\dagger}a_{\bar{k}}^{\dagger}a_{k^{\prime}}^{\dagger}a_{\bar{k^{\prime}}}^{\dagger}|\rangle+\dots\label{eq:BCS wave function sum form}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在固体物理中，
+\begin_inset Formula $N\simeq10^{23}$
+\end_inset
+
+，粒子数守恒的违背对物理量没有任何影响。然而在原子核里面，粒子数守恒的违背很多情况下都给出了很大的误差。人们必须用一些更高级的方法来解决这些问题（PBCS，FB
+CS，第11.4.3节）。
+\end_layout
+
+\begin_layout Standard
+为了展示
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS wave function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+这一拟设的灵活性，我们把它重写一下，把它用广义对产生算符
+\begin_inset Formula 
+\[
+A^{\dagger}=\sum_{k>0}\frac{v_{k}}{u_{k}}a_{k}^{\dagger}a_{\bar{k}}^{\dagger}
+\]
+
+\end_inset
+
+表示出来：
+\begin_inset Formula 
+\[
+|\text{BCS}\rangle\propto\exp\left(A^{\dagger}\right)|\rangle=\sum_{n=0}^{\infty}(A^{\dagger})^{n}|\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+粒子数为
+\begin_inset Formula $N$
+\end_inset
+
+的分量就是
+\begin_inset Formula $(A^{\dagger})^{N/2}$
+\end_inset
+
+。这实际上对应辛弱数
+\begin_inset Formula $s=0$
+\end_inset
+
+的基态；事实上，这个态就是辛弱数模型的精确的基态，因为这种情况下所有的
+\begin_inset Formula $v_{k}$
+\end_inset
+
+和
+\begin_inset Formula $u_{k}$
+\end_inset
+
+都是相同的
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+没懂，希望后面能懂。
+\end_layout
+
+\end_inset
+，我们在下面将会看到这个。在这种意义下，BCS拟设包含了
+\begin_inset Formula $s=0$
+\end_inset
+
+，全是独立的对的态，也就是说，这个态上发生了对的凝聚（类似玻色子的性质，参见第九章），所有的对都处在
+\begin_inset Formula $I=0,T=1$
+\end_inset
+
+的态上。在无限大系统中，这会导致对的Bose-Einstein凝聚（超导）。而在像原子核这样的有限大系统中，并不存在真正的相变。尽管如此，实际情况可能和相变非常
+类似，并且在任何情况下，这将是一个好的近似。
+\end_layout
+
+\begin_layout Subsection
+BCS方程
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:BCS方程"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们假设一个多体系统可以由如下Hamilton 量描述：
+\begin_inset Formula 
+\begin{equation}
+H=\sum_{k_{1}k_{2}}t_{k_{1}k_{2}}a_{k_{1}}^{\dagger}a_{k_{2}}+\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\bar{v}_{k_{1}k_{2}k_{3}k_{4}}a_{k_{1}}^{\dagger}a_{k_{2}}^{\dagger}a_{k_{4}}a_{k_{3}}\label{eq:general hamiltonian}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+试探波函数的参数
+\begin_inset Formula $u$
+\end_inset
+
+和
+\begin_inset Formula $v$
+\end_inset
+
+可以由对能量的变分得到。尽管如此，这个变分要受到粒子数期望值为
+\begin_inset Formula $N$
+\end_inset
+
+的限制：
+\begin_inset Formula 
+\begin{equation}
+\langle\text{BCS}|\hat{N}|\text{BCS}\rangle=2\sum_{k>0}v_{k}^{2}=N\label{eq:particle number expectation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这可以通过在Hamilton 量中加入
+\begin_inset Formula $-\lambda\hat{N}$
+\end_inset
+
+项来解决，得到新Hamilton 量：
+\begin_inset Formula 
+\[
+H^{\prime}=H-\lambda\hat{N}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+拉格朗日乘子可以通过
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particle number expectation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+得到。它被称为化学势或者费米能，因为它代表了粒子数改变时能量
+\begin_inset Formula $E=\langle\text{BCS}|H|\text{BCS}\rangle$
+\end_inset
+
+的变化值：
+\begin_inset Formula 
+\[
+\lambda=\frac{\mathrm{d}E}{\mathrm{d}N}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+为了得到这个式子，我们利用
+\begin_inset Formula $H^{\prime}$
+\end_inset
+
+的期望值是任意BCS波函数的变分的最小值这一点。一个特殊的情况是改变参数
+\begin_inset Formula $\lambda$
+\end_inset
+
+，因此，我们得到：
+\begin_inset Formula 
+\[
+\frac{\mathrm{d}}{\mathrm{d}\lambda^{\prime}}\left(\langle\text{BCS}(\lambda^{\prime})|H|\text{BCS}(\lambda^{\prime})\rangle-\lambda\langle\text{BCS}(\lambda^{\prime})|\hat{N}|\text{BCS}(\lambda^{\prime})\rangle\right)_{\lambda=\lambda^{\prime}}=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+也就是：
+\begin_inset Formula 
+\[
+\frac{\mathrm{d}E}{\mathrm{d}\lambda}=\lambda\frac{\mathrm{d}N}{\mathrm{d}\lambda}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+接下来我们用的一直都是
+\begin_inset Formula $H^{\prime}$
+\end_inset
+
+而不是
+\begin_inset Formula $H$
+\end_inset
+
+。因此我们要记得，为了计算真实的能量，最后还要加上
+\begin_inset Formula $\lambda N$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+另外一个有趣的量是粒子数不确定度：
+\begin_inset Formula 
+\begin{equation}
+(\Delta N)^{2}:=\langle\text{BCS}|\hat{N}^{2}|\text{BCS}\rangle-N^{2}=4\sum_{k>0}u_{k}^{2}v_{k}^{2}\label{eq:uncertainty of particle number}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这点我们待会儿也会讨论。
+\end_layout
+
+\begin_layout Standard
+从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS wave function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:general hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中可以得到
+\begin_inset Formula $H^{\prime}$
+\end_inset
+
+的期望值：
+\begin_inset Formula 
+\[
+\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle=\sum_{k}\left[(t_{kk}-\lambda)v_{k}^{2}+\frac{1}{2}\sum_{k^{\prime}}\bar{v}_{kk^{\prime}kk^{\prime}}v_{k}^{2}v_{k^{\prime}}^{2}\right]+\sum_{kk^{\prime}>0}\bar{v}_{k\bar{k}k^{\prime}\bar{k^{\prime}}}u_{k}v_{k}u_{k^{\prime}}v_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这里的计算如果直接暴力计算会相当复杂且易错，一个简明的推导是利用推广的Wick定理。它告诉我们产生湮灭算符的线性组合成的新算符依然满足Wick定理。
+\end_layout
+
+\begin_layout Booknote*
+利用BCS变换（这会在下一章提到）把产生湮灭算符视作准粒子产生湮灭算符的线性组合，我们可以得到：
+\begin_inset Formula 
+\begin{align*}
+\langle a_{k}^{\dagger}a_{l}\rangle & =v_{k}^{2}\delta_{kl}\\
+\langle a_{k}a_{l}^{\dagger}\rangle & =u_{k}^{2}\delta_{kl}\\
+\langle a_{k}a_{l}\rangle & =-u_{k}v_{k}\delta_{k\bar{l}}\\
+\langle a_{k}^{\dagger}a_{l}^{\dagger}\rangle & =u_{k}v_{k}\delta_{k\bar{l}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这里我们利用
+\begin_inset Formula $\langle a_{k}^{\dagger}a_{l}\rangle=\langle\text{BCS}|a_{k}^{\dagger}a_{l}|\text{BCS}\rangle$
+\end_inset
+
+表示算符
+\begin_inset Formula $a_{k}^{\dagger}$
+\end_inset
+
+和
+\begin_inset Formula $a_{l}$
+\end_inset
+
+的缩并。由此，无需利用Wick定理我们就可以得到单体部分为：
+\begin_inset Formula 
+\[
+\sum_{k_{1}k_{2}}(t_{k_{1}k_{2}}-\lambda\delta_{k_{1}k_{2}})\langle a_{k_{1}}^{\dagger}a_{k_{2}}\rangle=\sum_{k}(t_{kk}-\lambda)v_{k}^{2}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+而两体部分为 ：
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\bar{v}_{k_{1}k_{2}k_{3}k_{4}}\langle a_{k_{1}}^{\dagger}a_{k_{2}}^{\dagger}a_{k_{4}}a_{k_{3}}\rangle & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\bar{v}_{k_{1}k_{2}k_{3}k_{4}}\left(\langle a_{k_{1}}^{\dagger}a_{k_{3}}\rangle\langle a_{k_{2}}^{\dagger}a_{k_{4}}\rangle-\langle a_{k_{1}}^{\dagger}a_{k_{4}}\rangle\langle a_{k_{2}}^{\dagger}a_{k_{3}}\rangle+\langle a_{k_{1}}^{\dagger}a_{k_{2}}^{\dagger}\rangle\langle a_{k_{4}}a_{k_{3}}\rangle\right)\\
+ & =\frac{1}{4}\sum_{k_{1}k_{2}k_{3}k_{4}}\bar{v}_{k_{1}k_{2}k_{3}k_{4}}\left[v_{k_{1}}^{2}v_{k_{2}}^{2}(\delta_{k_{1}k_{3}}\delta_{k_{2}k_{4}}-\delta_{k_{1}k_{4}}\delta_{k_{2}k_{3}})+u_{k_{1}}v_{k_{1}}u_{k_{3}}v_{k_{3}}\delta_{k_{1}\bar{k}_{2}}\delta_{k_{3}\bar{k}_{4}}\right]\\
+ & =\frac{1}{2}\sum_{kk^{\prime}}\bar{v}_{kk^{\prime}kk^{\prime}}v_{k}^{2}v_{k^{\prime}}^{2}+\frac{1}{4}\sum_{kk^{\prime}}\bar{v}_{k\bar{k}k^{\prime}\bar{k^{\prime}}}u_{k}v_{k}u_{k^{\prime}}v_{k^{\prime}}\\
+ & =\frac{1}{2}\sum_{kk^{\prime}}\bar{v}_{kk^{\prime}kk^{\prime}}v_{k}^{2}v_{k^{\prime}}^{2}+\sum_{kk^{\prime}>0}\bar{v}_{k\bar{k}k^{\prime}\bar{k^{\prime}}}u_{k}v_{k}u_{k^{\prime}}v_{k^{\prime}}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+这样我们就得到了上面的期望值。
+\end_layout
+
+\begin_layout Standard
+由于BCS波函数可以完全被参数
+\begin_inset Formula $v_{k}$
+\end_inset
+
+确定，因此变分
+\begin_inset Formula $\delta\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle=0$
+\end_inset
+
+将得到：
+\begin_inset Formula 
+\[
+\left(\frac{\partial}{\partial v_{k}}+\frac{\partial u_{k}}{\partial v_{k}}\frac{\partial}{\partial u_{k}}\right)\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle=0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+根据
+\begin_inset Formula $u_{i}^{2}+v_{i}^{2}=1$
+\end_inset
+
+，得到
+\begin_inset Formula $u_{i}\mathrm{d}u_{i}+v_{i}\mathrm{d}v_{i}=0$
+\end_inset
+
+。由此：
+\begin_inset Formula 
+\[
+\frac{\mathrm{d}}{\mathrm{d}v_{i}}=\frac{\partial}{\partial v_{i}}+\frac{\partial u_{i}}{\partial v_{i}}\frac{\partial}{\partial u_{i}}=\frac{\partial}{\partial v_{i}}-\frac{v_{i}}{u_{i}}\frac{\partial}{\partial u_{i}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+微分后，我们最终得到了BCS方程：
+\begin_inset Formula 
+\begin{equation}
+2\tilde{\varepsilon}_{k}u_{k}v_{k}+\Delta_{k}(v_{k}^{2}-u_{k}^{2})=0\quad k>0\label{BCS equation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+其中：
+\begin_inset Formula 
+\begin{equation}
+\tilde{\varepsilon}_{k}=\frac{1}{2}\left[t_{kk}+t_{\bar{k}\bar{k}}+\sum_{k^{\prime}}(\bar{v}_{kk^{\prime}kk^{\prime}}+\bar{v}_{\bar{k}k^{\prime}\bar{k}k^{\prime}})v_{k^{\prime}}^{2}\right]-\lambda\label{eq:tilde epsilon}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+能隙参数为：
+\begin_inset Formula 
+\begin{equation}
+\Delta_{k}=-\sum_{k^{\prime}>0}\bar{v}_{k\bar{k}k^{\prime}\bar{k^{\prime}}}u_{k^{\prime}}v_{k^{\prime}}\label{eq:Delta}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+对于确定的
+\begin_inset Formula $\tilde{\varepsilon}_{k}$
+\end_inset
+
+和
+\begin_inset Formula $\Delta_{k}$
+\end_inset
+
+，从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:normalization of BCS"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BCS equation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中我们可以得到两个关于
+\begin_inset Formula $u_{k}^{2}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+的二次方程，相应的，它们有解：
+\begin_inset Formula 
+\begin{align*}
+v_{k}^{2} & =\frac{1}{2}\left(1\pm\frac{\tilde{\varepsilon}_{k}}{\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}}\right)\\
+u_{k}^{2} & =\frac{1}{2}\left(1\pm\frac{\tilde{\varepsilon}_{k}}{\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}}\right)
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在没有相互作用的时候，
+\begin_inset Formula $\Delta=0$
+\end_inset
+
+，此时对于占据态（
+\begin_inset Formula $\tilde{\varepsilon}<0$
+\end_inset
+
+）应当有
+\begin_inset Formula $v_{k}^{2}=1,u_{k}^{2}=0$
+\end_inset
+
+。因此唯一可能的解是：
+\begin_inset Formula 
+\begin{align}
+v_{k}^{2} & =\frac{1}{2}\left(1-\frac{\tilde{\varepsilon}_{k}}{\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}}\right)\label{eq:formal solution of BCS eq}\\
+u_{k}^{2} & =\frac{1}{2}\left(1+\frac{\tilde{\varepsilon}_{k}}{\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}}\right)\nonumber 
+\end{align}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+因此从变分原理我们得到了
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tilde epsilon"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+、
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS eq"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。还有粒子数条件
+\begin_inset Formula $2\sum_{k>0}v_{k}^{2}=N$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+利用它们就可以计算出BCS参数
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+。一般来讲，这些方程是非线性的，一般用迭代的方式求解。
+\end_layout
+
+\begin_layout Standard
+为了讨论这些方程的性质，我们把
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS eq"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+代入到
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中，得到所谓的能隙方程：
+\begin_inset Formula 
+\begin{equation}
+\Delta_{k}=-\frac{1}{2}\sum_{k^{\prime}>0}\bar{v}_{k\bar{k}k^{\prime}\bar{k^{\prime}}}\frac{\Delta_{k^{\prime}}}{\sqrt{\tilde{\varepsilon}_{k^{\prime}}^{2}+\Delta_{k^{\prime}}^{2}}}\label{eq:gap equation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+纯对力的情况
+\end_layout
+
+\begin_layout Standard
+正如我们在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:BCS方程"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中看到的，纯对力是一个描述原子核对性质的简洁有力的模型。因此它被广泛的用于原子核的BCS描述。接下来，我们给出理论这一特殊情况的最重要的推导。
+\end_layout
+
+\begin_layout Standard
+Hamilton 量具有形式：
+\begin_inset Formula 
+\[
+H=\sum_{k>0}\varepsilon_{k}(a_{k}^{\dagger}a_{k}+a_{\bar{k}}^{\dagger}a_{\bar{k}})-G\sum_{kk^{\prime}>0}a_{k}^{\dagger}a_{\bar{k}}^{\dagger}a_{\bar{k^{\prime}}}a_{k^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H^{\prime}=H-\lambda\hat{N}$
+\end_inset
+
+的期待值是：
+\begin_inset Formula 
+\begin{equation}
+\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle=2\sum_{k>0}\left(\tilde{\varepsilon}_{k}v_{k}^{2}+\frac{1}{2}Gv_{k}^{4}\right)-\frac{\Delta^{2}}{G}\label{eq:pure pair force energy expectation}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在这种情况下，对参数
+\begin_inset Formula $\Delta$
+\end_inset
+
+不依赖于
+\begin_inset Formula $k$
+\end_inset
+
+：
+\begin_inset Formula 
+\begin{equation}
+\Delta=G\sum_{k>0}u_{k}v_{k}\label{eq:Delta G}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\tilde{\varepsilon}_{k}$
+\end_inset
+
+可以如下给出：
+\begin_inset Formula 
+\begin{equation}
+\tilde{\varepsilon}_{k}=\varepsilon_{k}-\lambda-Gv_{k}^{2}\label{eq:tilde epsilon G}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pure pair force energy expectation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中的
+\begin_inset Formula $Gv_{k}^{4}$
+\end_inset
+
+项和上式中的
+\begin_inset Formula $Gv_{k}^{2}$
+\end_inset
+
+项经常被忽略，因为它们并不重要，而且只会影响单粒子能。事实上，单粒子能更多地受粒子-空穴关联影响
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+这是为何？
+\end_layout
+
+\end_inset
+
+，而这显然没有在这个模型中考虑。在这种情况下，我们有：
+\begin_inset Formula 
+\begin{equation}
+\left.\begin{matrix}u_{k}^{2}\\
+v_{k}^{2}
+\end{matrix}\right\} =\frac{1}{2}\left[1\pm\frac{\varepsilon_{k}-\lambda}{\sqrt{(\varepsilon_{k}-\lambda)^{2}+\Delta^{2}}}\right]\label{eq:formal solution of BCS equation G}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里
+\begin_inset Formula $v_{k}^{2}=\langle\text{BCS}|a_{k}^{\dagger}a_{k}|\text{BCS}\rangle$
+\end_inset
+
+是不同单粒子态的占据几率。
+\end_layout
+
+\begin_layout Standard
+从上式中我们仍然可以看出，在
+\begin_inset Formula $G\rightarrow0$
+\end_inset
+
+时，也就是
+\begin_inset Formula $\Delta\rightarrow0$
+\end_inset
+
+时，对于占据态有
+\begin_inset Formula $v_{k}^{2}=1$
+\end_inset
+
+，而非占据态有
+\begin_inset Formula $v_{k}^{2}=0$
+\end_inset
+
+。在这种情况下，
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+是一个阶跃函数
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:无相互作用和有相互作用时的占据概率"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，而在有相互作用
+\begin_inset Formula $\Delta\neq0$
+\end_inset
+
+的情况下，阶跃函数被抹平了。由于相互作用，粒子从费米面下被散射到费米面之上。这导致费米面以下的态是部分缺失的，而费米面以上的态是部分填充的
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:无相互作用和有相互作用时的占据概率"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。能隙方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap equation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+具有简单的形式：
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_5.pdf
+	width 70line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:无相互作用和有相互作用时的占据概率"
+
+\end_inset
+
+无相互作用
+\begin_inset Formula $\Delta=0$
+\end_inset
+
+和有相互作用
+\begin_inset Formula $\Delta\neq0$
+\end_inset
+
+时的占据概率
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta=\frac{G}{2}\sum_{k>0}\frac{\Delta}{\sqrt{(\varepsilon_{k}-\lambda)^{2}+\Delta^{2}}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在单
+\begin_inset Formula $j$
+\end_inset
+
+壳的特殊情况下，所有的
+\begin_inset Formula $\varepsilon_{k}$
+\end_inset
+
+都是相等的。从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS equation G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tilde epsilon G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS eq"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+甚至是保留
+\begin_inset Formula $Gv_{k}^{2}$
+\end_inset
+
+的情况我们都可以看出，所有的
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+都是相等的。从粒子数守恒的条件
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particle number expectation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，我们可以得到：
+\begin_inset Formula 
+\begin{equation}
+v_{k}=\sqrt{\frac{N}{2\Omega}},\quad u_{k}=\sqrt{1-\frac{N}{2\Omega}}\label{eq:v and u G}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+相应的能量（
+\begin_inset Formula $\varepsilon_{k}=0$
+\end_inset
+
+）为：
+\begin_inset Formula 
+\[
+E_{\text{BCS}}^{(N)}=-\frac{1}{2}GN\Omega\left(1-\frac{N}{2\Omega}+\frac{N}{2\Omega^{2}}\right)
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这一表达式和精确的结果
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E to N"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+相比，对于大
+\begin_inset Formula $N$
+\end_inset
+
+的情况，至少对
+\begin_inset Formula $1/\Omega$
+\end_inset
+
+阶的情况是正确的。因此，我们可以说BCS拟设是一个好的近似，非常适合用来处理原子核对关联。
+\end_layout
+
+\begin_layout Standard
+粒子数的不确定度
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:uncertainty of particle number"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+也可以从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:v and u G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中得到：
+\begin_inset Formula 
+\[
+\frac{\Delta N}{N}=\frac{1}{\sqrt{N}}\sqrt{2-\frac{N}{\Omega}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这一模型的能隙可以由
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:v and u G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+给出：
+\begin_inset Formula 
+\[
+\Delta=G\sqrt{\frac{N}{2}\left(\Omega-\frac{N}{2}\right)}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此能隙关于壳中的粒子数是抛物线型的依赖，当壳是空的或者满的的时候，能隙均为零。对于
+\begin_inset Formula $N=\Omega$
+\end_inset
+
+，也就是半满壳，我们发现：
+\begin_inset Formula 
+\[
+2\Delta=G\Omega
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+我们接下来会看到
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Bogoliubov准粒子——激发态和阻塞"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，
+\begin_inset Formula $2\Delta$
+\end_inset
+
+不是偶然的等于第一激发态的能量
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:energy gap"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，随之
+\begin_inset Formula $\Delta$
+\end_inset
+
+被称作能隙的原因也会更清晰。
+\end_layout
+
+\begin_layout Subsection
+Bogoliubov准粒子——激发态和阻塞
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Bogoliubov准粒子——激发态和阻塞"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+把基态写成
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS wave function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+或者
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BCS wave function sum form"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+的形式，除了有和辛弱数模型的精确基态（对的凝聚态）十分相似，因此包含了对关联这一好处之外，还有一个好处就是
+\begin_inset Formula $|\text{BCS}\rangle$
+\end_inset
+
+态也可以写成一种新型费米子即Bogoliubov准粒子的直积态。多体物理中的准粒子的概念将会在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:推广的单粒子模型（HFB理论）"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中讨论。事实上，可以容易的验证：
+\begin_inset Formula 
+\[
+|\text{BCS}\rangle\propto\prod_{k}\alpha_{k}|\rangle
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里：
+\begin_inset Formula 
+\begin{align}
+\alpha_{k}^{\dagger} & =u_{k}a_{k}^{\dagger}-v_{k}a_{\bar{k}}\nonumber \\
+\alpha_{\bar{k}}^{\dagger} & =u_{k}a_{\bar{k}}^{\dagger}+v_{k}a_{k}\label{eq:quasi particle operator}
+\end{align}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+它们满足费米子对易关系：
+\begin_inset Formula 
+\[
+\{\alpha_{k},\alpha_{k^{\prime}}\}=0;\quad\{\alpha_{k},\alpha_{k^{\prime}}^{\dagger}\}=\delta_{kk^{\prime}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里我们通常使用
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:conj state"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和通常的相位约定：
+\begin_inset Formula 
+\[
+u_{\bar{k}}=u_{k}>0;\quad v_{\bar{k}}=-v_{k}<0;\quad k>0
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+上式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quasi particle operator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中的拟设和Lipkin模型中的HF-准粒子拟设
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Lipkin model operator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+非常接近。因此我们可以用相同的技巧来得到解。在Lipkin模型中，我们可以得到实系数（
+\begin_inset Formula $\varphi=0$
+\end_inset
+
+）给出了最低能量。在这里，只要
+\begin_inset Formula $\bar{v}_{k\bar{k}k^{\prime}\bar{k}^{\prime}}<0$
+\end_inset
+
+，就会出现同样的情况，而这时非常合理的，因此我们只需要使用实系数
+\begin_inset Formula $u_{k}$
+\end_inset
+
+和
+\begin_inset Formula $v_{k}$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+从
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quasi particle operator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS eq"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+我们可以看到，准粒子既有裸粒子的性质，也有裸空穴的性质：在费米面之上（
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+很小），它几乎是粒子，而在费米面之下（
+\begin_inset Formula $u_{k}^{2}$
+\end_inset
+
+很小），它有几乎是空穴。
+\end_layout
+
+\begin_layout Standard
+从方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quasi particle operator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+可以看出，通过利用线性Bogoliubov变换这个有用的技巧，我们把基态从成对的相互作用粒子表示成了无相互作用准粒子气体。这在很多情况下是非常有用的。而我们必须
+为之付出的代价则是粒子数不再守恒了——因为我们混合了产生算符和湮灭算符。如果我们假设不仅仅是基态可以由准粒子直积态表示，激发态也可以，那么无相互作用准粒子气体的
+Hamilton 量
+\begin_inset Formula $H_{\text{qp}}$
+\end_inset
+
+则可以表示为：
+\begin_inset Formula 
+\[
+H_{\text{qp}}=\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle+\sum_{k}E_{k}\alpha_{k}^{\dagger}\alpha_{k}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这里常数
+\begin_inset Formula $\langle H^{\prime}\rangle$
+\end_inset
+
+充分考虑了以下事实：
+\begin_inset Formula 
+\[
+\alpha_{k}|\text{BCS}\rangle=0,\quad\text{对所有的}k
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此，
+\begin_inset Formula $H_{\text{qp}}$
+\end_inset
+
+有着正确的基态能量期待值。准粒子能量
+\begin_inset Formula $E_{k}$
+\end_inset
+
+是真实粒子相关概念的推广（具体的计算参考
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:推广的单粒子模型（HFB理论）"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+）。
+\begin_inset Formula 
+\begin{align*}
+E_{k} & =\langle\text{BCS}|\alpha_{k}H^{\prime}\alpha_{k}^{\prime}|\text{BCS}\rangle-\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle\\
+ & =\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}
+\end{align*}
+
+\end_inset
+
+ 单准粒子态为：
+\begin_inset Formula 
+\begin{align*}
+\alpha_{k_{1}}^{\dagger}|\text{BCS}\rangle & =a_{k_{1}}^{\dagger}\prod_{k\neq k_{1}}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|\rangle\\
+\alpha_{\bar{k}_{1}}^{\dagger}|\text{BCS}\rangle & =a_{\bar{k}_{1}}^{\dagger}\prod_{k\neq k_{1}}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|\rangle
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+这些态显然有能量为
+\begin_inset Formula $\langle H^{\prime}\rangle+E_{k}$
+\end_inset
+
+。它们是具有奇数粒子数的一系列态的叠加，描述了奇核。根据量子数
+\begin_inset Formula $k_{1}$
+\end_inset
+
+，这一态既可能是基态，也可能是激发态
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+什么意思？可能是奇核的基态或者偶核的激发态？
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+两粒子准粒子态：
+\begin_inset Formula 
+\begin{align*}
+\alpha_{k_{1}}^{\dagger}\alpha_{k_{2}}^{\dagger}|\text{BCS}\rangle & =a_{k_{1}}^{\dagger}a_{k_{2}}^{\dagger}\prod_{k\neq k_{1},k_{2}}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|\rangle,\quad k_{2}\neq\bar{k}_{1}\\
+\alpha_{k_{1}}^{\dagger}\alpha_{\bar{k}_{1}}^{\dagger}|\text{BCS}\rangle & =(-v_{k_{1}}+u_{k_{1}}a_{k_{1}}^{\dagger}a_{\bar{k}_{1}}^{\dagger})\prod_{k\neq k_{1}}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|\rangle,\quad k_{2}=\bar{k}_{1}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+它们具有能量
+\begin_inset Formula $\langle H^{\prime}\rangle+E_{k_{1}}+E_{k_{2}}$
+\end_inset
+
+。它们描述了偶核的激发态。在这种情况下，有一个对被拆开了，激发能为：
+\begin_inset Formula 
+\[
+E_{k_{1}}+E_{k_{2}}\ge2\Delta
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+偶核的第一激发态的能量因此一定比基态能量高出
+\begin_inset Formula $2\Delta$
+\end_inset
+
+以上。
+\end_layout
+
+\begin_layout Standard
+在只有一个
+\begin_inset Formula $j$
+\end_inset
+
+-壳的情况下，激发能为：
+\begin_inset Formula 
+\[
+E_{k}+E_{k^{\prime}}=2\sqrt{\tilde{\varepsilon}^{2}+\Delta^{2}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+考虑纯对力的情况，再令
+\begin_inset Formula $\varepsilon_{k}=0$
+\end_inset
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+令
+\begin_inset Formula $\varepsilon_{k}=0$
+\end_inset
+
+相当于辛弱数模型。
+\end_layout
+
+\end_inset
+，得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{\varepsilon}=G\frac{\Omega-N}{2}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+利用
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+的表达式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS equation G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+，得到：
+\begin_inset Formula 
+\[
+\lambda^{2}=\frac{(2v_{k}^{2}-1)^{2}\Delta^{2}}{1-(2v_{k}^{2}-1)^{2}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+再代入上一节得到的
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+和
+\begin_inset Formula $\Delta$
+\end_inset
+
+的表达式，得到：
+\begin_inset Formula 
+\[
+\lambda^{2}=\frac{G^{2}}{4}(N-\Omega)^{2}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Booknote*
+由于此时
+\begin_inset Formula $\tilde{\varepsilon}=-\lambda$
+\end_inset
+
+，而
+\begin_inset Formula $\tilde{\varepsilon}$
+\end_inset
+
+一定为正，所以得到
+\begin_inset Formula $\tilde{\varepsilon}=G\frac{\Omega-N}{2}$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+从而得出：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{k}+E_{k^{\prime}}=G\cdot\Omega
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+和辛弱数模型得到的结果
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:energy gap"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+相符
+
+\begin_inset Flex Comment
+status open
+
+\begin_layout Plain Layout
+但这是省略了
+\begin_inset Formula $Gv_{k}^{2}$
+\end_inset
+
+和
+\begin_inset Formula $Gv_{k}^{4}$
+\end_inset
+
+得到的结果。
+\end_layout
+
+\end_inset
+。此外由准粒子能
+\begin_inset Formula $\tilde{\varepsilon}$
+\end_inset
+
+的表达式我们还可以发现，只有半满壳的时候，激发能才为
+\begin_inset Formula $2\Delta$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+在基态奇粒子数的系统里，激发态为
+\begin_inset Formula $\alpha_{k}^{\dagger}|\text{BCS}\rangle$
+\end_inset
+
+，基态为
+\begin_inset Formula $\alpha_{k_{0}}|\text{BCS}\rangle$
+\end_inset
+
+，如果
+\begin_inset Formula $\tilde{\varepsilon}_{k_{0}}\simeq0$
+\end_inset
+
+，则激发能为：
+\begin_inset Formula 
+\[
+E_{k}-E_{k_{0}}=\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta^{2}}-\Delta
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $\tilde{\varepsilon}_{k}\ll\Delta$
+\end_inset
+
+，上式基本为零，我们因此发现在这些奇粒子数系统中能级密度非常大。
+\end_layout
+
+\begin_layout Standard
+我们也可以用如下的方式解释奇偶质量效应：对于任意的
+\begin_inset Formula $N$
+\end_inset
+
+，基态能量
+\begin_inset Formula $E_{N}^{\text{GS}}$
+\end_inset
+
+可以如下给出：
+\begin_inset Formula 
+\[
+E_{N+2}^{\text{GS}}=E_{N}^{\text{GS}}+2\lambda;\quad E_{N+1}^{\text{GS}}=E_{N}^{\text{GS}}+\lambda+E_{k_{0}}
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+因此奇偶质量差为：
+\begin_inset Formula 
+\[
+\frac{1}{2}[E_{N+2}^{\text{GS}}-E_{N+1}^{\text{GS}}-(E_{N+1}^{\text{GS}}-E_{N}^{\text{GS}})]=-E_{k_{0}}\simeq-\Delta
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+上式经常用来从实验上测得的结合能确定能隙。现在已经发现，平均来讲能隙和核子数的关系为
+\begin_inset Formula $\Delta=12\cdot A^{-1/2}$
+\end_inset
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NA62,ZGS67"
+literal "true"
+
+\end_inset
+，如
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:质子能隙随质子数的变化([BM-69])"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_6.pdf
+	width 60line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:质子能隙随质子数的变化([BM-69])"
+
+\end_inset
+
+质子能隙随质子数的变化(
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BM69"
+literal "true"
+
+\end_inset
+)
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+上述讨论使我们对超流核中许多态的结构获得了定性的理解。然而，在更深入的细致研究中，还有几个重要的要点必须予以考虑：
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(i) 化学势
+\series default
+（The Chemical Potential）。正如在式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particle number expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中所见，化学势
+\begin_inset Formula $\lambda$
+\end_inset
+
+的确定是为了使 BCS 基态中的平均粒子数具有正确的数值。利用同一个
+\begin_inset Formula $\lambda$
+\end_inset
+
+，对于单准粒子态
+\begin_inset Formula $|k\rangle=\alpha_{k}^{\dagger}|\text{BCS}\rangle$
+\end_inset
+
+，我们发现
+\begin_inset Formula 
+\begin{equation}
+\langle k|\hat{N}|k\rangle=N+u_{k}^{2}-v_{k}^{2}\label{eq:average_particle_number_quasi}
+\end{equation}
+
+\end_inset
+
+只有对于远离 Fermi 面的能级
+\begin_inset Formula $k$
+\end_inset
+
+，上式才等于
+\begin_inset Formula $N\pm1$
+\end_inset
+
+。对于 Fermi 面附近的能级，平均粒子数是不正确的。由于能量对平均粒子数具有强烈的依赖性，因此应当针对奇核中的不同能级以及偶核中的激发能级重新调整化学势
+\begin_inset Formula $\lambda$
+\end_inset
+
+。只要我们尚未进行这种重新调整，就应当在计算激发能时使用算符
+\begin_inset Formula $H^{\prime}=H-\lambda\hat{N}$
+\end_inset
+
+而不是
+\begin_inset Formula $H$
+\end_inset
+
+（正如我们目前所做的那样）。例如，如果我们对式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:average_particle_number_quasi"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中态
+\begin_inset Formula $|k\rangle$
+\end_inset
+
+不正确的粒子数进行修正，就可以看出这一点：
+\begin_inset Formula 
+\begin{align*}
+E_{N+1}^{k} & =\langle k|H|k\rangle+\frac{\mathrm{d}E}{\mathrm{d}N}(N+1-\langle k|\hat{N}|k\rangle)\\
+ & =\langle k|H-\lambda\hat{N}|k\rangle+\lambda(N+1)\\
+ & =E_{N}^{\text{GS}}+\lambda+E_{k}
+\end{align*}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(ii) 阻塞效应
+\series default
+（The Blocking Effect）。BCS 基态的占据概率
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+[式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:formal solution of BCS eq"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+] 是由变分原理决定的。奇核系统的基态由如下波函数描述：
+\begin_inset Formula 
+\begin{equation}
+\alpha_{k_{1}}^{\dagger}|\text{BCS}\rangle=a_{k_{1}}^{\dagger}\prod_{k\neq k_{1}}(u_{k}+v_{k}a_{k}^{\dagger}a_{\bar{k}}^{\dagger})|-\rangle\label{eq:blocked_wavefunction}
+\end{equation}
+
+\end_inset
+
+未配对的粒子处在能级
+\begin_inset Formula $k_{1}$
+\end_inset
+
+上并将该能级“阻塞”。Pauli 原理阻止了该能级参与由对关联引起的核子散射过程。能级
+\begin_inset Formula $k_{1}$
+\end_inset
+
+始终保持被占据，而能级
+\begin_inset Formula $\bar{k}_{1}$
+\end_inset
+
+则始终保持为空。只有对于
+\begin_inset Formula $k\neq k_{1}$
+\end_inset
+
+，我们才有
+\begin_inset Formula $v_{k}^{2}=v_{\bar{k}}^{2}$
+\end_inset
+
+（
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:状态k1的阻塞"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+）。将受阻塞的波函数
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:blocked_wavefunction"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+作为试探波函数用于变分原理，我们得到与之前相同的关于
+\begin_inset Formula $v_{k}^{2}$
+\end_inset
+
+的方程。唯一的区别在于，在能隙的计算中有一个能级被“阻塞”：
+\begin_inset Formula 
+\begin{equation}
+\Delta=G\sum_{k\neq k_{1}}u_{k}v_{k}\label{eq:blocked_gap}
+\end{equation}
+
+\end_inset
+
+能级
+\begin_inset Formula $k_{1}$
+\end_inset
+
+必须从求和中排除，因为它无法对配对能量做出贡献。化学势由下式决定：
+\begin_inset Formula 
+\begin{equation}
+N=1+2\sum_{k\neq k_{1}}v_{k}^{2}\label{eq:blocked_particle_number}
+\end{equation}
+
+\end_inset
+
+对于存在更多阻塞能级的情况（例如双准粒子态），完全类似的方程同样成立。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/6_7.pdf
+	width 85line%
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:状态k1的阻塞"
+
+\end_inset
+
+状态
+\begin_inset Formula $k_{1}$
+\end_inset
+
+的阻塞
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Delta$
+\end_inset
+
+以及
+\begin_inset Formula $u_{k}$
+\end_inset
+
+与
+\begin_inset Formula $v_{k}$
+\end_inset
+
+的这种改变称为阻塞效应。这些阻塞关联是
+\begin_inset Formula $\Omega^{-1}$
+\end_inset
+
+量级的，通常可以忽略。然而，正如 Soloviev 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "So61,Wa62b"
+literal "true"
+
+\end_inset
+ 以及 Nilsson 和 Prior 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NP61"
+literal "true"
+
+\end_inset
+ 所指出的，在某些情况下这一修正可能相当大。这在形变核中尤为突出，因为在形变核的能谱中尽管可能有 20 个能级，但对式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap equation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+的求和有显著贡献的仅有 4 或 5 个能级。显然，在这样的情形下阻塞其中一两个能级会产生巨大的影响，以至于人们不能简单地将激发能等同于准粒子能量，而必须计算激发态的总能量并减去真空态能量。对于双准粒子态，修正后的能量（
+\begin_inset Formula $\simeq1.4\,\text{MeV}$
+\end_inset
+
+）总是小于准粒子能量（
+\begin_inset Formula $\simeq1.7\,\text{MeV}$
+\end_inset
+
+），但远大于自由粒子能量（
+\begin_inset Formula $\simeq0.15\,\text{MeV}$
+\end_inset
+
+）。在这种修正理论中产生的一个问题是，
+\begin_inset Formula $v_{k}$
+\end_inset
+
+在基态和激发态中可能存在显著差异，导致这些态不再自动正交，尽管有时不同的量子数（如自旋或宇称）能够保证正交性。特别是，在这些情况下自旋为
+\begin_inset Formula $0^{+}$
+\end_inset
+
+的双准粒子态与基态并不正交。
+\end_layout
+
+\begin_layout Subsection
+能隙方程的讨论
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:能隙方程的讨论"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+在所有实际应用中，BCS 方程都必须借助计算机进行数值求解，于是就产生了一个问题：在计算中应当包含多少个能级？也就是说，我们必须探究哪些状态对能隙方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap equation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中出现的求和贡献最大。为此，让我们首先考虑靠近 Fermi 能级的某个状态的能隙
+\begin_inset Formula $\Delta_{k}$
+\end_inset
+
+。在这种情况下，求和的主要贡献来自 Fermi 能级附近的状态。其原因在于：(i) 在此情形下，表达式
+\begin_inset Formula $\Delta_{k^{\prime}}/(\tilde{\varepsilon}_{k^{\prime}}^{2}+\Delta_{k^{\prime}}^{2})^{1/2}\simeq1$
+\end_inset
+
+（因为
+\begin_inset Formula $\tilde{\varepsilon}_{k^{\prime}}\simeq0$
+\end_inset
+
+）；(ii) 当
+\begin_inset Formula $k^{\prime}\simeq k$
+\end_inset
+
+时（波函数具有强重叠），矩阵元
+\begin_inset Formula $\bar{v}_{k\bar{k}k^{\prime}\bar{k}^{\prime}}$
+\end_inset
+
+比其他矩阵元更大。
+\end_layout
+
+\begin_layout Standard
+反之，若
+\begin_inset Formula $k$
+\end_inset
+
+远离 Fermi 面，则式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap equation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+求和中的所有项都很小。对于
+\begin_inset Formula $k^{\prime}\simeq k$
+\end_inset
+
+，波函数的重叠虽然仍然很大，但由于
+\begin_inset Formula $\tilde{\varepsilon}_{k}^{2}\gg\Delta_{k}^{2}$
+\end_inset
+
+，因子
+\begin_inset Formula $\Delta_{k^{\prime}}/(\tilde{\varepsilon}_{k^{\prime}}^{2}+\Delta_{k^{\prime}}^{2})^{1/2}$
+\end_inset
+
+此时变得很小。而对于 Fermi 面上的状态
+\begin_inset Formula $k^{\prime}$
+\end_inset
+
+，情况恰好相反，因为那里的矩阵元非常小（
+\begin_inset Formula $k$
+\end_inset
+
+与
+\begin_inset Formula $k^{\prime}$
+\end_inset
+
+通常属于不同的主量子数）。
+\end_layout
+
+\begin_layout Standard
+因此，配对力的效应局限于 Fermi 面的邻域，也就是说，仅在这一邻域内
+\begin_inset Formula $\Delta_{k}$
+\end_inset
+
+才显著不为零。现在我们便能理解，为什么在 Fermi 面邻域取常数配对力而在其余区域矩阵元取为零是一个合理的近似。另一方面，如果我们在整个组态空间中都取常数矩阵元，则能隙将会发散。
+\end_layout
+
+\begin_layout Standard
+对于球形或仅弱形变的原子核，单粒子能级呈现出显著的壳层结构。能隙方程求和中的主要贡献来自于同一壳层内的跃迁。因此，我们或多或少可以分别独立处理各个壳层。由上述讨论，我们预期对于内壳层有
+\begin_inset Formula $\Delta_{k}\simeq0$
+\end_inset
+
+。因此，配对力仅在部分填充的壳层中有效，该壳层通常称为
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层（
+\begin_inset Formula $\Lambda$
+\end_inset
+
+-shell）。这便回到了辛弱数模型。对于强形变核，壳层结构已被完全抹平，尽管如此，求和依然仅仅遍及 Fermi 面邻近的一组能级，这组能级同样称为
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层。
+\end_layout
+
+\begin_layout Standard
+配对效应局限于 Fermi 能级附近，这也是中子与质子可以分别独立处理的原因（至少对于重核而言）。对于
+\begin_inset Formula $A\sim150$
+\end_inset
+
+的原子核，过剩中子数为
+\begin_inset Formula $(N-Z)\geqslant20$
+\end_inset
+
+。因此，靠近 Fermi 能级的中子与质子能级之间的重叠，与纯质子或纯中子能级之间的重叠相比非常小。因此，忽略中子-质子配对，总波函数可以表示为质子部分与中子部分的直积：
+\begin_inset Formula 
+\begin{equation}
+|\text{BCS}\rangle=\prod_{k_{1}>0}\left(u_{k_{1}}^{(p)}+v_{k_{1}}^{(p)}a_{k_{1}}^{(p)\dagger}a_{\bar{k}_{1}}^{(p)\dagger}\right)\prod_{k_{2}>0}\left(u_{k_{2}}^{(n)}+v_{k_{2}}^{(n)}a_{k_{2}}^{(n)\dagger}a_{\bar{k}_{2}}^{(n)\dagger}\right)|-\rangle\label{eq:bcs_proton_neutron}
+\end{equation}
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+尽管引入了这些简化假设，BCS 方程通常仍只能通过数值计算求解。为了定性地研究核子对之间相互作用的影响，我们将自身限制于
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层内的纯配对力
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pure pair force energy expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+。在接下来的讨论中，我们因而忽略其他壳层。此时能隙方程具有如下形式：
+\begin_inset Formula 
+\begin{equation}
+\Delta=\frac{1}{2}G\sum_{k>0}^{\Lambda}\frac{\Delta}{\sqrt{\tilde{\varepsilon}_{k}^{2}+\Delta^{2}}}\label{eq:gap_equation_lambda_shell}
+\end{equation}
+
+\end_inset
+
+其中求和仅遍历
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层。方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap_equation_lambda_shell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+总是存在平凡解
+\begin_inset Formula $\Delta=0$
+\end_inset
+
+，即
+\begin_inset Formula $u_{k}\cdot v_{k}=0$
+\end_inset
+
+；在不存在配对力或配对力足够弱时，这是唯一的解。然而，当满足条件
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{2}G\sum_{k>0}^{\Lambda}\frac{1}{|\tilde{\varepsilon}_{k}|}>1\label{eq:nontrivial_gap_condition}
+\end{equation}
+
+\end_inset
+
+时，存在第二个非平庸解
+\begin_inset Formula $\Delta>0$
+\end_inset
+
+。只要配对力足够强，或者
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层足够大，这种情况总会发生。然而，这一突变的相变是粒子数不守恒（粒子数破缺）的结果，在更扩展的理论 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MPR65"
+literal "true"
+
+\end_inset
+ 中它在某种程度上会被抹平平滑化。对于无限大系统，粒子数破缺是可以忽略的，此时相变总是尖锐突变的。
+\end_layout
+
+\begin_layout Standard
+另一方面，式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap_equation_lambda_shell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+也可用于确定配对力的强度
+\begin_inset Formula $G$
+\end_inset
+
+，因为正如我们之前所述，
+\begin_inset Formula $\Delta$
+\end_inset
+
+可以从奇偶效应经验地确定。然而，它仍然依赖于“截断”（cutoff）
+\begin_inset Formula $\Lambda$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Subsection
+能隙方程的示意解
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:能隙方程的示意解"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+获得能隙方程的解析解是非常富有启发性的 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Be59"
+literal "true"
+
+\end_inset
+。这只能在一个非常简化的示意模型中实现。我们设想一个具有良好形变的原子核，其能级密度近似均匀，且平均能级间距
+\begin_inset Formula $\Delta\varepsilon$
+\end_inset
+
+远小于
+\begin_inset Formula $\Delta$
+\end_inset
+
+（对于稀土区的形变核，
+\begin_inset Formula $\Delta\simeq1\,\text{MeV}$
+\end_inset
+
+，而
+\begin_inset Formula $\Delta\varepsilon\simeq0.1\text{--}0.2\,\text{MeV}$
+\end_inset
+
+）。于是我们可以近似地将式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gap_equation_lambda_shell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中的求和替换为在
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层上的积分：
+\begin_inset Formula $\varepsilon^{\prime}<\varepsilon<\varepsilon^{\prime\prime}$
+\end_inset
+
+；令
+\begin_inset Formula $a=\varepsilon^{\prime}-\lambda$
+\end_inset
+
+，
+\begin_inset Formula $b=\varepsilon^{\prime\prime}-\lambda$
+\end_inset
+
+，有
+\begin_inset Formula 
+\begin{equation}
+1=\frac{1}{2}G\int_{a}^{b}\frac{1}{\sqrt{\varepsilon^{2}+\Delta^{2}}}\rho(\varepsilon)\,\mathrm{d}\varepsilon\label{eq:schematic_gap_integral}
+\end{equation}
+
+\end_inset
+
+其中
+\begin_inset Formula $\rho(\varepsilon)$
+\end_inset
+
+为能级密度。我们进一步假设
+\begin_inset Formula $\rho(\varepsilon)$
+\end_inset
+
+在
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层内近似为常数（
+\begin_inset Formula $\rho\simeq\bar{\rho}$
+\end_inset
+
+）。引入无量纲量
+\begin_inset Formula 
+\begin{equation}
+\eta=\frac{1}{\bar{\rho}G}\label{eq:eta_definition}
+\end{equation}
+
+\end_inset
+
+积分后可得
+\begin_inset Formula 
+\begin{equation}
+2\eta=\operatorname{arsinh}\frac{b}{\Delta}-\operatorname{arsinh}\frac{a}{\Delta}\label{eq:arsinh_relation}
+\end{equation}
+
+\end_inset
+
+解出
+\begin_inset Formula $\Delta$
+\end_inset
+
+可得
+\begin_inset Formula 
+\begin{equation}
+\Delta=\frac{1}{\sinh2\eta}\sqrt{b^{2}+a^{2}-2ab\cosh2\eta}\label{eq:delta_schematic_solution}
+\end{equation}
+
+\end_inset
+
+BCS 模型中的平均粒子数由式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particle number expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+给出，并由此确定化学势
+\begin_inset Formula $\lambda$
+\end_inset
+
+。
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层内的粒子数由下式给出（我们再次将式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particle number expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中的求和替换为积分）：
+\begin_inset Formula 
+\begin{equation}
+N=2\int_{a}^{b}\frac{1}{2}\left(1-\frac{\varepsilon}{\sqrt{\varepsilon^{2}+\Delta^{2}}}\right)\bar{\rho}\,\mathrm{d}\varepsilon\label{eq:particle_number_schematic}
+\end{equation}
+
+\end_inset
+
+\begin_inset Formula $\Lambda$
+\end_inset
+
+壳层内的能级数由下式给出：
+\begin_inset Formula 
+\begin{equation}
+\Omega=\bar{\rho}(b-a)\label{eq:omega_levels}
+\end{equation}
+
+\end_inset
+
+引入占据因子
+\begin_inset Formula 
+\begin{equation}
+\chi_{N}=1-\frac{N}{\Omega}\label{eq:chi_n_definition}
+\end{equation}
+
+\end_inset
+
+利用式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_schematic_solution"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+，经过冗长但直接的计算，可得
+\begin_inset Formula 
+\begin{equation}
+\lambda=\frac{\varepsilon^{\prime}+\varepsilon^{\prime\prime}}{2}-\frac{\varepsilon^{\prime\prime}-\varepsilon^{\prime}}{2}\chi_{N}\operatorname{ctgh}\eta\label{eq:lambda_schematic}
+\end{equation}
+
+\end_inset
+
+将式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lambda_schematic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+代入式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_schematic_solution"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+，得到：
+\begin_inset Formula 
+\begin{equation}
+\Delta=\frac{\varepsilon^{\prime\prime}-\varepsilon^{\prime}}{2\sinh\eta}\sqrt{1-\chi_{N}^{2}}\label{eq:delta_chi_n}
+\end{equation}
+
+\end_inset
+
+在弱耦合极限下，即对于
+\begin_inset Formula $G\cdot\bar{\rho}\ll1$
+\end_inset
+
+，我们发现：
+\begin_inset Formula 
+\begin{equation}
+\Delta\propto\mathrm{e}^{-(1/\bar{\rho}G)}\label{eq:delta_exponential_weak}
+\end{equation}
+
+\end_inset
+
+因此，从式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_exponential_weak"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+可以得到一个重要结论：能隙不能按相互作用强度的幂级数展开。
+\end_layout
+
+\begin_layout Standard
+式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_chi_n"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+是在
+\begin_inset Formula $\Delta$
+\end_inset
+
+不小于能级间距的条件下导出的，即
+\begin_inset Formula 
+\begin{equation}
+\Delta\cdot\bar{\rho}>1\label{eq:delta_rho_condition}
+\end{equation}
+
+\end_inset
+
+或者
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{2\sinh\eta}\sqrt{N(2\Omega-N)}>1\label{eq:delta_rho_condition_explicit}
+\end{equation}
+
+\end_inset
+
+对于
+\begin_inset Formula $\eta\ll1$
+\end_inset
+
+（强配对关联），该不等式总是满足的。对于
+\begin_inset Formula $\eta\gg1$
+\end_inset
+
+，式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_rho_condition_explicit"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+仅在
+\begin_inset Formula $N(2\Omega-N)$
+\end_inset
+
+的值足够大时才成立。
+\end_layout
+
+\begin_layout Standard
+BCS 理论中的基态能量由式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pure pair force energy expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+给出。它对
+\begin_inset Formula $H^{\prime}$
+\end_inset
+
+的基态期望值的贡献为
+\begin_inset Formula 
+\begin{equation}
+\langle\text{BCS}|H^{\prime}|\text{BCS}\rangle=2\int_{a}^{b}\frac{1}{2}\left(1-\frac{\varepsilon}{\sqrt{\varepsilon^{2}+\Delta^{2}}}\right)\varepsilon\bar{\rho}\,\mathrm{d}\varepsilon-\frac{\Delta^{2}}{G}\label{eq:h_prime_expectation}
+\end{equation}
+
+\end_inset
+
+由于
+\begin_inset Formula $H^{\prime}$
+\end_inset
+
+与
+\begin_inset Formula $H$
+\end_inset
+
+相差
+\begin_inset Formula $\lambda\cdot N$
+\end_inset
+
+，利用式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:lambda_schematic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+并完成式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:h_prime_expectation"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中的积分，我们得到基态能量：
+\begin_inset Formula 
+\begin{equation}
+E_{\text{BCS}}=\langle\text{BCS}|H|\text{BCS}\rangle=\frac{1}{2}(\varepsilon^{\prime\prime}+\varepsilon^{\prime})N-\frac{1}{4}\Omega(\varepsilon^{\prime\prime}-\varepsilon^{\prime})(1-\chi_{N}^{2})\operatorname{ctgh}\eta\label{eq:e_bcs_energy}
+\end{equation}
+
+\end_inset
+
+我们关注的是基态能量中单纯来自配对力的那一部分。为此，我们首先计算
+\begin_inset Formula $G=0$
+\end_inset
+
+时的能量，这对应于极限
+\begin_inset Formula $\eta\to\infty$
+\end_inset
+
+：
+\begin_inset Formula 
+\begin{equation}
+E^{0}=\frac{1}{2}(\varepsilon^{\prime}+\varepsilon^{\prime\prime})\cdot N-\frac{1}{4}\Omega(\varepsilon^{\prime\prime}-\varepsilon^{\prime})(1-\chi_{N}^{2})\label{eq:e_zero_energy}
+\end{equation}
+
+\end_inset
+
+因此，配对力对基态能量的贡献
+\begin_inset Formula $E^{P}$
+\end_inset
+
+由下式给出：
+\begin_inset Formula 
+\begin{equation}
+E^{P}=E_{\text{BCS}}-E^{0}\label{eq:e_p_definition}
+\end{equation}
+
+\end_inset
+
+在半满壳层（即
+\begin_inset Formula $N=\Omega$
+\end_inset
+
+）的情形下，利用式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:e_bcs_energy"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+、式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:e_zero_energy"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+、式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:omega_levels"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+和式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_chi_n"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+，可得
+\begin_inset Formula 
+\begin{equation}
+E^{P}=-\frac{1}{4}\Omega(\varepsilon^{\prime\prime}-\varepsilon^{\prime})(1-\chi_{N}^{2})(\operatorname{ctgh}\eta-1)=-\frac{1}{2}\Delta^{2}\bar{\rho}(1-\mathrm{e}^{-2\eta})\label{eq:e_p_half_filled}
+\end{equation}
+
+\end_inset
+
+这就是中子或质子的配对能（pairing energy）。对于重核，可以从奇偶效应估计
+\begin_inset Formula $G$
+\end_inset
+
+和
+\begin_inset Formula $\Delta$
+\end_inset
+
+。Nilsson 和 Prior 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NP61"
+literal "true"
+
+\end_inset
+ 发现，对于质子
+\begin_inset Formula $G_{p}\simeq17/A\,\text{MeV}$
+\end_inset
+
+，对于中子
+\begin_inset Formula $G_{n}\simeq25/A\,\text{MeV}$
+\end_inset
+
+。能隙
+\begin_inset Formula $\Delta$
+\end_inset
+
+约为
+\begin_inset Formula $1\,\text{MeV}$
+\end_inset
+
+。假设特征能级密度为
+\begin_inset Formula $1/\bar{\rho}\simeq0.5\,\text{MeV}$
+\end_inset
+
+，可得
+\begin_inset Formula $\eta\simeq A/100$
+\end_inset
+
+。在此情形下，我们可以忽略式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:e_p_half_filled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+中的
+\begin_inset Formula $\mathrm{e}^{-2\eta}$
+\end_inset
+
+项，从而得到总配对能（质子和中子的配对能大致相同）：
+\begin_inset Formula 
+\begin{equation}
+E_{\text{total}}^{P}=E_{(p)}^{P}+E_{(n)}^{P}\simeq-\bar{\rho}\Delta^{2}\simeq-2\,[\text{MeV}]\label{eq:e_total_pairing}
+\end{equation}
+
+\end_inset
+
+因此，与总结合能相比，总配对能极其微小。这是各类关联能的普遍特征，然而，这绝不意味着它们在解释许多物理问题时不能发挥决定性的作用。
+\end_layout
+
+\begin_layout Standard
+正如我们所见，BCS 波函数所代表的态并不是粒子数算符的本征态。整个理论仅在
+\begin_inset Formula $|\text{BCS}\rangle$
+\end_inset
+
+很好地定域于实际粒子数附近时才有效。为了获得一个估计，我们计算粒子数的均方偏差
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:uncertainty of particle number"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+：
+\begin_inset Formula 
+\begin{equation}
+(\Delta N)^{2}=\sum_{k>0}\frac{\Delta_{k}^{2}}{\tilde{\varepsilon}_{k}^{2}+\Delta_{k}^{2}}\label{eq:delta_n_squared_definition}
+\end{equation}
+
+\end_inset
+
+在示意模型中，由此可得
+\begin_inset Formula 
+\begin{equation}
+(\Delta N)^{2}=\bar{\rho}\Delta\left(\arctan\frac{b}{\Delta}-\arctan\frac{a}{\Delta}\right)\label{eq:delta_n_squared_schematic}
+\end{equation}
+
+\end_inset
+
+在弱配对关联或低能级密度的极限下，我们得到
+\begin_inset Formula 
+\begin{equation}
+(\Delta N)^{2}=\bar{\rho}\cdot\Delta\cdot\pi\label{eq:delta_n_weak_pairing}
+\end{equation}
+
+\end_inset
+
+这一近似对于强形变核大体上是满足的。取
+\begin_inset Formula $\bar{\rho}$
+\end_inset
+
+和
+\begin_inset Formula $G$
+\end_inset
+
+的典型特征值，我们得到
+\begin_inset Formula $\eta\simeq4,\dots,5$
+\end_inset
+
+，平均偏差为
+\begin_inset Formula $\Delta N\simeq\sqrt{6}$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+在强配对的另一极限下（
+\begin_inset Formula $\eta\ll1$
+\end_inset
+
+），我们仅保留式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta_n_squared_schematic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+关于
+\begin_inset Formula $\eta$
+\end_inset
+
+的领头项：
+\begin_inset Formula 
+\begin{equation}
+(\Delta N)^{2}=\Omega(1-\chi_{N}^{2})=2N\left(1-\frac{N}{2\Omega}\right)\label{eq:delta_n_strong_pairing}
+\end{equation}
+
+\end_inset
+
+因此，对于半满壳层（
+\begin_inset Formula $N=\Omega$
+\end_inset
+
+），可得
+\begin_inset Formula $\Delta N=\sqrt{N}$
+\end_inset
+
+；而对于仅有一对核子（
+\begin_inset Formula $N=2$
+\end_inset
+
+），我们得到
+\begin_inset Formula $\Delta N\simeq2$
+\end_inset
+
+。
+\begin_inset Formula $\eta\ll1$
+\end_inset
+
+的半满壳层的一个典型例子是
+\begin_inset Formula $^{202}\text{Pb}$
+\end_inset
+
+。其 BCS 波函数包含大量的
+\begin_inset Formula $^{204}\text{Pb}$
+\end_inset
+
+和
+\begin_inset Formula $^{200}\text{Pb}$
+\end_inset
+
+，以及
+\begin_inset Formula $^{206}\text{Pb}$
+\end_inset
+
+和
+\begin_inset Formula $^{198}\text{Pb}$
+\end_inset
+
+。然而我们必须记住，对于所有这些核，Fermi 面
+\begin_inset Formula $\lambda$
+\end_inset
+
+和能隙
+\begin_inset Formula $\Delta$
+\end_inset
+
+几乎完全相同，因此粒子数的不确定性并不像表面上看起来那么严重。
+\end_layout
+
+\begin_layout Standard
+正如我们所看到的，非常简单的 BCS 模型使我们能够解释核子短程关联所引起的原子核的许多特征。我们仅分别独立处理了中子和质子的配对，忽略了中子-质子相互作用。对于重核，这是合理的，因为质子和中子波函数通常属于不同的主量子数，配对矩阵元很小。然而对于轻核（
+\begin_inset Formula $s\text{--}d$
+\end_inset
+
+壳层！），这不再成立，我们还必须计入中子-质子配对。在非常简要地提及其中某些计算之前，我们希望从更一般的 Hartree-Fock-Bogoliubov 理论重新审视 Hartree-Fock 理论、形变以及配对，正如我们将看到的，该理论涵盖了我们迄今所讨论的所有模型。
+\end_layout
+
+\end_body
+\end_document

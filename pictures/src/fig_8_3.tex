@@ -1,0 +1,91 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % Diagram D (Direct)
+  % ========================================================
+  \begin{scope}[shift={(-4.2, 0)}]
+    \node[font=\large] at (0.6, 1.8) {$\mathrm{D}$};
+
+    \coordinate (V1) at (0, 0);
+    \coordinate (V2) at (1.5, 0);
+
+    % Dashed interaction line
+    \draw[thick, dashed, line width=1pt] (V1) -- (V2);
+
+    % Vertex 1 (left)
+    \draw[thick, line width=1pt, arrowed] (V1) -- (-0.35, 1.2) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (0.35, 1.2) node[right=1pt, font=\small] {$i$} -- (V1);
+    \node[below=3pt, font=\small] at (V1) {$1$};
+
+    % Vertex 2 (right)
+    \draw[thick, line width=1pt, arrowed] (1.15, -1.2) node[left=1pt, font=\small] {$n$} -- (V2);
+    \draw[thick, line width=1pt, arrowed] (V2) -- (1.85, -1.2) node[right=1pt, font=\small] {$j$};
+    \node[above=3pt, font=\small] at (V2) {$2$};
+  \end{scope}
+
+  % Minus sign
+  \node[font=\large] at (-1.8, 0) {$-$};
+
+  % ========================================================
+  % Diagram E (Exchange)
+  % ========================================================
+  \begin{scope}[shift={(0.2, 0)}]
+    \node[font=\large] at (0.6, 1.8) {$\mathrm{E}$};
+
+    \coordinate (V1) at (0, 0);
+    \coordinate (V2) at (1.5, 0);
+
+    % Dashed interaction line
+    \draw[thick, dashed, line width=1pt] (V1) -- (V2);
+
+    % Vertex 1 (left)
+    \draw[thick, line width=1pt, arrowed] (V1) -- (-0.3, 1.2) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (-0.3, -1.2) node[left=1pt, font=\small] {$n$} -- (V1);
+    \node[left=3pt, font=\small] at (V1) {$1$};
+
+    % Vertex 2 (right)
+    \draw[thick, line width=1pt, arrowed] (1.8, 1.2) node[right=1pt, font=\small] {$i$} -- (V2);
+    \draw[thick, line width=1pt, arrowed] (V2) -- (1.8, -1.2) node[right=1pt, font=\small] {$j$};
+    \node[right=3pt, font=\small] at (V2) {$2$};
+  \end{scope}
+
+  % Equals sign
+  \node[font=\large] at (2.9, 0) {$=$};
+
+  % ========================================================
+  % Antisymmetrized Vertex (open circle)
+  % ========================================================
+  \begin{scope}[shift={(4.5, 0)}]
+    \coordinate (C) at (0, 0);
+
+    \draw[thick, line width=1pt, arrowed] (C) -- (-0.55, 1.2) node[left=1pt, font=\small] {$m$};
+    \draw[thick, line width=1pt, arrowed] (0.55, 1.2) node[right=1pt, font=\small] {$i$} -- (C);
+    \draw[thick, line width=1pt, arrowed] (-0.55, -1.2) node[left=1pt, font=\small] {$n$} -- (C);
+    \draw[thick, line width=1pt, arrowed] (C) -- (0.55, -1.2) node[right=1pt, font=\small] {$j$};
+
+    \filldraw[fill=white, thick, line width=1.1pt] (C) circle (3pt);
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round, >=Stealth]
+
+  \tikzset{
+    boson/.style={
+      decorate,
+      decoration={snake, amplitude=1.3pt, segment length=5.2pt, post length=0pt, pre length=0pt},
+      line width=0.8pt
+    },
+    fermion/.style={
+      line width=0.85pt
+    }
+  }
+
+  % ========================================================
+  % 1. TOP-LEFT: C_{kk'}^\mu
+  % ========================================================
+  \begin{scope}[shift={(0, 3.2)}]
+    % Label
+    \node[anchor=east, font=\large] at (-1.5, 0) {$C_{kk'}^\mu$};
+
+    % Boson incoming
+    \node[anchor=east, font=\normalsize] at (-0.85, 0) {$\mu$};
+    \draw[boson] (-0.75, 0) -- (0, 0);
+
+    % Fermion outgoing
+    \draw[fermion] (0, 0) -- (0.55, 0.75) node[anchor=south west, font=\normalsize] {$k$};
+    \draw[fermion] (0, 0) -- (0.55, -0.75) node[anchor=north west, font=\normalsize] {$k'$};
+  \end{scope}
+
+  % ========================================================
+  % 2. TOP-RIGHT: \Gamma_{\mu' k'}^{\mu k}
+  % ========================================================
+  \begin{scope}[shift={(6.5, 3.2)}]
+    % Label
+    \node[anchor=east, font=\large] at (-1.5, 0) {$\Gamma_{\mu' k'}^{\mu k}$};
+
+    % Top line (boson -> vertex1 -> horizontal fermion -> vertex2 -> boson)
+    \node[anchor=east, font=\normalsize] at (-0.85, 0.45) {$\mu$};
+    \draw[boson] (-0.75, 0.45) -- (0, 0.45);
+    \draw[fermion] (0, 0.45) -- (1.5, 0.45);
+    \draw[boson] (1.5, 0.45) -- (2.25, 0.45);
+    \node[anchor=west, font=\normalsize] at (2.35, 0.45) {$\mu'$};
+
+    % Bottom line labels
+    \node[anchor=east, font=\normalsize] at (-0.85, -0.45) {$k$};
+    \node[anchor=west, font=\normalsize] at (2.35, -0.45) {$k'$};
+
+    % Fermion loop hanging from top bar
+    \draw[fermion] (0, 0.45) to[out=-75, in=180] (0.75, -0.15) to[out=0, in=-105] (1.5, 0.45);
+
+    % Fermion line from k to k' crossing the bowl
+    % Left segment of k line
+    \draw[fermion] (-0.75, -0.45) to[out=0, in=-160] (0.9, -0.22);
+    % White mask where it crosses under the bowl
+    \draw[white, line width=3.5pt] (0.95, -0.18) -- (1.25, -0.32);
+    % Right segment to k'
+    \draw[fermion] (1.2, -0.35) to[out=-15, in=180] (2.25, -0.45);
+  \end{scope}
+
+  % ========================================================
+  % 3. BOTTOM-LEFT: \Gamma_{\mu'\nu'}^{\mu\nu}
+  % ========================================================
+  \begin{scope}[shift={(0, 0)}]
+    % Label
+    \node[anchor=east, font=\large] at (-1.5, 0) {$\Gamma_{\mu'\nu'}^{\mu\nu}$};
+
+    % Left bosons
+    \node[anchor=east, font=\normalsize] at (-0.85, 0.5) {$\mu$};
+    \draw[boson] (-0.75, 0.5) -- (0, 0.5);
+    \node[anchor=east, font=\normalsize] at (-0.85, -0.5) {$\nu$};
+    \draw[boson] (-0.75, -0.5) -- (0, -0.5);
+
+    % Right bosons
+    \draw[boson] (1.4, 0.5) -- (2.15, 0.5);
+    \node[anchor=west, font=\normalsize] at (2.25, 0.5) {$\mu'$};
+    \draw[boson] (1.4, -0.5) -- (2.15, -0.5);
+    \node[anchor=west, font=\normalsize] at (2.25, -0.5) {$\nu'$};
+
+    % Fermion box
+    \draw[fermion] (0, 0.5) -- (1.4, 0.5);
+    \draw[fermion] (0, -0.5) -- (1.4, -0.5);
+
+    % Diagonal under (bottom-left to top-right)
+    \draw[fermion] (0, -0.5) -- (1.4, 0.5);
+
+    % Mask for over crossing
+    \draw[white, line width=3.5pt] (0.5, 0.15) -- (0.9, -0.15);
+
+    % Diagonal over (top-left to bottom-right)
+    \draw[fermion] (0, 0.5) -- (1.4, -0.5);
+  \end{scope}
+
+  % ========================================================
+  % 4. BOTTOM-RIGHT: \Gamma_{\mu'\nu'\rho'}^{\mu\nu\rho}
+  % ========================================================
+  \begin{scope}[shift={(6.5, 0)}]
+    % Label
+    \node[anchor=east, font=\large] at (-1.5, 0) {$\Gamma_{\mu'\nu'\rho'}^{\mu\nu\rho}$};
+
+    % Left bosons
+    \node[anchor=east, font=\normalsize] at (-0.85, 0.8) {$\mu$};
+    \draw[boson] (-0.75, 0.8) -- (0, 0.8);
+
+    \node[anchor=east, font=\normalsize] at (-0.85, 0) {$\nu$};
+    \draw[boson] (-0.75, 0) -- (0.35, 0);
+
+    \node[anchor=east, font=\normalsize] at (-0.85, -0.8) {$\rho$};
+    \draw[boson] (-0.75, -0.8) -- (0, -0.8);
+
+    % Right bosons
+    \draw[boson] (1.6, 0.8) -- (2.35, 0.8);
+    \node[anchor=west, font=\normalsize] at (2.45, 0.8) {$\mu'$};
+
+    \draw[boson] (1.25, 0) -- (2.0, 0);
+    \node[anchor=west, font=\normalsize] at (2.1, 0) {$\nu'$};
+
+    \draw[boson] (1.6, -0.8) -- (2.35, -0.8);
+    \node[anchor=west, font=\normalsize] at (2.45, -0.8) {$\rho'$};
+
+    % Horizontal bars
+    \draw[fermion] (0, 0.8) -- (1.6, 0.8);
+    \draw[fermion] (0, -0.8) -- (1.6, -0.8);
+
+    % Braided diagonals
+    % Upper cross:
+    % (0.35, 0) to (1.6, 0.8) [under]
+    \draw[fermion] (0.35, 0) -- (1.6, 0.8);
+    % (0, 0.8) to (1.25, 0) [over]
+    \draw[white, line width=3.5pt] (0.65, 0.5) -- (0.95, 0.3);
+    \draw[fermion] (0, 0.8) -- (1.25, 0);
+
+    % Lower cross:
+    % (0, -0.8) to (1.25, 0) [under]
+    \draw[fermion] (0, -0.8) -- (1.25, 0);
+    % (0.35, 0) to (1.6, -0.8) [over]
+    \draw[white, line width=3.5pt] (0.65, -0.3) -- (0.95, -0.5);
+    \draw[fermion] (0.35, 0) -- (1.6, -0.8);
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

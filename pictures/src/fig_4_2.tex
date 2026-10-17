@@ -1,0 +1,171 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  },
+  arrowedpos/.style={
+    decoration={
+      markings,
+      mark=at position #1 with {\arrow{Stealth[length=4.8pt, width=3.3pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % ========================================================
+  % ROW 1: Bethe-Goldstone integral equation for G
+  % ========================================================
+  \begin{scope}[shift={(0, 1.4)}]
+
+    % LHS: Box G
+    \begin{scope}[shift={(-4.6, 0)}]
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.0, 0.45) -- (-0.35, 0.16);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.0, -0.45) -- (-0.35, -0.16);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0.35, 0.16) -- (1.0, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (0.35, -0.16) -- (1.0, -0.45);
+
+      \draw[thick, fill=white] (-0.35, -0.35) rectangle (0.35, 0.35);
+      \node[font=\large] at (0, 0) {$G$};
+    \end{scope}
+
+    % Equals sign
+    \node[font=\large] at (-3.2, 0) {$=$};
+
+    % Term 1: Bare interaction \bar{v}
+    \begin{scope}[shift={(-1.9, 0)}]
+      \coordinate (V1) at (0, 0);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, 0.45) -- (V1);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, -0.45) -- (V1);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (V1) -- (0.75, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (V1) -- (0.75, -0.45);
+      \filldraw[black] (V1) circle (2pt);
+      \node[font=\normalsize, below=5pt] at (V1) {$\bar{v}$};
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (-0.6, 0) {$+$};
+
+    % Term 2: \bar{v} + intermediate pair + Box G
+    \begin{scope}[shift={(1.0, 0)}]
+      \coordinate (V2) at (0, 0);
+      % Incoming legs
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, 0.45) -- (V2);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, -0.45) -- (V2);
+      \node[font=\normalsize, below=5pt] at (V2) {$\bar{v}$};
+
+      % Bubble to Box G at x = 1.3
+      \coordinate (GBtop) at (1.1, 0.16);
+      \coordinate (GBbot) at (1.1, -0.16);
+
+      \draw[thick, line width=1pt, arrowedpos=0.55] (V2) to[out=50, in=155] (GBtop);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (V2) to[out=-50, in=-155] (GBbot);
+
+      % Box G
+      \draw[thick, fill=white] (1.1, -0.35) rectangle (1.8, 0.35);
+      \node[font=\large] at (1.45, 0) {$G$};
+
+      % Outgoing legs from Box G
+      \draw[thick, line width=1pt, arrowedpos=0.55] (1.8, 0.16) -- (2.45, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (1.8, -0.16) -- (2.45, -0.45);
+
+      \filldraw[black] (V2) circle (2pt);
+    \end{scope}
+
+  \end{scope}
+
+  % ========================================================
+  % ROW 2: Ladder expansion of G in powers of \bar{v}
+  % ========================================================
+  \begin{scope}[shift={(0, -1.3)}]
+
+    % Equals sign
+    \node[font=\large] at (-3.2, 0) {$=$};
+
+    % Term 1: Single vertex
+    \begin{scope}[shift={(-1.9, 0)}]
+      \coordinate (W1) at (0, 0);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, 0.45) -- (W1);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-0.75, -0.45) -- (W1);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (W1) -- (0.75, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (W1) -- (0.75, -0.45);
+      \filldraw[black] (W1) circle (2pt);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (-0.6, 0) {$+$};
+
+    % Term 2: Two vertices with ladder rung
+    \begin{scope}[shift={(0.8, 0)}]
+      \coordinate (L1) at (-0.55, 0);
+      \coordinate (L2) at (0.55, 0);
+
+      % Incoming
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.25, 0.45) -- (L1);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.25, -0.45) -- (L1);
+
+      % Bubble
+      \draw[thick, line width=1pt, arrowed] (L1) to[out=55, in=125] (L2);
+      \draw[thick, line width=1pt, arrowed] (L1) to[out=-55, in=-125] (L2);
+
+      % Outgoing
+      \draw[thick, line width=1pt, arrowedpos=0.55] (L2) -- (1.25, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (L2) -- (1.25, -0.45);
+
+      \filldraw[black] (L1) circle (2pt);
+      \filldraw[black] (L2) circle (2pt);
+    \end{scope}
+
+    % Plus sign
+    \node[font=\large] at (2.6, 0) {$+$};
+
+    % Term 3: Three vertices (two ladder rungs)
+    \begin{scope}[shift={(4.7, 0)}]
+      \coordinate (M1) at (-1.0, 0);
+      \coordinate (M2) at (0, 0);
+      \coordinate (M3) at (1.0, 0);
+
+      % Incoming
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.65, 0.45) -- (M1);
+      \draw[thick, line width=1pt, arrowedpos=0.6] (-1.65, -0.45) -- (M1);
+
+      % Bubble 1
+      \draw[thick, line width=1pt, arrowed] (M1) to[out=55, in=125] (M2);
+      \draw[thick, line width=1pt, arrowed] (M1) to[out=-55, in=-125] (M2);
+
+      % Bubble 2
+      \draw[thick, line width=1pt, arrowed] (M2) to[out=55, in=125] (M3);
+      \draw[thick, line width=1pt, arrowed] (M2) to[out=-55, in=-125] (M3);
+
+      % Outgoing
+      \draw[thick, line width=1pt, arrowedpos=0.55] (M3) -- (1.65, 0.45);
+      \draw[thick, line width=1pt, arrowedpos=0.55] (M3) -- (1.65, -0.45);
+
+      \filldraw[black] (M1) circle (2pt);
+      \filldraw[black] (M2) circle (2pt);
+      \filldraw[black] (M3) circle (2pt);
+    \end{scope}
+
+    % Plus and ellipsis
+    \node[font=\large] at (7.0, 0) {$+$};
+    \node[font=\large] at (7.9, 0) {$\cdots$};
+
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

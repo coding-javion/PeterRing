@@ -1,0 +1,157 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round]
+
+  % Scale: 1 MeV = 3.2 cm
+  \def\yscale{3.2}
+  
+  % y-axis
+  \draw[line width=0.9pt] (0, {-0.28*\yscale}) -- (0, {2.0*\yscale});
+  \node[font=\normalsize, left=5pt] at (0, {1.65*\yscale}) {MeV};
+
+  % Ticks and labels on y-axis
+  \foreach \e/\lbl in {0/0, 1.0/1.0, 2.0/2.0} {
+    \draw[line width=0.8pt] (0, {\e*\yscale}) -- (0.15, {\e*\yscale});
+    \node[left=4pt, font=\small] at (0, {\e*\yscale}) {\lbl};
+  }
+
+  % Styling
+  \tikzset{
+    lvl/.style={line width=1.1pt},
+    thicklvl/.style={line width=2.2pt},
+    conn/.style={line width=0.7pt, dashed, dash pattern=on 3pt off 2pt},
+    lbl/.style={font=\footnotesize, inner sep=1pt}
+  }
+
+  % Column x-coordinates and half-width
+  \def\xone{1.8}
+  \def\xtwo{4.2}
+  \def\xthree{6.6}
+  \def\xfour{9.0}
+  \def\hw{0.62}
+
+  % Column headers (isotopes)
+  \node[anchor=north] at (\xone, {-0.32*\yscale}) {\normalsize\textbf{\boldmath $^{127}$Xe}};
+  \node[anchor=north] at (\xtwo, {-0.32*\yscale}) {\normalsize\textbf{\boldmath $^{129}$Xe}};
+  \node[anchor=north] at (\xthree, {-0.32*\yscale}) {\normalsize\textbf{\boldmath $^{131}$Xe}};
+  \node[anchor=north] at (\xfour, {-0.32*\yscale}) {\normalsize\textbf{\boldmath $^{133}$Xe}};
+
+  % ==========================================
+  % Energy Levels Data (in MeV)
+  % ==========================================
+  % 127Xe
+  \def\eAeleven{0.996}
+  \def\eAthirteen{0.688}
+  \def\eAseven{0.446}
+  \def\eAfifteen{0.401}
+  \def\eAbase{0.000}
+  \def\eAnine{-0.202}
+
+  % 129Xe
+  \def\eBeleven{1.054}
+  \def\eBthirteen{0.829}
+  \def\eBseven{0.674}
+  \def\eBfifteen{0.645}
+  \def\eBbase{0.000}
+  \def\eBnine{0.202}
+
+  % 131Xe
+  \def\eCeleven{1.095}
+  \def\eCthirteen{0.961}
+  \def\eCpair{0.853}
+  \def\eCbase{0.000}
+  \def\eCnine{0.628}
+
+  % 133Xe
+  \def\eDeleven{1.140}
+  \def\eDthirteen{1.072}
+  \def\eDpair{1.019}
+  \def\eDnine{0.926}
+  \def\eDbase{0.000}
+
+  % ==========================================
+  % Connecting Dashed Lines
+  % ==========================================
+  % 11/2- band
+  \draw[conn] (\xone+\hw, {\eAeleven*\yscale}) -- (\xtwo-\hw, {\eBeleven*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBeleven*\yscale}) -- (\xthree-\hw, {\eCeleven*\yscale});
+  \draw[conn] (\xthree+\hw, {\eCeleven*\yscale}) -- (\xfour-\hw, {\eDeleven*\yscale});
+
+  % 13/2- band
+  \draw[conn] (\xone+\hw, {\eAthirteen*\yscale}) -- (\xtwo-\hw, {\eBthirteen*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBthirteen*\yscale}) -- (\xthree-\hw, {\eCthirteen*\yscale});
+  \draw[conn] (\xthree+\hw, {\eCthirteen*\yscale}) -- (\xfour-\hw, {\eDthirteen*\yscale});
+
+  % 7/2- & 15/2- bands
+  \draw[conn] (\xone+\hw, {\eAseven*\yscale}) -- (\xtwo-\hw, {\eBseven*\yscale});
+  \draw[conn] (\xone+\hw, {\eAfifteen*\yscale}) -- (\xtwo-\hw, {\eBfifteen*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBseven*\yscale}) -- (\xthree-\hw, {\eCpair*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBfifteen*\yscale}) -- (\xthree-\hw, {\eCpair*\yscale});
+  \draw[conn] (\xthree+\hw, {\eCpair*\yscale}) -- (\xfour-\hw, {\eDpair*\yscale});
+
+  % 9/2- band (dropping rapidly into abnormal coupling)
+  \draw[conn] (\xone+\hw, {\eAnine*\yscale}) -- (\xtwo-\hw, {\eBnine*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBnine*\yscale}) -- (\xthree-\hw, {\eCnine*\yscale});
+  \draw[conn] (\xthree+\hw, {\eCnine*\yscale}) -- (\xfour-\hw, {\eDnine*\yscale});
+
+  % 11/2- base line at 0 MeV
+  \draw[conn] (\xone+\hw, {\eAbase*\yscale}) -- (\xtwo-\hw, {\eBbase*\yscale});
+  \draw[conn] (\xtwo+\hw, {\eBbase*\yscale}) -- (\xthree-\hw, {\eCbase*\yscale});
+  \draw[conn] (\xthree+\hw, {\eCbase*\yscale}) -- (\xfour-\hw, {\eDbase*\yscale});
+
+  % ==========================================
+  % Level Bars
+  % ==========================================
+  % 127Xe
+  \draw[lvl] (\xone-\hw, {\eAeleven*\yscale}) -- (\xone+\hw, {\eAeleven*\yscale});
+  \draw[lvl] (\xone-\hw, {\eAthirteen*\yscale}) -- (\xone+\hw, {\eAthirteen*\yscale});
+  \draw[lvl] (\xone-\hw, {\eAseven*\yscale}) -- (\xone+\hw, {\eAseven*\yscale});
+  \draw[lvl] (\xone-\hw, {\eAfifteen*\yscale}) -- (\xone+\hw, {\eAfifteen*\yscale});
+  \draw[lvl] (\xone-\hw, {\eAbase*\yscale}) -- (\xone+\hw, {\eAbase*\yscale});
+  \draw[lvl] (\xone-\hw, {\eAnine*\yscale}) -- (\xone+\hw, {\eAnine*\yscale});
+
+  % 129Xe
+  \draw[lvl] (\xtwo-\hw, {\eBeleven*\yscale}) -- (\xtwo+\hw, {\eBeleven*\yscale});
+  \draw[lvl] (\xtwo-\hw, {\eBthirteen*\yscale}) -- (\xtwo+\hw, {\eBthirteen*\yscale});
+  \draw[lvl] (\xtwo-\hw, {\eBseven*\yscale}) -- (\xtwo+\hw, {\eBseven*\yscale});
+  \draw[lvl] (\xtwo-\hw, {\eBfifteen*\yscale}) -- (\xtwo+\hw, {\eBfifteen*\yscale});
+  \draw[lvl] (\xtwo-\hw, {\eBbase*\yscale}) -- (\xtwo+\hw, {\eBbase*\yscale});
+  \draw[lvl] (\xtwo-\hw, {\eBnine*\yscale}) -- (\xtwo+\hw, {\eBnine*\yscale});
+
+  % 131Xe
+  \draw[lvl] (\xthree-\hw, {\eCeleven*\yscale}) -- (\xthree+\hw, {\eCeleven*\yscale});
+  \draw[lvl] (\xthree-\hw, {\eCthirteen*\yscale}) -- (\xthree+\hw, {\eCthirteen*\yscale});
+  \draw[thicklvl] (\xthree-\hw, {\eCpair*\yscale}) -- (\xthree+\hw, {\eCpair*\yscale});
+  \draw[lvl] (\xthree-\hw, {\eCnine*\yscale}) -- (\xthree+\hw, {\eCnine*\yscale});
+  \draw[lvl] (\xthree-\hw, {\eCbase*\yscale}) -- (\xthree+\hw, {\eCbase*\yscale});
+
+  % 133Xe
+  \draw[lvl] (\xfour-\hw, {\eDeleven*\yscale}) -- (\xfour+\hw, {\eDeleven*\yscale});
+  \draw[lvl] (\xfour-\hw, {\eDthirteen*\yscale}) -- (\xfour+\hw, {\eDthirteen*\yscale});
+  \draw[thicklvl] (\xfour-\hw, {\eDpair*\yscale}) -- (\xfour+\hw, {\eDpair*\yscale});
+  \draw[lvl] (\xfour-\hw, {\eDnine*\yscale}) -- (\xfour+\hw, {\eDnine*\yscale});
+  \draw[lvl] (\xfour-\hw, {\eDbase*\yscale}) -- (\xfour+\hw, {\eDbase*\yscale});
+
+  % ==========================================
+  % Labels on the right of 133Xe
+  % ==========================================
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.06, {\eDeleven*\yscale+0.08}) {$11/2^-$};
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.06, {\eDthirteen*\yscale+0.02}) {$13/2^-$};
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.06, {\eDpair*\yscale-0.03}) {$7/2^-$};
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.75, {\eDpair*\yscale-0.07}) {$15/2^-$};
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.06, {\eDnine*\yscale-0.08}) {$9/2^-$};
+  \node[lbl, anchor=west, font=\scriptsize] at (\xfour+\hw+0.06, {\eDbase*\yscale}) {$11/2^-$};
+
+\end{tikzpicture}
+\end{document}

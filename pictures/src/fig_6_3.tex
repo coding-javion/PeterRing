@@ -1,0 +1,60 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round, line join=round]
+
+  % ========================================================
+  % Panel a: Schematic pure pairing force spectrum
+  % ========================================================
+  \begin{scope}[shift={(0,0)}]
+    % Ground state I = 0
+    \draw[very thick, line width=1.5pt] (0, 0) -- (2.2, 0);
+    \node[above=3pt, font=\large] at (1.1, 0) {$I = 0$};
+
+    % Degenerate excited states I = 2, 4, \dots, 2j-1
+    \draw[very thick, line width=1.5pt] (0, 3.8) -- (2.2, 3.8);
+    \node[above=3pt, font=\large] at (1.1, 3.8) {$I = 2, 4, \dots, 2j-1$};
+
+    % Label a)
+    \node[font=\Large] at (1.1, -1.0) {a)};
+  \end{scope}
+
+  % ========================================================
+  % Panel b: Experimental spectrum (210Po)
+  % ========================================================
+  \begin{scope}[shift={(5.2,0)}]
+    % 0+ at 0
+    \draw[very thick, line width=1.5pt] (0, 0) -- (2.2, 0);
+    \node[left=5pt, font=\large] at (0, 0) {$0^+$};
+    \node[right=5pt, font=\large] at (2.2, 0) {$0\ (\mathrm{MeV})$};
+
+    % 2+ at 1.181 MeV (y = 2.8)
+    \draw[very thick, line width=1.5pt] (0, 2.8) -- (2.2, 2.8);
+    \node[left=5pt, font=\large] at (0, 2.8) {$2^+$};
+    \node[right=5pt, font=\large] at (2.2, 2.8) {$1.181$};
+
+    % 4+ at 1.426 MeV (y = 3.65)
+    \draw[very thick, line width=1.5pt] (0, 3.65) -- (2.2, 3.65);
+    \node[left=5pt, font=\large] at (0, 3.65) {$4^+$};
+    \node[right=5pt, font=\large] at (2.2, 3.65) {$1.426$};
+
+    % 6+ at 1.472 MeV (y = 4.15)
+    \draw[very thick, line width=1.5pt] (0, 4.15) -- (2.2, 4.15);
+    \node[left=5pt, font=\large] at (0, 4.15) {$6^+$};
+    \node[right=5pt, font=\large] at (2.2, 4.15) {$1.472$};
+
+    % Label b)
+    \node[font=\Large] at (1.1, -1.0) {b)};
+  \end{scope}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,53 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{fontspec}
+\usepackage[mathrm=sym]{unicode-math}
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf,
+    ItalicFont = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\setmathfont{texgyrepagella-math.otf}[AutoFakeBold = 2.5]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+  arrowed/.style={
+    decoration={
+      markings,
+      mark=at position 0.55 with {\arrow{Stealth[length=5pt, width=3.5pt]}}
+    },
+    postaction={decorate}
+  }
+]
+
+  % Vertex coordinates
+  \coordinate (VL) at (-1.5, 0);
+  \coordinate (VR) at (1.5, 0);
+
+  % Intermediate line between vertices (arrow pointing left)
+  \draw[thick, line width=1.1pt, decoration={markings, mark=at position 0.55 with {\arrow{Stealth[length=5.5pt, width=3.8pt]}}}, postaction={decorate}] 
+    (VR) -- (VL);
+
+  % Left vertex external lines
+  % Top incoming (pointing right towards VL)
+  \draw[thick, line width=1.1pt, arrowed] (-3.2, 0.9) to[out=0, in=120] (VL);
+  % Middle line (pointing left away from VL)
+  \draw[thick, line width=1.1pt, arrowed] (VL) -- (-3.2, 0);
+  % Bottom incoming (pointing right towards VL)
+  \draw[thick, line width=1.1pt, arrowed] (-3.2, -0.9) to[out=0, in=-120] (VL);
+
+  % Right vertex external lines
+  % Top outgoing (pointing right away from VR)
+  \draw[thick, line width=1.1pt, arrowed] (VR) to[out=60, in=180] (3.2, 0.9);
+  % Middle incoming (pointing left towards VR)
+  \draw[thick, line width=1.1pt, arrowed] (3.2, 0) -- (VR);
+  % Bottom outgoing (pointing right away from VR)
+  \draw[thick, line width=1.1pt, arrowed] (VR) to[out=-60, in=180] (3.2, -0.9);
+
+  % Vertices (solid black dots)
+  \filldraw[black] (VL) circle (2.2pt);
+  \filldraw[black] (VR) circle (2.2pt);
+
+\end{tikzpicture}
+\end{document}

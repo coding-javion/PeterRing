@@ -1,0 +1,10926 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-book
+\begin_preamble
+\input{preamble.tex}
+\end_preamble
+\use_default_options true
+\begin_modules
+beautiful-booknotes
+theorems-ams-chap-bytype
+\end_modules
+\maintain_unincluded_children no
+\language chinese-simplified
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_auto_link true
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008080
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+主题索引与术语表
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{chapter}{主题索引与术语表}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+markboth{主题索引与术语表}{主题索引与术语表}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+noindent 本索引按英文字母顺序排列，收录原著全书核心物理主题、概念与专有术语。条目后附对应中文学术译名及原书页码，以便对照查阅。
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+vspace{0.8em}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{A}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Abelian symmetry groups}{阿贝尔对称群}{459}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Abnormal coupling states}{异常耦合态}{396}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Abnormal density}{异常密度}{251, 551, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Absorption probability}{吸收几率}{587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Acceleration of system}{系统加速度}{512}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Action integral}{作用量积分}{489, 563}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{A-dependence}{质量数 $A$ 依赖性}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{$B(E2)$-values}{$B(E2)$ 跃迁值}{14}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{binding energy}{结合能}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{giant resonance energy}{巨共振能量}{15, 16,293, 295, 334, 560, 571}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{gyromagnetic ratio}{旋磁比}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{moment of inertia}{转动惯量}{19}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{radius}{半径}{3}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabatic approximation}{绝热近似}{508, 520}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabatic basis}{绝热基}{495, 524}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabaticity}{绝热性}{520, 565}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabatic limit}{绝热极限}{506, 524}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabatic motion}{绝热运动}{510}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Adiabatic perturbation theory}{绝热微扰论}{523ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Adiabatic time-dependent Hartree-Fock (ATDHF)}{绝热时间相关 Hartree-Fock 方法（ATDHF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{521--523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{approximation}{近似}{507}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equations}{方程}{509, 511, 518}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{511, 514}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{local representation}{局域表象}{515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{mass}{质量 / 惯量质量}{511, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Airy function}{Airy 函数}{537}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Alignment (rotational)}{转动顺排}{101, 111, 115--118, 123, 276, 385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Analog (isobaric)}{同位旋类似态}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{resonance}{共振}{291, 297}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state}{态}{299}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Angular momentum}{角动量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{algebra}{代数}{348, 575--579}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson representation}{玻色表象}{348}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collective}{集体}{108}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{commutation relation}{对易关系}{348}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constraint}{约束}{272, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coupling}{耦合}{10, 52, 226, 325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{intrinsic components}{内秉分量}{20,457, 577}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{maximal stable}{最大稳定}{35}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection}{投影}{473--484}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{representation by Euler angles}{Euler 角表示}{577}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{selection rules}{选择定则}{583, 590}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{total}{总}{490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Angular velocity}{角速度}{103, 127, 130, 272}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Anharmonicities}{非谐性}{17, 347, 375, 397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Annihilation operator}{湮灭算符}{596}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Anti-commutator}{反对易子}{598, 601}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Anti-linear operators}{反线性算符}{251}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Anti-pairing effect}{反配对效应}{参见 Coriolis anti-pairing effect（Coriolis anti-pairing effect）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Asymmetric rotor}{非对称转子}{26, 123}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Asymptotic quantum number}{渐近量子数}{72}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{ATHF}{绝热时间相关 Hartree-Fock 方法}{参见 Adiabatic time-dependent Hartree-Fock（Adiabatic time-dependent Hartree-Fock）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Attenuation factor}{衰减因子}{120, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Attractive interaction}{吸引相互作用}{286}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Average field}{平均场}{39,210}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Average level density}{平均能级密度}{86}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Average potential}{平均势}{38, 210}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Averaging procedure}{平均程序}{86--90}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Axial symmetry}{轴对称性}{22, 109, 477, 478}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{approximation (GOA)}{高斯重叠近似（GOA）}{424--42}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{and force spone}{与力参数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Goldhaber-Teller model}{Goldhaber-Teller 模型}{560}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop model}{液滴模型}{11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{semiclassical theory}{半经典 理论}{543}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Steinwedel-Jensen model}{Steinwedel-Jensen 模型}{560}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{A-shell}{$A$-壳层}{239}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{B}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+beta$-band}{$\backslash
+beta$ 振动带}{348}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+beta$-vibration}{$\backslash
+beta$ 振动}{22}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$B$-coefficient}{$B$ 质量系数}{103, 133}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$B(E0)$-values}{$B(E0)$ 跃迁值}{327, 434}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{$B(E2)$-values}{$B(E2)$ 跃迁值}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{enhanced}{增强}{450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{experimental}{实验}{14}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop.}{液滴模型}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotor model}{转子模型}{25}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{327, 328}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{seniority model}{辛弱数模型}{227}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{$B(E1)$- and $B(M1)$-values}{$B(E1)$- and $B(M1)$-values}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{definition}{定义}{13, 589}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projected}{投影}{480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA-calculation}{RPA 计算}{327}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{$B(M1)$-values}{$B(M1)$ 跃迁值}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{328}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Back bending}{回弯现象}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{giant}{巨共振}{140}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{plot}{曲线图}{104, 106, 140, 274}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{second}{二次 / 第二}{107}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Baker-Campbell -Hausdorff formula}{Baker-Campbell-Hausdorff 公式}{412}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Balian - Brézin formula}{Balian-Brézin 公式}{617--618}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Band crossing}{能带交叉}{106, 274, 277}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Band head}{带首}{78, 112}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Baranger- Vénéroni decomposition}{Baranger-Vénéroni 分解}{507, 605--606}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Bargmann}{Bargmann 表象}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{8-function}{$\backslash
+delta$ 函数}{413}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{measure}{测度}{412}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{representation}{表象}{408, 412--414}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{space}{空间}{411}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bartlett force}{Bartlett 力}{154}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Basic operators}{基本算符}{352}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{BCS (Bardeen, Cooper, Schrieffer)}{BCS 理论}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and coherent states}{与 相干态}{449}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and gauge symmetry}{与规范对称性}{448}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{decomposition of the wave function}{波函数分解}{483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equations}{方程}{230, 262, 550}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phase convention}{相位约定}{184}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state}{态}{343}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{theory}{理论}{228--243}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave function}{波函数}{228}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Belyaev formula}{Belyaev 惯量公式}{131}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Belyaev-Zelevinsky boson representation}{Belyaev-Zelevinsky boson representation}{352, 354--362, 383}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Beringer - Knox shapes}{Beringer-Knox 形状}{34, 99}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bethe- Goldstone equation}{Bethe-Goldstone 方程}{156, 204, 207}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bethe - Salpeter equation}{Bethe-Salpeter 方程}{319, 324, 640--642}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bethe - Weizsäcker formula}{Bethe-Weizsäcker 半经验质量公式}{4, 84}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Binding energy}{结合能}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{per nucleon}{每核子}{2,3}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Biorthogonal basis,}{双正交基}{403, 475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Bloch - Messiah theorem}{Bloch-Messiah 定理}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{620}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Blocked levels}{阻塞能级}{248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Blocking}{阻塞效应}{101, 234, 237, 248, 249, 257, 258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Body-fixed system}{体固坐标系}{18, 21, 457, 576}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bogoliubov quasi-particles}{Bogoliubov 准粒子}{234}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Bogoliubov transformation}{Bogoliubov 变换}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{620--622}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{general}{一般情形}{245--251, 308, 361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{special}{特殊情形}{234, 248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Bohr Hamiltonian}{Bohr Hamiltonian 量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotation-vibration}{转动-振动耦合}{18, 20, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibration-particle-coupling}{振动-粒子耦合}{383}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bohr-Tassie model}{Bohr-Tassie 模型}{336, 561}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Bolizmann equation}{Boltzmann 方程}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collisionless}{无碰撞}{553}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{linearized}{线性化}{554}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bombarding energy}{轰击能量}{505}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bose - Einstein condensation}{Bose-Einstein 凝聚}{229, 446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Boson -boson interaction}{玻色子-玻色子相互作用}{367, 373, 378}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Boson commutation relation}{玻色子对易关系}{参见 对易规则（Commutation rules）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Boson condensate}{玻色凝聚体}{301, 445, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Boson operator}{玻色子算符}{9,307, 341, 597}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Boson representation}{玻色表象}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and GCM}{与 GCM}{406--408, 414}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{375--381}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Belyaev-Zelevinskii}{Belyaev-Zelevinsky 展开}{352--362}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Dyson}{Dyson 理论}{350, 367, 370, 390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for even systems}{偶核系统}{348--381}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for odd mass systems}{奇质量核系统}{382--397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Holstein -Primakoff}{Holstein-Primakoff 展开}{348, 350, 360, 374, 378}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Marumori}{Marumori 展开}{352, 362--366}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{mathematical background}{数学背景}{368--372}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{microscopic}{微观}{380}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of angular momenta}{角动量的}{348--351}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{perturbative}{微扰}{358--361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phenomenological}{唯象}{375}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Schwinger}{Schwinger 表象}{350, 354, 373}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Boson vacuum}{玻色子真空态}{348, 352, 363, 620}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Breathing mode}{呼吸模（巨单极共振）}{291, 296, 327, 333, 334, 337, 433, 523, 572}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Brink- Booker force}{Brink-Booker 力}{177, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Broken symmetry}{破缺对称性}{参见 对称性破缺（Symmetry violation）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Brueckner G-matrix}{Brueckner $G$ 矩阵}{156, 203}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Brueckner- Hartree-Fock}{Brueckner-Hartree-Fock 方法（BHF）}{203, 633, 635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{BSE}{Bethe-Salpeter 方程}{参见 Bethe-Salpeter 方程（Bethe-Salpeter equation）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Bulk properties}{核体性质}{83}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{C}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Canonical}{典范 / 标准}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{basis}{基底}{248, 251, 256, 272, 344}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coordinate}{坐标}{309, 312, 338, 509, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{form}{形式}{247, 251, 609, 611 312, 509, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quantization}{量子化}{9,586}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{variables (weakly)}{弱典范变量}{515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{CAP-effect}{CAP 效应（Coriolis 反配对效应）}{100, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Casimir operator}{Casimir 算符}{349,352}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{C-coefficient}{$C$ 刚度系数}{103, 133}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Center of mass}{质心}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{angle}{角向}{313, 457, 493, 507}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coordinate}{坐标}{313, 452, 490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{motion}{运动}{6, 456, 492}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{system}{系统}{454, 592}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Central force}{中心力}{152, 174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Centrifugal forces}{离心力}{128, 137}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Chapman -Enskog development}{Chapman-Enskog 展开}{557}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Charge distributtion}{电荷分布}{214, 581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Chemical potential}{化学势}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and gauge transformations}{与规范变换}{448}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as frequency of pairing rotations}{作为配对转动频率}{447}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as generator coordinate}{作为生成坐标}{435, 473}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the BCS model}{在 BCS 模型中}{230, 236}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the HFB theory}{在 HFB 理论中}{254, 259}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Strutinski method}{在 Strutinsky 方法中}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Thomas-Fermi theory}{在 Thomas-Fermi 理论中}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{CHF (see Constrain: Hartree-Fock) approximation}{CHF 近似（参见 Constrain: Hartree-Fock）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{aspects of coherent states}{相干态性质}{415}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{aspects of the mean field approach}{平均场方法性质}{446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{aspects of the TDHF method}{TDHF 方法性质}{496, 509}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Bohr Hamiltonian}{Bohr Hamiltonian 量}{522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{case for giant resonances}{巨共振情形}{336}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deterministic behavior}{确定性行为}{495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equation of motion}{运动方程}{490, 507, 512, 515,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamilton function}{Hamilton 函数}{511, 516}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{limit of TDHF}{TDHF 的极限}{522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{path}{路径}{417}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{trajectory}{轨迹}{495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{turning point}{经典转折点}{532}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Closed shell nuclei}{闭壳核}{434}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cluster representation}{结团表象}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coester line}{Coester 线}{206}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Coherent states}{相干态}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{446, 449, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{definition}{定义}{412}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{properties}{性质}{415, 622}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coherent superposition}{相干叠加}{281, 286, 288, 299}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Collective 3-state}{集体 $3^-$ 态}{参见 八极振动（Octupole vibration）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective coordinates}{集体坐标}{430--432, 452, 513,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective effect of transition}{跃迁的集体效应}{227}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective energy}{集体 能量}{287, 320, 521}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective excitations}{集体 激发}{281, 287, 290--301}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective fermion pairs}{集体费米子对}{346, 353, 355, 364,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Collective Hamiltonian}{集体 Hamiltonian 量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{506, 510, 514, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coordinate transformation}{坐标变换}{452}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{402, 419--432}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop model}{液滴模型}{9,20}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{107}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective mode}{集体模}{290--301, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective model}{集体模型}{9, 20, 107}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective path}{集体路径}{425, 430--432, 517}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective ph vibration}{集体粒子-空穴振动}{290}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Collective states}{集体 态}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{low lying}{低激发}{293}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{classification}{分类}{292}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective strength}{集体跃迁强度}{281, 288, 321}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Collective subspace}{集体子空间}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson representation}{玻色表象}{347, 359, 364}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generator coordinates}{生成坐标}{402, 406, 409, 410}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection methods}{投影方法}{451, 458}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective velocity}{集体速度}{492}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collective vibration}{集体振动}{290--301, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Collisions}{碰撞}{487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Commutation rules}{对易规则}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{angular momenta}{角动量}{222, 348}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bosons}{玻色子}{307, 352, 369, 586, 597}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{canonical}{典范 / 标准}{309, 312}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fermion pairs}{费米子对}{355, 382}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fermions}{费米子}{234, 246, 598}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Completeness relations}{完备性关系}{参见 完备性关系 / 封闭关系（Closure relations）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Compressibility}{不可压缩模量}{参见 不可压缩模量（Incompressibility）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Compressible}{可压缩}{336}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Compression modulus}{压缩模量}{321}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Condensate of bosons}{玻色子凝聚体}{229, 301, 446, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Condon-Shortley phases}{Condon-Shortley 相位}{184}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Conjugate states (canonically)}{典范共轭态}{228, 248, 272}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Conservation}{守恒}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of energy}{能量的}{490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of orthogonality}{正交性}{489}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of symmetries}{对称性}{490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Closure relations}{完备性关系 / 封闭关系}{289, 305, 306, 341, 355, 412}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Constrained Hartree-Fock (CHF) theory}{约束 Hartree-Fock 理论（CHF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and ATDHF}{与 ATDHF}{517, 521}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Constrained Hartree-Fock (CHF) [conr.]}{约束 Hartree-Fock 理论（CHF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and linear response}{与 线性响应}{321}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and sum rules}{与求和规则}{333}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{270, 272, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{(see also Constraint)}{}{参见 also Constraint（also Constraint）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Constrained motion}{受约束运动}{569}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Constraint}{约束}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{linear}{线性}{267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{optimal}{最优}{268, 432, 518}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quadratic}{二次}{267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{second}{二次 / 第二}{271,463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{self-consistent}{自洽}{432}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{unbounded}{无界}{270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Constraint of}{约束}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{angular momentum}{角动量}{272, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformation}{形变}{269}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fluctuations}{涨落}{271,463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{orthogonality}{正交性}{257,278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle number}{粒子数}{230, 259, 268, 449}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Contact force}{接触力}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Continuity equation}{连续性方程}{588}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Continuous symmetry}{连续对称性}{203, 311, 317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Continuum RPA}{连续谱 RPA}{322--325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Contraction}{缩并}{601, 619}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Convergence of boson expansions}{玻色展开的收敛性}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Belyaev-Zelevinskii}{Belyaev-Zelevinsky 展开}{359}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Dyson}{Dyson 理论}{367}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{horizontal}{水平}{368}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Marumori}{Marumori 展开}{365}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vertical}{垂直}{368}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cooper pairs}{Cooper 对}{99, 219, 260, 275, 354, 372}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cooper pole}{Cooper 极点}{635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coordinate, generalized}{广义坐标}{309, 338, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Coordinate space representation}{坐标空间表象}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Bethe-Salpeter equation}{Bethe-Salpeter 方程}{324}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density matrix}{密度矩阵}{604, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{field operators}{场算符}{598}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF equations}{HF 方程}{196}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF equations}{TDHF 方程}{488}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Core polarization}{芯极化}{169, 216, 390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coriolis anti-pairing (CAP) effect}{Coriolis 反配对效应（CAP）}{100, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coriolis force}{Coriolis 力}{128}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Coriolis term}{Coriolis 项}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{attenuation of}{衰减}{120}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{effect of}{效应}{100, 123, 274--277}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in TDHF}{在 时间相关 Hartree-Fock 方法（TDHF）中}{493}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the cranking model}{在 Cranking 模型 / 推引模型中}{128, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Nilsson model}{在 Nilsson 模型中}{137}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the particle-plus-rotor model}{在 粒子加转子模型中}{108, 110}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Curvature of the energy surface}{Curvature of the energy surface}{12, 191, 199}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Correlation}{关联}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{445, 448}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{function}{函数}{487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Correlations}{关联}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ph-}{粒子-空穴（ph）}{302}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{2p-2h-}{$2p$-$2h$ 组态}{283}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ground state}{基态}{303, 342, 343}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{long range}{长程}{185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of valence nucleons}{价核子的}{288}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{short range}{短程}{185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coulomb gauge}{库仑规范}{584}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Coulomb potential}{库仑势}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and analog resonances}{与类似共振}{297}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in HF calculations}{在 HF 计算中}{209}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in TDHF calculations}{在 TDHF 计算中}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Nilsson model}{在 Nilsson 模型中}{80}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the shell model}{在壳模型中}{47}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Coulomb term s}{库仑项}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Coupling}{耦合}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{intermediate}{中间态}{390--397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{minimal}{极小}{453}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{strong}{强}{110--112}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{weak}{弱}{112--115, 385--389, 397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Cranking formula}{推引转动惯量公式}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for general collective motion}{针对广义集体运动}{525}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for rotations}{针对转动}{130, 131, 314, 322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cranking frequency}{推引转动频率}{103, 127, 130, 272, 468, 479}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cranking model for general collective motions}{Cranking model for general collective motions}{523--525}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Cranking model for rotations}{转动推引模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and the harmonic oscillator}{与简谐振子}{133--13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{449}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as approximate projection}{作为近似投影}{468, 478}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as TDHF-solution}{作为 TDHF 解}{493}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pure single-particle case}{纯单粒子情形}{126--145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{self-consistent (SCC) case}{自洽推引情形（SCC 情形）}{271--279, 478--480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{semiclassical derivation}{半经典推导}{127}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Crank-Nicholson operator}{Crank-Nicolson 演化算符}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Creation operator}{产生算符}{597}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Critical coul raconsas}{临界耦合常数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the BCS model}{在 BCS 模型中}{343, 465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the GCM}{在 生成坐标法（GCM）中}{435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Lipkin model}{在 Lipkin 模型中}{200, 361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the RPA}{在 随机相位近似（RPA）中}{320, 342, 361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Critical level density}{临界能级密度}{443, 465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Cross section of dipole absorption}{偶极吸收截面}{294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Current density}{流密度}{581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Current distributions}{流分布}{504}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Curvature corrections}{曲率修正}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{to the collective path}{沿集体路径}{519}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{to the Strutinski method}{在 Strutinsky 方法中}{87 211,321, 329}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Curvature tensor}{曲率张量}{253, 513}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{D}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{d-boson}{$d$ 玻色子}{373, 377}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+delta$-force}{$\backslash
+delta$ 相互作用力}{173, 174, 197, 499}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{D-functions}{Wigner $D$ 函数}{576}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$D_2$-group}{$D_2$ 二面体对称群}{21, 476}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Damped collisions (strongly)}{强阻尼碰撞}{505}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Damping}{阻尼}{494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Daughter nucleus}{子核}{297, 298}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{DBE (see Dyson boson expansion) Decay width}{DBE Decay width（参见 Dyson 玻色展开）}{323}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Decoupled bands}{解耦带}{102, 117}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Decoupling factor}{解耦因子}{112,125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Decoupling limit}{解耦极限}{110, 115--118}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Deformations}{形变}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and BCS}{与 BCS}{219}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and level crossings}{与能级交叉}{565 443--450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{443--450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equilibrium}{平衡}{80}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{hexadecupole}{十六极}{6, 66, 81, 265}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the liquid drop model}{在液滴模型中}{5--9}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the shell model}{在壳模型中}{65--83}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{octupole}{八极}{6, 442}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of the Fermi sphere}{Fermi 球}{566--571}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{prolate-oblate}{长椭球-扁椭球过渡}{118, 142}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quadrupole}{四极}{6--9, 66, 260, 441--451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{triaxial}{三轴}{27, 101, 122, 140, 385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Deformation alignment}{形变顺排}{110--112}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Deformation energies}{形变能}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop}{液滴模型}{12}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{79}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Deformation energy surface}{形变势能面}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constrained HF}{约束 HF}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop model}{液滴模型}{12, 28, 30, 32}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotating}{转动}{33, 139--141}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{83}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Strutinski}{Strutinsky 方法}{92,95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Deformation equation}{形变方程}{261, 442, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Deformation parameter}{形变参数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{$\backslash
+alpha_{\backslash
+lambda\backslash
+mu}$}{多极形变参数 $\backslash
+alpha_{\backslash
+lambda\backslash
+mu}$}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{$\backslash
+beta_\backslash
+lambda$}{多极形变参数 $\backslash
+beta_\backslash
+lambda$}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{$\backslash
+beta$}{四极形变参数 $\backslash
+beta$}{5,34,69,275 5,34, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{$\backslash
+epsilon$}{单粒子能量 $\backslash
+epsilon$}{72}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{q}{四极矩坐标 $q$}{261}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Deformed harmonic oscillator.}{形变简谐振子}{68, 548}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Density}{密度}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and sum rules}{与求和规则}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{distributions}{分布}{214, 271, 532, 544, 548}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hartree-Fock}{Hartree-Fock}{209, 214}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{oscillations}{振荡}{532, 548}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{semiclassical}{半经典}{537}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Strutinski smoothed}{Strutinsky 平滑}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF profiles}{TDHF 密度剖面}{503, 504}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Thomas-Fermi}{Thomas-Fermi 理论}{531, 544}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Density dependent forces}{密度依赖核力}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hartree-Fock (DDHF)}{密度依赖 Hartree-Fock 方法（DDHF）}{203--215}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{264--265}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{linear response}{线性响应}{316, 317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rules}{求和规则}{332}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Density matrix}{密度矩阵}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{abnormal}{异常}{251, 550, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized}{广义}{252, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{normal}{正常}{251, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{one-particle}{单粒子}{603}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{two-body}{两体}{487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Density of states (see Level density) Dipole}{Density of states Dipole（参见 能级密度）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{moment (see Magnetic moment)}{极矩}{参见 Magnetic moment（Magnetic moment）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{294,592}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{radiation}{辐射}{593}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rule}{求和规则}{294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transition density}{跃迁密度}{561}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibrations}{振动}{434, 569}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dirac perturbation theory}{Dirac 微扰论}{587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Direct term}{直接项}{285}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Discretization}{离散化}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{continuum RPA}{连续谱 RPA}{323, 325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{401, 403, 404, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dispersion relation}{色散关系}{320, 342}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Distorted rotational bands}{畸变转动带}{119}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Double projection}{双重投影}{418, 473}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Double variational method}{双重变分方法}{431,477}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Droplet model}{液滴模型}{5}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dynamic kinetic energy density}{动力学动能密度}{570}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dynamic part of the mass operator}{质量算符动力学部分}{635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dynamic polarizability}{动态极化率}{322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Dynamic properties}{动力学性质}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of boson representation}{玻色表象的}{347, 359, 365}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of the GCM}{生成坐标法（GCM）}{403}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dyramic semiclassical thecry}{动态半经典理论}{550--574}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dynamic solution of TDHF}{TDHF 动力学解}{492}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dyson boson expansion}{Dyson 玻色展开}{350, 367, 370, 390, 408}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Dyson equation}{Dyson 方程}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{640}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Dyson operator}{Dyson 算符}{369}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective charge}{有效电荷}{65, 389--390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective fermion space}{有效费米子空间}{365}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective g-factors}{有效 $g$ 因子}{581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Effective interaction}{有效相互作用}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and Green's functions}{与 Green 函数}{640--642}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and VPC-theory}{与振动-粒子耦合理论（VPC 理论）}{385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{between valence particles (pp)}{价核子之间（pp）}{164--170,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{between particles and holes (ph)}{粒子与空穴之间（ph）}{170--172, 640}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{between quasi-particles}{准粒子之间}{178, 640ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{experimental}{实验}{185--187}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{G-matrix}{$G$ 矩阵}{156--164}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{microscopic}{微观}{156--172}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{momentum dependence}{动量依赖性}{173}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phenomenological}{唯象}{172--185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{renormalized}{重整化}{177, 326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective mass}{有效质量}{139, 212, 214, 523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective matrix element}{有效 矩阵元}{389}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Effective single-particle potential}{有效单粒子势}{628}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Electromagnetic moments}{电磁极矩}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop}{液滴模型}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projected theory}{投影理论}{480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotor model}{转子模型}{25,26}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{60}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Electromagnetic multipole operators}{电磁多极算符}{12, 582}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Electromagnetic transitions}{电磁跃迁}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop}{液滴模型}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projected theory}{投影理论}{480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotor model}{转子模型}{25, 26}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{60}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Elliot - Clark force}{Elliott-Clark 力}{175}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Elliot model}{Elliott 模型（$\backslash
+mathrm{SU}(3)$ 模型）}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Elongation coordinate}{伸长坐标}{29}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Emission probability}{发射几率}{587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy curve}{能量曲线}{32, 83, 92, 270, 523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy density}{能量 密度}{209, 555}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy functional}{能量泛函}{194}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy gap}{能隙}{218, 236}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Energy overlap}{Energy overlap}{参见 重叠函数（Overlap functions）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy of resonance}{共振能量}{331}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy in the rotating frame}{转动参考系能量（Routhian）}{129,142}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{ergy spread}{能量展宽}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Energy surface}{势能面}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and collective motion}{与集体运动}{431, 451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transition}{与 相变}{443}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson model}{玻色子模型}{376}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constraint HF}{约束 HF}{269--270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{curvature}{曲率}{191, 199, 211, 321, 329}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hartree-Fock}{Hartree-Fock}{253}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{258, 264}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the rotating frame}{在转动参考系中}{139--141}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Lipkin model}{Lipkin 模型}{200}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop model}{液滴模型}{28, 30, 32}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{multidimensional (TDHF)}{多维（TDHF）}{494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projected}{投影}{462}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{83}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Strutinski method}{Strutinsky 壳修正方法}{92, 95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy of surface vibration}{表面振动能量}{334}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy weighted moments}{能量加权矩}{330}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Energy weighted sum rule}{能量加权求和规则}{294, 331}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Enhanced transition}{增强跃迁}{321}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Equation of continuity}{连续性方程}{559, 564, 588}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Equation of motion}{运动方程}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{classical}{经典}{490, 507, 512, 515, 564}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Equilibrium deformation}{平衡形变}{80}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Equipotential line}{等势线}{490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Equipotential surfaces}{等势面}{388}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Escape width}{逃逸宽度}{494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{ETF theory}{ETF 理论}{参见 扩展 Thomas-Fermi 理论（Extended Thomas-Fermi theory）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Euler angles}{Euler 角}{18, 443, 453, 457, 473, 576}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Euler equation}{Euler 方程}{557, 559, 564}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Evolution operator}{演化算符}{485, 501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Exchange mixtures}{交换混合相互作用}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Exchange operator}{交换算符}{150, 153}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Exchange potential (see also Fock potential)}{交换势（参见 also Fock 势）}{196, 488}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Exchange term}{交换项}{285, 387}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Excitation}{激发}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ph}{粒子-空穴（ph）}{48,283, 292}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{2p-2h}{$2p$-$2h$ 激发}{300, 304, 323, 435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{probability}{几率}{319, 326, 589}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{strength}{强度}{323}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Extended Thomas- Fermi theory}{扩展 Thomas-Fermi 理论}{527, 534--550}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{External field}{外场}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{static}{静态}{267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{time dependent}{时间相关}{314}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{e|l-force}{e|l-force}{参见 四极-四极相互作用力（Quadrupole-quadrupole force）}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{F}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fallieros sum rules}{Fallieros 求和规则}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Facieros sum res}{Fallieros 求和规则}{487, 633}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Favored states}{有利态}{114, 116}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{FBCS-theory}{固定粒子数 BCS 理论（FBCS）}{462, 464}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fermi commutation relations}{费米反对易关系}{234, 246, 598}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fermi momentum}{Fermi 动量}{210, 532, 569}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fermi sphere, deformed}{形变 Fermi 球}{566--571}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fermi surface, smeared out}{弥散 Fermi 面}{495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fermion operators}{费米子算符}{597}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Fermion pair operators}{费米子对算符}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collective}{集体}{346, 353, 355}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{non-collective}{非集体}{354}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Ferrel - Visscher force}{Ferrell-Visscher 力}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Feshbach projection formalism}{Feshbach 投影形式理论}{165, 171, 628}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Feynman graphs}{Feynman 图}{285}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Feynman theorem}{Feynman 定理}{321, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Field operators}{场算符}{598}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Final state interaction (spurious)}{末态相互作用（虚假）}{499}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Finite range}{有限力程}{173, 176, 187, 501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fissibility parameter}{可裂变度参数 $x$}{29, 31}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Fission}{裂变}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{barrier}{势垒}{31, 83, 270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{isomers}{同质异能素}{66, 83, 95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{path}{路径}{31, 95, 269--271}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{process}{过程}{266, 270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{valley,}{谷线}{31, 269}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Flow pattern}{流动图像}{11,504}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Fluctuations}{涨落}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions.}{与相变}{445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and projection techniques}{与投影技术}{467, 479,483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as constraint}{作为约束}{271}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the angular momentum}{在 角动量中}{479,483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the momentum}{在 动量中}{425, 428}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the order parameter}{在 序参量中}{445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in particle number:}{在粒子数中}{230, 233, 242, 483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of the symmetry operator}{对称性算符}{470}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fluid dynamics}{流体动力学}{555, 562, 568, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fock potential}{Fock 势}{197, 261, 488}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fock space}{Fock 空间}{347}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fomenko method}{Fomenko 投影方法}{465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Form factor}{形状因子}{325, 388}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fragmentation coordinate}{碎片化坐标}{29}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Friction}{摩擦力 / 摩擦系数}{517}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Fusion}{聚变反应}{505, 561}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{G}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Galilean invariance}{Galilei 不变性}{128, 151, 313, 452, 454, 470, 473}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+gamma$-band}{$\backslash
+gamma$ 振动带}{273, 278, 345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+gamma$-vibration}{$\backslash
+gamma$ 振动}{22}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gap equation}{能隙方程}{199, 232, 233, 238, 343, 441, 450, 636, 638}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Gap parameter A}{能隙参数 $\backslash
+Delta$}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transition}{与 相变}{449}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as generator coordinate}{作为生成坐标}{435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gapless superconductivity}{无能隙超导性}{277}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Gauge}{规范}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{angle}{角向}{447,452}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Coulomb-}{库仑相互作用}{584}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetry}{对称性}{457, 459}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transformations}{变换}{447}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gaussian barrier}{高斯势垒}{497}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gaussian force}{高斯力}{174, 176, 551}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gaussian overlap}{高斯重叠}{409, 414, 420, 425, 467, 475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gaussian wave packets}{高斯波包}{414--417}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{GCM}{生成坐标法（GCM）}{参见 生成坐标法（Generator coordinate method）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Generalized coordinate}{广义坐标}{309, 338, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Generalized momentum}{广义动量}{309, 338, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Generating function}{生成函数}{399, 410}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Generator coordinate method (GCM)}{生成坐标法（GCM）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and boson representations}{与玻色表象}{352, 406}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and projectien methods}{与投影方法}{458}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and RPA}{与 RPA}{308}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{433--437}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{numerical solution}{数值解}{404}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wavefunction}{波函数}{399}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Generator coordinates}{生成坐标}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{complex}{复数}{400, 410, 411--414}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{redundant}{冗余}{418}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Geodesic distance}{测地距离}{430}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{GF}{GF}{参见 Green 函数（Green's functions）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$g$-factor}{$g$ 因子 / 旋磁比}{63, 581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Giant dipole resonance}{巨偶极共振}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fluid dynamics}{流体动力学}{568--572}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{hydrodynamical models}{流体动力学模型}{558--561}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{325--329}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{splitting}{劈裂}{294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Giant quadrupole resonance}{巨四极共振}{16, 295, 327, 334, 445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Giant resonances}{巨共振}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{classification}{分类}{290--297}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed nuclei}{形变核}{294, 296, 345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fine structure}{精细结构}{281, 289, 294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fluid dynamics}{流体动力学}{568--572}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{433--435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{hydrodynamical models}{流体动力学模型}{558--561}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{325--330}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rules}{求和规则}{333--339}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{width}{宽度}{323}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gillet force}{Gillet 力}{174, 326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Global approximation}{整体近似}{423}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Global properties}{整体性质}{330}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{G-matrix}{$G$ 矩阵}{157, 203--207}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gogny force}{Gogny 力}{176, 265}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Goldhaber-Teller model}{Goldhaber-Teller 模型}{295, 558, 560}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gorkov equations}{Gorkov 方程}{635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gradient expansion}{梯度展开}{535}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gradient method}{梯度法}{200, 255, 258--259, 268}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Gram-Schmidt method}{Gram-Schmidt 正交化方法}{306, 401}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Graph}{图符 / 图解}{284, 304, 628}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Graphical solution}{图解法}{287, 320}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Green's functions}{Green 函数}{623--642}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Grodzin's rule}{Grodzins 经验定则}{14}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Ground state}{基态}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{correlations}{关联}{301, 320, 341, 433, 436}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformations}{形变}{80}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed}{形变}{262}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{79, 194, 209, 300, 530, 533, 624}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotational band}{转动带}{100, 273, 278, 433, 478}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spins}{自旋}{78,219}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Gyromagnetic ratio}{旋磁比}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{cranking model}{Cranking 模型 / 推引模型}{132}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotor model}{转子模型}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{63}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{H}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{h-correction}{$\backslash
+hbar$ 修正}{535}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{h-expansion}{$\backslash
+hbar$ 展开}{535, 545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hamada - Johnston potential}{Hamada-Johnston 势}{155, 167}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hamilton equations:}{Hamilton 正则方程}{512, 515, 564}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hamilton function in collective variables}{集体变量中的 Hamilton 函数}{514}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Hamilton overlap}{Hamilton overlap}{参见 重叠函数（Overlap functions）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hard core}{硬芯}{155, 159--163, 185, 203}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Harmonic approximation}{谐振近似}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{locally}{局域}{519,545--547}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{308, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Harmonic interaction}{简谐相互作用}{455}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Harmonic oscillator}{简谐振子}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and center of mass motion}{与质心运动}{456}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and coherent states}{与 相干态}{412--417}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and GCM}{与 GCM}{409--411}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and RPA}{与 RPA}{309, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{anisotropic}{各向异性}{68--70}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed}{形变}{68--70, 548}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{propagator}{传播子}{538--545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quantization}{量子化}{9,586}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotating}{转动}{133--139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spectrum}{能谱}{41}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shifted}{平移}{415}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spherical}{球形}{40--42}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{surface vibrations}{表面 振动}{9,10}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{time dependent}{时间相关}{416--417, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave packets}{波包}{414--417}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Harmonic spectrum}{简谐能谱}{10, 41, 224, 300}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Harris model}{Harris 推引展开公式}{103}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Hartree-Fock (HF)}{Hartree-Fock 方法（HF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and shell corrections}{与壳修正}{92,93}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and symmetries}{与对称性}{201--203}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{205, 213--215}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{basis}{基底}{195, 315, 614}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constrained}{受约束}{266--271}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{193, 209, 214, 316}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density dependent-(DDHF)}{密度依赖（DDHF）}{203--215}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{194, 209}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equations}{方程}{195, 196, 212, 626}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{196}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{numerical solution}{数值解}{197, 258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{potential}{势}{196,487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave functions}{波函数}{192, 201}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Hartree-Fock- Bogoliubov (HFB)}{Hartree-Fock-Bogoliubov 理论（HFB）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{basis}{基底}{246, 253, 613--614}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{calculations}{计算}{262--266, 271--279}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constrained}{受约束}{266--271}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{densities}{密度}{251--252, 551}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density dependent}{密度依赖}{264--266}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{254, 265, 613}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equations}{方程}{254, 266, 272, 635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{254}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the rotating frame}{在转动参考系中}{271--279}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix}{矩阵}{254, 265, 636}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{numerical solution}{数值解}{258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{potentials}{势}{254, 265}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave functions}{波函数}{249, 250}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Healing distance,}{愈合距离}{163, 205}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Heat current density}{热流密度}{555}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Heavy ion scattering}{重离子散射}{497, 504}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Heisenberg force}{Heisenberg 交换力}{154}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Helmholtz equation}{Helmholtz 方程}{584}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hermite wave packets}{Hermite 波包}{417}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hexadecupole deformations}{十六极 形变}{6, 66, 81, 265}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{HF}{Hartree-Fock 方法（HF）}{参见 Hartree-Fock（Hartree-Fock）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{参见 Hartree-Fock-Bogoliubov（Hartree-Fock-Bogoliubov）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Higher RPA}{高阶 RPA}{311}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{High spin states}{高自旋态}{96--145, 271--279}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hilbert-Schmidt type}{Hilbert-Schmidt 型算符}{401, 409}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hill - Wheeler coordinates}{Hill-Wheeler 坐标}{7,34, 141}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hill - Wheeler equation}{Hill-Wheeler 方程}{400, 404, 413}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hiskes shape}{Hiskes 核形状}{34, 99}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hohenberg - Kohn theorem}{Hohenberg-Kohn 定理}{541}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Holstein-Primakoff boson representation}{Holstein-Primakoff boson representation}{348, 350, 360, 374, 378}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hulthen force}{Hulthén 力}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{HW equation}{HW 方程}{参见 Hill-Wheeler 方程（Hill- Wheeler equation）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hydrodynamical models}{流体动力学模型}{11, 336, 558--562}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Hypernetted chain formalism}{超网链形式理论}{205}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{I}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{I-coefficients}{$I$ 系数}{356, 363}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{IBA}{相互作用玻色子近似（IBA）}{参见 相互作用玻色子模型（Interacting boson model）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$I=0$ pairs}{$I=0$ 核子对}{21}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Incompressibility}{不可压缩模量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and breathing mode}{与 呼吸模（巨单极共振）}{296, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and force parameters}{与核力参数}{211}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and velocity distribution}{与速度分布}{336, 337}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{definition}{定义}{211}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Inelastic scattering}{非弹性散射}{295}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Inertial parameter 470~472}{Inertial parameter 470~472}{参见 also Mass parameter; Moment of inertia（also Mass parameter; Moment of inertia）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Inertia tensor}{转动惯量张量}{430, 457, 511, 514, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Infinitesimal generators}{无穷小生成元}{515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Inglis formula}{Inglis 惯量公式}{131, 134, 322, 471, 472, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Interacting boson model}{相互作用玻色子模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{y-soft limit}{$\backslash
+gamma$ 软核极限}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotational limit}{转动极限}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibrational limit}{振动极限}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Interaction}{相互作用}{参见 原子核 力（Nuclear forces）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Intermediate coupling}{中等耦合}{390--397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Internal}{Internal}{参见 内秉（Intrinsic）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Intrinsic,}{内秉}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{components of the angular momentum}{角动量分量}{20, 457, 577}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coordinates}{坐标}{443, 451--458}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{degrees of freedom}{自由度}{452}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{452, 455}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quadrupole moment}{四极矩}{25, 66, 123, 439, 480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave function}{波函数}{127, 272, 474, 475, 478, 482, 499}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Intruder state}{侵入态}{113, 170}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Invariance}{不变性}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of nucleon-nucleon force}{核子-核子力}{150--152}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Inverse energy weighted sum rule}{逆能量加权求和规则}{333}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Irreducible graphs}{不可约图}{632}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Irrotational}{无旋流动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{flow}{流动}{11, 336, 337, 560, 564, 569, 570}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{moment of inertia}{转动惯量}{19,20, 122, 135}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Island of isomers}{同质异能素岛}{65, 145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Isomers}{同质异能素}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{high spin}{高自旋}{65, 102, 143--146}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{K-}{$K$ 轨道}{145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shape}{形状}{67, 83, 95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Isolated crossing (of levels)}{孤立能级交叉}{526}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Isoscalar excitations (AT =0)}{同位旋标量激发（$\backslash
+Delta T = 0$）}{291,295, 333, 334, 523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Isoscalar monopole mode}{Isoscalar monopole mode}{参见 呼吸模（巨单极共振）（Breathing mode）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Isospin}{同位旋}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and analog resonances}{与类似共振}{297--299}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and the giant dipole resonance}{与巨偶极共振}{925}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{dependence of the residual interaction}{剩余相互作用的依赖性}{286}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{flip}{自旋翻转}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{impurity}{杂质}{56}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{invariance}{不变性}{151}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{modes}{模式}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Isotopic spin}{Isotopic spin}{参见 同位旋（Isospin）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Isovector excitations (AT = 1)}{同位旋矢量激发（$\backslash
+Delta T = 1$）}{291, 295, 559}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Iterative diagonalization}{迭代对角化}{200, 255, 257}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{I-forbidden Ml-transitions}{$l$-禁戒 $M1$ 跃迁}{63, 145}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{J}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{j-j coupling scheme}{$j$-$j$ 耦合方案}{43}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Jacobi coordinates}{Jacobi 坐标}{452}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Jacobi shapes}{Jacobi 椭球形状}{33, 140}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{K}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Kallio-Koltveit force}{Kallio-Koltveit 力}{175}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Kamlah expansion}{Kamlah 展开}{467, 478, 480}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{K=0 bands}{$K = 0$ 能带}{22}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$K \backslash
+ne 0$ bands}{$K \backslash
+ne 0$ 能带}{23}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{K-forbidden transitions}{$K$ 禁戒跃迁}{126, 145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Kinematic properties}{运动学性质}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of boson representations}{玻色表象}{347, 359, 365}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of the GCM}{生成坐标法（GCM）}{403}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Kinetic energy}{动能}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{209, 530, 533, 544, 610}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density functional}{密度泛函}{541}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of surface vibrations}{表面 振动的}{11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{K-isomers}{$K$ 同质异能素}{145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Knudsen gas}{Knudsen 气体}{557}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Kuo-Brown force}{Kuo-Brown 现实有效力}{167ff., 326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Kurath force}{Kurath 力}{174}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{L}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{lergy spin traps}{高自旋阱}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{LACM}{LACM}{参见 大振幅集体运动（LACM）（Large amplitude collective motion）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Lagrange multiplier}{Lagrange 乘子}{123, 230, 252, 259, 267, 532}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Lagrangian}{Lagrange 量}{489, 562}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Laguerre polynomials}{Laguerre 多项式}{88}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Landau -Zener formula}{Landau-Zener 公式}{526, 565}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Laplace equation}{Laplace 方程}{582}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Laplace transformation}{Laplace 变换}{529}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Large amplitude collective motion (LACM)}{大振幅集体运动（LACM）}{398, 422, 506, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Large deformations}{大形变}{67, 466}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{LCAO-method}{LCAO 方法（原子轨道线性组合法）}{398}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Level}{能级}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{blocked}{阻塞}{248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{paired}{配对}{248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Level bunching}{能级丛集}{82, 84}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Level crossing}{能级交叉}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and ATDHF}{与 ATDHF}{521}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and deformation}{与形变}{565}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and GCM}{与 GCM}{420}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and reoccupation}{与重新占据}{565}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Nilsson diagram}{在 Nilsson 能级演化图中}{. 76}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{time dependent}{时间相关}{526}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Level density}{能级密度}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and deformation}{与形变}{81, 85}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and pairing correlations}{与对关联}{242}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and shell effects}{与壳效应}{84}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{average}{平均}{86, 529}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{even-odd effect in}{奇偶效应}{218, 225}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{model with uniform}{均匀模型}{240}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{85}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Strutinski smoothed}{Strutinsky 平滑}{86, 529}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+boldsymbol{l}^2$-term}{$\backslash
+boldsymbol{l}^2$ 轨道角动量项}{70, 72, 139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Life time of Slater determinants}{Slater 行列式寿命}{498}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Linear constraint}{线性约束}{267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Linear momentum (total)}{总线动量}{460, 490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Linear potential}{线性 势}{537, 545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Linear response theory}{线性响应理论}{132, 314--325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Linked matrix elements}{连通矩阵元}{427}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Lipkin model}{Lipkin 模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and ATDHF}{与 ATDHF}{522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and boson representations}{与玻色表象}{350, 352, 357, 366}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and Gaussian overlap approximation}{与 高斯重叠近似}{428--429}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and GCM}{与 GCM}{405--406}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and gradient method}{与梯度法}{200}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and Hartree-Fock}{与 Hartree-Fock}{198--201}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and SCRPA}{与自洽 RPA（SCRPA）}{361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and TDHF}{与 TDHF}{490, 501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy surface}{势能面}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{exact solution}{精确解}{405--406}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{overlap functions}{重叠函数}{405}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{with three levels}{三能级模型}{432}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Lippmann- Sch winger equation}{Lippmann-Schwinger 方程}{156}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Liquid drop}{液滴模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and shell corrections}{与壳修正}{83--95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy surface}{势能面}{28, 30,32}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{model}{模型}{1--35}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{parameters}{参数}{4, 549}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotating}{转动}{32--35,99}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local approximation (LA)}{局域近似（LA）}{423}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local density approximation (LDA)}{局域密度近似（LDA）}{163, 206, 551}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local equilibrium}{局域平衡}{556}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local force}{局域 力}{149}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local harmonic approach}{局域谐振近似}{519}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Locally harmonic}{局域谐振}{545, 546}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local moinentum}{局域动量}{532}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local potential}{局域 势}{196ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local redundancy}{局域冗余}{419}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local representation of ATDHF}{ATDHF 局域表象}{515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local response function}{局域响应函数}{324}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Local RPA}{局域 RPA}{519}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Löwdin projector}{Löwdin 投影算符}{474}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Long range order}{长程序}{441}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Long wavelength limit}{长波极限}{589}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{M}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{multidimensional}{多维}{43}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Maclaurin shape}{Maclaurin 旋转椭球}{33}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Magic number}{幻数}{37, 38, 83}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Magnetic moment (dipole)}{磁偶极矩}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and center of mass motion}{与质心运动}{456}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the cranking model}{在 Cranking 模型 / 推引模型中}{132}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the liquid drop model}{在液滴模型中}{13}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the particle-plus-rotator model}{在粒子加转子模型中}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the shell model}{在壳模型中}{61--63}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{tensor component}{张量分量}{63}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Magnetic multipole operators}{磁多极算符}{13, 583, 589}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Magnetic resonance}{磁 共振}{297, 327}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Majorana force}{Majorana 力}{154}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Many-body Green's functions}{多体 Green 函数}{629}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Many-body Schrödinger equation}{多体 Schrödinger 方程}{45}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Many-quasi-particle state}{多准粒子态}{49, 251}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Marumori boson representation}{Marumori 玻色表象}{352, 362--366, 371--372}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Marumori operator}{Marumori 展开 算符}{363, 371}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mass distribution}{质量分布}{497}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mass operator}{质量 / 惯量质量 算符}{626}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Mass parameters}{质量 / 惯量质量 参数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{511, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson model}{玻色子模型}{376}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{cranking formula}{推引转动惯量公式}{525}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{422, 427, 429}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop mode!}{液滴模型}{11}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{(see also Moment of inertia)}{}{参见 also Moment of inertia（also Moment of inertia）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mass tensor}{质量张量}{430, 511, 513, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Maximal overlap, principle of}{最大重叠原理}{76, 115, 123, 144, 145, 220}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Maxwell- Boltzmann distribution}{Maxwell-Boltzmann 分布}{556}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{MBZ-interaction}{MBZ 相互作用（Marumori-Belyaev-Zelevinsky）}{185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{MDI-interaction}{MDI-interaction}{参见 Modified 8-interaction（Modified 8-interaction）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mean field}{平均场}{316, 317, 439, 441, 444, 491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mean free path}{平均自由程}{37, 494, 557}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Mean square deviation}{Mean square deviation}{参见 Fluctuation（Fluctuation）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Mean square radius}{Mean square radius}{参见 Root mean square radius（Root mean square radius）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mesonic degrees of freedom}{介子自由度}{147, 155}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Metric}{度规}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{425, 430}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{304}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Metric tensor}{度规张量}{19, 430}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Migdal force}{Migdal 力}{177--179, 326--328, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Minimal coupling, principle of}{极小耦合原理}{453}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mode coupling}{模耦合}{397, 436}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Modified $\backslash
+delta$-interaction (MDI)}{Modified $\backslash
+delta$-interaction (MDI)}{176, 433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Moment expansion}{极矩 展开}{参见 Symmetric moment 展开（Symmetric moment expansion）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Moment of inertia}{转动惯量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{511, 516, 523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{average (single particle rotation)}{单粒子转动平均}{143}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Belyaev}{Belyaev 理论}{131}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{cranking model}{Cranking 模型 / 推引模型}{129--132, 274}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{experimental}{实验}{19, 103, 104, 219}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{harmonic oscillator}{简谐振子}{136, 457}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{hydrodynamical}{流体动力学}{18, 135, 457}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Inglis}{Inglis 理论}{130, 134, 471, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{irrotational flow}{无旋流动}{19, 20, 122, 135}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{linear response}{线性响应}{133, 322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rigid body}{刚体}{19, 33, 131, 135, 137, 139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{self-consistent}{自洽}{271, 313, 322, 469}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Skyrme}{Skyrme 力}{472}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Thouless- Valatin}{Thouless-Valatin 惯量}{313, 322, 458, 469, 471,472, 511}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{variable (VMI)}{变转动惯量模型（VMI）}{104}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Yoccoz (GCM)}{Peierls-Yoccoz 投影（GCM）}{428, 469, 472, 475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Moment of the strength function}{强度函数矩}{330ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Momentum}{动量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized}{广义}{312, 416, 509, 515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{total linear}{总线动量}{490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Momentum dependence}{动量依赖性}{173}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Momentum distribution 562, 564, 569}{Momentum distribution 562, 564, 569}{参见 also Velocity distribution（also Velocity distribution）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{MONA-effect}{MONA 效应（中子-质子协同排列效应）}{145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{M1-transitions}{$M1$ 跃迁}{63, 125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Monopole}{单极}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{mode, (see Breathing mode)}{mode}{参见 呼吸模（巨单极共振）（Breathing mode）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pairing force}{配对力}{184}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{part of the mean field}{平均场部分}{441}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rule}{求和规则}{333}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transition density}{跃迁密度}{337}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mori theory}{Mori 投影算符理论}{640}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mother nucleus}{母核}{298}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mottelson-Suzuki model}{Mottelson-Suzuki 模型}{334}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Mottelson - Valatin effect}{Mottelson-Valatin 效应（CAP 效应）}{101, 107, 276, 465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Moving frame}{运动参考系}{492}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Multidimensional energy surface}{Multidimensional energy surface}{参见 势能面（Energy surface）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Multidimensional Gaussian overlap}{多维高斯重叠}{430}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Multipole expansion}{多极展开}{582, 584ff}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Multipole-multipole forces}{多极-多极力}{182 185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Multipole strength}{多极跃迁强度}{14, 327}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Multipole transitions}{多极 跃迁}{587ff.}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{N}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Narrow overlap approximation}{窄重叠近似}{467, 479}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Natural states}{自然轨道态}{402, 403, 404}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Navier-Stokes equations}{Navier-Stokes 方程}{557}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Neck coordinate}{颈部坐标（裂变颈）}{29}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Negative parity band}{负宇称带}{273}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Negative quasi-particle energy}{负准粒子能量}{257, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Neumann - Wigner no-crossing rule}{von Neumann-Wigner 能级非交叉定则}{76,526}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{NFT}{NFT}{参见 Nuclear field 理论（Nuclear field theory）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Nilsson}{Nilsson 模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{diagram}{图符}{72--77, 138}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energies}{能量}{79}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{70}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{levels (slope)}{能级斜率}{77}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{model}{模型}{70--80, 262}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{parameters}{参数}{70, 76}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{potential}{势}{70, 261}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quantum numbers}{量子数}{69}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotating model}{转动 模型}{137--139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave function}{波函数}{77}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{No-alignment limit}{无顺排极限}{113}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{No-crossing rule}{能级非交叉规则}{76, 106}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Non-Abelian symmetry groups 460}{非阿贝尔对称群}{709}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Non-collective bosons}{非集体玻色子}{369--372, 373, 383}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nonlocal behavior of the density p}{密度 $\backslash
+rho$ 的非定域性}{207, 291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nonlocal operator}{非定域算符}{600}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Nonlocal potential}{非定域势}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hartree-Fock}{Hartree-Fock}{197}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{semiclassical treatment}{半经典处理}{549}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nonlocality of X-BV}{核力非定域性}{574}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Non-orthogonal basis}{非正交基}{368, 392, 401, 475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Normal ordered product}{正规序乘积}{150, 255, 414, 421, 601}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Norm matrix}{范数矩阵 / 重叠矩阵}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bosons}{玻色子}{363--368, 371}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{401, 404}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection}{投影}{475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Norm overlap}{Norm overlap}{参见 重叠函数（Overlap functions）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nuclear field theory (NFT)}{原子核场论（NFT）}{386, 391}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Nuclear forces}{原子核 力}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bare}{裸}{156--159}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{effective 156-172 (see also Effective interaction)}{effective 156-172}{参见 also Effective 相互作用（also Effective interaction）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{experimental}{实验}{185--187}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{invariances of}{不变性}{150--152}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phenomenological}{唯象}{172--185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nuclear magneton}{核磁子}{61}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Nuclear matter:}{核物质}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{slab of}{平板}{497}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nuclear Meissner effect}{原子核 Meissner 效应（超流反配对）}{276}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Nuclear twist}{核扭转模}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Nucleon - nucleon force}{核子-核子力}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{invariances of}{不变性}{150--152}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Number parity}{粒子数宇称}{250, 256}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Numerical solution}{数值解}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF}{Hartree-Fock 方法（HF）}{197,258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{404}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{306, 325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{50}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF}{时间相关 Hartree-Fock 方法（TDHF）}{501}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{O}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Oblate deformations}{扁椭球形变}{101, 118, 142, 263}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Occupation number representation}{占据数表象}{587, 596}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Occupation numbers}{占据数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{BCS}{BCS 理论}{228, 232}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized (Strutinski)}{广义 Strutinsky 方法}{89}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF}{Hartree-Fock 方法（HF）}{193}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{251, 256, 264}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quasi-particie (Landau)}{准粒子（Landau）}{177}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{self-consistent cranking}{自洽推引模型}{273}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{second quantization}{二次量子化}{596}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{90}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF}{时间相关 Hartree-Fock 方法（TDHF）}{495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{with projection}{带投影}{463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Octupole}{八极}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformations}{形变}{6, 442}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transition density}{跃迁密度}{339}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibration}{振动}{10, 206, 287, 292, 326, 339}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Odd-even effect}{奇偶效应}{218, 236}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Odd I-values}{奇自旋值}{477}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Odd-mass nuclei}{奇质量核}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{BCS}{BCS 理论}{235, 237}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{437}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF}{Hartree-Fock 方法（HF）}{215}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{257, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{107--126}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-vibrator model}{粒子加振动子模型}{381--396}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{seniority model}{辛弱数模型}{225}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{51, 60, 61, 78}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Off-shell behavior of the NN-force}{核力离壳行为}{187}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{One-body}{单体}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{603}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{dissipation}{耗散}{491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{friction}{摩擦力 / 摩擦系数}{487, 494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{599}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{One-pion exchange potential (OPEP)}{单 $\backslash
+pi$ 介子交换势（OPEP）}{155}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{One quasi-particle state}{单准粒子态}{237, 250}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Onishi formula}{Onishi 公式}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{622}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Open shell Hartree-Fock}{开壳 Hartree-Fock 方法}{215}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Open shell nuclei}{开壳核}{288}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Open shell RPA}{开壳 RPA}{302}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Optical model potential}{光学模型 势}{627}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Optimal constraint}{最优约束}{268, 432, 518}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Order parameter}{序参量}{279, 443, 450, 638}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Orthogonality relations}{正交性关系}{289, 305, 341, 355}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Orthogonalization}{正交化}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Gram-Schmidt}{Gram-Schmidt 正交化}{305, 401}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetric}{对称}{401}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Oscillating charge}{振荡电荷}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Oscillating slabs}{振荡核平板}{502}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Oscillator}{Oscillator}{参见 简谐振子（Harmonic oscillator）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Oscillator frequency}{谐振子频率}{41}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Oscillator length}{谐振子长度}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{as generator coordinate}{作为生成坐标}{433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformation dependent}{形变依赖}{68}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{time dependent}{时间相关}{416, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+mathrm{O}(6)$ model}{$\backslash
+mathrm{O}(6)$ 模型}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Overcomplete basis}{过完备基}{392}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Overhauser states}{Overhauser 态}{441}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Overlap angle}{重叠角}{186}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Overlap functions}{重叠函数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for boson vacua}{针对玻色子真空}{622}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for the Lipkin model}{针对 Lipkin 模型}{405}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for oscillator functions}{针对谐振子波函数}{433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for projections}{针对投影}{466, 481}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for Slater determinants}{针对 Slater 行列式}{498}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Gaussian form}{高斯形式}{409, 424, 467}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in GCM}{在 生成坐标法（GCM）中}{401, 406, 407, 409, 420, 428, 434}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{multidimensional}{多维}{430, 481}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Onishi formula}{Onishi 公式}{618--620}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{with Skyrme forces}{采用 Skyrme 力}{433}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Overlap integrals}{Overlap integrals}{参见 重叠函数（Overlap functions）}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pair condensate}{对凝聚体}{225}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pair creation operator}{对产生算符}{229}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pair transfer :}{对转移反应}{450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pair wave function}{对波函数}{220}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Paired levels}{配对能级}{248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing correlations}{对关联}{80, 91, 122, 217, 270, 343, 436, 446, 465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing energy}{配对能}{91, 242, 551}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing field A}{配对场 $\backslash
+Delta$}{221, 254, 260, 261, 266, 279,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing force}{配对力}{184, 221, 232--234, 239, 260, 264, 342, 435, 449}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Pairing gap}{配对能隙}{参见 Gap parameier（Gap parameier）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing rotations}{配对转动}{445, 448, 451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing, semiclassical}{半经典配对理论}{550}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing tensor}{配对张量}{251, 551, 608}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Pairing vibrations}{对振动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transition}{与 相变}{341--343, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson representation}{玻色表象}{380}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{GCM}{生成坐标法（GCM）}{435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pp-TDA}{粒子-粒子 TDA（$pp$-TDA）}{289}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pp-RPA}{粒子-粒子 RPA（$pp$-RPA）}{339--341}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{seniority model}{辛弱数模型}{224}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{weak coupling}{弱耦合}{397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing-plus-quadrupole force}{对加四极相互作用力}{185, 260, 345, 373, 380, 381}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pairing-plus-quadrupole model}{对加四极模型（P+Q 模型）}{259--262, 263,639}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Parent nucleus}{母核}{297}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Parity operation 7, 15l}{宇称操作}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Parity violation}{宇称破缺}{440}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Partial resummation of h-expansion}{$\backslash
+hbar$ 展开的部分求和}{545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Particle-hole (ph)}{粒子-空穴（ph）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{calculations}{计算}{325--328}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in self-consistent basis}{在自洽基底中}{328--330}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{correlations}{关联}{244, 260, 279, 302, 342, 640}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coupling}{耦合}{52, 113}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{creation operator}{产生算符}{283}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{excitations}{激发}{48, 107, 283, 292}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{interaction}{相互作用}{133, 170--172, 177, 640}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix element}{矩阵元}{344}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Particle number}{粒子数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{conservation}{守恒}{341}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{on the average}{平均}{230, 252, 462}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{non-integer values}{非整数值}{496}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{597, 600}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{proejcted HFB}{投影 HFB 理论}{465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection}{投影}{463--466}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetry}{对称性}{447--451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{urcertainty}{测不准}{230, 231, 233, 242}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{violation}{破缺}{229, 252, 260, 396, 450, 532}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Particle-particle (PP)}{粒子-粒子（pp）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bosons}{玻色子}{372--375, 377}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{correlations}{关联}{217--221, 244, 260, 279, 288, 300, 342, 633}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{interaction}{相互作用}{133, 164--170, 177, 344}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix element}{矩阵元}{344}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pp-RPA}{粒子-粒子 RPA（$pp$-RPA）}{339--341}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pp-TDA}{粒子-粒子 TDA（$pp$-TDA）}{288--289}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Particle-plus-rotor model (PRM)}{粒子加转子模型（PRM）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{axially symmetric}{轴对称}{109--122}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{electromagnetic properties}{电磁性质}{125}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{triaxial}{三轴}{122--124}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Partition function}{配分函数}{529, 538ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Path on the energy surface}{势能面上的路径}{31, 200, 259, 269, 431--432, 494, 513, 517--519}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Pauli exclusion principle}{Pauli 不相容原理}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{violation of}{破缺}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pauli projector}{Pauli 投影算符}{158}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{PBCS-theory}{PBCS 理论（投影 BCS 理论）}{462, 464}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Peierls-Thouless method}{Peierls-Thouless 投影方法}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Peierls- Yoccoz projection}{Peierls-Yoccoz 投影方法}{459, 469}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Perturbation theory}{微扰论}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{adiabatic}{绝热}{523ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Perturbative boson expansion}{微扰玻色展开}{358--361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{ph}{粒子-空穴（ph）}{参见 粒子-空穴（Particle-hole）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Phase space}{相空间}{491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Phase transition}{相变}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and boson condensation}{与玻色凝聚}{229,445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and GCM}{与 GCM}{398, 435}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and Green's functions}{与 Green 函数}{634, 637}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and projection methods}{与投影方法}{465}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and symmetry violations}{与对称性破缺}{439, 443}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spherical-deformed}{球形-形变过渡}{201, 377, 380, 637}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{to superfluidity}{向超流动性过渡}{101, 107, 229, 300, 341,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Phonon pole}{声子极点}{639}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Photo}{光核反应}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{absorption}{吸收}{294, 593}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{cross section}{截面}{329}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Physical subspace}{物理子空间}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson representation}{玻色表象}{349,352,369}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{redundant variables}{冗余变量}{453}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pion condensation}{$\backslash
+pi$ 介子凝聚}{440, 451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Plateau condition}{平台条件（Strutinsky 壳修正）}{88, 89}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Poisson bracket}{Poisson 括号}{535, 610}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Polar decomposition}{极分解}{617}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Polarizability}{极化率}{321, 335}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Polarization}{极化}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and effective charges}{与有效电荷}{63, 65, 390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{charge}{电荷}{390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{core}{芯 / 核芯}{169, 216, 390}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of the mean field}{平均场}{216, 257}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{waves}{波}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Potential barrier}{势垒}{496}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{pp}{pp}{参见 粒子-粒子（Particle-particle）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pressure tensor}{压力张量}{555, 556, 558, 564}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Product rule for Wigner transforms}{Wigner 变换的乘积规则}{535, 567, 610}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Product wave functions}{直积波函数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized}{广义}{250}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{(see also Slater determinants)}{}{参见 also Slater determinants（also Slater determinants）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Projected}{投影}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{BCS}{BCS 理论}{462, 464}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF}{Hartree-Fock 方法（HF）}{481}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDA}{Tamm-Dancoff 近似（TDA）}{483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF}{时间相关 Hartree-Fock 方法（TDHF）}{493}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Projected energy}{投影 能量}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{surface}{表面}{462}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Projection}{投影}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{methods}{方法}{451, 458--484}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{onto good angular momentum}{投影到确定角动量}{466, 473--484}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{onto good linear momentum}{投影到确定线动量}{460}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{onto good particle number}{投影到确定粒子数}{435, 459, 463--466}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operators}{算符}{459, 460, 466, 474}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Projection theorem for vector operators}{矢量算符投影定理}{61,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Proactor lomations}{投影公式}{59, 118, 1 142, 26.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Propagator}{传播子}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{free}{自由}{535}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{harmonic oscillator}{简谐振子}{537, 545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{linear potential}{线性 势}{538, 545}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Proton gap}{质子配对能隙}{236, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Proton - neutron pairing}{质子-中子配对}{239, 262}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Pushing model}{平移动力学模型（Pushing 模型）}{471, 480}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{Q}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Quadratic constraint}{二次约束}{267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Quadrupole}{四极}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bosons}{玻色子}{352, 372, 373, 375--381}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{correlations}{关联}{442--446, 450, 638}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformations}{形变}{6--9, 66, 260, 441--451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{moment}{极矩}{63, 64, 66, 265, 439, 584}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{227, 377, 583}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pairing force}{配对力}{185, 381, 442}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{part of the mean field}{平均场部分}{441}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rule}{求和规则}{15,295}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transition density}{跃迁密度}{337}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{transitions (electric) (see B(E2)-values)}{transitions (electric)-values)}{参见 B(E2（B(E2）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibrations}{振动}{14, 221, 334, 380, 433--435, 521, 523, 571}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Quadrupole - quadrupole force}{四极-四极相互作用力}{182, 185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Quantization}{量子化}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ATDHF}{绝热时间相关 Hartree-Fock 方法（ATDHF）}{516}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{canonical}{典范 / 标准}{9,586}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Pauli}{Pauli 原理}{19}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{second}{二次 / 第二}{595--602}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{WKB}{WKB 近似}{533}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Quasi-boson approximation}{准玻色子近似}{303, 304, 307, 311}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Quasi-particle}{准粒子}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{band}{能带}{278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{131, 235, 254, 256, 275}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{excitations}{激发}{251, 254, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{interaction}{相互作用}{177,614}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operators}{算符}{49, 234, 245--248, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phonon-coupling}{声子耦合}{395}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{representation}{表象}{253, 343, 354, 613--614}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA equation}{RPA 方程}{343, 344}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{states}{态}{49, 235, 249, 251}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vacuum}{真空}{249--250}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Quasi-particles}{准粒子}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{BCS}{BCS 理论}{234}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF}{Hartree-Fock 方法（HF）}{614}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HFB}{Hartree-Fock-Bogoliubov 理论（HFB）}{245--248}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Landau}{Landau 理论}{177, 245}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{shell model}{壳模型}{49}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Quasi-spin}{准自旋}{198, 222, 446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Quasi-static}{准静态}{492}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{R}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Radial shapes}{径向分布形状}{291}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Radiation field}{辐射场}{584--587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Random phase approximation}{随机相位近似}{参见 随机相位近似（RPA）（RPA）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Rate of strain tensor}{应变速率张量}{555}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Rearrangement potential}{重排势}{208}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Recoil term}{反冲项}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotational}{转动}{108, 110, 115, 120}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{translational}{平动}{455}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Recursion relation}{递推关系}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{fermion norm}{费米子范数}{364ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{residue integrals}{留数积分}{463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Reduced transition probabilities -and B(MI) - values)}{Reduced transition probabilities-and B(MI)-values)}{参见 B(EI（B(EI）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Redundant generator coordinates}{冗余生成坐标}{418}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Redundant variables}{冗余变量}{109, 399, 453}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Reference spectrum method}{参考谱方法}{163}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Reid soft core potential}{Reid 软芯势}{155, 205, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Relative coordinate}{相对坐标}{452}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Renormalized effective interaction (quasi-particle interaction)}{重整化有效相互作用（准粒子相互作用）}{177, 326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Repulsive interaction}{排斥相互作用}{286}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Reguantization 516, 519}{Reguantization 516, 519}{参见 also Quantization（also Quantization）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Residual interaction}{剩余相互作用}{49, 131, 132, 165, 281, 286,314,316}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Residues method}{留数法}{463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Resonance}{共振}{322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Response function}{响应函数}{316, 323, 633}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Restoring force 570}{Restoring force 570}{参见 also Stiffness coefficient（also Stiffness coefficient）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Re-summation}{重求和}{546}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Rigid body}{刚体}{19, 33, 131, 135, 137, 139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Ritz variation principle}{Ritz 变分原理}{129, 190, 252, 543}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$\backslash
+mathscr{R}_{1,2}$ symmetry}{$\backslash
+mathscr{R}_{1,2}$ 对称性}{22, 111, 113, 116, 137, 261,272, 476,579}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Root mean square (rms) radi}{均方根半径（rms 半径）}{41, 213, 333,}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Rosenfeld force}{Rosenfeld 相互作用力}{174, 326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Rotating}{转动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{frame}{参考系}{127ff., 271ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{harmonic oscillator}{简谐振子}{133--139}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop}{液滴模型}{32--35}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quasi-particle RPA}{准粒子 RPA（QRPA）}{345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Rotation}{转动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and TDHF}{与 TDHF}{493}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and RPA}{与 RPA}{313}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collective}{集体}{17,101}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{around symmetry axis}{绕对称轴}{142ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{single-particle}{单粒子}{102, 142ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Rotational}{转动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{alignment}{顺排}{101, 111, 115ff., 123, 276, 385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bands}{能带}{24, 103, 119, 273, 278, 448, 451, 461}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{invariances 51, 72, 15i,}{不变性}{260, 443ff., 476}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{motion}{运动}{451, 457--458}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{576ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{spectrum (see Rotational band)}{能谱}{参见 转动带（Rotational band）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Rotation - vibration coupling}{转动-振动耦合 耦合}{25}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Rotor model}{转子模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and projection}{与投影}{475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson representation}{玻色表象}{351}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{RPA (random phase approximation)}{随机相位近似（RPA）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{amplitudes}{振幅}{307}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and boson-representation}{与玻色表象}{360ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{441, 442}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{calculation}{计算}{328}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{derivation}{推导}{301--304, 308, 317, 408, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equation}{方程}{135, 303, 317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{excitation probability}{激发几率}{326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for density dependent forces :}{针对密度依赖核力}{315}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ground state}{基态}{302, 309, 310}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{313}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{higher}{更高阶}{311}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the continuum}{在 连续谱中}{322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix}{矩阵}{305, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{metric}{度规}{304, 620}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{numerical solution :}{数值解}{306, 325}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{open shell}{开壳}{302}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spurious states}{赝态 / 虚假激发态}{31 1ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rules}{求和规则}{332}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetry restoration}{对称性恢复}{440}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{S}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{}{}{参见 also Giant dipole 共振（also Giant dipole resonance）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{449, 550 (sez also Gap parameter)}{配对场（参见 能隙参数）}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Saddle point}{鞍点}{31}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Saddle point method}{鞍点法}{547}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Saturation}{饱和性}{2, 211}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Saturation potential}{饱和性 势}{208}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{s-boson}{$s$ 玻色子}{377ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Scale transformation}{标度变换}{425}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Scaling of coordinates}{坐标标度变换}{333, 433, 567}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Scattering matrix}{Scattering matrix}{参见 $S$ 矩阵（S-matrix）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Scattering of slabs}{核物质平板散射}{503}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{SCC}{SCC}{参见 Cranking 模型 / 推引模型（Cranking model）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Schematic model}{示意模型}{285, 319, 342}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Schiffer interaction}{Schiffer 相互作用}{186}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Schmidi lines}{Schmidt 极限线}{61, 62}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Schwarz inequalities}{Schwarz 不等式}{331}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Schwinger boson representation}{Schwinger 玻色表象}{350, 354, 373}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Scott-Moszkowski method}{Scott-Moszkowski 分离法}{163}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Screening term}{屏蔽项}{326}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Second band}{二次 / 第二 带}{106, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Second constraint}{二次约束}{271, 463}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Second minimum}{第二极小值（裂变异构态）}{83, 95, 270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Second quanitzation}{二次量子化}{595--602}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Secularly unstable}{长期不稳定性}{33}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Selection rules}{选择定则}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for multipole moments}{针对 多极矩}{583}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for multipole transitions}{针对 多极 跃迁}{590}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Self-consistency}{自洽性}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{condition}{条件}{132, 134, 136, 199, 253}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Self-consistent}{自洽}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{basis}{基底}{195, 328}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{calculation}{计算}{212, 265, 544}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{constraint}{约束}{432}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{cranking model}{Cranking 模型 / 推引模型}{271--279}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{field}{场}{195, 254, 260, 274, 279, 487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{path}{路径}{518}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{RPA}{随机相位近似（RPA）}{361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetry}{对称性}{202, 256, 261, 491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Semiclassical}{半经典}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{derivation of cranking}{推引模型推导}{127}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{540}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{pairing}{配对 / 对关联}{550}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{theory}{理论}{527, 536, 540}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Semidecoupled bands}{半解耦带}{103}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Semi-empirical mass formula}{半经验质量公式}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Seniority}{辛弱数}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{model}{模型}{221, 350, 378, 446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quantum number}{量子数}{223, 446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Separable forces}{可分离 力}{180, 285, 345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Separation energy}{分离能}{37ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Separation method}{分离方法}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Serber force}{Serber 交换力}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Shape vibrations 435}{Shape vibrations 435}{参见 also 振动（also Vibrations）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Shell corrections}{壳修正}{83--95, 139--143, 522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Shell effects}{壳效应}{37ff., 81, 99, 538}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Shell model}{壳模型}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed}{形变}{65--95}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{spherical}{球形}{36--65}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Shell model calculations}{壳模型计算}{50, 145, 481}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Shell model configuration mixing}{壳模型组态混合}{288}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Shift operations}{升降算符 / 位移操作}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{415, 622}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for collective motion}{针对 集体运动}{415, 421, 424, 514ff., 607ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Short-range interaction}{短程 相互作用}{183, 219}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Side feeding}{边馈送（高自旋退激发）}{98}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Siegert theorem}{Siegert 定理}{63}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Signautre}{Signature（指定数量子数 $\backslash
+alpha$）}{137, 476, 478}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Single j-shell}{单 $j$ 壳层}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{BCS}{BCS 理论}{233}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{configurations}{组态}{53}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quasi-particle states}{准粒子态}{235}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{IBA}{相互作用玻色子近似（IBA）}{373, 379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{seniority}{辛弱数}{221ff., 446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Single-particle}{单粒子}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{193, 530, 600, 624}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Green's function}{Green 函数}{324, 623ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{levels}{能级}{59}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix elements of multipole operators}{多极算符矩阵元}{63, 591}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{states}{态}{49, 56ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{units}{单位}{592}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Skeleton expansion}{骨架图展开}{631}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Skyrme force}{Skyrme 力}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalization}{推广}{330, 501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Skyrme inertia}{Skyrme 转动惯量}{472}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Slab}{核物质平板}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collision}{碰撞}{561}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of nuclear matter}{核物质的}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{oscillating}{振荡}{502}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Slater determinant}{Slater 行列式}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{stability of}{稳定性}{498}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Small amplitude motion}{小振幅运动}{506, 570}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Small amplitudes}{小振幅}{314, 317, 506--512}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Small velocities}{小速度}{507}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{S-matrix}{$S$ 矩阵}{498, 627}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Smooth energy}{平滑能量}{92, 540}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{SO(2M)-algebra}{$\backslash
+mathrm{SO}(2M)$ 李代数}{355}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Soft core}{软芯}{155}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Soft mode}{软模}{443, 635}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Solitary wave}{孤立波}{500}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Soliton}{孤子}{495, 500}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Soper force}{Soper 力}{174}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Sound}{声波 / 声速}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{ordinary}{常数 / 普通}{544}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{zero}{零}{544}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spectral density matrix}{谱密度矩阵}{529}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spectral representation}{谱表象}{318, 624, 634, 636}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spectroscopic factor}{谱学因子}{59, 392}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spectroscopic quadrupole moment}{谱学电四极矩}{66}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spherical tensor operator}{球张量算符}{576}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Spin}{自旋}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{degree of freedom}{自由度}{292}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{distribution}{分布}{581}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{saturation}{饱和性}{176}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{waves}{波}{292}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Spin-orbit}{自旋-轨道}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{coupling}{耦合}{42--45,70}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{210}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{interaction}{相互作用}{153}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{potential}{势}{212}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{term}{项}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed}{形变}{67}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sperical}{球形}{43}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spontaneous emission}{自发辐射}{588}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spreading width}{扩散宽度}{323, 330, 494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Spring constant}{弹性常数 / 刚度系数}{322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Spurious}{虚假 / 赝}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{components in HF wave function}{HF 波函数中的分量}{483}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{excitation}{激发}{293, 314}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{motion}{运动}{314}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotational energy}{转动能}{469, 479}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{solution}{解}{311, 318}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state and symmetry violation}{态与对称性破缺}{51}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state and boson representatin}{态与玻色表象}{371, 374, 392}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state and redundant variables}{态与冗余变量}{453, 455}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{translational energy}{平动能量}{313, 455}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Square well potential}{方势阱}{40}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Stability matrix}{稳定性矩阵（RPA 矩阵）}{253, 305, 317, 513}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Stability of rotating liquid drops}{转动液滴稳定性}{33}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Staggering}{奇偶交错}{2 119}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Static}{静态}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformation}{形变}{338}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{507}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{HF energy}{HF 能量}{510}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{polarizability}{极化率}{321, 333}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Thomas-Fermi}{Thomas-Fermi 理论}{528}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Steepest descent}{最速下降法（梯度法）}{258}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Steinwedel-Jensen model}{Steinwedel-Jensen 模型}{559, 572}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Stephens-Simon}{Stephens-Simon 模型（回弯模型）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{band}{能带}{273}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{effect}{效应}{101, 107, 276}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Stiffness coefficient 12}{Stiffness coefficient 12}{参见 also Curvature of the energy surface（also Curvature of the energy surface）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Stretching effect}{离心拉伸效应}{274}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Strength function}{强度函数}{325, 329, 330, 334}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Strong coupling scheme}{强耦合方案}{110--112, 117}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Structure spin traps}{高自旋同质异能阱}{145}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Strutinsky}{Strutinsky 壳修正方法}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy theorem}{能量 定理}{93}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{method}{方法}{83ff., 539}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and rotation}{与转动}{139ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{applications}{应用}{95, 141}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{SU(2)-group 348}{$\backslash
+mathrm{SU}(2)$ 群}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{SU (3) - model}{$\backslash
+mathrm{SU}(3)$ 模型}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{SU(5) - model}{$\backslash
+mathrm{SU}(5)$ 模型}{375, 379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{SU(6) - model}{$\backslash
+mathrm{SU}(6)$ 模型}{373, 375, 377ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Subspace}{子空间}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{collective}{集体}{347, 359, 364}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{physical}{物理}{349, 352, 369}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Sum rule}{求和规则}{15, 288, 294, 322, 326, 330--336, 445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Superconductor}{超导体}{22}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Superheavy nuclei}{超重核}{9}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Superfluid}{超流体}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{behavior}{行为 / 特性}{100, 449, 450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{nuclei}{原子核}{217ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{state}{态}{300}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Superposition principle}{叠加原理}{495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Surface}{表面}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{12}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{oscillations (see also Vibrations)}{振荡}{参见 also 振动（also Vibrations）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{tension}{张力}{5}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{term}{项}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{thickness}{厚度}{40, 67}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibration}{振动}{291, 558}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vibration of liquid drop}{液滴表面振动}{336}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Surface ô-interaction}{表面 $\backslash
+delta$ 相互作用（SDI）}{179, 380, 345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Sussex force}{Sussex 相互作用矩阵元}{185}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Symmetric moment expansion (SME)}{对称矩展开（SME）}{420--423}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Symmetric ordering}{对称排序 / Weyl 序}{421}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Symmetric orthogonalization}{对称正交化}{401}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Symmetry}{对称性}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{axis}{对称轴}{142}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{conservation}{守恒}{462, 463, 490}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{continuous}{连续}{203, 311, 317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{energy}{能量}{5, 47, 299, 559}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{438}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{properties}{性质}{50}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{transformation on a density-dependent force}{密度依赖核力变换}{203}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Symmetry violations}{对称性破缺}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and correlations}{与 关联}{201, 637, 639}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and density dependent forces}{与 密度依赖核力}{203, 317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and phase transitions}{与相变}{441--451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and the mean field approach}{与平均场方法}{441--451}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and the RPA}{与 RPA}{312, 317, 361}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and zero-frequency modes}{与零频模}{311--313}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the BCS model}{在 BCS 模型中}{446}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the HF method}{在 HF 方法中}{201}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the Nilsson model}{在 Nilsson 模型中}{67, 77}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in the shell model}{在壳模型中}{51}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection methods}{投影方法}{458--484}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{restauration}{恢复}{438--484}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{T}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{= TDHF}{TDHF 方法}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tabakin potential}{Tabakin 可分离势}{155}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Tamm- Dancoff}{Tamm-Dancoff 近似}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and symmetry violation}{与 对称性破缺}{293}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equation}{方程}{164, 170}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{method}{方法}{282, 284, 301}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projected}{投影}{482}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{sum rules}{求和规则}{332}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tassie model}{Tassie 流体动力学模型}{336, 560}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tauberian theorem}{Tauber 型定理}{410}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{TDHF (time-dependent Hartree-Fock)}{时间相关 Hartree-Fock 方法（TDHF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{derivation}{推导}{486--489}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{equations}{方程}{488}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{exactly soluble model}{精确可解模型}{522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{numerical solution}{数值解}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{properties}{性质}{489--491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{symmetries}{对称性}{489}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave functions}{波函数}{496ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Temperature}{温度}{529, 535, 556, 557}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tensor component of the magnetic dipole}{磁偶极算符张量分量}{63}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tensor force}{张量力}{152}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{$T=0$ pairing}{$T=0$ 对关联}{263}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Thomas -Fermi theory}{Thomas-Fermi 理论 理论}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{extended (ETF)}{扩展 Thomas-Fermi（ETF）}{540, 570}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Thomas - Reiche-Kuhn sum rule}{Thomas-Reiche-Kuhn 求和规则}{294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Thouless theorem}{Thouless 定理}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{for bosons}{针对玻色子}{621}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized}{广义}{616}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Thouless - Valatin equations}{Thouless-Valatin 惯量 方程}{312, 322}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Thouless- Valatin inertia}{Thouless-Valatin 转动惯量}{313, 322, 458, 469, 471, 472, 511}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Three-body correlations}{三体关联}{205}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Three-body interaction}{三体相互作用}{175, 176, 210}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Time-dependent}{时间相关}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{487, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{description}{描述}{289, 314}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{harmonic oscillator}{简谐振子}{416ff., 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{Hartree-Fock (see TDHF)}{Hartree-Fock}{参见 时间相关 Hartree-Fock 方法（TDHF）（TDHF）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{mean field}{平均场}{317}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{one-body density}{单体 密度}{315}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{perturbation theory}{微扰论}{318}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{phase factor}{相位因子}{524}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{variational principle}{变分原理}{489, 562}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{wave function}{波函数}{485}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Time-even}{时间反演偶}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{566, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrices}{矩阵}{507}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Time-odd}{时间反演奇}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{component}{分量}{516, 520}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Time ordered product}{时间编序乘积（$T$ 乘积）}{601, 624}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Time-reversal invariance}{时间反演不变性}{151, 256, 261, 272, 421, 424, 426, 491, 510, 609}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Time-reversal operator}{时间反演算符}{7, 184, 228, 248, 491}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{T-matrix}{$T$ 矩阵}{156, 627, 633}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Total mass of the nuclens}{原子核总质量}{313}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Trajectory}{轨迹}{489,495}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Transition}{跃迁}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{current}{流密度}{335, 338}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{290, 291, 303, 325, 335, 336, 338, 561, 638}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{matrix element}{矩阵元}{13, 25, 60, 321, 587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{60, 336, 587}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{probability (see Electromagnetic transitions)}{几率}{参见 电磁跃迁（Electromagnetic transitions）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Transitional nuclei}{过渡核}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and boson model}{与玻色子模型}{375ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and ATDHF}{与 ATDHF}{522}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Translation}{平移}{293, 313, 492}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Transiational excitations}{平动激发}{445}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Translational invariance}{平移不变性}{50, 151, 260, 439, 460,592}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Translational kinetic energy of slabs}{平板平动动能}{503}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Translational motion}{平动运动}{454--456}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Triaxial}{三轴}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformations}{形变}{27, 101, 122, 140, 385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-plus-rotor model}{粒子加转子模型}{122}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{projection}{投影}{481}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotor}{转子}{21,26, 122ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Tunneling}{量子隧穿}{496, 549}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Turning point, classical}{经典转折点}{532}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Twist mode}{扭转模（Twist 模）}{291, 568}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Two-body}{两体}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{density}{密度}{487}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{friction}{摩擦力 / 摩擦系数}{487, 494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{operator}{算符}{600}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two center model}{双中心壳模型}{81}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two-particle-two-hole (20-2h) admixtures}{两粒子-两空穴（$2p$-$2h$）掺杂}{494}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two-particle wave function}{两粒子 波函数}{150}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two-phonon multiplet}{双声子多重态}{397, 346, 376}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two-phonon norm}{双声子范数}{363}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Two-quasi-particle state}{两准粒子态}{235, 257}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{U}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unbounded constraint}{无界约束}{270}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Uncertainty relation}{测不准关系}{2, 415}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unfavored states}{不利态}{114, 117}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unfilled shells}{未填满壳层 / 开壳}{50}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unified model}{统一模型（Bohr-Mottelson 模型）}{97}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unitary approximation to evolution operator}{演化算符酉近似}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Unpaired particle}{未配对粒子}{237}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Usui operator}{Usui 算符（玻色变换）}{370}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{V}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Vacuum}{真空}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{bare}{裸}{372, 374, 596}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{boson}{玻色子}{310, 348, 352, 37}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quasi-particle}{准粒子}{249ff}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Vacuum projector}{真空投影算符}{363, 382}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Valence particles}{价核子}{107, 164, 167, 393}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Valley of B-stability}{$\backslash
+beta$ 稳定线谷}{35}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{VAP method}{VAP method}{参见 Variation after projection（Variation after projection）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Variable moment of inertia (VMI) model.}{变转动惯量模型（VMI 模型）}{104}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Variation}{变分}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{after projection (VAP)}{投影后变分（VAP）}{461, 468, 470, 499}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{before projection (VBP) :}{变分前投影（PBV / VBP）}{460, 469, 472}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{with constraints}{带约束}{230, 267}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Variational calcuations}{变分计算}{542}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Variational principle}{变分原理}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and energy density functional}{与能量密度泛函}{206ff., 543}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{in fluid dynamics}{在 流体动力学中}{562}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of Hamilton}{Hamilton 形式}{469}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of Ritz}{Ritz 变分}{190--192, 252, 400, 431}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{time-dependent}{时间相关}{489, 562}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{VBP method}{VBP method}{参见 Variation before projection（Variation before projection）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Vector spherical harmonics}{矢量球谐函数}{585}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Velocity}{速度}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{distribution}{分布}{131, 136, 291, 504, 556ff., 565}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{field}{场}{136, 337, 568, 573}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Vertex (vibration particle coupling)}{顶点（振动-粒子耦合）}{384, 387ff., 638}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Vibration particle coupling (VPC)}{振动-粒子耦合理论（VPC）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{Hamiltonian}{Hamilton 量}{383}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{perturbation theory}{微扰论}{385}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{vertex}{顶角}{384, 387ff}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Vibrations}{振动}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{liquid drop}{液滴模型}{9--17}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-hole}{粒子-空穴}{280--345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{particle-particle}{粒子-粒子}{288, 339--343}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{quasi-particle}{准粒子}{343--345}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{TDHF}{时间相关 Hartree-Fock 方法（TDHF）}{501}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Villars equations}{Villars 方程（ATDHF）}{518}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Virial theorem}{维里定理}{80}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Virtual bosons}{虚玻色子}{342}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Virtual phonon excitation}{虚声子激发}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Volume conservation}{体积守恒}{6, 34, 68, 136}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Volume term}{体积项}{4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentrysee{VPC}{VPC}{参见 Vibration particle 耦合（Vibration particle coupling）}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Vigner transformation}{Wigner 变换}{535, 609--61}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Vigner transform of pair potential}{配对势的 Wigner 变换}{550}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{W}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wave packet}{波包}{289, 315, 338, 416, 485}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Weak coupling scheme}{弱耦合方案}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and rotations}{与转动}{110, 112ff., 117}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{and vibrations}{与 振动}{385ff., 397}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Weakly canonical variables}{弱典范变量}{515}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Weight function}{权重函数}{399ff., 434}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Weisskopf units}{Weisskopf 单位}{590, 592}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Weizsäcker term}{Weizsäcker 动能表面梯度修正项}{542}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Werntz-Überall mode}{Werntz-Überall 偶极自旋翻转模}{560}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wick's theorem}{Wick 定理}{194, 254, 255, 601--602, 605, 619, 620}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Width}{宽度}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of giant resonance}{巨共振的}{323, 330}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of norm overlap}{范数重叠}{410, 427}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{of resonance}{共振的}{331}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wigner-Eckart theorem}{Wigner-Eckart 定理}{227,583}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wigner force}{Wigner 力}{153, 154, 174, 294}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wigner functions}{Wigner 函数}{7, 576}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wigner-Kirkwood expansion}{Wigner-Kirkwood 展开}{534ff., 546}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wilet-Jean model}{Wilets-Jean 模型（$\backslash
+gamma$ 不稳定转子模型）}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{WKB quantization rule}{WKB 量子化条件}{533}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Wobbling}{摆动运动（Wobbling 模）}{28, 101, 351}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexparent{Woods- Saxon potential}{Woods-Saxon 势}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{deformed}{形变}{67}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{generalized}{广义}{81}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexsubentry{rotating}{转动}{139}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{Y}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{y-cascade}{$\backslash
+gamma$ 跃迁级联}{98}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{y-continuum}{$\backslash
+gamma$ 连续谱}{98}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{y-soft oscillator}{$\backslash
+gamma$ 软简谐振子}{379}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yale potential}{Yale 势}{155}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yoccoz-inertia}{Peierls-Yoccoz 转动惯量}{428, 469, 472, 475}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yrare levels}{Yrare 能级（次高自旋态）}{98}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yrast line}{Yrast 线（最高自旋基带）}{28, 98ff., 104ff., 274, 278}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yrast traps}{Yrast 阱（同质异能阱）}{102, 140, 143ff.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Yukawa force}{Yukawa 力}{155, 326}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+subsection*{Z}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero eigenvalues}{零本征值}{312, 402}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero-frequency mode}{零频模（Goldstone 模）}{450}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero plus (Ot) ground state}{零加（$0^+$）基态}{299}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero plus (Ot) pair}{零加（$0^+$）配对}{220,,342}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero-point energy}{零点能}{427ff., 523}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero-point fluctuations}{零点涨落}{140}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero range forces}{零程力}{323, 334}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+indexentry{Zero sound}{零声（费米液体零声模）}{554}
+\end_layout
+
+\end_inset
+\end_layout
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+end{multicols}
+\end_layout
+
+\end_inset
+\end_layout
+
+\end_body
+\end_document
